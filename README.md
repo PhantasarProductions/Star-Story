@@ -8,7 +8,7 @@ This game will be set up to work in Windows and Mac.
 The possibility to make it run in Linux as well is investigated, however not yet promised.
 
 You can follow the some progress on:
-SourceForge: http://starstory.sourceforge.net
-or GameJolt: http://gamejolt.com/games/star-story/58632
+- SourceForge: http://starstory.sourceforge.net
+- or GameJolt: http://gamejolt.com/games/star-story/58632
 
 When some open testing can begin will be announced on either site.
