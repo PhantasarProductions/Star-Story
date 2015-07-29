@@ -10,4 +10,6 @@ You can follow the some progress on:
 - SourceForge: http://starstory.sourceforge.net
 - or GameJolt: http://gamejolt.com/games/star-story/58632
 
+A live worklog is kept at: http://starstory.sourceforge.net/uTBBS/index.php?C=QuickWorkLog&A=Show&Board=1
+
 When some open testing can begin will be announced on either site.
