@@ -5,7 +5,7 @@ Below are the last known dates to updates
 Part | Last build update
 -----|-----
 Mac Engine | Last built: 29 Jul 2015; 23:04:27
-Window Engine | Not built yet
+Windows Engine | Last built: 30 Jul 2015; 00:35:13
 JCR6 Resource Files | Not built yet
 All times are in CET (Central European Time: Amsterdam, Brussels, Paris, Madrid)
 
