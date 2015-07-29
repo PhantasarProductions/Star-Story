@@ -7,5 +7,7 @@ Part | Last build update
 Mac Engine | Last built: 29 Jul 2015; 23:04:27
 Window Engine | Not built yet
 JCR6 Resource Files | Not built yet
+All times are in CET (Central European Time: Amsterdam, Brussels, Paris, Madrid)
+
 
 Please note this file has no real value yet until the open alpha starts. NO ETA given for that yet!
