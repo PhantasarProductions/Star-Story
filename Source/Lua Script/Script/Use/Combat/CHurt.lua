@@ -8,7 +8,7 @@ local elementalresistance = ({
                                  [0] = function() return 3 end
                               })[RPGStat.StatExists(chtarget,"ER_"..element)]()
 local switch = 
-               ({   -- Lua way of doing a 'switch case' statment. Ugly I know, but it works. :-P
+               (({   -- Lua way of doing a 'switch case' statment. Ugly I know, but it works. :-P
                     -- Why the variable defition is needed is beyond me, as the variable is totally unneeded, but Lua fails to parse this code without it.
      
                  [0] = function() -- fatal
@@ -40,7 +40,7 @@ local switch =
                        r,g,b = 0,255,0
                        end,      
                  default = function() end      -- In all other situations (which includes situation 3) do nothing :)
-               })[elementalresistance or 'default']()
+               })[elementalresistance] or function() end)()
 RPGStat.Points(chtarget,"HP").Have = RPGStat.Points(chtarget,"HP").Have - dodmg
 CharReport(tg,ti,report,{r,g,b})               
 end
