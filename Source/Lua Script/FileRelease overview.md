@@ -2,8 +2,103 @@
 
 ## Demo Release
 
-Data/JINC/Foes/0.lua1. Script/CharStats/AutoUse.lua1. Script/CharStats/General.lua1. Script/CharStats/Wendicka.lua1. Script/Flow/Achievements.lsv1. Script/Flow/Achievements.lua1. Script/Flow/AutoUse.lua1. Script/Flow/Combat.lsv1. Script/Flow/Combat.lua1. Script/Flow/Field.lua1. Script/Flow/Menu.lua1. Script/Flow/Quit.lua1. Script/Flow/SaveGame.lsv1. Script/Flow/SaveGame.lua1. Script/Init/AutoUse.lua1. Script/Init/LoadGame.lua1. Script/Init/Start.lua1. Script/JINC/Big/Achievements.lua1. Script/JINC/Foes/Reg/BattleDroid.lua1. Script/JINC/IAA/ABL_WENDICKA_PROLOGUE_SHOCK.lua1. Script/JINC/IAA/ABL_WENDICKA_SHOCK.lua1. Script/JINC/IAA/ARM_DART.lua1. Script/JINC/IAA/ARM_HEALINGSPRAY.lua1. Script/JINC/IAA/ITM_ADHBANDAGE.lua1. Script/JINC/IAA/ITM_BANDAGE.lua1. Script/JINC/InitChar/Briggs.lua1. Script/JINC/InitChar/Crystal.lua1. Script/JINC/InitChar/Share/Crystal.lua1. Script/JINC/InitChar/Share/Wendicka.lua1. Script/JINC/InitChar/UniCrystal.lua1. Script/JINC/InitChar/UniWendicka.lua1. Script/JINC/InitChar/Wendicka.lua1. Script/Libs/A few mathematical functions.lua1. Script/Libs/bool2int.lua1. Script/Libs/boolean.lua1. Script/Libs/Colors.lua1. Script/Libs/Console.lua1. Script/Libs/CVV.lua1. Script/Libs/DarkText.lua1. Script/Libs/each.lua1. Script/Libs/jinclude.lua1. Script/Libs/join.lua1. Script/Libs/KeyCodes_BlitzMax.lua1. Script/Libs/Markers.lua1. Script/Libs/mysplit.lua1. Script/Libs/Quick String Routines.lua1. Script/Libs/QuickJCR6.lua1. Script/Libs/RPGSTAT_Iterator.lua1. Script/Libs/spairs.lua1. Script/Libs/strings.lua1. Script/Libs/sval.lua1. Script/Libs/tablecontains.lua1. Script/Maps/AutoUse.lua1. Script/Maps/Prologue_Yaqirpa.lua1. Script/SubRoutines/AutoUse.lua1. Script/SubRoutines/BoxText.lua1. Script/SubRoutines/BoxTextKthuraBackGround.lua1. Script/SubRoutines/Flip.lua1. Script/SubRoutines/IO.lua1. Script/SubRoutines/Items and Abilities.lua1. Script/SubRoutines/Party.lua1. Script/SubRoutines/SFX.lua1. Script/SubRoutines/TrueMusic.lua1. Script/System/Console.lsv1. Script/System/Console.lua1. Script/Use/Anyway/AAAAAAAAAAA.lua1. Script/Use/Anyway/Flip.lua1. Script/Use/Anyway/Fonts.lua1. Script/Use/Anyway/GetCoords.lua1. Script/Use/Anyway/Hide-and-seek.lua1. Script/Use/Anyway/LevelCaps.lua1. Script/Use/Anyway/Libs.lua1. Script/Use/Anyway/Mouse.lua1. Script/Use/Anyway/Music.lua1. Script/Use/AnyWay/MusicAvailable.lua (only available when you have the version WITH music)1. Script/Use/Anyway/Resistance names.lua1. Script/Use/Anyway/TutorialInit.lua1. Script/Use/Combat/CAction.lua1. Script/Use/Combat/CDrawFighters.lua1. Script/Use/Combat/CDrawScreen.lua1. Script/Use/Combat/CFoeInput.lua1. Script/Use/Combat/CHurt.lua1. Script/Use/Combat/CLoadFoe.lua1. Script/Use/Combat/CPlayerInput.lua1. Script/Use/Combat/CTargetInfo.lua1. Script/Use/Combat/SpellAni/AAAAAAAAAAAAAAAAAAA.lua1. Script/Use/Combat/SpellAni/Shoot.lua1. Script/Use/Goto/GoToMenu.lua1. Script/Use/Goto/GoToSave.lua1. Script/Use/Linkers/AchieveLinker.lua1. Script/Use/Linkers/BoxTextLinker.lua1. Script/Use/Linkers/CombatLinker.lua1. Script/Use/Linkers/Inventory and Abilities Linker.lua1. Script/Use/Linkers/PartyLinker.lua1. Script/Use/Linkers/SFXLinker.lua1. Script/Use/Menu/LearnSpellMessages.lua
+1. Data/JINC/Foes/0.lua
+1. Script/CharStats/AutoUse.lua
+1. Script/CharStats/General.lua
+1. Script/CharStats/Wendicka.lua
+1. Script/Flow/Achievements.lsv
+1. Script/Flow/Achievements.lua
+1. Script/Flow/AutoUse.lua
+1. Script/Flow/Combat.lsv
+1. Script/Flow/Combat.lua
+1. Script/Flow/Field.lua
+1. Script/Flow/Menu.lua
+1. Script/Flow/Quit.lua
+1. Script/Flow/SaveGame.lsv
+1. Script/Flow/SaveGame.lua
+1. Script/Init/AutoUse.lua
+1. Script/Init/LoadGame.lua
+1. Script/Init/Start.lua
+1. Script/JINC/Big/Achievements.lua
+1. Script/JINC/Foes/Reg/BattleDroid.lua
+1. Script/JINC/IAA/ABL_WENDICKA_PROLOGUE_SHOCK.lua
+1. Script/JINC/IAA/ABL_WENDICKA_SHOCK.lua
+1. Script/JINC/IAA/ARM_DART.lua
+1. Script/JINC/IAA/ARM_HEALINGSPRAY.lua
+1. Script/JINC/IAA/ITM_ADHBANDAGE.lua
+1. Script/JINC/IAA/ITM_BANDAGE.lua
+1. Script/JINC/InitChar/Briggs.lua
+1. Script/JINC/InitChar/Crystal.lua
+1. Script/JINC/InitChar/Share/Crystal.lua
+1. Script/JINC/InitChar/Share/Wendicka.lua
+1. Script/JINC/InitChar/UniCrystal.lua
+1. Script/JINC/InitChar/UniWendicka.lua
+1. Script/JINC/InitChar/Wendicka.lua
+1. Script/Libs/A few mathematical functions.lua
+1. Script/Libs/bool2int.lua
+1. Script/Libs/boolean.lua
+1. Script/Libs/Colors.lua
+1. Script/Libs/Console.lua
+1. Script/Libs/CVV.lua
+1. Script/Libs/DarkText.lua
+1. Script/Libs/each.lua
+1. Script/Libs/jinclude.lua
+1. Script/Libs/join.lua
+1. Script/Libs/KeyCodes_BlitzMax.lua
+1. Script/Libs/Markers.lua
+1. Script/Libs/mysplit.lua
+1. Script/Libs/Quick String Routines.lua
+1. Script/Libs/QuickJCR6.lua
+1. Script/Libs/RPGSTAT_Iterator.lua
+1. Script/Libs/spairs.lua
+1. Script/Libs/strings.lua
+1. Script/Libs/sval.lua
+1. Script/Libs/tablecontains.lua
+1. Script/Maps/AutoUse.lua
+1. Script/Maps/Prologue_Yaqirpa.lua
+1. Script/SubRoutines/AutoUse.lua
+1. Script/SubRoutines/BoxText.lua
+1. Script/SubRoutines/BoxTextKthuraBackGround.lua
+1. Script/SubRoutines/Flip.lua
+1. Script/SubRoutines/IO.lua
+1. Script/SubRoutines/Items and Abilities.lua
+1. Script/SubRoutines/Party.lua
+1. Script/SubRoutines/SFX.lua
+1. Script/SubRoutines/TrueMusic.lua
+1. Script/System/Console.lsv
+1. Script/System/Console.lua
+1. Script/Use/Anyway/AAAAAAAAAAA.lua
+1. Script/Use/Anyway/Flip.lua
+1. Script/Use/Anyway/Fonts.lua
+1. Script/Use/Anyway/GetCoords.lua
+1. Script/Use/Anyway/Hide-and-seek.lua
+1. Script/Use/Anyway/LevelCaps.lua
+1. Script/Use/Anyway/Libs.lua
+1. Script/Use/Anyway/Mouse.lua
+1. Script/Use/Anyway/Music.lua
+1. Script/Use/AnyWay/MusicAvailable.lua (only available when you have the version WITH music)
+1. Script/Use/Anyway/Resistance names.lua
+1. Script/Use/Anyway/TutorialInit.lua
+1. Script/Use/Combat/CAction.lua
+1. Script/Use/Combat/CDrawFighters.lua
+1. Script/Use/Combat/CDrawScreen.lua
+1. Script/Use/Combat/CFoeInput.lua
+1. Script/Use/Combat/CHurt.lua
+1. Script/Use/Combat/CLoadFoe.lua
+1. Script/Use/Combat/CPlayerInput.lua
+1. Script/Use/Combat/CTargetInfo.lua
+1. Script/Use/Combat/SpellAni/AAAAAAAAAAAAAAAAAAA.lua
+1. Script/Use/Combat/SpellAni/Shoot.lua
+1. Script/Use/Goto/GoToMenu.lua
+1. Script/Use/Goto/GoToSave.lua
+1. Script/Use/Linkers/AchieveLinker.lua
+1. Script/Use/Linkers/BoxTextLinker.lua
+1. Script/Use/Linkers/CombatLinker.lua
+1. Script/Use/Linkers/Inventory and Abilities Linker.lua
+1. Script/Use/Linkers/PartyLinker.lua
+1. Script/Use/Linkers/SFXLinker.lua
+1. Script/Use/Menu/LearnSpellMessages.lua
 
 
 
-### Last updated: Thu 30 July 2015; 15:26:43 CET
+### Last updated: Thu 30 July 2015; 15:27:42 CET
