@@ -1,8 +1,9 @@
 # Star-Story-Tracker
 
-This tracker will be used to track down bugs or undesirable behavior in the "Star Story" game. 
-At this moment, the game is not yet open for testing, I only opened this tracker already to test things out and to make things ready 
-once the testing can truly begin.
+This tracker can be used to look into the source code of Star Story. You can see the source of the Engine, the launcher and the scripts themselves.
+
+You can also use the issue tracker to report bugs, or request/suggest features.
+Soon the builds of the alpha versions (they are not finished, just the game as it currently is) will be released. It is not yet decided if this github repository will be used for it or if they'll be available elsewhere (or even both). That will of course be noted in this repository :)
 
 This game will be set up to work in Windows and Mac. Unfortunately, I cannot go for a Linux version. Linux is already a crappy OS, and Linux + BlitzMax = HELL! Once the source is released you might try to compile this yourself in Linux, I won't stop you, but I'm not going to pain myself with it any more.
 
