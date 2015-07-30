@@ -1,4 +1,6 @@
-# Launcher source
+# LAURA II source
+
+This is the engine used to create Star Story.
 
 This source has entirely been written in BlitzMax.
 In order to compile you need
