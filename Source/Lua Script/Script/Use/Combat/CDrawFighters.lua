@@ -80,7 +80,7 @@ ReportList         = ReportList         or {}
 ReportList[tg]     = ReportList[tg]     or {}
 ReportList[tg][ti] = ReportList[tg][ti] or {}
 local x,y = FighterCoords(tg,ti)
-table.insert(ReportList[tg][ti],{ x=x,y=y, m=report, scale=0, timer=100, r=color[1], g=color[2], b=color[3] })
+table.insert(ReportList[tg][ti],{ x=x,y=y-30, m=report, scale=0, timer=100, r=color[1], g=color[2], b=color[3] })
 end
 
 function ShowCharReports()

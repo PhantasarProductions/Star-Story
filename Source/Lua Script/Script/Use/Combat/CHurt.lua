@@ -5,7 +5,7 @@ local dodmg = hp
 local chtarget = FighterTag(tg,ti)
 local elementalresistance = ({
                                  [1] = function() return RPGStat.Stat(chtarget,"ER_"..element) end,
-                                 [0] = function() return 0 end
+                                 [0] = function() return 3 end
                               })[RPGStat.StatExists(chtarget,"ER_"..element)]()
 local switch = 
                ({   -- Lua way of doing a 'switch case' statment. Ugly I know, but it works. :-P
