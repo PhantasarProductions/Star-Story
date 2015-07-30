@@ -158,6 +158,7 @@ InputItems = {
       Input = function(ch,pos)
               Act.Hero[pos].ActSpeed=250
               Act.Hero[pos].Act = "RLD"
+              InputDone=true
               end,        
       Done = function()
              return true
