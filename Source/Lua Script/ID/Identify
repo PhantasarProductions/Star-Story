@@ -1,0 +1,8 @@
+Title=Star Story
+ID=StarStory
+Engine=LAURA2
+Version=15.07.28
+Screen=800x600
+LoadingPosition=BottomRight
+OSMousePointer=No
+Dev=Yes
