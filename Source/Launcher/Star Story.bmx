@@ -1,7 +1,7 @@
 Rem
 /*
 	Launcher for Star Story
-	
+	Simple program to correctly start a new game or load a savegame
 	
 	
 	
@@ -24,7 +24,7 @@ Rem
 */
 
 
-Version: 15.06.27
+Version: 15.07.30
 
 End Rem
 Strict
