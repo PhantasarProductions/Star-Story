@@ -85,6 +85,7 @@ end
 
 function ShowCharReports()
 local fi,fg,fgl,f
+if not ReportList then return end
 for fg,fgl in spairs(ReportList) do for fi,f in pairs(fgl) do
     if #f>0 then
        Image.Scale(f[1].scale,f[1].scale)
