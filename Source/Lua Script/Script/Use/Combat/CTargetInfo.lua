@@ -43,7 +43,7 @@
 
 
 
-Version: 15.07.27
+Version: 15.07.30
 
 ]]
 function AVGLevel(group,chat)
