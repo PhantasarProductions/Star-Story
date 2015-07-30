@@ -2,7 +2,7 @@ function Hurt(tg,ti,hp,element)
 local r,g,b = 255,255,255
 local report = hp
 local dodmg = hp
-local chtarget = FighterTag(act.TargetGroup,act.TargetIndividual)
+local chtarget = FighterTag(tg,ti)
 local elementalresistance = ({
                                  [1] = function() return RPGStat.Stat(chtarget,"ER_"..element) end,
                                  [0] = function() return 0 end
