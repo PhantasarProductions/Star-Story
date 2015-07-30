@@ -1,4 +1,6 @@
-# Launcher source
+# LAURA II source
+
+This is the engine used to create Star Story.
 
 This source has entirely been written in BlitzMax.
 In order to compile you need
@@ -11,4 +13,4 @@ Please note, this repository is only a copy of my real work directory. It will n
 
 Please note the icons (Wendicka.o, Wendicka.icns and Wendicka.ico) are my own property not part of the open-source license and my only be distributed with an unmodified version of the game.
 
-### Last updated: Thu 30 July 2015; 17:36:00
+### Last updated: Thu 30 July 2015; 17:36:01
