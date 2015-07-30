@@ -10,7 +10,7 @@
 ]]
 
 
--- Version 15.07.30
+-- Version 15.07.31
 
 
 
@@ -19,14 +19,14 @@ Data = {
 	Desc = "A simple droid whipped up by the Astrilopups.\nAll it can do is kill.",
 	ImageFile = "Reg/BattleDroid.png",
 	Stat = {
-		["Strength"] = {4,200},
-		["Defense"] = {2,100},
+		["Strength"] = {15,250},
+		["Defense"] = {10,240},
 		["Will"] = {1,5},
 		["Resistance"] = {2,95},
 		["Agility"] = {5,200},
 		["Accuracy"] = {100,10000},
 		["Evasion"] = {2,10},
-		["HP"] = {10,500},
+		["HP"] = {20,600},
 		["AP"] = {0,0},
 		["LevelRange"] = {1,100},
 	},
