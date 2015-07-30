@@ -69,4 +69,9 @@ RPGChar.Points(ch,"AMMO").Have = RPGChar.Points(ch,"AMMO",1).Have - 1
 end
 
 function ActionFuncs.RLD(ag,ai,act)
+SFX("Audio/SFX/Gun-Cocking-Sound.ogg")
+if ag~="Hero" then Sys.Error("Reloading can only be done by heroes") end
+local t = FighterTag(ag,ai)
+local h = {UniWendicka="her",UniCrystal="her"}
+MINI( RPGChar.Name(t) .. " has reloaded "..(h[t] or "his").." gun")
 end 
