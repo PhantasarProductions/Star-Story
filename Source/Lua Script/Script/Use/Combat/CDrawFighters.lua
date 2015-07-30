@@ -89,7 +89,7 @@ if not ReportList then return end
 for fg,fgl in spairs(ReportList) do for fi,f in pairs(fgl) do
     if #f>0 then
        Image.Scale(f[1].scale,f[1].scale)
-       DarkText(f[1].m,f[1].x,f[1].y,f[1].r,f[1].g,f[1].b)
+       DarkText(f[1].m,f[1].x,f[1].y,2,2,f[1].r,f[1].g,f[1].b)
        if f[1].scale<1 then f[1].scale = f[1].scale + .1
        elseif f[1].timer>0 then f[1].timer = f[1].timer -1 
        else table.remove(fi,1) end
