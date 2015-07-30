@@ -73,5 +73,6 @@ SFX("Audio/SFX/Gun-Cocking-Sound.ogg")
 if ag~="Hero" then Sys.Error("Reloading can only be done by heroes") end
 local t = FighterTag(ag,ai)
 local h = {UniWendicka="her",UniCrystal="her"}
+RPGChar.Points(t,"AMMO").Have = RPGChar.Points(t,"AMMO").Maximum
 MINI( RPGChar.Name(t) .. " has reloaded "..(h[t] or "his").." gun")
 end 
