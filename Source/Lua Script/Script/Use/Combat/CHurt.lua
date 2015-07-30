@@ -7,12 +7,9 @@ local elementalresistance = ({
                                  [1] = function() return RPGStat.Stat(chtarget,"ER_"..element) end,
                                  [0] = function() return 0 end
                               })[RPGStat.StatExists(chtarget,"ER_"..element)]()
--- @IF IGNOREME                              
 local switch = 
--- @FI
                ({   -- Lua way of doing a 'switch case' statment. Ugly I know, but it works. :-P
-                    -- The IGNOREME statement will cause the pre-processor to remove the "switch =" which is totally unneeded in every single way, but my syntax checker 
-                    -- was allergic to code without it. That's quality stuff man... :-(
+                    -- Why the variable defition is needed is beyond me, as the variable is totally unneeded, but Lua fails to parse this code without it.
      
                  [0] = function() -- fatal
                        report = "DEATH"; r,g,b = 255,0,0
