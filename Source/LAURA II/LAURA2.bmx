@@ -99,7 +99,6 @@ A few tools you may need if you want to use LAURA II
 = Kthura Map Editor. It was not yet released when I wrote
   this notice, it very likely will be over time.
 
-If it's not done yet, please make a comment of the line "Import "GameJolt.bmx"". 
 This line contains security material and is therefore not given away. The engine
 should compile without it. In the case of Star Story this will mean that the
 game will not work with the "GameJolt.net" file present. Removing or renaming
@@ -148,8 +147,6 @@ Import	brl.freeaudioaudio
 Import	brl.glmax2d
 Import	brl.freetypefont
 
-' GameJolt
-Import      "GameJolt/GameJolt.bmx" ' Turn this line into a comment to compile, as the file required here is close-sourced in order not to compromise GameJolt's security!
 
 
 ' Version
