@@ -75,6 +75,28 @@ function FighterCoords(g,t)
 return CoordsFighter[g](t)
 end 
 
+function CharReport(tg,ti,report,color)
+ReportList         = ReportList         or {}
+ReportList[tg]     = ReportList[tg]     or {}
+ReportList[tg][ti] = ReportList[tg][ti] or {}
+local x,y = FighterCoords(tg,ti)
+table.insert(ReportList[tg][ti],{ x=x,y=y, m=report, scale=0, timer=100, r=color[1], g=color[2], b=color[3] })
+end
+
+function ShowCharReports()
+local fi,fg,fgl,f
+for fg,fgl in spairs(ReportList) do for fi,f in pairs(fgl) do
+    if #f>0 then
+       Image.Scale(f[1].scale,f[1].scale)
+       DarkText(f[1].m,f[1].x,f[1].y,f[1].r,f[1].g,f[1].b)
+       if f[1].scale<1 then f[1].scale = f[1].scale + .1
+       elseif f[1].timer>0 then f[1].timer = f[1].timer -1 
+       else table.remove(fi,1) end
+       end
+    end end
+Image.Scale(1,1)    
+end
+
 function TargetedColor()
 --[[ No good
 TAR_HueChange  = 1

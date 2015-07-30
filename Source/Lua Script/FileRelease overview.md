@@ -2,7 +2,6 @@
 
 ## Demo Release
 
-1. Data/JINC/Foes/0.lua
 1. Script/CharStats/AutoUse.lua
 1. Script/CharStats/General.lua
 1. Script/CharStats/Wendicka.lua
@@ -53,6 +52,7 @@
 1. Script/Libs/spairs.lua
 1. Script/Libs/strings.lua
 1. Script/Libs/sval.lua
+1. Script/Libs/switch.lua
 1. Script/Libs/tablecontains.lua
 1. Script/Maps/AutoUse.lua
 1. Script/Maps/Prologue_Yaqirpa.lua
@@ -101,4 +101,4 @@
 
 
 
-### Last updated: Thu 30 July 2015; 15:27:42 CET
+### Last updated: Thu 30 July 2015; 15:31:04 CET

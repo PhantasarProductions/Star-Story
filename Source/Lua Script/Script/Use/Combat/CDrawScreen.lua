@@ -93,5 +93,6 @@ White()
 Image.Draw("ARENA",0,0)
 DrawGauge()
 DrawFighters()
+ShowCharReports()
 ShowParty()
 end
