@@ -56,6 +56,7 @@ Act = { Hero = {}, Foe = {} }
 Bestiary = Bestiary or {}
 Oversoul = Oversoul or {}
 Fighters = {}
+VicCheck = {}
 
 function DelEnemies()
 local foeid
@@ -197,9 +198,33 @@ if CombatData.MUSIC and CombatData.MUSIC~="*NOCHANGE*" then
    end
 end
 
+function Victory()
+return (VicCheck or function()
+   local i,v
+   for i,v in pairs(Fighters.Foe) do return false end -- Return false only gets executed if an enemy exists, if it doesn't exist we got an entirely empty "for" loop as 'return false' will be called for zero times.
+   return true
+   end)
+end
+
+function RunVictory()
+ywscale = ywscale or 0
+ywtimer = ywtimer or 150
+local cosdeg = (360-ywscale)
+local cosres = math.cos(cosdeg); if cosdeg<=0 then cosres=1 end
+local genscale = math.ceil((cosdeg/360)*100)
+Image.ScalePC(genscale,genscale*cosres)
+Image.LoadNew("YOUWIN","GFX/Combat/YouWin.png"); Image.HotCenter("YOUWIN")
+Image.Show("YOUWIN",400,150)
+if ywscale<360 then 
+   ywscale = ywscale + 1
+   else
+   ywtimer = ywtimer - 1
+   if ywtimer<=0 then LAURA.Flow(CombatData.RETURNFLOW or "FIELD") end
+   end
+end
 
 function MAIN_FLOW()
 DrawScreen()
-RunGauge()
+if Victory() then RunVictory() else RunGauge() end
 Flip()
 end
