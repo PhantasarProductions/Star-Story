@@ -171,6 +171,7 @@ if RPGStat.Points(myfoe.Tag,"HP").Have==0 then
        KillFoe(idx,myfoe.Tag) 
        end
    end
+Image.ScalePC(100)   
 end
 
 
