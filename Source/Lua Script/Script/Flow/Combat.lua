@@ -198,12 +198,14 @@ if CombatData.MUSIC and CombatData.MUSIC~="*NOCHANGE*" then
    end
 end
 
+function DefaultVictory()
+local i,v
+for i,v in pairs(Fighters.Foe) do return false end -- Return false only gets executed if an enemy exists, if it doesn't exist we got an entirely empty "for" loop as 'return false' will be called for zero times.
+return true
+end
+   
 function Victory()
-return (VicCheck or function()
-   local i,v
-   for i,v in pairs(Fighters.Foe) do return false end -- Return false only gets executed if an enemy exists, if it doesn't exist we got an entirely empty "for" loop as 'return false' will be called for zero times.
-   return true
-   end)()
+return (VicCheck or DefaultVictory)()
 end
 
 function RunVictory()
