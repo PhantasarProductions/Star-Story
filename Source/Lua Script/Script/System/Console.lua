@@ -185,7 +185,7 @@ end
 function VARS()
 local k,v
 for k,v in IVARS() do
-    CSay(k.." = "..sval(v))
+    if left(k,1)~="<" then CSay(k.." = "..sval(v)) end
     end
 end
 
@@ -195,6 +195,10 @@ local i,l
 for i,l in ipairs(a) do
     CSay(l)
     end
+end
+
+function KILL(variable)
+Var.Clear(variable)
 end
 
 function GETHOT(tag)
