@@ -90,6 +90,7 @@ function PerformAction(ft,p,fv)
 -- @IF DEBUG_COMBAT_ACT
 for l in each(mysplit(serialize("FIGHTER_IN_ACTION",Fighters[ft][p]),"\n")) do MINI(l); CSay(l) end 
 -- @FI
+(GameSpecificPerformAction or function() end)(ft,p,fv);
 (ActionFuncs[Fighters[ft][p].Act.Act] or ActionFuncs.Error)(ft,p,Fighters[ft][p].Act)
 -- Reset gauge
 if Fighters[ft][p].Gauge>9999 then Fighters[ft][p].Gauge = 0 end

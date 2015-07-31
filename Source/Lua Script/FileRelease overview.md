@@ -85,6 +85,7 @@
 1. Script/Use/Combat/CFoeInput.lua
 1. Script/Use/Combat/CHurt.lua
 1. Script/Use/Combat/CLoadFoe.lua
+1. Script/Use/Combat/CombatStuffSpecificForStarStory.lua
 1. Script/Use/Combat/CPlayerInput.lua
 1. Script/Use/Combat/CTargetInfo.lua
 1. Script/Use/Combat/SpellAni/AAAAAAAAAAAAAAAAAAA.lua
@@ -101,4 +102,4 @@
 
 
 
-### Last updated: Fri 31 July 2015; 00:19:13 CET
+### Last updated: Fri 31 July 2015; 02:26:52 CET
