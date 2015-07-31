@@ -203,7 +203,7 @@ return (VicCheck or function()
    local i,v
    for i,v in pairs(Fighters.Foe) do return false end -- Return false only gets executed if an enemy exists, if it doesn't exist we got an entirely empty "for" loop as 'return false' will be called for zero times.
    return true
-   end)
+   end)()
 end
 
 function RunVictory()
@@ -211,7 +211,7 @@ ywscale = ywscale or 0
 ywtimer = ywtimer or 150
 local cosdeg = (360-ywscale)
 local cosres = math.cos(cosdeg); if cosdeg<=0 then cosres=1 end
-local genscale = math.ceil((cosdeg/360)*100)
+local genscale = math.ceil((ywscale/360)*100)
 Image.ScalePC(genscale,genscale*cosres)
 Image.LoadNew("YOUWIN","GFX/Combat/YouWin.png"); Image.HotCenter("YOUWIN")
 Image.Show("YOUWIN",400,150)
