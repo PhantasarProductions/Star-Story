@@ -40,6 +40,7 @@
 1. Script/Libs/Console.lua
 1. Script/Libs/CVV.lua
 1. Script/Libs/DarkText.lua
+1. Script/Libs/Debug.lua
 1. Script/Libs/each.lua
 1. Script/Libs/jinclude.lua
 1. Script/Libs/join.lua
@@ -102,4 +103,4 @@
 
 
 
-### Last updated: Fri 31 July 2015; 15:40:01 CET
+### Last updated: Fri 31 July 2015; 15:48:34 CET

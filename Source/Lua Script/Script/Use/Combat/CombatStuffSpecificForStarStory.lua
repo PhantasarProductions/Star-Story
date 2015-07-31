@@ -18,13 +18,14 @@ end
 
 
 function KillFoe(idx,myfoe)
+Dbg("Let's kill foe #"..idx.."> "..myfoe.Tag)
 local maxfactor = 250
 local enemylevel = RPGStat.Stat(myfoe.Tag,"Level")
 local herotag,herolevel,gainexp
 -- Hero experience
 for i=0,5 do
     herotag = RPGStat.PartyTag(i)
-    if herotag~="" then
+    if herotag and herotag~="" then
        herolevel = RPGStat.Stat(herotag,"Level")
        gainexp = math.floor((herolevel/enemylevel)*maxfactor)
        RPGStat.Points(herotag,"EXP").Inc(gainexp)
