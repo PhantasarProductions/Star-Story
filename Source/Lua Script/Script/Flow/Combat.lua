@@ -165,6 +165,7 @@ local fx,fy
 for k,v in spairs(CombatData) do
     if left(k,3)=="FOE" and type(v)=='string' then
        FoeCount = FoeCount + 1
+       Dbg('New Foe','Foe #'..FoeCount,"key: "..key,"Foe File: "..v)
        if CombatData["IDFOE"..k] then GiveID=CombatData["IDFOE"..k] else GiveID=GaugeID; GaugeID=GaugeID+1 end
        InitFoeCoords(FoeCount)
        fx,fy = foec[FoeCount][1],foec[FoeCount][2]
@@ -224,6 +225,7 @@ if ywscale<360 then
    ywtimer = ywtimer - 1
    if ywtimer<=0 then 
       PullMusic()
+      inc('%COMBAT.VICTORIES')
       LAURA.Flow(CombatData.RETURNFLOW or "FIELD") 
       end
    end
