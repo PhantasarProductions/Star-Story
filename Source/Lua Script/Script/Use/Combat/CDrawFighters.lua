@@ -165,7 +165,7 @@ if Targeted then TargetedColor() else White() end
 myfoe.DeathScale = myfoe.DeathScale or 100
 Image.ScalePC(myfoe.DeathScale)   
 Image.Show(pt[Neg[idx]==true]..Fighters.Foe[idx].Tag,CoordsFighter.Foe(idx)) -- Neg[idx]==true is used, as the initial value is "nil" and that would cause the game to crash. CoordsFigher.Foe(idx) will return both the x and the y, and the Lua parser will pick that up correctly.
-if RPGStat.Points(myfoe.Tag).Have==0 then
+if RPGStat.Points(myfoe.Tag,"HP").Have==0 then
    myfoe.DeathScale = myfoe.Deathscale - 1
    if myfoe.DeathScale<=0 then
        KillFoe(idx,myfoe.Tag) 
