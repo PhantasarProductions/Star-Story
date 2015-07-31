@@ -205,7 +205,7 @@ return true
 end
    
 function Victory()
-return (VicCheck or DefaultVictory)()
+return (VicCheck[CombatData.VICTORYCHECK] or DefaultVictory)()
 end
 
 function RunVictory()
@@ -222,7 +222,10 @@ if ywscale<360 then
    ywscale = ywscale + 1
    else
    ywtimer = ywtimer - 1
-   if ywtimer<=0 then LAURA.Flow(CombatData.RETURNFLOW or "FIELD") end
+   if ywtimer<=0 then 
+      PullMusic()
+      LAURA.Flow(CombatData.RETURNFLOW or "FIELD") 
+      end
    end
 end
 
