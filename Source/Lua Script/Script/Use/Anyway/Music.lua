@@ -44,6 +44,7 @@ local pushidx = CVV("%PUSHEDSONGS")
 local newpushidx
 if pushidx==0 then
    CSay("WARNING! Pull music request done while no songs were pushed")
+else
    Music(CVV("$PUSHEDSONGS["..CVV("%PUSHEDSONGS").."]"))
    Var.Clear(CVV("$PUSHEDSONGS["..CVV("%PUSHEDSONGS").."]"))
    newpushidx = pushidx - 1
