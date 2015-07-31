@@ -30,7 +30,7 @@ for i=0,5 do
     herotag = RPGStat.PartyTag(i)
     if herotag and herotag~="" then
        herolevel = RPGStat.Stat(herotag,"Level")
-       gainexp = math.floor((herolevel/enemylevel)*maxfactor)
+       gainexp = math.floor((enemylevel/herolevel)*maxfactor)
        RPGStat.Points(herotag,"EXP").Inc(gainexp)
        end
     end
