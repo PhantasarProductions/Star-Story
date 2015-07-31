@@ -94,7 +94,7 @@ end
 function PullMusic()
 if not PushedMusic then Console.Write("! WARNING: Pull music requested when a push was never done before!");  return; end
 if #PushedMusic<1 then Console.Write("! WARNING: Pull music requested while the queue is currently empty!"); return; end
-if PushedMusicNr<1 then Console.Write("! WARNING: Pull music requested while the queue is currently empty!"); return; end
+if PushedMusicNr<1 then Console.Write("! WARNING: Pull music requested while the queue index is currently 0!"); return; end
 local PM = PushedMusic[PushedMusicNr]
 PushedMusic[PushedMusicNr] = nil
 PushedMusicNr = PushedMusicNr - 1

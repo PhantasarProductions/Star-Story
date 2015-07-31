@@ -217,7 +217,7 @@ local genscale = math.ceil((ywscale/360)*100)
 Image.ScalePC(genscale,genscale*cosres)
 Image.LoadNew("YOUWIN","GFX/Combat/YouWin.png"); Image.HotCenter("YOUWIN")
 Image.Show("YOUWIN",400,150)
-Image.ScalePC(100)
+Image.ScalePC(100,100)
 if ywscale<360 then 
    ywscale = ywscale + 1
    else
