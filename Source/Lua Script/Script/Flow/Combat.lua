@@ -213,19 +213,19 @@ function RunVictory()
 ywscale = ywscale or 0
 ywtimer = ywtimer or 150
 local cosdeg = (360-ywscale)
-local cosres = math.cos(cosdeg); if cosdeg<=0 then cosres=1 end
+local cosres = math.cos(cosdeg/9); if cosdeg<=0 then cosres=1 end
 local genscale = math.ceil((ywscale/360)*100)
 Image.ScalePC(genscale,genscale*cosres)
 Image.LoadNew("YOUWIN","GFX/Combat/YouWin.png"); Image.HotCenter("YOUWIN")
 Image.Show("YOUWIN",400,150)
 Image.ScalePC(100,100)
 if ywscale<360 then 
-   ywscale = ywscale + 1
+   ywscale = ywscale + 2
    else
    ywtimer = ywtimer - 1
    if ywtimer<=0 then 
       PullMusic()
-      inc('%COMBAT.VICTORIES')
+      inc('%COMBATSTAT.VICTORIES')
       LAURA.Flow(CombatData.RETURNFLOW or "FIELD") 
       end
    end
