@@ -135,7 +135,7 @@ local setup = {
      {"i","Leaving it blank will keep the answer we already got"},
      {"i","Typing '<nil>' will destroy this field"},
      {"%COMBAT.MINLVL","Minimum level:"},
-     {"%COMBAT.MAXLVL","Minimum level:"},
+     {"%COMBAT.MAXLVL","Maximum level:"},
      {"$COMBAT.BACKGROUND","Background arena:"},
      {"$COMBAT.MUSIC","Music:","Combat/REGULARCOMBAT.OGG"},    
    }
@@ -174,9 +174,15 @@ end
 
 function TB_RUN()
 local k,v
+local pdel = "%COMBAT.FOE"
 for k,v in spairs(TBSetup) do
-    CSay("Define: "..k.." > "..v)
-    Var.D(k,v)
+    if left(k,len(pdel))==pdel then
+       TBSetup[k]=nil
+       CSay("Remove faulty field:"..k)
+       else
+       CSay("Define: "..k.." > "..v)
+       Var.D(k,v)
+       end
     end
 CSay("Let combat commence!")
 StartCombat() 
