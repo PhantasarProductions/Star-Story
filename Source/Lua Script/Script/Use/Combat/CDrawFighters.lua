@@ -92,7 +92,7 @@ for fg,fgl in spairs(ReportList) do for fi,f in pairs(fgl) do
        Image.Font("Fonts/Robotica.ttf",round(f[1].scale))
        DarkText(f[1].m,f[1].x,f[1].y,2,2,f[1].r,f[1].g,f[1].b)
        if f[1].scale<15 then f[1].scale = f[1].scale + .5
-       elseif f[1].timer>0 then f[1].timer = f[1].timer -1 
+       elseif f[1].timer>0 and #f<=1 then f[1].timer = f[1].timer -1 
        else table.remove(f,1) end
        end
     end end
@@ -156,12 +156,21 @@ end
 
 function DrawFighter.Foe(idx,data)
 local pt={}
+local myfoe = Fighters.Foe[idx]
 pt[ true]="N"
 pt[false]="O"
 Neg = Neg or {}
 local Targeted = isorcontains(TargetedGroup,"Foe") and isorcontains(TargetedFighter,idx)
-if Targeted then TargetedColor() else White() end   
-Image.Show(pt[Neg[idx]==true]..Fighters.Foe[idx].Tag,CoordsFighter.Foe(idx)) -- Neg[idx]==true is used, as the initial value is "nil" and that would cause the game to crash. CoordsFigher.Foe(idx) will return both the x and the y, and the Lua parser will pick that up correctly. 
+if Targeted then TargetedColor() else White() end
+myfoe = myfoe.DeathScale or 100
+Image.ScalePC(myfoe.DeathScale)   
+Image.Show(pt[Neg[idx]==true]..Fighters.Foe[idx].Tag,CoordsFighter.Foe(idx)) -- Neg[idx]==true is used, as the initial value is "nil" and that would cause the game to crash. CoordsFigher.Foe(idx) will return both the x and the y, and the Lua parser will pick that up correctly.
+if RPGStat.Points(myfoe.Tag).Have==0 then
+   myfoe.DeathScale = myfoe.Deathscale - 1
+   if myfoe.DeathScale<=0 then
+       KillFoe(idx,myfoe.Tag) 
+       end
+   end
 end
 
 
