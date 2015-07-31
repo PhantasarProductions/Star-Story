@@ -162,7 +162,7 @@ pt[false]="O"
 Neg = Neg or {}
 local Targeted = isorcontains(TargetedGroup,"Foe") and isorcontains(TargetedFighter,idx)
 if Targeted then TargetedColor() else White() end
-myfoe = myfoe.DeathScale or 100
+myfoe.DeathScale = myfoe.DeathScale or 100
 Image.ScalePC(myfoe.DeathScale)   
 Image.Show(pt[Neg[idx]==true]..Fighters.Foe[idx].Tag,CoordsFighter.Foe(idx)) -- Neg[idx]==true is used, as the initial value is "nil" and that would cause the game to crash. CoordsFigher.Foe(idx) will return both the x and the y, and the Lua parser will pick that up correctly.
 if RPGStat.Points(myfoe.Tag).Have==0 then
