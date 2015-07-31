@@ -18,7 +18,7 @@ end
 
 
 function KillFoe(idx,myfoe)
-Dbg("Let's kill foe #"..idx.."> "..myfoe.Tag)
+Dbg("Let's kill foe #"..idx.."> "..sval(myfoe.Tag))
 local maxfactor = 250
 local enemylevel = RPGStat.Stat(myfoe.Tag,"Level")
 local herotag,herolevel,gainexp

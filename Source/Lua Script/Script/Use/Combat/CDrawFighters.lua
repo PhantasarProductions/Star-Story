@@ -169,7 +169,7 @@ Image.Show(pt[Neg[idx]==true]..Fighters.Foe[idx].Tag,CoordsFighter.Foe(idx)) -- 
 if RPGStat.Points(myfoe.Tag,"HP").Have==0 then
    myfoe.DeathScale = myfoe.DeathScale - 2
    if myfoe.DeathScale<=0 then
-       KillFoe(idx,myfoe.Tag) 
+       KillFoe(idx,myfoe) 
        end
    end
 Image.ScalePC(100,100)   
