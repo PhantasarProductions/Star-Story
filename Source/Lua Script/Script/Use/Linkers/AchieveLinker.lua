@@ -32,5 +32,12 @@ if not achievementscript then
    function Award(Tag)
    MS.LN_Run("ACH","Script/Flow/Achievements.lua","Award",Tag)
    end
-
+   
+   function GrabAchievements(prefix)
+   MS.LN_Run("GRAB_Achievements",prefix)
+   local ret = Var.C("$GRABBEDACHIEVEMENTS")
+   Var.Clear("$GRABBEDACHIEVEMENTS")
+   return mysplit(ret,";")
    end
+   
+end

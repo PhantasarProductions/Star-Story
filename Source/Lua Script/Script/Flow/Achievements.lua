@@ -38,6 +38,18 @@ AchIcons = {}
 PM=0
 end
 
+function GRAB_Achievements(prefix)
+local r 
+for k,_ in spairs(Achievements) do
+    if left(k,len(prefix))==prefix then 
+      if r then r=r..";" else r="" end
+      r = r .. k
+      end
+   end
+Var.D("$GRABBEDACHIEVEMENTS",r)
+return r   
+end
+
 function Award(PTag)
 local Tag = upper(PTag)
 if not Achievements[Tag] then Console.Write("ERROR! Achievement '"..Tag.."' does not exist!"); return end

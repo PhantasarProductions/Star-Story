@@ -58,6 +58,28 @@ Oversoul = Oversoul or {}
 Fighters = {}
 VicCheck = {}
 
+
+function GetAch()
+Ach = {
+      Prefix = { Kills = "KILL", Victories = "VICTORY" },
+      BaseList = { },
+   
+      NumList = { }
+
+    }
+local k,p,num,numk
+for k,p in spairs(Ach.Prefix) do
+    Dbg("Setup Achievement set: "..k)
+    Ach.BaseList[k] = GrabAchievements(p)
+    for numk in each(Ach.BaseList[k]) do
+        num = Sys.Val(replace(numk,p,""))
+        Dbg("= Add "..numk.." >> "..num)
+        Ach.Numlist[num] = numk
+        end
+    end   
+end
+    
+
 function DelEnemies()
 local foeid
 local foedel = {}
