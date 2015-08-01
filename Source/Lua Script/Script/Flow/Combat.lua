@@ -74,7 +74,7 @@ for k,p in spairs(Ach.Prefix) do
     for numk in each(Ach.BaseList[k]) do
         num = Sys.Val(replace(numk,p,""))
         Dbg("= Add "..numk.." >> "..num)
-        Ach.Numlist[num] = numk
+        Ach.NumList[num] = numk
         end
     end   
 end
