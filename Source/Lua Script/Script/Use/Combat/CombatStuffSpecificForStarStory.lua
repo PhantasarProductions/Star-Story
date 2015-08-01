@@ -21,6 +21,7 @@ function KillFoe(idx,myfoe)
 local f = upper(myfoe.File)
 Dbg("Let's kill foe #"..idx.."> "..sval(myfoe.Tag))
 inc("%COMBATSTAT.KILLS")
+NumAchAward("KILL",CVV("%COMBATSTAT.KILLS"))
 Bestiary[f] = (Bestiary[f] or 0) + 1
 local maxfactor = 250
 local enemylevel = RPGStat.Stat(myfoe.Tag,"Level")

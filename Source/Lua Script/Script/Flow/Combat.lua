@@ -61,7 +61,7 @@ VicCheck = {}
 
 function GetAch()
 Ach = {
-      Prefix = { Kills = "KILL", Victories = "VICTORY" },
+      Prefix = { Kills = "KILL", Victories = "VICTORY", Perfect = "PERFECT", PerfectStreak = "PERFECTSTREAK" },
       BaseList = { },
    
       NumList = { }
@@ -74,9 +74,18 @@ for k,p in spairs(Ach.Prefix) do
     for numk in each(Ach.BaseList[k]) do
         num = Sys.Val(replace(numk,p,""))
         Dbg("= Add "..numk.." >> "..num)
-        Ach.NumList[num] = numk
+        Ach.NumList[p] = Ach.NumList[p] or {}
+        Ach.NumList[p][num] = numk
         end
     end   
+end
+
+function NumAchAward(prefix,num)
+assert(Ach.NumList[prefix],"No combat nummeric ach list named '"..prefix.."'")
+local n,a
+for n,a in pairs(Ach.NumList[prefix]) do
+    if num>=n then Award(a) end
+    end
 end
     
 
