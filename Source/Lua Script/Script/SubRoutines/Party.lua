@@ -295,7 +295,8 @@ if epm>0 and ep==epm then
    ({ [1] = function() RPGStat.Points(ch,"HP").Have = RPGStat.Points(ch,"HP").Maximum RPGStat.Points(ch,"AP").Have = RPGStat.Points(ch,"AP").Maximum end,
       [2] = function() RPGStat.Points(ch,"HP").Have = RPGStat.Points(ch,"HP").Maximum end,
       [3] = function() end })[skill](ch)
-   levelupanim[ch] = { scl=0; tme=150 }   
+   levelupanim[ch] = { scl=0; tme=150 }
+   if RPGStat.Stat(ch,"Level")>=MaxLevel then RGPStat.Points(ch,EXP).Maximum=0 end   
    end
 if levelupanim[ch] then
    levelupanim[ch].rot = ((levelupanim[ch].scl/100)*360)-(360+30)
@@ -308,7 +309,7 @@ if levelupanim[ch] then
    if levelupanim[ch].scl<100 then levelupanim[ch].scl=levelupanim[ch].scl+1
    elseif levelupanim[ch].tme>0 then levelupanim[ch].tme=levelupanim[ch].tme-1
    else levelupanim[ch]=nil end   
-   end
+   end   
 end
 
 function ShowParty()
