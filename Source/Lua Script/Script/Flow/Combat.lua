@@ -214,6 +214,8 @@ for k,f in spairs(Fighters) do
 CSay("Gauge init pos done")    
 -- General initiations    
 InitGaugeSpeed()
+-- Grab all achievements we need
+GetAch()
 -- Music
 if CombatData.MUSIC and CombatData.MUSIC~="*NOCHANGE*" then    
    PushMusic()
