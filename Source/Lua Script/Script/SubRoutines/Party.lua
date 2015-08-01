@@ -248,8 +248,8 @@ Image.Draw(picref,sx-RPGChar.Stat(ch,"PXM"),600-Image.Height(picref))
 end
 
 function RecoverChar(ch)
-RPG.Points(ch,"HP").Have = RPG.Points(ch,"HP").Maximum
-RPG.Points(ch,"AP").Have = RPG.Points(ch,"AP").Maximum
+RPGStat.Points(ch,"HP").Have = RPGStat.Points(ch,"HP").Maximum
+RPGStat.Points(ch,"AP").Have = RPGStat.Points(ch,"AP").Maximum
 end
 
 function ShowStats(ch,pos)
@@ -291,8 +291,8 @@ if Image.TextWidth(lv)<100 then DarkText("LV",sx+95,575,1,0,col+100,col+100,col+
 if epm>0 and ep==epm then
    RPGStat.DefStat(ch,"Level",lv+1) 
    GrabLevel(ch,RPGChar.Stat(ch,"Level"));
-   ({ [1] = function() RPG.Points(ch,"HP").Have = RPG.Points(ch,"HP").Maximum RPG.Points(ch,"AP").Have = RPG.Points(ch,"AP").Maximum end,
-      [2] = function() RPG.Points(ch,"HP").Have = RPG.Points(ch,"HP").Maximum end,
+   ({ [1] = function() RPGStat.Points(ch,"HP").Have = RPGStat.Points(ch,"HP").Maximum RPGStat.Points(ch,"AP").Have = RPGStat.Points(ch,"AP").Maximum end,
+      [2] = function() RPGStat.Points(ch,"HP").Have = RPGStat.Points(ch,"HP").Maximum end,
       [3] = function() end })[skill](ch)
    levelupanim[ch] = { scl=0; tme=150 }   
    end
