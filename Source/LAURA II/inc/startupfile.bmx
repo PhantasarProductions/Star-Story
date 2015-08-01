@@ -1,7 +1,7 @@
 Rem
 /*
-	
-	
+	LAURA II - Lua-based Advanced Utility for Role-Play and Adventuring
+	This is a quick file to start things up.
 	
 	
 	
@@ -24,7 +24,7 @@ Rem
 */
 
 
-Version: 15.05.22
+Version: 15.08.01
 
 End Rem
 Incbin "Witch.png"
@@ -57,6 +57,7 @@ If Not Witch
 	Else
 	Graphics ImageWidth(Witch),ImageHeight(Witch)
 	DrawImage Witch,0,0
+	LuaConsoleFlip = ID.Get("ShowConsole").toUpper()="YES"
 	Flip
 	EndIf
 AppTitle = "LAURA II"
@@ -89,5 +90,5 @@ VarDef("$LANG",L)
 End Function
 
 
-MKL_Version "LAURA II - inc/startupfile.bmx","15.05.22"
+MKL_Version "LAURA II - inc/startupfile.bmx","15.08.01"
 MKL_Lic     "LAURA II - inc/startupfile.bmx","GNU - General Public License ver3"
