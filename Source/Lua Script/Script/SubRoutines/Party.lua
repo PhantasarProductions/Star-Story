@@ -291,6 +291,7 @@ if Image.TextWidth(lv)<100 then DarkText("LV",sx+95,575,1,0,col+100,col+100,col+
 if epm>0 and ep==epm then
    RPGStat.DefStat(ch,"Level",lv+1) 
    GrabLevel(ch,RPGChar.Stat(ch,"Level"));
+   RPGStat.Points(ch,"EXP").Have=0
    ({ [1] = function() RPGStat.Points(ch,"HP").Have = RPGStat.Points(ch,"HP").Maximum RPGStat.Points(ch,"AP").Have = RPGStat.Points(ch,"AP").Maximum end,
       [2] = function() RPGStat.Points(ch,"HP").Have = RPGStat.Points(ch,"HP").Maximum end,
       [3] = function() end })[skill](ch)
