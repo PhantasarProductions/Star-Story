@@ -300,10 +300,10 @@ if levelupanim[ch] then
    levelupanim[ch].rot = ((levelupanim[ch].scl/100)*360)-(360+30)
    Image.LoadNew("LEVELUP","GFX/StatusBar/LevelUp.png"); Image.HotCenter("LEVELUP")
    Image.ScalePC(levelupanim[ch].scl,levelupanim[ch].scl)
-   Image.Rotation(levelupanim[ch].rot)
+   Image.SetRotation(levelupanim[ch].rot)
    Image.Show("LEVELUP",sx+100,550)
    Image.ScalePC(100,100)
-   Image.Rotation(0)
+   Image.SetRotation(0)
    if levelupanim[ch].scl<100 then levelupanim[ch].scl=levelupanim[ch].scl+1
    elseif levelupanim[ch].tme>0 then levelupanim[ch].tme=levelupanim[ch].tme-1
    else levelupanim[ch]=nil end   
