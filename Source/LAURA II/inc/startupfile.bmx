@@ -57,7 +57,6 @@ If Not Witch
 	Else
 	Graphics ImageWidth(Witch),ImageHeight(Witch)
 	DrawImage Witch,0,0
-	LuaConsoleFlip = ID.Get("ShowConsole").toUpper()="YES"
 	Flip
 	EndIf
 AppTitle = "LAURA II"

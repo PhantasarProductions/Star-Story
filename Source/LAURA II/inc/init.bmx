@@ -102,6 +102,7 @@ Function InitID()
 id = LoadID(JCR,"ID/Identify")
 If Not id error "Game has no identify data"
 If id.get("Engine")<>"LAURA2" And id.get("Engine")<>"LAURA II" error "This game was meant for the "+id.get("Engine")+" engine and not for LAURA II"
+LuaConsoleFlip = ID.Get("ShowConsole").toUpper()="YES"
 AppTitle = id.get("Title")
 End Function
 
