@@ -29,6 +29,7 @@ Version: 15.07.30
 ]]
 statusbar = Image.Load("GFX/Statusbar/StatusBar.png")
 portret = {}
+levelupanim = {}
 
 needexp = {2500,5000,10000}
 
@@ -246,6 +247,11 @@ if not portret[picref] then
 Image.Draw(picref,sx-RPGChar.Stat(ch,"PXM"),600-Image.Height(picref))
 end
 
+function RecoverChar(ch)
+RPG.Points(ch,"HP").Have = RPG.Points(ch,"HP").Maximum
+RPG.Points(ch,"AP").Have = RPG.Points(ch,"AP").Maximum
+end
+
 function ShowStats(ch,pos)
 if ch=="" then return end
 local col = math.abs(math.sin(Time.MSecs()/1000)*100)
@@ -282,6 +288,26 @@ if epm>0 then
    end
 DarkText(lv,sx+195,575,1,0)
 if Image.TextWidth(lv)<100 then DarkText("LV",sx+95,575,1,0,col+100,col+100,col+100) end   
+if epm>0 and ep==epm then
+   RPGStat.DefStat(ch,"Level",lv+1) 
+   GrabLevel(ch,RPGChar.Stat(ch,"Level"));
+   ({ [1] = function() RPG.Points(ch,"HP").Have = RPG.Points(ch,"HP").Maximum RPG.Points(ch,"AP").Have = RPG.Points(ch,"AP").Maximum end,
+      [2] = function() RPG.Points(ch,"HP").Have = RPG.Points(ch,"HP").Maximum end,
+      [3] = function() end })[skill](ch)
+   levelupanim[ch] = { scl=0; tme=150 }   
+   end
+if levelupanim[ch] then
+   levelupanim[ch].rot = ((levelupanim[ch].scl/100)*360)-(360+30)
+   Image.LoadNew("LEVELUP","GFX/StatusBar/LevelUp.png"); Image.HotCenter("LEVELUP")
+   Image.SetScalePC(levelupanim[ch].scl,levelupanim[ch].scl)
+   Image.Rotation(levelupanim[ch].rot)
+   Image.Show("LEVELUP",sx+100,550)
+   Image.SetScalePC(100,100)
+   Image.Rotation(0)
+   if levelupanim[ch].scl<100 then levelupanim[ch].scl=levelupanim[ch].scl+1
+   elseif levelupanim[ch].tme>0 then levelupanim[ch].tme=levelupanim[ch].tme-1
+   else levelupanim[ch]=nil end   
+   end
 end
 
 function ShowParty()
