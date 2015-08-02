@@ -44,7 +44,7 @@ IconFunction =
                   MS.LoadNew("ACH","Script/Flow/Achievements.lua") -- Only loads if it wasn't loaded before :)
                   LAURA.Flow("ACH") 
                   end,
-   FullScreen = function() CSay("Full Screen clicked" ) end,   
+   FullScreen = LAURA.ToggleFullScreen,   
    Quit = function() 
           MS.LoadNew("QUIT","Script/Flow/Quit.lua")
           LAURA.Flow("QUIT") 
