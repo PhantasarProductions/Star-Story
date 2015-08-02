@@ -13,7 +13,6 @@ If you see your name below and you think I'm using your stuff against your licen
 
 Author | Contributions | Kind of contributions
 ---|---|---
-Misc files; Script; 
 Aaron Krogh | 13 | Audio; 
 Alexander | 3 | Audio; Misc files; 
 Angela Nagtzaam | 11 | Art; 
