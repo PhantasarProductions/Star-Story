@@ -11,26 +11,27 @@ However since "honor to whom honor is due" is my motto when it comes to whatever
 If you see your name below and you think I'm using your stuff against your license conditions, please write an issue in the issue tracker on it, and I can tell you which asset it is and which license conditions were known to me. You should be able to offer me proof, as anybody can claim to be a copyright holder when in fact they are not.
 
 
-Author | Number of files contributed
----|---
-Aaron Krogh | 13
-Alexander | 3
-Angela Nagtzaam | 11
-Courtney Novits | 4
-Cynix | 1
-Emily Esposito | 1
-Fake Music Generator | 1
-FlamingText.com | 11
-GR-Sites | 2
-Kevin McLeod | 1
-Man of Steel | 28
-Matt McFarland | 2
-Mohammed Ibrahim | 1
-OpenClips | 1
-PacDV | 1
-Spiedkiks | 1
-Tricky (this is me) :sunglasses: | 1366
-Unknown Artist | 6
-Utopia | 2
-WeirdoMusic | 1
+Author | Contributions | Kind of contributions
+---|---|---
+Misc files; Script; 
+Aaron Krogh | 13 | Audio; 
+Alexander | 3 | Audio; Misc files; 
+Angela Nagtzaam | 11 | Art; 
+Courtney Novits | 4 | Font; Misc files; 
+Cynix | 1 | Art; 
+Emily Esposito | 1 | Art; 
+Fake Music Generator | 1 | Audio; 
+FlamingText.com | 11 | Art; 
+GR-Sites | 2 | Art; Audio; 
+Kevin McLeod | 1 | Audio; 
+Man of Steel | 28 | Art; 
+Matt McFarland | 2 | Audio; 
+Mohammed Ibrahim | 1 | Art; 
+OpenClips | 1 | Art; 
+PacDV | 1 | Audio; 
+Spiedkiks | 1 | Audio; 
+Tricky (this is me) :sunglasses: | 1366 | Art; Audio; Misc files; Script; 
+Unknown Artist | 6 | Art; 
+Utopia | 2 | Font; Misc files; 
+WeirdoMusic | 1 | Audio; 
 One final note. Since JCR6 uses an aliasing system some contributions are counted twice (or even more times) due to them being aliased. The system updating this list is (unfortunately) not able to tell a true contributions apart from aliases.
