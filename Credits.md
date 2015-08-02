@@ -11,10 +11,8 @@ However since "honor to whom honor is due" is my motto when it comes to whatever
 If you see your name below and you think I'm using your stuff against your license conditions, please write an issue in the issue tracker on it, and I can tell you which asset it is and which license conditions were known to me. You should be able to offer me proof, as anybody can claim to be a copyright holder when in fact they are not.
 
 
-
 Author | Number of files contributed
 ---|---
-test | 3
 Aaron Krogh | 13
 Alexander | 3
 Angela Nagtzaam | 11
