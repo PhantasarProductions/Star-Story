@@ -33,3 +33,4 @@ Tricky (this is me) :sunglasses: | 1366
 Unknown Artist | 6
 Utopia | 2
 WeirdoMusic | 1
+One final note. Since JCR6 uses an aliasing system some contributions are counted twice (or even more times) due to them being aliased. The system updating this list is (unfortunately) not able to tell a true contributions apart from aliases.
