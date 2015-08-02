@@ -16,7 +16,7 @@ Author | Contributions | Kind of contributions
 Aaron Krogh | 13 | Audio; 
 Alexander | 3 | Audio; Misc files; 
 Angela Nagtzaam | 11 | Art; 
-Courtney Novits | 4 | Font; Misc files; 
+Courtney Novits | 4 | Font; 
 Cynix | 1 | Art; 
 Emily Esposito | 1 | Art; 
 Fake Music Generator | 1 | Audio; 
