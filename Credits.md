@@ -13,7 +13,7 @@ If you see your name below and you think I'm using your stuff against your licen
 
 
 Author | Number of files contributed
---|--
+---|---
 test | 3
 Aaron Krogh | 13
 Alexander | 3
