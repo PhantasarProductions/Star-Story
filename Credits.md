@@ -32,7 +32,7 @@ Mohammed Ibrahim | 1
 OpenClips | 1
 PacDV | 1
 Spiedkiks | 1
-Tricky | 20
+Tricky (this is me) :sunglasses: | 20
 Unknown Artist | 6
 Utopia | 2
 WeirdoMusic | 1
