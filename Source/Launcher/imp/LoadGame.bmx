@@ -74,7 +74,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	Local i=-1,c=-1
 	ClearGadgetItems users
 	ClearGadgetItems files
-	For Local U$=EachIn ListDir(Dirry(Save))
+	For Local U$=EachIn ListDir(Dirry(Save),2)
 		AddGadgetItem Users,U
 		c:+1
 		If SUSER And SUSER=U i=c
@@ -88,7 +88,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	Method GetFiles(User$,SFILE$="")
 	ClearGadgetItems Files
 	Local i=-1,c=-1
-	For Local F$=EachIn ListDir(Dirry(Save)+"/"+User)
+	For Local F$=EachIn ListDir(Dirry(Save)+"/"+User,1)
 		AddGadgetItem Files,F 
 		c:+1
 		If SFILE And SFILE=F i=c
