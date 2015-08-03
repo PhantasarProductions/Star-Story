@@ -98,6 +98,7 @@ local cy = y - 20
 local cw = 100
 local tag= data.Tag --RPGStat.Tag(group,idx)
 local lv = LvString(group,idx)
+if RPGStat.CharExists(tag)==0 then return end -- Crash prevention if a enemy you are pointing with the mouse is dying on the same moment.
 local nm = RPGStat.GetName(tag)
 -- Prepare width for enemy name + level
 SetFont("StatusBar")
