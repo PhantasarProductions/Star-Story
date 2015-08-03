@@ -67,7 +67,7 @@ function GiveItem(ch,item,vault)
        end
    -- Now we'll do the same for an empty socket if no filled socket matched our requiments before    
    for ak=1,InventorySockets do
-       if RPGChar.Stat(pchar,"INVAMNT"..ak)==0 then spot = spot or ak end
+       if RPGChar.Stat(ch,"INVAMNT"..ak)==0 then spot = spot or ak end
        end
 -- If we got no socket reaching the required conditions, we must either reject the item or throw it into the vault (if the latter is allowed for this item)
 if not spot then
