@@ -73,11 +73,18 @@ function GiveItem(ch,item,vault)
 if not spot then
    if not vault then return end -- If the item cannot be thrown into the vault, let's just ignore the item and we won't even talk about it any more
    putinvault = PutInVault(item)
-   if not putinvault then return end -- and if the item also could not be placed in the vault, let's ignore it anway and also not even talk about it any more.    
-   RPGChar.IncStat(pchar,"INVAMNT"..ak)     
+   if not putinvault then return end -- and if the item also could not be placed in the vault, let's ignore it anway and also not even talk about it any more.
+   inc("%VAULT."..item)    
+else
+   RPGChar.IncStat(pchar,"INVAMNT"..ak)        
    end       
 -- Right oh, if the script is still being processed it means the item was accepted one way or another. Let's report that to the player.
-   
+MINI(RPGChar.GetName(ch).." get a "..ItemName(item),0,180,255)
+if not spot then 
+   MINI("however "..heshe[ch].." could not carry that any more since "..hisher[ch].." inventory is full",255,180,180)
+   if putinvalut then MINI("so the item has been put in the vault in stead") end
+   end   
+if not Done("&TUT.ITEMSINBATTLE") then Tutorial("Occasionally when an enemy dies\nit may drop an item which a random character will pick up\nHowever only if he or she has room in his or her inventory for that item\n\n\nIf an item is vital and the character who finds it cannot pick it up it will be dropped\nin the vault in stead. This will however ONLY\nhappen with VITAL items and not common items!") end   
 end
 
 
