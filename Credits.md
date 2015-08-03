@@ -13,24 +13,24 @@ If you see your name below and you think I'm using your stuff against your licen
 
 Author | Contributions | Kind of contributions
 ---|---|---
-Aaron Krogh | 13 | Audio; 
+Aaron Krogh | 13 | Music; 
 Alexander | 3 | Audio; Misc files; 
 Angela Nagtzaam | 11 | Art; 
 Courtney Novits | 4 | Font; 
 Cynix | 1 | Art; 
 Emily Esposito | 1 | Art; 
-Fake Music Generator | 1 | Audio; 
+Fake Music Generator | 1 | Music; 
 FlamingText.com | 11 | Art; 
 GR-Sites | 2 | Art; Audio; 
-Kevin McLeod | 1 | Audio; 
+Kevin McLeod | 1 | Music; 
 Man of Steel | 28 | Art; 
-Matt McFarland | 2 | Audio; 
+Matt McFarland | 2 | Music; 
 Mohammed Ibrahim | 1 | Art; 
 OpenClips | 1 | Art; 
 PacDV | 1 | Audio; 
-Spiedkiks | 1 | Audio; 
+Spiedkiks | 1 | Music; 
 Tricky (this is me) :sunglasses: | 1367 | Art; Audio; Misc files; Script; 
 Unknown Artist | 6 | Art; 
 Utopia | 2 | Font; Misc files; 
-WeirdoMusic | 1 | Audio; 
+WeirdoMusic | 1 | Music; 
 One final note. Since JCR6 uses an aliasing system some contributions are counted twice (or even more times) due to them being aliased. The system updating this list is (unfortunately) not able to tell a true contributions apart from aliases.
