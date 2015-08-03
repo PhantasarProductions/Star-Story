@@ -283,7 +283,7 @@ if apm>0 then -- Only display the AP if the character actually has AP. Crystal a
 if epm>0 then   
    Image.Color(80,80,80)
    Image.Rect(sx+95,590,100,2) 
-   Image.Color(col,col,col)
+   Image.Color(255,255,255)
    Image.Rect(sx+95,590,epbar,2) 
    end
 DarkText(lv,sx+195,575,1,0)
