@@ -187,7 +187,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	'oldfile = file	
 	'setcaption window,"Old Minute: "+OldMinute+"; True Minute: "+Minute() ' debug line
 	If oldminute<>Minute() Refresh user,cfile
-	SetGadgetText Window,cfile
+	'SetGadgetText Window,cfile
 	End Method
 	
 	End Type
