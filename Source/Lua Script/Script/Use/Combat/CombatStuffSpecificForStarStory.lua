@@ -76,11 +76,12 @@ if not spot then
    if not putinvault then return end -- and if the item also could not be placed in the vault, let's ignore it anway and also not even talk about it any more.
    inc("%VAULT."..item)    
 else
+   RPGChar.SetData(ch,"INVITEM",right(item,len(item)-4))
    RPGChar.IncStat(ch,"INVAMNT"..spot)        
    end       
 -- Right oh, if the script is still being processed it means the item was accepted one way or another. Let's report that to the player.
 CSay(ch.." receives "..item)
-MINI(RPGChar.GetName(ch).." get a "..ItemName(item),0,180,255)
+MINI(RPGChar.GetName(ch).." gets a "..ItemName(item),0,180,255)
 if not spot then 
    MINI("however "..heshe[ch].." could not carry that any more since "..hisher[ch].." inventory is full",255,180,180)
    if putinvalut then MINI("so the item has been put in the vault in stead") end
@@ -136,6 +137,7 @@ local cosres = math.cos(cosdeg/9); if cosdeg<=0 then cosres=1 end
 local genscale = math.ceil((ywscale/360)*100)
 Image.ScalePC(genscale,genscale*cosres)
 Image.LoadNew("YOUWIN","GFX/Combat/YouWin.png"); Image.HotCenter("YOUWIN")
+White()
 Image.Show("YOUWIN",400,150)
 Image.ScalePC(100,100)
 if ywscale<360 then 
