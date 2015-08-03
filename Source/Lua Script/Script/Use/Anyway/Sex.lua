@@ -19,7 +19,7 @@ sexhisher = {Male="his",Female="her"}
 sexheshe  = {Male="he", Female="she"}
 hisher = {}
 heshe  = {}
-for sexchar,sexsex in spairs(Sex) do
+for sexchar,sexsex in pairs(Sex) do
     hisher[sexchar] = sexhisher[sexsex]
     heshe [sexchar] = sexheshe [sexsex]
     end
