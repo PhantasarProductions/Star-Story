@@ -10,7 +10,7 @@
 ]]
 
 
--- Version 15.08.02
+-- Version 15.08.03
 
 
 
@@ -31,12 +31,22 @@ Data = {
 		["LevelRange"] = {1,100},
 	},
 	Acts = {}, -- Data itself defined below
-	ActMinLevel = {} -- Data itself defined below
+	ActMinLevel = {}, -- Data itself defined below
+	ItemDrop = {}, -- Data itself defined below
+	ItemSteal = {} -- Data itself definded below
 }
 
 
+local temp
+
 
 Data.ActMinLevel["Sys.Attack"] = 1		for ak=1,5 do table.insert(Data.Acts,"Sys.Attack") end
+temp = { ITM='ITM_ADHBANDAGE', LVL=1, VLT=false }
+for ak=1,500 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,5 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_BANDAGE', LVL=20, VLT=false }
+for ak=1,2 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,6 do table.insert(Data.ItemSteal,temp) end
 
 
 return Data

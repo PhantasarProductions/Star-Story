@@ -79,6 +79,7 @@
 1. Script/Use/Anyway/Music.lua
 1. Script/Use/AnyWay/MusicAvailable.lua (only available when you have the version WITH music)
 1. Script/Use/Anyway/Resistance names.lua
+1. Script/Use/Anyway/Sex.lua
 1. Script/Use/Anyway/TutorialInit.lua
 1. Script/Use/Combat/CAction.lua
 1. Script/Use/Combat/CDrawFighters.lua
@@ -103,4 +104,4 @@
 
 
 
-### Last updated: Mon 03 August 2015; 02:41:56 CET
+### Last updated: Mon 03 August 2015; 17:08:33 CET

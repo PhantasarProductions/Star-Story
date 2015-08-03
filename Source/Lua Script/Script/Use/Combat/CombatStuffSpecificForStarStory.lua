@@ -56,6 +56,30 @@ local ak
 for ak=1,3 do UpPoint(ak) end    
 end
 
+function GiveItem(ch,item,vault)
+-- Let's find a spot first to place the item in
+   local spot = nil
+   local ak
+   local putinvault
+   -- First we're gonna look for a socket having the same item, but with enough space to carry another
+   for ak=1,InventorySockets do
+       if item==RPGChar.Data(pchar,"INVITEM"..ak) and RPGChar.Stat(pchar,"INVAMNT"..ak)<InventoryMaxStack then spot = spot or ak end
+       end
+   -- Now we'll do the same for an empty socket if no filled socket matched our requiments before    
+   for ak=1,InventorySockets do
+       if RPGChar.Stat(pchar,"INVAMNT"..ak)==0 then spot = spot or ak end
+       end
+-- If we got no socket reaching the required conditions, we must either reject the item or throw it into the vault (if the latter is allowed for this item)
+if not spot then
+   if not vault then return end -- If the item cannot be thrown into the vault, let's just ignore the item and we won't even talk about it any more
+   putinvault = PutInVault(item)
+   if not putinvault then return end -- and if the item also could not be placed in the vault, let's ignore it anway and also not even talk about it any more.    
+   RPGChar.IncStat(pchar,"INVAMNT"..ak)     
+   end       
+-- Right oh, if the script is still being processed it means the item was accepted one way or another. Let's report that to the player.
+   
+end
+
 
 function KillFoe(idx,myfoe)
 local f = upper(myfoe.File)
@@ -83,7 +107,13 @@ if rand(0,enemylevel)>rand(0,herolevel*skill) then
    if not Done("&TUT.AURINA") then Tutorial("If you are lucky an enemy will drop an Aurina.\nThey are very important.\nSome businessmen throughout the universe will pay you money for them.") end
    end
 -- Item Drop
---[[ This comes later ]]--   
+local gip = rand(1,3) -- Who will get the item
+local gpc = {25,12,4}
+local gii
+if Fighter.Hero[gip] and Fighter.Hero[gip].Tag~="" and Fighter.Hero[gip].Tag~="Briggs" and RPGStat.Points(Fighter.Hero[gip].Tag,"HP").Have>0 and rand(1,100)>gpc[skill] and #myfoe.ItemDrop>0 then
+   gii = rand(1,#myfoe)
+   GiveItem(Fighter.Hero[gip].Tag,myfoe.ItemDrop.ITM,myfoe.ItemDrop.VLT)
+   end
 -- Remove the enemy from memory           
 Fighters.Foe[idx] = nil
 RPGStat.DelChar(myfoe.Tag)

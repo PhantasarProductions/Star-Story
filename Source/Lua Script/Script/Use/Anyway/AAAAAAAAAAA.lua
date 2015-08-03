@@ -41,17 +41,20 @@ if skill==0 then skill=2 end
 
 -- @SELECT skill
 -- @CASE 1
-   InventorySockets = 100   -- Max sockets
-   InventorySocketRow = 10  -- Max number of sockets per row
-   InventoryMaxStack = 25   -- Max number of items that may be stacked on a socket
+   InventorySockets = 100         -- Max sockets
+   InventorySocketRow = 10        -- Max number of sockets per row
+   InventoryMaxStack = 25         -- Max number of items that may be stacked on a socket
+   InventoryMaxVaultStack = 500   -- Max number of items that may be stacked on a vault socket (where each (unique) item just has one socket)
 -- @CASE 2
    InventorySockets = 50
    InventorySocketRow = 10   
    InventoryMaxStack = 10
+   InventoryMaxVaultStack = 250
 -- @CASE 3
    InventorySockets = 25
    InventorySocketRow = 5
    InventoryMaxStack = 1
+   InventoryMaxVaultStack = 100
 -- @ENDSELECT    
 
 
