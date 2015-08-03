@@ -23,7 +23,7 @@ local function dbgmysplit(inputstr, sep)
         end
         return t
         end
-local vl = mysplit(serialize(v,"MyVar"),"\n")
+local vl = mysplit(serialize("DEBUGCHECK",v),"\n")
 local l,c
 for c,l in ipairs(vl) do Console.Write(string.sub("          "..c,10,-1)..": "..l,180,255,0) end        
 -- @FI        
