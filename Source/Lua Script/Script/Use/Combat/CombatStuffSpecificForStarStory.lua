@@ -79,6 +79,7 @@ else
    RPGChar.IncStat(pchar,"INVAMNT"..ak)        
    end       
 -- Right oh, if the script is still being processed it means the item was accepted one way or another. Let's report that to the player.
+CSay(ch.." receives "..item)
 MINI(RPGChar.GetName(ch).." get a "..ItemName(item),0,180,255)
 if not spot then 
    MINI("however "..heshe[ch].." could not carry that any more since "..hisher[ch].." inventory is full",255,180,180)
