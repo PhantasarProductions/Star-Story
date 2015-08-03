@@ -63,7 +63,7 @@ function GiveItem(ch,item,vault)
    local putinvault
    -- First we're gonna look for a socket having the same item, but with enough space to carry another
    for ak=1,InventorySockets do
-       if item==RPGChar.Data(pchar,"INVITEM"..ak) and RPGChar.Stat(pchar,"INVAMNT"..ak)<InventoryMaxStack then spot = spot or ak end
+       if item==RPGChar.Data(ch,"INVITEM"..ak) and RPGChar.Stat(ch,"INVAMNT"..ak)<InventoryMaxStack then spot = spot or ak end
        end
    -- Now we'll do the same for an empty socket if no filled socket matched our requiments before    
    for ak=1,InventorySockets do
