@@ -61,6 +61,7 @@ function GiveItem(ch,item,vault)
    local spot = nil
    local ak
    local putinvault
+   if left ( item,4 )~="ITM_" then return CSay("WARNING! "..item.." may not be an item, or at least not one I can process!") end
    -- First we're gonna look for a socket having the same item, but with enough space to carry another
    for ak=1,InventorySockets do
        if item==RPGChar.Data(ch,"INVITEM"..ak) and RPGChar.Stat(ch,"INVAMNT"..ak)<InventoryMaxStack then spot = spot or ak end
@@ -76,7 +77,7 @@ if not spot then
    if not putinvault then return end -- and if the item also could not be placed in the vault, let's ignore it anway and also not even talk about it any more.
    inc("%VAULT."..item)    
 else
-   RPGChar.SetData(ch,"INVITEM",right(item,len(item)-4))
+   RPGChar.SetData(ch,"INVITEM"..spot,right(item,len(item)-4))
    RPGChar.IncStat(ch,"INVAMNT"..spot)        
    end       
 -- Right oh, if the script is still being processed it means the item was accepted one way or another. Let's report that to the player.
