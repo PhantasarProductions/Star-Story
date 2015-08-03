@@ -76,7 +76,7 @@ if not spot then
    if not putinvault then return end -- and if the item also could not be placed in the vault, let's ignore it anway and also not even talk about it any more.
    inc("%VAULT."..item)    
 else
-   RPGChar.IncStat(pchar,"INVAMNT"..ak)        
+   RPGChar.IncStat(ch,"INVAMNT"..spot)        
    end       
 -- Right oh, if the script is still being processed it means the item was accepted one way or another. Let's report that to the player.
 CSay(ch.." receives "..item)
