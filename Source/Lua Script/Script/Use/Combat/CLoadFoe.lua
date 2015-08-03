@@ -76,8 +76,8 @@ RPGStat.Points(Foe.Tag,"HP").Have = RPGStat.Points(Foe.Tag,"HP").Maximum
 -- Steal and drops
 Foe.ItemDrop = {}
 Foe.ItemSteal = {}
-for ckey,cvalue in ipairs(FoeData.ItemDrop)  do if cvalue.LVL>=Foe.Level then table.insert(Foe.ItemDrop ,cvalue) end end
-for ckey,cvalue in ipairs(FoeData.ItemSteal) do if cvalue.LVL>=Foe.Level then table.insert(Foe.ItemSteal,cvalue) end end
+for ckey,cvalue in ipairs(FoeData.ItemDrop)  do if cvalue.LVL<=Foe.Level then table.insert(Foe.ItemDrop ,cvalue) end end
+for ckey,cvalue in ipairs(FoeData.ItemSteal) do if cvalue.LVL<=Foe.Level then table.insert(Foe.ItemSteal,cvalue) end end
 -- Load the pictures
 Image.AssignLoad("O"..Foe.Tag,"GFX/Foes/"..FoeData.ImageFile)  
 Image.Negative("O"..Foe.Tag,"N"..Foe.Tag)  

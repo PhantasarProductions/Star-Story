@@ -116,7 +116,7 @@ Award(tag)
 end
 
 function SAVE(file)
-if (not file) or file=="" then CSay("? Cannot save when you don't gimme a filename") end
+if (not file) or file=="" then return CSay("? Cannot save when you don't gimme a filename") end
 LAURA.Save(file)
 end
 
