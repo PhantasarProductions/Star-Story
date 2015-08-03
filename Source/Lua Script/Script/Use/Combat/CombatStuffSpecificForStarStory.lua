@@ -66,6 +66,7 @@ function GiveItem(ch,item,vault)
    for ak=1,InventorySockets do
        CSay("Spot: "..ak.."; have: "..RPGChar.Stat(ch,"INVAMNT"..ak).." max: "..InventoryMaxStack) -- debug
        if item==RPGChar.Data(ch,"INVITEM"..ak) and RPGChar.Stat(ch,"INVAMNT"..ak)<InventoryMaxStack then spot = spot or ak end
+       CSay("Spot: "..ak.."; have: "..RPGChar.Stat(ch,"INVAMNT"..ak).." max: "..InventoryMaxStack.." spot: "..sval(spot)) -- debug
        end
    -- Now we'll do the same for an empty socket if no filled socket matched our requiments before    
    for ak=1,InventorySockets do
