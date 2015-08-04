@@ -38,3 +38,40 @@ if a and (not b) then return Math.Rand(1,a) end
 if not a then Console.Write("WARNING! Rand() First value is nil") end
 Sys.Error('Random Definition invalid')
 end
+
+--[[ Decimal to hex
+I've seen several things for decimal to hexadecimal conversion in the search, and also many on JavaScript in Google. Many local search results deal with functions available to Lua in various code libraries, but few if any actually did it with Lua.. (Lua has a nice inbuilt function for HEX to DEC though, so I won't try to reinvent that wheel).
+All working examples I found were larger and/or messier than what I worked up, so I'm sharing this so next time someone searches they might get what they need. :)
+Note that by extending the key string with more letters, changing the B value, decimal can be converted to any number in any base from 2 to 26, so long as the host system can hold the decimal integer you're feeding it. Don't ask for base 1; it will loop forever. >:)
+
+Lostgallifreyan
+]]
+function DEC_HEX(IN)
+    local B,K,OUT,I,D=16,"0123456789ABCDEF","",0
+    while IN>0 do
+        I=I+1
+        IN,D=math.floor(IN/B),math.mod(IN,B)+1
+        OUT=string.sub(K,D,D)..OUT
+    end
+    return OUT
+end
+
+function DEC_OCT(IN)
+    local B,K,OUT,I,D=8,"01234567","",0
+    while IN>0 do
+        I=I+1
+        IN,D=math.floor(IN/B),math.mod(IN,B)+1
+        OUT=string.sub(K,D,D)..OUT
+    end
+    return OUT
+end
+
+function DEC_BIN(IN)
+    local B,K,OUT,I,D=2,"01","",0
+    while IN>0 do
+        I=I+1
+        IN,D=math.floor(IN/B),math.mod(IN,B)+1
+        OUT=string.sub(K,D,D)..OUT
+    end
+    return OUT
+end

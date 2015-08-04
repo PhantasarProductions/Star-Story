@@ -122,7 +122,7 @@ if rand(0,enemylevel)>rand(0,herolevel*skill) then
 local gip = rand(1,3) -- Who will get the item
 local gpc = {25,12,4}
 local gii
-if Fighters.Hero[gip] and Fighters.Hero[gip].Tag~="" and Fighters.Hero[gip].Tag~="Briggs" and RPGStat.Points(Fighters.Hero[gip].Tag,"HP").Have>0 and rand(1,100)>gpc[skill] and #myfoe.ItemDrop>0 then
+if Fighters.Hero[gip] and Fighters.Hero[gip].Tag~="" and Fighters.Hero[gip].Tag~="Briggs" and RPGStat.Points(Fighters.Hero[gip].Tag,"HP").Have>0 and rand(1,100)<gpc[skill] and #myfoe.ItemDrop>0 then
    gii = rand(1,#myfoe.ItemDrop)
    DBGSerialize(myfoe)
    GiveItem(Fighters.Hero[gip].Tag,myfoe.ItemDrop[gii].ITM,myfoe.ItemDrop[gii].VLT)
