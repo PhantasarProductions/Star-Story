@@ -1,4 +1,4 @@
-# Star-Story-Tracker
+# Star-Story
 
 This tracker can be used to look into the source code of Star Story. You can see the source of the Engine, the launcher and the scripts themselves.
 
