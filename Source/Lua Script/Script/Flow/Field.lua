@@ -192,7 +192,12 @@ if WalkArrival and Actors.Walking(cplayer)==0 then
 end
 
 function SetUpFoes()
-
+local obj
+for obj in KthuraEach() do
+    if prefixed(obj.Kind,"$Enemy") then
+       Dbg("  = Process: "..obj.IDNum.."; "..obj.Tag.."; "..obj.kind)
+       end
+    end
 end 
 
 function SetUpTreasure()
