@@ -67,6 +67,7 @@ function KthuraEach(kind) -- Iterator. The values returned are editable and the 
 local c = Maps.ObjectList.Start(kind)
 local k
 local tab = {}
+print("objects to go through: "..c)
 for k=0,c-1 do
     print (k.."   "..c)
     Maps.ObjectList.Pick(k)
