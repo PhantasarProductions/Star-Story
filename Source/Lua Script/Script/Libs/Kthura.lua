@@ -57,14 +57,15 @@ Version: 15.08.06
 
 
 function KthuraGet(kind,idx) -- Grab an object. The returned value can even be edited affecting the map, so use with care.
-Maps.ObjectList.Start(kind)
+Maps.ObjectList.Start(kind or "")
 Maps.ObjectList.Pick(idx)
 return Maps.ObjectList.MyObject
 end
 
 
 function KthuraEach(kind) -- Iterator. The values returned are editable and the edits will affect the Kthura map, so use with care :)
-local c = Maps.ObjectList.Start(kind)
+print("Startup Kthuraeach: "..sval(kind))
+local c = Maps.ObjectList.Start(kind or "")
 local k
 local tab = {}
 print("objects to go through: "..c)
