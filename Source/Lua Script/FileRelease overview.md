@@ -77,7 +77,7 @@
 1. Script/Use/Anyway/Libs.lua
 1. Script/Use/Anyway/Mouse.lua
 1. Script/Use/Anyway/Music.lua
-1. Script/Use/AnyWay/MusicAvailable.lua (only available when you have the version WITH music)
+1. SCRIPT/USE/ANYWAY/MUSICAVAILABLE.LUA (only available when you have the version WITH music)
 1. Script/Use/Anyway/Resistance names.lua
 1. Script/Use/Anyway/Sex.lua
 1. Script/Use/Anyway/TutorialInit.lua
@@ -104,4 +104,4 @@
 
 
 
-### Last updated: Thu 06 August 2015; 16:42:22 CET
+### Last updated: Thu 06 August 2015; 16:54:43 CET

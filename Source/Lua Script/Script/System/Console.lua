@@ -250,7 +250,7 @@ function SCRIPTOBJECT(k,i)
 local c = Maps.ObjectList.Start(k)
 if c==0 then CSay("Everything's empty") end
 local l
-local s = Maps.ObjectList.ToScript(i or -1)
+local s = replace( Maps.ObjectList.ToScript(i or -1) , "\t","      ")
 print ( s )
 for l in each(mysplit(s,"\n")) do CSay(l) end
 end
