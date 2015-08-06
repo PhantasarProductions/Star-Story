@@ -75,6 +75,13 @@ local st=s or ""
 return substr(st,of,of+ln)
 end 
 
+
+function trim(s)
+  return (s:gsub("^%s*(.-)%s*$", "%1"))
+end
+-- from PiL2 20.4
+
+
 -- constructed with the Str object in GALE.
 -- If the module is not used in the GALE calling engine, this part should be ignored :)
 if Str then

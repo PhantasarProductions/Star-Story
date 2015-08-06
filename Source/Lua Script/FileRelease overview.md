@@ -35,6 +35,7 @@
 1. Script/JINC/InitChar/UniWendicka.lua
 1. Script/JINC/InitChar/Wendicka.lua
 1. Script/Libs/A few mathematical functions.lua
+1. Script/Libs/assert.lua
 1. Script/Libs/bool2int.lua
 1. Script/Libs/boolean.lua
 1. Script/Libs/Colors.lua
@@ -107,4 +108,4 @@
 
 
 
-### Last updated: Thu 06 August 2015; 22:27:13 CET
+### Last updated: Thu 06 August 2015; 22:35:45 CET
