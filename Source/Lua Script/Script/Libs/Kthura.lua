@@ -70,7 +70,7 @@ local k
 local tab = {}
 CSay("objects to go through: "..c)
 for k=0,c-1 do
-    print (k.."   "..c)
+    CSay(k.."   "..c)
     Maps.ObjectList.Pick(k)
     table.insert(tab,Maps.ObjectList.MyObject)
     end
