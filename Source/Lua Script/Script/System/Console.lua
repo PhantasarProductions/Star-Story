@@ -256,12 +256,12 @@ for l in each(mysplit(s,"\n")) do CSay(l) end
 end
 
 function RESETFOES()
-MS.Run("FIELD","SetupFoes")
+MS.Run("FIELD","SetUpFoes")
 CSay("= Foes are reset")
 end
 
 function RESETTREASURE()
-MS.Run("FIELD","SetupTreasure")
+MS.Run("FIELD","SetUpTreasure")
 CSay("= Treasures are reset")
 end
 
