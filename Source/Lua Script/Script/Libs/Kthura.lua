@@ -68,10 +68,11 @@ CSay("Startup Kthuraeach: "..sval(kind))
 local c = Maps.ObjectList.Start(kind or "")
 local k
 local tab = {}
-CSay("objects to go through: "..c)
+-- CSay("objects to go through: "..c)
 for k=0,c-1 do
-    CSay(k.."   "..c)
+    -- CSay(k.."   "..c)
     Maps.ObjectList.Pick(k)
+    CSay(Maps.ObjectList.MyObject.Kind)
     table.insert(tab,Maps.ObjectList.MyObject)
     end
 local i=0    
