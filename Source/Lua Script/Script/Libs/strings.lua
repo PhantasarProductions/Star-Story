@@ -85,6 +85,6 @@ end
 -- constructed with the Str object in GALE.
 -- If the module is not used in the GALE calling engine, this part should be ignored :)
 if Str then
-   prefixed = Str.Prefixed
-   suffixed = Str.Suffixed
+   function prefixed(s,p) return Str.Prefixed(s,p)==1 end 
+   function suffixed(s,p) return Str.Suffixed(s,p)==1 end    
    end
