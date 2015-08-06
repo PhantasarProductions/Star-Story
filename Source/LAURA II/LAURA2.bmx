@@ -54,7 +54,7 @@ In a Short clarification in the statment from that site:
   DOES require GNU license.
 
 
-If you Create a game using LAURA II, you are (of course)
+If you create a game using LAURA II, you are (of course)
 required to give people access to the source code of 
 LAURA II itself. In the case you use an unmodified
 version, a link to any official download site will do.
@@ -75,7 +75,7 @@ source codes. HOWEVER, I strictly do only allow such an action
 To go outside the scope of the GNU To write such a driver, Not
 To add any extra functionality To LAURA II as an interpreter.
 
-If you have any other reasons To need a close-sourced modified
+If you have any other reasons to need a close-sourced modified
 version of LAURA II, contact me (Jeroen Broks), And If we can
 come To an agreement I may provide prior written permission.
 
@@ -104,6 +104,12 @@ should compile without it. In the case of Star Story this will mean that the
 game will not work with the "GameJolt.net" file present. Removing or renaming
 it and the game will work as it should, however it will be unable to contact
 GameJolt, that's all. :)
+
+====
+Another note. In some of the included files (most notably the sources of the 
+imported GALE modules, and the files in the inc/api/ folder) will contains
+comments starting with "BLD: ". These are tags an automated .html generator
+called BLD responds to create a command overview 
 End Rem
 
 ' Import the required APIs from the gale framework
@@ -139,6 +145,7 @@ Import	tricky_units.Bye
 Import	tricky_units.HotSpot
 Import      tricky_units.specialchars
 Import      tricky_units.RPGStats
+Import      tricky_units.SafeString
 
 ' Lastly some brl modules I really need
 Import	brl.pngloader
