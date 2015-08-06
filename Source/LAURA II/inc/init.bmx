@@ -75,7 +75,7 @@ DevVersion = ID.Get("Dev").toUpper()="YES"
 If DevVersion
 	ConsoleWrite "Development Build",0,180,255
 	IDirective "*DEVELOPMENT"
-	' Info *DEVELOPMENT ' BLD: Compiler directive. If set it means you are running the Development version. The pre-processor can react to this if you use the -- @IF directive.
+	'Directive *DEVELOPMENT ' BLD: Compiler directive. If set it means you are running the Development version. The pre-processor can react to this if you use the -- @IF directive.
 	EndIf
 End Function
 
