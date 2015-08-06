@@ -193,7 +193,7 @@ end
 
 function SetUpFoes()
 local obj
--- CSay("Resetting Foes")
+CSay("Resetting Foes")
 for obj in KthuraEach() do
     Dbg("   = Seen: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind)
     if prefixed(obj.Kind,"$Enemy") then

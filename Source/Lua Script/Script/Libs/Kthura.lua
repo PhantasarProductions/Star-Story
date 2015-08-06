@@ -64,11 +64,11 @@ end
 
 
 function KthuraEach(kind) -- Iterator. The values returned are editable and the edits will affect the Kthura map, so use with care :)
-print("Startup Kthuraeach: "..sval(kind))
+CSay("Startup Kthuraeach: "..sval(kind))
 local c = Maps.ObjectList.Start(kind or "")
 local k
 local tab = {}
-print("objects to go through: "..c)
+CSay("objects to go through: "..c)
 for k=0,c-1 do
     print (k.."   "..c)
     Maps.ObjectList.Pick(k)
