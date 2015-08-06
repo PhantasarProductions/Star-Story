@@ -10,6 +10,7 @@
 1. Script/Flow/AutoUse.lua
 1. Script/Flow/Combat.lsv
 1. Script/Flow/Combat.lua
+1. Script/Flow/Field.lsv
 1. Script/Flow/Field.lua
 1. Script/Flow/Menu.lua
 1. Script/Flow/Quit.lua
@@ -106,4 +107,4 @@
 
 
 
-### Last updated: Thu 06 August 2015; 21:43:19 CET
+### Last updated: Thu 06 August 2015; 22:27:13 CET

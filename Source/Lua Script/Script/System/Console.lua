@@ -254,3 +254,19 @@ local s = replace( Maps.ObjectList.ToScript(i or -1) , "\t","      ")
 print ( s )
 for l in each(mysplit(s,"\n")) do CSay(l) end
 end
+
+function RESETFOES()
+MS.Run("FIELD","SetupFoes")
+CSay("= Foes are reset")
+end
+
+function RESETTREASURE()
+MS.Run("FIELD","SetupTreasure")
+CSay("= Treasures are reset")
+end
+
+function RESETMAP()
+RESETFOES()
+RESETTREASURE()
+CSay("= Map is reset")
+end

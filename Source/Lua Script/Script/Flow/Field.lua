@@ -191,7 +191,17 @@ if WalkArrival and Actors.Walking(cplayer)==0 then
   end      
 end
 
+function SetUpFoes()
+
+end 
+
+function SetUpTreasure()
+end
+
 function LoadMap(map)
+Maps.Load(map)
+SetUpFoes()
+SetUpTreasure()
 end
 
 

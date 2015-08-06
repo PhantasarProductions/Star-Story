@@ -29,6 +29,9 @@ Version: 15.04.29
 ]]
 -- Yes, don't tell me, I know I'm lazy. 
 -- Gimme a break :P
+
+-- constructed with Lua features
+
 upper = string.upper
 lower = string.lower
 chr = string.char
@@ -71,3 +74,10 @@ local of=o or 1
 local st=s or ""
 return substr(st,of,of+ln)
 end 
+
+-- constructed with the Str object in GALE.
+-- If the module is not used in the GALE calling engine, this part should be ignored :)
+if Str then
+   prefixed = Str.Prefixed
+   suffixed = Str.Suffixed
+   end
