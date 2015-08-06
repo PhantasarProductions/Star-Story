@@ -245,3 +245,9 @@ function PIA()
 if MS.ContainsScript("COMBAT")==0 then Console.Write("? ERROR ? Combat script not loaded!",255,0,0) return end
 MS.Run("COMBAT","DebugPIA")
 end
+
+function SCRIPTOBJECT(k,i)
+Maps.ObjectList.Start(k)
+local l
+for l in each(mysplit(serialize("SCRIPTOBJECT",Maps.ObjectList.ToScript(i or -1)),"\n")) do CSay(l) end
+end
