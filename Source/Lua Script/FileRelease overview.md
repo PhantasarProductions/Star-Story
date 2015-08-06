@@ -45,6 +45,7 @@
 1. Script/Libs/jinclude.lua
 1. Script/Libs/join.lua
 1. Script/Libs/KeyCodes_BlitzMax.lua
+1. Script/Libs/Kthura.lua
 1. Script/Libs/Markers.lua
 1. Script/Libs/mysplit.lua
 1. Script/Libs/Quick String Routines.lua
@@ -97,6 +98,7 @@
 1. Script/Use/Linkers/AchieveLinker.lua
 1. Script/Use/Linkers/BoxTextLinker.lua
 1. Script/Use/Linkers/CombatLinker.lua
+1. Script/Use/Linkers/FieldLinker.lua
 1. Script/Use/Linkers/Inventory and Abilities Linker.lua
 1. Script/Use/Linkers/PartyLinker.lua
 1. Script/Use/Linkers/SFXLinker.lua
@@ -104,4 +106,4 @@
 
 
 
-### Last updated: Thu 06 August 2015; 21:40:37 CET
+### Last updated: Thu 06 August 2015; 21:41:09 CET

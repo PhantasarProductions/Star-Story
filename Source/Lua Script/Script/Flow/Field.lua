@@ -191,6 +191,9 @@ if WalkArrival and Actors.Walking(cplayer)==0 then
   end      
 end
 
+function LoadMap(map)
+end
+
 
 function MAIN_FLOW()
 DrawScreen()

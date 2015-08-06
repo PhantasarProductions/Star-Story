@@ -24,7 +24,7 @@
 
 
 
-Version: 15.07.18
+Version: 15.08.06
 
 ]]
 -- This is a function to turn a variable into an easy to get value.
