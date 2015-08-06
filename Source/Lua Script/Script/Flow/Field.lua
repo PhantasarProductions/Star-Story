@@ -194,8 +194,9 @@ end
 function SetUpFoes()
 local obj
 for obj in KthuraEach() do
+    Dbg("   = Seen: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind)
     if prefixed(obj.Kind,"$Enemy") then
-       Dbg("  = Process: "..obj.IDNum.."; "..obj.Tag.."; "..obj.kind)
+       Dbg("  = Process: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind)
        end
     end
 end 
