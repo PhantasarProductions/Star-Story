@@ -68,6 +68,7 @@ local c = Maps.ObjectList.Start(kind)
 local k
 local tab = {}
 for k=0,c-1 do
+    print (k.."   "..c)
     Maps.ObjectList.Pick(k)
     table.insert(tab,Maps.ObjectList.MyObject)
     end
