@@ -197,7 +197,7 @@ CSay("Resetting Foes")
 for obj in KthuraEach() do
     CSay("   = Seen: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind)
     if prefixed(obj.Kind,"$Enemy") then
-       Dbg("  = Process: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind)
+       CSay("  = Process: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind)
        end
     end
 end 
