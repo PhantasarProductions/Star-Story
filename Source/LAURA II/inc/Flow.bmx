@@ -30,7 +30,7 @@ End Rem
 Function RunFlow() 
 Repeat
 If GALE_INP.AutoGrab Grabinput 
-LAURA_API.Terminate = 	Terminate = GALE_INP.Terminate 'AppTerminate()
+LAURA_API.Terminate =  GALE_INP.Terminate 'AppTerminate()
 If Not currentflow GALE_Error "No flow"
 GALE_MS.Run CurrentFlow,"MAIN_FLOW"
 If DevVersion And GALE_INP.KeyH(KEY_F1) DevConsole()
