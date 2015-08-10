@@ -111,6 +111,7 @@ function CheckClickables()
 local i,c
 local mx,my = TrueMouseCoords()
 local ret
+if INP.Terminate>0 then IconFunction.Quit() end
 if mousehit(1) then
    for i,c in ipairs(Clickables) do
        -- CSay("Clicked in object: "..c.." ("..mx..","..my..") ==> "..Maps.CoordsInObject(c,mx,my))
