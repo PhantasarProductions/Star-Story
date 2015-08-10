@@ -111,8 +111,6 @@ function CheckClickables()
 local i,c
 local mx,my = TrueMouseCoords()
 local ret
-DarkText(INP.Terminate,10,10)
-if INP.Terminate>0 then IconFunction.Quit() end
 if mousehit(1) then
    for i,c in ipairs(Clickables) do
        -- CSay("Clicked in object: "..c.." ("..mx..","..my..") ==> "..Maps.CoordsInObject(c,mx,my))
@@ -213,6 +211,11 @@ SetUpFoes()
 SetUpTreasure()
 end
 
+function Termination()
+DarkText(INP.Terminate,10,10)
+if INP.Terminate>0 then IconFunction.Quit() end
+end
+
 
 function MAIN_FLOW()
 DrawScreen()
@@ -220,5 +223,6 @@ Click()
 AutoScroll()
 ZoneAction()
 WalkArrivalCheck()
+Termination()
 Flip()
 end
