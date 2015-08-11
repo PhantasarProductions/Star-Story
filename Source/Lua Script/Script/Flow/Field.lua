@@ -212,7 +212,7 @@ SetUpTreasure()
 end
 
 function Termination()
-DarkText(INP.Terminate,10,10)
+-- DarkText(INP.Terminate,10,10)
 if INP.Terminate>0 then IconFunction.Quit() end
 end
 
