@@ -108,7 +108,15 @@ for key,ach in spairs(Achievements) do
 y = (ca*100)-590    
 if my==0   and PM>0 then PM = PM - 2 end
 if my>=599 and PM<y then PM = PM + 2 end
-if mousehit(2) then LAURA.Flow("FIELD") end
+if mousehit(2) then 
+   if CVV("&ACHTERMIMMEDIATELY") then Sys.Bye() end          
+   LAURA.Flow("FIELD") 
+   end
+if INP.Terminate then 
+   if CVV("&ACHTERMIMMEDIATELY") then Sys.Bye() end          
+   MS.LoadNew("QUIT","Script/Flow/Quit.lua")
+   LAURA.Flow("QUIT") 
+   end
 ShowMouse()    
 Flip()    
 end
