@@ -112,7 +112,7 @@ if mousehit(2) then
    if CVV("&ACHTERMIMMEDIATELY") then Sys.Bye() end          
    LAURA.Flow("FIELD") 
    end
-if INP.Terminate then 
+if INP.Terminate>0 then 
    if CVV("&ACHTERMIMMEDIATELY") then Sys.Bye() end          
    MS.LoadNew("QUIT","Script/Flow/Quit.lua")
    LAURA.Flow("QUIT") 
