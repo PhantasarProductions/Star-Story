@@ -33,7 +33,7 @@ achievementscript = true
 
 function GALE_OnLoad()
 Achievements = JINC("Script/JINC/Big/Achievements.lua")
-Achieved = {}
+Achieved = Achieved or {}
 AchIcons = {}
 PM=0
 end
