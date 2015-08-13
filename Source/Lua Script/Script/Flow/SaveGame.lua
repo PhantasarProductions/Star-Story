@@ -119,4 +119,6 @@ if mx<100 and mousehit(1) then
 ShowMouse() 
 -- Flip in the end
 Flip()
+-- Terminate LAURA II if the user requests to do so
+LAURA.TerminateBye()
 end

@@ -331,4 +331,5 @@ function MAIN_FLOW()
 DrawScreen()
 Click()
 Flip()
+LAURA.TerminateBye()
 end

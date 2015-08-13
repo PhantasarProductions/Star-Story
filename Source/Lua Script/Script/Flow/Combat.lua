@@ -247,4 +247,5 @@ function MAIN_FLOW()
 DrawScreen()
 if Victory() then RunVictory() else RunGauge() end
 Flip()
+LAURA.TerminateBye()
 end

@@ -81,4 +81,9 @@ if selection then
 ShowParty()
 ShowMouse()
 Flip()
+if INP.Terminate then
+   MINI("Weren't you already trying to quit?",255,0,0)
+   MINI("Please answer the question above and we can quit quite nicely",255,0,0)
+   MINI("Please don't be hasty!")
+   end 
 end
