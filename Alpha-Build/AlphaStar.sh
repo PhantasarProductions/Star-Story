@@ -52,3 +52,5 @@ open AlphaBuild/Alpha-Build/MacApp/Star\ Story.app
 echo "- Script has ended"	
 
 
+# This file is (c) 2015 Jeroen P. Broks
+# You may distribute it under the terms of the zlib license

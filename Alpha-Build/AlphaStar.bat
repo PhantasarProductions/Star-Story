@@ -47,5 +47,5 @@ Alpha-Build\WindowsExe\"Star Story"
 echo - Batch job ended
 
 
-rem This file is (c) Jeroen P. Broks
+rem This file is (c) 2015 Jeroen P. Broks
 rem You may distribute it under the terms of the zlib license

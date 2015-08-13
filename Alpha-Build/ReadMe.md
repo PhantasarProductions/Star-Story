@@ -1,5 +1,3 @@
-NOTE: The alpha version is not yet available for download. The text below is therefore not entirely valid. You can already see these files because I am preparing the game for alpha testing.
-
 # Alpha Build
 
 In this part of the repository the alpha versions for both Mac and Windows will be kept up-to-date on a regular basis. Please note that the game was created on a Mac and thefore the Mac Executable may predate the Windows executables. The assests and scripts are always the same in both versions. A few bugs in the Windows version may therefore come to life due to a few version conflicts, though I'll try to keep the Windows executables up-to-date.
@@ -36,3 +34,32 @@ In the console type the next commands
 
 
 Well, that should do it. Any questions?
+
+
+### Alternate method
+If working with the command line tools is beyond you, and you want to download the game in a basic archive form in stead, you can also download the archives from my DropBox account
+
+- [JCR.7z](https://www.dropbox.com/s/6jhb596eqc3tb0r/JCR.7z?dl=0) (required for both platforms)
+- [MacApp.7z](https://www.dropbox.com/s/c4mr8zl2ziv5iey/MacApp.7z?dl=0) (required for Mac)
+- [WinExe.7z](https://www.dropbox.com/s/sk2axpx5jqct3ei/WindowsExe.7z?dl=0) (required for Windows)
+
+(if any of the links above do not work, please write an issue ticket about it, and I'll sort it out)
+
+
+
+
+### Reporting bugs and issues
+
+Reporting bugs and issues can be doing through the issue tracker in this repository however a few things to keep in mind
+
+- It goes without saying, but you are about to play a game that is not finished. Parts will be missing, some dungeons cannot yet be completed. Some spells may not yet be animated, and so on. If you report something please make sure that it's something I didn't think of, or something I don't know, as it's not productive to report stuff that solely isn't there because I did not yet develop that part.
+- ALWAYS make sure you have the latest version before you report something. You should be sure the issue isn't already taken care of :)
+- Be as detailed as you can in your bug reports. Screenshots can help. I need to replecate the bug before I can fix it, after all :)
+- The GameJolt API has been disabled in this ALPHA version for security reasons. It will of course be there in the official releases.
+- Make sure you mention if you are on Windows or Mac. Most issues should be the same on both platforms (the game is for most part written in Lua after all), but sometimes things appear to be OS specific even when it doesn't appear to be that way at first.
+- Please check if you report an issue if it wasn't reported before
+- Any comments, suggestions, bug reports or anything else related to the alpha builds should be in this issue tracker and not in SourceForge reviews or GameJolt comments or anywhere else where a page on this game pops up.
+- Also please don't spoil the story line to people awaiting the official release
+- Last but not least. I hope you have fun helping me out. If you want I can credit you as an Alpha tester in the credits. Just let me know how you wish to be credited. :)
+
+
