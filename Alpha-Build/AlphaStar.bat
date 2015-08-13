@@ -15,12 +15,13 @@ echo:   = Configuring git
 md AlphaBuild
 C:\"program files"\git\bin\git init AlphaBuild
 cd AlphaBuild
-git remote add -f origin https://github.com/Tricky1975/Star-Story.git
+C:\"program files"\git\bin\git remote add -f origin https://github.com/Tricky1975/Star-Story.git
 C:\"program files"\git\bin\git config core.sparseCheckout true
 echo Alphabuild/WindowsExe >> .git/info/sparse-checkout
 echo Alphabuild/JCR >> .git/info/sparse-checkout
 echo:   = Downloading game
 C:\"Program Files"\git\bin\git pull origin master
+echo:This file marks in installed version, so the installer will not install this game twice > Installed.txt
 goto run
 
 :pull
