@@ -17,8 +17,8 @@ C:\"program files"\git\bin\git init AlphaBuild
 cd AlphaBuild
 git remote add -f origin https://github.com/Tricky1975/Star-Story.git
 C:\"program files"\git\bin\git config core.sparseCheckout true
-echo WindowsExe >> .git/info/sparse-checkout
-echo JCR >> .git/info/sparse-checkout
+echo Alphabuild/WindowsExe >> .git/info/sparse-checkout
+echo Alphabuild/JCR >> .git/info/sparse-checkout
 echo:   = Downloading game
 C:\"Program Files"\git\bin\git pull origin master
 goto run
@@ -31,7 +31,7 @@ goto run
 
 :run
 echo: - Running the game
-WindowsExe\"Star Story"
+AlphaBUild\WindowsExe\"Star Story"
 
 
 
