@@ -15,30 +15,33 @@ echo:   = Initializing git
 md AlphaBuild
 C:\"program files"\git\bin\git init AlphaBuild
 cd AlphaBuild
-echo "  = Analysing git repository"
+echo   = Analysing git repository
 C:\"program files"\git\bin\git remote add -f origin https://github.com/Tricky1975/Star-Story.git
-echo "  = Configuring git"
-C:\"program files"\git\bin\git config core.sparseCheckout true
+echo   = Configuring git
 echo Alpha-Build/WindowsExe >> .git/info/sparse-checkout
 echo Alpha-Build/JCR >> .git/info/sparse-checkout
-echo:   = Downloading game
+echo   = Checkout folders
+type .git/info/sparse-checkout
+C:\"program files"\git\bin\git config core.sparseCheckout true
+echo   = Downloading game
 C:\"Program Files"\git\bin\git pull origin master
-echo "This file marks in installed version, so the installer will not install this game twice" Installed.txt
+cd ..
+echo "This file marks in installed version, so the installer will not install this game twice" > Installed.txt
 goto run
 
 :pull
-echo: - Updating
+echo - Updating
 cd AlphaBuild
 C:\"Program Files"\git\bin\git pull origin master
 cd ..
 goto run
 
 :run
-echo " - Running the game"
+echo - Running the game
 Alpha-Build\WindowsExe\"Star Story"
 
 
 
 
 :bye
-echo " - Batch job ended"
+echo - Batch job ended
