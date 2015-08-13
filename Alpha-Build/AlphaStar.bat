@@ -38,4 +38,5 @@ AlphaBUild\WindowsExe\"Star Story"
 
 
 :bye
+cd ..
 echo: - Batch job ended
