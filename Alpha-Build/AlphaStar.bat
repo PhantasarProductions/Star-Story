@@ -18,8 +18,8 @@ cd AlphaBuild
 echo   = Analysing git repository
 C:\"program files"\git\bin\git remote add -f origin https://github.com/Tricky1975/Star-Story.git
 echo   = Configuring git
-echo Alpha-Build/WindowsExe/ >> .git/info/sparse-checkout
-echo Alpha-Build/JCR/ >> .git/info/sparse-checkout
+echo Alpha-Build/WindowsExe/>> .git/info/sparse-checkout
+echo Alpha-Build/JCR/>> .git/info/sparse-checkout
 echo   = Checkout folders
 type .git\info\sparse-checkout
 C:\"program files"\git\bin\git config core.sparseCheckout true
