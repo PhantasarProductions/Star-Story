@@ -20,15 +20,15 @@ Don't worry about compiling and stuff. This has already been done for before you
 If you know how that stuff works, skip this part, but if you don't know then follow this.
 
 ###### Windows
-Download and save the AlphaStar.bat file to C:\Users\<username>\AlphaStar
+Download and save the AlphaStar.bat file to C:\Users\_username_\AlphaStar
 Open the prompt and type the next commands
-cd C:\Users\<username>\AlphaStar
+cd C:\Users\_username_\AlphaStar
 AlphaStar
 
-That should do it for you. Of course, substitute <username> with your system username :)
+That should do it for you. Of course, substitute _username_ with your system username :)
 
 ###### Mac
-Download and save the AlphaStar.sh file to /Users/<username>/AlphaStar
+Download and save the AlphaStar.sh file to /Users/_username_/AlphaStar
 Open the terminal, you can find it in your applications folder in the subfolder "utilities"
 In the console type the next commands
 cd ~/AlphaStar
