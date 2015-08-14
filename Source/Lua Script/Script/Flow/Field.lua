@@ -216,6 +216,16 @@ function Termination()
 if INP.Terminate>0 then IconFunction.Quit() end
 end
 
+function EmergencySave()
+if LAURA.GetFlow()~="FIELD" then return end
+if ES_Time~=t then
+   EM_Second = (EM_Second or -1) + 1
+   if EM_Second>300 then
+      LAURA.Save("Debug/Emergency",1)
+      EM_Second = nil
+      end
+   end
+end
 
 function MAIN_FLOW()
 DrawScreen()
@@ -224,5 +234,6 @@ AutoScroll()
 ZoneAction()
 WalkArrivalCheck()
 Termination()
+EmergencySave()
 Flip()
 end
