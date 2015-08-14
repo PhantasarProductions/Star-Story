@@ -47,6 +47,17 @@ If working with the command line tools is beyond you, and you want to download t
 
 
 
+### Character viewer
+I have a handy utility available that can scan a savegame for all relevant character data. It only dumps data directely related to characters, it cannot analyse anything any game data other than that (because the the character framework is set up to work with multiple engines and this util's focus was to support them all).
+My main focus was to make this utility help me balance the enemies I set up well, however it can also help to locate certain bugs on certain data. You can screenshot its results if you found anything suspicious, you can also use its dump save feature and send the produced dump file to me.
+Oh yeah, you need to know where the savegames themselves are dumped if you use this utility
+For Mac that's in: /Users/_username_/Library/Application Support/Phantasar Productions/LAURA2/Star Story/Saved Games
+For Windows that's in: C:\\users\\_username_\\AppSupport\\Roaming\\Phantasar Productions\\LAURA2\\Star Story\\Saved Games
+
+- [Download the utility for Mac](https://www.dropbox.com/s/y9l6eabwu122dwr/RPGCharViewer_Mac.dmg?dl=0)
+- Download the utility for Windows (this will be put on later)
+
+
 
 ### Reporting bugs and issues
 
