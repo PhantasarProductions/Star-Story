@@ -159,6 +159,6 @@ End Function
 Function InitClosure()
 ConsoleWrite "Setting up closure statements..."
 If JCR_Exists(JCR,"Script/System/Bye.lua") GALE_SYS.AddByeScript("Script/System/Bye.lua")
-Notify "closure setting!" ' debug line
+'Notify "closure setting!" ' debug line
 AddByeFunction LAURABYE
 End Function

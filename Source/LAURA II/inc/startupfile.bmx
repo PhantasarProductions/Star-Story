@@ -73,6 +73,7 @@ JCR_Lua_Image_PatchMap = JCR
 AudioJCR = jcr
 GALEMSJCR = jcr
 GALEAPIJCRDIR = jcr
+ByeGALEJCR = jcr
 ' Tempdir
 JCR_EDir = Dirry(AppSupportdir+"/"+codename+"/JCR_E")
 CreateDir JCR_EDir,2
