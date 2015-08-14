@@ -42,6 +42,7 @@ InitDevelopment
 InitLoading; Loading
 InitScript
 InitShowMouseOrNot
+InitClosure
 'WaitKey ' Must be removed when init routines are complete!
 End Function
 
@@ -150,3 +151,13 @@ Local IScript:TLua = GALE_LoadScript(JCR,"Script/Init/"+StartUp.C("StartScript")
 ConsoleWrite "Running Start up script..."; Print "Rinning Start Up Script..."
 IScript.Run(StartUp.C("StartUpFunction"),Null)
 End Function
+
+Function LAURABYE()
+GALE_Sys.ByeExecute
+End Function
+
+Function InitClosure()
+ConsoleWrite "Setting up closure statements..."
+If JCR_Exists(JCR,"Script/System/Bye.lua") GALE_SYS.AddByeScript("Script/System/Bye.lua")
+AddByeFunction LAURABYE
+End function
