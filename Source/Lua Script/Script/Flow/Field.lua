@@ -28,7 +28,7 @@ Version: 15.07.27
 
 ]]
 
--- @DEFINE EMSAVEDEBUG
+-- @UNDEF EMSAVEDEBUG
 
 cplayer = "PLAYER"
 scrolling = true
@@ -219,14 +219,18 @@ if INP.Terminate>0 then IconFunction.Quit() end
 end
 
 function EmergencySave()
+local maxtime=600
+-- @IF EMSAVEDEBUG
+   maxtime = 10
+-- @FI
 if LAURA.GetFlow()~="FIELD" then return end
 if ES_Time~=Time.Time() then
    EM_Second = (EM_Second or -1) + 1
-   if EM_Second>=10 then
+   if EM_Second>=maxtime then
       LAURA.Save("System/Emergency",1)
       EM_Second = nil
-      -- @IF *DEVELOPMENT
-      MINI("DEBUG: 5 minutes have passed in the field. Emergency savegame has been saved!")
+      -- @IF EMSAVEDEBUG
+      MINI("DEBUG: Time over minutes have passed in the field. Emergency savegame has been saved!")
       -- @FI
       end
    ES_Time = Time.Time()

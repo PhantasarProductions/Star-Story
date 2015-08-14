@@ -1,2 +1,2 @@
 LAURA.KillSaveGame("System/Emergency")
-Sys.Alert("Byebye") -- Debug line
+-- Sys.Alert("Byebye") -- Debug line
