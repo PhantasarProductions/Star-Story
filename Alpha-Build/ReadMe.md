@@ -50,12 +50,20 @@ If working with the command line tools is beyond you, and you want to download t
 ### Character viewer
 I have a handy utility available that can scan a savegame for all relevant character data. It only dumps data directely related to characters, it cannot analyse anything any game data other than that (because the the character framework is set up to work with multiple engines and this util's focus was to support them all).
 My main focus was to make this utility help me balance the enemies I set up well, however it can also help to locate certain bugs on certain data. You can screenshot its results if you found anything suspicious, you can also use its dump save feature and send the produced dump file to me.
-Oh yeah, you need to know where the savegames themselves are dumped if you use this utility
-For Mac that's in: /Users/_username_/Library/Application Support/Phantasar Productions/LAURA2/Star Story/Saved Games
-For Windows that's in: C:\\users\\_username_\\AppSupport\\Roaming\\Phantasar Productions\\LAURA2\\Star Story\\Saved Games
+
+Oh yeah, you need to know where the savegames themselves are dumped if you use this utility:
+
+- For Mac that's in: /Users/_username_/Library/Application Support/Phantasar Productions/LAURA2/Star Story/Saved Games
+- For Windows that's in: C:\\users\\_username_\\AppData\\Roaming\\Phantasar Productions\\LAURA2\\Star Story\\Saved Games
+
+Download:
 
 - [Download the utility for Mac](https://www.dropbox.com/s/y9l6eabwu122dwr/RPGCharViewer_Mac.dmg?dl=0)
-- Download the utility for Windows (this will be put on later)
+- [Download the utility for Windows](https://www.dropbox.com/s/rl19d6gpqixexw4/RPGCharViewer_Windows.7z?dl=0)
+- [Download the source code](https://www.dropbox.com/s/d2dxyemepmm2t6f/RPGCharViewer_Source.tar.gz?dl=0) 
+
+(If you download the source code, you will need [My BlitzMax Modules](https://github.com/Tricky1975/TrickyMod) and Brucey's Volumes module in order to get the code compiled. 
+The code of the modules is mostly either licenced under the zlib license or the MPL, the utility itself is licensed under the GNU/GPL).
 
 
 
