@@ -69,6 +69,7 @@
 1. Script/SubRoutines/Party.lua
 1. Script/SubRoutines/SFX.lua
 1. Script/SubRoutines/TrueMusic.lua
+1. Script/System/Bye.lua
 1. Script/System/Console.lsv
 1. Script/System/Console.lua
 1. Script/Use/Anyway/AAAAAAAAAAA.lua
@@ -108,4 +109,4 @@
 
 
 
-### Last updated: Fri 14 August 2015; 04:03:55 CET
+### Last updated: Fri 14 August 2015; 17:31:49 CET

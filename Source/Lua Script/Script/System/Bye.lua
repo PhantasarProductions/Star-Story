@@ -1,0 +1,1 @@
+LAURA.KillSaveGame("System/Emergency")
