@@ -228,12 +228,12 @@ if ES_Time~=Time.Time() then
       -- @IF *DEVELOPMENT
       MINI("DEBUG: 5 minutes have passed in the field. Emergency savegame has been saved!")
       -- @FI
-      -- @IF EMSAVEDEBUG
-      DarkText("Save timer: "..sval(EM_Second),10,10)
-      -- @FI
       ES_Time = Time.Time()
       end
    end
+-- @IF EMSAVEDEBUG
+DarkText("Save timer: "..sval(EM_Second),10,10)
+-- @FI
 end
 
 function MAIN_FLOW()
