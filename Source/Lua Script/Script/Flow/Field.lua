@@ -28,6 +28,8 @@ Version: 15.07.27
 
 ]]
 
+-- @DEFINE EMSAVEDEBUG
+
 cplayer = "PLAYER"
 scrolling = true
 scrollrange = {}
@@ -218,11 +220,18 @@ end
 
 function EmergencySave()
 if LAURA.GetFlow()~="FIELD" then return end
-if ES_Time~=t then
+if ES_Time~=Time.Time() then
    EM_Second = (EM_Second or -1) + 1
-   if EM_Second>300 then
-      LAURA.Save("Debug/Emergency",1)
+   if EM_Second>=300 then
+      LAURA.Save("System/Emergency",1)
       EM_Second = nil
+      -- @IF *DEVELOPMENT
+      MINI("DEBUG: 5 minutes have passed in the field. Emergency savegame has been saved!")
+      -- @FI
+      -- @IF EMSAVEDEBUG
+      DarkText("Save timer: "..sval(EM_Second))
+      -- @FI
+      ES_Time = Time.Time()
       end
    end
 end

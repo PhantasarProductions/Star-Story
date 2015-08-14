@@ -34,7 +34,7 @@ QuitMenuItems = {
        Action = function()
                 LAURA.Flow("FIELD") -- Needed otherwise the savegame will contain the wrong FLOW data.
                 LAURA.Save("System/Quit Game",1)
-                LAURA.KillSaveGame("Debug/Emergency")
+                LAURA.KillSaveGame("System/Emergency")
                 Sys.Bye()
                 end
       },
