@@ -195,11 +195,15 @@ end
 
 function SetUpFoes()
 local obj
+FieldFoes = {}
 CSay("Resetting Foes")
 for obj in KthuraEach() do
     CSay("   = Seen: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind)
     if prefixed(obj.Kind,"$Enemy") then
        CSay("  = Process: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind)
+       FieldFoe[obj.Tag] = { obj = obj }
+       FieldFoe[obj.Tag].Go = right(obj.Kind,2)
+       
        end
     end
 end 
