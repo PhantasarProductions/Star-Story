@@ -229,7 +229,7 @@ for obj in KthuraEach() do
     -- CSay("   = Seen: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind) -- Debugline
     if prefixed(obj.Kind,"$Enemy") then
        CSay("  = Process: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind)
-       FieldFoes[obj.Tag] = { obj = obj }
+       FieldFoes[obj.Tag] = {  }       
        foe = FieldFoes[obj.Tag]
        foe.Work = right(obj.Kind,3)
        foe.Go = left(foe.Work,2)
@@ -276,6 +276,7 @@ for obj in KthuraEach() do
              B = 0
              end   
           Maps.ObjectList.SetColor(R,G,B)
+          --foe.obj = nil
           end
        end
     end
