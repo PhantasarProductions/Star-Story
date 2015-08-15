@@ -212,7 +212,7 @@ if lvrange[2]<lvrange[1] then GALE_Error("Negative level range for playthrough #
 FieldFoes = {}
 CSay("Resetting Foes")
 for obj in KthuraEach() do
-    CSay("   = Seen: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind)
+    -- CSay("   = Seen: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind) -- Debugline
     if prefixed(obj.Kind,"$Enemy") then
        CSay("  = Process: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind)
        FieldFoes[obj.Tag] = { obj = obj }
