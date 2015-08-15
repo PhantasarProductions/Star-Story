@@ -194,7 +194,21 @@ if WalkArrival and Actors.Walking(cplayer)==0 then
 end
 
 function SetUpFoes()
-local obj
+local obj,foe
+local R,G,B
+local pt = ngpcount or 1
+local lvrange
+if pt>99 then pt=99 end
+local dt = "PT "..right(" "..pt,2).." Level Range"
+while Maps.GetData(dt)=="" do
+      pt = pt - 1      
+      dt = "PT "..right(" "..pt,2).." Level Range"
+      if pt<=0 then return("No foe levels set, ignoring foe request!") end
+      end 
+lvrange = mysplit(Maps.GetData(dt),"-")
+if #lvrange<2 then GALE_Error("Level range for playthrough #"..pt.." not properly set up!") end
+for i,v in ipairs(lvrange) do lvrange[i] = Sys.Val(v) end
+if lvrange[2]<lvrange[1] then GALE_Error("Negative level range for playthrough #"..pt) end     
 FieldFoes = {}
 CSay("Resetting Foes")
 for obj in KthuraEach() do
@@ -202,8 +216,19 @@ for obj in KthuraEach() do
     if prefixed(obj.Kind,"$Enemy") then
        CSay("  = Process: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind)
        FieldFoes[obj.Tag] = { obj = obj }
-       FieldFoes[obj.Tag].Go = right(obj.Kind,2)
-       
+       foe = FieldFoes[obj.Tag]
+       foe.Work = right(obj.Kind,3)
+       foe.Go = left(foe.Work,2)
+       foe.Skill = Sys.Val(right(obj.Work,1))     
+       if skill<Foe.Skill then
+          CWrite("  = Rejected. Not meant for this skill level",255,0,0)
+          FieldFoes[obj.Tag] = nil
+         else
+          foe.Actor = obj.Tag .. " Actor"
+          Actors.Spawn(obj.Tag,foe.Tag,"GFX/FIELD/ENCOUNTER.PNG",1)
+          Actors.Pic(foe.Tag)
+          -- Actors.SetColor(R,G,B)
+          end
        end
     end
 end 
