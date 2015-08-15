@@ -35,15 +35,12 @@
 1. Script/JINC/InitChar/UniWendicka.lua
 1. Script/JINC/InitChar/Wendicka.lua
 1. Script/Libs/A few mathematical functions.lua
-1. Script/Libs/assert.lua
 1. Script/Libs/bool2int.lua
-1. Script/Libs/boolean.lua
 1. Script/Libs/Colors.lua
 1. Script/Libs/Console.lua
 1. Script/Libs/CVV.lua
 1. Script/Libs/DarkText.lua
 1. Script/Libs/Debug.lua
-1. Script/Libs/each.lua
 1. Script/Libs/jinclude.lua
 1. Script/Libs/join.lua
 1. Script/Libs/KeyCodes_BlitzMax.lua
@@ -53,9 +50,6 @@
 1. Script/Libs/Quick String Routines.lua
 1. Script/Libs/QuickJCR6.lua
 1. Script/Libs/RPGSTAT_Iterator.lua
-1. Script/Libs/spairs.lua
-1. Script/Libs/strings.lua
-1. Script/Libs/sval.lua
 1. Script/Libs/switch.lua
 1. Script/Libs/tablecontains.lua
 1. Script/Maps/AutoUse.lua
@@ -109,4 +103,4 @@
 
 
 
-### Last updated: Sat 15 August 2015; 18:47:02 CET
+### Last updated: Sat 15 August 2015; 21:20:21 CET
