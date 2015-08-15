@@ -147,6 +147,7 @@ Import      tricky_units.specialchars
 Import      tricky_units.RPGStats
 Import      tricky_units.SafeString
 Import	tricky_units.Append
+Import	tricky_units.advdatetime
 
 
 ' Lastly some brl modules I really need
@@ -170,7 +171,8 @@ Include	"inc/error.bmx"
 Include	"inc/Loading.bmx"
 Include     "Inc/Init.bmx"
 Include     "Inc/Flow.bmx"
-Include     "inc/savegame.bmx"
+Include     "inc/Savegame.bmx"
+Include     "inc/Swap.bmx"
 
 ' Lua Api includes
 Incbin 	"inc/api/EmptyMapScript.lua"

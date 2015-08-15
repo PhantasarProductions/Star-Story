@@ -180,7 +180,9 @@ For Local Line$=EachIn JCR_ListFile(BD,"MAP/Actors")
 	Next	
 map.totalremap
 ' Swap files
-If Not DeleteDir(Swapdir,1) GALE_Error "Could not delete original swap dir!"
+If FileType(Swapdir)
+	If Not DeleteDir(Swapdir,1) GALE_Error "Could not delete original swap dir!"
+	endif
 Local Ent:TJCREntry
 Local OSFile$ ' Output Swap file... Not Operating system :-P
 For Local E$ = EachIn EntryList(BD)
@@ -189,7 +191,7 @@ For Local E$ = EachIn EntryList(BD)
 		OSFile = Swapdir + Right(Ent.FileName,Len(Ent.FileName)-5)
 		If Not CreateDir(ExtractDir(OSFile),1) GALE_Error "Could not create output folder to create swapfile: "+OsFile
 		JCR_Extract BD,E,OSFile,1
-		endif
+		EndIf
 	Next
 ' Network data
 LoadNet BD,startup						
