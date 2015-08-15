@@ -194,10 +194,24 @@ if WalkArrival and Actors.Walking(cplayer)==0 then
 end
 
 function SetUpFoes()
+local ak,num
 local obj,foe
 local R,G,B
 local pt = ngpcount or 1
 local lvrange
+local minenemies = {1,2,3}
+local maxenemies = {3,6,9}
+local hilevel,diflevel
+local myleveltotal,partymembers,ptag
+for ak=0,5 do
+    ptag = RPGChar.PartyTag(ak)
+    if ptag~="" then
+       partymembers = (partymembers or 0) + 1
+       myleveltotal = myleveltotal + RPGChar.Stat(ptag,"Level")
+       end
+    end
+if not partymembers then Sys.Error("Something went wrong when counting the levels here!") end
+local mylevel = myleveltotal / partymembers
 if pt>99 then pt=99 end
 local dt = "PT "..right(" "..pt,2).." Level Range"
 while Maps.GetData(dt)=="" do
@@ -230,7 +244,35 @@ for obj in KthuraEach() do
           Actors.Spawn(obj.Tag,"GFX/FIELD/ENCOUNTER.PNG",foe.Tag,1)
           CSay("  = Configuring actor")
           Actors.Pick(foe.Tag)
-          -- Actors.SetColor(R,G,B)
+          foe.Enemies = {}
+          num = rand(minenemies[skill],maxenemies[skill])
+          hilevel = 0
+          for ak=1,num do
+              foe.Enemies[ak] = 
+                {
+                    level = rand(lvrange[1],lvrange[2])
+                }
+              if hilevel<foe.Enemies[ak].level then hilevel=foe.Enemies[ak] end
+              end
+          diflevel = hilevel - mylevel
+          if diflevel<-10 then
+             R = 0
+             G = 255
+             B = 0
+          elseif diflevel<=0 then
+             R = 255 - math.abs(diflevel)*20
+             G = math.abs(diflevel)*20
+             B = R
+          elseif diflevel<10 then
+             R = math.abs(diflevel)*20
+             G = 255 - math.abs(diflevel)*20
+             B = G
+          else
+             R = 255
+             G = 0
+             B = 0
+             end   
+          Actors.SetColor(R,G,B)
           end
        end
     end
