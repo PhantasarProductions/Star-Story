@@ -270,3 +270,21 @@ RESETFOES()
 RESETTREASURE()
 CSay("= Map is reset")
 end
+
+function ACTORS()
+local obj
+local R = rand(1,255)
+local G = rand(1,255)
+local B = rand(1,255)
+for obj in KthuraEach() do
+    if obj.Kind=="Actor" then
+       R = R + rand(-1,1)
+       G = G + rand(-1,1)
+       B = B + rand(-1,1)
+       if R<0 then R=0 elseif R>255 then R=255 end
+       if G<0 then G=0 elseif G>255 then G=255 end
+       if B<0 then B=0 elseif B>255 then B=255 end
+       CWrite("Actor '"..obj.Tag.."' located on  ("..obj.X..","..obj.Y..")",R,G,B)
+       end
+     end
+end     
