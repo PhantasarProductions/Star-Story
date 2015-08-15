@@ -243,7 +243,7 @@ for obj in KthuraEach() do
           CSay("  = Spawning actor")
           Actors.Spawn(obj.Tag,"GFX/FIELD/ENCOUNTER.PNG",foe.Tag,1)
           CSay("  = Configuring actor")
-          Actors.Pick(foe.Tag)
+          Maps.ObjectList.Pick(foe.Tag)
           foe.Enemies = {}
           num = rand(minenemies[skill],maxenemies[skill])
           hilevel = 0
