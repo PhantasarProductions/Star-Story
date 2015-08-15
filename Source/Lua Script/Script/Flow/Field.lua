@@ -226,7 +226,7 @@ for obj in KthuraEach() do
          else
           foe.Actor = obj.Tag .. " Actor"
           Actors.Spawn(obj.Tag,foe.Tag,"GFX/FIELD/ENCOUNTER.PNG",1)
-          Actors.Pic(foe.Tag)
+          Actors.Pick(foe.Tag)
           -- Actors.SetColor(R,G,B)
           end
        end
