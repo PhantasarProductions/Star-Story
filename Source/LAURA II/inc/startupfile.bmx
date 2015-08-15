@@ -77,6 +77,8 @@ ByeGALEJCR = jcr
 ' Tempdir
 JCR_EDir = Dirry(AppSupportdir+"/"+codename+"/JCR_E")
 CreateDir JCR_EDir,2
+Swapdir = Dirry(AppSupportdir+"/"+codename+"/Swap")
+CMapdir = Swapdir + "/Map Changes"
 ' Savedir
 SaveDir = Dirry(AppSupportdir+"/"+codename+"/Saved Games")
 CreateDir SaveDir,2

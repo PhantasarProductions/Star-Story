@@ -134,7 +134,7 @@ Import	tricky_kthura.kthura_draw
 Import	jcr6.zlibdriver
 Import	jcr6.quakepak ' Yes, I decided to support the Quake Pack files as well, in case you prefer that above JCR6. Please note that Quake Pack files are less sophisticated than JCR6 files, this can influence the support. Keep that in mind!
 
-' JCR6 raw file support, needed for some internal scripts.
+' JCR6 raw file support, needed for some internal scripts. (and the temp scripts)
 Import	jcr6.fileasjcr
 
 ' Import some general units by tricky
@@ -146,6 +146,8 @@ Import	tricky_units.HotSpot
 Import      tricky_units.specialchars
 Import      tricky_units.RPGStats
 Import      tricky_units.SafeString
+Import	tricky_units.Append
+
 
 ' Lastly some brl modules I really need
 Import	brl.pngloader

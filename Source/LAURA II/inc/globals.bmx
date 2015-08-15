@@ -35,6 +35,8 @@ Const AppSupportDir$ = "$AppSupport$/$LinuxDot$Phantasar Productions/LAURA2/"
 Const sstartupfile$ = appsupportdir + "LAURA2run.ini"
 
 Global SaveDir$ ' Defined during the start up
+Global SwapDir$ ' Defined during the start up
+Global CMapDir$ ' Defined during the start up
 
 ' Start up
 Global StartUp:TIni

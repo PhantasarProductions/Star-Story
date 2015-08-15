@@ -88,6 +88,12 @@ bt.addstring save,"Map/Actors","zlib"
 RPGSave bt,"Party"
 ' Logindata
 SaveNet bt,startup
+' Swap files
+If FileType(Swapdir)
+	For Local F$=EachIn CreateTree(SwapDir)
+		bt.addentry Swapdir+"/"+f,"SWAP/"+f
+		Next
+	EndIf
 ' Close
 'SSecuDone BT
 BT.Close "zlib"
@@ -172,14 +178,26 @@ For Local Line$=EachIn JCR_ListFile(BD,"MAP/Actors")
 			EndIf
 		EndIf
 	Next	
-map.totalremap	
+map.totalremap
+' Swap files
+If Not DeleteDir(Swapdir,1) GALE_Error "Could not delete original swap dir!"
+Local Ent:TJCREntry
+Local OSFile$ ' Output Swap file... Not Operating system :-P
+For Local E$ = EachIn EntryList(BD)
+	If Prefixed(E,"SWAP/")
+		Ent = JCR_Entry(BD,E$)
+		OSFile = Swapdir + Right(Ent.FileName,Len(Ent.FileName)-5)
+		If Not CreateDir(ExtractDir(OSFile),1) GALE_Error "Could not create output folder to create swapfile: "+OsFile
+		JCR_Extract BD,E,OSFile,1
+		endif
+	Next
 ' Network data
 LoadNet BD,startup						
 ' Security check
 Original = LSecu(BD)
 Print "Original = "+Original
 'ConsoleShow;Flip;WaitKey;Bye ' Debug line. Put on rem when done.
-' If this is a "DeleteMe" savegame, remove it now
+' If this is a "DeleteMe" savegame, remove it now	
 If DeleteWhenLoaded 
 	If Not DeleteFile(file) GALE_Error "Deletion Error",["1,This file had to be deleted after loading","2,however, either it's been tampered with","3,somehow or there are some filesystem","4,errors, but the deletion failed.","5,","6,In order not to enable cheating","7,the system's gonna crash out!","8,Bye!"]
 	EndIf
