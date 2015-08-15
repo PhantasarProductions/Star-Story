@@ -220,7 +220,7 @@ for obj in KthuraEach() do
        foe.Work = right(obj.Kind,3)
        foe.Go = left(foe.Work,2)
        foe.Skill = Sys.Val(right(obj.Work,1))     
-       if skill<Foe.Skill then
+       if skill<foe.Skill then
           CWrite("  = Rejected. Not meant for this skill level",255,0,0)
           FieldFoes[obj.Tag] = nil
          else
