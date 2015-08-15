@@ -227,7 +227,7 @@ for obj in KthuraEach() do
           foe.Actor = obj.Tag .. " Actor"
           foe.Tag = foe.Actor
           CSay("  = Spawning actor")
-          Actors.Spawn(obj.Tag,foe.Tag,"GFX/FIELD/ENCOUNTER.PNG",1)
+          Actors.Spawn(obj.Tag,"GFX/FIELD/ENCOUNTER.PNG",foe.Tag,1)
           CSay("  = Configuring actor")
           Actors.Pick(foe.Tag)
           -- Actors.SetColor(R,G,B)
