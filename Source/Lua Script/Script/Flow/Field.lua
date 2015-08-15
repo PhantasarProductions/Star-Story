@@ -207,7 +207,7 @@ for ak=0,5 do
     ptag = RPGChar.PartyTag(ak)
     if ptag~="" then
        partymembers = (partymembers or 0) + 1
-       myleveltotal = myleveltotal + RPGChar.Stat(ptag,"Level")
+       myleveltotal = (myleveltotal or 0) + RPGChar.Stat(ptag,"Level")
        end
     end
 if not partymembers then Sys.Error("Something went wrong when counting the levels here!") end
