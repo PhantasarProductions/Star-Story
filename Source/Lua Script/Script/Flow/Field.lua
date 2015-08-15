@@ -275,7 +275,7 @@ for obj in KthuraEach() do
              G = 0
              B = 0
              end   
-          Actors.SetColor(R,G,B)
+          Maps.SetColor(R,G,B)
           end
        end
     end
