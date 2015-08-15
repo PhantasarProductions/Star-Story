@@ -254,26 +254,32 @@ for obj in KthuraEach() do
                 }
               if hilevel<foe.Enemies[ak].level then hilevel=foe.Enemies[ak].level end
               end
+          CSay("  = MyLevel="..mylevel.."; HiLevel="..hilevel.."; DifLevel="..diflevel)    
           diflevel = hilevel - mylevel
           if diflevel<-10 then
              R = 0
              G = 255
              B = 0
              foe.radius = 100
+             CSay("  = Too Easy")
           elseif diflevel<=0 then
              R = 255 - math.abs(diflevel)*20
              G = math.abs(diflevel)*20
              B = R
              foe.radius = 250
+             CSay("  = Easy")
           elseif diflevel<10 then
              R = math.abs(diflevel)*20
              G = 255 - math.abs(diflevel)*20
              B = G
-             foe.radius = 800
+             foe.radius = 500
+             CSay("  = Hard")
           else
              R = 255
              G = 0
              B = 0
+             foe.radius = 1000
+             CSay("  = Too Hard")
              end   
           Maps.ObjectList.SetColor(R,G,B)
           --foe.obj = nil
