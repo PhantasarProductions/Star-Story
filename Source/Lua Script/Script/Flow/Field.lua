@@ -201,8 +201,8 @@ for obj in KthuraEach() do
     CSay("   = Seen: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind)
     if prefixed(obj.Kind,"$Enemy") then
        CSay("  = Process: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind)
-       FieldFoe[obj.Tag] = { obj = obj }
-       FieldFoe[obj.Tag].Go = right(obj.Kind,2)
+       FieldFoes[obj.Tag] = { obj = obj }
+       FieldFoes[obj.Tag].Go = right(obj.Kind,2)
        
        end
     end
