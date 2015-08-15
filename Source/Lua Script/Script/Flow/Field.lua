@@ -225,6 +225,7 @@ for obj in KthuraEach() do
           FieldFoes[obj.Tag] = nil
          else
           foe.Actor = obj.Tag .. " Actor"
+          foe.Tag = foe.Actor
           CSay("  = Spawning actor")
           Actors.Spawn(obj.Tag,foe.Tag,"GFX/FIELD/ENCOUNTER.PNG",1)
           CSay("  = Configuring actor")
