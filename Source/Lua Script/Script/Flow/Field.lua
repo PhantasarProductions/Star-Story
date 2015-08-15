@@ -252,21 +252,24 @@ for obj in KthuraEach() do
                 {
                     level = rand(lvrange[1],lvrange[2])
                 }
-              if hilevel<foe.Enemies[ak].level then hilevel=foe.Enemies[ak] end
+              if hilevel<foe.Enemies[ak].level then hilevel=foe.Enemies[ak].level end
               end
           diflevel = hilevel - mylevel
           if diflevel<-10 then
              R = 0
              G = 255
              B = 0
+             foe.radius = 100
           elseif diflevel<=0 then
              R = 255 - math.abs(diflevel)*20
              G = math.abs(diflevel)*20
              B = R
+             foe.radius = 250
           elseif diflevel<10 then
              R = math.abs(diflevel)*20
              G = 255 - math.abs(diflevel)*20
              B = G
+             foe.radius = 800
           else
              R = 255
              G = 0
