@@ -243,7 +243,7 @@ for obj in KthuraEach() do
           CSay("  = Spawning actor")
           Actors.Spawn(obj.Tag,"GFX/FIELD/ENCOUNTER.PNG",foe.Tag,1)
           CSay("  = Configuring actor")
-          Maps.ObjectList.Pick(foe.Tag)
+          Maps.Obj.Pick(foe.Tag)
           foe.Enemies = {}
           num = rand(minenemies[skill],maxenemies[skill])
           hilevel = 0
@@ -282,7 +282,7 @@ for obj in KthuraEach() do
              CSay("  = Too Hard")
              end   
           CWrite("Adjusting color of object "..Maps.ObjectList.MyObject.Tag.."  to ("..R..","..G..","..B..")",R,G,B)   
-          Maps.ObjectList.SetColor(R,G,B)
+          Maps.Obj.SetColor(R,G,B)
           --foe.obj = nil
           end
        end
