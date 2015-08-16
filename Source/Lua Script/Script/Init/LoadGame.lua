@@ -49,4 +49,5 @@ function LoadGame()
 Console.Write("Anything to do, after loading the game?")
 LoadFlowsScripts()
 LoadBaseGraphics()
+RedoMapShow()
 end

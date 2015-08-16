@@ -55,3 +55,12 @@ Var.D("$MAP.MAPSHOW.LASTALWAYSSHOW",serialize("ret",alwaysshow))
 local i,a
 for i,a in ipairs(alwaysshow) do Maps.ShowObject(a) end
 end
+
+function RedoMapShow() -- This function has only been put in place for the LoadGame sequence to make sure the request of the last MapShow is properly followed if it was in fact used at all since the last loadmap.
+local req = CVVN("$MAP.MAPSHOW.LASTREQUEST")
+local fas = loadstring(CVV("$MAP.MAPSHOW.LASTALWAYSSHOW").."\nreturn ret")
+local tas = alwaysshow
+alwaysshow = fas() or tas
+if req then MapShow(req) end
+alwaysshow = tas
+end

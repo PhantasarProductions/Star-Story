@@ -306,6 +306,8 @@ function LoadMap(map)
 Maps.Load(map)
 SetUpFoes()
 SetUpTreasure()
+Var.Clear("$MAP.MAPSHOW.LASTREQUEST")
+Var.Clear("$MAP.MAPSHOW.LASTALWAYSSHOW")
 end
 
 function Termination()
