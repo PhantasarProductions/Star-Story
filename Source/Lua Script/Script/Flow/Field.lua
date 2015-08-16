@@ -208,7 +208,7 @@ CSay("Searching for existing foes")
 for obj in KthuraEach("Actor") do
     CSay("Checking: "..obj.Kind.." "..obj.Tag.."; Got suffix "..sval(suffixed(obj.Tag,"FoeActor")))
     if suffixed(obj.Tag,"FoeActor") then
-       Maps.Kill(obj.Tag); CSay("Killed foe: "..obj.Tag.." (Obj #"..obj.IDNum..")")
+       Maps.Obj.Kill(obj.Tag); CSay("Killed foe: "..obj.Tag.." (Obj #"..obj.IDNum..")")
        end 
     end
 -- calc level differences
