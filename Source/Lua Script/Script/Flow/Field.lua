@@ -281,7 +281,7 @@ for obj in KthuraEach() do
              foe.radius = 1000
              CSay("  = Too Hard")
              end   
-          CWrite("Adjusting color of object "..Maps.ObjectList.MyObject.Tag.."  to ("..R..","..G..","..B..")",R,G,B)   
+          CWrite("  = Adjusting color of object "..Maps.Obj.MyObject.Tag.."  to ("..R..","..G..","..B..")",R,G,B)   
           Maps.Obj.SetColor(R,G,B)
           --foe.obj = nil
           end
