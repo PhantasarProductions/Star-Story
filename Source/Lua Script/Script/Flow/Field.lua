@@ -254,8 +254,8 @@ for obj in KthuraEach() do
                 }
               if hilevel<foe.Enemies[ak].level then hilevel=foe.Enemies[ak].level end
               end
-          CSay("  = MyLevel="..mylevel.."; HiLevel="..hilevel.."; DifLevel="..diflevel)    
           diflevel = hilevel - mylevel
+          CSay("  = MyLevel="..mylevel.."; HiLevel="..hilevel.."; DifLevel="..diflevel)    
           if diflevel<-10 then
              R = 0
              G = 255
