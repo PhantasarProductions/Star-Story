@@ -34,10 +34,10 @@ Version: 15.08.06
       
        This file contains some quick functions for quick access to Kthura
        Maps. This file even contains a few feature to actually edit Kthura 
-       maps directly. It goes without saying but ths script should therefore
+       maps directly. It goes without saying but this script should therefore
        be handled with care. You've no idea how dangerous a lua script can be
        when not handled properly. (I've heard the statement "It's just a Lua
-       script" way to often). :)
+       script" way too often). :)
        
        Please note, this file is only set up for the way the LAURA II engine
        delivers its Kthura API. I can therefore not guarantee this file will
