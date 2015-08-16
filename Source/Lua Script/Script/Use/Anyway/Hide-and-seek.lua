@@ -50,6 +50,8 @@ alwaysshow = {"PLAYER"}
 function MapShow(...)
 for i,v in ipairs(arg) do CSay("Show #"..i.." "..v) end CSay("")
 Maps.ShowOnlyLabel(join(arg,","),1)
+Var.D("$MAP.MAPSHOW.LASTREQUEST",join(arg,","))
+Var.D("$MAP.MAPSHOW.LASTALWAYSSHOW",serialize("ret",alwaysshow))
 local i,a
 for i,a in ipairs(alwaysshow) do Maps.ShowObject(a) end
 end
