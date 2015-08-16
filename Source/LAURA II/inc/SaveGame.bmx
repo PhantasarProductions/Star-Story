@@ -78,6 +78,7 @@ For Local A:TKthuraActor = EachIn map.fullobjectlist
 		If a.picbundledir Save :+ "~n~tChosenPic = "+a.ChosenPic
 		save$ :+"~n~tMoveSkip = "+a.moveskip
 		save$ :+"~n~tFrameSpeed = "+a.FrameSpeed
+		save  :+"~n~tVisible = "+a.visible
 		save$ :+"~n~tWind = "+a.Wind
 		EndIf
 	Next
@@ -173,6 +174,7 @@ For Local Line$=EachIn JCR_ListFile(BD,"MAP/Actors")
 				Case "FrameSpeed"	a.framespeed = ls[1].toint()
 				Case "Framespeed"	a.framespeed = ls[1].toint() ' Just needed as a "dirty" fix for an old bug. Will very likely be removed later.
 				Case "Wind"		a.wind = ls[1]
+				Case "Visible"	a.visible = ls[1].toint()
 				Default		GALE_Error "Unknown actor variable: "+ls[0]
 				End Select
 			EndIf
@@ -182,7 +184,7 @@ map.totalremap
 ' Swap files
 If FileType(Swapdir)
 	If Not DeleteDir(Swapdir,1) GALE_Error "Could not delete original swap dir!"
-	endif
+	EndIf
 Local Ent:TJCREntry
 Local OSFile$ ' Output Swap file... Not Operating system :-P
 For Local E$ = EachIn EntryList(BD)
