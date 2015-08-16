@@ -206,8 +206,8 @@ local myleveltotal,partymembers,ptag
 -- Make sure there are no foes in the field
 CSay("Searching for existing foes")
 for obj in KthuraEach("Actor") do
-    CSay("Checking: "..obj.Kind.." "..obj.Tag.."; Got suffix "..sval(suffixed(obj.Tag," FoeActor")))
-    if suffixed(obj.Tag," FoeActor") then
+    CSay("Checking: "..obj.Kind.." "..obj.Tag.."; Got suffix "..sval(suffixed(obj.Tag,"FoeActor")))
+    if suffixed(obj.Tag,"FoeActor") then
        Maps.Kill(obj.Tag); CSay("Killed foe: "..obj.Tag.." (Obj #"..obj.IDNum..")")
        end 
     end
