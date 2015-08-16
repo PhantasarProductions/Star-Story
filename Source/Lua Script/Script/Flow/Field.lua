@@ -263,15 +263,15 @@ for obj in KthuraEach() do
              foe.radius = 100
              CSay("  = Too Easy")
           elseif diflevel<=0 then
-             R = 255 - math.abs(diflevel)*20
-             G = math.abs(diflevel)*20
-             B = R
+             R = 180
+             G = 255
+             B = 0
              foe.radius = 250
              CSay("  = Easy")
           elseif diflevel<10 then
-             R = math.abs(diflevel)*20
-             G = 255 - math.abs(diflevel)*20
-             B = G
+             R = 255
+             G = 180
+             B = 0
              foe.radius = 500
              CSay("  = Hard")
           else
