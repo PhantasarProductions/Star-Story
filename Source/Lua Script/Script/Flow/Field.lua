@@ -203,6 +203,13 @@ local minenemies = {1,2,3}
 local maxenemies = {3,6,9}
 local hilevel,diflevel
 local myleveltotal,partymembers,ptag
+-- Make sure there are no foes in the field
+for obj in KthuraEach("Actor") do
+    if suffixed(obj.Tag," FoeActor") then
+       Maps.Kill(obj.Tag); CSay("Killed foe: "..obj.Tag.." (Obj #"..obj.IDNum..")")
+       end 
+    end
+-- calc level differences
 for ak=0,5 do
     ptag = RPGChar.PartyTag(ak)
     if ptag~="" then
@@ -222,7 +229,8 @@ while Maps.GetData(dt)=="" do
 lvrange = mysplit(Maps.GetData(dt),"-")
 if #lvrange<2 then GALE_Error("Level range for playthrough #"..pt.." not properly set up!") end
 for i,v in ipairs(lvrange) do lvrange[i] = Sys.Val(v) end
-if lvrange[2]<lvrange[1] then GALE_Error("Negative level range for playthrough #"..pt) end     
+if lvrange[2]<lvrange[1] then GALE_Error("Negative level range for playthrough #"..pt) end
+-- setting up the foes     
 FieldFoes = {}
 CSay("Resetting Foes")
 for obj in KthuraEach() do
@@ -238,7 +246,7 @@ for obj in KthuraEach() do
           CWrite("  = Rejected. Not meant for this skill level",255,0,0)
           FieldFoes[obj.Tag] = nil
          else
-          foe.Actor = obj.Tag .. " Actor"
+          foe.Actor = obj.Tag .. " FoeActor"
           foe.Tag = foe.Actor
           CSay("  = Spawning actor")
           Actors.Spawn(obj.Tag,"GFX/FIELD/ENCOUNTER.PNG",foe.Tag,1)
