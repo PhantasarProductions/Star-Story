@@ -56,7 +56,7 @@ if not Done("&DONE.TUT.YAQIRPA.Enemy") then
    Actors.StopWalking("ActBriggs")
    Actors.WalkToSpot("ActWendicka","FoeWendicka")
    Actors.WalkToSpot("ActCrystal","FoeCrystal")
-   Actors.WalkToSpot("ActBriggs","Foebriggs")
+   Actors.WalkToSpot("ActBriggs","FoeBriggs")
    MapText("EXPLAIN_FOES")
    Tutorial("If you touch the alien faces you'll get into combat.\nIt's up to you to go for them or not though they may come after you!")
    end
