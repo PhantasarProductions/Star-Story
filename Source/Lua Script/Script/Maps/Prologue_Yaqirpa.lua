@@ -49,6 +49,19 @@ if not Done("&DONE.TUT.YAQIRPA.SAVE") then
 MapShow("save")   
 end
 
+function TutEnemy()
+if not Done("&DONE.TUT.YAQIRPA.Enemy") then
+   Actors.StopWalking("ActWendicka")
+   Actors.StopWalking("ActCrystal")
+   Actors.StopWalking("ActBriggs")
+   Actors.WalkToSpot("ActWendicka","FoeWendicka")
+   Actors.WalkToSpot("ActCrystal","FoeCrystal")
+   Actors.WalkToSpot("ActBriggs","Foebriggs")
+   MapText("EXPLAIN_FOES")
+   Tutorial("If you touch the alien faces you'll get into combat.\nIt's up to you to go for them or not though they may come after you!")
+   end
+end
+
 function SaveSpot()
 -- Mini("Savespot reached!")
 GotoSave()
@@ -72,6 +85,7 @@ ZA_Enter("SAVEZONE1",EnterSave)
 ZA_Enter("EnterSave",EnterSave)
 ZA_Enter("ToHallS",EnterGreatHall)
 ZA_Enter("Entrance_Zone",EnterEntrance)
+ZA_Enter("TutEnemy",TutEnemy)
 -- ZA_Enter("EnterSave",EnterEntrance)
 AddClickable("SAVE1")
 alwaysshow = {"ActWendicka","ActCrystal","ActBriggs"}
