@@ -316,6 +316,8 @@ local foe
 if not FieldFoes then return end
 for obj in KthuraEach("Actor") do    
     foe = FieldFoes[obj.Tag]
+    CSay("We got a foe on  : "..obj.Tag.." >> "..sval(foe~=nil))
+    CSay("We got suffix on : "..obj.Tag.." >> "..sval(suffixed(obj.Tag,"FoeActor")))
     if foe and suffixed(obj.Tag,"FoeActor") then
        (({   -- Switch
           HZ = function ()  -- Horizontaal
@@ -323,7 +325,7 @@ for obj in KthuraEach("Actor") do
                  FoeChase()
                else
                  if foe.GoEast then Actors.MoveTo(obj.Tag,obj.X+10,obj.Y) else Actors.MoveTo(obj.Tag,obj.X-10,obj.Y) end
-                 if obj.X==foe.OldX and obj.Y==foeOldY then foe.GoEast=not foe.GoEast else f.OldX=obj.X f.OldY=obj.Y end 
+                 if obj.X==foe.OldX and obj.Y==foe.OldY then foe.GoEast=not foe.GoEast else f.OldX=obj.X f.OldY=obj.Y end 
                  end 
                end,
           VT = function () -- Verticaal
@@ -331,7 +333,7 @@ for obj in KthuraEach("Actor") do
                  FoeChase()
                else
                  if foe.GoSouth then Actors.MoveTo(obj.Tag,obj.X,obj.Y+10) else Actors.MoveTo(obj.Tag,obj.X,obj.Y-10) end
-                 if obj.X==foe.OldX and obj.Y==foeOldY then foe.GoSouth=not foe.GoSouth else f.OldX=obj.X f.OldY=obj.Y end 
+                 if obj.X==foe.OldX and obj.Y==foe.OldY then foe.GoSouth=not foe.GoSouth else f.OldX=obj.X f.OldY=obj.Y end 
                  end 
                end,     
           SS = function() -- Sta Stil!     
