@@ -305,6 +305,19 @@ FoeRadius = not FoeRadius
 end
 -- @FI
 
+function FoeList()
+local f = serialize("FieldFoes",FieldFoes)
+local r,g,b
+for l in each(mysplit(f,"\n")) do
+    r = r + 10
+    if r>255 then r=0; g=g+10 CWrite("Hit SPACE...") Console.Show() Console.Flip() repeat INP.Grab() until INP.KeyH(32) end
+    if g>255 then g=0; b=b+10 end
+    if b>255 then b=0 end
+    CWrite(l,r,g,b)
+    end
+CWrite("Current skill: "..sval(skill))    
+end 
+
 function FoeChase()
 end
 

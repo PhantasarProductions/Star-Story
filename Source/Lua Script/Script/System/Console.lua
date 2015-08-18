@@ -288,3 +288,7 @@ for obj in KthuraEach() do
        end
      end
 end     
+
+function FOELIST()
+MS.RUN("FIELD","FoeList")
+end
