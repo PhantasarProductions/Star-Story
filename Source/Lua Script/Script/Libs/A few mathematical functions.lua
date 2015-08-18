@@ -75,3 +75,17 @@ function DEC_BIN(IN)
     end
     return OUT
 end
+
+sin = math.sin
+cos = math.cos
+tan = math.tan
+abs = math.abs
+sqr = math.sqrt
+
+function Distance(x1,y1,x2,y2) -- BLD: Calculates distance between two points, by using Pythagoras
+local rechthoekszijde1 = abs(x1-x2)
+local rechthoekszijde2 = abs(y1-y2)
+local hypothenusakwardraat = (rechthoekszijde1*rechthoekszijde1) + (rechthoekszijde2*rechthoekszijde2)
+local hypothenusa = sqr(hypothenusakwardraat)
+return hypothenusa
+end

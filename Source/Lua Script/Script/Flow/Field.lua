@@ -318,10 +318,15 @@ for l in each(mysplit(f,"\n")) do
 CWrite("Current skill: "..sval(skill))    
 end 
 
-function FoeChase()
+function FoeChase(foe)
+local player = Actors.Actor(cplayer)
+Actors.WalkTo(foe.tag,player.X,player.Y)
 end
 
 function FoeActive(foe)
+local player = Actors.Actor(cplayer)
+local enemy  = Actors.Actor(foe.Tag)
+return Distance(player.X,player.Y,enemy.X,enemy.Y)<=foe.radius
 end
 
 
@@ -332,11 +337,11 @@ for obj in KthuraEach("Actor") do
     foe = FieldFoes[replace(obj.Tag," FoeActor","")]
     -- CSay("We got a foe on  : "..obj.Tag.." >> "..sval(foe~=nil))
     -- CSay("We got suffix on : "..obj.Tag.." >> "..sval(suffixed(obj.Tag,"FoeActor")))
-    if foe and suffixed(obj.Tag,"FoeActor") then
+    if foe and obj.Visible>0 and suffixed(obj.Tag,"FoeActor") then
        (({   -- Switch
           HZ = function ()  -- Horizontaal
                if FoeActive(foe) then 
-                 FoeChase()
+                 FoeChase(foe)
                else
                  if foe.GoEast then Actors.MoveTo(obj.Tag,obj.X+10,obj.Y) else Actors.MoveTo(obj.Tag,obj.X-10,obj.Y) end
                  if obj.X==foe.OldX and obj.Y==foe.OldY then foe.GoEast=not foe.GoEast foe.OldX=nil else foe.OldX=obj.X foe.OldY=obj.Y end 
@@ -344,7 +349,7 @@ for obj in KthuraEach("Actor") do
                end,
           VT = function () -- Verticaal
                if FoeActive(foe) then 
-                 FoeChase()
+                 FoeChase(foe)
                else
                  if foe.GoSouth then Actors.MoveTo(obj.Tag,obj.X,obj.Y+10) else Actors.MoveTo(obj.Tag,obj.X,obj.Y-10) end
                  if obj.X==foe.OldX and obj.Y==foe.OldY then foe.GoSouth=not foe.GoSouth foe.OldY=nil else foe.OldX=obj.X foe.OldY=obj.Y end 
@@ -352,7 +357,7 @@ for obj in KthuraEach("Actor") do
                end,     
           SS = function() -- Sta Stil!     
                if FoeActive(foe) then 
-                 FoeChase()
+                 FoeChase(foe)
                  end 
                end,
           AS = function() -- Altijd Stilstaan
