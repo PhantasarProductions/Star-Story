@@ -108,6 +108,7 @@ ConsoleWrite "Loading: "+file,255,95,10
 Local BD:TJCRDir = JCR_Dir(File)
 Local ls$[]
 Local DeleteWhenLoaded = False
+Local MapFile$
 ' GameVars
 LauraGamevars = LoadStringMap(BD,"LAURA/Vars")
 VarReg LauraGameVars ' We need to register this again, or the game will use an empty map, this empty map will now be destroyed by the garbage collector.
@@ -122,7 +123,7 @@ For Local line$=EachIn JCR_ListFile(BD,"LAURA/System")
 		Select ls[0]
 			Case "FullScreen"	graphicsfullscreen=ls[1].toint()
 			Case "Flow"		currentflow = ls[1]
-			Case "Maps.File"	LAURA2MAPS.Load ls[1]
+			Case "Maps.File"	MapFIle = ls[1]
 			Case "Maps.Cam.X"	LAURA2MAPS.CamX = ls[1].toint()
 			Case "Maps.Cam.Y" LAURA2MAPS.CAMY = ls[1].toint()
 			Case "DeleteMe"	DeleteWhenLoaded = ls[1].tolower()="true"
@@ -138,6 +139,8 @@ ClearMap GALE_MapMSSavedVars()
 For Local entry$=EachIn EntryList(BD)
 	If Left(Entry,8)="MS_SAVE/" MapInsert GALE_MapMSSavedVars(),Right(entry,Len(entry)-8),JCR_LoadString(bd,entry)
 	Next
+' Load the map
+LAURA2MAPS.Load ls[1] ' This order is required or the saved variables inside the required scripts will not be properly picked up.	
 ' Actors
 Map.RemoveActors
 Local A:TKthuraActor
