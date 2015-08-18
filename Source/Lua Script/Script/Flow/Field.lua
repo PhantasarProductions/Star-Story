@@ -299,6 +299,52 @@ for obj in KthuraEach() do
     end
 end 
 
+-- @IF *DEVELOPMENT
+function ToggleFoeRadius()
+FoeRadius = not FoeRadius
+end
+-- @FI
+
+function FoeChase()
+end
+
+function FoeActive()
+end
+
+function ControlFoes()
+local foe
+for obj in KthuraEach("Actor") do
+    foe = FieldFoe[obj.Tag]
+    if foe and suffixed(obj.Tag)=="FoeActor" then
+       (({   -- Switch
+          HZ = function ()  -- Horizontaal
+               if foe.Active() then 
+                 FoeChase()
+               else
+                 if foe.GoEast then Actors.MoveTo(obj.Tag,obj.X+10,obj.Y) else Actors.MoveTo(obj.Tag,obj.X-10,obj.Y) end
+                 if obj.X==foe.OldX and obj.Y==foeOldY then foe.GoEast=not foe.GoEast else f.OldX=obj.X f.OldY=obj.Y end 
+                 end 
+               end,
+          VT = function () -- Verticaal
+               if foe.Active() then 
+                 FoeChase()
+               else
+                 if foe.GoSouth then Actors.MoveTo(obj.Tag,obj.X,obj.Y+10) else Actors.MoveTo(obj.Tag,obj.X,obj.Y-10) end
+                 if obj.X==foe.OldX and obj.Y==foeOldY then foe.GoSouth=not foe.GoSouth else f.OldX=obj.X f.OldY=obj.Y end 
+                 end 
+               end,     
+          SS = function() -- Sta Stil!     
+               if foe.Active() then 
+                 FoeChase()
+                 end 
+               end,
+          AS = function() -- Altijd Stilstaan
+               end     
+       })[foe.Go] or function() Sys.Error("Unknown go code for foe #"..obj.IdNum,"Tag,"..obj.Tag..";Go,"..foe.Go) end)() 
+       end
+    end
+end
+
 function SetUpTreasure()
 end
 
@@ -345,5 +391,6 @@ ZoneAction()
 WalkArrivalCheck()
 Termination()
 EmergencySave()
+ControlFoes()
 Flip()
 end
