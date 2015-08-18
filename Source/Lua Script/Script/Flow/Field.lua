@@ -307,7 +307,7 @@ end
 
 function FoeList()
 local f = serialize("FieldFoes",FieldFoes)
-local r,g,b
+local r,g,b = 0,0,0
 for l in each(mysplit(f,"\n")) do
     r = r + 10
     if r>255 then r=0; g=g+10 CWrite("Hit SPACE...") Console.Show() Console.Flip() repeat INP.Grab() until INP.KeyH(32) end
