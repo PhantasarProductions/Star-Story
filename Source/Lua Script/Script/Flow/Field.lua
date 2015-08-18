@@ -314,7 +314,7 @@ end
 function ControlFoes()
 local foe
 for obj in KthuraEach("Actor") do
-    foe = FieldFoe[obj.Tag]
+    foe = FieldFoes[obj.Tag]
     if foe and suffixed(obj.Tag)=="FoeActor" then
        (({   -- Switch
           HZ = function ()  -- Horizontaal
