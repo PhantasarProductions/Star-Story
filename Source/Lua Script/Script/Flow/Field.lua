@@ -320,7 +320,7 @@ end
 
 function FoeChase(foe)
 local player = Actors.Actor(cplayer)
-Actors.WalkTo(foe.tag,player.X,player.Y)
+Actors.WalkTo(foe.Tag,player.X,player.Y)
 end
 
 function FoeActive(foe)
