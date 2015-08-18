@@ -308,7 +308,7 @@ end
 function FoeChase()
 end
 
-function FoeActive()
+function FoeActive(foe)
 end
 
 
@@ -322,7 +322,7 @@ for obj in KthuraEach("Actor") do
     if foe and suffixed(obj.Tag,"FoeActor") then
        (({   -- Switch
           HZ = function ()  -- Horizontaal
-               if foe.Active() then 
+               if Active(foe) then 
                  FoeChase()
                else
                  if foe.GoEast then Actors.MoveTo(obj.Tag,obj.X+10,obj.Y) else Actors.MoveTo(obj.Tag,obj.X-10,obj.Y) end
@@ -330,7 +330,7 @@ for obj in KthuraEach("Actor") do
                  end 
                end,
           VT = function () -- Verticaal
-               if foe.Active() then 
+               if Active(foe) then 
                  FoeChase()
                else
                  if foe.GoSouth then Actors.MoveTo(obj.Tag,obj.X,obj.Y+10) else Actors.MoveTo(obj.Tag,obj.X,obj.Y-10) end
@@ -338,7 +338,7 @@ for obj in KthuraEach("Actor") do
                  end 
                end,     
           SS = function() -- Sta Stil!     
-               if foe.Active() then 
+               if Active(foe) then 
                  FoeChase()
                  end 
                end,
