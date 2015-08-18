@@ -317,8 +317,8 @@ local foe
 if not FieldFoes then return end
 for obj in KthuraEach("Actor") do    
     foe = FieldFoes[replace(obj.Tag," FoeActor","")]
-    CSay("We got a foe on  : "..obj.Tag.." >> "..sval(foe~=nil))
-    CSay("We got suffix on : "..obj.Tag.." >> "..sval(suffixed(obj.Tag,"FoeActor")))
+    -- CSay("We got a foe on  : "..obj.Tag.." >> "..sval(foe~=nil))
+    -- CSay("We got suffix on : "..obj.Tag.." >> "..sval(suffixed(obj.Tag,"FoeActor")))
     if foe and suffixed(obj.Tag,"FoeActor") then
        (({   -- Switch
           HZ = function ()  -- Horizontaal
@@ -338,7 +338,7 @@ for obj in KthuraEach("Actor") do
                  end 
                end,     
           SS = function() -- Sta Stil!     
-               if FoesActive(foe) then 
+               if FoeActive(foe) then 
                  FoeChase()
                  end 
                end,
