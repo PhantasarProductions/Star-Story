@@ -140,7 +140,7 @@ For Local entry$=EachIn EntryList(BD)
 	If Left(Entry,8)="MS_SAVE/" MapInsert GALE_MapMSSavedVars(),Right(entry,Len(entry)-8),JCR_LoadString(bd,entry)
 	Next
 ' Load the map
-LAURA2MAPS.Load ls[1] ' This order is required or the saved variables inside the required scripts will not be properly picked up.	
+LAURA2MAPS.Load MapFile ' This order is required or the saved variables inside the required scripts will not be properly picked up.	
 ' Actors
 Map.RemoveActors
 Local A:TKthuraActor
