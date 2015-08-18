@@ -64,7 +64,7 @@ end
 
 
 function KthuraEach(kind) -- Iterator. The values returned are editable and the edits will affect the Kthura map, so use with care :)
-CSay("Startup Kthuraeach: "..sval(kind))
+-- CSay("Startup Kthura-Each: "..sval(kind))
 local c = Maps.ObjectList.Start(kind or "")
 local k
 local tab = {}

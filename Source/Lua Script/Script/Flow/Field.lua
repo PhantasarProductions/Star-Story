@@ -314,9 +314,9 @@ end
 function ControlFoes()
 local foe
 if not FieldFoes then return end
-for obj in KthuraEach("Actor") do
+for obj in KthuraEach("Actor") do    
     foe = FieldFoes[obj.Tag]
-    if foe and suffixed(obj.Tag)=="FoeActor" then
+    if foe and suffixed(obj.Tag,"FoeActor") then
        (({   -- Switch
           HZ = function ()  -- Horizontaal
                if foe.Active() then 
