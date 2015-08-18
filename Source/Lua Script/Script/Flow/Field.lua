@@ -241,7 +241,7 @@ for obj in KthuraEach() do
        CSay("  = Process: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind)
        FieldFoes[obj.Tag] = {  }       
        foe = FieldFoes[obj.Tag]
-       foe.Work = right(obj.Kind,3)
+       foe.Work = right(trim(obj.Kind),3)
        foe.Go = left(foe.Work,2)
        foe.Skill = Sys.Val(right(obj.Work,1))     
        if skill<foe.Skill then

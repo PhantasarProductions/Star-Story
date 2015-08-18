@@ -292,3 +292,6 @@ end
 function FOELIST()
 MS.RUN("FIELD","FoeList")
 end
+
+function LISTFOES() 
+FOELIST() end
