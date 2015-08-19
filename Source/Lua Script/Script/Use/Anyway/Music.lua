@@ -37,6 +37,7 @@ function PushMusic()
 local pushidx = CVV("%PUSHEDSONGS") + 1
 Var.D("%PUSHEDSONGS",pushidx)
 Var.D("$PUSHEDSONGS["..pushidx.."]",CVV("$CURRENTSONG"))
+CSay("Pushed: $PUSHEDSONGS["..pushidx.."]",CVV("$CURRENTSONG"))
 end
 
 function PullMusic()
@@ -45,6 +46,7 @@ local newpushidx
 if pushidx==0 then
    CSay("WARNING! Pull music request done while no songs were pushed")
 else
+   CSay("Pulled: $PUSHEDSONGS["..CVV("%PUSHEDSONGS").."]".."> "..CVV("$PUSHEDSONGS["..CVV("%PUSHEDSONGS").."]"))
    Music(CVV("$PUSHEDSONGS["..CVV("%PUSHEDSONGS").."]"))
    Var.Clear(CVV("$PUSHEDSONGS["..CVV("%PUSHEDSONGS").."]"))
    newpushidx = pushidx - 1
