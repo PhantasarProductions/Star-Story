@@ -378,6 +378,7 @@ for k in IVARS() do
     end
 -- Let's now define the new shit we got    
 Var.D("$COMBAT.BACKGROUND",arena)
+Var.D("$COMBAT.BEGIN","Default")
 encmusic = encmusic or GetEncTracks()    
 if Maps.GetData("AltEncounterMusic")~="" then Var.D("$COMBAT.MUSIC",Maps.GetData("AltEncounterMusic")) else Var.D("$COMBAT.MUSIC",encmusic[rand(1,#encmusic)]) end
 for i,v in ipairs(foe.Enemies) do
