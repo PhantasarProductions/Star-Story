@@ -52,8 +52,10 @@ Type TLoadGamePanel Extends tfpanelbase
 	Field Users:TGadget
 	Field Files:TGadget
 	Field Go:TGadget
+	Field IgnoreGameJolt:TGadget
 	Field OldMinute ',OldUser$,OldFile$
 	Field User$,CFile$
+	Field YesNo$[] = ["Yes","No"]
 		
 	Method Make()
 	Crystal = CreatePanel(TW-CW,TH-CH,CW,CH,panel)
@@ -68,6 +70,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	GetUsers()
 	oldminute = Minute()
 	made = True
+	IgnoreGameJolt:TGadget = CreateButton("Ignore GameJolt",0,CH-25,250,25,Button_ok)
 	End Method
 	
 	Method GetUsers(SUSER$="",SFILE$="")
@@ -132,6 +135,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	WriteLine bt,"Var:Title=Star Story"
 	WriteLine bt,"Var:StartUpFunction=LoadGame"
 	WriteLine Bt,"Var:CodeName=StarStory"
+	WriteLine bt,"Var:IgnoreGameJolt="+YesNo[ButtonState(IgnoreGameJolt)]
 	CloseStream BT
 	?Not MacOS
 	HideGadget window
