@@ -370,9 +370,11 @@ end
 function StartEncounter(foe)
 FX.FallDown("PARTY","ShowParty")
 local k,v,i
+-- Destroy all old shit we got
 for k in IVARS() do
     if prefixed(k,"$COMBAT.") or prefixed(k,"%COMBAT.") or prefixed("&COMBAT.") then Var.Clear(k) end 
     end
+-- Let's now define the new shit we got    
 Var.D("$COMBAT.BACKGROUND",arena)
 encmusic = encmusic or GetEncTracks()    
 if Maps.GetData("AltEncounterMusic")=="" then Var.D("$COMBAT.MUSIC",Maps.GetData("AltEncounterMusic")) else Var.D("$COMBAT.Music",encmusic[rand(1,#encmusic)]) end
@@ -380,12 +382,13 @@ for i,v in ipairs(foe.Enemies) do
     Var.D("$FOE_"  ..i,v.foe)
     Var.D("%FOELV_"..i,v.level)
     end
-Var.D("$COMBAT.FO")
+-- All the shit defined so let combat commence.    
 StartCombat()
 end
 
 function ControlFoes()
 local foe
+local player = Actors.Actor(cplayer)
 if not FieldFoes then return end
 for obj in KthuraEach("Actor") do    
     foe = FieldFoes[replace(obj.Tag," FoeActor","")]
