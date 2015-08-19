@@ -55,7 +55,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	Field IgnoreGameJolt:TGadget
 	Field OldMinute ',OldUser$,OldFile$
 	Field User$,CFile$
-	Field YesNo$[] = ["Yes","No"]
+	Field YesNo$[] = ["No","Yes"]
 		
 	Method Make()
 	Crystal = CreatePanel(TW-CW,TH-CH,CW,CH,panel)
