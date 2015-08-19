@@ -226,7 +226,7 @@ InitGaugeSpeed()
 -- Grab all achievements we need
 GetAch()
 -- Music
-if CombatData.MUSIC and CombatData.MUSIC~="*NOCHANGE*" then    
+if CombatData.MUSIC and CombatData.MUSIC~="" and CombatData.MUSIC~="*NOCHANGE*" then    
    PushMusic()
    CSay("Music! "..sval(CombatData.MUSIC))
    Music(CombatData.MUSIC)

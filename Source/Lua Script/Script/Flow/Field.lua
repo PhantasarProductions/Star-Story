@@ -382,7 +382,13 @@ for i,v in ipairs(foe.Enemies) do
     Var.D("$FOE_"  ..i,v.foe)
     Var.D("%FOELV_"..i,v.level)
     end
+-- --[[ Debugging. Music routine claims to have receive a nil value (which is not possible no matter how you explain things, but still it reports it, so let's see what we got here.       
+for k in IVARS() do
+    CSay(k.." = "..Var.C(k))  end 
+    end
+--]]     
 -- All the shit defined so let combat commence.    
+
 StartCombat()
 end
 
