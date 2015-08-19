@@ -102,6 +102,7 @@ if Audio.Playing("MUSIC")~=0 then
    end 
 end
 
+--[[
 -- PushMusic and PullMusic were most of all used by the battle engine.
 -- Its names are based on the assembly language :)
 function PushMusic()
@@ -120,5 +121,5 @@ PushedMusic[PushedMusicNr] = nil
 PushedMusicNr = PushedMusicNr - 1
 TrueMusic(PM)
 end
-
+]]
 Console.Write("Music routines loaded!",255,255,255)
