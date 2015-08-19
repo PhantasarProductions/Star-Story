@@ -386,7 +386,7 @@ for i,v in ipairs(foe.Enemies) do
     end
 -- Remove the foe from the field
 if not foe.me then -- This routine was needed due to an old bug. It may not serve much purpose in the main game.
-   for k,v in FieldFoes do if v==foe then foe.me=k end end
+   for k,v in pairs(FieldFoes) do if v==foe then foe.me=k end end
    end
 FieldFoes[foe.me] = nil
 Maps.Obj.Kill(foe.Tag)    
