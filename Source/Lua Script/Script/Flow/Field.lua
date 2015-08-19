@@ -262,6 +262,7 @@ for obj in KthuraEach() do
           CWrite("  = Rejected. Not meant for this skill level",255,0,0)
           FieldFoes[obj.Tag] = nil
          else
+          foe.Oripos = { X = obj.X, Y = obj.Y }
           foe.Actor = obj.Tag .. " FoeActor"
           foe.Tag = foe.Actor
           CSay("  = Spawning actor")
@@ -313,6 +314,19 @@ for obj in KthuraEach() do
        end
     end
 end 
+
+function ResetFoePositions()
+local k,foe,obj
+for k,foe in spairs(FieldFoes) do
+    if not foe.OriPos then
+      CSay("WARNING! No OriPos set for foe: "..k)
+      else
+      obj = Actors.Actor(foe.Tag)
+      obj.X = foe.OriPos.X
+      obj.Y = foe.OriPos.Y
+      end
+    end
+end
 
 -- @IF *DEVELOPMENT
 function ToggleFoeRadius()

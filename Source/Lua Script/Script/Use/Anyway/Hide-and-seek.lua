@@ -54,6 +54,7 @@ Var.D("$MAP.MAPSHOW.LASTREQUEST",join(arg,","))
 Var.D("$MAP.MAPSHOW.LASTALWAYSSHOW",serialize("ret",alwaysshow))
 local i,a
 for i,a in ipairs(alwaysshow) do Maps.ShowObject(a) end
+if ResetFoePositions then ResetFoePositions() else MS.Run("FIELD","ResetFoePositions") end
 end
 
 function RedoMapShow() -- This function has only been put in place for the LoadGame sequence to make sure the request of the last MapShow is properly followed if it was in fact used at all since the last loadmap.
