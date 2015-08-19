@@ -154,11 +154,12 @@ End Function
 
 Function LAURABYE()
 GALE_Sys.ByeExecute
+DeleteFile Sessionfile
 End Function
 
 Function InitClosure()
 ConsoleWrite "Setting up closure statements..."
-If JCR_Exists(JCR,"Script/System/Bye.lua") GALE_SYS.AddByeScript("Script/System/Bye.lua")
+If JCR_Exists(JCR,"Script/System/Bye.lua") GALE_Sys.AddByeScript("Script/System/Bye.lua")
 'Notify "closure setting!" ' debug line
 AddByeFunction LAURABYE
 End Function

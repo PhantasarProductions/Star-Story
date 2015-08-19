@@ -75,3 +75,6 @@ Global CurrentFlow$
 Global DevVersion = False
 Global LastConsoleCommand$
 Global ConsoleScript:TLua
+
+' Session
+Global SessionFile$

@@ -81,6 +81,9 @@ Swapdir = Dirry(AppSupportdir+"/"+codename+"/Swap")
 CMapdir = Swapdir + "/Map Changes"
 ' Savedir
 SaveDir = Dirry(AppSupportdir+"/"+codename+"/Saved Games")
+' Session
+Sessionfile = Appsupportdir+"/"+codename+"/Session.txt"
+SaveString "LAURA II game "+codename+" is now in session",SessionFIle
 CreateDir SaveDir,2
 ' A few default variable definitions
 Local s = startup.C("Skill").ToInt()

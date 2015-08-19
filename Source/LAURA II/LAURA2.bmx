@@ -179,6 +179,7 @@ Incbin 	"inc/api/EmptyMapScript.lua"
 Include     "inc/api/Maps.bmx"
 Include 	"inc/api/Actors.bmx"
 Include	"inc/api/LAURA.bmx"
+Include     "inc/api/Effects.bmx"
 
 StartUpFile ' Must be called BEFORE the games goes into graphics mode as it's also possible we are only informing about the version.
 Init
