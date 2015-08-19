@@ -420,7 +420,7 @@ for obj in KthuraEach("Actor") do
           AS = function() -- Altijd Stilstaan
                end     
        })[foe.Go] or function() Sys.Error("Unknown go code for foe #"..obj.IdNum,"Tag,"..obj.Tag..";Go,"..foe.Go) end)() 
-       if Distance(player.X,player.Y,enemy.X,enemy.Y)<=16 then
+       if Distance(player.X,player.Y,foe.X,foe.Y)<=16 then
           StartEncounter(foe)
           end
        end
