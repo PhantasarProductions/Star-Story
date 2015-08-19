@@ -262,7 +262,7 @@ for obj in KthuraEach() do
           CWrite("  = Rejected. Not meant for this skill level",255,0,0)
           FieldFoes[obj.Tag] = nil
          else
-          foe.Oripos = { X = obj.X, Y = obj.Y }
+          foe.OriPos = { X = obj.X, Y = obj.Y }
           foe.Actor = obj.Tag .. " FoeActor"
           foe.Tag = foe.Actor
           CSay("  = Spawning actor")
@@ -358,6 +358,31 @@ local enemy  = Actors.Actor(foe.Tag)
 return Distance(player.X,player.Y,enemy.X,enemy.Y)<=foe.radius
 end
 
+function GetEncTracks()
+local f
+local ret = {}
+if not musicavailable then return {"NOMUSIC.OGG"} end
+for f in iJCR6Dir() do
+    if prefixed(upper(f),"MUSIC/ENCOUNTER/") then table.insert(ret,f) end 
+    end 
+end
+
+function StartEncounter(foe)
+FX.FallDown("PARTY","ShowParty")
+local k,v,i
+for k in IVARS() do
+    if prefixed(k,"$COMBAT.") or prefixed(k,"%COMBAT.") or prefixed("&COMBAT.") then Var.Clear(k) end 
+    end
+Var.D("$COMBAT.BACKGROUND",arena)
+encmusic = encmusic or GetEncTracks()    
+if Maps.GetData("AltEncounterMusic")=="" then Var.D("$COMBAT.MUSIC",Maps.GetData("AltEncounterMusic")) else Var.D("$COMBAT.Music",encmusic[rand(1,#encmusic)]) end
+for i,v in ipairs(foe.Enemies) do
+    Var.D("$FOE_"  ..i,v.foe)
+    Var.D("%FOELV_"..i,v.level)
+    end
+Var.D("$COMBAT.FO")
+StartCombat()
+end
 
 function ControlFoes()
 local foe
@@ -392,6 +417,9 @@ for obj in KthuraEach("Actor") do
           AS = function() -- Altijd Stilstaan
                end     
        })[foe.Go] or function() Sys.Error("Unknown go code for foe #"..obj.IdNum,"Tag,"..obj.Tag..";Go,"..foe.Go) end)() 
+       if Distance(player.X,player.Y,enemy.X,enemy.Y)<=16 then
+          StartEncounter(foe)
+          end
        end
     end
 end
