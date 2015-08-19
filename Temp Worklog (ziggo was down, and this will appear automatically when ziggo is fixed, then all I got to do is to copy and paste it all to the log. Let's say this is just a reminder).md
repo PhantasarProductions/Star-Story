@@ -10,3 +10,9 @@ Another temp worklog, as long as Ziggo is down.
 - ISSUE: Put on an 'ignore internet' feature for loadgame.
 - FIXED: Field encounters always had an empty battle. That is now fixed
 - BUG: Returning to field music always comes to a claim about a nil value. The routines the nil value is extracted from is not able to produce such a value so this is a bit odd.
+- BUG: Stuff loaded by the map during a loadgame is suddenly classed "not loaded". Some variables are also not working the way they should from loadgame. 
+
+
+
+
+

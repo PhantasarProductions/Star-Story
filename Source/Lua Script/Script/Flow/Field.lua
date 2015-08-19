@@ -374,7 +374,10 @@ FX.FallDown("PARTY","ShowParty")
 local k,v,i
 -- Destroy all old shit we got
 for k in IVARS() do
-    if prefixed(k,"$COMBAT.") or prefixed(k,"%COMBAT.") or prefixed("&COMBAT.") then Var.Clear(k) end 
+    if prefixed(k,"$COMBAT.") or prefixed(k,"%COMBAT.") or prefixed("&COMBAT.") then 
+       Var.Clear(k)
+       CSay("Destroyed: "..k) 
+       end 
     end
 -- Let's now define the new shit we got    
 Var.D("$COMBAT.BACKGROUND",arena)
