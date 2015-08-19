@@ -228,6 +228,7 @@ GetAch()
 -- Music
 if CombatData.MUSIC and CombatData.MUSIC~="*NOCHANGE*" then    
    PushMusic()
+   CSay("Music!")
    Music(CombatData.MUSIC)
    end
 end
