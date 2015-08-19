@@ -365,7 +365,8 @@ local ret = {}
 if not musicavailable then return {"NOMUSIC.OGG"} end
 for f in iJCR6Dir() do
     if prefixed(upper(f),"MUSIC/ENCOUNTER/") then table.insert(ret,f) end 
-    end 
+    end
+return ret
 end
 
 function StartEncounter(foe)
