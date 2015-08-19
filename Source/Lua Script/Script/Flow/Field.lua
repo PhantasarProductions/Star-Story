@@ -255,6 +255,7 @@ for obj in KthuraEach() do
        CSay("  = Process: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind)
        FieldFoes[obj.Tag] = {  }       
        foe = FieldFoes[obj.Tag]
+       foe.me = obj.Tag
        foe.Work = right(trim(obj.Kind),3)
        foe.Go = left(foe.Work,2)
        foe.Skill = Sys.Val(right(foe.Work,1))     
@@ -377,18 +378,23 @@ for k in IVARS() do
 -- Let's now define the new shit we got    
 Var.D("$COMBAT.BACKGROUND",arena)
 encmusic = encmusic or GetEncTracks()    
-if Maps.GetData("AltEncounterMusic")=="" then Var.D("$COMBAT.MUSIC",Maps.GetData("AltEncounterMusic")) else Var.D("$COMBAT.MUSIC",encmusic[rand(1,#encmusic)]) end
+if Maps.GetData("AltEncounterMusic")~="" then Var.D("$COMBAT.MUSIC",Maps.GetData("AltEncounterMusic")) else Var.D("$COMBAT.MUSIC",encmusic[rand(1,#encmusic)]) end
 for i,v in ipairs(foe.Enemies) do
     Var.D("$FOE_"  ..i,v.foe)
     Var.D("%FOELV_"..i,v.level)
     end
+-- Remove the foe from the field
+if not foe.me then -- This routine was needed due to an old bug. It may not serve much purpose in the main game.
+   for k,v in FieldFoes do if v==foe then foe.me=k end end
+   end
+FieldFoes[foe.me] = nil
+Maps.Obj.Kill(foe.Tag)    
 -- --[[ Debugging. Music routine claims to have receive a nil value (which is not possible no matter how you explain things, but still it reports it, so let's see what we got here.       
 for k in IVARS() do
     CSay(k.." = "..Var.C(k))  
     end
 --]]     
 -- All the shit defined so let combat commence.    
-
 StartCombat()
 end
 
