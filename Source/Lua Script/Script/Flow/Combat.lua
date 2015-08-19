@@ -203,7 +203,7 @@ for k,v in spairs(CombatData) do
        Fighters.Foe[FoeCount] = {
                Tag = "FOE_"..FoeCount,
                File = v,
-               Level = CombatData["LVFOE"..k] or rand(CombatData.MINLVL,CombatData.MAXLVL),
+               Level = CombatData["LVFOE"..right(k,len(k)-3)] or rand(CombatData.MINLVL,CombatData.MAXLVL),
                Letter = Str.Char(64 + FoeCount),
                x = fx,
                y = fy
