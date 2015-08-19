@@ -73,11 +73,12 @@ if AltMusic and AltMusic[upper(currentsong)] then
 if song then Audio.Free(song) end
 Console.Write("Loading music: "..sval(currentsong),255,255,0)
 local rqsong = currentsong
+if not prefixed(upper(rqsong),"MUSIC/") then rqsong = "Music/"..rqsong end
 if Str.Upper(Str.Right(rqsong,4))~=".OGG" then rqsong = rqsong .. ".ogg"; end 
 if noloop then
-   song = Audio.Load("Music/"..rqsong)
+   song = Audio.Load(rqsong)
    else
-   song = Audio.LoadLoop("Music/"..rqsong)
+   song = Audio.LoadLoop(rqsong)
    end
 end
 
