@@ -203,7 +203,7 @@ local minenemies = {1,2,3}
 local maxenemies = {3,6,9}
 local hilevel,diflevel
 local myleveltotal,partymembers,ptag
-local enemiesmain 
+local enemiesmain = Maps.GetData("Foes")
 if (not enemiesmain) or enemiesmain=="" then return CSay("No enemy data found in this map") end
 local enemymainlist = mysplit(enemiesmain,";")
 local enemies = {}
@@ -215,7 +215,7 @@ for es in each(enemymainlist) do
         table.insert(enemies,ea[1])
         end
     end 
-local arena = Maps.GetData("Arena")
+arena = Maps.GetData("Arena")
 if not suffixed(upper(arena),".PNG") then arena = arena .. ".png" end
 -- Make sure there are no foes in the field
 CSay("Searching for existing foes")
