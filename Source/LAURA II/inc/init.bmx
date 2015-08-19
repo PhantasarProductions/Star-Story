@@ -154,7 +154,7 @@ End Function
 
 Function LAURABYE()
 GALE_Sys.ByeExecute
-DeleteFile Sessionfile
+DeleteFile Dirry(Sessionfile)
 End Function
 
 Function InitClosure()

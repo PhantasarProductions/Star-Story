@@ -82,7 +82,8 @@ CMapdir = Swapdir + "/Map Changes"
 ' Savedir
 SaveDir = Dirry(AppSupportdir+"/"+codename+"/Saved Games")
 ' Session
-Sessionfile = Appsupportdir+"/"+codename+"/Session.txt"
+Sessionfile = Dirry(Appsupportdir+"/"+codename+"/Session.txt")
+Print "Writing: "+Sessionfile
 SaveString "LAURA II game "+codename+" is now in session",SessionFIle
 CreateDir SaveDir,2
 ' A few default variable definitions
