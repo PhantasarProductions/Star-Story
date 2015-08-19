@@ -114,6 +114,11 @@ LauraGamevars = LoadStringMap(BD,"LAURA/Vars")
 VarReg LauraGameVars ' We need to register this again, or the game will use an empty map, this empty map will now be destroyed by the garbage collector.
 ' Party
 RPGLoad BD,"Party"
+' Saved Lua Variables
+ClearMap GALE_MapMSSavedVars()
+For Local entry$=EachIn EntryList(BD)
+	If Left(Entry,8)="MS_SAVE/" MapInsert GALE_MapMSSavedVars(),Right(entry,Len(entry)-8),JCR_LoadString(bd,entry)
+	Next
 ' System
 For Local line$=EachIn JCR_ListFile(BD,"LAURA/System")
 	If line
@@ -123,7 +128,8 @@ For Local line$=EachIn JCR_ListFile(BD,"LAURA/System")
 		Select ls[0]
 			Case "FullScreen"	graphicsfullscreen=ls[1].toint()
 			Case "Flow"		currentflow = ls[1]
-			Case "Maps.File"	MapFIle = ls[1]
+			Case "Maps.File"	MapFIle = ls[1]; LAURA2MAPS.Load MapFile 
+
 			Case "Maps.Cam.X"	LAURA2MAPS.CamX = ls[1].toint()
 			Case "Maps.Cam.Y" LAURA2MAPS.CAMY = ls[1].toint()
 			Case "DeleteMe"	DeleteWhenLoaded = ls[1].tolower()="true"
@@ -134,13 +140,6 @@ For Local line$=EachIn JCR_ListFile(BD,"LAURA/System")
 			End Select
 		EndIf
 	Next
-' Saved Lua Variables
-ClearMap GALE_MapMSSavedVars()
-For Local entry$=EachIn EntryList(BD)
-	If Left(Entry,8)="MS_SAVE/" MapInsert GALE_MapMSSavedVars(),Right(entry,Len(entry)-8),JCR_LoadString(bd,entry)
-	Next
-' Load the map
-LAURA2MAPS.Load MapFile ' This order is required or the saved variables inside the required scripts will not be properly picked up.	
 ' Actors
 Map.RemoveActors
 Local A:TKthuraActor
