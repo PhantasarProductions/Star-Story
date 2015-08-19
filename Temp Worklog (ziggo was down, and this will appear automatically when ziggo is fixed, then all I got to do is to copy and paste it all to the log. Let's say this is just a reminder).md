@@ -11,6 +11,7 @@ Another temp worklog, as long as Ziggo is down.
 - FIXED: Field encounters always had an empty battle. That is now fixed
 - BUG: Returning to field music always comes to a claim about a nil value. The routines the nil value is extracted from is not able to produce such a value so this is a bit odd.
 - BUG: Stuff loaded by the map during a loadgame is suddenly classed "not loaded". Some variables are also not working the way they should from loadgame. 
+- ENHANCEMENT: LAURA II now supports skipping GameJolt login regardless of settings. I only need to adapt the launcher for this setup.
 
 
 
