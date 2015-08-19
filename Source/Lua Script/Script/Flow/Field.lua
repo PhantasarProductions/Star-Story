@@ -203,6 +203,20 @@ local minenemies = {1,2,3}
 local maxenemies = {3,6,9}
 local hilevel,diflevel
 local myleveltotal,partymembers,ptag
+local enemiesmain 
+if (not enemiesmain) or enemiesmain=="" then return CSay("No enemy data found in this map") end
+local enemymainlist = mysplit(enemiesmain,";")
+local enemies = {}
+local es,ea
+for es in each(enemymainlist) do
+    ea = mysplit(es,",")
+    ea[2] = Sys.Val(ea[2] or "1")
+    for ak=1,ea[2] do
+        table.insert(enemies,ea[1])
+        end
+    end 
+local arena = Maps.GetData("Arena")
+if not suffixed(upper(arena),".PNG") then arena = arena .. ".png" end
 -- Make sure there are no foes in the field
 CSay("Searching for existing foes")
 for obj in KthuraEach("Actor") do
@@ -260,7 +274,8 @@ for obj in KthuraEach() do
           for ak=1,num do
               foe.Enemies[ak] = 
                 {
-                    level = rand(lvrange[1],lvrange[2])
+                    level = rand(lvrange[1],lvrange[2]),
+                    foe   = enemies[rand(1,#enemies)]
                 }
               if hilevel<foe.Enemies[ak].level then hilevel=foe.Enemies[ak].level end
               end
@@ -270,25 +285,25 @@ for obj in KthuraEach() do
              R = 0
              G = 255
              B = 0
-             foe.radius = 100
+             foe.radius = 50
              CSay("  = Too Easy")
           elseif diflevel<=0 then
              R = 180
              G = 255
              B = 0
-             foe.radius = 250
+             foe.radius = 150
              CSay("  = Easy")
           elseif diflevel<10 then
              R = 255
              G = 180
              B = 0
-             foe.radius = 500
+             foe.radius = 300
              CSay("  = Hard")
           else
              R = 255
              G = 0
              B = 0
-             foe.radius = 1000
+             foe.radius = 600
              CSay("  = Too Hard")
              end   
           CWrite("  = Adjusting color of object "..Maps.Obj.MyObject.Tag.."  to ("..R..","..G..","..B..")",R,G,B)   
