@@ -70,7 +70,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	GetUsers()
 	oldminute = Minute()
 	made = True
-	IgnoreGameJolt:TGadget = CreateButton("Ignore GameJolt",0,CH-25,250,25,Button_ok)
+	IgnoreGameJolt:TGadget = CreateButton("Ignore GameJolt",0,CH-25,250,25,panel,Button_ok)
 	End Method
 	
 	Method GetUsers(SUSER$="",SFILE$="")
