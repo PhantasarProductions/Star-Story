@@ -295,3 +295,7 @@ end
 
 function LISTFOES() 
 FOELIST() end
+
+function FALLDOWN()
+FX.FallDown("PARTY","ShowParty")
+end
