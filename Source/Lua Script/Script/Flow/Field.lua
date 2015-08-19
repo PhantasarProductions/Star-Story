@@ -381,8 +381,8 @@ Var.D("$COMBAT.BACKGROUND",arena)
 encmusic = encmusic or GetEncTracks()    
 if Maps.GetData("AltEncounterMusic")~="" then Var.D("$COMBAT.MUSIC",Maps.GetData("AltEncounterMusic")) else Var.D("$COMBAT.MUSIC",encmusic[rand(1,#encmusic)]) end
 for i,v in ipairs(foe.Enemies) do
-    Var.D("$FOE"  ..i,v.foe)
-    Var.D("%LVFOE"..i,v.level)
+    Var.D("$COMBAT.FOE"  ..i,v.foe)
+    Var.D("%COMBAT.LVFOE"..i,v.level)
     end
 -- Remove the foe from the field
 if not foe.me then -- This routine was needed due to an old bug. It may not serve much purpose in the main game.
