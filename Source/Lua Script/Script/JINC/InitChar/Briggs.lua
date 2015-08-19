@@ -60,3 +60,5 @@ RPGStat.DefStat("Briggs","SR_BASE_Block",90/skill)
 RPGStat.DefStat("Briggs","SR_BASE_Death",90/skill)
 RPGStat.DefStat("Briggs","SR_BASE_Damned",90/(skill))
 RPGChar.DefStat("Briggs","AMMO_BASE",8)
+
+RPGChar.ScriptStat("Briggs","BASE_Agility","Script/CharStats/Briggs.lua","Briggs_Agility")

@@ -3,6 +3,7 @@
 ## Demo Release
 
 1. Script/CharStats/AutoUse.lua
+1. Script/CharStats/Briggs.lua
 1. Script/CharStats/General.lua
 1. Script/CharStats/Wendicka.lua
 1. Script/Flow/Achievements.lsv
@@ -103,4 +104,4 @@
 
 
 
-### Last updated: Wed 19 August 2015; 23:58:49 CET
+### Last updated: Thu 20 August 2015; 01:22:48 CET
