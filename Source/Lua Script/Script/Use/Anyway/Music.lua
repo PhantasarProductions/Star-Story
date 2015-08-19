@@ -35,6 +35,7 @@ end
 
 function PushMusic()
 local pushidx = CVV("%PUSHEDSONGS") + 1
+MS.LN_Run("MUSIC","Script/SubRoutines/TrueMusic.lua","GetCurrentSong","$CURRENTSONG")
 Var.D("%PUSHEDSONGS",pushidx)
 Var.D("$PUSHEDSONGS["..pushidx.."]",CVV("$CURRENTSONG"))
 CSay("Pushed: $PUSHEDSONGS["..pushidx.."]",CVV("$CURRENTSONG"))

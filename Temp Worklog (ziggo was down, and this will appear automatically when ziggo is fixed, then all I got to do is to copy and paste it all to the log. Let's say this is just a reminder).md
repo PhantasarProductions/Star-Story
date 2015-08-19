@@ -8,3 +8,5 @@ Another temp worklog, as long as Ziggo is down.
 - FIXED: Foe reset ignore bug fixed (won't affect older savegames untill new dungeon is loaded, once that's done, the reset will work)
 - FIXED: Several Foe/Player detection errors (leading to crashes) fixed.
 - ISSUE: Put on an 'ignore internet' feature for loadgame.
+- FIXED: Field encounters always had an empty battle. That is now fixed
+- BUG: Returning to field music always comes to a claim about a nil value. The routines the nil value is extracted from is not able to produce such a value so this is a bit odd.

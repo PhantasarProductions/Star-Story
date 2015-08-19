@@ -65,6 +65,10 @@ if true then -- config.music or MainMenuScript then
 	end
 end
 
+function GetCurrentSong(vn)
+Var.D(vn or "$CURRENTSONG",currentsong)
+end
+
 function LoadMusic(noloop)
 if AltMusic and AltMusic[upper(currentsong)] then
    Console.Write("Redirection script has been found for music: "..currentsong,255,180,0)
