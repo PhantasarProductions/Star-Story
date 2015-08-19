@@ -13,9 +13,10 @@ Another temp worklog, as long as Ziggo is down.
 - BUG: Stuff loaded by the map during a loadgame is suddenly classed "not loaded". Some variables are also not working the way they should from loadgame. 
 - ENHANCEMENT: LAURA II now supports skipping GameJolt login regardless of settings. I only need to adapt the launcher for this setup.
 - FIXED: The two bugs above came forth due to a misformulated boolean expression causing all system vars to get deleted. Well this is fixed.
-- TO DO: Balance Briggs more properly with the girls. The game is not fun this way, and even though Briggs is a guest, the opening dungeon is the most important one.
+- (TO DO: Balance Briggs more properly with the girls. The game is not fun this way, and even though Briggs is a guest, the opening dungeon is the most important one.)
 - ENHANCEMENT: And the launcher is now also compatible with the skip GameJolt setup
-
+- NERF: Briggs agility is now tied to the agility of the girls, he's always faster than them, however not as extreme as it was before.
+- FIXED: Duplicate enemy spot fixed (caused some very funny effects)
 
 
 
