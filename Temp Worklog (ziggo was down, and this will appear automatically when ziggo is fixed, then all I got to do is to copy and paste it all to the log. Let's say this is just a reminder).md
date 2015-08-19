@@ -17,6 +17,7 @@ Another temp worklog, as long as Ziggo is down.
 - ENHANCEMENT: And the launcher is now also compatible with the skip GameJolt setup
 - NERF: Briggs agility is now tied to the agility of the girls, he's always faster than them, however not as extreme as it was before.
 - FIXED: Duplicate enemy spot fixed (caused some very funny effects)
+- And now we gotta wait till Ziggo works again! :(
 
 
 
