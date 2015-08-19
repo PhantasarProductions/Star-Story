@@ -71,7 +71,7 @@ if AltMusic and AltMusic[upper(currentsong)] then
    currentsong = AltMusic[upper(currentsong)]()
    end
 if song then Audio.Free(song) end
-Console.Write("Loading music: "..currentsong,255,255,0)
+Console.Write("Loading music: "..sval(currentsong),255,255,0)
 local rqsong = currentsong
 if Str.Upper(Str.Right(rqsong,4))~=".OGG" then rqsong = rqsong .. ".ogg"; end 
 if noloop then
