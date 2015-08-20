@@ -81,6 +81,10 @@ Actors.StopWalking("ActBriggs")
 Actors.StopMoving("ActWendicka")
 Actors.StopMoving("ActCrystal")
 Actors.StopMoving("ActBriggs")
+-- Does this "fix" our bug???
+Actors.RenewActor("ActWendicka")
+Actors.RenewActor("ActCrystal")
+Actors.RenewActor("ActBrigs")
 end
 
 
