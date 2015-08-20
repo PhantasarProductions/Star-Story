@@ -66,6 +66,9 @@ end
 function Trap(exitpoint,mapshowlabels)
 local exit = Maps.Obj.Obj(exitpoint)
 if not exit then Sys.Error("Cannot move to "..sval(exitpoint)) end
+Actors.StopWalking("ActWendicka")
+Actors.StopWalking("ActCrystal")
+Actors.StopWalking("ActBriggs")
 Actors.Actor("ActWendicka").X = exit.X
 Actors.Actor("ActWendicka").Y = exit.Y
 Actors.Actor("ActCrystal" ).X = exit.X
