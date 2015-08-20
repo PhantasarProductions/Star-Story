@@ -116,7 +116,7 @@ ZA_Enter("TutEnemy",TutEnemy)
 ZA_Enter("Verdieping1",function() MapShow("GreatHall-FirstFloor") end)
 ZA_Enter("Kantoor", function() MapShow("GreatHall-FirstFloor","Kantoor") end)
 ZA_Enter("UPto1",function() Trap("U_Verdieping1","GreatHall-FirstFloor") end)
-ZA_Enter("DownTo0",function() Trap("BeganeGrond","GreatHall") end)
+ZA_Enter("DownTo0",function() Trap("BeganeGrond","GreatHall"); EnterGreatHall() end)
 -- ZA_Enter("EnterSave",EnterEntrance)
 AddClickable("SAVE1")
 alwaysshow = {"ActWendicka","ActCrystal","ActBriggs"}
