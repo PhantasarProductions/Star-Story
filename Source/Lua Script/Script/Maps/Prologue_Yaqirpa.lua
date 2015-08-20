@@ -64,8 +64,14 @@ end
 
 
 function Trap(exitpoint,mapshowlabels)
-
-
+local exit = Maps.Obj.Obj(exitpoint)
+if not exit then Sys.Error("Cannot move to "..sval(exitpoint)) end
+Actors.Actor("ActWendicka").X = exit.X
+Actors.Actor("ActWendicka").Y = exit.Y
+Actors.Actor("ActCrystal" ).X = exit.X
+Actors.Actor("ActCrystal" ).Y = exit.Y
+Actors.Actor("ActBriggs"  ).X = exit.X
+Actors.Actor("ActBriggs"  ).Y = exit.Y
 end
 
 
@@ -96,6 +102,8 @@ ZA_Enter("Entrance_Zone",EnterEntrance)
 ZA_Enter("TutEnemy",TutEnemy)
 ZA_Enter("Verdieping1",function() MapShow("GreatHall-Floor1") end)
 ZA_Enter("Kantoor", function() MapShow("GreatHall-Floor1","Kantoor") end)
+ZA_Enter("UPto1",function() Trap("U_Verdieping1","GreatHall-Floor1") end)
+ZA_Enter("DownTo0",function() Trap("BeganeGrond","GreatHall") end)
 -- ZA_Enter("EnterSave",EnterEntrance)
 AddClickable("SAVE1")
 alwaysshow = {"ActWendicka","ActCrystal","ActBriggs"}
