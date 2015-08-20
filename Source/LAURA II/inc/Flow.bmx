@@ -120,7 +120,7 @@ Select cmd
 			EndIf
 		VarDef Para[0],Para[1]			
 	Case "HELP"
-		For Local LCMD$=EachIn ConsoleScripts.Functions
+		For Local LCMD$=EachIn ConsoleScript.Functions
 			ConsoleWrite LCMD
 			Next
 	Case "BYE","EXIT","QUIT"
