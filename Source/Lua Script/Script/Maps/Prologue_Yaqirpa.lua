@@ -62,6 +62,13 @@ if not Done("&DONE.TUT.YAQIRPA.Enemy") then
    end
 end
 
+
+function Trap(exitpoint,mapshowlabels)
+
+end
+
+
+
 function SaveSpot()
 -- Mini("Savespot reached!")
 GotoSave()
@@ -86,6 +93,8 @@ ZA_Enter("EnterSave",EnterSave)
 ZA_Enter("ToHallS",EnterGreatHall)
 ZA_Enter("Entrance_Zone",EnterEntrance)
 ZA_Enter("TutEnemy",TutEnemy)
+ZA_Enter("Verdieping1",function() MapShow("GreatHall-Floor1") end)
+ZA_Enter("Kantoor", function() MapShow("GreatHall-Floor1","Kantoor") end)
 -- ZA_Enter("EnterSave",EnterEntrance)
 AddClickable("SAVE1")
 alwaysshow = {"ActWendicka","ActCrystal","ActBriggs"}
