@@ -75,6 +75,12 @@ Actors.Actor("ActCrystal" ).X = exit.X
 Actors.Actor("ActCrystal" ).Y = exit.Y
 Actors.Actor("ActBriggs"  ).X = exit.X
 Actors.Actor("ActBriggs"  ).Y = exit.Y
+Actors.StopWalking("ActWendicka")
+Actors.StopWalking("ActCrystal")
+Actors.StopWalking("ActBriggs")
+Actors.StopMoving("ActWendicka")
+Actors.StopMoving("ActCrystal")
+Actors.StopMoving("ActBriggs")
 end
 
 
