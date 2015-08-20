@@ -65,6 +65,7 @@ end
 
 function Trap(exitpoint,mapshowlabels)
 
+
 end
 
 
