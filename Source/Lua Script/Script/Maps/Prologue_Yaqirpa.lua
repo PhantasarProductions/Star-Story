@@ -87,7 +87,10 @@ Actors.RenewActor("ActCrystal")
 Actors.RenewActor("ActBriggs")
 end
 
-
+function Kantoor()
+MapShow("GreatHall-FirstFloor","Kantoor")
+MapText("EAVESDROP_ASTRILOPUP_01")
+end
 
 function SaveSpot()
 -- Mini("Savespot reached!")
@@ -114,7 +117,7 @@ ZA_Enter("ToHallS",EnterGreatHall)
 ZA_Enter("Entrance_Zone",EnterEntrance)
 ZA_Enter("TutEnemy",TutEnemy)
 ZA_Enter("Verdieping1",function() MapShow("GreatHall-FirstFloor") end)
-ZA_Enter("Kantoor", function() MapShow("GreatHall-FirstFloor","Kantoor") end)
+ZA_Enter("Kantoor", Kantoor())
 ZA_Enter("UPto1",function() Trap("U_Verdieping1","GreatHall-FirstFloor") end)
 ZA_Enter("DownTo0",function() Trap("BeganeGrond","GreatHall"); EnterGreatHall() end)
 -- ZA_Enter("EnterSave",EnterEntrance)

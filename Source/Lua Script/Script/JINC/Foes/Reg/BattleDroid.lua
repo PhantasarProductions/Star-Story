@@ -10,7 +10,7 @@
 ]]
 
 
--- Version 15.08.03
+-- Version 15.08.21
 
 
 
@@ -18,6 +18,7 @@ Data = {
 	Name = "Battle Droid",
 	Desc = "A simple droid whipped up by the Astrilopups.\nAll it can do is kill.",
 	ImageFile = "Reg/BattleDroid.png",
+	AI = "Default",
 	Stat = {
 		["Strength"] = {15,250},
 		["Defense"] = {10,240},
