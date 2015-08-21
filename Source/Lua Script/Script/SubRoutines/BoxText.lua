@@ -64,6 +64,7 @@ local Processes = {
     ["!"] = function(Rec,DLine) Rec.Header = DLine end,
     ["*"] = function(Rec,DLine) Rec.PicDir = DLine end,
     [":"] = function(Rec,DLine) Rec.PicSpc = DLine end,
+    ["%"] = function(Rec,DLine) Rec.AltTxtFont = DLine end,
     ["#"] = function(Rec,DLine) table.insert(Rec.Lines,DLine) end,
     ["-"] = function() end
     }
@@ -175,10 +176,16 @@ if data.PicRef then
    end
 -- Header
 Red()
+setfont("BoxText")
 Image.DText(data.Header,startx,starty-20)
 -- Text itself
 local ax,ay,y
 LightBlue()
+if data.AltTxtFont then
+   Image.Font(data.AltTxtFont,fonts.BoxText[2])
+   else
+   setfont("BoxText")
+   end
 for ay=1,#data.Lines do
     y = (ay-1)*fh
     if ay<data.SL then
