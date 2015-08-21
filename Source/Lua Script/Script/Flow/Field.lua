@@ -503,7 +503,6 @@ function ListScheduled()
 local ev
 for ev in each(Scheduled) do
     CSay("   "..ev.MS.."."..ev.FN)
-    MS.Run(ev.MS,ev.FN) 
     end
 CSay(" "..#Scheduled.." event(s) listed for execution")    
 end
