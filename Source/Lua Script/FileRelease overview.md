@@ -21,7 +21,9 @@
 1. Script/Init/LoadGame.lua
 1. Script/Init/Start.lua
 1. Script/JINC/Big/Achievements.lua
+1. Script/JINC/Foes/Reg/astrilopup.lua
 1. Script/JINC/Foes/Reg/BattleDroid.lua
+1. Script/JINC/IAA/ABL_FOE_PHOTON.lua
 1. Script/JINC/IAA/ABL_WENDICKA_PROLOGUE_SHOCK.lua
 1. Script/JINC/IAA/ABL_WENDICKA_SHOCK.lua
 1. Script/JINC/IAA/ARM_DART.lua
@@ -104,4 +106,4 @@
 
 
 
-### Last updated: Fri 21 August 2015; 19:14:21 CET
+### Last updated: Fri 21 August 2015; 19:37:41 CET
