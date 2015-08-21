@@ -179,7 +179,7 @@ if data.PicRef then
 Red()
 setfont("BoxText")
 Image.DText(data.Header,startx,starty-20)
-print(serialize("boxtext",data))
+--print(serialize("boxtext",data))
 -- Text itself
 local ax,ay,y
 LightBlue()
@@ -213,7 +213,7 @@ local t = f[tag]
 if not t then Sys.Error("Boxtext file "..file.." has no tag called "..tag) end
 local rec = t[idx]
 if not rec then Sys.Error("Boxtext file "..file.." tag "..tag.." does not have a record #"..idx.." (max is "..#t..")") end
-local sb_data = { Header = rec.Header, PicDir = rec.PicDir, PicSpc = rec.PicSpc, Lines = {}, SL = 1, SP=1 }
+local sb_data = { Header = rec.Header, PicDir = rec.PicDir, PicSpc = rec.PicSpc, Lines = {}, SL = 1, SP=1, AltTxtFont = rec.AltTxtFont }
 local width=700 -- standard width, this can be shortened by the portraits popping with the textbox
 local ak,txt,cline,spline
 local aw,word
