@@ -299,3 +299,7 @@ FOELIST() end
 function FALLDOWN()
 FX.FallDown("PARTY","ShowParty")
 end
+
+function LISTSCHEDULED()
+MS.Run("FIELD","ListScheduled")
+end

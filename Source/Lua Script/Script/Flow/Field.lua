@@ -499,6 +499,14 @@ table.insert(Scheduled,{MS=scr,FN=func})
 CSay("Scheduled: "..scr.."."..func)
 end
 
+function ListScheduled()
+local ev
+for ev in each(Scheduled) do
+    Say("Scheduled For Execution: "..ev.MS.."."..ev.FN)
+    MS.Run(ev.MS,ev.FN) 
+    end
+end
+
 function MAIN_FLOW()
 DrawScreen()
 ScheduledExecution()
