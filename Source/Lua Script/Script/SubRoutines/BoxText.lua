@@ -179,6 +179,7 @@ if data.PicRef then
 Red()
 setfont("BoxText")
 Image.DText(data.Header,startx,starty-20)
+print(serialize("boxtext",data))
 -- Text itself
 local ax,ay,y
 LightBlue()
