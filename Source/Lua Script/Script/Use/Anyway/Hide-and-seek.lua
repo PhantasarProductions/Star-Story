@@ -57,6 +57,7 @@ if ThisIsAMapScript then
    for i,a in ipairs(alwaysshow) do Maps.ShowObject(a) end
    if ResetFoePositions then ResetFoePositions() else MS.Run("FIELD","ResetFoePositions") end
 else
+   CSay("Not called from Map Script so calling it from mapscript artifically")
    MS.Run("MAP","MapShow",join(arg,",")) 
    end
 end
