@@ -220,9 +220,9 @@ local aw,word
 if rec.PicRef then
    width = width - Image.Width(rec.PicRef)   
    end
-if data.AltTxtFont then
-   CSay("Setting font: "..data.AltTxtFont,fonts.BoxText[2])
-   Image.Font(data.AltTxtFont,fonts.BoxText[2])
+if rec.AltTxtFont then
+   CSay("Setting font: "..rec.AltTxtFont,fonts.BoxText[2])
+   Image.Font(data.AltTxtFont,rec.BoxText[2])
    else
    setfont("BoxText")
    end   
