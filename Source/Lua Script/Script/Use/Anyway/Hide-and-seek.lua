@@ -61,6 +61,9 @@ function RedoMapShow() -- This function has only been put in place for the LoadG
 local req = CVVN("$MAP.MAPSHOW.LASTREQUEST")
 local fas = loadstring(CVV("$MAP.MAPSHOW.LASTALWAYSSHOW").."\nreturn ret")
 local tas = alwaysshow
+CSay("Redo Map Show")
+CSay("- Last request = "..sval(req))
+for as in each(fas) do CSay("- Always show: "..as) end
 alwaysshow = fas() or tas
 if req then MapShow(req) end
 alwaysshow = tas
