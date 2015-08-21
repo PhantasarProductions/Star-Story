@@ -96,6 +96,7 @@ for LineNumber,Line in ipairs(crap) do
           -- @CASE   "[scenario]"
              Prefix = left(L,1)
              DLine = right(L,len(L)-1)
+             CSay("ReadLine: "..L+" >> Prefix: "..Prefix)
              if (not WorkRec) and Prefix~="@" and Prefix~="-" then Sys.Error("Trying to assign data, while no boxtext record has yet been created","Line,"..LineNumber) end
              if Prefix=="@" then
                 WorkRec = { Lines = {} }
