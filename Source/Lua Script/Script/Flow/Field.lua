@@ -488,7 +488,7 @@ end
 function ScheduledExecution()
 local ev
 for ev in each(Scheduled) do
-    MS(ev.MS,ev.FN) 
+    MS.Run(ev.MS,ev.FN) 
     end
 Scheduled = {}    
 end
