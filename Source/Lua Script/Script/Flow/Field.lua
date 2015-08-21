@@ -40,6 +40,8 @@ IconMnX = 750 - (#Icons*40)
 IconBack = Image.Load("GFX/FieldIcons/Back.png") 
 IconClicked = nil
 
+Scheduled = {}
+
 IconFunction = 
 {
    Achievements = function()
@@ -483,8 +485,21 @@ DarkText("Save timer: "..sval(EM_Second),10,10)
 -- @FI
 end
 
+function ScheduledExecution()
+local ev
+for ev in each(Scheduled) do
+    MS(ev.MS,ev.FN) 
+    end
+Scheduled = {}    
+end
+
+function Schedule(scr,func)
+table.insert(Scheduled,{MS=scr,FN=func})
+end
+
 function MAIN_FLOW()
 DrawScreen()
+ScheduledExecution()
 Click()
 AutoScroll()
 ZoneAction()

@@ -87,8 +87,15 @@ Actors.RenewActor("ActCrystal")
 Actors.RenewActor("ActBriggs")
 end
 
+function KantoorNaGevecht()
+Maps.Obj.Kill("ASTRILOPUP_A")
+Maps.Obj.Kill("ASTRILOPUP_B")
+MapText("EAVESDROP_ASTRILOPUP_02")
+end
+
 function Kantoor()
 MapShow("GreatHall-FirstFloor","Kantoor")
+if Done("&YAQIRPA.KANTOOR.ASTRILOPUPS") then return end
 Actors.Spawn("ASTRILOPUP_A","GFX/ACTORS/SinglePic/Astrilopup/Astrilopup_E.png","ACTASTRILO_A",1)
 Actors.Spawn("ASTRILOPUP_B","GFX/ACTORS/SinglePic/Astrilopup/Astrilopup_W.png","ACTASTRILO_B",1)
 local gtx=1344
@@ -100,6 +107,15 @@ MS.Run("FIELD","DrawScreen")
 Flip()
 until Maps.CamX==gtx and Maps.CamY==gty
 MapText("EAVESDROP_ASTRILOPUP_01")
+Var.D("$COMBAT.BACKGROUND","GFX/Arena/Yaqirpa.png")
+Var.D("$COMBAT.BEGIN","Default")
+Var.D("$FOE1","Astrilopup")
+Var.D("$FOE2","Astrilopup")
+Var.D("%LVFOE1",rand(1,RPGStat.Stat("Wendicka","Level")+5))
+Var.D("%LVFOE2",rand(1,RPGStat.Stat("Wendicka","Level")+5))
+Var.D("$COMBAT.MUSIC","ENCOUNTER/002.ogg")
+Schedule("MAP","KantoorNaGevecht")
+StartCombat()
 end
 
 function SaveSpot()
