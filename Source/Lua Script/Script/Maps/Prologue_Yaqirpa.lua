@@ -89,8 +89,8 @@ end
 
 function Kantoor()
 MapShow("GreatHall-FirstFloor","Kantoor")
-Actors.Spawn("ASTRILOPUP_A","ACTORS/SinglePic/Astrilopups/Astrilopup_E.png","ACTASTRILO_A",1)
-Actors.Spawn("ASTRILOPUP_B","ACTORS/SinglePic/Astrilopups/Astrilopup_W.png","ACTASTRILO_B",1)
+Actors.Spawn("ASTRILOPUP_A","GFX/ACTORS/SinglePic/Astrilopups/Astrilopup_E.png","ACTASTRILO_A",1)
+Actors.Spawn("ASTRILOPUP_B","GFX/ACTORS/SinglePic/Astrilopups/Astrilopup_W.png","ACTASTRILO_B",1)
 local gtx=1344
 local gty=834
 repeat
