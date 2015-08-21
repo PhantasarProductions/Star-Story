@@ -64,7 +64,7 @@ local Processes = {
     ["!"] = function(Rec,DLine) Rec.Header = DLine end,
     ["*"] = function(Rec,DLine) Rec.PicDir = DLine end,
     [":"] = function(Rec,DLine) Rec.PicSpc = DLine end,
-    ["%"] = function(Rec,DLine) Rec.AltTxtFont = DLine end,
+    ["%"] = function(Rec,DLine) Rec.AltTxtFont = "Font/"..DLine..".ttf"  end,
     ["#"] = function(Rec,DLine) table.insert(Rec.Lines,DLine) end,
     ["-"] = function() end
     }
