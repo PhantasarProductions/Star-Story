@@ -222,7 +222,7 @@ if rec.PicRef then
    end
 if rec.AltTxtFont then
    CSay("Setting font: "..rec.AltTxtFont,fonts.BoxText[2])
-   Image.Font(rec.AltTxtFont,rec.BoxText[2])
+   Image.Font(rec.AltTxtFont,fonts.BoxText[2])
    else
    setfont("BoxText")
    end   
