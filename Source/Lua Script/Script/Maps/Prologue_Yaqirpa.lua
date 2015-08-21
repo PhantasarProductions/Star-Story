@@ -88,6 +88,14 @@ Actors.RenewActor("ActBriggs")
 end
 
 function Kantoor()
+local gtx=1344
+local gty=834
+repeat
+if Maps.CamX<gtx then Maps.CamX=Maps.CamX+1 elseif Maps.CamX>gtx then Maps.CamX=Maps.CamX-1 end
+if Maps.CamY<gty then Maps.CamY=Maps.CamY+1 elseif Maps.CamY>gtx then Maps.CamY=Maps.CamY-1 end
+DrawScreen()
+Flip()
+until Maps.CamX==gtx and Maps.CamY==gty
 MapShow("GreatHall-FirstFloor","Kantoor")
 MapText("EAVESDROP_ASTRILOPUP_01")
 end
