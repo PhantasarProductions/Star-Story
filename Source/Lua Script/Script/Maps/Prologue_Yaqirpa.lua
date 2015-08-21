@@ -107,7 +107,7 @@ MS.Run("FIELD","DrawScreen")
 Flip()
 until Maps.CamX==gtx and Maps.CamY==gty
 MapText("EAVESDROP_ASTRILOPUP_01")
-Var.D("$COMBAT.BACKGROUND","GFX/Arena/Yaqirpa.png")
+Var.D("$COMBAT.BACKGROUND","Yaqirpa")
 Var.D("$COMBAT.BEGIN","Default")
 Var.D("$FOE1","Astrilopup")
 Var.D("$FOE2","Astrilopup")
