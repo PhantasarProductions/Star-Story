@@ -182,6 +182,7 @@ Image.DText(data.Header,startx,starty-20)
 local ax,ay,y
 LightBlue()
 if data.AltTxtFont then
+   CSay("Setting font: "..data.AltTxtFont,fonts.BoxText[2])
    Image.Font(data.AltTxtFont,fonts.BoxText[2])
    else
    setfont("BoxText")
