@@ -75,6 +75,6 @@ if ThisIsAMapScript then
   alwaysshow = tas
 else
    CSay("RedoMapShow: Not called from Map Script so calling it from mapscript artifically")
-   MS.Run("MAP","RedoMapShow",join(arg,","))
+   MS.Run("MAP","RedoMapShow")
    end 
 end
