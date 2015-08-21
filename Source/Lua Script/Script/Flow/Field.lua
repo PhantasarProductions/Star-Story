@@ -502,9 +502,10 @@ end
 function ListScheduled()
 local ev
 for ev in each(Scheduled) do
-    Say("Scheduled For Execution: "..ev.MS.."."..ev.FN)
+    Say("   "..ev.MS.."."..ev.FN)
     MS.Run(ev.MS,ev.FN) 
     end
+CSay(" "..#Scheduled.." event(s) listed for execution")    
 end
 
 function MAIN_FLOW()
