@@ -488,7 +488,7 @@ end
 function ScheduledExecution()
 local ev
 for ev in each(Scheduled) do
-    Say("Scheduled Execution: "..ev.MS.."."..ev.FN)
+    CSay("Scheduled Execution: "..ev.MS.."."..ev.FN)
     MS.Run(ev.MS,ev.FN) 
     end
 Scheduled = {}    
@@ -502,7 +502,7 @@ end
 function ListScheduled()
 local ev
 for ev in each(Scheduled) do
-    Say("   "..ev.MS.."."..ev.FN)
+    CSay("   "..ev.MS.."."..ev.FN)
     MS.Run(ev.MS,ev.FN) 
     end
 CSay(" "..#Scheduled.." event(s) listed for execution")    
