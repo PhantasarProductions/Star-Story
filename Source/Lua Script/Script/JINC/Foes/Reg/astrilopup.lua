@@ -15,8 +15,8 @@
 
 
 Data = {
-	Name = "",
-	Desc = "",
+	Name = "Astrilopup Gunner",
+	Desc = "An Astrilopup with a photon gun.\nBut how did it ever get such a gun?",
 	ImageFile = "Reg/astrilopup.png",
 	AI = "Default",
 	Stat = {

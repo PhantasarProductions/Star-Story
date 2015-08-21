@@ -488,6 +488,7 @@ end
 function ScheduledExecution()
 local ev
 for ev in each(Scheduled) do
+    Say("Scheduled Execution: "..ev.MS.."."..ev.FN)
     MS.Run(ev.MS,ev.FN) 
     end
 Scheduled = {}    
@@ -495,6 +496,7 @@ end
 
 function Schedule(scr,func)
 table.insert(Scheduled,{MS=scr,FN=func})
+CSay("Scheduled: "..scr.."."..func)
 end
 
 function MAIN_FLOW()
