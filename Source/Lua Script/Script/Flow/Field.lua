@@ -30,7 +30,7 @@ Version: 15.07.27
 
 -- @UNDEF EMSAVEDEBUG
 
-cplayer = "PLAYER"
+cplayer = cplayer or "PLAYER"
 scrolling = true
 scrollrange = {}
 
