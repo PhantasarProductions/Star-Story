@@ -88,6 +88,9 @@ Actors.RenewActor("ActBriggs")
 end
 
 function Kantoor()
+MapShow("GreatHall-FirstFloor","Kantoor")
+Actors.Spawn("ASTRILOPUP_A","ACTORS/SinglePic/Astrilopups/Astrilopup_E.png","ACTASTRILO_A",1)
+Actors.Spawn("ASTRILOPUP_B","ACTORS/SinglePic/Astrilopups/Astrilopup_W.png","ACTASTRILO_B",1)
 local gtx=1344
 local gty=834
 repeat
@@ -96,7 +99,6 @@ if Maps.CamY<gty then Maps.CamY=Maps.CamY+1 elseif Maps.CamY>gtx then Maps.CamY=
 MS.Run("FIELD","DrawScreen")
 Flip()
 until Maps.CamX==gtx and Maps.CamY==gty
-MapShow("GreatHall-FirstFloor","Kantoor")
 MapText("EAVESDROP_ASTRILOPUP_01")
 end
 
