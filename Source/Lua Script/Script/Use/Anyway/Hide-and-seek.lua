@@ -45,7 +45,7 @@
 Version: 15.06.27
 
 ]]
-alwaysshow = {"PLAYER"}
+alwaysshow = alwaysshow or {"PLAYER"}
 
 function MapShow(...)
 for i,v in ipairs(arg) do CSay("Show #"..i.." "..v) end CSay("")
