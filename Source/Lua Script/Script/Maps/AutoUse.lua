@@ -30,6 +30,7 @@ Version: 15.06.27
 -- @USEDIR Script/Use/Anyway
 
 
+ThisIsAMapScript = true
 
 -- Load the map scenario if available
 function InitMapText()

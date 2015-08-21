@@ -48,23 +48,31 @@ Version: 15.06.27
 alwaysshow = alwaysshow or {"PLAYER"}
 
 function MapShow(...)
-for i,v in ipairs(arg) do CSay("Show #"..i.." "..v) end CSay("")
-Maps.ShowOnlyLabel(join(arg,","),1)
-Var.D("$MAP.MAPSHOW.LASTREQUEST",join(arg,","))
-Var.D("$MAP.MAPSHOW.LASTALWAYSSHOW",serialize("ret",alwaysshow))
-local i,a
-for i,a in ipairs(alwaysshow) do Maps.ShowObject(a) end
-if ResetFoePositions then ResetFoePositions() else MS.Run("FIELD","ResetFoePositions") end
+if ThisIsAMapScript then
+   for i,v in ipairs(arg) do CSay("Show #"..i.." "..v) end CSay("")
+   Maps.ShowOnlyLabel(join(arg,","),1)
+   Var.D("$MAP.MAPSHOW.LASTREQUEST",join(arg,","))
+   Var.D("$MAP.MAPSHOW.LASTALWAYSSHOW",serialize("ret",alwaysshow))
+   local i,a
+   for i,a in ipairs(alwaysshow) do Maps.ShowObject(a) end
+   if ResetFoePositions then ResetFoePositions() else MS.Run("FIELD","ResetFoePositions") end
+else
+   MS.Run("MAP","MapShow",join(arg,",")) 
+   end
 end
 
 function RedoMapShow() -- This function has only been put in place for the LoadGame sequence to make sure the request of the last MapShow is properly followed if it was in fact used at all since the last loadmap.
-local req = CVVN("$MAP.MAPSHOW.LASTREQUEST")
-local fas = loadstring(CVV("$MAP.MAPSHOW.LASTALWAYSSHOW").."\nreturn ret")
-local tas = alwaysshow
-CSay("Redo Map Show")
-CSay("- Last request = "..sval(req))
-for as in each(fas) do CSay("- Always show: "..as) end
-alwaysshow = fas() or tas
-if req then MapShow(req) end
-alwaysshow = tas
+if ThisIsAMapScript then
+  local req = CVVN("$MAP.MAPSHOW.LASTREQUEST")
+  local fas = loadstring(CVV("$MAP.MAPSHOW.LASTALWAYSSHOW").."\nreturn ret")
+  local tas = alwaysshow
+  CSay("Redo Map Show")
+  CSay("- Last request = "..sval(req))
+  for as in each(fas) do CSay("- Always show: "..as) end
+  alwaysshow = fas() or tas
+  if req then MapShow(req) end
+  alwaysshow = tas
+else
+   MS.Run("MAP","MapShow",join(arg,","))
+   end 
 end
