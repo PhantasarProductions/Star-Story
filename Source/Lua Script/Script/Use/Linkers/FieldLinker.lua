@@ -4,5 +4,5 @@ end
 
 
 Schedule = Schedule or function (scr,func)
-MS.LN_Run("FIELD","Scedule",scr..";"..func) 
+MS.LN_Run("FIELD","Schedule",scr..";"..func) 
 end
