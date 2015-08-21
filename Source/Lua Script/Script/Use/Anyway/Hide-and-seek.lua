@@ -67,10 +67,11 @@ if ThisIsAMapScript then
   local req = CVVN("$MAP.MAPSHOW.LASTREQUEST")
   local fas = loadstring(CVV("$MAP.MAPSHOW.LASTALWAYSSHOW").."\nreturn ret")
   local tas = alwaysshow
+  local as
   CSay("Redo Map Show")
   CSay("- Last request = "..sval(req))
-  for as in each(fas) do CSay("- Always show: "..as) end
   alwaysshow = fas() or tas
+  for as in each(alwaysshow) do CSay("- Always show: "..as) end
   if req then MapShow(req) end
   alwaysshow = tas
 else
