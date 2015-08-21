@@ -220,6 +220,12 @@ local aw,word
 if rec.PicRef then
    width = width - Image.Width(rec.PicRef)   
    end
+if data.AltTxtFont then
+   CSay("Setting font: "..data.AltTxtFont,fonts.BoxText[2])
+   Image.Font(data.AltTxtFont,fonts.BoxText[2])
+   else
+   setfont("BoxText")
+   end   
 for ak,txt in ipairs(rec.Lines) do
     cline = ""
     spline = mysplit(Var.S(txt)," ")
