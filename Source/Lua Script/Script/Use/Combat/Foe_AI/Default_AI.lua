@@ -37,7 +37,7 @@ local myfoe = Fighters.Foe[pos]
 local actlist = Fighters.Foe[pos].Actions
 local ok = false
 local chosenaction
-local acttype,act
+local acttype,act,actsplit
 if (not actlist) or #actlist==0 then DBGSerialize(Fighters.Foe[pos],true) Sys.Error("Foe_AI.Default("..pos.."): No actions defined!") end
 repeat
    if timeout>=10000 then Sys.Error("Foe_AI.Default("..pos.."): Timeout") end
@@ -46,6 +46,6 @@ repeat
    acttype      = actsplit[1]
    act          = actsplit[2]
    timeout      = timeout + 1
-   ok           = (DefaultProcess[acttype] or function() Sys.Error("Foe_AI.Default("..pos.."): Unknown action type "..actsplit.."."..act) end)(myfoe,act,myact)
+   ok           = (DefaultProcess[acttype] or function() DBG_Serialize(actsplit,true) Sys.Error("Foe_AI.Default("..pos.."): Unknown action type "..sval(acttype).."."..sval(act)) end)(myfoe,act,myact)
 until ok
 end 
