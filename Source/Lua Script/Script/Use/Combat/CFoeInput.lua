@@ -47,15 +47,15 @@ Version: 15.07.20
 ]]
 FoeTargetSelector = {
 
-  ["1A"] = function(me,allowdead)
+  ["1A"] = function(me)
+           end,
+  ["1F"] = function(me,allowdead)
            local t = rand(1,3)
            local myhero = Fighters.Hero[t]
            if not myhero then return false,false end
            local mytag = myhero.tag
            if RPGStat.Points(mytag,"HP").Have==0 and (not allowdead) then return false,false end
            return "Hero",t
-           end,
-  ["1F"] = function(me)
            end,
   ["AA"] = function(me)
            end,
