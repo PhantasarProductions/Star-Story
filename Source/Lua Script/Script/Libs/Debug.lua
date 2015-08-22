@@ -39,8 +39,13 @@ for i,v in ipairs(arg) do
 -- @FI
 end
 
-function DBGSerialize(v)
+function DBGSerialize(v,shownow)
 -- -- @IF *DEVELOPMENT
+if shownow then
+   Console.Write("Debug serialize request received, stand by...",0,180,255)
+   Console.Show()
+   Console.Flip()
+   end
 local function dbgmysplit(inputstr, sep)
         if sep == nil then
                 sep = "%s"
@@ -54,6 +59,12 @@ local function dbgmysplit(inputstr, sep)
         end
 local vl = mysplit(serialize("DEBUGCHECK",v),"\n")
 local l,c
-for c,l in ipairs(vl) do Console.Write(string.sub("          "..c,10,-1)..": "..l,180,255,0) end        
+for c,l in ipairs(vl) do 
+    Console.Write(string.sub("          "..c,10,-1)..": "..l,180,255,0)
+    if shownow then
+       Console.Show()
+       Console.Flip()
+       end 
+    end        
 -- @FI        
 end
