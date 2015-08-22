@@ -64,7 +64,7 @@ function GiveItem(ch,item,vault)
    if left ( item,4 )~="ITM_" then return CSay("WARNING! "..item.." may not be an item, or at least not one I can process!") end
    -- First we're gonna look for a socket having the same item, but with enough space to carry another
    for ak=1,InventorySockets do
-       CSay("Spot: "..ak.."; have: "..RPGChar.Stat(ch,"INVAMNT"..ak).." max: "..InventoryMaxStack) -- debug
+       -- CSay("Spot: "..ak.."; have: "..RPGChar.Stat(ch,"INVAMNT"..ak).." max: "..InventoryMaxStack) -- debug
        if item=="ITM_"..RPGChar.Data(ch,"INVITEM"..ak) and RPGChar.Stat(ch,"INVAMNT"..ak)<InventoryMaxStack then spot = spot or ak end
        --CSay("Spot: "..ak.."; have: "..RPGChar.Stat(ch,"INVAMNT"..ak).." max: "..InventoryMaxStack.." spot: "..sval(spot)) -- debug
        end
