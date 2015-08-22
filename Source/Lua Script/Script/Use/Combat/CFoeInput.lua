@@ -45,6 +45,37 @@
 Version: 15.07.20
 
 ]]
+FoeTargetSelector = {
+
+  ["1A"] = function(me,allowdead)
+           local t = rand(1,3)
+           local myhero = Fighters.Hero[t]
+           if not myhero then return false,false end
+           local mytag = myhero.tag
+           if RPGStat.Points(mytag,"HP").Have==0 and (not allowdead) then return false,false end
+           return "Hero",t
+           end,
+  ["1F"] = function(me)
+           end,
+  ["AA"] = function(me)
+           end,
+  ["AF"] = function(me)
+           end,
+  ["OS"] = function(me)
+           local i,v
+           for i,v in pairs(Fighters.Foe) do
+               if v==me then return i end
+               end
+           Sys.Error("FoeTargetSelector.OS: Cannot find myself")    
+           end,                  
+  ["EV"] = function(me) 
+           return true,true -- The EV setting ignores everything anyway, as everybody in combat, friend or foe alike will get hit by the selected move.
+           end           
+}
+
+
 function EnemyInput(pos,tag)
-Fighters.Foe[pos].Gauge = 0
+-- Fighters.Foe[pos].Gauge = 0 -- Original line to prevent crashes when the enemies were still in "IDLE" mode as I was first testing the player moves.
+local myfoe=Fighters.Foe[pos];
+(Foe_AI[myfoe.AI] or function() Sys.Error("Unknown enemy AI setup: "..sval(myfoe.AI)) end)(pos)
 end

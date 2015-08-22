@@ -78,6 +78,12 @@ Foe.ItemDrop = {}
 Foe.ItemSteal = {}
 for ckey,cvalue in ipairs(FoeData.ItemDrop)  do if cvalue.LVL<=Foe.Level then table.insert(Foe.ItemDrop ,cvalue) end end
 for ckey,cvalue in ipairs(FoeData.ItemSteal) do if cvalue.LVL<=Foe.Level then table.insert(Foe.ItemSteal,cvalue) end end
+-- Actions (only needed for the Default AI setting)
+Foe.Actions = {}
+for cvalue in each(FoeData.Acts) do
+    if Foe.Level>=FoeData.ActMinLevel[cvalue] then table.insert(Foe.Actions,cvalue) end -- Only add the move if the level allows it
+    end
+Foe.AI=FoeData.AI    
 -- Load the pictures
 Image.AssignLoad("O"..Foe.Tag,"GFX/Foes/"..FoeData.ImageFile)  
 Image.Negative("O"..Foe.Tag,"N"..Foe.Tag)  

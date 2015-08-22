@@ -92,6 +92,8 @@
 1. Script/Use/Combat/CombatStuffSpecificForStarStory.lua
 1. Script/Use/Combat/CPlayerInput.lua
 1. Script/Use/Combat/CTargetInfo.lua
+1. Script/Use/Combat/Foe_AI/0000000.lua
+1. Script/Use/Combat/Foe_AI/Default_AI.lua
 1. Script/Use/Combat/SpellAni/AAAAAAAAAAAAAAAAAAA.lua
 1. Script/Use/Combat/SpellAni/Shoot.lua
 1. Script/Use/Goto/GoToMenu.lua
@@ -107,4 +109,4 @@
 
 
 
-### Last updated: Fri 21 August 2015; 21:31:14 CET
+### Last updated: Sat 22 August 2015; 17:01:37 CET
