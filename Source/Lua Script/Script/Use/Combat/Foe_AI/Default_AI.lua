@@ -46,6 +46,6 @@ repeat
    acttype      = actsplit[1]
    act          = actsplit[2]
    timeout      = timeout + 1
-   ok           = (DefaultProcess[acttype] or function() DBG_Serialize(actsplit,true) Sys.Error("Foe_AI.Default("..pos.."): Unknown action type "..sval(acttype).."."..sval(act)) end)(myfoe,act,myact)
+   ok           = (DefaultProcess[acttype] or function() DBGSerialize(actsplit,true) Sys.Error("Foe_AI.Default("..pos.."): Unknown action type "..sval(acttype).."."..sval(act)) end)(myfoe,act,myact)
 until ok
 end 
