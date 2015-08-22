@@ -53,7 +53,7 @@ FoeTargetSelector = {
            local t = rand(1,3)
            local myhero = Fighters.Hero[t]
            if not myhero then return false,false end
-           local mytag = myhero.tag
+           local mytag = myhero.Tag
            if RPGStat.Points(mytag,"HP").Have==0 and (not allowdead) then return false,false end
            return "Hero",t
            end,
