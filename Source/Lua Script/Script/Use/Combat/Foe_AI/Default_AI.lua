@@ -34,11 +34,11 @@ Fighters.Foe[pos].Gauge = 10001
 Fighters.Foe[pos].Act = Act.Foe[pos]
 local myact = Act.Foe[pos]
 local myfoe = Fighters.Foe[pos]
-local actlist = Act.Foe[pos].Actions
+local actlist = Fighters.Foe[pos].Actions
 local ok = false
 local chosenaction
 local acttype,act
-if (not actlist) or #actlist==0 then DBGSerialize(Fighters.Foe[pos]) Sys.Error("Foe_AI.Default("..pos.."): No actions defined!") end
+if (not actlist) or #actlist==0 then DBGSerialize(Fighters.Foe[pos],true) Sys.Error("Foe_AI.Default("..pos.."): No actions defined!") end
 repeat
    if timeout>=10000 then Sys.Error("Foe_AI.Default("..pos.."): Timeout") end
    chosenaction = rand(1,#actlist)
