@@ -41,7 +41,7 @@ local acttype,act,actsplit
 if (not actlist) or #actlist==0 then DBGSerialize(Fighters.Foe[pos],true) Sys.Error("Foe_AI.Default("..pos.."): No actions defined!") end
 repeat
    if timeout>=10000 then Sys.Error("Foe_AI.Default("..pos.."): Timeout") end
-   chosenaction = rand(1,#actlist)
+   chosenaction = actlist[rand(1,#actlist)]
    actsplit     = mysplit(chosenaction,".")
    acttype      = actsplit[1]
    act          = actsplit[2]
