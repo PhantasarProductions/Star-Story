@@ -88,6 +88,10 @@ for ak=0,5 do
     end
 end
 
+function NEWPARTY(a,b,c,d,e,f)
+Party(a,b,c,d,e,f)
+end
+
 function CHARPOINTS(...)
 local p = arg
 local ak

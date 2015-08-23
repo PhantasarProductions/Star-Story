@@ -38,6 +38,38 @@
 Version: 15.07.20
 
 ]]
+--[[
 Sys.Error("Wendicka not yet ready")
 
 local f = loadstring(JCR6.LoadString("Script/JINC/InitChar/Share/Wendicka.lua")); f()
+]]
+local ignoreprefixes = {"AMMO"}
+local ignorefullnames = {"Pic","PXM"}
+
+local procedure = { 
+    Stat   = { F = RPGStat.StatFields,   L = RPGStat.LinkStat   },
+    Data   = { F = RPGStat.DataFields,   L = RPGStat.LinkData   },
+    Points = { F = RPGStat.PointsFields, L = RPGStat.LinkPoints }
+    }
+
+local i,v
+local k,d
+local ii,iv
+local fields
+local ok
+for k,d in pairs(procedure) do
+    fields = mysplit(d.F("UniWendicka"),";")
+    for i,v in ipairs(fields) do
+        ok = true
+        for ii,iv in ipairs(ignoreprefixes)  do ok = ok and (not prefixed(v,iv)) end    
+        for ii,iv in ipairs(ignorefullnames) do ok = ok and v~=iv end
+        if ok then
+           CSay("UniWendicka - Wendicka: Linking "..k..": "..v)
+           d.L("UniWendicka","Wendicka",v)
+           end
+        end   
+    end
+
+
+RPGChar.SetData("Wendicka","Pic","GENERAL")
+RPGChar.DefStat("Wendicka","PXM",52)
