@@ -43,6 +43,20 @@ Sys.Error("Wendicka not yet ready")
 
 local f = loadstring(JCR6.LoadString("Script/JINC/InitChar/Share/Wendicka.lua")); f()
 ]]
+
+function mysplit(inputstr, sep) -- I had to copy this, as loadstring includes do not support the compiler directives of GALE.
+        if sep == nil then
+                sep = "%s"
+        end
+        local t={} ; i=1
+        for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
+                t[i] = str
+                i = i + 1
+        end
+        return t
+end
+
+
 local ignoreprefixes = {"AMMO"}
 local ignorefullnames = {"Pic","PXM"}
 
