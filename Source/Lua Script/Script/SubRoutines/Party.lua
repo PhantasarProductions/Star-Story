@@ -127,6 +127,8 @@ RPGChar.Points(ch,"HP").Have = RPGChar.Points(ch,"HP").Maximum
 RPGChar.Points(ch,"AP").Have = 0
 if skill==1 then RPGChar.Points(ch,"AP").Have = RPGChar.Points(ch,"AP").Maximum end
 RPGChar.Points(ch,"AMMO").Have = RPGChar.Points(ch,"AMMO").Maximum 
+-- Learnlist
+RPGChar.CreateList(ch,"LEARN") -- When this list contains any items (ability names), the first one in the list will be learned the next time the character performs a normal attack. This goes for all characters except Briggs and Crystal.
 CSay("Initiated character: "..ch)
 end
 

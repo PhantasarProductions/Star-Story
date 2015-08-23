@@ -65,3 +65,6 @@ learnspellmessages = {
       Johnson     = needkills              
 
 }
+
+
+learnspellmessages.UniWendicka = leanspellmessages.Wendicka
