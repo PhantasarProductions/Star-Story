@@ -75,8 +75,8 @@ local ii,iv
 local fields
 local ok
 for k,d in pairs(procedure) do
-    fields = mysplit(d.F("UniWendicka"),";")
     Console.Write("UniWendicka - Wendicka: Linking "..k,180,0,255)    
+    fields = mysplit(d.F("UniWendicka"),";")
     for i,v in ipairs(fields) do
         ok = true
         for ii,iv in ipairs(ignoreprefixes)  do ok = ok and (not prefixed(v,iv)) end    
