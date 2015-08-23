@@ -80,7 +80,7 @@ for k,d in pairs(procedure) do
         for ii,iv in ipairs(ignoreprefixes)  do ok = ok and (not prefixed(v,iv)) end    
         for ii,iv in ipairs(ignorefullnames) do ok = ok and v~=iv end
         if ok then
-           CSay("UniWendicka - Wendicka: Linking "..k..": "..v)
+           Console.Write("UniWendicka - Wendicka: Linking "..k..": "..v,0,180,255)
            d.L("UniWendicka","Wendicka",v)
            end
         end   
