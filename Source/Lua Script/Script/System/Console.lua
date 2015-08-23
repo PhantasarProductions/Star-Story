@@ -120,7 +120,12 @@ Award(tag)
 end
 
 function SAVE(file)
+if LAURA.GetFlow()~="FIELD" then return CWrite("? You can only save in the field!",255,0,180) end
 if (not file) or file=="" then return CSay("? Cannot save when you don't gimme a filename") end
+local myfile=file
+local dir = mysplit(file,"/")
+if #dir==1 then myfile = "Debug/"..myfile; dir = mysplit(myfile,"/") end 
+if #dir~=2 then return CWrite("? I cannot save that file. Only one directory please!",255,0,0) end
 LAURA.Save(file)
 end
 
