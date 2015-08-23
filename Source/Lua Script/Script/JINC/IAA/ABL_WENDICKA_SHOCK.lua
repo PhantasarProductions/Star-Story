@@ -48,5 +48,7 @@
 		["Target"] = "1F",
 		["UseCombat"] = true,
 		["UseField"] = false}
+		
+Console.Write("Wendicka's shock ability is now loaded",0,180,255)		
 
 return ret
