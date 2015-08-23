@@ -56,6 +56,8 @@ function mysplit(inputstr, sep) -- I had to copy this, as loadstring includes do
         return t
 end
 
+function prefixed(s,p) return Str.Prefixed(s,p)==1 end
+
 
 local ignoreprefixes = {"AMMO"}
 local ignorefullnames = {"Pic","PXM"}
