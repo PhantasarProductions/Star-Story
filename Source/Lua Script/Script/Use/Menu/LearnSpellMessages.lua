@@ -67,4 +67,4 @@ learnspellmessages = {
 }
 
 
-learnspellmessages.UniWendicka = leanspellmessages.Wendicka
+learnspellmessages.UniWendicka = learnspellmessages.Wendicka
