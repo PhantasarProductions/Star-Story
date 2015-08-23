@@ -124,7 +124,7 @@ end
 
 function SETCHARPOINTS(ch,points,newhave) -- This works on both enemies as heroes providing you know their CODENAME (not the screen name).
 if RPGStat.CharExists(ch)==0 then return CSay("? That character does not exist! Try CharList to see what we have!") end
-if RPGStat.PointsExists(ch,points) then return CSay("? That character does not have those points, so I cannot modify them") end
+if RPGStat.PointsExists(ch,points)==0 then return CSay("? That character does not have those points, so I cannot modify them") end
 RPGStat.Points(ch,points).Have = newhave
 end
 
