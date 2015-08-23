@@ -74,10 +74,13 @@ if not realinventory then -- This if statement must prevent that the real Items 
    end
    
    ItemGet = function (I)
+   ItemGetArray = ItemGetArray or {}
+   if ItemGetArray[I] then return ItemGetArray[I] end
    MS.Run("ITEMS","ItemGet",I)
    local f = loadstring(Var.C('$RET'))
    -- print(Var.C("$RET"))
-   return f()
+   ItemGetArray[I] = f()
+   return ItemGetArray[I]
    end
    
    
