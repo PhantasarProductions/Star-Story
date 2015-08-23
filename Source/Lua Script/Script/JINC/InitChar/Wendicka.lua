@@ -65,7 +65,8 @@ local ignorefullnames = {"Pic","PXM"}
 local procedure = { 
     Stat   = { F = RPGStat.StatFields,   L = RPGStat.LinkStat   },
     Data   = { F = RPGStat.DataFields,   L = RPGStat.LinkData   },
-    Points = { F = RPGStat.PointsFields, L = RPGStat.LinkPoints }
+    Points = { F = RPGStat.PointsFields, L = RPGStat.LinkPoints },
+    List   = { F = RPGStat.ListFields,   L = RPGStat.LinkList   }
     }
 
 local i,v
