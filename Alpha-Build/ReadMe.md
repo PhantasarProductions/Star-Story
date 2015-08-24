@@ -60,7 +60,7 @@ Download:
 
 - [Download the utility for Mac](https://www.dropbox.com/s/y9l6eabwu122dwr/RPGCharViewer_Mac.dmg?dl=0)
 - [Download the utility for Windows](https://www.dropbox.com/s/rl19d6gpqixexw4/RPGCharViewer_Windows.7z?dl=0)
-- [Download the source code](https://www.dropbox.com/s/d2dxyemepmm2t6f/RPGCharViewer_Source.tar.gz?dl=0) 
+- [Download the source code](https://www.dropbox.com/s/v96gv1rzfcl69wf/RPGCharViewer_Source.7z?dl=0) 
 
 (If you download the source code, you will need [My BlitzMax Modules](https://github.com/Tricky1975/TrickyMod) and Brucey's Volumes module in order to get the code compiled. 
 The code of the modules is mostly either licenced under the zlib license or the MPL, the utility itself is licensed under the GNU/GPL).
