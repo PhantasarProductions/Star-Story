@@ -63,8 +63,8 @@ local ignorefullnames = {"Pic","PXM"}
 local procedure = { 
     Stat   = { F = RPGStat.StatFields,   L = RPGStat.LinkStat   },
     Data   = { F = RPGStat.DataFields,   L = RPGStat.LinkData   },
-    Points = { F = RPGStat.PointsFields, L = RPGStat.LinkPoints },
-    List   = { F = RPGStat.ListFields,   L = RPGStat.LinkList   }
+--  Points = { F = RPGStat.PointsFields, L = RPGStat.LinkPoints },
+--  List   = { F = RPGStat.ListFields,   L = RPGStat.LinkList   }
     }
 
 local i,v
@@ -86,6 +86,10 @@ for k,d in pairs(procedure) do
         end   
     end
 
-
+RPGChar.LinkPoints("UniCrystal","Crystal","EXP")
+RPGChar.CreateList("Crystal","ARMS")
+RPGChar.AddList("Crystal","ARMS","ARM_DART")
+RPGChar.AddList("Crystal","ARMS","ARM_HEALINGSPRAY")
+RPGChar.SetData("Crystal","ABLTYPE","ARM")
 RPGChar.SetData("Crystal","Pic","GENERAL")
 RPGChar.DefStat("Crystal","PXM",26)
