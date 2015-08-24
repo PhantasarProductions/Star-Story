@@ -43,22 +43,22 @@ learnspellmessages = {
       Wendicka    = function()
                     local need = CVV("%WENDICKA.NEED") - CVV("%WENDICKA.DONE")
                     if CVV("%WENDICKA.NEED")==0 then return end
-                    if need<=0 then return "Attack any enemy" end
-                    return "Perform "..need.." spels"
+                    if need<=0 then return "Attack any enemy to learn a new spell" end
+                    return "Perform "..need.." spells to unlock a new one"
                     end,
       Crystal     = function() return "" end,              
       Yirl        = function()
                     local need = CVV("%MONEY.NEED") - CVV("%MONEY.DONE")
                     if CVV("%MONEY.NEED")==0 then return end
                     if need<=0 then return "Attack any enemy" end
-                    return "Earn "..need.." credits"
+                    return "Earn "..need.." credits to unlock a new skill"
                     end,
       Foxy        = function() return "???" end,
       Xenobi      = function()              
                     local need = CVV("%MONEY.NEED") - CVV("%MONEY.DONE")
                     if CVV("%XENOBI.NEED")==0 then return end
                     if need<=0 then return "Attack any enemy" end
-                    return "Gain "..need.." levels"
+                    return "Gain "..need.." levels to learn a new spell"
                     end,
       ExHuRU      = needkills,
       Rolf        = needkills,
