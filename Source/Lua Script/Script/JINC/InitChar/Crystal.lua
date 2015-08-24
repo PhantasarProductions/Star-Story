@@ -58,7 +58,7 @@ function prefixed(s,p) return Str.Prefixed(s,p)==1 end
 
 
 local ignoreprefixes = {"AMMO","UPGRADE_","BASE_","BUFF_","END_"}
-local ignorefullnames = {"Pic","PXM"}
+local ignorefullnames = {"Pic","PXM","ABLTYPE"}
 
 local procedure = { 
     Stat   = { F = RPGStat.StatFields,   L = RPGStat.LinkStat   },
