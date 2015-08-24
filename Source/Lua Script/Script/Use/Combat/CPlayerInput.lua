@@ -195,7 +195,7 @@ InputItems = {
       Allow = function(ch) return ch~="Briggs" end,
       Input = function(ch,pos)
               local item
-              if CVV("%CHOSENITEM.SOCKET")==0 then GotoMenu(ch,"Items") 
+              if CVV("%CHOSENITEM.SOCKET")==0 then GoToMenu(ch,"Items") 
               elseif CVV("%CHOSENITEM.SOCKET")<0 then PIA=nil 
               else
                  item=GetItem(CVV("$CHOSENITEM.ITEM"))
