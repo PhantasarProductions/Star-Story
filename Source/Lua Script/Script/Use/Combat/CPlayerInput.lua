@@ -58,6 +58,17 @@ SelectTarget = {
                        SelectTarget.AllowGroups = groups
                        PIA = SelectTarget
                        end,
+                       
+         AblSelectTarget = function(trgt,ch,pos,returnto)
+                           (({
+                              ["1A"] = function() SelectTarget.StartSelect("Hero",returnto) end,
+                              ["1F"] = function() SelectTarget.StartSelect("Foe" ,returnto) end,
+                              ["AA"] = function() Act.Hero[pos].TargetGroup = "Hero"; InputDone=true end,
+                              ["AF"] = function() Act.Hero[pos].TargetGroup = "Foe" ; InputDone=true end,
+                              ["EV"] = function() Act.Hero[pos].TargetGroup = true  ; InputDone=true end,
+                              ["OS"] = function() Act.Hero[pos].TargetGroup = "Hero"; Act.Hero[pos].TargetIndividual=pos end
+                           })[trgt] or function() Sys.Error("Unknown Target type "..sval(trgt)) end)()   
+                           end,           
 
          Input = function(ch,pos)
                  local group,i,f
@@ -182,7 +193,14 @@ InputItems = {
     { Name = "Item",
       Item = "ITEM",
       Allow = function(ch) return ch~="Briggs" end,
-      Input = function(ch)
+      Input = function(ch,pos)
+              local item
+              if CVV("%CHOSENITEM.SOCKET")==0 then GotoMenu(ch,"Items") 
+              elseif CVV("%CHOSENITEM.SOCKET")<0 then PIA=nil 
+              else
+                 item=GetItem(CVV("$CHOSENITEM.ITEM"))
+                 SelectTarget.AblSelectTarget(item.Target,ch,pos)
+                 end
               end,        
       Done = function()
              end  
@@ -209,6 +227,11 @@ InputItems = {
 IBT = {} --[[ Item by tag ]] for _,vIBT in ipairs(InputItems) do IBT[vIBT.Item] = vIBT end -- (each cannot be used here, as on this call the function was not yet loaded (at least not in the current version of LAURA II on the day this was scripted)).
 
 function AllowInputItems(ch)
+-- A few initiations
+Var.D("%CHOSENITEM.SOCKET",0)
+Var.D("$CHOSENITEM.ITEM","")
+Var.D("$CHOSENABILITY","")
+Var.D("$CHOSENARM","")
 -- Sound Effect here, as this is always at the start of the input. :)
 SFX("Audio/SFX/Signal.ogg")
 -- And now the input allowance itself

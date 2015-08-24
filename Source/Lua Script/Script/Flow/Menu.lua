@@ -74,6 +74,10 @@ pcharn = Sys.Val(chp)
 pchar = RPGChar.PartyTag(pcharn)
 end
 
+function PointPage(v)
+Feature[returnto] = v
+end
+
 function SetReturnTo(r)
 returnto = r
 end

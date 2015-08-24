@@ -88,8 +88,8 @@ for k,d in pairs(procedure) do
 
 RPGChar.LinkPoints("UniCrystal","Crystal","EXP")
 RPGChar.CreateList("Crystal","ARMS")
-RPGChar.AddList("Crystal","ARMS","ARM_DART")
-RPGChar.AddList("Crystal","ARMS","ARM_HEALINGSPRAY")
+RPGChar.AddList("Crystal","ARMS","DART")
+RPGChar.AddList("Crystal","ARMS","HEALINGSPRAY")
 RPGChar.SetData("Crystal","ABLTYPE","ARM")
 RPGChar.SetData("Crystal","Pic","GENERAL")
 RPGChar.DefStat("Crystal","PXM",26)

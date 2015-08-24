@@ -27,8 +27,9 @@
 Version: 15.06.27
 
 ]]
-function GoToMenu(ch)
+function GoToMenu(ch,page)
 MS.LN_Run("MENU","Script/Flow/Menu.lua","PointChar",ch)
 MS.Run("MENU","SetReturnTo",LAURA.GetFlow())
+if page then MS.Run("MENU","PointPage",page) end
 LAURA.Flow("MENU")
 end
