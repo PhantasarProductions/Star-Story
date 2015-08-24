@@ -32,7 +32,7 @@ Version: 15.08.06
 
 CVF = {
    ["%"] = function(k) return Sys.Val(Var.C(k)) end,
-   ["&"] = function(k) return string.upper(Var.C(k))=="TRUE" or string.upper(Var.C(k))=="FALSE" end,
+   ["&"] = function(k) return string.upper(Var.C(k))=="TRUE" or string.upper(Var.C(k))=="YES" end,
    ["$"] = function(k) return Var.C(k) end
 }
 
