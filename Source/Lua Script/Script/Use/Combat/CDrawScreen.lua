@@ -55,7 +55,7 @@ CombatMessages = {}
 
 function NewMessage(msg,Icon)
 SetFont("CombatMessage")
-table.insert(CombatMessages,{Msg = msg, Icon=Icon, Y=600+(#CombatMessages*Image.TextHeight(msg)), SPD=10, Alpha=100, W = Image.TextWidth(msg), H = Image.TextHeight(msg), IconX = 400 - (Image.TextWidth(msg)/2), PX = 375 - (Image.TextWidth(msg)/2), PY = 300 - (Image.TextHeigth(msg)/2)})
+table.insert(CombatMessages,{Msg = msg, Icon=Icon, Y=600+(#CombatMessages*Image.TextHeight(msg)), SPD=10, Alpha=100, W = Image.TextWidth(msg), H = Image.TextHeight(msg), IconX = 400 - (Image.TextWidth(msg)/2), PX = 375 - (Image.TextWidth(msg)/2), PY = 300 - (Image.TextHeight(msg)/2)})
 end
 
 function DrawGauge()
