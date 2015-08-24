@@ -276,7 +276,7 @@ FeatureHandleArray = {
                            if mousehit(1) or mousehit(2) then
                                if RPGChar.Stat(pchar,"INVAMNT"..ak)>0 then
                                   Var.D("%CHOSENITEM.SOCKET",ak)
-                                  Var.D("$CHOSENITEM.ITEM",RPGChar.GetData("INVITEM"..ak))
+                                  Var.D("$CHOSENITEM.ITEM",RPGChar.GetData(pchar,"INVITEM"..ak))
                                   end
                               end
                            end   
