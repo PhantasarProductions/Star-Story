@@ -111,7 +111,11 @@ SelectTarget = {
                          end
                      end
                  ShowMouse()
-                 if INP.MouseH(2)==1 then PIA = SelectTarget.ReturnTo; TargetedGroup=nil end                 
+                 if INP.MouseH(2)==1 then 
+                    PIA = SelectTarget.ReturnTo
+                    TargetedGroup=nil 
+                    Var.D("%CHOSENITEM.SOCKET",0)                    
+                    end                 
                  end,
          Done = function() return false end -- If this is in PIA, the move is never input, so it should always return false, however, nonexistence of this function will lead to a crash.        
       
@@ -126,8 +130,8 @@ InputItems = {
               ret = ret and RPGChar.Stat(ch,"AMMO")==0 
               return ret
               end,
-      Input = function(ch,pos)
-              if not Act.Hero[pos].Target then 
+      Input = function(ch,pos)              
+              if not Act.Hero[pos].Target then
                  SelectTarget.StartSelect({"Foe"})
                  end
               end,        
@@ -196,10 +200,16 @@ InputItems = {
       Allow = function(ch) return ch~="Briggs" end,
       Input = function(ch,pos)
               local item
+              local iact
               if CVV("%CHOSENITEM.SOCKET")==0 then GoToMenu(ch,"Items") 
-              elseif CVV("%CHOSENITEM.SOCKET")<0 then PIA=nil 
+              elseif CVV("%CHOSENITEM.SOCKET")<0 then 
+                     PIA=nil
+                     Var.D("%CHOSENITEM.SOCKET",0) 
               else
                  item=ItemGet("ITM_"..CVV("$CHOSENITEM.ITEM"))
+                 iact = Act.Hero[pos]
+                 iact.Act = "ITM"
+                 iact.ActSpeed = item.ActSpeed
                  SelectTarget.AblSelectTarget(item.Target,ch,pos)
                  end
               end,        
