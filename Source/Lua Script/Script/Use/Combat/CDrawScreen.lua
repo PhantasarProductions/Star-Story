@@ -112,6 +112,8 @@ if CombatMessages[1].Alpha<=0 then table.remove(CombatMessages,1) end
 Image.SetAlphaPC(100)
 end
 
+
+
 function DrawScreen()
 Image.Cls()
 White()
