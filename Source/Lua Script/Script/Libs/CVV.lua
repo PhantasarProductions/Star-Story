@@ -115,7 +115,7 @@ return ret
 end 
 
 function Toggle(boolvar) 
-local prefix = string.sub(k,1,1)
+local prefix = string.sub(boolvar,1,1)
 if prefix~="&" then
   Console.Write("ERROR! Can only 'Toggle' variables marked as '&'",255,0,0)
   return
