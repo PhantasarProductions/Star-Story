@@ -140,7 +140,7 @@ local myfile=file
 local dir = mysplit(file,"/")
 if #dir==1 then myfile = "Debug/"..myfile; dir = mysplit(myfile,"/") end 
 if #dir~=2 then return CWrite("? I cannot save that file. Only one directory please!",255,0,0) end
-LAURA.Save(file)
+LAURA.Save(myfile)
 end
 
 function MOUSE()
