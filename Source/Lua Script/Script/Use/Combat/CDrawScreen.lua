@@ -55,7 +55,7 @@ CombatMessages = {}
 
 function NewMessage(msg,Icon)
 SetFont("CombatMessage")
-table.insert(CombatMessages,{Msg = msg, Icon=Icon, y=600+(#CombatMessages*Image.TextHeight(msg)), SPD=10, Alpha=100, W = Image.TextWidth(msg), H = Image.TextHeight(msg), IconX = 400 - (Image.TextWidth(msg)/2), PX = 375 - (Image.TextWidth(msg)/2), PY = 300 - (Image.TextHeight(msg)/2)})
+table.insert(CombatMessages,{Msg = msg, Icon=Icon, y=600+(#CombatMessages*Image.TextHeight(msg)), SPD=40, Alpha=100, W = Image.TextWidth(msg), H = Image.TextHeight(msg), IconX = 400 - (Image.TextWidth(msg)/2), PX = 375 - (Image.TextWidth(msg)/2), PY = 300 - (Image.TextHeight(msg)/2)})
 end
 
 function DrawGauge()
@@ -109,6 +109,7 @@ for m in each ( CombatMessages ) do
        end
     end
 if CombatMessages[1].Alpha<=0 then table.remove(CombatMessages,1) end    
+Image.SetAlphaPC(100)
 end
 
 function DrawScreen()
