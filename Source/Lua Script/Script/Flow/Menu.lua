@@ -282,6 +282,10 @@ FeatureHandleArray = {
                               end
                            end   
                       end
+                  if mousehit(2) then -- Should be executed when user didn't click an item with right
+                     Var.D("%CHOSENITEM.SOCKET",-1)
+                     LAURA.Flow("COMBAT")                     
+                     end    
                   -- @IF *DEVELOPMENT
                   y = 20
                   for k,v in spairs(ChosenItem) do
@@ -332,6 +336,12 @@ ClickArray = {
                 end
             end,
    COMBAT = function()
+            for ak=0,5 do
+                if ClickedChar(ak) then
+                   Var.D("%CHOSENITEM.SOCKET",-1)
+                   LAURA.Flow("COMBAT")                     
+                   end
+                end   
             end           
    }
 
