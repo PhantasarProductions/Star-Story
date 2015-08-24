@@ -48,6 +48,7 @@ Version: 15.08.01
 ]]
 
 -- @USEDIR Script/Use/Combat
+-- @USEDIR Script/Use/Goto
 
 -- @UNDEF DEBUG_COMBAT_ACT
 
