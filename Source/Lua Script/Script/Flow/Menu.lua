@@ -271,7 +271,15 @@ FeatureHandleArray = {
                                end   
                             if ChosenItem.Taken then ChosenItem.Icon=ItemIconCode("ITM_"..ChosenItem.Item) end   
                             end -- end field click
-                         end    
+                         end -- end of returnto FIELD   
+                        if returnto=="COMBAT" and mx>x-14 and mx<x+14 and my>y-14 and my<y+14 and pchar~="Briggs" then
+                           if mousehit(1) or mousehit(2) then
+                               if RPGChar.Stat(pchar,"INVAMNT"..ak)>0 then
+                                  Var.D("%CHOSENITEM.SOCKET",ak)
+                                  Var.D("$CHOSENITEM.ITEM",RPGChar.GetData("INVITEM"..ak))
+                                  end
+                              end
+                           end   
                       end
                   -- @IF *DEVELOPMENT
                   y = 20
