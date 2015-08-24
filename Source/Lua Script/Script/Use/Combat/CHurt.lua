@@ -51,6 +51,8 @@ local r,g,b = 255,255,255
 local report = hp
 local dodmg = hp
 local chtarget = FighterTag(tg,ti)
+local jack = CVV("&CHEAT.JACK")
+local god  = CVV("&CHEAT.GOD")
 local elementalresistance = ({
                                  [1] = function() return RPGStat.Stat(chtarget,"ER_"..element) end,
                                  [0] = function() return 3 end
@@ -88,6 +90,8 @@ local elementalresistance = ({
                        end,      
                  default = function() end      -- In all other situations (which includes situation 3) do nothing :)
                })[elementalresistance] or function() end)()
+if god and tg=="Hero" and elementalresistance<5 then dodmg = 0 end
+if jack and tg=="Foe" and elementalresistance<6 then dodmg = RPGStat.Points(chtarget,"HP").Have end
 RPGStat.Points(chtarget,"HP").Have = RPGStat.Points(chtarget,"HP").Have - dodmg
 CharReport(tg,ti,report,{r,g,b})               
 end

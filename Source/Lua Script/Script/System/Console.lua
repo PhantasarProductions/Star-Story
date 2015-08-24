@@ -333,8 +333,12 @@ CSay("God mode is now: "..Var.C("&CHEAT.GOD"))
 end
 
 function JACK()
-Toggle("&CHEAT.GOD")
+Toggle("&CHEAT.JACK")
 CSay("Jack the Ripper mode is now: "..Var.C("&CHEAT.GOD"))
 end
 
+function COMBATMESSAGE(...)
+if LAURA.GetFlow()~="COMBAT" then return CWrite("? This command only works in combat flow mode") end
+MS.Run("COMBAT","NewMessage",join(arg,";"))
+end
 

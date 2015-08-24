@@ -49,7 +49,8 @@ fonts = {
     SaveName = {"Robotica.ttf",20},
     SaveFiles = {"Robotica.ttf",14},
     MiniMessage = {"Robotica.ttf",10},  -- The routines are in party in order to operate more smoothly with the party screen at the bottom of the screen.
-    CombatPlayerInput = {"Robotica.ttf",40}
+    CombatPlayerInput = {"Robotica.ttf",40},
+    CombatMessage = {"Robotica.ttf",35}
 }
 
 

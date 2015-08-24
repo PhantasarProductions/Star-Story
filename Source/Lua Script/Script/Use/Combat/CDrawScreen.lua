@@ -51,6 +51,13 @@ ShowTagPointer = {
            end
 }
 
+CombatMessages = {}
+
+function NewMessage(msg,Icon)
+SetFont("CombatMessage")
+table.insert(CombatMessages,{Msg = msg, Icon=Icon, Y=600+(#CombatMessages*Image.TextHeight(msg)), SPD=10, Alpha=100, W = Image.TextWidth(msg), H = Image.TextHeight(msg), IconX = 400 - (Image.TextWidth(msg)/2), PX = 375 - (Image.TextWidth(msg)/2), PY = 300 - (Image.TextHeigth(msg)/2)})
+end
+
 function DrawGauge()
 local iy = 40
 local fk,fs,fi,fv,ak,x,r,g,b
@@ -87,6 +94,23 @@ Image.Origin(0,0)
 Image.ViewPort(0,0,800,600)
 end
 
+function ShowMessages()
+if #CombatMessages==0 then return end
+local m
+SetFont("CombatMessage")
+for m in each ( CombatMessages ) do
+    Image.SetAlphaPC(m.Alpha)
+    DText(m.Msg,400,m.y,2,2,0,180,255)
+    if m.SPD>0 then
+       m.y=m.y-m.SPD
+       m.SPD=m.SPD-1
+    elseif m.Alpha>0 then
+       m.Alpha=m.Alpha-1
+       end
+    end
+if CombatMessages[1].Alpha<=0 then table.remove(CombatMessages,1) end    
+end
+
 function DrawScreen()
 Image.Cls()
 White()
@@ -94,5 +118,6 @@ Image.Draw("ARENA",0,0)
 DrawGauge()
 DrawFighters()
 ShowCharReports()
+ShowMessages()
 ShowParty()
 end
