@@ -277,6 +277,7 @@ FeatureHandleArray = {
                                if RPGChar.Stat(pchar,"INVAMNT"..ak)>0 then
                                   Var.D("%CHOSENITEM.SOCKET",ak)
                                   Var.D("$CHOSENITEM.ITEM",RPGChar.GetData(pchar,"INVITEM"..ak))
+                                  LAURA.Flow("COMBAT")
                                   end
                               end
                            end   
