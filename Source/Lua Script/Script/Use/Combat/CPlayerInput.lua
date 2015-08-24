@@ -56,6 +56,7 @@ SelectTarget = {
          StartSelect = function(groups,returnto) 
                        SelectTarget.ReturnTo = returnto
                        SelectTarget.AllowGroups = groups
+                       if type(groups)=="string" then SelectTarget.AllowGroups = {groups} end 
                        PIA = SelectTarget
                        end,
                        
