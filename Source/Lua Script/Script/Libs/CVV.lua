@@ -114,3 +114,18 @@ for k,v in IVARS() do
 return ret    
 end 
 
+function Toggle(boolvar) 
+if prefix~="&" then
+  Console.Write("ERROR! Can only 'Toggle' variables marked as '&'",255,0,0)
+  return
+  end
+if not sval then
+  Console.Write("ERROR! Toggle requires the sval function which does not appear to be loaded",255,0,0)
+  return
+  end
+if not upper then
+  Console.Write("ERROR! Toggle requires the upper function which does not appear to be loaded",255,0,0)
+  return
+  end
+Var.D(boolvar,upper(sval(not CVV(boolvar))))
+end  

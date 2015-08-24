@@ -327,3 +327,14 @@ function LISTSCHEDULED()
 MS.Run("FIELD","ListScheduled")
 end
 
+function GOD()
+Toggle("&CHEAT.GOD")
+CSay("God mode is now: "..Var.C("&CHEAT.GOD"))
+end
+
+function JACK()
+Toggle("&CHEAT.GOD")
+CSay("Jack the Ripper mode is now: "..Var.C("&CHEAT.GOD"))
+end
+
+

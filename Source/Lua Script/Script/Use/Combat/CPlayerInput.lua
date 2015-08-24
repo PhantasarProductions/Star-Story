@@ -210,6 +210,9 @@ InputItems = {
                  iact = Act.Hero[pos]
                  iact.Act = "ITM"
                  iact.ActSpeed = item.ActSpeed
+                 iact.ItemCode = "ITM_"..CVV("$CHOSENITEM.ITEM")
+                 iact.Item = item
+                 iact.ItemSocket = CVV("%CHOSENITEM.SOCKET")
                  SelectTarget.AblSelectTarget(item.Target,ch,pos)
                  end
               end,        
