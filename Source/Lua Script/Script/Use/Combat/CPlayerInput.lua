@@ -198,7 +198,7 @@ InputItems = {
               if CVV("%CHOSENITEM.SOCKET")==0 then GoToMenu(ch,"Items") 
               elseif CVV("%CHOSENITEM.SOCKET")<0 then PIA=nil 
               else
-                 item=ItemGet(CVV("$CHOSENITEM.ITEM"))
+                 item=ItemGet("ITM_"..CVV("$CHOSENITEM.ITEM"))
                  SelectTarget.AblSelectTarget(item.Target,ch,pos)
                  end
               end,        
