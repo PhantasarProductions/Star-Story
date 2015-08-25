@@ -100,7 +100,10 @@ local m
 SetFont("CombatMessage")
 for m in each ( CombatMessages ) do
     Image.SetAlphaPC(m.Alpha)
-    DarkText(m.Msg,400,m.y,2,2,0,180,255)
+    if m.Icon then
+       DrawImage(m.Icon,m.IconX,m.y)
+       end
+    DarkText(m.Msg,400,m.y,2,2,0,180,255)    
     if m.SPD>0 then
        m.y=m.y-m.SPD
        m.SPD=m.SPD-1
