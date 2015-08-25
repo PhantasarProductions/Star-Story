@@ -110,11 +110,13 @@ for i=0,5 do
     herotag = RPGStat.PartyTag(i)
     if herotag and herotag~="" then
        herolevel = RPGStat.Stat(herotag,"Level")
-       gainexp = math.floor((enemylevel/herolevel)*maxfactor);
-       ({
+       gainexp = math.floor((enemylevel/herolevel)*maxfactor)
+       if RPGStat.Points(herotag,"HP").Have==0 then
+          ({
            function() end,
            function() gainexp = gainexp / 2 end,
-           function() gainexp = 0 end})[skill]()
+           function() gainexp = 0 end})[skill]()          
+          end
        RPGStat.Points(herotag,"EXP").Inc(gainexp)
        end
     end
