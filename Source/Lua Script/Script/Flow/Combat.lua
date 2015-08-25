@@ -58,6 +58,7 @@ Bestiary = Bestiary or {}
 Oversoul = Oversoul or {}
 Fighters = {}
 VicCheck = {}
+DefeatCheck = {}
 
 
 function GetAch()
