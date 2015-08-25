@@ -86,6 +86,7 @@ Type introaction Extends TFPanelBase
 	Method flow()
 	Local done3
 	If Not allowcanvas Return
+	If nocanvas return
 	SetGraphics CanvasGraphics(Self.panel)
 	SetBlend alphablend
 	Cls

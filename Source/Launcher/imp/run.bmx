@@ -91,9 +91,6 @@ For Local SF:TSystemfile = EachIn lsystemfile
 Return showpanel<>tabber	
 End Function
 
-Private
-Global NoCanvas
-Public
 
 ' Main
 showpanel 0
@@ -117,6 +114,6 @@ Select eid
 	Case event_gadgetpaint
 		allowcanvas = Not NoCanvas
 	End Select	
-ALLOWCANVAS = ALLOWCANVAS And (Not NOCANVAS)	
+'ALLOWCANVAS = ALLOWCANVAS And (Not NOCANVAS)	
 Flow
 Forever

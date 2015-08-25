@@ -33,7 +33,7 @@ Import brl.linkedlist
 Import bah.volumes
 Import "JCRFile.bmx"
 
-JCR6CrashError = true
+JCR6CrashError = True
 
 ?MacOS
 Const winw = 800
@@ -53,7 +53,7 @@ Global TH = ClientHeight(tabber)
 Global EID
 Global ESource:TGadget
 Global CPanel
-Global allowcanvas
+Global allowcanvas,NoCanvas
 
 Type TFPanelBase
 
