@@ -29,6 +29,9 @@ Version: 15.07.27
 End Rem
 Function RunFlow() 
 Repeat
+If Second()=0 Then
+	If Not FileType(Sessionfile) End
+	EndIf
 If GALE_INP.AutoGrab Grabinput 
 LAURA_API.Terminate =  GALE_INP.Terminate 'AppTerminate()
 If Not currentflow GALE_Error "No flow"
