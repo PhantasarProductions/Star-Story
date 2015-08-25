@@ -48,8 +48,8 @@ Version: 15.08.01
 ]]
 function AblEffect(ag,ai,act,tg,ti)
 local abl=act.Item
-local cha = FighterTag(ag,ai)
-local cht = FighterTag(tg,ti)
+local cha = FighterTag(ag,ai)..""
+local cht = FighterTag(tg,ti).."" -- This way of forming FORCES a <nil> value error if this should happen. I need to know if the evil's done here or not :)
 -- Cure status changes (this must always be the first thing to do)
 -- Heal absolute or by percent
 if abl.Healing and abl.Healing>0 then
@@ -115,7 +115,7 @@ if not act.EAI then Sys.Error("Illegally set up act for EAI") end
 NewMessage(act.Item.Name,ItemIconCode(act.ItemCode))
 local ch = FighterTag(ag,ai)
 local tg,ti
-local function SingleEffect(ag,ai,act) AbilityEffect(ag,ai,act,act.TargetGroup,Act.TargetIndividual) end
+local function SingleEffect(ag,ai,act) AbilityEffect(ag,ai,act,act.TargetGroup,act.TargetIndividual) end
 local function GroupEffect(ag,ai,act)
                local i
                local tg = act.TargetGroup

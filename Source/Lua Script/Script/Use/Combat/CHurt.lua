@@ -46,6 +46,9 @@
 Version: 15.08.01
 
 ]]
+
+-- @DEFINE DEBUG_HURT
+
 function Hurt(tg,ti,hp,element)
 local r,g,b = 255,255,255
 local report = hp
@@ -58,9 +61,12 @@ local elementalresistance = ({
                                  [1] = function() return RPGStat.Stat(chtarget,"ER_"..element) end,
                                  [0] = function() return 3 end
                               })[RPGStat.StatExists(chtarget,"ER_"..(element or "NonElemental"))]();
+-- @IF DEBUG_HURT
+   CSay("HURT: Received data "..tg..","..ti..","..hp..","..(element or "NonElemental"))
+   CSay("HURT: Resistance is "..elementalresistance);
+-- @FI                                                            
 (({   -- Lua way of doing a 'switch case' statment. Ugly I know, but it works. :-P
-      -- Why the variable defition is needed is beyond me, as the variable is totally unneeded, but Lua fails to parse this code without it.
-      -- (In this case ";" must be behind the last command. One of the few cases where Lua requires the use of ";")     
+      -- (In this case ";" must be behind the last command. One of the few cases where Lua requires the use of ";". That is only the case if the last command before this ends with a ")")     
                  [0] = function() -- fatal
                        report = "DEATH"; r,g,b = 255,0,0
                        dodmg = RPGStat.Points(chtarget,"HP").Have
