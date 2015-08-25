@@ -51,6 +51,7 @@ sf.Load = CreateLabel("Load",(tw/2)-200,th/2,200,25,sf.panel)
 sf.del  = CreateLabel("Delete",(tw/2)-200,th/2,200,25,sf.panel)
 HideGadget sf.panel
 sf.File = File
+ListAddLast Lsystemfile,sf
 End Function
 
 CreateSystemFile "Emergency Save","Emergency Save","Perhaps you did not properly quit the game last time you played. Maybe there was an error in the game? Or a total OS crash? Or did you have a power malfunction? Or did you just forget to shutdown the game? Anyway here we got an emergency save so maybe you can load it to recover some unsaved data."
@@ -59,7 +60,7 @@ CreateSystemFile "Quite Game","Save upon quitting","Last time you quit the game 
 Function SystemFilesCheck()
 Local ShowPanel:TGadget = Tabber
 For Local SF:TSystemfile = EachIn lsystemfile
-	Notify "Checking for "+(Dirry(Save)+"/System/"+sf.file)+" resulted into: "+FileType(Dirry(Save)+"/System/"+sf.file) ' debug line
+	'Notify "Checking for "+(Dirry(Save)+"/System/"+sf.file)+" resulted into: "+FileType(Dirry(Save)+"/System/"+sf.file) ' debug line
 	If FileType(Dirry(Save)+"/System/"+sf.file) And tabber=ShowPanel ShowPanel=sf.panel
 	If eid=event_gadgetaction
 		Select ESource
