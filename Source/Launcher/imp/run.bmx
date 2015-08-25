@@ -112,7 +112,7 @@ Select eid
 			showpanel cpanel		
 			EndIf
 	Case event_gadgetpaint
-		allowcanvas = Not NoCanvas
+		allowcanvas = True
 	End Select	
 'ALLOWCANVAS = ALLOWCANVAS And (Not NOCANVAS)	
 Flow
