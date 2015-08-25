@@ -296,7 +296,7 @@ if epm>0 and ep==epm then
    RPGStat.DefStat(ch,"Level",lv+1) 
    GrabLevel(ch,RPGChar.Stat(ch,"Level"));
    RPGStat.Points(ch,"EXP").Have=0
-   if RPGStat.Points(ch,"HP").HP>0 then
+   if RPGStat.Points(ch,"HP").Have>0 then
    ({ [1] = function() RPGStat.Points(ch,"HP").Have = RPGStat.Points(ch,"HP").Maximum RPGStat.Points(ch,"AP").Have = RPGStat.Points(ch,"AP").Maximum end,
       [2] = function() RPGStat.Points(ch,"HP").Have = RPGStat.Points(ch,"HP").Maximum end,
       [3] = function() end })[skill](ch)
