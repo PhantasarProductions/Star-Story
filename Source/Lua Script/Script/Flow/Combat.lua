@@ -242,15 +242,26 @@ local i,v
 for i,v in pairs(Fighters.Foe) do return false end -- Return false only gets executed if an enemy exists, if it doesn't exist we got an entirely empty "for" loop as 'return false' will be called for zero times.
 return true
 end
+
+function DefaultDefeated()
+local i,v
+for i,v in pairs(Fighters.Hero) do 
+    if RPGChar.Points(v.Tag,"HP").Have>0 then return false end 
+    end
+return true    
+end
    
 function Victory()
 return (VicCheck[CombatData.VICTORYCHECK] or DefaultVictory)()
 end
 
+function Defeated()
+return (DefeatCheck[CombatData.DEFEATEDCHECK] or DefaultDefeated)()
+end
 
 function MAIN_FLOW()
 DrawScreen()
-if Victory() then RunVictory() else RunGauge() end
+if Defeated() then RunDefeated() elseif Victory() then RunVictory() else RunGauge() end
 Flip()
 LAURA.TerminateBye()
 end

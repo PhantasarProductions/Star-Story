@@ -164,3 +164,15 @@ if ywscale<360 then
       end
    end
 end
+
+DefeatedFunctions = { 
+      Default = function()
+                MS.Load("GAMEOVER","Script/Flow/GameOver.Lua")
+                LAURA.Flow("GAMEOVER")
+                end
+  }
+   
+
+function RunDefeated()
+DefeatedFunctions[CombatData.Defeated or 'Default']()
+end
