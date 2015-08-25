@@ -46,9 +46,9 @@ Global LSystemFile:TList = New TList
 Function CreateSystemFile(File$,Description$,Explain$)
 Local SF:TSystemFile = New tsystemfile
 sf.panel = CreatePanel(0,0,ClientWidth(window),ClientHeight(window),window)
-CreateLabel "The ~q"+Description+"~q has been found.~n~n"+Explain+"~n~nDo you wish to load or delete this file?",0,0,TW,TH/2,sf.panel
-sf.Load = CreateLabel("Load",(tw/2)-200,th/2,200,25,sf.panel)
-sf.del  = CreateLabel("Delete",(tw/2)-200,th/2,200,25,sf.panel)
+CreateLabel "The ~q"+Description+"~q file has been found.~n~n"+Explain+"~n~nDo you wish to load or delete this file?",0,0,TW,TH/2,sf.panel
+sf.Load = CreateButton("Load"  ,(tw/2)-200,th/2,200,25,sf.panel)
+sf.del  = CreateButton("Delete",(tw/2)    ,th/2,200,25,sf.panel)
 HideGadget sf.panel
 sf.File = File
 ListAddLast Lsystemfile,sf
