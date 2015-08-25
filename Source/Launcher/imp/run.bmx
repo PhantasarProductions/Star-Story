@@ -59,6 +59,7 @@ CreateSystemFile "Quite Game","Save upon quitting","Last time you quit the game 
 Function SystemFilesCheck()
 Local ShowPanel:TGadget = Tabber
 For Local SF:TSystemfile = EachIn lsystemfile
+	Notify "Checking for "+(Dirry(Save)+"/System/"+sf.file)+" resulted into: "+FileType(Dirry(Save)+"/System/"+sf.file) ' debug line
 	If FileType(Dirry(Save)+"/System/"+sf.file) And tabber=ShowPanel ShowPanel=sf.panel
 	If eid=event_gadgetaction
 		Select ESource
