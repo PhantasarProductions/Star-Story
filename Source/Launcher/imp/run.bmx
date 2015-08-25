@@ -91,6 +91,9 @@ For Local SF:TSystemfile = EachIn lsystemfile
 Return showpanel<>tabber	
 End Function
 
+Private
+Global NoCanvas
+Public
 
 ' Main
 showpanel 0
@@ -102,9 +105,7 @@ If FileType(crashf)
 PollEvent
 eid = EventID()
 esource = TGadget(EventSource())
-Private
-Global NoCanvas = SystemFilesCheck()
-Public
+NoCanvas = SystemFilesCheck()
 Select eid
 	Case event_AppTerminate,event_windowclose
 		Bye
