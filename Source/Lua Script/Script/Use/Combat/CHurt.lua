@@ -56,7 +56,7 @@ local dodmg = hp
 local chtarget = FighterTag(tg,ti)
 local jack = CVV("&CHEAT.JACK")
 local god  = CVV("&CHEAT.GOD")
-if not RPGChar.StatExists(chtarget,"ER_Healing")==0 then RPGChar.DefStat(chtarget,"ER_Healing",6) end
+if RPGChar.StatExists(chtarget,"ER_Healing")==0 then RPGChar.DefStat(chtarget,"ER_Healing",6) end
 local elementalresistance = ({
                                  [1] = function() return RPGStat.Stat(chtarget,"ER_"..element) end,
                                  [0] = function() return 3 end
