@@ -82,8 +82,8 @@ For Local SF:TSystemfile = EachIn lsystemfile
 	If FileType(sf.file) And (Not ShownPanel) ShownPanel=sf.panel
 	If eid=event_gadgetaction
 		Select ESource
-	 		Case sf.Load	LoadGame	Dirry(Save)+"/System/"+sf.file; HideGadget ShownPanel; showpanel cpanel; Return
-			Case sf.del		DeleteFile	Dirry(Save)+"/System/"+sf.file; HideGadget ShownPanel; showpanel cpanel; Return
+	 		Case sf.Load	LoadGame	sf.file; HideGadget ShownPanel; showpanel cpanel; Return
+			Case sf.del		DeleteFile	sf.file; HideGadget ShownPanel; showpanel cpanel; Return
 			End Select
 		EndIf	
 	'sf.panel.setshow showpanel=sf.panel
