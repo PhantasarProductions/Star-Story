@@ -153,8 +153,8 @@ IScript.Run(StartUp.C("StartUpFunction"),Null)
 End Function
 
 Function LAURABYE()
-GALE_Sys.ByeExecute
 If Not DeleteFile(Dirry(Sessionfile)) GALE_Error "LAURA session not properly closed",[","+SessionFile,",this file could not be properly deleted ",",to mark the session is over.",",",",LAURA II will not be hurt by this",",but the launcher might malfunction.",",delete this file manually and stuff should work normally again"]	
+GALE_Sys.ByeExecute
 End Function
 
 Function InitClosure()
