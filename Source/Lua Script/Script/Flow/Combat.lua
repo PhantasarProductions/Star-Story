@@ -141,22 +141,23 @@ local CInput = { Hero = PlayerInput, Foe = EnemyInput }
 local ft,ftl,fli,fv
 for ft,ftl in spairs(Fighters) do
     for fli,fv in pairs(ftl) do
-        if fv.Gauge==10000 then
+        if fv.Gauge==10000 and RPGChar.Points(fv.Tag,"HP").Have>0 then
            return CInput[ft](fli,fv.Tag)
            end
-        if fv.Gauge==20000 then return PerformAction(ft,fli,fv) end    
+        if fv.Gauge==20000 and RPGChar.Points(fv.Tag,"HP").Have>0  then return PerformAction(ft,fli,fv) end    
         end
     end
 -- No input or actions, then let's move the gauge, shall we?
 for ft,ftl in spairs(Fighters) do
     for fli,fv in pairs(ftl) do
-        if fv.Gauge<10000 then
+        if fv.Gauge<10000 and RPGChar.Points(fv.Tag,"HP").Have>0 then
            fv.Gauge = fv.Gauge + ((RPGStat.Stat(fv.Tag,"END_Agility")/HiSpeed)*25)
            if fv.Gauge>10000 then fv.Gauge=10000 end
-        elseif fv.Gauge>10000 then
+        elseif fv.Gauge>10000 and RPGChar.Points(fv.Tag,"HP").Have>0  then
            -- fv.Gauge = fv.Gauge + fv.Act.Speed
            fv.Gauge = fv.Gauge + Act[ft][fli].ActSpeed
-           if fv.Gauge>20000 then fv.Gauge=20000 end 
+           if fv.Gauge>20000 then fv.Gauge=20000 end
+        elseif RPGChar.Points(fv.Tag,"HP").Have<=0 and fv.Gauge>-100 then fv.Gauge = fv.Gauge - 100     
            end           
         end
     end    
