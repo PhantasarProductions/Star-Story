@@ -79,7 +79,7 @@ Local ShownPanel:TGadget = Null
 For Local SF:TSystemfile = EachIn lsystemfile
 	'Notify "Checking for "+(Dirry(Save)+"/System/"+sf.file)+" resulted into: "+FileType(Dirry(Save)+"/System/"+sf.file) ' debug line
 
-	If FileType(sf.file) And (Not ShownPanel) ShownPanel=sf.panel Else hidepanel sf.panel
+	If FileType(sf.file) And (Not ShownPanel) ShownPanel=sf.panel Else hidegadget sf.panel
 	If eid=event_gadgetaction
 		Select ESource
 	 		Case sf.Load	LoadGame	sf.file; HideGadget ShownPanel; showpanel cpanel; Return
