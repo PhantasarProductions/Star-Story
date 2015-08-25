@@ -46,6 +46,9 @@
 Version: 15.08.01
 
 ]]
+function AblEffect(ag,ai,act,tg,ti)
+end
+
 ActionFuncs = {}
 
 function ActionFuncs.Error(g,i,act)
@@ -94,6 +97,23 @@ if not act.EAI then Sys.Error("Illegally set up act for EAI") end
 NewMessage(act.Item.Name,ItemIconCode(act.ItemCode))
 local ch = FighterTag(ag,ai)
 local tg,ti
+local function SingleEffect(ag,ai,act) AbilityEffect(ag,ai,act,act.TargetGroup,Act.TargetIndividual) end
+local function GroupEffect(ag,ai,act)
+               local i
+               local tg = act.TargetGroup
+               for i,_ in pairs(Fighters[tg]) do AbilityEffect(ag,ai,act,tg,i) end
+               end
+(({
+      ["1F"] = SingleEffect,
+      ["1A"] = SingleEffect,
+      ["OS"] = SingleEffect,
+      ["AA"] = GroupEffect,
+      ["AF"] = GroupEffect,
+      ["EV"] = function(ag,ai,act)
+               local tg,ti,group
+               for tg,group in pairs(Fighters) do for ti,_ in pairs(group) do AbilityEffect(ag,ai,act,tg,ti) end end
+               end
+      })[act.Item.Target] or function() Sys.Error("EAI: Unknown target type"..act.Item.Target) end)(ag,ai,act)
 end
 
 function ActionFuncs.ITM(ag,ai,act)

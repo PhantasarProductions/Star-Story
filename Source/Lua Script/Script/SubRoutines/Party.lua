@@ -111,6 +111,8 @@ for status in iStatus(true) do
     RPGChar.DefStat(ch,"SR_TRUE_"..status,0)
     RPGChar.ScriptStat(ch,"SR_TRUE_"..status,"Script/CharStats/General.lua","STATUSRESIST")
     end   
+RPGChar(ch,"ER_Healing",6)
+RPGChar(ch,"ER_NonElemental",3)    
 -- Scripted stuff
 Var.D("$INITCHAR",ch)
 jinc("Script/JINC/InitChar/"..ch..".lua")

@@ -53,10 +53,11 @@ local dodmg = hp
 local chtarget = FighterTag(tg,ti)
 local jack = CVV("&CHEAT.JACK")
 local god  = CVV("&CHEAT.GOD")
+if not RPG.StatExists(chtarget,"ER_Healing")==0 then RPGChar(chtarget,"ER_Healing",6) end
 local elementalresistance = ({
                                  [1] = function() return RPGStat.Stat(chtarget,"ER_"..element) end,
                                  [0] = function() return 3 end
-                              })[RPGStat.StatExists(chtarget,"ER_"..element)]();
+                              })[RPGStat.StatExists(chtarget,"ER_"..(element or "NonElemental"))]();
 (({   -- Lua way of doing a 'switch case' statment. Ugly I know, but it works. :-P
       -- Why the variable defition is needed is beyond me, as the variable is totally unneeded, but Lua fails to parse this code without it.
       -- (In this case ";" must be behind the last command. One of the few cases where Lua requires the use of ";")     
@@ -92,6 +93,7 @@ local elementalresistance = ({
                })[elementalresistance] or function() end)()
 if god and tg=="Hero" and elementalresistance<5 then dodmg = 0 end
 if jack and tg=="Foe" and elementalresistance<6 then dodmg = RPGStat.Points(chtarget,"HP").Have end
+if tg=="Hero" then Points(chtarget,"AP").Have = Points(chtarget,"AP").Have + 1 end 
 RPGStat.Points(chtarget,"HP").Have = RPGStat.Points(chtarget,"HP").Have - dodmg
 CharReport(tg,ti,report,{r,g,b})               
 end
