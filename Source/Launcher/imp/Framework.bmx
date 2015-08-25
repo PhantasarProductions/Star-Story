@@ -100,3 +100,11 @@ For Local ak=0 Until CountList(panels)
 	DebugLog "Panel("+ak+") = "+Int(c=ak)
 	Next
 End Function
+
+Function ShowForcedPanel(G:TGadget)
+If Not g Return
+For Local ak=0 Until CountList(panels)
+	panel(ak).setshow False
+	Next
+ShowGadget G
+End Function

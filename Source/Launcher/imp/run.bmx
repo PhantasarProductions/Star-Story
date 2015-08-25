@@ -45,7 +45,7 @@ Global LSystemFile:TList = New TList
 	
 Function CreateSystemFile(File$,Description$,Explain$)
 Local SF:TSystemFile = New tsystemfile
-sf.panel = CreatePanel(0,0,ClientWidth(window),ClientHeight(window),window)
+sf.panel = CreatePanel(0,0,ClientWidth(tabber),ClientHeight(tabber),tabber)
 CreateLabel "The ~q"+Description+"~q file has been found.~n~n"+Explain+"~n~nDo you wish to load or delete this file?",0,0,TW,TH/2,sf.panel
 sf.Load = CreateButton("Load"  ,(tw/2)-200,th/2,200,25,sf.panel)
 sf.del  = CreateButton("Delete",(tw/2)    ,th/2,200,25,sf.panel)
@@ -59,7 +59,7 @@ Function MacSessionKill()
 'Notify "MacSessionKill set up" ' Debug line
 Local file$ = Dirry("$AppSupport$/$LinuxDot$Phantasar Productions/LAURA2/StarStory/Session.txt")
 Local SF:TSystemFile = New tsystemfile
-sf.panel = CreatePanel(0,0,ClientWidth(window),ClientHeight(window),window)
+sf.panel = CreatePanel(0,0,ClientWidth(tabber),ClientHeight(tabber),tabber)
 CreateLabel "It appears the game is in session. Don't use this launcher as long as the session goes.~n~nIf there is no session running then it might be possible the last session is not properly shut down. I can kill the session forcefully, however if a real session is running nevertheless it will terminate itself in less than 60 seconds without any futher warning.~n~nIf the game is running fine, you shouldn't bother. :) ",0,0,TW,TH/2,sf.panel
 sf.del  = CreateButton("Kill Session",(tw/2)-100    ,th/2,200,25,sf.panel)
 HideGadget sf.panel
@@ -75,22 +75,23 @@ CreateSystemFile "Emergency","Emergency Save","Perhaps you did not properly quit
 CreateSystemFile "Quit Game","Save upon quitting","Last time you quit the game (maybe in a hurry) and you left this savegame."
 
 Function SystemFilesCheck()
-Local ShowPanel:TGadget = Tabber
+Local ShownPanel:TGadget = Null
 For Local SF:TSystemfile = EachIn lsystemfile
 	'Notify "Checking for "+(Dirry(Save)+"/System/"+sf.file)+" resulted into: "+FileType(Dirry(Save)+"/System/"+sf.file) ' debug line
-	If FileType(Dirry(Save)+"/System/"+sf.file) And tabber=ShowPanel ShowPanel=sf.panel
+	If FileType(Dirry(Save)+"/System/"+sf.file) And (Not ShowPanel) ShownPanel=sf.panel
 	If eid=event_gadgetaction
 		Select ESource
 	 		Case sf.Load	LoadGame	Dirry(Save)+"/System/"+sf.file; showpanel cpanel; Return
 			Case sf.del		DeleteFile	Dirry(Save)+"/System/"+sf.file; showpanel cpanel; Return
 			End Select
 		EndIf	
-	sf.panel.setshow showpanel=sf.panel
-	tabber.setshow showpanel=tabber	
+	'sf.panel.setshow showpanel=sf.panel
+	'tabber.setshow showpanel=tabber		
 	Next	
-If showpanel<>tabber 	
-	For Local pan:TFPanelBase=EachIn panels HideGadget pan.panel Next
-	EndIf
+'If showpanel<>tabber 	
+'	For Local pan:TFPanelBase=EachIn panels HideGadget pan.panel Next
+'	EndIf
+showforcedpanel ShownPanel
 Return showpanel<>tabber	
 End Function
 
@@ -110,7 +111,7 @@ Select eid
 	Case event_AppTerminate,event_windowclose
 		Bye
 	Case event_gadgetaction
-		If esource=tabber
+		If esource=tabber And (Not nocanvas)
 			cpanel = SelectedGadgetItem(esource)
 			showpanel cpanel		
 			EndIf
