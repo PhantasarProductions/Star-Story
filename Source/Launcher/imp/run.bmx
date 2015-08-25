@@ -45,7 +45,7 @@ Global LSystemFile:TList = New TList
 	
 Function CreateSystemFile(File$,Description$,Explain$)
 Local SF:TSystemFile = New tsystemfile
-sf.panel = CreatePanel(0,0,ClientWidth(tabber),ClientHeight(tabber),tabber)
+sf.panel = CreatePanel(0,0,ClientWidth(tabber),ClientHeight(tabber),tabber); HideGadget sf.panel
 CreateLabel "The ~q"+Description+"~q file has been found.~n~n"+Explain+"~n~nDo you wish to load or delete this file?",0,0,TW,TH/2,sf.panel
 sf.Load = CreateButton("Load"  ,(tw/2)-200,th/2,200,25,sf.panel)
 sf.del  = CreateButton("Delete",(tw/2)    ,th/2,200,25,sf.panel)
@@ -82,8 +82,8 @@ For Local SF:TSystemfile = EachIn lsystemfile
 	If FileType(sf.file) And (Not ShownPanel) ShownPanel=sf.panel
 	If eid=event_gadgetaction
 		Select ESource
-	 		Case sf.Load	LoadGame	Dirry(Save)+"/System/"+sf.file; showpanel cpanel; Return
-			Case sf.del		DeleteFile	Dirry(Save)+"/System/"+sf.file; showpanel cpanel; Return
+	 		Case sf.Load	LoadGame	Dirry(Save)+"/System/"+sf.file; HideGadget ShownPanel; showpanel cpanel; Return
+			Case sf.del		DeleteFile	Dirry(Save)+"/System/"+sf.file; HideGadget ShownPanel; showpanel cpanel; Return
 			End Select
 		EndIf	
 	'sf.panel.setshow showpanel=sf.panel
