@@ -110,7 +110,11 @@ for i=0,5 do
     herotag = RPGStat.PartyTag(i)
     if herotag and herotag~="" then
        herolevel = RPGStat.Stat(herotag,"Level")
-       gainexp = math.floor((enemylevel/herolevel)*maxfactor)
+       gainexp = math.floor((enemylevel/herolevel)*maxfactor);
+       ({
+           function() end,
+           function() gainexp = gainexp / 2 end,
+           function() gainexp = 0 end})[skill]()
        RPGStat.Points(herotag,"EXP").Inc(gainexp)
        end
     end
@@ -127,7 +131,7 @@ local gpc = {25,12,4}
 local gii
 if Fighters.Hero[gip] and Fighters.Hero[gip].Tag~="" and Fighters.Hero[gip].Tag~="Briggs" and RPGStat.Points(Fighters.Hero[gip].Tag,"HP").Have>0 and rand(1,100)<gpc[skill] and #myfoe.ItemDrop>0 then
    gii = rand(1,#myfoe.ItemDrop)
-   DBGSerialize(myfoe)
+   -- DBGSerialize(myfoe)
    GiveItem(Fighters.Hero[gip].Tag,myfoe.ItemDrop[gii].ITM,myfoe.ItemDrop[gii].VLT)
    end
 -- Remove the enemy from memory           
