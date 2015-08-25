@@ -91,6 +91,12 @@ local elementalresistance = ({
                        r,g,b = 255,180,0
                        end,
                  [6] = function()
+                       if RPGChar.Points(chtarget,"HP").Have == 0 then
+                          dodmg = 0
+                          report = "NO EFFECT!"      
+                          r,g,b = 255,180,0
+                          return
+                          end
                        dodmg = math.abs(dodmg)*(-1)
                        report = math.abs(dodmg)
                        r,g,b = 0,255,0
