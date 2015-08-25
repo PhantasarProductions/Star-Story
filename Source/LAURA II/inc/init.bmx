@@ -154,7 +154,7 @@ End Function
 
 Function LAURABYE()
 GALE_Sys.ByeExecute
-DeleteFile Dirry(Sessionfile)
+If Not DeleteFile(Dirry(Sessionfile)) GALE_Error "LAURA session not properly closed",[","+SessionFile,",this file could not be properly deleted ",",to mark the session is over.",",",",LAURA II will not be hurt by this",",but the launcher might malfunction.",",delete this file manually and stuff should work normally again"]	
 End Function
 
 Function InitClosure()
