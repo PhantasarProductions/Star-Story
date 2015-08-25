@@ -65,7 +65,7 @@ sf.del  = CreateButton("Kill Session",(tw/2)-100    ,th/2,200,25,sf.panel)
 HideGadget sf.panel
 sf.File = File
 ListAddLast Lsystemfile,sf
-Notify "Session file = "+file
+'Notify "Session file = "+file ' Debug line
 End Function
 
 MacSessionKill
@@ -79,7 +79,7 @@ Local ShownPanel:TGadget = Null
 For Local SF:TSystemfile = EachIn lsystemfile
 	'Notify "Checking for "+(Dirry(Save)+"/System/"+sf.file)+" resulted into: "+FileType(Dirry(Save)+"/System/"+sf.file) ' debug line
 
-	If FileType(sf.file) And (Not ShownPanel) ShownPanel=sf.panel Else hidegadget sf.panel
+	If FileType(sf.file) And (Not ShownPanel) ShownPanel=sf.panel Else HideGadget sf.panel
 	If eid=event_gadgetaction
 		Select ESource
 	 		Case sf.Load	LoadGame	sf.file; HideGadget ShownPanel; showpanel cpanel; Return
