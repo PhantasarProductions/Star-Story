@@ -81,13 +81,16 @@ For Local SF:TSystemfile = EachIn lsystemfile
 	If FileType(Dirry(Save)+"/System/"+sf.file) And tabber=ShowPanel ShowPanel=sf.panel
 	If eid=event_gadgetaction
 		Select ESource
-	 		Case sf.Load	LoadGame	Dirry(Save)+"/System/"+sf.file
-			Case sf.del		DeleteFile	Dirry(Save)+"/System/"+sf.file
+	 		Case sf.Load	LoadGame	Dirry(Save)+"/System/"+sf.file; showpanel cpanel; Return
+			Case sf.del		DeleteFile	Dirry(Save)+"/System/"+sf.file; showpanel cpanel; Return
 			End Select
 		EndIf	
 	sf.panel.setshow showpanel=sf.panel
 	tabber.setshow showpanel=tabber	
 	Next	
+If showpanel<>tabber 	
+	For Local pan:TFPanelBase=EachIn TFPanel.Panel HideGadget pan.panel Next
+	endif
 Return showpanel<>tabber	
 End Function
 
