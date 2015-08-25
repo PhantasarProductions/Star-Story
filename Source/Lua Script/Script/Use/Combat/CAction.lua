@@ -65,7 +65,7 @@ if abl.Healing and abl.Healing>0 then
 -- Hurt target (can also heal if the element is being absored)
 -- Scripted stuff
 -- Cause status changes (this must always be the last thing to do)
-end
+end; AbilityEffect = AblEffect
 
 ActionFuncs = {}
 
