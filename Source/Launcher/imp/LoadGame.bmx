@@ -38,9 +38,14 @@ JCR6CrashError = True
 
 Const save$ = "$AppSupport$/$LinuxDot$Phantasar Productions/LAURA2/StarStory/Saved Games"
 
+Private
+Global GLGPanel:tloadgamepanel = New TLoadGamePanel
+Public
+Global LGPanel:TGadget = AddPanel("Load Game",GLGPanel)
 
-Global LGPanel:TGadget = AddPanel("Load Game",New TLoadGamePanel)
-
+Function LoadGame(file$)
+GLGPanel.RunLoadGame File
+End Function
 
 Type TLoadGamePanel Extends tfpanelbase
 
@@ -78,9 +83,11 @@ Type TLoadGamePanel Extends tfpanelbase
 	ClearGadgetItems users
 	ClearGadgetItems files
 	For Local U$=EachIn ListDir(Dirry(Save),2)
-		AddGadgetItem Users,U
-		c:+1
-		If SUSER And SUSER=U i=c
+		If Upper(U)<>"SYSTEM"
+			AddGadgetItem Users,U
+			c:+1
+			If SUSER And SUSER=U i=c
+			EndIf
 		Next
 	If i>-1 
 		SelectGadgetItem Users,i	
