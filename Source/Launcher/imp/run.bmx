@@ -54,7 +54,7 @@ sf.File = File
 End Function
 
 CreateSystemFile "Emergency Save","Emergency Save","Perhaps you did not properly quit the game last time you played. Maybe there was an error in the game? Or a total OS crash? Or did you have a power malfunction? Or did you just forget to shutdown the game? Anyway here we got an emergency save so maybe you can load it to recover some unsaved data."
-CreateSystemFile "Quite Save","Save upon quitting","Last time you quit the game (maybe in a hurry) and you left this savegame."
+CreateSystemFile "Quite Game","Save upon quitting","Last time you quit the game (maybe in a hurry) and you left this savegame."
 
 Function SystemFilesCheck()
 Local ShowPanel:TGadget = Tabber
