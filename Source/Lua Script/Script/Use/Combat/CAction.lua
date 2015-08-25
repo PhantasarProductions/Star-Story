@@ -88,3 +88,30 @@ CSay(sval(ag).."["..sval(ai).."]: "..sval(ch).." attacks")
 -- Perform Attack
 Attack(ag,ai,act)
 end
+
+function ActionFuncs.EAI(ag,ai,act)
+if not act.EAI then Sys.Error("Illegally set up act for EAI") end
+NewMessage(act.Item.Name,ItemIconCode(act.ItemCode))
+local ch = FighterTag(ag,ai)
+local tg,ti
+end
+
+function ActionFuncs.ITM(ag,ai,act)
+if ag=="Foe" then -- Foes should use "FAI" in stead.
+   MINI("Action skipped! Enemies cannot use items",255,0,0)
+   MINI("This must be the result of a bug",255,0,0)
+   MINI("Please write an issue about it on",255,0,0)
+   MINI("https://github.com/Tricky1975/Star-Story/issues",0,180,255)
+   MINI("(Unless somebody already did",255,0,0)
+   return
+   end
+local ch = FighterTag(ag,ai)   
+if RPGChar.Stat(ch,"INVAMNT"..act.ItemSocket)<=0 then
+   MINI("Action Cancelled!",255,0,0)
+   MINI("Item socket empty",255,180,0)
+   return
+   end
+RPGChar.DecStat(ch,"INVAMNT"..act.ItemSocket)   
+act.EAI = true
+ActionFuncs.EAI(ag,ai,act)
+end   
