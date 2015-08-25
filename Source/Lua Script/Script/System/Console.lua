@@ -342,3 +342,7 @@ if LAURA.GetFlow()~="COMBAT" then return CWrite("? This command only works in co
 MS.Run("COMBAT","NewMessage",join(arg,";"))
 end
 
+function GAMEOVER()
+MS.Load("GAMEOVER","Script/Flow/GameOver.Lua")
+LAURA.Flow("GAMEOVER")
+end 

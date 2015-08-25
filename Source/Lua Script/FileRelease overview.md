@@ -13,6 +13,7 @@
 1. Script/Flow/Combat.lua
 1. Script/Flow/Field.lsv
 1. Script/Flow/Field.lua
+1. Script/Flow/GameOver.lua
 1. Script/Flow/Menu.lua
 1. Script/Flow/Quit.lua
 1. Script/Flow/SaveGame.lsv
@@ -109,4 +110,4 @@
 
 
 
-### Last updated: Tue 25 August 2015; 20:00:39 CET
+### Last updated: Tue 25 August 2015; 21:17:50 CET
