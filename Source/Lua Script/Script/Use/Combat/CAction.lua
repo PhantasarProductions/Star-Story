@@ -47,6 +47,24 @@ Version: 15.08.01
 
 ]]
 function AblEffect(ag,ai,act,tg,ti)
+local abl=act.Item
+local cha = FighterTag(ag,ai)
+local cht = FighterTag(tg,ti)
+-- Cure status changes (this must always be the first thing to do)
+-- Heal absolute or by percent
+if abl.Healing and abl.Healing>0 then
+   (({ Absolute = function() Heal(tg,ti,abl.Healing) end,
+      Percent  = function()
+                 local hpt = RPGChar.Points(cht,"HP")
+                 local hpm = hpt.Maximum
+                 local points = (hpm/100)*abl.Healing
+                 Heal(tg,ti,points)
+                 end
+   })[abl.HealingType] or function() Sys.Error("Unknown healing type: "..sval(abl.HealingType)) end )()               
+   end
+-- Hurt target (can also heal if the element is being absored)
+-- Scripted stuff
+-- Cause status changes (this must always be the last thing to do)
 end
 
 ActionFuncs = {}
