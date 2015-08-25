@@ -56,6 +56,7 @@ End Function
 
 ?MacOS
 Function MacSessionKill()
+Notify "MacSessionKill set up" ' Debug line
 Local file$ = Dirry("$AppSupport$/$LinuxDot$Phantasar Productions/LAURA2/StarStory/Session.txt")
 Local SF:TSystemFile = New tsystemfile
 sf.panel = CreatePanel(0,0,ClientWidth(window),ClientHeight(window),window)
@@ -112,5 +113,6 @@ Select eid
 	Case event_gadgetpaint
 		allowcanvas = Not NoCanvas
 	End Select	
+ALLOWCANVAS = ALLOWCANVAS And (Not NOCANVAS)	
 Flow
 Forever
