@@ -98,6 +98,10 @@ RPGStat.Points(chtarget,"HP").Have = RPGStat.Points(chtarget,"HP").Have - dodmg
 CharReport(tg,ti,report,{r,g,b})               
 end
 
+function Heal(tg,ti,hp)
+Hurt ( tg , ti , hp , "Healing")
+end
+
 
 function Attack(ag,ai,act,pdata)
 local chactor = FighterTag(ag,ai)
