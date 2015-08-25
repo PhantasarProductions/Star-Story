@@ -59,9 +59,9 @@ for ak=1,3 do UpPoint(ak) end
 end
 
 function GiveItem(ch,item,vault)
-DrawScreen()
-DarkText("Configuring Data",400,300,2,2,255,255,255)
-Flip()
+-- DrawScreen()
+-- DarkText("Configuring Data",400,300,2,2,255,255,255)
+-- Flip()
 -- Let's find a spot first to place the item in
    local spot = nil
    local ak
