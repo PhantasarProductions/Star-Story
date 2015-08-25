@@ -41,6 +41,7 @@ Version: 15.08.01
 function UpPoint(i,amount)
 if not Fighters.Hero[i] then return end
 local f = FighterTag("Hero",i)
+if RPGStat.Points(f,"HP").Have==0 then return end -- Don't deal with the dead
 RPGStat.Points(f,"AP").Inc(amount or 1)
 local ak
 for ak=3,5 do
