@@ -142,7 +142,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	WriteLine bt,"Var:Title=Star Story"
 	WriteLine bt,"Var:StartUpFunction=LoadGame"
 	WriteLine Bt,"Var:CodeName=StarStory"
-	WriteLine bt,"Var:IgnoreGameJolt="+YesNo[ButtonState(IgnoreGameJolt)]
+	If IgnoreGameJolt WriteLine bt,"Var:IgnoreGameJolt="+YesNo[ButtonState(IgnoreGameJolt)]
 	CloseStream BT
 	?Not MacOS
 	HideGadget window
