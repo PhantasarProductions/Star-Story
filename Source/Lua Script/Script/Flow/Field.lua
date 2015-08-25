@@ -201,8 +201,8 @@ local obj,foe
 local R,G,B
 local pt = ngpcount or 1
 local lvrange
-local minenemies = {1,2,3}
-local maxenemies = {3,6,9}
+-- local minenemies = {1,2,3}
+-- local maxenemies = {3,6,9}
 local hilevel,diflevel
 local myleveltotal,partymembers,ptag
 local enemiesmain = Maps.GetData("Foes")
@@ -273,7 +273,13 @@ for obj in KthuraEach() do
           CSay("  = Configuring actor")
           Maps.Obj.Pick(foe.Tag)
           foe.Enemies = {}
+          --[[ old
           num = rand(minenemies[skill],maxenemies[skill])
+          ]]
+          -- new
+          repeat
+          num = rand(1,9)
+          until rand(1,num)<skill
           hilevel = 0
           for ak=1,num do
               foe.Enemies[ak] = 
