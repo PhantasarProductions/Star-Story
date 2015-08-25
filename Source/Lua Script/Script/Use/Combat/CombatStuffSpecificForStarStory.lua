@@ -57,6 +57,9 @@ for ak=1,3 do UpPoint(ak) end
 end
 
 function GiveItem(ch,item,vault)
+DrawScreen()
+DarkText("Configuring Data",400,300,2,2,255,255,255)
+Flip()
 -- Let's find a spot first to place the item in
    local spot = nil
    local ak
@@ -65,18 +68,18 @@ function GiveItem(ch,item,vault)
    -- First we're gonna look for a socket having the same item, but with enough space to carry another
    for ak=1,InventorySockets do
        -- CSay("Spot: "..ak.."; have: "..RPGChar.Stat(ch,"INVAMNT"..ak).." max: "..InventoryMaxStack) -- debug
-       if item=="ITM_"..RPGChar.Data(ch,"INVITEM"..ak) and RPGChar.Stat(ch,"INVAMNT"..ak)<InventoryMaxStack then spot = spot or ak end
+       if (not spot) and item=="ITM_"..RPGChar.Data(ch,"INVITEM"..ak) and RPGChar.Stat(ch,"INVAMNT"..ak)<InventoryMaxStack then spot = spot or ak end
        --CSay("Spot: "..ak.."; have: "..RPGChar.Stat(ch,"INVAMNT"..ak).." max: "..InventoryMaxStack.." spot: "..sval(spot)) -- debug
        end
    -- Now we'll do the same for an empty socket if no filled socket matched our requiments before    
    for ak=1,InventorySockets do
-       if RPGChar.Stat(ch,"INVAMNT"..ak)==0 then spot = spot or ak end
+       if (not spot) and RPGChar.Stat(ch,"INVAMNT"..ak)==0 then spot = spot or ak end
        end
 -- If we got no socket reaching the required conditions, we must either reject the item or throw it into the vault (if the latter is allowed for this item)
 if not spot then
    if not vault then return end -- If the item cannot be thrown into the vault, let's just ignore the item and we won't even talk about it any more
    putinvault = PutInVault(item)
-   if not putinvault then return end -- and if the item also could not be placed in the vault, let's ignore it anway and also not even talk about it any more.
+   if not putinvault then return end -- and if the item also could not be placed in the vault, let's ignore it anyway and also not even talk about it any more.
    inc("%VAULT."..item)    
 else
    RPGChar.SetData(ch,"INVITEM"..spot,right(item,len(item)-4))
@@ -87,7 +90,7 @@ CSay(ch.." receives "..item)
 MINI(RPGChar.GetName(ch).." gets a "..ItemName(item),0,180,255)
 if not spot then 
    MINI("however "..heshe[ch].." could not carry that any more since "..hisher[ch].." inventory is full",255,180,180)
-   if putinvalut then MINI("so the item has been put in the vault in stead") end
+   if putinvault then MINI("so the item has been put in the vault in stead") end
    end   
 if not Done("&TUT.ITEMSINBATTLE") then Tutorial("Occasionally when an enemy dies\nit may drop an item which a random character will pick up\nHowever only if he or she has room in his or her inventory for that item\n\n\nIf an item is vital and the character who finds it cannot pick it up it will be dropped\nin the vault in stead. This will however ONLY\nhappen with VITAL items and not common items!") end   
 end
