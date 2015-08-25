@@ -93,7 +93,7 @@ local elementalresistance = ({
                })[elementalresistance] or function() end)()
 if god and tg=="Hero" and elementalresistance<5 then dodmg = 0 end
 if jack and tg=="Foe" and elementalresistance<6 then dodmg = RPGStat.Points(chtarget,"HP").Have end
-if tg=="Hero" then Points(chtarget,"AP").Have = Points(chtarget,"AP").Have + 1 end 
+if tg=="Hero" then RPGChar.Points(chtarget,"AP").Have = RPGChar.Points(chtarget,"AP").Have + 1 end 
 RPGStat.Points(chtarget,"HP").Have = RPGStat.Points(chtarget,"HP").Have - dodmg
 CharReport(tg,ti,report,{r,g,b})               
 end
