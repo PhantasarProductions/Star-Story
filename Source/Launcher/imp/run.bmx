@@ -50,7 +50,7 @@ CreateLabel "The ~q"+Description+"~q file has been found.~n~n"+Explain+"~n~nDo y
 sf.Load = CreateButton("Load"  ,(tw/2)-200,th/2,200,25,sf.panel)
 sf.del  = CreateButton("Delete",(tw/2)    ,th/2,200,25,sf.panel)
 HideGadget sf.panel
-sf.File = File
+sf.File = Dirry(Save)+"/System/"+File
 ListAddLast Lsystemfile,sf
 End Function
 
@@ -78,7 +78,8 @@ Function SystemFilesCheck()
 Local ShownPanel:TGadget = Null
 For Local SF:TSystemfile = EachIn lsystemfile
 	'Notify "Checking for "+(Dirry(Save)+"/System/"+sf.file)+" resulted into: "+FileType(Dirry(Save)+"/System/"+sf.file) ' debug line
-	If FileType(Dirry(Save)+"/System/"+sf.file) And (Not ShowPanel) ShownPanel=sf.panel
+
+	If FileType(sf.file) And (Not ShownPanel) ShownPanel=sf.panel
 	If eid=event_gadgetaction
 		Select ESource
 	 		Case sf.Load	LoadGame	Dirry(Save)+"/System/"+sf.file; showpanel cpanel; Return
@@ -92,7 +93,7 @@ For Local SF:TSystemfile = EachIn lsystemfile
 '	For Local pan:TFPanelBase=EachIn panels HideGadget pan.panel Next
 '	EndIf
 showforcedpanel ShownPanel
-Return shownpanel<>null	
+Return shownpanel<>Null	
 End Function
 
 
