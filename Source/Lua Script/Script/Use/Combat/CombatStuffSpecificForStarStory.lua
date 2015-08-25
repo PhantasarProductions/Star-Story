@@ -46,6 +46,7 @@ local ak
 for ak=3,5 do
     f = RPGStat.PartyTag(ak)
     if f~="" then RPGStat.Points(f,"AP").Inc(amount or 1) end
+    if f=="Crystal" then RPGStat.Points(f,"HP").Inc(amount or 1) end
     end
 end
 
