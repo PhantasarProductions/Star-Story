@@ -89,8 +89,8 @@ For Local SF:TSystemfile = EachIn lsystemfile
 	tabber.setshow showpanel=tabber	
 	Next	
 If showpanel<>tabber 	
-	For Local pan:TFPanelBase=EachIn TFPanel.Panel HideGadget pan.panel Next
-	endif
+	For Local pan:TFPanelBase=EachIn panels HideGadget pan.panel Next
+	EndIf
 Return showpanel<>tabber	
 End Function
 
