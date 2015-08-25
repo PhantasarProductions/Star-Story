@@ -56,7 +56,7 @@ End Function
 
 ?MacOS
 Function MacSessionKill()
-Notify "MacSessionKill set up" ' Debug line
+'Notify "MacSessionKill set up" ' Debug line
 Local file$ = Dirry("$AppSupport$/$LinuxDot$Phantasar Productions/LAURA2/StarStory/Session.txt")
 Local SF:TSystemFile = New tsystemfile
 sf.panel = CreatePanel(0,0,ClientWidth(window),ClientHeight(window),window)
@@ -65,6 +65,7 @@ sf.del  = CreateButton("Kill Session",(tw/2)-100    ,th/2,200,25,sf.panel)
 HideGadget sf.panel
 sf.File = File
 ListAddLast Lsystemfile,sf
+Notify "Session file = "+file
 End Function
 
 MacSessionKill
@@ -101,7 +102,9 @@ If FileType(crashf)
 PollEvent
 eid = EventID()
 esource = TGadget(EventSource())
-Local NoCanvas = SystemFilesCheck()
+Private
+Global NoCanvas = SystemFilesCheck()
+Public
 Select eid
 	Case event_AppTerminate,event_windowclose
 		Bye
