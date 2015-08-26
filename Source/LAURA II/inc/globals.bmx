@@ -77,4 +77,4 @@ Global LastConsoleCommand$
 Global ConsoleScript:TLua
 
 ' Session
-Global SessionFile$
+'Global SessionFile$

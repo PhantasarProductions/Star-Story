@@ -377,3 +377,7 @@ for ch in each(chlist) do
     end
 
 end
+
+function CRASH(err,errarray)
+Sys.Error(err or "Fabricated Error",errarry)
+end

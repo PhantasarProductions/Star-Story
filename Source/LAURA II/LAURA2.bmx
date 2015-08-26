@@ -113,8 +113,8 @@ called BLD responds to create a command overview
 End Rem
 
 ' Import the required APIs from the gale framework
-Framework	gale.m2d
-Import	gale.multiscript
+Framework	gale.multiscript
+Import	"imp/Alt_M2D.bmx"
 Import	gale.shell
 Import	gale.gamevar
 Import	gale.image
