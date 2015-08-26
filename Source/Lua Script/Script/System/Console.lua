@@ -360,13 +360,17 @@ for ch in each(mysplit(RPGChar.CharList(),";")) do
 end
 
 function CHARSTAT(gch,gstat)
+CSay("CHARSTAT("..sval(gch)..","..sval(gstat)..");")
 local chlist = gch or RPGChar.CharList()
+CSay("Working with charlist: "..sval(chlist))
+-- if trim(gch)=="" then chlist = RPGChar.Charlist() end 
 chlist = mysplit( chlist, ";" ) 
+CSay("Charlist succesfully split")
 local statlist 
 local ch,stat
 for ch in each(chlist) do 
-    statlist = mysplit(gstat or RPGChar.StatFields(gch), ";")
-    CSay("- Char: ",ch) 
+    CSay("- Char: "..ch) 
+    statlist = mysplit(gstat or RPGChar.StatFields(ch) or "", ";")
     for stat in each(statlist) do
         CSay("  = "..stat..": "..RPGChar.Stat(ch,stat))
         end
