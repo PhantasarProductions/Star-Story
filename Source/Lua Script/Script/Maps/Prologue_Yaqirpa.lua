@@ -88,8 +88,8 @@ Actors.RenewActor("ActBriggs")
 end
 
 function KantoorNaGevecht()
-Maps.Obj.Kill("ASTRILOPUP_A")
-Maps.Obj.Kill("ASTRILOPUP_B")
+Maps.Obj.Kill("ACTASTRILOPUP_A")
+Maps.Obj.Kill("ACTASTRILOPUP_B")
 MapShow("GreatHall-FirstFloor","Kantoor")
 MapText("EAVESDROP_ASTRILOPUP_02")
 end
