@@ -205,7 +205,7 @@ Print "Original = "+Original
 'ConsoleShow;Flip;WaitKey;Bye ' Debug line. Put on rem when done.
 ' If this is a "DeleteMe" savegame, remove it now	
 If DeleteWhenLoaded 
-	If Not DeleteFile(file) GALE_Error "Deletion Error",["1,This file had to be deleted after loading","2,however, either it's been tampered with","3,somehow or there are some filesystem","4,errors, but the deletion failed.","5,","6,In order not to enable cheating","7,the system's gonna crash out!","8,Bye!"]
+	If Not DeleteFile(file) GALE_Error "Deletion Error",["1,This file had to be deleted after loading","2,however either it's been tampered with","3,somehow or there are some filesystem","4,errors but the deletion failed.","5,","6,In order not to enable cheating","7,the system's gonna crash out!","8,Bye!"]
 	EndIf
 Return Original
 End Function
