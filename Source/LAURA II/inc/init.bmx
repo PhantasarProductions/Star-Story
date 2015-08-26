@@ -105,6 +105,12 @@ If Not id error "Game has no identify data"
 If id.get("Engine")<>"LAURA2" And id.get("Engine")<>"LAURA II" error "This game was meant for the "+id.get("Engine")+" engine and not for LAURA II"
 LuaConsoleFlip = ID.Get("ShowConsole").toUpper()="YES"
 AppTitle = id.get("Title")
+ErrorClosureMessage=id.Get("Error")+"\n"
+If id.get("Dev")="Yes" 	
+	ErrorClosureMessage:+"\n"+id.get("DevError")
+	sessionlogfile = ExtractDir(SessionFile)+"/Session Log.html"
+	ConsoleWriteLogFile(SessionLogFile$)
+	EndIf
 End Function
 
 Function InitGraphics(i:TID,fullscreen)
@@ -155,6 +161,8 @@ End Function
 Function LAURABYE()
 ConsoleWrite "Killig session: "+Sessionfile
 If Not DeleteFile(Dirry(Sessionfile)) GALE_Error "LAURA session not properly closed",[","+SessionFile,",this file could not be properly deleted ",",to mark the session is over.",",",",LAURA II will not be hurt by this",",but the launcher might malfunction.",",delete this file manually and stuff should work normally again"]	
+ConsoleWrite "Session ended on: "+PNow()
+ConsoleCloseLogFile()
 GALE_Sys.ByeExecute
 End Function
 

@@ -378,6 +378,6 @@ for ch in each(chlist) do
 
 end
 
-function CRASH(err,errarray)
-Sys.Error(err or "Fabricated Error",errarry)
+function CRASH(err)
+Sys.Error(err or "Fabricated Error")
 end

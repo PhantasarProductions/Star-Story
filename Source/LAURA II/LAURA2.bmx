@@ -114,7 +114,8 @@ End Rem
 
 ' Import the required APIs from the gale framework
 Framework	gale.multiscript
-Import	"imp/Alt_M2D.bmx"
+Import	"imp/Alt_M2D.bmx" ' Version conflict with other stuff, sigh!
+Import	gale.M2D
 Import	gale.shell
 Import	gale.gamevar
 Import	gale.image
@@ -158,6 +159,7 @@ Import	brl.glmax2d
 Import	brl.freetypefont
 
 
+GaleCon = New GALEMainCon2
 
 ' Version
 MKL_Lic     "LAURA II - LAURA2.bmx","GNU - General Public License ver3"

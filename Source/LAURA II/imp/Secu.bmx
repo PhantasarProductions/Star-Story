@@ -33,6 +33,7 @@ Import brl.linkedlist
 Import jcr6.jcr6main
 Import tricky_units.gamevars
 Import tricky_units.rpgstats
+Import tricky_units.console
 Type TSecu
 	
 	Method New() ListAddLast SecuList,Self End Method	

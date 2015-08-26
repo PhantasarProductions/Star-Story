@@ -49,14 +49,17 @@ Import GALE.MaxLua4Gale
 Import Tricky_units.console
 'Import "../Units/MKL_Version.bmx" ' MKL_Version has been transformed into a module for better access from other modules of mine.
 Import Tricky_Units.MKL_Version
+Import tricky_units.Bye
 
 Import Gale.Main
 
 
 
 ' I moved this here.
-Global SessionFile$ ' Part of LAURA II, very important too
-Global SessionLog:TStream ' Part of LAURA II development mode, very important too.
+Global SessionFile$ ' Part of LAURA II, very important 
+Global SessionLogFile$  ' Part of LAURA II, very important too
+Global SessionLogStream:TStream ' Part of LAURA II development mode, very important too.
+Global ErrorClosureMessage$
 
 
 ' Versions
@@ -93,9 +96,9 @@ MKL_Lic     "GALE - GALE_M2D.bmx","Mozilla Public License 2.0"
 
 
 ' The functione below make contact with Max2D. In the GUI version they put it on a by a user selected textfield.
-Private
+'Private
 
-Type GALEMainCon Extends GALE_DebugConsole 'GALE_DebugConsole
+Type GALEMainCon2 Extends GALE_DebugConsole 'GALE_DebugConsole
 	Method GaleConsoleWrite(Txt$,R=255,G=255,B=255)
 	ConsoleWrite(Txt,R,G,B)
 	End Method
@@ -112,14 +115,21 @@ Type GALEMainCon Extends GALE_DebugConsole 'GALE_DebugConsole
 	ConsoleCloseLogFile
 	End Method
 	
-	Method GaleErrorClosureRequest()
+	Method GaleErrorClosureRequest()	
+	Local gotlog = FileType(SessionLogFile)<>0
+	Local cont$[] = ["Hit any key to continue","Do you wish to open the log in the browser? (Y/N)"]
+	ConsoleCloseLogFile()
+	For Local line$=EachIn ErrorClosureMessage.Split("\n")
+		ConsoleWrite line,255,180,0
+		Next
 	GALEConsoleWrite "Hit any key to coninue",255,0,255
+	Graphics 800,600,0
 	FlushKeys
 	Cls
 	ConsoleShow
 	Flip
-	WaitKey	
-	End 
+	If Chr(WaitKey())="Y" And gotlog OpenURL SessionLogFile
+	Bye
 	End Method
 	
 	Method DoFlip(A=-1)
@@ -153,7 +163,7 @@ Type GALEMainCon Extends GALE_DebugConsole 'GALE_DebugConsole
 	End Type
 
 Public
-GaleCon = New GALEMainCon
+GaleCon = New GALEMainCon2
 Private
 
 
@@ -181,4 +191,4 @@ Type LConsole ' BLD: Object Console\nAllows a lua script to write something on t
 	
 	End Type
 	
-LuaRegisterObject New LConsole,"Console"
+GALE_Register New LConsole,"Console"
