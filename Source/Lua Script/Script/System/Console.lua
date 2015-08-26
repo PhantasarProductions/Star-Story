@@ -350,11 +350,26 @@ end
 function CHARLIST()
 local r,g,b
 local ch
-for ch in each(mysplit(RPGChar.CharList())) do
+for ch in each(mysplit(RPGChar.CharList(),";")) do
     r = 180
     g = 255
     b = 0
     if prefixed(ch,"FOE") then r=255; g=0; b=0 end
     CWrite(ch,r,g,b)
     end
+end
+
+function CHARSTAT(gch,gstat)
+local chlist = gch or RPGChar.CharList()
+chlist = mysplit( chlist, ";" ) 
+local statlist 
+local ch,stat
+for ch in each(chlist) do 
+    statlist = mysplit(gstat or RPGChar.StatFields(gch), ";")
+    CSay("- Char: ",ch) 
+    for stat in each(statlist) do
+        CSay("  = "..stat..": "..RPGChar.Stat(ch,stat))
+        end
+    end
+
 end
