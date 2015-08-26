@@ -294,7 +294,7 @@ FeatureHandleArray = {
                      end    
                   local dy = my + 16   
                   local dl
-                  if hover and RPGChar.Stat(pchar,"INVAMNT"..hoverdata.i)>0 then
+                  if hoverdata and RPGChar.Stat(pchar,"INVAMNT"..hoverdata.i)>0 then
                          item = ItemGet("ITM_"..RPGChar.Data(pchar,"INVITEM"..hoverdata.i))
                          SetFont("ItemHeader")
                          FitText(item.Name,mx+16,my+16)
