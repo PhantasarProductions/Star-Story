@@ -301,7 +301,7 @@ FeatureHandleArray = {
                          dy = dy + Image.TextHeight(item.Name,255,0,0)
                          SetFont("ItemDescription")
                          for dl in each(mysplit(item.Description,"\n")) do
-                             FitText(dl,my,dy,0,180,255)
+                             FitText(dl,mx,dy,0,180,255)
                              dy = dy + Image.TextHeight(dl)
                              end
                          end    
