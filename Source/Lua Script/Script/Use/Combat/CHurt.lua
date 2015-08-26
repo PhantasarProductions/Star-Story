@@ -47,7 +47,7 @@ Version: 15.08.26
 
 ]]
 
--- @DEFINE DEBUG_HURT
+-- @UNDEF DEBUG_HURT
 
 function Hurt(tg,ti,hp,element)
 local r,g,b = 255,255,255
@@ -72,7 +72,7 @@ local elementalresistance = ({
                        dodmg = RPGStat.Points(chtarget,"HP").Have
                        end,
                  [1] = function() -- super weakness
-                       dodmg = dodmg *4
+                       dodmg = dodmg * 4
                        report = dodmg; r,g,b = 255,0,0
                        end,
                  [2] = function() -- regular weakness

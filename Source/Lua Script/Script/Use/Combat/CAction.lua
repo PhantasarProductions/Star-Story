@@ -48,6 +48,7 @@ Version: 15.08.26
 ]]
 function AblEffect(ag,ai,act,tg,ti)
 local abl=act.Item
+local atkdata
 local cha = FighterTag(ag,ai)..""
 local cht = FighterTag(tg,ti).."" -- This way of forming FORCES a <nil> value error if this should happen. I need to know if the evil's done here or not :)
 -- Cure status changes (this must always be the first thing to do)
@@ -63,6 +64,16 @@ if abl.Healing and abl.Healing>0 then
    })[abl.HealingType] or function() Sys.Error("Unknown healing type: "..sval(abl.HealingType)) end )()               
    end
 -- Hurt target (can also heal if the element is being absored)
+if abl.AttackPower>0 then
+   atkdata = {
+       atk = abl.AttackStat,
+       def = abl.DefenseStat,
+       mod = abl.AttackPower/100,
+       element
+           = abl.AttackElement
+      }
+   Attack(ag,ai,act,atkdata)   
+   end
 -- Scripted stuff
 -- Cause status changes (this must always be the last thing to do)
 end; AbilityEffect = AblEffect
@@ -79,7 +90,7 @@ if RPGChar.Points(ch,"AMMO",1).Have<=0 then return MINI(RPGChar.Name(ch).." cann
 local tg,ti = TargetFromAct(act)
 CSay(sval(ag).."["..sval(ai).."]: "..sval(ch).." shoots")
 -- Animate character 
---[[ Comes later ]]
+SpriteAnim[ag](ai,act)
 -- SpellAni for the projectile
 RPGChar.NewData(ch,"ShootSpellAni","PhotonGun") -- If not properly set, we'll assume the photon gun animation is required. 
 SpellAni[RPGChar.GetData(ch,"ShootSpellAni")](ag,ai,tg,ti)
@@ -105,7 +116,7 @@ local ch = FighterTag(ag,ai) --RPGChar.PartyTag(ag,ai)
 local tg,ti = TargetFromAct(act)
 CSay(sval(ag).."["..sval(ai).."]: "..sval(ch).." attacks")
 -- Animate character 
---[[ Comes later ]]
+SpriteAnim[ag](ai,act)
 -- Perform Attack
 Attack(ag,ai,act)
 end
@@ -113,6 +124,7 @@ end
 function ActionFuncs.EAI(ag,ai,act)
 if not act.EAI then Sys.Error("Illegally set up act for EAI") end
 NewMessage(act.Item.Name,ItemIconCode(act.ItemCode))
+SpriteAnim[ag](ai,act)
 local ch = FighterTag(ag,ai)
 local tg,ti
 local function SingleEffect(ag,ai,act) AbilityEffect(ag,ai,act,act.TargetGroup,act.TargetIndividual) end

@@ -176,6 +176,26 @@ if RPGStat.Points(myfoe.Tag,"HP").Have==0 then
 Image.ScalePC(100,100)   
 end
 
+function FlashFoe(idx,act)
+local myfoe = Fighters.Foe[idx]
+local k
+for k=1,5 do
+    Neg = Neg or {}
+    Neg[idx] = not Neg[idx]
+    DrawScreen()
+    Flip()
+    Time.Sleep(25)
+    end
+Neg[idx]=nil    
+end
+
+function AnimateHero(idx,act)
+end
+
+SpriteAnim = {
+    Foe = FlashFoe,
+    Hero = AnimateHero
+    }
 
 function DrawFighters()
 for ft,ftl in spairs(Fighters) do

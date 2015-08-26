@@ -106,7 +106,7 @@ local ch,i,r,g
 for i=1,#p do
     r = (i/#p)*255
     g = 255-r    
-    Console.Write(i.."> "..RPGChar.PartyTag(i),r,g,0)
+    Console.Write(i.."> "..RPGChar.PartyTag(i-1),r,g,0)
     Console.Write("   = HP:  "..RPGChar.Points(p[i], "HP").Have.." of "..RPGChar.Points(p[i], "HP").Maximum,r,g,0)
     Console.Write("   = AP:  "..RPGChar.Points(p[i], "AP").Have.." of "..RPGChar.Points(p[i], "AP").Maximum,r,g,0)
     Console.Write("   = EXP: "..RPGChar.Points(p[i],"EXP").Have.." of "..RPGChar.Points(p[i],"EXP").Maximum,r,g,0)
@@ -346,3 +346,15 @@ function GAMEOVER()
 MS.Load("GAMEOVER","Script/Flow/GameOver.Lua")
 LAURA.Flow("GAMEOVER")
 end 
+
+function CHARLIST()
+local r,g,b
+local ch
+for ch in each(mysplit(RPGChars.CharList())) do
+    r = 180
+    g = 255
+    b = 0
+    if prefixed(ch,"FOE") then r=255; g=0; b=0 end
+    CWrite(ch,r,g,b)
+    end
+end
