@@ -350,7 +350,7 @@ end
 function CHARLIST()
 local r,g,b
 local ch
-for ch in each(mysplit(RPGChars.CharList())) do
+for ch in each(mysplit(RPGChar.CharList())) do
     r = 180
     g = 255
     b = 0
