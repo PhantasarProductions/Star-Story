@@ -153,3 +153,16 @@ RPGChar.DecStat(ch,"INVAMNT"..act.ItemSocket)
 act.EAI = true
 ActionFuncs.EAI(ag,ai,act)
 end   
+
+function ActionFuncs.FAI(ag,ai,act)
+if ag=="Hero" then -- Foes should use "FAI" in stead.
+   MINI("Action skipped! FAI is an enemy-only setting, not the playable characters!",255,0,0)
+   MINI("This must be the result of a bug",255,0,0)
+   MINI("Please write an issue about it on",255,0,0)
+   MINI("https://github.com/Tricky1975/Star-Story/issues",0,180,255)
+   MINI("(Unless somebody already did",255,0,0)
+   return
+   end
+act.EAI = true
+ActionFuncs.EAI(ag,ai,act)
+end

@@ -67,7 +67,12 @@ DefaultProcess = {
               return DefaultSys[act](me,myact) 
               end,
         Abl = function (me,act,myact)
-              Sys.Error("Special abilities not yet implemented")
+              local item = ItemGet(act)
+              myact.Act = "FAI"
+              myact.ItemCode = act
+              myact.Item = item
+              myact.ActSpeed = item.ActSpeed
+              myact.TargetGroup,myact.TargetIndividual = FoeTargetSelector[item.Target](me)
               end
     }
 
