@@ -97,8 +97,8 @@ end
 function Kantoor()
 MapShow("GreatHall-FirstFloor","Kantoor")
 if Done("&YAQIRPA.KANTOOR.ASTRILOPUPS") then return end
-Actors.Spawn("ASTRILOPUP_A","GFX/ACTORS/SinglePic/Astrilopup/Astrilopup_E.png","ACTASTRILO_A",1)
-Actors.Spawn("ASTRILOPUP_B","GFX/ACTORS/SinglePic/Astrilopup/Astrilopup_W.png","ACTASTRILO_B",1)
+Actors.Spawn("ASTRILOPUP_A","GFX/ACTORS/SinglePic/Astrilopup/Astrilopup_E.png","ACTASTRILOPUP_A",1)
+Actors.Spawn("ASTRILOPUP_B","GFX/ACTORS/SinglePic/Astrilopup/Astrilopup_W.png","ACTASTRILOPUP_B",1)
 local gtx=1344
 local gty=834
 repeat
