@@ -1,6 +1,6 @@
 --[[
 /* 
-  
+  Learn Spell Messages
 
   Copyright (C) 2015 Jeroen P. Broks
 
@@ -24,7 +24,7 @@
 
 
 
-Version: 15.05.22
+Version: 15.08.26
 
 ]]
 function needkills()

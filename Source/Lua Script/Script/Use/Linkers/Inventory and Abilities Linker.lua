@@ -1,11 +1,12 @@
 --[[
 /* 
-  
+  Inventory and abilities linker
 
   Copyright (C) 2015 Jeroen P. Broks
   
   ===========================
-  This file is part of a project related to the Phantasar Chronicles.
+  This file is part of a project related to the Phantasar Chronicles or another
+  series or saga which is property of Jeroen P. Broks.
   This means that it may contain references to a story-line plus characters
   which are property of Jeroen Broks. These references may only be distributed
   along with an unmodified version of the game. 
@@ -42,7 +43,7 @@
 
 
 
-Version: 15.05.22
+Version: 15.08.26
 
 ]]
 if not realinventory then -- This if statement must prevent that the real Items and Abilities routine (which incldues this file as well and I cannot prevent that) gets destroyed by these definitions!

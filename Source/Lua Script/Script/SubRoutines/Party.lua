@@ -24,7 +24,7 @@
 
 
 
-Version: 15.08.01
+Version: 15.08.26
 
 ]]
 statusbar = Image.Load("GFX/Statusbar/StatusBar.png")

@@ -35,7 +35,7 @@
 
 
 
-Version: 15.07.20
+Version: 15.08.26
 
 ]]
 lvWendicka = RPGStats.Stat("UniWendicka","Level")

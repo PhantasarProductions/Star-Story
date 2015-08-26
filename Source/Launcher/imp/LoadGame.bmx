@@ -1,7 +1,14 @@
 Rem
 /*
-	
-	
+	Star Story - Load Game
+	If Not ch 
+		GALE_Error("Character doesn't exist",["F,RPGChar.SetData","char,"+char])
+		EndIf
+
+	Load savegame screen for Star Story
+		GALE_Error("Character doesn't exist",["F,RPGChar.SetData","char,"+char])
+		EndIf
+
 	
 	
 	
@@ -24,7 +31,7 @@ Rem
 */
 
 
-Version: 15.05.22
+Version: 15.08.26
 
 End Rem
 Strict

@@ -5,7 +5,8 @@
   Copyright (C) 2015 JPB
   
   ===========================
-  This file is part of a project related to the Phantasar Chronicles.
+  This file is part of a project related to the Phantasar Chronicles or another
+  series or saga which is property of Jeroen P. Broks.
   This means that it may contain references to a story-line plus characters
   which are property of Jeroen Broks. These references may only be distributed
   along with an unmodified version of the game. 
@@ -42,7 +43,7 @@
 
 
 
-Version: 15.07.20
+Version: 15.08.26
 
 ]]
 
@@ -218,7 +219,7 @@ FeatureHandleArray = {
                   local row,col
                   local mx,my = MouseCoords()
                   local temp
-                  local hover
+                  local hover,hoverdata
                   local item
                   White()
                   for ak=1,InventorySockets do
@@ -238,11 +239,7 @@ FeatureHandleArray = {
                          end
                       -- Detect Hover
                       hover = mx>x-14 and mx<x+14 and my>y-14 and my<y+14
-                      if hover and RPGChar.Stat(pchar,"INVAMNT"..ak)>0 then
-                         item = ItemGet("ITM_"..RPGChar.Data(pchar,"INVITEM"..ak))
-                         SetFont("ItemHeader")
-                         FitText(item.Name,mx+16,my+16)
-                         end    
+                      if hover then hoverdata = { i = ak, x = x, y = y} end
                       -- Field clicks
                       if returnto=="FIELD" and hover and pchar~="Briggs" then -- Briggs will be without items as a guest character!
                          -- Move items
@@ -295,6 +292,19 @@ FeatureHandleArray = {
                      Var.D("%CHOSENITEM.SOCKET",-1)
                      LAURA.Flow("COMBAT")                     
                      end    
+                  local dy = my + 16   
+                  local dl
+                  if hover and RPGChar.Stat(pchar,"INVAMNT"..hoverdata.i)>0 then
+                         item = ItemGet("ITM_"..RPGChar.Data(pchar,"INVITEM"..hoverdata.i))
+                         SetFont("ItemHeader")
+                         FitText(item.Name,mx+16,my+16)
+                         dy = dy + Image.TextHeight(item.Name,255,0,0)
+                         SetFont("ItemDescription")
+                         for dl in each(mysplit(item.Description,"\n")) do
+                             FitText(dl,my,dy,0,180,255)
+                             dy = dy + Image.TextHeight(dl)
+                             end
+                         end    
                   -- @IF *DEVELOPMENT
                   y = 20
                   for k,v in spairs(ChosenItem) do

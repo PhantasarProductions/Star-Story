@@ -1,7 +1,7 @@
 Rem
 /*
-	
-	
+	LAURA II
+	Init the engine
 	
 	
 	
@@ -24,10 +24,10 @@ Rem
 */
 
 
-Version: 15.07.12
+Version: 15.08.26
 
 End Rem
-MKL_Version "LAURA II - inc/init.bmx","15.07.12"
+MKL_Version "LAURA II - inc/init.bmx","15.08.26"
 MKL_Lic     "LAURA II - inc/init.bmx","GNU - General Public License ver3"
 
 Function Init()

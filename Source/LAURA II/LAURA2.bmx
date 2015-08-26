@@ -24,7 +24,7 @@ Rem
 */
 
 
-Version: 15.06.27
+Version: 15.08.26
 
 End Rem
 Strict
@@ -161,7 +161,7 @@ Import	brl.freetypefont
 
 ' Version
 MKL_Lic     "LAURA II - LAURA2.bmx","GNU - General Public License ver3"
-MKL_Version "LAURA II - LAURA2.bmx","15.06.27"
+MKL_Version "LAURA II - LAURA2.bmx","15.08.26"
 
 ' Basic Includes
 Include	"inc/globals.bmx"

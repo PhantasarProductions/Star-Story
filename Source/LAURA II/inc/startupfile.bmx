@@ -24,7 +24,7 @@ Rem
 */
 
 
-Version: 15.08.01
+Version: 15.08.26
 
 End Rem
 Incbin "Witch.png"
@@ -96,5 +96,5 @@ VarDef("$LANG",L)
 End Function
 
 
-MKL_Version "LAURA II - inc/startupfile.bmx","15.08.01"
+MKL_Version "LAURA II - inc/startupfile.bmx","15.08.26"
 MKL_Lic     "LAURA II - inc/startupfile.bmx","GNU - General Public License ver3"

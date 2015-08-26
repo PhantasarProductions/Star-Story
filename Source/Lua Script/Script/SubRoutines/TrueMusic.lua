@@ -43,7 +43,7 @@
 
 
 
-Version: 15.08.01
+Version: 15.08.26
 
 ]]
 -- The 'real' music stuff will happen here.

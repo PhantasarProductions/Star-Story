@@ -1,7 +1,7 @@
 Rem
 /*
-	
-	
+	LAURA II
+	Global declaraions
 	
 	
 	
@@ -24,10 +24,10 @@ Rem
 */
 
 
-Version: 15.05.22
+Version: 15.08.26
 
 End Rem
-MKL_Version "LAURA II - inc/globals.bmx","15.05.22"
+MKL_Version "LAURA II - inc/globals.bmx","15.08.26"
 MKL_Lic     "LAURA II - inc/globals.bmx","GNU - General Public License ver3"
 
 ' Dirs
