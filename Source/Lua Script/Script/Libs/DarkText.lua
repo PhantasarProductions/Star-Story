@@ -34,3 +34,12 @@ for ay=y-1,y+1 do for ax=x-1,x+1 do Image.DText(txt,ax,ay,ah,av) end end
 Image.Color(r or 255, g or 255, b or 255)
 Image.DText(txt,x,y,ah,av)
 end
+
+
+function FitText(txt,x,y,r,g,b)
+local w = Image.TextWidth(txt)
+local ha = 0
+local tx = x
+if x+w>795 then tx=795 ha=2 end
+DarkText(txt,tx,y,ha,0,r,g,b)
+end

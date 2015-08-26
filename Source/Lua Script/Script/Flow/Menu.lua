@@ -218,6 +218,8 @@ FeatureHandleArray = {
                   local row,col
                   local mx,my = MouseCoords()
                   local temp
+                  local hover
+                  local item
                   White()
                   for ak=1,InventorySockets do
                       -- Get some needed values
@@ -234,8 +236,15 @@ FeatureHandleArray = {
                             if skill==3 then RPGChar.DefStat(pchar,'INVAMNT'..ak,1) else DarkText(RPGChar.Stat(pchar,"INVAMNT"..ak),x+16,y+16,1,1) end
                             end 
                          end
+                      -- Detect Hover
+                      hover = mx>x-14 and mx<x+14 and my>y-14 and my<y+14
+                      if hover and RPGChar.Stat(pchar,"INVAMNT"..ak)>0 then
+                         item = ItemGet("ITM_"..RPGChar.Data(pchar,"INVITEM"..ak))
+                         SetFont("ItemHeader")
+                         FitText(item.Name,mx+16,my+16)
+                         end    
                       -- Field clicks
-                      if returnto=="FIELD" and mx>x-14 and mx<x+14 and my>y-14 and my<y+14 and pchar~="Briggs" then -- Briggs will be without items as a guest character!
+                      if returnto=="FIELD" and hover and pchar~="Briggs" then -- Briggs will be without items as a guest character!
                          -- Move items
                          if mousehit(1) then
                             -- Grab an item
@@ -272,7 +281,7 @@ FeatureHandleArray = {
                             if ChosenItem.Taken then ChosenItem.Icon=ItemIconCode("ITM_"..ChosenItem.Item) end   
                             end -- end field click
                          end -- end of returnto FIELD   
-                        if returnto=="COMBAT" and mx>x-14 and mx<x+14 and my>y-14 and my<y+14 and pchar~="Briggs" then
+                        if returnto=="COMBAT" and hover and pchar~="Briggs" then
                            if mousehit(1) or mousehit(2) then
                                if RPGChar.Stat(pchar,"INVAMNT"..ak)>0 then
                                   Var.D("%CHOSENITEM.SOCKET",ak)
