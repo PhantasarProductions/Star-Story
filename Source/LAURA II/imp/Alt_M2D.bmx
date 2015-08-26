@@ -122,7 +122,7 @@ Type GALEMainCon2 Extends GALE_DebugConsole 'GALE_DebugConsole
 	For Local line$=EachIn ErrorClosureMessage.Split("\n")
 		ConsoleWrite line,255,180,0
 		Next
-	GALEConsoleWrite "Hit any key to coninue",255,0,255
+	GALEConsoleWrite cont[gotlog],255,0,255
 	Graphics 800,600,0
 	FlushKeys
 	Cls
