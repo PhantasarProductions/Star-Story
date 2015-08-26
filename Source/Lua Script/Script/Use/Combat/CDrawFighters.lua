@@ -68,6 +68,7 @@ end
 
 function CoordsFighter.Foe(idx)
 -- return foec[idx][1],foec[idx][2]
+if not Fighters.Foe[idx] then CSay("Warning! Nil reported for foe #"..idx); return 0,0 end
 return Fighters.Foe[idx].x,Fighters.Foe[idx].y
 end
 

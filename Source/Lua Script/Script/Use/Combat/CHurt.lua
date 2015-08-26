@@ -60,9 +60,9 @@ if RPGChar.StatExists(chtarget,"ER_Healing")==0 then RPGChar.DefStat(chtarget,"E
 local elementalresistance = ({
                                  [1] = function() return RPGStat.Stat(chtarget,"ER_"..element) end,
                                  [0] = function() return 3 end
-                              })[RPGStat.StatExists(chtarget,"ER_"..(element or "NonElemental"))]();
+                              })[RPGStat.StatExists(chtarget,"ER_"..(element or "Non-Elemental"))]();
 -- @IF DEBUG_HURT
-   CSay("HURT: Received data "..tg..","..ti..","..hp..","..(element or "NonElemental"))
+   CSay("HURT: Received data "..tg..","..ti..","..hp..","..(element or "Non-Elemental"))
    CSay("HURT: Resistance is "..elementalresistance);
 -- @FI                                                            
 (({   -- Lua way of doing a 'switch case' statment. Ugly I know, but it works. :-P
