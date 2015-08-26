@@ -73,6 +73,7 @@ DefaultProcess = {
               myact.Item = item
               myact.ActSpeed = item.ActSpeed
               myact.TargetGroup,myact.TargetIndividual = FoeTargetSelector[item.Target](me)
+              return myact.TargetGroup
               end
     }
 
