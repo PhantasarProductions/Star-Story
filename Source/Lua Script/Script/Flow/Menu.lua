@@ -297,11 +297,11 @@ FeatureHandleArray = {
                   if hoverdata and RPGChar.Stat(pchar,"INVAMNT"..hoverdata.i)>0 then
                          item = ItemGet("ITM_"..RPGChar.Data(pchar,"INVITEM"..hoverdata.i))
                          SetFont("ItemHeader")
-                         FitText(item.Name,mx+16,my+16)
-                         dy = dy + Image.TextHeight(item.Name,255,0,0)
+                         FitText(item.Name,mx+16,my+16,255,0,0)
+                         dy = dy + Image.TextHeight(item.Name)
                          SetFont("ItemDescription")
                          for dl in each(mysplit(item.Description,"\n")) do
-                             FitText(dl,mx,dy,0,180,255)
+                             FitText(dl,mx+16,dy,0,180,255)
                              dy = dy + Image.TextHeight(dl)
                              end
                          end    
