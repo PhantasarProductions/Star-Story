@@ -130,6 +130,7 @@ CLICK_ARRIVAL_SAVE1 = SaveSpot
 function CLICK_ARRIVAL_Sleutel()
 MapText("KEYTOTOWER")
 if not ItemGive("ITM_KEY_YAQIRPA") then Sys.Error("Give Item ITM_KEY_YAQIRPA could not proceed! Why?") end
+Maps.Obj.Kill("Sleutel",1) -- Permanent kill. Does it work?
 end
 
 function EnterSave() MapShow("save") end
