@@ -85,6 +85,7 @@ Actors.StopMoving("ActBriggs")
 Actors.RenewActor("ActWendicka")
 Actors.RenewActor("ActCrystal")
 Actors.RenewActor("ActBriggs")
+MapShow(mapshowlabels)
 end
 
 function KantoorNaGevecht()
@@ -133,9 +134,11 @@ if not ItemGive("ITM_KEY_YAQIRPA") then Sys.Error("Give Item ITM_KEY_YAQIRPA cou
 Maps.Obj.Kill("Sleutel",1) -- Permanent kill. Does it work?
 end
 
-function CLICK_DoorOn2()
+function CLICK_ARRIVAL_DEUR()
 if ItemHave("ITM_KEY_YAQIRPA") then 
-   Maps.Obj.Kill("DoorOn2",1)
+   Maps.Obj.Kill("DEUR",1)
+   MINI("The door is open now. Way to go!")
+   CSay("Sesam open u!")
 else
    MapText("DEUROPSLOT")
    end

@@ -136,11 +136,13 @@ end
 -- In the case of Linked Party members, it'll be easy, as the item automatically transfers to the linked character as soon as he/she joins the group.
 function ItemHave(itemcode)
 if CVV("%VAULT."..itemcode)>0 then return true end
-local i,ch
-for i = 0,5 do
-    ch = RPGChar.PartyTag(i)
+local i,ch,chi
+for chi = 0,5 do
+    ch = RPGChar.PartyTag(chi)
     if ch and ch~="" then
-       if itemcode=="ITM_"..RPGChar.Data(ch,"INVITEM"..i) and RPGChar.Stat(ch,"INVAMNT"..i)>0 then return true end
+       for i=1,InventorySockets do
+           if (itemcode=="ITM_"..RPGChar.Data(ch,"INVITEM"..i) or itemcode==RPGChar.Data(ch,"INVITEM"..i) ) and RPGChar.Stat(ch,"INVAMNT"..i)>0 then return true end
+           end
        end 
     end
 end   

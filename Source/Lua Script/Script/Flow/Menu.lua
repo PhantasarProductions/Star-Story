@@ -96,6 +96,7 @@ function ReturnItem()
 if not ChosenItem.Taken then return end
 local ak = ChosenItem.Spot
 local ch = ChosenItem.Char
+if not ak then return MINI("WARNING! No spot for this item. It might get lost!") end
 RPGChar.DefStat(ch,"INVAMNT"..ak,RPGChar.Stat(ch,"INVAMNT"..ak)-1)
 RPGChar.SetData(ch,"INVITEM"..ak,ChosenItem.Item)
 end
@@ -256,7 +257,7 @@ FeatureHandleArray = {
                                     else
                                      RPGChar.DefStat(pchar,"INVAMNT"..ak,0)
                                      end
-                                    ChosenItem = { Taken=true, Item=temp, Char=pchar, Slot=ak }
+                                    ChosenItem = { Taken=true, Item=temp, Char=pchar, Slot=ak, Spot=ak }
                                     end
                             -- Grab an item from stack
                             elseif RPGChar.Stat(pchar,"INVAMNT"..ak)>1 then
@@ -265,7 +266,7 @@ FeatureHandleArray = {
                                   if ChosenItem.Item==RPGChar.Data(pchar,"INVITEM"..ak) and RPGChar.Stat(pchar,"INVAMNT"..ak)<InventoryMaxStack then RPGChar.DefStat(pchar,"INVAMNT"..ak,RPGChar.Stat(pchar,"INVAMNT"..ak)+1) ChosenItem={} end
                                   else
                                   temp = RPGChar.Data(pchar,"INVITEM"..ak)
-                                  ChosenItem = { Taken=true, Item=temp, Char=pchar, Slot=ak }
+                                  ChosenItem = { Taken=true, Item=temp, Char=pchar, Slot=ak, Spot=ak }
                                   RPGChar.DefStat(pchar,"INVAMNT"..ak,RPGChar.Stat(pchar,"INVAMNT"..ak)-1)
                                   end
                              -- Get rid of it if you click an empty socket
