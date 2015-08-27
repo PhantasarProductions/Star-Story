@@ -165,6 +165,22 @@ GaleCon = New GALEMainCon2
 MKL_Lic     "LAURA II - LAURA2.bmx","GNU - General Public License ver3"
 MKL_Version "LAURA II - LAURA2.bmx","15.08.26"
 
+' Platform information
+?MacOS
+Const Platform_OS$ = "Mac"
+?Win32
+Const Platform_OS$ = "Win32"
+?Linux
+Const Platform_OS$ = "Linux"
+?
+
+?X86
+Const Platform_CPU$ = "x86"
+?PPC
+Const Platform_CPU$ = "PPC
+?
+
+
 ' Basic Includes
 Include	"inc/globals.bmx"
 Include	"inc/KthuraErrorReplacements.bmx"

@@ -32,6 +32,7 @@ MKL_Lic     "LAURA II - inc/init.bmx","GNU - General Public License ver3"
 
 Function Init()
 Local Original = True
+InitPlatformScript
 initID
 InitLoadGame Original
 DefineSpecialChars
@@ -172,3 +173,14 @@ If JCR_Exists(JCR,"Script/System/Bye.lua") GALE_Sys.AddByeScript("Script/System/
 'Notify "closure setting!" ' debug line
 AddByeFunction LAURABYE
 End Function
+
+Function InitPlatformScript()
+Local s$ = PlatformOS+"."+Platform_CPU
+Local F$ = s$ = "Script/BOOSOS/"+Platform
+If Not JCR_Exists(JCR,f)
+	Notify "Apparantly this game has no full support for platform: "+s
+	End
+	Endif
+GALE_LoadScript(JCR,s)
+End Function
+	

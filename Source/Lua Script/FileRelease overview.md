@@ -59,6 +59,8 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Maps/AutoUse.lua
 1. Script/Maps/Prologue_Yaqirpa.lua
+1. Script/OSBOOT/Mac.x86.lua
+1. Script/OSBOOT/Win32.x86.lua
 1. Script/SubRoutines/AutoUse.lua
 1. Script/SubRoutines/BoxText.lua
 1. Script/SubRoutines/BoxTextKthuraBackGround.lua
@@ -111,4 +113,4 @@
 
 
 
-### Last updated: Thu 27 August 2015; 17:32:22 CET
+### Last updated: Thu 27 August 2015; 19:34:08 CET

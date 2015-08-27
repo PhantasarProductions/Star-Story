@@ -129,7 +129,7 @@ Type GALEMainCon2 Extends GALE_DebugConsole 'GALE_DebugConsole
 	ConsoleShow
 	Flip
 	If Chr(WaitKey())="Y" And gotlog OpenURL SessionLogFile
-	Bye
+	Bye true
 	End Method
 	
 	Method DoFlip(A=-1)
