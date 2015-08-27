@@ -133,6 +133,14 @@ if not ItemGive("ITM_KEY_YAQIRPA") then Sys.Error("Give Item ITM_KEY_YAQIRPA cou
 Maps.Obj.Kill("Sleutel",1) -- Permanent kill. Does it work?
 end
 
+function CLICK_DoorOn2()
+if ItemHave("ITM_KEY_YAQIRPA") then 
+   Maps.Obj.Kill("DoorOn2",1)
+else
+   MapText("DEUROPSLOT")
+   end
+end   
+
 function EnterSave() MapShow("save") end
 function EnterGreatHall() MapShow("GreatHall") end
 function EnterEntrance() MapShow("Entrance") end
@@ -152,11 +160,15 @@ ZA_Enter("Entrance_Zone",EnterEntrance)
 ZA_Enter("TutEnemy",TutEnemy)
 ZA_Enter("Verdieping1",function() MapShow("GreatHall-FirstFloor") end)
 ZA_Enter("Kantoor", Kantoor)
+-- Trappen
 ZA_Enter("UPto1",function() Trap("U_Verdieping1","GreatHall-FirstFloor") end)
 ZA_Enter("DownTo0",function() Trap("BeganeGrond","GreatHall"); EnterGreatHall() end)
+ZA_Enter("DownTo1",function() Trap("D_Verdieping1","GreatHall"); EnterGreatHall() end)
+ZA_Enter("UpToTower1", function() Trap("U_Tower1","Tower1") end)
 -- ZA_Enter("EnterSave",EnterEntrance)
 AddClickable("SAVE1")
 AddClickable("Sleutel")
+AddClickable("DEUR")
 alwaysshow = {"ActWendicka","ActCrystal","ActBriggs"}
 end
 

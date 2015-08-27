@@ -45,6 +45,7 @@ fonts = {
     StatusStat = {"Robotica.ttf",15},
     AbilityList = {"Robotica.ttf",15},
     AchievementHeader = {"Robotica.ttf",25},
+    AchievementDescription = {"Robotica.ttf",15},
     AbilityList = {"Robotica.ttf",15},
     ItemHeader = {"Robotica.ttf",25},
     ItemDescription = {"Robotica.ttf",15},

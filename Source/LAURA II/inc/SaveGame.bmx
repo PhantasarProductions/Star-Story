@@ -204,6 +204,11 @@ For Local E$ = EachIn EntryList(BD)
 		JCR_Extract BD,E,OSFile,1
 		EndIf
 	Next
+' Perform perma-change if it's there
+Local permafile$ = SwapDir+"Perma-Map/"+laura2maps.CodeName+".lua"
+If FileType(permafile)
+	GALE_LoadScript(Raw2JCR(permafile,permafile),permafile)
+	EndIf	
 ' Network data
 LoadNet BD,startup						
 ' Security check
