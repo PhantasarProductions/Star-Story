@@ -220,7 +220,7 @@ FeatureHandleArray = {
                   local mx,my = MouseCoords()
                   local temp
                   local hover,hoverdata
-                  local item
+                  local item,cmbitem
                   White()
                   for ak=1,InventorySockets do
                       -- Get some needed values
@@ -278,12 +278,16 @@ FeatureHandleArray = {
                             if ChosenItem.Taken then ChosenItem.Icon=ItemIconCode("ITM_"..ChosenItem.Item) end   
                             end -- end field click
                          end -- end of returnto FIELD   
+                        
                         if returnto=="COMBAT" and hover and pchar~="Briggs" then
                            if mousehit(1) or mousehit(2) then
                                if RPGChar.Stat(pchar,"INVAMNT"..ak)>0 then
-                                  Var.D("%CHOSENITEM.SOCKET",ak)
-                                  Var.D("$CHOSENITEM.ITEM",RPGChar.GetData(pchar,"INVITEM"..ak))
-                                  LAURA.Flow("COMBAT")
+                                  cmbitem = ItemGet("ITM_"..RPGChar.GetData(pchar,"INVITEM"..ak))
+                                  if cmbitem.ItemType=="Consumable" or cmb.ItemType=="EndlesslyUsable" then
+                                     Var.D("%CHOSENITEM.SOCKET",ak)
+                                     Var.D("$CHOSENITEM.ITEM",RPGChar.GetData(pchar,"INVITEM"..ak))
+                                     LAURA.Flow("COMBAT")
+                                     end
                                   end
                               end
                            end   

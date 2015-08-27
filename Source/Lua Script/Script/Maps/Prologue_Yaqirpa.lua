@@ -127,6 +127,11 @@ end
 
 CLICK_ARRIVAL_SAVE1 = SaveSpot
 
+function CLICK_ARRIVAL_Sleutel()
+ItemGive("ITEM_KEY_YAQIRPA")
+MapText("KEYTOTOWER")
+end
+
 function EnterSave() MapShow("save") end
 function EnterGreatHall() MapShow("GreatHall") end
 function EnterEntrance() MapShow("Entrance") end
@@ -150,6 +155,7 @@ ZA_Enter("UPto1",function() Trap("U_Verdieping1","GreatHall-FirstFloor") end)
 ZA_Enter("DownTo0",function() Trap("BeganeGrond","GreatHall"); EnterGreatHall() end)
 -- ZA_Enter("EnterSave",EnterEntrance)
 AddClickable("SAVE1")
+AddClickable("Sleutel")
 alwaysshow = {"ActWendicka","ActCrystal","ActBriggs"}
 end
 

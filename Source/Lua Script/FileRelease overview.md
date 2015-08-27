@@ -31,6 +31,7 @@
 1. Script/JINC/IAA/ARM_HEALINGSPRAY.lua
 1. Script/JINC/IAA/ITM_ADHBANDAGE.lua
 1. Script/JINC/IAA/ITM_BANDAGE.lua
+1. Script/JINC/IAA/ITM_KEY_YAQIRPA.lua
 1. Script/JINC/InitChar/Briggs.lua
 1. Script/JINC/InitChar/Crystal.lua
 1. Script/JINC/InitChar/Share/Crystal.lua
@@ -110,4 +111,4 @@
 
 
 
-### Last updated: Wed 26 August 2015; 22:41:12 CET
+### Last updated: Thu 27 August 2015; 17:32:22 CET
