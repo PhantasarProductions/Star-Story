@@ -175,12 +175,12 @@ AddByeFunction LAURABYE
 End Function
 
 Function InitPlatformScript()
-Local s$ = PlatformOS+"."+Platform_CPU
-Local F$ = s$ = "Script/BOOSOS/"+Platform
+Local s$ = Platform_OS+"."+Platform_CPU
+Local F$ = "Script/BOOSOS/"+s+".lua"
 If Not JCR_Exists(JCR,f)
 	Notify "Apparantly this game has no full support for platform: "+s
 	End
-	Endif
+	EndIf
 GALE_LoadScript(JCR,s)
 End Function
 	
