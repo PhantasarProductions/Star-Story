@@ -92,8 +92,11 @@ SaveNet bt,startup
 ' Swap files
 If FileType(Swapdir)
 	For Local F$=EachIn CreateTree(SwapDir)
-		bt.addentry Swapdir+"/"+f,"SWAP/"+f
+		bt.addentry Swapdir+"/"+f,"SWAP/"+f,"zlib"
+		ConsoleWrite "Added Swap: "+f,255,95,10
 		Next
+	Else
+		ConsoleWrite "Skipped swap. Apparently not there",255,95,10			
 	EndIf
 ' Close
 'SSecuDone BT
@@ -185,6 +188,9 @@ For Local Line$=EachIn JCR_ListFile(BD,"MAP/Actors")
 map.totalremap
 ' Swap files
 If FileType(Swapdir)
+	?Win32
+	swapdir = Replace(swapdir,"/","\") ' I really need to make sure this is not the evil here.
+	?
 	If Not DeleteDir(Swapdir,1) GALE_Error "Could not delete original swap dir!"
 	EndIf
 Local Ent:TJCREntry
@@ -193,6 +199,7 @@ For Local E$ = EachIn EntryList(BD)
 	If Prefixed(E,"SWAP/")
 		Ent = JCR_Entry(BD,E$)
 		OSFile = Swapdir + Right(Ent.FileName,Len(Ent.FileName)-5)
+		ConsoleWrite "Extracting: "+Ent.FileName,255,95,10
 		If Not CreateDir(ExtractDir(OSFile),1) GALE_Error "Could not create output folder to create swapfile: "+OsFile
 		JCR_Extract BD,E,OSFile,1
 		EndIf
