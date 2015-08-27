@@ -128,8 +128,8 @@ end
 CLICK_ARRIVAL_SAVE1 = SaveSpot
 
 function CLICK_ARRIVAL_Sleutel()
-ItemGive("ITEM_KEY_YAQIRPA")
 MapText("KEYTOTOWER")
+if not ItemGive("ITM_KEY_YAQIRPA") then Sys.Error("Give Item ITM_KEY_YAQIRPA could not proceed! Why?") end
 end
 
 function EnterSave() MapShow("save") end

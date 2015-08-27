@@ -109,7 +109,7 @@ local allowchars =
                      end
                  return ret    
                  end })[type(ch)] or function() Sys.Error("Unknown char defintion in ItemGive","ItemCode,"..sval(itemcode)..";ch,"..type(chl)..";,"..sval(chl)) end)()
-for ch in allowchars do 
+for ch in each(allowchars) do 
     for ak=1,InventorySockets do
         -- CSay("Spot: "..ak.."; have: "..RPGChar.Stat(ch,"INVAMNT"..ak).." max: "..InventoryMaxStack) -- debug
         if (not spot) and itemcode=="ITM_"..RPGChar.Data(ch,"INVITEM"..ak) and RPGChar.Stat(ch,"INVAMNT"..ak)<InventoryMaxStack then spot = spot or ak  tochar = tochar or ch end
