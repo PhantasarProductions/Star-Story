@@ -52,5 +52,7 @@ End Function
 Function WriteOrAppend:TStream(File$)
 Local af:TStream(F$)[] = [LWriteFile,AppendFile,SwapAbuse]
 Local df:TStream(f$) = af[FileType(File)]
+Local as$[] = ["Creating file: "+File,"Appending to file: "+File,"Hey, this is no file: "+File]
+ConsoleWrite as[FileType(file)],180,255,0
 Return df(File)
 End Function
