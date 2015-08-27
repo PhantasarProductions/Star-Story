@@ -121,7 +121,7 @@ for ch in each(allowchars) do
         end    
     end -- chars allowed
 if spot and tochar then   
-   RPGChar.SetData(tochar,"INVITEM"..spot,right(itemcode,len(item)-4))
+   RPGChar.SetData(tochar,"INVITEM"..spot,right(itemcode,len(itemcode)-4))
    RPGChar.IncStat(tochar,"INVAMNT"..spot)
    if not nochat then MINI(RPGChar.GetName(tochar).." received a "..item.Name) end
    return true       
