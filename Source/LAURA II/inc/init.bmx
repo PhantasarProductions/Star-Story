@@ -176,11 +176,17 @@ End Function
 
 Function InitPlatformScript()
 Local s$ = Platform_OS+"."+Platform_CPU
-Local F$ = "Script/BOOSOS/"+s+".lua"
+Local F$ = "Script/OSBOOT/"+s+".lua"
 If Not JCR_Exists(JCR,f)
+	ConsoleWrite "Not found boot file: "+f,255,0,0
+	ConsoleCloseLogFile
+	?Debug
+	Notify "Not found: "+f
+	?Not Debug
 	Notify "Apparantly this game has no full support for platform: "+s
+	?
 	End
 	EndIf
-GALE_LoadScript(JCR,s)
+GALE_LoadScript(JCR,f)
 End Function
 	
