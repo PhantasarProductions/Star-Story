@@ -198,14 +198,14 @@ Local OSFile$ ' Output Swap file... Not Operating system :-P
 For Local E$ = EachIn EntryList(BD)
 	If Prefixed(E,"SWAP/")
 		Ent = JCR_Entry(BD,E$)
-		OSFile = Swapdir + Right(Ent.FileName,Len(Ent.FileName)-5)
+		OSFile = Swapdir + "/"+Right(Ent.FileName,Len(Ent.FileName)-5)
 		ConsoleWrite "Extracting: "+Ent.FileName,255,95,10
 		If Not CreateDir(ExtractDir(OSFile),1) GALE_Error "Could not create output folder to create swapfile: "+OsFile
 		JCR_Extract BD,E,OSFile,1
 		EndIf
 	Next
 ' Perform perma-change if it's there
-Local permafile$ = SwapDir+"Perma-Map/"+laura2maps.CodeName+".lua"
+Local permafile$ = SwapDir+"/Perma-Map/"+laura2maps.CodeName+".lua"
 If FileType(permafile)
 	GALE_LoadScript(Raw2JCR(permafile,permafile),permafile)
 	EndIf	
