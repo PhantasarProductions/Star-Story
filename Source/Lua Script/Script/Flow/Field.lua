@@ -474,18 +474,18 @@ local maxtime=600
 -- @IF EMSAVEDEBUG
    maxtime = 10
 -- @FI
+-- @IF ALLOW_EMERGENCYSAVE
 if LAURA.GetFlow()~="FIELD" then return end
 if ES_Time~=Time.Time() then
    EM_Second = (EM_Second or -1) + 1
    if EM_Second>=maxtime then
       LAURA.Save("System/Emergency",1)
       EM_Second = nil
-      -- @IF EMSAVEDEBUG
-      MINI("DEBUG: Time over minutes have passed in the field. Emergency savegame has been saved!")
-      -- @FI
+      MINI("Emergency file has been written")
       end
    ES_Time = Time.Time()
    end
+-- @FI   
 -- @IF EMSAVEDEBUG
 DarkText("Save timer: "..sval(EM_Second),10,10)
 -- @FI

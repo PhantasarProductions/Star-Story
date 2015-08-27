@@ -33,11 +33,12 @@ MKL_Lic     "LAURA II - inc/init.bmx","GNU - General Public License ver3"
 Function Init()
 Local Original = True
 initID
+InitConsoleText
 InitPlatformScript
 InitLoadGame Original
 DefineSpecialChars
 InitGraphics id,GraphicsFullScreen
-InitConsoleText
+'InitConsoleText
 InitNetwork Original
 InitDevelopment
 InitLoading; Loading

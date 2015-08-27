@@ -27,6 +27,8 @@
 Version: 15.08.26
 
 ]]
+
+-- @IF ALLOW_QUITSAVE
 QuitMenuItems = {
 
      { Display = "Save",
@@ -47,6 +49,19 @@ QuitMenuItems = {
        Action = function() LAURA.Flow("FIELD") end
        }
    }
+-- @ELSE   
+QuitMenuItems = {
+
+     { Display = "Quit",
+       Help    = "Quit the game. Unsaved progress will be lost!",
+       Action  = Sys.Bye
+       },
+     { Display = "Cancel",
+       Help    = "Don't quit and go back to the game",
+       Action = function() LAURA.Flow("FIELD") end
+       }
+   }
+-- @FI   
 
 
 function MAIN_FLOW()
