@@ -461,9 +461,9 @@ CSay("Placing in treasures")
 local k,treas
 for k,treas in spairs(FieldTreasure or {}) do
     Maps.CreateObstacle(treas.x,treas.y,treas.icon,treas.objtag)
-    Maps.Obj.Pick(treas.objtag)  CSay("Pick")
-    Maps.Obj.MyObject.Dominace = treas.dominance   CSay("Dominance")
-    Maps.Obj.MyObject.Labels = treas.labels        CSay("Labels")
+    Maps.Obj.Pick(treas.objtag)  --CSay("Pick")
+    Maps.Obj.MyObject.Dominance = treas.dominance  -- CSay("Dominance")
+    Maps.Obj.MyObject.Labels = treas.labels       -- CSay("Labels")
     CSay("  = Placed: "..k)
     end
 end
