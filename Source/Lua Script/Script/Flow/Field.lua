@@ -459,7 +459,7 @@ for obj in KthuraEach('Obstacle') do -- Remove all existing items to prevent con
     end
 CSay("Placing in treasures")
 local k,treas
-for k,treas in spairs(FieldTreasure) do
+for k,treas in spairs(FieldTreasure or {}) do
     Maps.CreateObstacle(treas.x,treas.y,treas.Pic,treas.objtag)
     Maps.Obj.Pick(treas.objtag)
     Maps.Obj.MyObject.Dominace = treas.dominance
