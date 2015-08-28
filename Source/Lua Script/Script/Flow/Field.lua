@@ -464,6 +464,7 @@ for k,treas in spairs(FieldTreasure or {}) do
     Maps.Obj.Pick(treas.objtag)  --CSay("Pick")
     Maps.Obj.MyObject.Dominance = treas.dominance  -- CSay("Dominance")
     Maps.Obj.MyObject.Labels = treas.labels       -- CSay("Labels")
+    Maps.Obj.MyObject.Impassible = 0
     CSay("  = Placed: "..k)
     end
 end
@@ -495,7 +496,7 @@ if #treasures==0 then CSay("No treasure in this map."); return end
 FieldTreasure = {}
 local add,itemnr,itemcode,item
 for obj in KthuraEach('$Item') do
-    if (rand(1,(skill*skill)*5)==1) then
+    if (rand(1,(skill)*5)==1) then
        itemnr = rand(1,#treasures)
        itemcode = treasures[itemnr]
        if prefixed(itemcode,"ONCE:") then
