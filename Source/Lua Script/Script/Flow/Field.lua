@@ -31,6 +31,7 @@ Version: 15.08.26
 -- @UNDEF EMSAVEDEBUG
 
 cplayer = cplayer or "PLAYER"
+activeplayer = activeplayer or RPGChar.PartyTag(0)
 scrolling = true
 scrollrange = {}
 
@@ -525,6 +526,10 @@ for obj in KthuraEach('$Item') do
 PlaceTreasures()    
 end
 
+function FindTreasures()
+
+end
+
 function LoadMap(map)
 Maps.Load(map)
 SetUpFoes()
@@ -592,5 +597,6 @@ WalkArrivalCheck()
 Termination()
 EmergencySave()
 ControlFoes()
+FindTreasures()
 Flip()
 end

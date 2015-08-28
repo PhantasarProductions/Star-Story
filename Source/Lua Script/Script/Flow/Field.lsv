@@ -2,3 +2,4 @@ MS_SAVE FieldFoes
 MS_SAVE FieldTreasure
 MS_SAVE arena
 MS_SAVE cplayer
+MS_SAVE activeplayer
