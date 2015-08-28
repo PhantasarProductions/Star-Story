@@ -31,7 +31,7 @@ Strict
 Import "framework.bmx"
 Import tricky_units.Dirry
 
-JCR6CrashError = true
+JCR6CrashError = True
 Global NGPanel:TGadget = AddPanel("New Game",New TNewGamePanel)
 
 Global ReservedNames$[] = ["SYSTEM"]
@@ -88,6 +88,8 @@ Type TNewGamePanel Extends tfpanelbase
 	CreateLabel "Token:",0,350,300,25,Panel
 	GameJoltUserName = CreateTextField(300,325,300,25,Panel)
 	GameJoltToken = CreateTextField(300,350,300,25,panel,textfield_password)
+	Gamejoltusername.setenabled JCR_Exists(JCR,"Authenticate/GameJolt")
+	gamejolttoken.setenabled JCR_Exists(JCR,"Authenticate/GameJolt")
 	made = True
 	Rem
 	?Win32

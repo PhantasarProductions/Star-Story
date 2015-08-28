@@ -63,7 +63,7 @@ if not Done("&DONE.TUT.YAQIRPA.Enemy") then
 end
 
 
-function Trap(exitpoint,mapshowlabels)
+function Trap(exitpoint,mapshowlabels,whine)
 local exit = Maps.Obj.Obj(exitpoint)
 if not exit then Sys.Error("Cannot move to "..sval(exitpoint)) end
 Actors.StopWalking("ActWendicka")
@@ -86,6 +86,9 @@ Actors.RenewActor("ActWendicka")
 Actors.RenewActor("ActCrystal")
 Actors.RenewActor("ActBriggs")
 MapShow(mapshowlabels)
+if whine and (not Done("&YAQIRPA.WENDICKA.WHINE."..whine)) then
+   MapText(whine)   
+   end
 end
 
 function KantoorNaGevecht()
@@ -168,6 +171,16 @@ ZA_Enter("UPto1",function() Trap("U_Verdieping1","GreatHall-FirstFloor") end)
 ZA_Enter("DownTo0",function() Trap("BeganeGrond","GreatHall"); EnterGreatHall() end)
 ZA_Enter("DownTo1",function() Trap("D_Verdieping1","GreatHall"); EnterGreatHall() end)
 ZA_Enter("UpToTower1", function() Trap("U_Tower1","Tower1") end)
+ZA_Enter("UpToTower2", function() Trap("U_Tower2","Tower2") end)
+ZA_Enter("UpToTower3", function() Trap("U_Tower3","Tower3","TOWER3") end)
+ZA_Enter("UpToTower4", function() Trap("U_Tower4","Tower4","TOWER4") end)
+ZA_Enter("UpToTower5", function() Trap("U_Tower5","Tower5","TOWER5") end)
+ZA_Enter("UpToTowerTop", function() Trap("Top"   ,"TowerTop","TOWERTOP") end)
+ZA_Enter("DownToTower1", function() Trap("D_Tower1","Tower1") end)
+ZA_Enter("DownToTower2", function() Trap("D_Tower2","Tower2") end)
+ZA_Enter("DownToTower3", function() Trap("D_Tower3","Tower3") end)
+ZA_Enter("DownToTower4", function() Trap("D_Tower4","Tower4") end)
+ZA_Enter("DownToTower5", function() Trap("D_Tower5","Tower5") end)
 -- ZA_Enter("EnterSave",EnterEntrance)
 AddClickable("SAVE1")
 AddClickable("Sleutel")
