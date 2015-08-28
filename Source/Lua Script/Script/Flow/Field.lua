@@ -478,9 +478,8 @@ local i,t,tra
 CSay("Find treasure from map itself")
 CSay("Playthrough #"..pt)
 for i = 1 , pt do
-    t = Maps.GetData("PT"..right("   "..pt,3))
-    if t~="" then table.insert(treasurestringarray,t) end
-    CSay("Added: "..t)
+    t = Maps.GetData("PT"..right("   "..pt,3).." Items")
+    if t~="" then table.insert(treasurestringarray,t) end    
     end
 -- Compile into a workable array
 treasurestring=join(treasurestringarray,";")
