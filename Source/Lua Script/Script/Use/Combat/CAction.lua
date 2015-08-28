@@ -46,6 +46,16 @@
 Version: 15.08.26
 
 ]]
+
+function CheckTarget(tg,ti,allowdead)
+local ret = true
+local fd = Fighters[tg][ti]
+ret = ret and fd
+ret = ret and RPGChar.CharExists(fd.Tag)
+ret = ret and (allowdead or RPGChar.Points(fd.Tag,"HP").Have>0)
+return ret
+end
+
 function AblEffect(ag,ai,act,tg,ti)
 local abl=act.Item
 local atkdata
@@ -88,6 +98,7 @@ function ActionFuncs.SHT(ag,ai,act)
 local ch = FighterTag(ag,ai) --RPGChar.PartyTag(ag,ai)
 if RPGChar.Points(ch,"AMMO",1).Have<=0 then return MINI(RPGChar.Name(ch).." cannot shoot! Out of ammo!") end
 local tg,ti = TargetFromAct(act)
+if not CheckTarget(tg,ti) then MINI("Shot cancelled"); MINI("There's no enemy on that spot anymore"); return end
 CSay(sval(ag).."["..sval(ai).."]: "..sval(ch).." shoots")
 -- Animate character 
 SpriteAnim[ag](ai,act)
@@ -114,6 +125,7 @@ end
 function ActionFuncs.ATK(ag,ai,act)
 local ch = FighterTag(ag,ai) --RPGChar.PartyTag(ag,ai)
 local tg,ti = TargetFromAct(act)
+if not CheckTarget(tg,ti) then MINI("Shot cancelled"); MINI("There's no enemy on that spot anymore"); return end
 CSay(sval(ag).."["..sval(ai).."]: "..sval(ch).." attacks")
 -- Animate character 
 SpriteAnim[ag](ai,act)

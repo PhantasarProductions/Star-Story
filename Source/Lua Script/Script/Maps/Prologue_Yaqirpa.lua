@@ -38,6 +38,8 @@
 Version: 15.08.26
 
 ]]
+
+-- @DEFINE TRAPDEBUG
 function TutSave()
 if not Done("&DONE.TUT.YAQIRPA.SAVE") then
    Actors.StopWalking("ActWendicka")
@@ -69,6 +71,9 @@ if not exit then Sys.Error("Cannot move to "..sval(exitpoint)) end
 Actors.StopWalking("ActWendicka")
 Actors.StopWalking("ActCrystal")
 Actors.StopWalking("ActBriggs")
+if whine and (not Done("&YAQIRPA.WENDICKA.WHINE."..whine)) then
+   MapText(whine)   
+   end
 Actors.Actor("ActWendicka").X = exit.X
 Actors.Actor("ActWendicka").Y = exit.Y
 Actors.Actor("ActCrystal" ).X = exit.X
@@ -89,6 +94,12 @@ MapShow(mapshowlabels)
 if whine and (not Done("&YAQIRPA.WENDICKA.WHINE."..whine)) then
    MapText(whine)   
    end
+-- @IF TRAPDEBUG
+MINI("Moved to exit point: "..sval(exitpoint))
+MINI("Mapshow labels:"..sval(mapshowlabels))
+MINI("Whine: "..sval(whine))
+MINI("Everything correct?")
+-- @FI   
 end
 
 function KantoorNaGevecht()
@@ -130,6 +141,7 @@ GotoSave()
 end 
 
 CLICK_ARRIVAL_SAVE1 = SaveSpot
+CLICK_ARRIVAL_SAVESPOTTOP = SaveSpot
 
 function CLICK_ARRIVAL_Sleutel()
 MapText("KEYTOTOWER")
@@ -150,6 +162,21 @@ end
 function EnterSave() MapShow("save") end
 function EnterGreatHall() MapShow("GreatHall") end
 function EnterEntrance() MapShow("Entrance") end
+
+function BreakThe4thWall()
+if Done("&YAQUIPRA.4EMUUR") then return end
+MapText("4EMUURSTART")
+-- @IF $MAC
+MapText("4EMUURMAC")
+-- @FI
+-- @IF $WINDOWS
+MapText("4EMUURWINDOWS")
+-- @FI
+-- @IF $LINUX
+MapText("4EMUURLINUX")
+-- @FI
+MapText("4EMUURBRIGGS")
+end
 
 function GALE_OnLoad()
 CSay("Welcome to the Yaqirpa")
@@ -180,11 +207,12 @@ ZA_Enter("DownToTower1", function() Trap("D_Tower1","Tower1") end)
 ZA_Enter("DownToTower2", function() Trap("D_Tower2","Tower2") end)
 ZA_Enter("DownToTower3", function() Trap("D_Tower3","Tower3") end)
 ZA_Enter("DownToTower4", function() Trap("D_Tower4","Tower4") end)
-ZA_Enter("DownToTower5", function() Trap("D_Tower5","Tower5") end)
+ZA_Enter("DownToTower5", function() BreakThe4thWall(); Trap("D_Tower5","Tower5") end)
 -- ZA_Enter("EnterSave",EnterEntrance)
 AddClickable("SAVE1")
 AddClickable("Sleutel")
 AddClickable("DEUR")
+AddClickable("SAVESPOTTOP")
 alwaysshow = {"ActWendicka","ActCrystal","ActBriggs"}
 end
 
