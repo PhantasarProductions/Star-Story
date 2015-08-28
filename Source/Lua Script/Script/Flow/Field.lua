@@ -475,9 +475,12 @@ local treasures = {}
 local pt = ngpcount or 1
 local i,t,tra
 -- Get treasures from map itself
+CSay("Find treasure from map itself")
+CSay("Playthrough #"..pt)
 for i = 1 , pt do
     t = Maps.GetData("PT"..right("   "..pt,3))
     if t~="" then table.insert(treasurestringarray,t) end
+    CSay("Added: "..t)
     end
 -- Compile into a workable array
 treasurestring=join(treasurestringarray,";")
@@ -488,7 +491,7 @@ for t in each(mysplit(treasurestring,";")) do
         table.insert(treasures,trim(tra[1]))
         end
     end
-if #treasures==0 then CSay("No treasure in this map.") end
+if #treasures==0 then CSay("No treasure in this map."); return end
 -- Let's place in all the treasure
 FieldTreasure = {}
 local add,itemnr,itemcode,item
