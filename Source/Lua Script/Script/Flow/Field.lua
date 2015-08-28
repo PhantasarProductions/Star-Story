@@ -500,6 +500,11 @@ for obj in KthuraEach('$Item') do
           itemcode = right(itemcode,len(itemcode)-5)
           table.remove(treasures,itemnr)
           end
+       if not itemcode then
+          CSay("Error! Item code became 'nil'. Let's sort this out!")
+          DBGSerialize(treasures)
+          CSay("itemnr = "..itemnr)
+          end   
        item = ItemGet("ITM_"..itemcode)
        add = {
               x = obj.X,
