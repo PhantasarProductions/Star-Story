@@ -39,7 +39,7 @@ Version: 15.08.26
 
 ]]
 
--- @DEFINE TRAPDEBUG
+-- @UNDEF TRAPDEBUG
 function TutSave()
 if not Done("&DONE.TUT.YAQIRPA.SAVE") then
    Actors.StopWalking("ActWendicka")

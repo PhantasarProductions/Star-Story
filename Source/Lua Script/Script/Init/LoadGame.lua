@@ -50,5 +50,6 @@ function LoadGame()
 Console.Write("Anything to do, after loading the game?")
 LoadFlowsScripts()
 LoadBaseGraphics()
+MS.LN_Run("FIELD","Script/Flow/Field.lua","PlaceTreasures")
 RedoMapShow()
 end

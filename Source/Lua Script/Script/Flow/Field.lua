@@ -453,7 +453,68 @@ for obj in KthuraEach("Actor") do
     end
 end
 
+function PlaceTreasures()
+for obj in KthuraEach('Obstacle') do -- Remove all existing items to prevent conflicts
+    if prefixed(obj.Tag,"Item.") then Maps.Obj.Kill(obj.Tag) end
+    end
+CSay("Placing in treasures")
+local k,treas
+for k,treas in spairs(FieldTreasure) do
+    Maps.CreateObstacle(treas.x,treas.y,treas.Pic,treas.objtag)
+    Maps.Obj.Pick(treas.objtag)
+    Maps.Obj.MyObject.Dominace = treas.dominance
+    Maps.Obj.MyObject.Labels = treas.labels
+    CSay("  = Placed: "..k)
+    end
+end
+
 function SetUpTreasure()
+local treasurestring
+local treasurestringarray = {}
+local treasures = {}
+local pt = ngpcount or 1
+local i,t,tra
+-- Get treasures from map itself
+for i = 1 , pt do
+    t = Maps.GetData("PT"..right("   "..pt,3))
+    if t~="" then table.insert(treasurestringarray,t) end
+    end
+-- Compile into a workable array
+treasurestring=join(treasurestringarray,";")
+for t in each(mysplit(treasurestring,";")) do
+    tra = mysplit(t,",")
+    if #tra~=2 then Sys.Error("Invalid treasure definition in this map! > "..t) end
+    for i=1,Sys.Val(tra[2]) do        
+        table.insert(treasures,trim(tra[1]))
+        end
+    end
+if #treasures==0 then CSay("No treasure in this map.") end
+-- Let's place in all the treasure
+FieldTreasure = {}
+local add,itemnr,itemcode,item
+for obj in KthuraEach('$Item') do
+    if (rand(1,(skill*skill)*5)==1) then
+       itemnr = rand(1,#treasures)
+       itemcode = treasures[itemnr]
+       if prefixed(itemcode,"ONCE:") then
+          itemcode = right(itemcode,len(itemcode)-5)
+          table.remove(treasures,itemnr)
+          end
+       item = ItemGet("ITM_"..itemcode)
+       add = {
+              x = obj.X,
+              y = obj.Y,
+              spottag = obj.Tag,
+              labels = obj.Labels,
+              dominance = obj.Dominance,
+              objtag = "Item."..obj.Tag,
+              item = itemcode,
+              icon = item.Icon
+          }
+       FieldTreasure[obj.Tag] = add          
+       end
+    end
+PlaceTreasures()    
 end
 
 function LoadMap(map)
