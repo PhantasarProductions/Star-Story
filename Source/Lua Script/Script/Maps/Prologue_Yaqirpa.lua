@@ -109,6 +109,22 @@ MapShow("GreatHall-FirstFloor","Kantoor")
 MapText("EAVESDROP_ASTRILOPUP_02")
 end
 
+function TopAstrilopups()
+if Done("&YAQIRPA.ASTROLOTOP") then return end
+MapText("ASTRILOATTACK")
+CleanCombat()
+Var.D("$COMBAT.BACKGROUND","Yaqirpa.png")
+Var.D("$COMBAT.BEGIN","Default")
+Var.D("$COMBAT.FOE1","Astrilopup")
+Var.D("$COMBAT.FOE2","Astrilopup")
+Var.D("%COMBAT.LVFOE1",rand(1,RPGStat.Stat("UniWendicka","Level")+5+skill))
+Var.D("%COMBAT.LVFOE2",rand(1,RPGStat.Stat("UniWendicka","Level")+5+skill))
+Var.D("$COMBAT.MUSIC","ENCOUNTER/002.ogg")
+Maps.Obj.Kill("TopAstrilo_East")
+Maps.Obj.Kill("TopAstrilo_West")
+StartCombat()
+end
+
 function Kantoor()
 MapShow("GreatHall-FirstFloor","Kantoor")
 if Done("&YAQIRPA.KANTOOR.ASTRILOPUPS") then return end
@@ -210,17 +226,20 @@ ZA_Enter("DownToTower2", function() Trap("D_Tower2","Tower2") end)
 ZA_Enter("DownToTower3", function() Trap("D_Tower3","Tower3") end)
 ZA_Enter("DownToTower4", function() Trap("D_Tower4","Tower4") end)
 ZA_Enter("DownToTower5", function() BreakThe4thWall(); Trap("D_Tower5","Tower5") end)
+ZA_Enter("Astrilopups",  TopAstrilopups)
 -- ZA_Enter("EnterSave",EnterEntrance)
 AddClickable("SAVE1")
 AddClickable("Sleutel")
 AddClickable("DEUR")
 AddClickable("SAVESPOTTOP")
 alwaysshow = {"ActWendicka","ActCrystal","ActBriggs"}
+CSay("Astrilopups on the top defeated: "..sval(CVV("&YAQIRPA.ASTROLOTOP")))
 if not CVV("&YAQIRPA.ASTROLOTOP") then
    Actors.Spawn("Astrilo_East","GFX/ACTORS/SinglePic/Astrilopup/Astrilopup_E.png","TopAstrilo_East",1)
    Actors.Spawn("Astrilo_West","GFX/ACTORS/SinglePic/Astrilopup/Astrilopup_W.png","TopAstrilo_West",1)
+   CSay("The Astrilopups have not yet been defeated so, let's put them in shall we?")
+   -- RedoMapShow()
    end
-
 end
 
 function MAP_FLOW()

@@ -271,7 +271,7 @@ for obj in KthuraEach() do
           foe.Tag = foe.Actor
           CSay("  = Spawning actor")
           Actors.Spawn(obj.Tag,"GFX/FIELD/ENCOUNTER.PNG",foe.Tag,1)
-          CSay("  = Configuring actor")
+          CSay("  = Configuring actor ( skill = "..skill.." ) ")
           Maps.Obj.Pick(foe.Tag)
           foe.Enemies = {}
           --[[ old
@@ -280,7 +280,7 @@ for obj in KthuraEach() do
           -- new
           repeat
           num = rand(1,9)
-          until rand(1,num)<skill
+          until rand(1,num)<=skill
           hilevel = 0
           for ak=1,num do
               foe.Enemies[ak] = 
