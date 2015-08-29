@@ -222,7 +222,7 @@ for i,v in ipairs(miniarray) do
     if v.x<=790 then v.timer = v.timer - 1 end            
     end
 -- Remove outdated first rank.
-if miniarray[1].timer<=0 or (v.x<=790 and #miniarray>20) then table.remove(miniarray,1) end
+if miniarray[1].timer<=0 or (miniarray[1].x<=790 and #miniarray>20) then table.remove(miniarray,1) end
 end
 
 function ShowCharacterPic(ch,pos)

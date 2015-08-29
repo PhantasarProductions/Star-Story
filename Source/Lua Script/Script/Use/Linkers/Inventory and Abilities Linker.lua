@@ -46,6 +46,8 @@
 Version: 15.08.26
 
 ]]
+
+
 if not realinventory then -- This if statement must prevent that the real Items and Abilities routine (which incldues this file as well and I cannot prevent that) gets destroyed by these definitions!
 
    MS.LoadNew("ITEMS","Script/SubRoutines/Items and Abilities.lua")
@@ -108,7 +110,8 @@ local allowchars =
                      if c~="" then table.insert(ret,c) end
                      end
                  return ret    
-                 end })[type(ch)] or function() Sys.Error("Unknown char defintion in ItemGive","ItemCode,"..sval(itemcode)..";ch,"..type(chl)..";,"..sval(chl)) end)()
+                 end })[type(chl)] or function() Sys.Error("Unknown char defintion in ItemGive","ItemCode,"..sval(itemcode)..";ch,"..type(chl)..";,"..sval(chl)) end)()
+                 
 for ch in each(allowchars) do 
     for ak=1,InventorySockets do
         -- CSay("Spot: "..ak.."; have: "..RPGChar.Stat(ch,"INVAMNT"..ak).." max: "..InventoryMaxStack) -- debug

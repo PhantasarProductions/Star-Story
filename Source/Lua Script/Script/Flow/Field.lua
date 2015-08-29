@@ -538,7 +538,7 @@ for k,t in spairs(FieldTreasure) do
        if (not ItemGive("ITM_"..t.item,{activeplayer})) and (not Done("&TUTORIAL.BAGSFULL")) then
           MS.LoadNew("BOXTEXT","Script/SubRoutines/BoxText.lua")
           MS.Run("BOXTEXT","LoadData","TUTORIAL/BAGSFULL;BAGSFULL")
-          SerialBoxText("BAGSFULL",upper("FULL."..activecharacter),"Field")
+          SerialBoxText("BAGSFULL",upper("FULL."..activeplayer),"Field")
           SerialBoxText("BAGSFULL","TUTORIAL_FULL","Field")
           MS.Run("BOXTEXT","RemoveData","BAGSFULL")
           Maps.Obj.Kill(t.objtag)          
