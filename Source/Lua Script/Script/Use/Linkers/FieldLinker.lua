@@ -55,4 +55,4 @@ Schedule = Schedule or function (scr,func)
 MS.LN_Run("FIELD","Flow/Field.lua","Schedule",scr..";"..func) 
 end
 
-SetActive = ActivePlayer or function(P) LN_Run("FIELD","Flow/Field.lua","SetActive",P) end
+SetActive = SetActive or function(P) MS.LN_Run("FIELD","Flow/Field.lua","SetActive",P) end

@@ -10,7 +10,7 @@
 ]]
 
 
--- Version 15.08.26
+-- Version 15.08.29
 
 
 
@@ -46,6 +46,9 @@ temp = { ITM='ITM_ADHBANDAGE', LVL=1, VLT=false }
 for ak=1,5 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,5 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_BANDAGE', LVL=20, VLT=false }
+for ak=1,5 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,5 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_VLUGZOUT', LVL=5, VLT=false }
 for ak=1,5 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,5 do table.insert(Data.ItemSteal,temp) end
 

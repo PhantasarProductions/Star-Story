@@ -152,6 +152,7 @@ if mousehit(1) then -- Left Mouse button
 end
 
 function SetPlayer(P) cplayer=P end
+function SetActive(P) activeplayer=P end
 
 function SetScrolling(set,rsx,rsy,rex,rey)
 scrolling = set==true or set=="true" or set=="TRUE" or sval(set)==1
@@ -498,7 +499,7 @@ if #treasures==0 then CSay("No treasure in this map."); return end
 FieldTreasure = {}
 local add,itemnr,itemcode,item
 for obj in KthuraEach('$Item') do
-    if (rand(1,(skill)*4)==1) then
+    if (rand(1,(skill)*3)==1) then
        itemnr = rand(1,#treasures)
        itemcode = treasures[itemnr]
        if prefixed(itemcode,"ONCE:") then

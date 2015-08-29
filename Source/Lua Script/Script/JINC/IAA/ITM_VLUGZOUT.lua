@@ -2,13 +2,13 @@
 -- 29 Aug 2015; 19:33:47
 -- License: If stripped from any reference to the story line and its characters, this file becomes zLib
 	ret = {
-		["ABL_AP"] = 15,
+		["ABL_AP"] = 0,
 		["ABL_APCut"] = 0,
 		["ABL_Cancel"] = 0,
 		["ABL_DblPower"] = 0,
 		["ABL_DblSpeed"] = 0,
 		["ABL_Instant"] = 0,
-		["ABL_Speed"] = 250,
+		["ABL_Speed"] = 0,
 		["ARM_Hit%"] = 0,
 		["ARM_MaxAmmo"] = 0,
 		["ARM_XPower"] = 0,
@@ -16,8 +16,8 @@
 		["AniIsEffectScript"] = false,
 		["AniScriptDefaultPath"] = true,
 		["AniScriptFile"] = "",
-		["AttackElement"] = "Thunder",
-		["AttackPower"] = 50,
+		["AttackElement"] = "Non-Elemental",
+		["AttackPower"] = 0,
 		["AttackStat"] = "Strength",
 		["CauseAmnesia"] = false,
 		["CauseBagLock"] = false,
@@ -32,7 +32,7 @@
 		["CureBagLock"] = false,
 		["CureConfusion"] = false,
 		["CureDeathFull"] = false,
-		["CureDeathOne"] = false,
+		["CureDeathOne"] = true,
 		["CureDisease"] = false,
 		["CureHandicapped"] = false,
 		["CureParalysis"] = false,
@@ -40,17 +40,17 @@
 		["CureSleep"] = false,
 		["CureTerrified"] = false,
 		["DefenseStat"] = "Defense",
-		["Description"] = "Shick the enemy",
+		["Description"] = "Revives fallen character",
 		["EffectScriptDefaultPath"] = true,
 		["EffectScriptFile"] = "",
 		["EffectScriptFunction"] = "EFFECT_MAIN",
 		["Healing"] = 0,
 		["HealingType"] = "Absolute",
-		["Icon"] = "GFX/Abilities/Lightning.png",
+		["Icon"] = "GFX/Inventory/Vlugzout.png",
 		["ItemType"] = "Consumable",
-		["Name"] = "Shock",
-		["Target"] = "1F",
+		["Name"] = "Ammonium carbonate",
+		["Target"] = "1A",
 		["UseCombat"] = true,
-		["UseField"] = false}
+		["UseField"] = true}
 
 return ret

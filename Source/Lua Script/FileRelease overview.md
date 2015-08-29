@@ -33,6 +33,7 @@
 1. Script/JINC/IAA/ITM_ADHBANDAGE.lua
 1. Script/JINC/IAA/ITM_BANDAGE.lua
 1. Script/JINC/IAA/ITM_KEY_YAQIRPA.lua
+1. Script/JINC/IAA/ITM_VLUGZOUT.lua
 1. Script/JINC/InitChar/Briggs.lua
 1. Script/JINC/InitChar/Crystal.lua
 1. Script/JINC/InitChar/Share/Crystal.lua
@@ -114,4 +115,4 @@
 
 
 
-### Last updated: Sat 29 August 2015; 16:03:02 CET
+### Last updated: Sat 29 August 2015; 20:14:49 CET

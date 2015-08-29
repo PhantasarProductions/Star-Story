@@ -63,6 +63,21 @@ else
    end
 end
 
+function OnlyMapShow(...) -- Same as mapshow but will skip the 'always show' variable
+if ThisIsAMapScript then
+   for i,v in ipairs(arg) do CSay("Show #"..i.." "..v) end CSay("")
+   Maps.ShowOnlyLabel(join(arg,","),1)
+   Var.D("$MAP.MAPSHOW.LASTREQUEST",join(arg,","))
+   Var.D("$MAP.MAPSHOW.LASTALWAYSSHOW",serialize("ret",alwaysshow))
+   local i,a
+   for i,a in ipairs(alwaysshow) do Maps.ShowObject(a) end
+   if ResetFoePositions then ResetFoePositions() else MS.Run("FIELD","ResetFoePositions") end
+else
+   --CSay("MapShow: Not called from Map Script so calling it from mapscript artifically")
+   --MS.Run("MAP","MapShow",join(arg,",")) 
+   end
+end -- Yeah this was the dirty method I know   
+
 function RedoMapShow() -- This function has only been put in place for the LoadGame sequence to make sure the request of the last MapShow is properly followed if it was in fact used at all since the last loadmap.
 if ThisIsAMapScript then
   local req = CVVN("$MAP.MAPSHOW.LASTREQUEST")
