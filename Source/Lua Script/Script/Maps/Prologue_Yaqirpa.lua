@@ -195,6 +195,7 @@ MapText("4EMUURBRIGGS")
 end
 
 function GALE_OnLoad()
+SetActive("UniWendicka")
 CSay("Welcome to the Yaqirpa")
 Music("Dungeon/Opening Theme C")
 if not CVV("&DUNG.YAQIRPA") then
