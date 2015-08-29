@@ -145,6 +145,7 @@ local bstarty = (starty - 20) - Image.Height(piccorner)
 local ak,av,ac
 -- @IF BOXTEXTDEBUG
 White()
+Image.NoFont()
 Image.DText("startxy = ("..startx..","..starty..")",0,0)
 Image.DText("bstarty = "..bstarty,0,fh)
 Image.DText("showtext = ("..data.SL..","..data.SP.."); total lines = "..#data.Lines,0,fh*2)
@@ -152,6 +153,7 @@ Image.DText("picref = "..sval(data.PicRef),0,fh*3)
 local dbg_py = -999
 if data.PicRef then dbg_py = 600-Image.Height(data.PicRef) end
 Image.DText("pic-y = "..dbg_py,0,fh*4)
+Image.DText("boxback = "..bb,0,fh*5)
 ac=0
 for ak,av in pairs(data) do
     ac = ac + 1
