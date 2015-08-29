@@ -381,3 +381,11 @@ end
 function CRASH(err)
 Sys.Error(err or "Fabricated Error")
 end
+
+function MAPOBJECTS(kind)
+local cnt = 0
+local o
+for o in kthuraeach(kind) do
+    CSay(o.IDNUM.."> "..o.Kind.."; "..o.Tag.."; ("..o.X..","..o.Y..")")
+    end
+end
