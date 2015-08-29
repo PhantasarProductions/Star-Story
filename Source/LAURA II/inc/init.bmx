@@ -95,7 +95,9 @@ If LuaConsoleFlip ConsoleShow; Flip
 End Function
 
 Function InitLoadGame(O Var) ' Load a saved game!
-If Not DeleteDir(Swapdir,1) GALE_Error "Could not delete original swap dir!"
+If FileType(swapdir)
+	If Not DeleteDir(Swapdir,1) GALE_Error "Could not delete original swap dir!"
+	EndIf
 Local F$=Trim(startup.C("LoadGame"))
 If Not F Return
 If Chr(F[0])="*" Return
