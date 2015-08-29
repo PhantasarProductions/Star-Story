@@ -154,7 +154,7 @@ function Mini(msg,r,g,b)
 SetFont("MiniMessage")
 local newm = {msg = msg or "?", r = Sys.Val(r or 255), g = Sys.Val(g or 255), b = Sys.Val(b or 255), y = 490, x = 810 + Image.TextWidth(msg), timer=1000 }
 miniarray = miniarray or {}
-table.insert(miniarray,newm)
+if #miniarray<50 then table.insert(miniarray,newm) end
 end
 
 function ShowGenData()
@@ -222,7 +222,7 @@ for i,v in ipairs(miniarray) do
     if v.x<=790 then v.timer = v.timer - 1 end            
     end
 -- Remove outdated first rank.
-if miniarray[1].timer<=0 then table.remove(miniarray,1) end
+if miniarray[1].timer<=0 or (v.x<=790 and #miniarray>20) then table.remove(miniarray,1) end
 end
 
 function ShowCharacterPic(ch,pos)

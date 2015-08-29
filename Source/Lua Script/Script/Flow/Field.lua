@@ -535,15 +535,15 @@ px = Maps.Obj.MyObject.X
 py = Maps.Obj.MyObject.Y
 for k,t in spairs(FieldTreasure) do
     if Distance(px,py,t.x,t.y)<16 then
-       if not ItemGive("ITM_"..t.item,{activeplayer}) and (not Done("&TUTORIAL.BAGSFULL")) then
+       if (not ItemGive("ITM_"..t.item,{activeplayer})) and (not Done("&TUTORIAL.BAGSFULL")) then
           MS.LoadNew("BOXTEXT","Script/SubRoutines/BoxText.lua")
           MS.Run("BOXTEXT","LoadData","TUTORIAL/BAGSFULL;BAGSFULL")
           SerialBoxText("BAGSFULL",upper("FULL."..activecharacter),"Field")
           SerialBoxText("BAGSFULL","TUTORIAL_FULL","Field")
           MS.Run("BOXTEXT","RemoveData","BAGSFULL")
-          Maps.Obj.Kill(t.objtag)
-          FieldTreasure[k]=nil
+          Maps.Obj.Kill(t.objtag)          
           end
+       FieldTreasure[k]=nil   
        end
     end
 end
