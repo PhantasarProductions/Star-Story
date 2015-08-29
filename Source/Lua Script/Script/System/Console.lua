@@ -387,5 +387,19 @@ local cnt = 0
 local o
 for o in KthuraEach(kind) do
     CSay(o.IDNUM.."> "..o.Kind.."; "..o.Tag.."; ("..o.X..","..o.Y.."); "..({[0]="Invisible",[1]="Visible"})[o.Visible].."; "..o.Labels)
+    cnt = cnt + 1
     end
+CSay(  cnt.." objects found")    
 end
+
+function UNLABELLED(kind)
+local cnt = 0
+local o
+for o in KthuraEach(kind) do
+    if o.Labels=="" then 
+       CSay(o.IDNUM.."> "..o.Kind.."; "..o.Tag.."; ("..o.X..","..o.Y.."); "..({[0]="Invisible",[1]="Visible"})[o.Visible]..";") 
+       cnt = cnt + 1
+       end
+    end
+CSay(  cnt.." objects found")    
+end    

@@ -193,6 +193,8 @@ ZA_Enter("Entrance_Zone",EnterEntrance)
 ZA_Enter("TutEnemy",TutEnemy)
 ZA_Enter("Verdieping1",function() MapShow("GreatHall-FirstFloor") end)
 ZA_Enter("Kantoor", Kantoor)
+ZA_Enter("EnterBoss",function() MapShow("Boss") end)
+ZA_Enter("LeaveBoss",function() MapShow("TowerTop") end)
 -- Trappen
 ZA_Enter("UPto1",function() Trap("U_Verdieping1","GreatHall-FirstFloor") end)
 ZA_Enter("DownTo0",function() Trap("BeganeGrond","GreatHall"); EnterGreatHall() end)

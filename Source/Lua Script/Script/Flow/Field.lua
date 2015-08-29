@@ -537,14 +537,17 @@ for k,t in spairs(FieldTreasure) do
     if Distance(px,py,t.x,t.y)<16 then
        given = ItemGive("ITM_"..t.item,{activeplayer})
        if (not given) and (not Done("&TUTORIAL.BAGSFULL")) then
+          Actors.StopWalking(cplayer)
           MS.LoadNew("BOXTEXT","Script/SubRoutines/BoxText.lua")
           MS.Run("BOXTEXT","LoadData","TUTORIAL/BAGSFULL;BAGSFULL")
           SerialBoxText("BAGSFULL",upper("FULL."..activeplayer)) --,"Field")
           SerialBoxText("BAGSFULL","TUTORIAL_FULL") --,"Field")
           MS.Run("BOXTEXT","RemoveData","BAGSFULL")
+          end
+       if given then 
+          FieldTreasure[k]=nil 
           Maps.Obj.Kill(t.objtag)          
-       end
-       if given then FieldTreasure[k]=nil end   
+          end   
        end
     end
 end
