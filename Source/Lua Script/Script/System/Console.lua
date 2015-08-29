@@ -385,7 +385,7 @@ end
 function MAPOBJECTS(kind)
 local cnt = 0
 local o
-for o in kthuraeach(kind) do
+for o in KthuraEach(kind) do
     CSay(o.IDNUM.."> "..o.Kind.."; "..o.Tag.."; ("..o.X..","..o.Y..")")
     end
 end
