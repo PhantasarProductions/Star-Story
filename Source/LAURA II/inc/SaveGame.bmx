@@ -191,7 +191,7 @@ If FileType(Swapdir)
 	?Win32
 	swapdir = Replace(swapdir,"/","\") ' I really need to make sure this is not the evil here.
 	?
-	If Not DeleteDir(Swapdir,1) GALE_Error "Could not delete original swap dir!"
+	'If Not DeleteDir(Swapdir,1) GALE_Error "Could not delete original swap dir!"
 	EndIf
 Local Ent:TJCREntry
 Local OSFile$ ' Output Swap file... Not Operating system :-P
