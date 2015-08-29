@@ -216,6 +216,11 @@ AddClickable("Sleutel")
 AddClickable("DEUR")
 AddClickable("SAVESPOTTOP")
 alwaysshow = {"ActWendicka","ActCrystal","ActBriggs"}
+if not CVV("&YAQIRPA.ASTROLOTOP") then
+   Actors.Spawn("Astrilo_East","GFX/ACTORS/SinglePic/Astrilopup/Astrilopup_E.png","TopAstrilo_East",1)
+   Actors.Spawn("Astrilo_West","GFX/ACTORS/SinglePic/Astrilopup/Astrilopup_W.png","TopAstrilo_West",1)
+   end
+
 end
 
 function MAP_FLOW()
