@@ -149,6 +149,7 @@ ywtimer = ywtimer or 150
 local cosdeg = (360-ywscale)
 local cosres = math.cos(cosdeg/9); if cosdeg<=0 then cosres=1 end
 local genscale = math.ceil((ywscale/360)*100)
+local i,ch   
 Image.ScalePC(genscale,genscale*cosres)
 Image.LoadNew("YOUWIN","GFX/Combat/YouWin.png"); Image.HotCenter("YOUWIN")
 White()
@@ -162,6 +163,10 @@ if ywscale<360 then
       PullMusic()
       inc('%COMBATSTAT.VICTORIES')
       NumAchAward("VICTORY",CVV("%COMBATSTAT.VICTORIES"))
+      for i=0,5 do
+          ch = RPGChar.PartyTag(i)
+          if ch~="" and RPGChar.Points(ch,"HP").Have<=0 then RPGChar.Points(ch,"HP").Have=1 end
+          end
       LAURA.Flow(CombatData.RETURNFLOW or "FIELD") 
       end
    end

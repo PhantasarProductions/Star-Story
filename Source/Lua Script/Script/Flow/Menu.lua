@@ -168,7 +168,7 @@ FeatureHandleArray = {
                   Image.DText("HP",50,100)
                   Image.DText(RPGStats.Points(pchar,"HP").Have.." / "..RPGStats.Points(pchar,"HP").Maximum,250,100,1)
                   Image.Color(100,100,100);   Image.Rect(50,120,200,3)
-                  Image.Color(255-hpc,255,0); Image.Rect(50,120,hpb,3)
+                  Image.Color(255-hpc,hpc,0); Image.Rect(50,120,hpb,3)
                   if RPGStats.Points(pchar,"AP").Maximum>0 then
                      Image.Color(100,100,255)
                      Image.DText("AP",50,125)

@@ -141,16 +141,19 @@ end
 function DrawFighter.Hero(idx,data)
 local x,y = CoordsFighter.Hero(idx)
 -- Marker(x,y)
-local ptag = "COMBAT.HERO."..data.Tag.."."..(data.Pick or "default")
-local Targeted = isorcontains(TargetedGroup,"Hero") and isorcontains(TargetedFighter,idx)
 data.Pick = data.Pick or "Default"
+local pick = data.Pick
+if RPGChar.Points(data.Tag,"HP").Have<=0 then pick="Dead" end
+local ptag = "COMBAT.HERO."..data.Tag.."."..(pick or "default")
+local Targeted = isorcontains(TargetedGroup,"Hero") and isorcontains(TargetedFighter,idx)
 if Image.Loaded(ptag)==0 then -- Load if needed!
-   Image.AssignLoad(ptag,"GFX/Combat/Fighters/Hero/"..data.Tag..'.'..data.Pick..".png")
-   if JCR6.Exists("GFX/Combat/Fighters/Hero/"..data.Tag..'.'..data.Pick..".hot")==0 then Image.Hot(ptag,Image.Width(ptag)/2,Image.Height(ptag)) end
+   Image.AssignLoad(ptag,"GFX/Combat/Fighters/Hero/"..data.Tag..'.'..pick..".png")
+   if JCR6.Exists("GFX/Combat/Fighters/Hero/"..data.Tag..'.'..pick..".hot")==0 then Image.Hot(ptag,Image.Width(ptag)/2,Image.Height(ptag)) end
    CSay("Loaded: "..ptag)
    end
 if Targeted then TargetedColor() else White() end   
 Image.Show(ptag,x,y)   
+-- DarkText("HP="..RPGChar.Points(data.Tag,"HP").Have.."; Pick="..pick.."; tag=".. data.Tag.."; ptag="..ptag,x,y,1) -- debug line
 end
 
 
