@@ -498,7 +498,7 @@ if #treasures==0 then CSay("No treasure in this map."); return end
 FieldTreasure = {}
 local add,itemnr,itemcode,item
 for obj in KthuraEach('$Item') do
-    if (rand(1,(skill)*5)==1) then
+    if (rand(1,(skill)*4)==1) then
        itemnr = rand(1,#treasures)
        itemcode = treasures[itemnr]
        if prefixed(itemcode,"ONCE:") then
@@ -529,21 +529,22 @@ end
 
 function FindTreasures()
 local k,t
-local px,py
+local px,py,given
 Maps.Obj.Pick(cplayer)
 px = Maps.Obj.MyObject.X
 py = Maps.Obj.MyObject.Y
 for k,t in spairs(FieldTreasure) do
     if Distance(px,py,t.x,t.y)<16 then
-       if (not ItemGive("ITM_"..t.item,{activeplayer})) and (not Done("&TUTORIAL.BAGSFULL")) then
+       given = ItemGive("ITM_"..t.item,{activeplayer})
+       if (not given) and (not Done("&TUTORIAL.BAGSFULL")) then
           MS.LoadNew("BOXTEXT","Script/SubRoutines/BoxText.lua")
           MS.Run("BOXTEXT","LoadData","TUTORIAL/BAGSFULL;BAGSFULL")
           SerialBoxText("BAGSFULL",upper("FULL."..activeplayer)) --,"Field")
           SerialBoxText("BAGSFULL","TUTORIAL_FULL") --,"Field")
           MS.Run("BOXTEXT","RemoveData","BAGSFULL")
           Maps.Obj.Kill(t.objtag)          
-          end
-       FieldTreasure[k]=nil   
+       end
+       if given then FieldTreasure[k]=nil end   
        end
     end
 end

@@ -386,6 +386,6 @@ function MAPOBJECTS(kind)
 local cnt = 0
 local o
 for o in KthuraEach(kind) do
-    CSay(o.IDNUM.."> "..o.Kind.."; "..o.Tag.."; ("..o.X..","..o.Y..")")
+    CSay(o.IDNUM.."> "..o.Kind.."; "..o.Tag.."; ("..o.X..","..o.Y.."); "..({[0]="Invisible",[1]="Visible"})[o.Visible].."; "..o.Labels)
     end
 end
