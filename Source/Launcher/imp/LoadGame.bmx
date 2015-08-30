@@ -77,8 +77,8 @@ Type TLoadGamePanel Extends tfpanelbase
 	Go = CreateButton("Load Game",0,CH-25,CW,25,Crystal,Button_ok)
 	?
 	?MacOS
-	Go = CreateButton("Load Game",CW-150,CH-50,150,25,Crystal,Button_ok)
-	RefreshButton = CreateButton("Refresh",CW-150,CH-25,150,25,Crystal)
+	Go = CreateButton("Load Game",CW-150,CH-25,150,25,Crystal,Button_ok)
+	RefreshButton = CreateButton("Refresh",CW-150,CH-50,150,25,Crystal)
 	?
 	CreateLabel "Users:",0,0,600,25,panel
 	Users = CreateListBox(0,25,600,75,Panel)
