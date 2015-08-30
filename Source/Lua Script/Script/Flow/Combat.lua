@@ -59,6 +59,9 @@ Oversoul = Oversoul or {}
 Fighters = {}
 VicCheck = {}
 DefeatCheck = {}
+FlawlessVictory = true
+FlawlessStreak = FlawlessStreak or 0
+FlawlessVictories = FlawlessVicotry or 0
 
 
 function GetAch()

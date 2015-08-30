@@ -103,6 +103,7 @@ local elementalresistance = ({
                        end,      
                  default = function() end      -- In all other situations (which includes situation 3) do nothing :)
                })[elementalresistance] or function() end)()
+FlawlessVictory = FlawlessVictory and (not(tg=="Hero" and dodmg>0 and elementalresistance<5))
 if god and tg=="Hero" and elementalresistance<5 then dodmg = 0 end
 if jack and tg=="Foe" and elementalresistance<6 then dodmg = RPGStat.Points(chtarget,"HP").Have end
 RPGStat.Points(chtarget,"HP").Have = RPGStat.Points(chtarget,"HP").Have - dodmg
