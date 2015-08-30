@@ -78,7 +78,6 @@ Function SystemFilesCheck()
 Local ShownPanel:TGadget = Null
 For Local SF:TSystemfile = EachIn lsystemfile
 	'Notify "Checking for "+(Dirry(Save)+"/System/"+sf.file)+" resulted into: "+FileType(Dirry(Save)+"/System/"+sf.file) ' debug line
-
 	If FileType(sf.file) And (Not ShownPanel) And cpanel<>0 ShownPanel=sf.panel Else HideGadget sf.panel
 	If eid=event_gadgetaction
 		Select ESource
