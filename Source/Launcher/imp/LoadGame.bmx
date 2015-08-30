@@ -68,11 +68,18 @@ Type TLoadGamePanel Extends tfpanelbase
 	Field OldMinute ',OldUser$,OldFile$
 	Field User$,CFile$
 	Field YesNo$[] = ["No","Yes"]
+	Field RefreshButton:TGadget ' Only used on Mac
 		
 	Method Make()
 	Crystal = CreatePanel(TW-CW,TH-CH,CW,CH,panel)
 	SetGadgetPixmap Crystal,PixCrystal
+	?Not MacOS
+	Go = CreateButton("Load Game",0,CH-25,CW,25,Crystal,Button_ok)
+	?
+	?MacOS
 	Go = CreateButton("Load Game",CW-150,CH-25,150,25,Crystal,Button_ok)
+	RefreshButton = CreateButton("Refresh",CW-150,CH-25,150,25,Crystal)
+	?
 	CreateLabel "Users:",0,0,600,25,panel
 	Users = CreateListBox(0,25,600,75,Panel)
 	CreateLabel "Files:",0,100,600,25,panel
@@ -199,6 +206,10 @@ Type TLoadGamePanel Extends tfpanelbase
 						cfile = GadgetItemText(Files,F)
 						RunLoadGame Dirry(Save)+"/"+User+"/"+CFile
 						EndIf
+				?MacOS		
+				Case RefreshButton
+					Refresh User,CFile
+				?	
 				End Select		
 		End Select
 	'olduser = user

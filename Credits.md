@@ -17,7 +17,7 @@ Aaron Krogh | 13 | Music;
 Alexander | 3 | Audio; Misc files; 
 Angela Nagtzaam | 11 | Art; 
 Ann | 1 | Art; 
-Courtney Novits | 4 | Font; 
+Courtney Novits | 3 | Font; Misc files; 
 Cynix | 1 | Art; 
 Emily Esposito | 1 | Art; 
 Fake Music Generator | 1 | Music; 
