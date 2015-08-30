@@ -402,4 +402,21 @@ for o in KthuraEach(kind) do
        end
     end
 CSay(  cnt.." objects found")    
-end    
+end 
+
+function LEVELUP(...)
+local chrs = arg
+local ch
+local i
+if #chrs==0 or chrs[1]=="" then
+   chrs = {} 
+   for i=0,5 do
+       ch = RPGChar.PartyTag(i)
+       if ch~="" then table.insert(chrs,ch) end
+       end
+   end
+for ch in each(chrs) do
+    CSay("Level up: "..ch)
+    RPGChar.Points(ch,"EXP").Have = 9999999
+    end
+end        

@@ -263,6 +263,8 @@ function Defeated()
 return (DefeatCheck[CombatData.DEFEATEDCHECK] or DefaultDefeated)()
 end
 
+
+
 function MAIN_FLOW()
 DrawScreen()
 if Defeated() then RunDefeated() elseif Victory() then RunVictory() else RunGauge() end

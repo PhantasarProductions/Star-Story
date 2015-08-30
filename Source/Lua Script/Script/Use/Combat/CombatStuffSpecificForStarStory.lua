@@ -166,15 +166,17 @@ if ywscale<360 then
       for i=0,5 do
           ch = RPGChar.PartyTag(i)
           if ch~="" and RPGChar.Points(ch,"HP").Have<=0 then RPGChar.Points(ch,"HP").Have=1 end
-          if FlawlessVictory then
-             FlawlessStreak = FlawlessStreak + 1
-             FlawlessVictories = FlawlessVicotry + 1
-             NumAchAward("PERFECT",FlawlessVictories)
-             NumAchAward("PERFECTSTREAK",FlawlessVictories)
-             else
-             FlawlessStreak = 0 
-             end
           end
+      if FlawlessVictory then
+         FlawlessStreak = FlawlessStreak + 1
+         FlawlessVictories = FlawlessVictories + 1
+         NumAchAward("PERFECTVICTORY",FlawlessVictories)
+         NumAchAward("PERFECTSTREAK",FlawlessStreak)
+         CSay("Flawless: "..FlawlessVictories)
+         CSay("Streak:   "..FlawlessStreak)
+      else
+         FlawlessStreak = 0 
+         end
       LAURA.Flow(CombatData.RETURNFLOW or "FIELD") 
       end
    end
