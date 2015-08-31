@@ -303,6 +303,7 @@ if epm>0 and ep==epm then
       end
    levelupanim[ch] = { scl=0; tme=150 }
    if RPGStat.Stat(ch,"Level")>=MaxLevel then RGPStat.Points(ch,EXP).Maximum=0 end   
+   SFX("Audio/SFX/MBOX2.ogg")
    end
 if levelupanim[ch] then
    levelupanim[ch].rot = ((levelupanim[ch].scl/100)*360)-(360+30)

@@ -61,12 +61,12 @@ VicCheck = {}
 DefeatCheck = {}
 FlawlessVictory = true
 FlawlessStreak = FlawlessStreak or 0
-FlawlessVictories = FlawlessVicotry or 0
+FlawlessVictories = FlawlessVictories or 0
 
 
 function GetAch()
 Ach = {
-      Prefix = { Kills = "KILL", Victories = "VICTORY", Perfect = "PERFECT", PerfectStreak = "PERFECTSTREAK" },
+      Prefix = { Kills = "KILL", Victories = "VICTORY", Perfect = "PERFECTVICTORY", PerfectStreak = "PERFECTSTREAK" },
       BaseList = { },
    
       NumList = { }
