@@ -23,6 +23,7 @@
 1. Script/Init/LoadGame.lua
 1. Script/Init/Start.lua
 1. Script/JINC/Big/Achievements.lua
+1. Script/JINC/Foes/Boss/BrainDroid.lua
 1. Script/JINC/Foes/Reg/astrilopup.lua
 1. Script/JINC/Foes/Reg/BattleDroid.lua
 1. Script/JINC/IAA/ABL_FOE_PHOTON.lua
@@ -115,4 +116,4 @@
 
 
 
-### Last updated: Wed 02 September 2015; 19:28:32 CET
+### Last updated: Wed 02 September 2015; 23:35:37 CET

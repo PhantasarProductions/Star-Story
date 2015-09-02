@@ -1,36 +1,7 @@
 --[[
- **********************************************
+**********************************************
   
-  This file is part of a closed-source 
-  project by Jeroen Petrus Broks and should
-  therefore not be in your pocession without
-  his permission which should be obtained 
-  PRIOR to obtaining this file.
-  
-  You may not distribute this file under 
-  any circumstances or distribute the 
-  binary file it procudes by the use of 
-  compiler software without PRIOR written
-  permission from Jeroen P. Broks.
-  
-  If you did obtain this file in any way
-  please remove it from your system and 
-  notify Jeroen Broks you got it somehow. If
-  you have downloaded it from a website 
-  please notify the webmaster to remove it
-  IMMEDIATELY!
-  
-  Thank you for your cooperation!
-  
-  
- **********************************************
-Prologue_Yaqirpa.lua
-(c) 2015 Jeroen Petrus Broks
-Version: 15.09.02
-]]
---[[
-/**********************************************
-  
+  Prologue_Yaqirpa.lua
   (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
@@ -53,20 +24,15 @@ Version: 15.09.02
   from it, you can use it under that license.
   Please check out the other files to find out
   which license applies.
-
   This file comes 'as-is' and in no possible
   way the author can be held responsible of
   any form of damages that may occur due to 
   the usage of this file
   
   
- **********************************************/
+ **********************************************
  
-
-
-
-Version: 15.08.26
-
+version: 15.09.02
 ]]
 
 -- @UNDEF TRAPDEBUG
@@ -209,6 +175,13 @@ function EnterSave() MapShow("save") end
 function EnterGreatHall() MapShow("GreatHall") end
 function EnterEntrance() MapShow("Entrance") end
 
+function Boss()
+Actors.StopWalking("ActWendicka")
+Actors.StopWalking("ActCrystal")
+Actors.StopWalking("ActBriggs")
+MapText("BOSS_START")
+end
+
 function BreakThe4thWall()
 if Done("&YAQUIPRA.4EMUUR") then return end
 MapText("4EMUURSTART")
@@ -258,6 +231,7 @@ ZA_Enter("DownToTower3", function() Trap("D_Tower3","Tower3") end)
 ZA_Enter("DownToTower4", function() Trap("D_Tower4","Tower4") end)
 ZA_Enter("DownToTower5", function() BreakThe4thWall(); Trap("D_Tower5","Tower5") end)
 ZA_Enter("Astrilopups",  TopAstrilopups)
+ZA_Enter("Boss", Boss)
 -- ZA_Enter("EnterSave",EnterEntrance)
 AddClickable("SAVE1")
 AddClickable("Sleutel")
