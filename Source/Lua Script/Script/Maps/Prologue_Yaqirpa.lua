@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.02
+version: 15.09.03
 ]]
 
 -- @UNDEF TRAPDEBUG
@@ -176,10 +176,65 @@ function EnterGreatHall() MapShow("GreatHall") end
 function EnterEntrance() MapShow("Entrance") end
 
 function Boss()
+-- Stop walking and let Briggs explain
 Actors.StopWalking("ActWendicka")
 Actors.StopWalking("ActCrystal")
 Actors.StopWalking("ActBriggs")
+no_follow_the_leader = true
 MapText("BOSS_START")
+Actors.WalkToSpot("ActBriggs","BriggsBoss")  WalkWait("ActBriggs")
+-- DIE BRIGGS! DIE!
+Party("UniWendicka","UniCrystal")
+local oribriggs = { x = Actors.PX("ActBriggs"), y = Actors.PY("ActBriggs")}
+local y
+Actors.ChoosePic("ActBriggs","BRIGGS.DEAD")
+for y=oribriggs.y,1568,-5 do
+    Actors.Actor("ActBriggs").Y=y
+    Actors.Actor("ActBriggs").X=1552
+    DrawScreen()
+    Flip()
+    end
+Actors.WalkToSpot("ActWendicka","DeadBriggsWendicka")
+Actors.ChoosePic("ActWendicka","WENDICKA.NORTH")
+MapText("BOSS_SHOUTBRIGGS")
+Actors.WalkToSpot("ActCrystal","DeadBriggsCrystal")
+WalkWait({"ActWendicka","ActCrystal"})  
+Actors.ChoosePic("ActWendicka","WENDICKA.NORTH")
+Actors.ChoosePic("ActCrystal","CRYSTAL.NORTH")
+MapText("BOSS_BRIGGSISDEAD")  
+-- GIRLS CHARGE IN
+Actors.WalkToSpot("ActWendicka","BossWendicka")
+Actors.WalkToSpot("ActCrystal","BossCrystal")
+Actors.ChoosePic("ActWendicka","WENDICKA.SOUTH")
+Actors.ChoosePic("ActCrystal","CRYSTAL.SOUTH")
+MapShow("Boss")
+Maps.CamX = 1184
+Maps.CamY = 1616
+DrawScreen()
+Flip()
+MapText("BOSS_COMMENCE")
+-- Fight
+Sys.Error("Bossfight not scripted yet!")
+CleanCombat()
+Var.D("$COMBAT.BACKGROUND","Yaqirpa.png")
+Var.D("$COMBAT.BEGIN","Default")
+Var.D("$COMBAT.FOE1","Boss/BrainDroid")
+Var.D("%COMBAT.LVFOE1",RPGChar.Stat("Briggs",Level))
+Var.D("$COMBAT.VICTORYCHECK")
+RandomBossTune()
+Schedule("MAP","PostBoss")
+StartCombat()
+end
+
+function PostBoss()
+-- Talk 1
+-- Kill Crystal
+-- Rage Wendicka
+-- KABOOM!
+-- Wake up at Salp'r'drita
+-- Sickbay talk
+-- Set up Wendicka to leave
+Sys.Error("The rest not yet created")
 end
 
 function BreakThe4thWall()
@@ -213,7 +268,7 @@ ZA_Enter("Entrance_Zone",EnterEntrance)
 ZA_Enter("TutEnemy",TutEnemy)
 ZA_Enter("Verdieping1",function() MapShow("GreatHall-FirstFloor") end)
 ZA_Enter("Kantoor", Kantoor)
-ZA_Enter("EnterBoss",function() MapShow("Boss") end)
+ZA_Enter("EnterBoss", Boss )
 ZA_Enter("LeaveBoss",function() MapShow("TowerTop") end)
 -- Trappen
 ZA_Enter("UPto1",function() Trap("U_Verdieping1","GreatHall-FirstFloor") end)
@@ -231,7 +286,6 @@ ZA_Enter("DownToTower3", function() Trap("D_Tower3","Tower3") end)
 ZA_Enter("DownToTower4", function() Trap("D_Tower4","Tower4") end)
 ZA_Enter("DownToTower5", function() BreakThe4thWall(); Trap("D_Tower5","Tower5") end)
 ZA_Enter("Astrilopups",  TopAstrilopups)
-ZA_Enter("Boss", Boss)
 -- ZA_Enter("EnterSave",EnterEntrance)
 AddClickable("SAVE1")
 AddClickable("Sleutel")
@@ -253,6 +307,7 @@ clplayer = clplayer or "Wendicka"
 local follow = {Wendicka = "Briggs", Crystal = "Wendicka", Briggs = "Crystal"}
 local x,y,w 
 local tx,ty,fx,fy
+if no_follow_the_leader then return end
 local leader,follower
 for follower,leader in pairs(follow) do
     x,y,w = GetCoords("Act"..leader)

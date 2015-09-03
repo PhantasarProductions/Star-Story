@@ -61,6 +61,7 @@
 1. Script/Libs/switch.lua
 1. Script/Libs/tablecontains.lua
 1. Script/Maps/AutoUse.lua
+1. Script/Maps/Excalibur_Sickbay.lua
 1. Script/Maps/Prologue_Yaqirpa.lua
 1. Script/OSBOOT/Mac.x86.lua
 1. Script/OSBOOT/Win32.x86.lua
@@ -78,6 +79,7 @@
 1. Script/System/Console.lua
 1. Script/Use/Anyway/AAAAAAAAAAA.lua
 1. Script/Use/Anyway/CombatStuff.lua
+1. Script/Use/Anyway/Experience.lua
 1. Script/Use/Anyway/Flip.lua
 1. Script/Use/Anyway/Fonts.lua
 1. Script/Use/Anyway/GetCoords.lua
@@ -90,6 +92,7 @@
 1. Script/Use/Anyway/Resistance names.lua
 1. Script/Use/Anyway/Sex.lua
 1. Script/Use/Anyway/TutorialInit.lua
+1. Script/Use/Anyway/WalkWait.lua
 1. Script/Use/Combat/CAction.lua
 1. Script/Use/Combat/CDrawFighters.lua
 1. Script/Use/Combat/CDrawScreen.lua
@@ -116,4 +119,4 @@
 
 
 
-### Last updated: Wed 02 September 2015; 23:35:37 CET
+### Last updated: Thu 03 September 2015; 20:31:27 CET
