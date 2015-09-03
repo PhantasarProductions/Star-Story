@@ -227,8 +227,13 @@ end
 
 function PostBoss()
 -- Talk 1
+MapText("POSTBOSS_START")
 -- Kill Crystal
+Actors.ChoosePic("ActCrystal","CRYSTAL.DEAD")
+Party("Wendicka")
+DrawScreen()
 -- Rage Wendicka
+MapText("POSTBOSS_WENDICKARAGE")
 -- KABOOM!
 -- Wake up at Salp'r'drita
 -- Sickbay talk

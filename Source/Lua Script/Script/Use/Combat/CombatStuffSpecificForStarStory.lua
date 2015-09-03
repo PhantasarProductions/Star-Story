@@ -148,16 +148,19 @@ local f
 if not BrainTag then
    for f in each(Fighters.Foe) do
        BrainTag = f.Tag 
+       BrainFoe = f
        CSay("BrainTag = "..BrainTag)
        end
    end
 RPGChar.Points(BrainTag,"HP").Minimum = 1 -- Now we cannot accidentally kill the boss, as this would spook the script up a little.
+if BrainFoe.x<300 then BrainFoe.x=BrainFoe.x+2 end
+if BrainFoe.y<400 then BrainFoe.y=BrainFoe.y+2 end
 if RPGChar.Points(BrainTag,"HP").Have==1 then
    GrantExperienceOnLevel(20)
    DrawScreen()
    GrantEventExperience(6)
    DrawScreen()
-   DelEnemies()
+   -- DelEnemies()
    LAURA.Flow("FIELD")
    end   
 end
