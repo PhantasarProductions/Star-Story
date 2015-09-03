@@ -148,6 +148,7 @@ local f
 if not BrainTag then
    for f in each(Fighters.Foe) do
        BrainTag = f.Tag 
+       CSay("BrainTag = "..BrainTag)
        end
    end
 RPGPoints.Points(BrainTag,"HP").Minimum = 1 -- Now we cannot accidentally kill the boss, as this would spook the script up a little.

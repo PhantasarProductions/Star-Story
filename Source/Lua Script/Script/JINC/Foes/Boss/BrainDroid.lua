@@ -43,7 +43,7 @@ version: 15.09.03
 Data = {
 	Name = "Mother Brain",
 	Desc = "This droid has control over all other droids in the region",
-	ImageFile = "Boss/BrainDroid.png",
+	ImageFile = "Boss/Brain.png",
 	AI = "Default",
 	Boss = true,
 	Stat = {

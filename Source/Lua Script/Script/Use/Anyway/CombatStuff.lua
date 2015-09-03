@@ -1,6 +1,6 @@
 --[[
   CombatStuff.lua
-  Version: 15.09.02
+  Version: 15.09.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -48,8 +48,11 @@ if not musicavailable then CSay("No Music Available, so let's forget about a ran
 if not bossmusiclist then
    bossmusiclist = {}
    for f in iJCR6Dir(true) do
-       if prefixed(f,"MUSIC/BOSS/") and suffixed(".OGG") then table.insert(bossmusiclist,replace(f,"MUSIC/","")) end  
+       if prefixed(f,"MUSIC/BOSS/") and suffixed(f,".OGG") then 
+           -- table.insert(bossmusiclist,replace(f,"MUSIC/","")) -- Suddenly for no reason at all, Lua doesn't accept strings for parameter #2. It always did, and in a test version of Lua it still did, but here it doesn't. Odd!
+           bossmusiclist[#bossmusiclist+1]=f -- Well when the official method doesn't work, then we have to go for this ugly alternative. 
+           end  
        end
    end    
-Var.D("$COMBAT.MUSIC",bossmusiclist(rand(1,#bossmusiclist)))   
+Var.D("$COMBAT.MUSIC",bossmusiclist[rand(1,#bossmusiclist)])   
 end
