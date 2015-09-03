@@ -151,11 +151,13 @@ if not BrainTag then
        CSay("BrainTag = "..BrainTag)
        end
    end
-RPGPoints.Points(BrainTag,"HP").Minimum = 1 -- Now we cannot accidentally kill the boss, as this would spook the script up a little.
-if RPG.Points(BrainTag,"HP").Have==1 then
-   GrandExperienceOnlevel(20)
+RPGChar.Points(BrainTag,"HP").Minimum = 1 -- Now we cannot accidentally kill the boss, as this would spook the script up a little.
+if RPGChar.Points(BrainTag,"HP").Have==1 then
+   GrantExperienceOnLevel(20)
    DrawScreen()
-   GrandEventExperience(6)
+   GrantEventExperience(6)
+   DrawScreen()
+   DelEnemies()
    LAURA.Flow("FIELD")
    end   
 end

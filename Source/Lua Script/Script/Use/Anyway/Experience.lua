@@ -56,11 +56,12 @@ ret1,ret2 = ({
                   ch = RPGChar.PartyTag(ak)
                   if ch~="" then table.insert(ret,ch) end
                   end
+              return ret,p2    
               end })[type(chl)](chl,exp)                                   
 return ret1,ret2
 end
 
-function GrandFixedExperience(cha,exp)
+function GrantFixedExperience(cha,exp)
 local chl,x = EXPGetCharList(cha,exp)
 local ch
 for ch in each (chl) do
@@ -68,15 +69,15 @@ for ch in each (chl) do
     end
 end
 
-function GrandExperienceOnLevel(c1,c2)
+function GrantExperienceOnLevel(c1,c2)
 local chl,lv = EXPGetCharList(c1,c2)
 local ch
-for ch in each (chl) do
+for ch in each(chl) do
     RPGChar.Points(ch,"EXP").Inc((RPGChar.Stat(ch,"Level")/lv)*250)
     end
 end    
 
-function GrandEventExperience(c1,c2)
+function GrantEventExperience(c1,c2)
 local chl,lv = EXPGetCharList(c1,c2)
 local ch
 for ch in each (chl) do
