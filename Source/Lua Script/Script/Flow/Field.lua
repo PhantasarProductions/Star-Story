@@ -39,6 +39,7 @@
 
 cplayer = cplayer or "PLAYER"
 activeplayer = activeplayer or RPGChar.PartyTag(0)
+
 scrolling = true
 scrollrange = {}
 
@@ -79,10 +80,11 @@ for ak,i in ipairs(Icons) do
     end    
 end
 
-function AytoPlayerWind()
+-- Automatically turn the player actor into the right direction
+function AutoPlayerWind()
 if cplayer~="PLAYER" then return end
 local x,y,w = GetCoords("PLAYER")
-Actors.ChoosePic("PLAYER",upper(activeplayer).."."..upper(w))
+Actors.ChoosePic("PLAYER",upper(replace(activeplayer,"Uni","")).."."..upper(w))
 end
 
 function DrawScreen()
