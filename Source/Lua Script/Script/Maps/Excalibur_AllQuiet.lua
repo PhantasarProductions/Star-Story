@@ -52,7 +52,7 @@ end
 
 function MAP_FLOW()
 local k,v
-for k,v in Doors do
+for k,v in spairs(Doors) do
     if Maps.Obj.Obj(k).X<v.ox then Maps.Obj.Obj(k).X = Maps.Obj.Obj(k).X + 1 end
     if Maps.Obj.Obj(k).X>v.ox then Maps.Obj.Obj(k).X = Maps.Obj.Obj(k).X - 1 end
     end
