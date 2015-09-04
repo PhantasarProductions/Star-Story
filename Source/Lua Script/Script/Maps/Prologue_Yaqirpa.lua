@@ -264,6 +264,8 @@ for c=0,255,0.5 do
     end    
 -- Sickbay talk
 LoadMap("Excalibur_Sickbay")
+Maps.CamX=0
+Maps.CamY=96
 MapText("SICKBAY")
 -- Set up Wendicka to leave
 Sys.Error("The rest not yet created")
