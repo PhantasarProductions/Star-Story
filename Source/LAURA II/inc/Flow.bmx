@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.09.02
+Version: 15.09.04
 End Rem
 Rem
 /*
@@ -56,7 +56,7 @@ Repeat
 Select Second()
 	Case 0,15,30,45
 		If Not FileType(Sessionfile) End
-	End select
+	End Select
 If GALE_INP.AutoGrab Grabinput 
 LAURA_API.Terminate =  GALE_INP.Terminate 'AppTerminate()
 If Not currentflow GALE_Error "No flow"
@@ -74,7 +74,8 @@ FlushKeys
 Repeat
 ConsoleShow
 Flip
-X = WaitChar()
+If Not FileType(Sessionfile) End
+X = GetChar()
 If X>=32 ConsoleCommand:+Chr(X) Else
 	Select X
 		Case 8 If ConsoleCommand ConsoleCommand = Left(ConsoleCommand,Len(ConsoleCommand)-1)
@@ -84,7 +85,7 @@ If X>=32 ConsoleCommand:+Chr(X) Else
 			LastConsoleCommand = ConsoleCommand
 			ConsoleCommand=""
 			FlushKeys
-			ConsoleExecute LastConsoleCommand
+			If lastconsolecommand ConsoleExecute LastConsoleCommand
 		End Select
 Until X=KEY_ESCAPE
 FlushKeys
