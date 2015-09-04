@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.03
+version: 15.09.04
 ]]
 
 -- @UNDEF TRAPDEBUG
@@ -235,8 +235,35 @@ DrawScreen()
 -- Rage Wendicka
 MapText("POSTBOSS_WENDICKARAGE")
 -- KABOOM!
+local kaboom = Image.Load("GFX/Scenario/Explosion.png")
+SFX("Audio/SFX/Dynamite.ogg")
+DestroyPushedMusic()
+Music("Sys/Silence.ogg")
+local m = { [false]=-5, [true]=5}
+local b
+for ak=1,10 do
+    b = not b
+    Image.Cls()
+    Image.Show(kaboom,m[b],m[b])
+    Flip()
+    Time.Sleep(10)
+    end
+Image.Free(kaboom)
+Image.Cls()
+Flip()    
 -- Wake up at Salp'r'drita
+Time.Sleep(1000)
+local doctor = Image.Load("GFX/Scenario/Dokter Sal'pr'drita.png")
+local c
+for c=0,255,0.5 do
+    Image.Cls()
+    Image.Color(c,c,c)
+    Image.Show(doctor,0,0)
+    Flip()
+    end    
 -- Sickbay talk
+LoadMap("Excalibur_Sickbay")
+MapText("SICKBAY")
 -- Set up Wendicka to leave
 Sys.Error("The rest not yet created")
 end

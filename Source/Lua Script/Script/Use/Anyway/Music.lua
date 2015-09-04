@@ -1,7 +1,7 @@
 --[[
   Music.lua
   
-  version: 15.09.02
+  version: 15.09.04
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -76,4 +76,8 @@ end
 
 -- Just to have an alias :P
 PlayMusic = Music
+
+function DestroyPushedMusic()
+Var.D("%PUSHEDSONGS",0)
+end
 

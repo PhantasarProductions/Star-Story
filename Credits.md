@@ -14,7 +14,7 @@ If you see your name below and you think I'm using your stuff against your licen
 Author | Contributions | Kind of contributions
 ---|---|---
 Aaron Krogh | 13 | Music; 
-Alexander | 3 | Audio; Misc files; 
+Alexander | 2 | Audio; Misc files; 
 Angela Nagtzaam | 11 | Art; 
 Ann | 1 | Art; 
 Courtney Novits | 3 | Font; Misc files; 
@@ -30,11 +30,11 @@ Mohammed Ibrahim | 2 | Art;
 OpenClips | 1 | Art; 
 Pablo Impallari | 6 | Font; Misc files; 
 PacDV | 1 | Audio; 
-Shockwave-sound.com | 2 | Audio; Misc files; 
+Shockwave-sound.com | 1 | Audio; 
 Spiedkiks | 1 | Music; 
-Tricky (this is me) :sunglasses: | 1419 | Art; Audio; Data; Dutch translation; Font; Misc files; Original English Scenario; Script; 
+Tricky (this is me) :sunglasses: | 1418 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
 Unknown Artist | 8 | Art; 
 Utopia | 2 | Font; Misc files; 
-Varazuvi(TM) | 6 | Audio; Misc files; 
+Varazuvi(TM) | 4 | Audio; 
 WeirdoMusic | 1 | Music; 
 One final note. Since JCR6 uses an aliasing system some contributions are counted twice (or even more times) due to them being aliased. The system updating this list is (unfortunately) not able to tell a true contributions apart from aliases.
