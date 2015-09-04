@@ -244,6 +244,7 @@ local b
 for ak=1,10 do
     b = not b
     Image.Cls()
+    White()
     Image.Show(kaboom,m[b],m[b])
     Flip()
     Time.Sleep(10)
