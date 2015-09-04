@@ -205,6 +205,7 @@ MapText("BOSS_BRIGGSISDEAD")
 -- GIRLS CHARGE IN
 Actors.WalkToSpot("ActWendicka","BossWendicka")
 Actors.WalkToSpot("ActCrystal","BossCrystal")
+WalkWait({"ActWendicka","ActCrystal"})
 Actors.ChoosePic("ActWendicka","WENDICKA.SOUTH")
 Actors.ChoosePic("ActCrystal","CRYSTAL.SOUTH")
 MapShow("Boss")
@@ -264,11 +265,16 @@ for c=0,255,0.5 do
     end    
 -- Sickbay talk
 LoadMap("Excalibur_Sickbay")
+Image.Free(doctor)
 Maps.CamX=0
 Maps.CamY=96
 MapText("SICKBAY")
 -- Set up Wendicka to leave
-Sys.Error("The rest not yet created")
+Party("UniWendicka")
+Maps.LoadMap("Excalibur_AllQuiet")
+Actors.Spawn("Start","GFX/Actors/Uniform","PLAYER")
+Actors.ChoosePic("PLAYER","WENDICKA.SOUTH")
+MS.Run("FIELD","SetPlayer","PLAYER")
 end
 
 function BreakThe4thWall()
