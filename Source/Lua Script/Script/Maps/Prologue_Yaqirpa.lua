@@ -271,7 +271,7 @@ Maps.CamY=96
 MapText("SICKBAY")
 -- Set up Wendicka to leave
 Party("UniWendicka")
-Maps.LoadMap("Excalibur_AllQuiet")
+LoadMap("Excalibur_AllQuiet")
 Actors.Spawn("Start","GFX/Actors/Uniform","PLAYER")
 Actors.ChoosePic("PLAYER","WENDICKA.SOUTH")
 MS.Run("FIELD","SetPlayer","PLAYER")
