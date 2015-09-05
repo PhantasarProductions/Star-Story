@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.05
+version: 15.09.06
 ]]
 
 function Internal_Transporter(spot,text,labels)
@@ -93,8 +93,8 @@ MapText("DEUR_JOHNSON")
 local Links  = Maps.Obj.Obj("Deur_Johnson_Links")    -- PvdA
 local Rechts = Maps.Obj.Obj("Deur_Johnson_Rechts")   -- VVD
 for ak=0,40 do
-    Links.X = Links.X - 1
-    Links.Y = Links.Y - 1
+    Links.X  = Links.X  - 1
+    Rechts.X = Rechts.X - 1
     Image.Cls()
     DrawScreen()
     Flip()
