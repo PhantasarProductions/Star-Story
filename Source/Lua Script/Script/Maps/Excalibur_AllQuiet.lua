@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.04
+version: 15.09.05
 ]]
 function NoBusiness()
 MapText("NOBUSINESS")
@@ -48,6 +48,7 @@ function GALE_OnLoad()
 Music("Excalibur/Blip Stream.ogg")
 SetDoor("LeftDoorSickBay",-40)
 SetDoor("RightDoorSickBay",40)
+if RPGChar.CharExists("Briggs")==1 then RPGChar.DelChar("Briggs") end
 end
 
 function MAP_FLOW()

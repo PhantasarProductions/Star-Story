@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.04
+version: 15.09.05
 ]]
 
 -- @UNDEF TRAPDEBUG
@@ -272,6 +272,7 @@ MapText("SICKBAY")
 -- Set up Wendicka to leave
 Party("UniWendicka")
 LoadMap("Excalibur_AllQuiet")
+MapShow("Sickbay")
 Actors.Spawn("Start","GFX/Actors/Uniform","PLAYER")
 Actors.ChoosePic("PLAYER","WENDICKA.SOUTH")
 MS.Run("FIELD","SetPlayer","PLAYER")

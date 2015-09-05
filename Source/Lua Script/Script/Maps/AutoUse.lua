@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 15.09.03
+  version: 15.09.05
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -141,4 +141,9 @@ end
 
 function DrawScreen()
 MS.Run("FIELD","DrawScreen")
+end
+
+function NPC_MapText()
+TurnPlayer("North")
+MapText(upper(Var.C("$NPC_MAPTEXT")))
 end

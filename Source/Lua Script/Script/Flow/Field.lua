@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.09.04
+  Version: 15.09.05
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -87,6 +87,11 @@ local x,y,w = GetCoords("PLAYER")
 Actors.ChoosePic("PLAYER",upper(replace(activeplayer,"Uni","")).."."..upper(w))
 end
 
+function TurnPlayer(w)
+if cplayer~="PLAYER" then return end
+Actors.ChoosePic("PLAYER",upper(replace(activeplayer,"Uni","")).."."..upper(w))
+end
+
 function DrawScreen()
 Image.Cls()
 Maps.Draw()
@@ -136,9 +141,16 @@ if mousehit(1) then
    for i,c in ipairs(Clickables) do
        -- CSay("Clicked in object: "..c.." ("..mx..","..my..") ==> "..Maps.CoordsInObject(c,mx,my))
        if Maps.CoordsInObject(c,mx,my)==1 then
-          Actors.WalkToSpot(cplayer,"SPOT_"..c)
-          WalkArrival = "CLICK_ARRIVAL_"..c
-          ret=true
+          if prefixed(c,"NPC_MT_") then
+            Actors.WalkTo(cplayer,Maps.Obj.Obj(c).X,Maps.Obj.Obj(c).Y+32)
+            WalkArrival = "NPC_MapText"
+            Var.D("$NPC_MAPTEXT",c)
+            ret=true
+          else
+            Actors.WalkToSpot(cplayer,"SPOT_"..c)
+            WalkArrival = "CLICK_ARRIVAL_"..c
+            ret=true
+            end
           end
        end
    end    
@@ -569,10 +581,21 @@ for k,t in spairs(FieldTreasure) do
     end
 end
 
+function SetUpAutoClickables()
+local prefixes = {"NPC_MT_"}
+local p
+for obj in KthuraEach() do
+    for p in each(prefixes) do 
+        if prefixed(obj.Tag,p) then AddClickable(obj.Tag) CSay("Autoclickable "..obj.Tag.." added") end
+        end
+    end
+end
+
 function LoadMap(map)
 Maps.Load(map)
 SetUpFoes()
 SetUpTreasure()
+SetUpAutoClickables()
 Var.Clear("$MAP.MAPSHOW.LASTREQUEST")
 Var.Clear("$MAP.MAPSHOW.LASTALWAYSSHOW")
 end
