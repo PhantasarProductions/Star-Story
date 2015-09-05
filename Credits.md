@@ -25,7 +25,7 @@ FlamingText.com | 12 | Art;
 GR-Sites | 2 | Art; Audio; 
 Kevin McLeod | 6 | Music; 
 Knight Of Fire | 2 | Music; 
-Man of Steel | 35 | Art; 
+Man of Steel | 41 | Art; 
 Matt McFarland | 2 | Music; 
 Mohammed Ibrahim | 2 | Art; 
 OpenClips | 1 | Art; 
