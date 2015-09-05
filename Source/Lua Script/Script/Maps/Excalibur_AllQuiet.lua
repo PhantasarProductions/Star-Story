@@ -89,16 +89,18 @@ end
 
 function CLICK_ARRIVAL_Deur_Johnson()
 if Done("&DONE.EXCALIBUR.OFFICE.JOHNSON") then return end
+NoDoorAction = true
 MapText("DEUR_JOHNSON")
 local Links  = Maps.Obj.Obj("Deur_Johnson_Links")    -- PvdA
 local Rechts = Maps.Obj.Obj("Deur_Johnson_Rechts")   -- VVD
 for ak=0,40 do
     Links.X  = Links.X  - 1
-    Rechts.X = Rechts.X - 1
+    Rechts.X = Rechts.X + 1
     Image.Cls()
     DrawScreen()
     Flip()
     end
+NoDoorAction = true    
 Sys.Error("Next part not yet scripted")
 end
 
@@ -119,8 +121,10 @@ end
 
 function MAP_FLOW()
 local k,v
-for k,v in spairs(Doors) do
-    if Maps.Obj.Obj(k).X<v.ox then Maps.Obj.Obj(k).X = Maps.Obj.Obj(k).X + 1 end
-    if Maps.Obj.Obj(k).X>v.ox then Maps.Obj.Obj(k).X = Maps.Obj.Obj(k).X - 1 end
-    end
+if not NoDoorAction then
+   for k,v in spairs(Doors) do
+       if Maps.Obj.Obj(k).X<v.ox then Maps.Obj.Obj(k).X = Maps.Obj.Obj(k).X + 1 end
+       if Maps.Obj.Obj(k).X>v.ox then Maps.Obj.Obj(k).X = Maps.Obj.Obj(k).X - 1 end
+       end
+   end    
 end
