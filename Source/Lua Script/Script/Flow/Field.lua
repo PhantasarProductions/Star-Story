@@ -80,6 +80,11 @@ for ak,i in ipairs(Icons) do
     end    
 end
 
+function GetActive(external)
+if external=='yes' then Var.D('$RET',activeplayer) end
+return activeplayer
+end
+
 -- Automatically turn the player actor into the right direction
 function AutoPlayerWind()
 if cplayer~="PLAYER" then return end

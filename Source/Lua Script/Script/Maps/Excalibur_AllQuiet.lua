@@ -44,11 +44,16 @@ Doors[Tag] = {ox = Maps.Obj.Obj(Tag).X}
 Maps.Obj.Obj(Tag).X = Maps.Obj.Obj(Tag).X + x
 end
 
+function NoBusiness()
+MapText("NOBUSINESS."..upper(GetActive()))
+end
+
 function GALE_OnLoad()
 Music("Excalibur/Blip Stream.ogg")
 SetDoor("LeftDoorSickBay",-40)
 SetDoor("RightDoorSickBay",40)
 if RPGChar.CharExists("Briggs")==1 then RPGChar.DelChar("Briggs") end
+ZA_Enter("Sickbay_NoBusiness",NoBusiness)
 end
 
 function MAP_FLOW()

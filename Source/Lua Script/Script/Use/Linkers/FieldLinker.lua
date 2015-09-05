@@ -46,3 +46,5 @@ end
 SetActive = SetActive or function(P) MS.LN_Run("FIELD","Flow/Field.lua","SetActive",P) end
 
 TurnPlayer = TurnPlayer or function(w) MS.LN_Run("FIELD","Flow/Field.lua","TurnPlayer",w) end
+
+GetActive = GetActive or function() MS.LN_Run("FIELD","Flow/Field.Lua","GetActive","yes") return Var.C("$RET") end
