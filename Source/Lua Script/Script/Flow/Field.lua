@@ -176,7 +176,7 @@ if mousehit(1) then -- Left Mouse button
    elseif CheckClickables() then
      -- Nothing happens here, but this will take any other checks out.       
       else -- If there's nothing else then perform then walk to
-      CSay(cplayer.." is going to walk to ("..mx..","..my..")")
+      -- CSay(cplayer.." is going to walk to ("..mx..","..my..")")
       Actors.WalkTo(cplayer,mx+Maps.CamX,my+Maps.CamY)
       WalkArrival = nil
       -- Actors.MoveTo(cplayer,mx+Maps.CamX,my+Maps.CamY)
@@ -241,7 +241,7 @@ local lvrange
 local hilevel,diflevel
 local myleveltotal,partymembers,ptag
 local enemiesmain = Maps.GetData("Foes")
-if (not enemiesmain) or enemiesmain=="" then return CSay("No enemy data found in this map") end
+if (not enemiesmain) or enemiesmain=="" then FieldFoes = {} return CSay("No enemy data found in this map") end
 local enemymainlist = mysplit(enemiesmain,";")
 local enemies = {}
 local es,ea

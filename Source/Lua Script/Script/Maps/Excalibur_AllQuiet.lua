@@ -34,6 +34,40 @@
  
 version: 15.09.05
 ]]
+
+function Internal_Transporter(spot,text,labels)
+TurnPlayer("South")
+MapText(text)
+-- Beam Out
+Actors.ChoosePic("PLAYER","TELEPORT")
+Actors.Actor("PLAYER").NotInMotionThen0 = 0
+for f=0,99 do
+    Image.Cls()
+    Actors.Actor("PLAYER").Frame = f 
+    Maps.Draw()
+    Flip()    
+    end
+Maps.OBJ.Kill("PLAYER")
+-- Beam in
+Actors.Spawn(spot,"GFX/Actors/Uniform","PLAYER")
+Maps.CamX = Actors.PX("PLAYER")-400
+Maps.CamY = Actors.PY("PLAYER")-300
+Actors.ChoosePic("PLAYER","TELEPORT")
+Actors.Actor("PLAYER").NotInMotionThen0 = 0
+MapShow(labels)
+for f=99,0,-1 do
+    Image.Cls()
+    Actors.Actor("PLAYER").Frame = f 
+    Maps.Draw()
+    Flip()    
+    end
+cp = GetActive()
+if cp=="UniWendicka" then cp="Wendicka" end    
+Actors.ChoosePic("PLAYER",upper(cp)..".SOUTH")     
+TurnPlayer("South")  
+Actors.Actor("PLAYER").NotInMotionThen0 = 1
+end
+
 function NoBusiness()
 MapText("NOBUSINESS")
 end
@@ -48,12 +82,39 @@ function NoBusiness()
 MapText("NOBUSINESS."..upper(GetActive()))
 end
 
+function Transporter_Johnson()
+CSay("Johnson Transporter")
+if not CVV("&DONE.EXCALIBUR.OFFICE.JOHNSON") then MapText("NOTELEPORT_JOHNSON") end
+end
+
+function CLICK_ARRIVAL_Deur_Johnson()
+if Done("&DONE.EXCALIBUR.OFFICE.JOHNSON") then return end
+MapText("DEUR_JOHNSON")
+local Links  = Maps.Obj.Obj("Deur_Johnson_Links")    -- PvdA
+local Rechts = Maps.Obj.Obj("Deur_Johnson_Rechts")   -- VVD
+for ak=0,40 do
+    Links.X = Links.X - 1
+    Links.Y = Links.Y - 1
+    Image.Cls()
+    DrawScreen()
+    Flip()
+    end
+Sys.Error("Next part not yet scripted")
+end
+
 function GALE_OnLoad()
 Music("Excalibur/Blip Stream.ogg")
 SetDoor("LeftDoorSickBay",-40)
 SetDoor("RightDoorSickBay",40)
+SetDoor("Deur_Johnson_Links",-40)
+SetDoor("Deur_Johnson_Rechts",40)
 if RPGChar.CharExists("Briggs")==1 then RPGChar.DelChar("Briggs") end
 ZA_Enter("Sickbay_NoBusiness",NoBusiness)
+ZA_Enter("Johnson_NoBusiness",NoBusiness)
+ZA_Enter("Johnson2_NoBusiness",NoBusiness)
+ZA_Enter("Transporter_Sickbay",function() Internal_Transporter("Johnson_Entrance","TELEPORT_SICK2STAFF","Staff") end)
+ZA_Enter("Transporter_Johnson",Transporter_Johnson)
+AddClickable("Deur_Johnson")
 end
 
 function MAP_FLOW()
