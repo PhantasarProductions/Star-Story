@@ -36,6 +36,9 @@ version: 15.09.07
 ]]
 
 function Internal_Transporter(spot,text,labels)
+local ac = GetActive()
+local Bundle = "GFX/Actors/Heroes"
+if ac=="UniWendicka" then Bundle = "GFX/Actors/Uniform" end
 TurnPlayer("South")
 MapText(text)
 -- Beam Out
@@ -49,7 +52,7 @@ for f=0,99 do
     end
 Maps.OBJ.Kill("PLAYER")
 -- Beam in
-Actors.Spawn(spot,"GFX/Actors/Uniform","PLAYER")
+Actors.Spawn(spot,Bundle,"PLAYER")
 Maps.CamX = Actors.PX("PLAYER")-400
 Maps.CamY = Actors.PY("PLAYER")-300
 Actors.ChoosePic("PLAYER","TELEPORT")
@@ -116,7 +119,38 @@ Music("Scenario/Panic Stations")
 MapText("JONES")
 MapShow("Staff")
 TurnPlayer("South")
--- Sys.Error("Next part not yet scripted")
+NoDoorAction = false
+
+end
+
+function Crystal_Panic()
+if not CVV("&DONE.EXCALIBUR.OFFICE.JOHNSON") then return end
+Actors.StopWalking("PLAYER")
+MapText("CRYSTAL_PANIC")
+Actors.WalkToSpot("PLAYER","Spot_Transporter_Staff")
+WalkWait()
+Internal_Transporter( "Galahad" , "TELEPORT_STAFF2HOME" , "Galahad" )
+end
+
+
+function CLICK_ARRIVAL_GERDO()
+local m = { UniWendicka = "", Wendicka = "_2"}
+MapText("GERDO_WILD"..m[GetActive()])
+end
+
+function CLICK_ARRIVAL_THUIS()
+NoDoorAction = true
+local Links  = Maps.Obj.Obj("Deur_Thuis_Links")    -- PvdA
+local Rechts = Maps.Obj.Obj("Deur_Thuis_Rechts")   -- VVD
+for ak=0,40 do
+    Links.X  = Links.X  - 1
+    Rechts.X = Rechts.X + 1
+    Image.Cls()
+    DrawScreen()
+    Flip()
+    end
+NoDoorAction = true
+Sys.Error("Next part not yet scripted")
 end
 
 function GALE_OnLoad()
@@ -125,13 +159,19 @@ SetDoor("LeftDoorSickBay",-40)
 SetDoor("RightDoorSickBay",40)
 SetDoor("Deur_Johnson_Links",-40)
 SetDoor("Deur_Johnson_Rechts",40)
+SetDoor("Deur_Thuis_Links",-40)
+SetDoor("Deur_Thuis_Rechts",40)
 if RPGChar.CharExists("Briggs")==1 then RPGChar.DelChar("Briggs") end
 ZA_Enter("Sickbay_NoBusiness",NoBusiness)
 ZA_Enter("Johnson_NoBusiness",NoBusiness)
 ZA_Enter("Johnson2_NoBusiness",NoBusiness)
+ZA_Enter("NoBusiness_Galahad",NoBusiness)
 ZA_Enter("Transporter_Sickbay",function() Internal_Transporter("Johnson_Entrance","TELEPORT_SICK2STAFF","Staff") end)
 ZA_Enter("Transporter_Johnson",Transporter_Johnson)
+ZA_Enter("Crystal_Panic",Crystal_Panic)
 AddClickable("Deur_Johnson")
+AddClickable("GERDO")
+AddClickable("THUIS")
 end
 
 function MAP_FLOW()
