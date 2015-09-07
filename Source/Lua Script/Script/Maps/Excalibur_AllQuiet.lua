@@ -108,6 +108,13 @@ MapShow("Johnson")
 Music("Sys/Silence.ogg")
 MapText("JOHNSON")
 SetAutoScroll("yes")
+TurnPlayer("North")
+Maps.CamX = 32
+Maps.CamY = 112
+MapShow("Staff","Jones")
+Music("Scenario/Panic Stations")
+MapText("JONES")
+MapShow("Staff")
 TurnPlayer("South")
 Sys.Error("Next part not yet scripted")
 end

@@ -33,9 +33,10 @@ Pablo Impallari | 6 | Font; Misc files;
 PacDV | 1 | Audio; 
 Shockwave-sound.com | 1 | Audio; 
 Spiedkiks | 1 | Music; 
-Tricky (this is me) :sunglasses: | 1440 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
+Tricky (this is me) :sunglasses: | 1441 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
 Unknown Artist | 9 | Art; 
 Utopia | 2 | Font; Misc files; 
 Varazuvi(TM) | 4 | Audio; 
 WeirdoMusic | 1 | Music; 
+Widzy | 1 | Misc files; 
 One final note. Since JCR6 uses an aliasing system some contributions are counted twice (or even more times) due to them being aliased. The system updating this list is (unfortunately) not able to tell a true contributions apart from aliases.
