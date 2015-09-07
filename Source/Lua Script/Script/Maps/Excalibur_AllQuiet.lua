@@ -105,7 +105,7 @@ SetAutoScroll("no")
 Maps.CamX = 688
 Maps.CamY = -16
 MapShow("Johnson")
-Music("Sys/Silense.ogg")
+Music("Sys/Silence.ogg")
 MapText("JOHNSON")
 SetAutoScroll("yes")
 TurnPlayer("South")
