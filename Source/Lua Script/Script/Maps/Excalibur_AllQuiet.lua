@@ -116,7 +116,7 @@ Music("Scenario/Panic Stations")
 MapText("JONES")
 MapShow("Staff")
 TurnPlayer("South")
-Sys.Error("Next part not yet scripted")
+-- Sys.Error("Next part not yet scripted")
 end
 
 function GALE_OnLoad()
