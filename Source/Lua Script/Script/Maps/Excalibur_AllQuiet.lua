@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.06
+version: 15.09.07
 ]]
 
 function Internal_Transporter(spot,text,labels)
@@ -101,6 +101,13 @@ for ak=0,40 do
     Flip()
     end
 NoDoorAction = true    
+SetAutoScroll("no")
+Maps.CamX = 688
+Maps.CamY = -16
+MapShow("Johnson")
+MapText("JOHNSON")
+SetAutoScroll("yes")
+TurnPlayer("South")
 Sys.Error("Next part not yet scripted")
 end
 

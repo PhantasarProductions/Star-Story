@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.09.05
+  Version: 15.09.07
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -193,6 +193,10 @@ if rsx then scrollrange = {rsx=Sys.Val(rsx),rsy=Sys.Val(rsy),rex=Sys.Val(rex),re
 end
 
 function DestroyScrollRage() scrollrange={} end
+
+function SetAutoScroll(yesorno)
+scrolling = yesorno == "yes"
+end
 
 function AutoScroll()
 if not scrolling then return end
