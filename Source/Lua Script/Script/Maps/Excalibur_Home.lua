@@ -45,7 +45,7 @@ GotoSave()
 end
 
 function CLICK_ARRIVAL_Scyndi()
-GotoVault()
+GoToVault()
 end
 
 

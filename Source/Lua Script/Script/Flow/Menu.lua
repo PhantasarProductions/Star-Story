@@ -50,6 +50,7 @@ tuts = {
     ["FIELD.Order"] = "Click the characters in the menu (not the bar below) to switch the combat order",
     
     ["VAULT.Items"] = "Drag items from or to other characters\nor into or out of the vault.",
+    ["VAULT.Vault"] = "",
     
     ["COMBAT.Status"] = "",
     ["COMBAT.Items"] = "Click any item with either left or right to use it,\nor click the status bar to cancel",
@@ -80,7 +81,7 @@ invsocket = Image.Load("GFX/StatusBar/ItemSocket.png");  Image.HotCenter(invsock
 FeaturePics = {}
 local i,v,k,a
 for k,a in spairs(FeatureArray) do
-    for i,v in ipairs(FeatureArray) do FeaturePics[v] = FeaturePics[v] or Image.Load("GFX/StatusBar/Icons/"..v..".png"); Image.HotCenter(FeaturePics[v]); end
+    for i,v in ipairs(a) do FeaturePics[v] = FeaturePics[v] or Image.Load("GFX/StatusBar/Icons/"..v..".png"); Image.HotCenter(FeaturePics[v]); CSay(k.." asked for an icon "..v) end
     end
 end
 
@@ -88,9 +89,14 @@ function ReturnItem()
 if not ChosenItem.Taken then return end
 local ak = ChosenItem.Spot
 local ch = ChosenItem.Char
-if not ak then return MINI("WARNING! No spot for this item. It might get lost!") end
-RPGChar.DefStat(ch,"INVAMNT"..ak,RPGChar.Stat(ch,"INVAMNT"..ak)-1)
-RPGChar.SetData(ch,"INVITEM"..ak,ChosenItem.Item)
+if ch == "VAULT" then
+   inc("%VAULT.ITM_"..ChosenItem.Item)
+else
+   if not ak then return MINI("WARNING! No spot for this item. It might get lost!") end
+   RPGChar.DefStat(ch,"INVAMNT"..ak,RPGChar.Stat(ch,"INVAMNT"..ak)-1)
+   RPGChar.SetData(ch,"INVITEM"..ak,ChosenItem.Item)
+   end
+ChosenItem = {}   
 end
 
 DrawArray = {
@@ -322,8 +328,43 @@ FeatureHandleArray = {
                   -- @FI    
                   end,
       Vault     = function()
+                  local y = 15
+                  local hover = nil
+                  local itcode,item,itshort,itreallyshort
                   Image.ViewPort(50,100,700,400)
                   Image.Origin(50,100)
+                  for itcode in IVARS() do
+                      if prefixed(itcode,"%VAULT.") then
+                         itshort = right(itcode,len(itcode)-7)
+                         White()
+                         ItemIcon(itshort,50,y) 
+                         item = ItemGet(itshort)
+                         itreallyshort = right(itshort,len(itshort)-4)
+                         if CVV(itcode)<1 then 
+                            Red()
+                         else
+                            Image.Color(0,80,155)
+                            if INP.MouseY()>100+y and INP.MouseY()<132+y then
+                               hover = {code=itcode, short=itshort, reallyshort=itreallyshort}
+                               LightBlue()
+                               end
+                            end
+                         Image.DText(item.Name,100,y,0,2) 
+                         Image.DText("x"..CVV(itcode),680,y,1,2)  
+                         y = y + 32
+                         end 
+                      end
+                  if INP.MouseH(1)==1 and INP.MouseY()>100 then
+                     if ChosenItem.Taken then 
+                        if CVV("%VAULT.ITM_"..ChosenItem.Item) < InventoryMaxVaultStack then
+                           ChosenItem = {}
+                           inc("%VAULT.ITM_"..ChosenItem.Item)
+                           end
+                     elseif hover then
+                        ChosenItem = { Taken=true, Item=hover.reallyshort, Char="VAULT" }   
+                        dec(hover.code) 
+                        end 
+                     end   
                   Image.ViewPort(0,0,800,600)
                   Image.Origin(0,0)
                   end,            
@@ -345,6 +386,7 @@ FeatureHandleArray = {
 }
 
 function DrawScreen()
+Feature.VAULT = Feature.VAULT or "Items"
 Feature[returnto] = Feature[returnto] or "Status"
 if not Done("&"..returnto.."."..Feature[returnto]) then Tutorial(tuts[returnto.."."..Feature[returnto]]) end
 Image.Cls()

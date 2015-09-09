@@ -1,7 +1,7 @@
 --[[
   Flip.lua
   
-  version: 15.09.02
+  version: 15.09.09
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -78,7 +78,7 @@ end
 
 
 function InitTutorial(txt)
-TutorialText = mysplit(txt,"\n")
+TutorialText = mysplit(txt or "WARNING!\nNil for tutorial received","\n")
 TutorialTime = 600
 TutorialAlpha = 100
 CSay("Tutorial text received:")

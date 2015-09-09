@@ -44,6 +44,9 @@ end
 function GoToVault()
 local ch = RPGChar.PartyTag(0)
 MS.LN_Run("MENU","Script/Flow/Menu.lua","PointChar",ch)
-MS.Run("MENU","SetReturnTo","VAULT")
+MS.Run("MENU","SetReturnTo","VAULT","Items")
 LAURA.Flow("MENU")
 end
+
+GotoMenu = GoToMenu
+GotoVault = GoToVault
