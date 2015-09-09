@@ -101,6 +101,7 @@
 1. Script/Use/Linkers/PartyLinker.lua
 1. Script/Use/Linkers/SFXLinker.lua
 1. Script/Use/Menu/LearnSpellMessages.lua
+
 ## Full Release
 
 1. SCRIPT/USE/ANYWAY/FULL.LUA
@@ -129,4 +130,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Thu 10 September 2015; 01:57:29 CET
+### Last updated: Thu 10 September 2015; 01:59:23 CET
