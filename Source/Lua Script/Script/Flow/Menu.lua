@@ -344,7 +344,7 @@ FeatureHandleArray = {
                             Red()
                          else
                             Image.Color(0,80,155)
-                            if INP.MouseY()>100+y and INP.MouseY()<132+y then
+                            if INP.MouseY()>84+y and INP.MouseY()<116+y then
                                hover = {code=itcode, short=itshort, reallyshort=itreallyshort}
                                LightBlue()
                                end

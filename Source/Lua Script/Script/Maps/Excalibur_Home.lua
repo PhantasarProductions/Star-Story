@@ -48,6 +48,37 @@ function CLICK_ARRIVAL_Scyndi()
 GoToVault()
 end
 
+function CLICK_ARRIVAL_Crystal_Asleep()
+MapText("FOUNDCRYSTAL_FOUNDHER")
+local alpha
+for alpha=0,100 do
+    Image.SetAlphaPC(100)
+    DrawScreen()
+    Black()
+    Image.SetAlphaPC(alpha)
+    Image.Rect(0,0,800,600)
+    Flip()
+    end
+MapShow("Crystal","CrystalFound")    
+for alpha=100,0,-1 do
+    Image.SetAlphaPC(100)
+    DrawScreen()
+    Black()
+    Image.SetAlphaPC(alpha)
+    Image.Rect(0,0,800,600)
+    Flip()
+    end
+MapText("FOUNDCRYSTAL_SECURITY")
+Maps.Obj.Kill("Crystal_Asleep",1)
+MapText("FOUNDCRYSTAL_AWAKE")    
+GrantExperienceOnLevel({"UniWendicka","UniCrystal"},10)
+Music("Sys/Silence.ogg")
+DrawScreen()
+Flip()
+Party("Wendicka")
+Sys.Error("Let's crash out until the next section has been put in")
+end
+
 
 function GALE_OnLoad()
 if not CVV("%DONE.PROLOGUE")      then Music("Scenario/Panic Stations.ogg") 
@@ -62,4 +93,5 @@ ZA_Enter("Kamer_Badkamer" ,function() MapShow("Badkamer")  end)
 AddClickable("Vlag_Brabant")
 AddClickable("Computer")
 AddClickable("Scyndi") -- The name "Scyndi refers to a cabinet in my home of which I did have a picture of Scyndi (from Secrets of Dyrt) and named the cabinet after it. The picture is removed by now, but the name remained.
+if Maps.Obj.Exists("Crystal_Asleep")>0 then AddClickable("Crystal_Asleep") end
 end
