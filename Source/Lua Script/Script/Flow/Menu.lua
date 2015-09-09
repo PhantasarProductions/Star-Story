@@ -361,7 +361,7 @@ FeatureHandleArray = {
                            ChosenItem = {}
                            end
                      elseif hover then
-                        ChosenItem = { Taken=true, Item=hover.reallyshort, Char="VAULT" }   
+                        ChosenItem = { Taken=true, Item=hover.reallyshort, Char="VAULT", Icon=ItemIconCode(hover.short) }   
                         dec(hover.code) 
                         end 
                      end   
