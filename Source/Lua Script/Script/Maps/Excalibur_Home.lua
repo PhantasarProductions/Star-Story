@@ -39,7 +39,10 @@ function CLICK_ARRIVAL_Vlag_Brabant()
 CharMapText("Brabant") 
 end
 
-CLICK_ARRIVAL_Computer = GotoSave
+function CLICK_ARRIVAL_Computer()
+CSay("Savespot activated")
+GotoSave()
+end
 
 function GALE_OnLoad()
 if not CVV("%DONE.PROLOGUE")      then Music("Scenario/Panic Stations.ogg") 
