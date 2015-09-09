@@ -150,7 +150,7 @@ for ak=0,40 do
     Flip()
     end
 NoDoorAction = true
-LoadMap("Excalibur_Thuis")
+LoadMap("Excalibur_Home")
 Actors.Spawn("Start","GFX/Actors/Uniform","PLAYER")
 MapShow("Woonkamer")
 TurnPlayer("North")
