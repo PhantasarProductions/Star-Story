@@ -44,6 +44,11 @@ CSay("Savespot activated")
 GotoSave()
 end
 
+function CLICK_ARRIVAL_Scyndi()
+GotoVault()
+end
+
+
 function GALE_OnLoad()
 if not CVV("%DONE.PROLOGUE")      then Music("Scenario/Panic Stations.ogg") 
 elseif CVV("%DONE.EXHURU")        then Music("Scenario/Panic Stations.ogg")
@@ -56,4 +61,5 @@ ZA_Enter("Kamer_Keuken",   function() MapShow("Keuken")    end)
 ZA_Enter("Kamer_Badkamer" ,function() MapShow("Badkamer")  end)
 AddClickable("Vlag_Brabant")
 AddClickable("Computer")
+AddClickable("Scyndi") -- The name "Scyndi refers to a cabinet in my home of which I did have a picture of Scyndi (from Secrets of Dyrt) and named the cabinet after it. The picture is removed by now, but the name remained.
 end
