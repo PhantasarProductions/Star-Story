@@ -1,5 +1,5 @@
 --[[
-  GoToMenu.lua
+  Vault.lua
   Version: 15.09.09
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -34,16 +34,13 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-function GoToMenu(ch,page)
-MS.LN_Run("MENU","Script/Flow/Menu.lua","PointChar",ch)
-MS.Run("MENU","SetReturnTo",LAURA.GetFlow())
-if page then MS.Run("MENU","PointPage",page) end
-LAURA.Flow("MENU")
+function MAIN_FLOW()
+LAURA.Flow("FIELD")
 end
 
-function GoToVault()
-local ch = RPGChar.PartyTag(0)
-MS.LN_Run("MENU","Script/Flow/Menu.lua","PointChar",ch)
-MS.Run("MENU","SetReturnTo","VAULT")
-LAURA.Flow("MENU")
-end
+--[[ 
+
+      This file will also link the vault well to the field.
+      It has no true purpose otherwise, this file is only here to prevent a crash!
+      
+]]

@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 15.09.02
+  Version: 15.09.09
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -34,60 +34,12 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
---[[
-/* 
-  Menu
-
-  Copyright (C) 2015 JPB
-  
-  ===========================
-  This file is part of a project related to the Phantasar Chronicles or another
-  series or saga which is property of Jeroen P. Broks.
-  This means that it may contain references to a story-line plus characters
-  which are property of Jeroen Broks. These references may only be distributed
-  along with an unmodified version of the game. 
-  
-  As soon as you remove or replace ALL references to the storyline or character
-  references, or any termology specifically set up for the Phantasar universe,
-  the restrictions of this file are removed and will automatically become
-  zLib licensed (see below).
-  
-  Please note that doing so counts as a modification and must be marked as such
-  in accordance to the zLib license.
-  ===========================
-
-
-  zLib license terms:
-
-  This software is provided 'as-is', without any express or implied
-  warranty.  In no event will the authors be held liable for any damages
-  arising from the use of this software.
-
-  Permission is granted to anyone to use this software for any purpose,
-  including commercial applications, and to alter it and redistribute it
-  freely, subject to the following restrictions:
-
-  1. The origin of this software must not be misrepresented; you must not
-     claim that you wrote the original software. If you use this software
-     in a product, an acknowledgment in the product documentation would be
-     appreciated but is not required.
-  2. Altered source versions must be plainly marked as such, and must not be
-     misrepresented as being the original software.
-  3. This notice may not be removed or altered from any source distribution.
-
-*/
-
-
-
-Version: 15.08.26
-
-]]
 
 -- @USEDIR Script/Use/Menu
 
 pchar = 0
 returnto = "ERROR"
-FeatureArray = { "Status" , "Items" , "Abilities", "Order" }
+FeatureArray = {FIELD = { "Status" , "Items" , "Abilities", "Order" }, VAULT = { "Items", "Vault" } }
 Feature = {}
 
 tuts = {
@@ -96,6 +48,8 @@ tuts = {
     ["FIELD.Items"]  = "Right click an item and the onwer will use it.\n\nLeft click an item to place it to a different spot or even a different characters",
     ["FIELD.Abilities"] = "Left click an ability to use it, if it's available in the field.\n\nSome characters show the requirement to learn a new move",
     ["FIELD.Order"] = "Click the characters in the menu (not the bar below) to switch the combat order",
+    
+    ["VAULT.Items"] = "Drag items from or to other characters\nor into or out of the vault.",
     
     ["COMBAT.Status"] = "",
     ["COMBAT.Items"] = "Click any item with either left or right to use it,\nor click the status bar to cancel",
@@ -124,8 +78,10 @@ back = Image.Load("GFX/StatusBar/StatusFull.png")
 chpointer = Image.Load("GFX/StatusBar/CharPointer.png"); Image.HotCenter(chpointer)
 invsocket = Image.Load("GFX/StatusBar/ItemSocket.png");  Image.HotCenter(invsocket)
 FeaturePics = {}
-local i,v
-for i,v in ipairs(FeatureArray) do FeaturePics[i] = Image.Load("GFX/StatusBar/Icons/"..v..".png"); Image.HotCenter(FeaturePics[i]); end
+local i,v,k,a
+for k,a in spairs(FeatureArray) do
+    for i,v in ipairs(FeatureArray) do FeaturePics[v] = FeaturePics[v] or Image.Load("GFX/StatusBar/Icons/"..v..".png"); Image.HotCenter(FeaturePics[v]); end
+    end
 end
 
 function ReturnItem()
@@ -142,9 +98,20 @@ DrawArray = {
    FIELD  = function()
             local i,v,x,y
             local mx,my = MouseCoords()
-            for i,v in ipairs(FeatureArray) do
+            for i,v in ipairs(FeatureArray.FIELD) do
                 if v==Feature[returnto] then Image.Color(0,180,255) else Image.Color(0,90,128) end
-                Image.Draw(FeaturePics[i],(i*64)+100,25)
+                Image.Draw(FeaturePics[v],(i*64)+100,25)
+                y = 25
+                x = (i*64)+100
+                if mousehit(1) and mx>x-16 and mx<x+16 and my>y-16 and my<y+16 then Feature[returnto] = v end 
+                end
+            end,
+   VAULT  = function()
+            local i,v,x,y
+            local mx,my = MouseCoords()
+            for i,v in ipairs(FeatureArray.VAULT) do
+                if v==Feature[returnto] then Image.Color(0,180,255) else Image.Color(0,90,128) end
+                Image.Draw(FeaturePics[v],(i*64)+100,25)
                 y = 25
                 x = (i*64)+100
                 if mousehit(1) and mx>x-16 and mx<x+16 and my>y-16 and my<y+16 then Feature[returnto] = v end 
@@ -278,7 +245,7 @@ FeatureHandleArray = {
                       hover = mx>x-14 and mx<x+14 and my>y-14 and my<y+14
                       if hover then hoverdata = { i = ak, x = x, y = y} end
                       -- Field clicks
-                      if returnto=="FIELD" and hover and pchar~="Briggs" then -- Briggs will be without items as a guest character!
+                      if (returnto=="FIELD" or returnto=="VAULT") and hover and pchar~="Briggs" then -- Briggs will be without items as a guest character!
                          -- Move items
                          if mousehit(1) then
                             -- Grab an item
@@ -354,6 +321,12 @@ FeatureHandleArray = {
                       end                
                   -- @FI    
                   end,
+      Vault     = function()
+                  Image.ViewPort(50,100,700,400)
+                  Image.Origin(50,100)
+                  Image.ViewPort(0,0,800,600)
+                  Image.Origin(0,0)
+                  end,            
       Abilities = function()
                   Image.ViewPort(50,100,700,400)
                   Image.Origin(50,100)
@@ -388,6 +361,14 @@ end
 ClickArray = {
    ERROR  = function() Sys.Error("Click called in an unknown environment","RT,"..returnto) end,
    FIELD  = function()
+            local ak
+            for ak=0,5 do
+                if ClickedChar(ak) then
+                   if ak==pcharn then ReturnItem() LAURA.FLOW("FIELD") else pcharn=ak; pchar=RPGChar.PartyTag(pcharn) end
+                   end
+                end
+            end,
+   VAULT  = function()
             local ak
             for ak=0,5 do
                 if ClickedChar(ak) then

@@ -19,6 +19,7 @@
 1. Script/Flow/Quit.lua
 1. Script/Flow/SaveGame.lsv
 1. Script/Flow/SaveGame.lua
+1. Script/Flow/Vault.lua
 1. Script/Init/AutoUse.lua
 1. Script/Init/LoadGame.lua
 1. Script/Init/Start.lua
@@ -121,4 +122,4 @@
 
 
 
-### Last updated: Wed 09 September 2015; 17:50:14 CET
+### Last updated: Wed 09 September 2015; 19:30:15 CET
