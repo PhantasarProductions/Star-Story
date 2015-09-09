@@ -357,8 +357,8 @@ FeatureHandleArray = {
                   if INP.MouseH(1)==1 and INP.MouseY()>100 then
                      if ChosenItem.Taken then 
                         if CVV("%VAULT.ITM_"..ChosenItem.Item) < InventoryMaxVaultStack then
-                           ChosenItem = {}
                            inc("%VAULT.ITM_"..ChosenItem.Item)
+                           ChosenItem = {}
                            end
                      elseif hover then
                         ChosenItem = { Taken=true, Item=hover.reallyshort, Char="VAULT" }   
