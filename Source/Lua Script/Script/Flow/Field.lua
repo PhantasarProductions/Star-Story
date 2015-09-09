@@ -68,10 +68,10 @@ IconFunction =
 
 function SetScrollBoundaries(xmin,ymin,xmax,ymax)
 ScrollBoundaries = {}
-if xmin and xmin~='nil' then ScrollBoundaries.xmin = Sys.Val(xmin) end
-if xmax and xmax~='nil' then ScrollBoundaries.xmax = Sys.Val(xmax) end
-if ymin and ymin~='nil' then ScrollBoundaries.ymin = Sys.Val(ymin) end
-if ymax and ymax~='nil' then ScrollBoundaries.ymax = Sys.Val(ymax) end
+if xmin and xmin~='nil' then ScrollBoundaries.minx = Sys.Val(xmin) end
+if xmax and xmax~='nil' then ScrollBoundaries.maxx = Sys.Val(xmax) end
+if ymin and ymin~='nil' then ScrollBoundaries.miny = Sys.Val(ymin) end
+if ymax and ymax~='nil' then ScrollBoundaries.maxy = Sys.Val(ymax) end
 end
 
 
@@ -216,16 +216,18 @@ if not scrolling then return end
 local px,py = GetCoords(cplayer)
 local sx = px - 400
 local sy = py - 300
+--[[
 if scrollrange.rsx and sx<scrollrange.rsx then sx=scrollrange.rsx end
-if scrollrange.rsy and sx<scrollrange.rsy then sx=scrollrange.rsy end
+if scrollrange.rsy and sy<scrollrange.rsy then sy=scrollrange.rsy end
 if scrollrange.rex and sx>scrollrange.rex then sx=scrollrange.rex end
-if scrollrange.rey and sx>scrollrange.rey then sx=scrollrange.rey end
+if scrollrange.rey and sy>scrollrange.rey then sy=scrollrange.rey end
+]]
 Maps.CamX = sx
 Maps.CamY = sy
 if ScrollBoundaries.minx and ScrollBoundaries.minx>Maps.CamX then Maps.CamX=ScrollBoundaries.minx end
 if ScrollBoundaries.maxx and ScrollBoundaries.maxx<Maps.CamX then Maps.CamX=ScrollBoundaries.maxx end
 if ScrollBoundaries.miny and ScrollBoundaries.miny>Maps.CamY then Maps.CamY=ScrollBoundaries.miny end
-if ScrollBoundaries.minx and ScrollBoundaries.minx<Maps.CamY then Maps.CamY=ScrollBoundaries.minx end
+if ScrollBoundaries.maxy and ScrollBoundaries.maxy<Maps.CamY then Maps.CamY=ScrollBoundaries.maxy end
 end
 
 function ZoneAction()

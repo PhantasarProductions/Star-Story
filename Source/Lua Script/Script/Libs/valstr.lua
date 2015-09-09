@@ -7,3 +7,5 @@ return ({
    ['function'] = function(a) Sys.Error("valstr does not support functions") end,
    ['table'] = function(a) Sys.Error('Valstr does not support tables') end})[type(a)](a)
 end
+
+strval = valstr
