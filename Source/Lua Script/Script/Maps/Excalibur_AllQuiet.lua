@@ -151,7 +151,7 @@ for ak=0,40 do
     end
 NoDoorAction = true
 LoadMap("Excalibur_Home")
-Actors.Spawn("Start","GFX/Actors/Uniform","PLAYER")
+Actors.Spawn("Voordeur","GFX/Actors/Uniform","PLAYER")
 MapShow("Woonkamer")
 TurnPlayer("North")
 MapText("CRYSTAL_UNIFORM")
