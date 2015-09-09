@@ -34,6 +34,13 @@
  
 version: 15.09.09
 ]]
+
+function CLICK_ARRIVAL_Vlag_Brabant()
+CharMapText("Brabant") 
+end
+
+
+
 function GALE_OnLoad()
 if not CVV("%DONE.PROLOGUE")      then Music("Scenario/Panic Stations.ogg") 
 elseif CVV("%DONE.EXHURU")        then Music("Scenario/Panic Stations.ogg")
@@ -44,4 +51,5 @@ ZA_Enter("Kamer_Crystal"  ,function() MapShow("Crystal")   end)
 ZA_Enter("Kamer_Woonkamer",function() MapShow("Woonkamer") end)
 ZA_Enter("Kamer_Keuken",   function() MapShow("Keuken")    end)
 ZA_Enter("Kamer_Badkamer" ,function() MapShow("Badkamer")  end)
+AddClickable("Vlag_Brabant")
 end
