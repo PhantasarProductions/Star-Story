@@ -39,7 +39,7 @@ function CLICK_ARRIVAL_Vlag_Brabant()
 CharMapText("Brabant") 
 end
 
-
+CLICK_ARRIVAL_Computer = GotoSave
 
 function GALE_OnLoad()
 if not CVV("%DONE.PROLOGUE")      then Music("Scenario/Panic Stations.ogg") 
@@ -52,4 +52,5 @@ ZA_Enter("Kamer_Woonkamer",function() MapShow("Woonkamer") end)
 ZA_Enter("Kamer_Keuken",   function() MapShow("Keuken")    end)
 ZA_Enter("Kamer_Badkamer" ,function() MapShow("Badkamer")  end)
 AddClickable("Vlag_Brabant")
+AddClickable("Computer")
 end
