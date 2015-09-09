@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.07
+version: 15.09.09
 ]]
 
 function Internal_Transporter(spot,text,labels)
@@ -150,7 +150,12 @@ for ak=0,40 do
     Flip()
     end
 NoDoorAction = true
-Sys.Error("Next part not yet scripted")
+LoadMap("Excalibur_Thuis")
+Actors.Spawn("Start","GFX/Actors/Uniform","PLAYER")
+MapShow("Woonkamer")
+TurnPlayer("North")
+MapText("CRYSTAL_UNIFORM")
+-- Sys.Error("Next part not yet scripted")
 end
 
 function GALE_OnLoad()

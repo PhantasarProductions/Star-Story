@@ -62,6 +62,7 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Maps/AutoUse.lua
 1. Script/Maps/Excalibur_AllQuiet.lua
+1. Script/Maps/Excalibur_Home.lua
 1. Script/Maps/Excalibur_Sickbay.lua
 1. Script/Maps/Prologue_Yaqirpa.lua
 1. Script/OSBOOT/Mac.x86.lua
@@ -120,4 +121,4 @@
 
 
 
-### Last updated: Wed 09 September 2015; 14:21:56 CET
+### Last updated: Wed 09 September 2015; 16:06:33 CET
