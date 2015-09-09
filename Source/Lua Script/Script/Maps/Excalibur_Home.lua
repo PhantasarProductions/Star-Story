@@ -35,8 +35,8 @@
 version: 15.09.09
 ]]
 function GALE_OnLoad()
-if not CVV("%DONE.PROLOGUE")      then Music("Panic Stations.ogg") 
-elseif CVV("%DONE.EXHURU")        then Music("Panic Stations.ogg")
+if not CVV("%DONE.PROLOGUE")      then Music("Scenario/Panic Stations.ogg") 
+elseif CVV("%DONE.EXHURU")        then Music("Scenario/Panic Stations.ogg")
 elseif CVV("%ATTACKED.EXCALIBUR") then Music("Excalibur/Attacked.ogg")
 else                                   Music("Scenario/Calm Indoors.ogg") end
 end
