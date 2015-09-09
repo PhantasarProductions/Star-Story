@@ -39,4 +39,9 @@ if not CVV("%DONE.PROLOGUE")      then Music("Scenario/Panic Stations.ogg")
 elseif CVV("%DONE.EXHURU")        then Music("Scenario/Panic Stations.ogg")
 elseif CVV("%ATTACKED.EXCALIBUR") then Music("Excalibur/Attacked.ogg")
 else                                   Music("Scenario/Calm Indoors.ogg") end
+ZA_Enter("Kamer_Wendicka" ,function() MapShow("Wendicka")  end)
+ZA_Enter("Kamer_Crystal"  ,function() MapShow("Crystal")   end)
+ZA_Enter("Kamer_Woonkamer",function() MapShow("Woonkamer") end)
+ZA_Enter("Kamer_Keuken",   function() MapShow("Keuken")    end)
+ZA_Enter("Kamer_Badkamer" ,function() MapShow("Badkamer")  end)
 end
