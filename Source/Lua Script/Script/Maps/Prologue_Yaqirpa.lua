@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.05
+version: 15.09.09
 ]]
 
 -- @UNDEF TRAPDEBUG
@@ -274,6 +274,7 @@ Party("UniWendicka")
 LoadMap("Excalibur_AllQuiet")
 MapShow("Sickbay")
 Actors.Spawn("Start","GFX/Actors/Uniform","PLAYER")
+Maps.ShowObject("PLAYER") -- Make sure the player shows, though this SHOULD already happen by default.
 Actors.ChoosePic("PLAYER","WENDICKA.SOUTH")
 MS.Run("FIELD","SetPlayer","PLAYER")
 end
