@@ -61,6 +61,7 @@
 1. Script/Libs/RPGSTAT_Iterator.lua
 1. Script/Libs/switch.lua
 1. Script/Libs/tablecontains.lua
+1. Script/Libs/valstr.lua
 1. Script/Maps/AutoUse.lua
 1. Script/Maps/Excalibur_AllQuiet.lua
 1. Script/Maps/Excalibur_Home.lua
@@ -122,4 +123,4 @@
 
 
 
-### Last updated: Wed 09 September 2015; 22:42:06 CET
+### Last updated: Thu 10 September 2015; 00:06:13 CET

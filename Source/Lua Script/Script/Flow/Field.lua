@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.09.07
+  Version: 15.09.10
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -50,6 +50,7 @@ IconBack = Image.Load("GFX/FieldIcons/Back.png")
 IconClicked = nil
 
 Scheduled = {}
+ScrollBoundaries = ScrollBoundaries or {}
 
 IconFunction = 
 {
@@ -63,6 +64,18 @@ IconFunction =
           LAURA.Flow("QUIT") 
           end
 }
+
+
+function SetScrollBoundaries(xmin,ymin,xmax,ymax)
+ScrollBoundaries = {}
+if xmin and xmin~='nil' then ScrollBoundaries.xmin = Sys.Val(xmin) end
+if xmax and xmax~='nil' then ScrollBoundaries.xmax = Sys.Val(xmax) end
+if ymin and ymin~='nil' then ScrollBoundaries.ymin = Sys.Val(ymin) end
+if ymax and ymax~='nil' then ScrollBoundaries.ymax = Sys.Val(ymax) end
+end
+
+
+
 function ShowIcons()
 White()
 Image.Draw(IconBack,IconMnX,0)
@@ -209,6 +222,10 @@ if scrollrange.rex and sx>scrollrange.rex then sx=scrollrange.rex end
 if scrollrange.rey and sx>scrollrange.rey then sx=scrollrange.rey end
 Maps.CamX = sx
 Maps.CamY = sy
+if ScrollBoundaries.minx and ScrollBoundaries.minx>Maps.CamX then Maps.CamX=ScrollBoundaries.minx end
+if ScrollBoundaries.maxx and ScrollBoundaries.maxx<Maps.CamX then Maps.CamX=ScrollBoundaries.maxx end
+if ScrollBoundaries.miny and ScrollBoundaries.miny>Maps.CamY then Maps.CamY=ScrollBoundaries.miny end
+if ScrollBoundaries.minx and ScrollBoundaries.minx<Maps.CamY then Maps.CamY=ScrollBoundaries.minx end
 end
 
 function ZoneAction()

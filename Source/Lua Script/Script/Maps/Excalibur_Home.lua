@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.09
+version: 15.09.10
 ]]
 
 function CLICK_ARRIVAL_Vlag_Brabant()
@@ -94,4 +94,5 @@ AddClickable("Vlag_Brabant")
 AddClickable("Computer")
 AddClickable("Scyndi") -- The name "Scyndi refers to a cabinet in my home of which I did have a picture of Scyndi (from Secrets of Dyrt) and named the cabinet after it. The picture is removed by now, but the name remained.
 if Maps.Obj.Exists("Crystal_Asleep")>0 then AddClickable("Crystal_Asleep") end
+SetScrollBoundaries(432,-96,576,-96)
 end

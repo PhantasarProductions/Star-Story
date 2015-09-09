@@ -1,6 +1,6 @@
 --[[
   FieldLinker.lua
-  Version: 15.09.07
+  Version: 15.09.10
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -50,3 +50,7 @@ TurnPlayer = TurnPlayer or function(w) MS.LN_Run("FIELD","Flow/Field.lua","TurnP
 GetActive = GetActive or function() MS.LN_Run("FIELD","Flow/Field.Lua","GetActive","yes") return Var.C("$RET") end
 
 SetAutoScroll = SetAutoScroll or function(yes) MS.LN_Run("FIELD","Flow/Field.lua","SetAutoScroll",({[true]='yes',[false]='no'})[yes=='yes' or yes==true]) end
+
+SetScrollBoundaries = SetScrollBoundaries or function(xmin,ymin,xmax,ymax)
+MS.LN_Run("FIELD","Flow/Field.Lua","SetScrollBoundaries",strval(xmin)..";"..strval(ymin)..";"..strval(xmax)..";"..strval(ymax))
+end
