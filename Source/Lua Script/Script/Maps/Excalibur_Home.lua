@@ -77,7 +77,39 @@ DrawScreen()
 Flip()
 Party("Wendicka")
 Maps.Obj.Kill("Crystal Awake",1)
-Sys.Error("Let's crash out until the next section has been put in")
+Image.Cls(); Flip(); Time.Delay(500)
+Image.Font("Robotica.tff",40)
+White()
+Image.Cls(); Image.DText(({Dutch = "Een jaar later"})[CVV("$LANG")] or "One Year Later",400,300,2,2); Flip(); Time.Delay(2000)
+Image.Cls(); Flip(); Time.Delay(500)
+LoadMap("Excalibur_Kitchen")
+MapShow("Niks")
+MapText("COOK1")
+MapShow("Keuken")
+MapText("COOK2")
+Actors.Spawn("Wendicka","PLAYER","PLAYER")
+local ak
+for ak=1,40 do
+    Maps.Obj.Obj("Deur_Links" ).X = Maps.Obj.Obj("Deur_Links" ).X - 1
+    Maps.Obj.Obj("Deur_Rechts").X = Maps.Obj.Obj("Deur_Rechts").X + 1
+    DrawScreen()
+    Flip()
+    end
+Actors.WalkToSpot("PLAYER","WendickaCook")
+TurnPlayer("West")
+WaitWalking()
+MapText("COOK3")    
+Actors.WalkToSpot("PLAYER","Wendicka")
+WaitWalking()
+for ak=1,40 do
+    Maps.Obj.Obj("Deur_Links" ).X = Maps.Obj.Obj("Deur_Links" ).X + 1
+    Maps.Obj.Obj("Deur_Rechts").X = Maps.Obj.Obj("Deur_Rechts").X - 1
+    DrawScreen()
+    Flip()
+    end
+LoadMap("Excalibur_AllQuiet")
+Actors.Spawn("Keuken_Start","PLAYER","PLAYER")    
+-- Sys.Error("Let's crash out until the next section has been put in")
 end
 
 

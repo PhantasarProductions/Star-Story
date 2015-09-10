@@ -14,7 +14,7 @@ If you see your name below and you think I'm using your stuff against your licen
 Author | Contributions | Kind of contributions
 ---|---|---
 Aaron Krogh | 13 | Music; 
-Alexander | 2 | Audio; Misc files; 
+Alexander | 3 | Audio; Misc files; Music; 
 Angela Nagtzaam | 11 | Art; 
 Ann | 1 | Art; 
 Courtney Novits | 3 | Font; Misc files; 
@@ -23,7 +23,7 @@ Emily Esposito | 1 | Art;
 Eric Matyas | 2 | Music; 
 Fake Music Generator | 1 | Music; 
 FlamingText.com | 12 | Art; 
-GR-Sites | 2 | Art; Audio; 
+GR-Sites | 5 | Art; Audio; Misc files; 
 Kevin McLeod | 6 | Music; 
 Knight Of Fire | 2 | Music; 
 Man of Steel | 45 | Art; Misc files; 
@@ -34,7 +34,7 @@ Pablo Impallari | 6 | Font; Misc files;
 PacDV | 1 | Audio; 
 Shockwave-sound.com | 1 | Audio; 
 Spiedkiks | 1 | Music; 
-Tricky (this is me) :sunglasses: | 1518 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
+Tricky (this is me) :sunglasses: | 1533 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
 Unknown Artist | 9 | Art; 
 Utopia | 2 | Font; Misc files; 
 Varazuvi(TM) | 4 | Audio; 
