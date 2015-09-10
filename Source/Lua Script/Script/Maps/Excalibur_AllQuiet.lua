@@ -151,10 +151,16 @@ for ak=0,40 do
     end
 NoDoorAction = true
 LoadMap("Excalibur_Home")
-Actors.Spawn("Voordeur","GFX/Actors/Uniform","PLAYER")
-MapShow("Woonkamer")
-TurnPlayer("North")
-MapText("CRYSTAL_UNIFORM")
+if CVV("%DONE.PROLOGUE") then
+   Actors.Spawn("Voordeur","GFX/Actors/Player","PLAYER")
+   MapShow("Woonkamer")
+   TurnPlayer("North")
+else
+   Actors.Spawn("Voordeur","GFX/Actors/Uniform","PLAYER")
+   MapShow("Woonkamer")
+   TurnPlayer("North")
+   MapText("CRYSTAL_UNIFORM")
+   end
 -- Sys.Error("Next part not yet scripted")
 end
 
