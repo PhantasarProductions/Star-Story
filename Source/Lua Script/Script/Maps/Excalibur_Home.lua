@@ -117,7 +117,7 @@ Actors.Spawn("Keuken_Start","GFX/Actors/PLAYER","PLAYER")
 MapShow("Keuken")
 TurnPlayer("South")   
 Actors.ChoosePic("PLAYER","WENDICKA.SOUTH") 
-Done("%DONE.PROLOGUE")
+Done("&DONE.PROLOGUE")
 Award("SCENARIO_PROLOGUE")
 end
 
