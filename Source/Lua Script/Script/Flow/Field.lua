@@ -624,6 +624,7 @@ Maps.Load(map)
 SetUpFoes()
 SetUpTreasure()
 SetUpAutoClickables()
+ScrollBoundaries = {}
 Var.Clear("$MAP.MAPSHOW.LASTREQUEST")
 Var.Clear("$MAP.MAPSHOW.LASTALWAYSSHOW")
 end

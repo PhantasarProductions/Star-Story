@@ -87,7 +87,9 @@ MapShow("Niks")
 MapText("COOK1")
 MapShow("Keuken")
 MapText("COOK2")
+SetActive("Wendicka")
 Actors.Spawn("Wendicka","PLAYER","PLAYER")
+Actors.ChoosePic("PLAYER","WENDICKA.SOUTH")
 local ak
 for ak=1,40 do
     Maps.Obj.Obj("Deur_Links" ).X = Maps.Obj.Obj("Deur_Links" ).X - 1
@@ -97,10 +99,10 @@ for ak=1,40 do
     end
 Actors.WalkToSpot("PLAYER","WendickaCook")
 TurnPlayer("West")
-WaitWalking()
+WalkWait()
 MapText("COOK3")    
 Actors.WalkToSpot("PLAYER","Wendicka")
-WaitWalking()
+WalkWait()
 for ak=1,40 do
     Maps.Obj.Obj("Deur_Links" ).X = Maps.Obj.Obj("Deur_Links" ).X + 1
     Maps.Obj.Obj("Deur_Rechts").X = Maps.Obj.Obj("Deur_Rechts").X - 1
@@ -108,7 +110,9 @@ for ak=1,40 do
     Flip()
     end
 LoadMap("Excalibur_AllQuiet")
-Actors.Spawn("Keuken_Start","PLAYER","PLAYER")    
+Actors.Spawn("Keuken_Start","PLAYER","PLAYER")
+TurnPlayer("South")   
+Actors.ChoosePic("PLAYER","WENDICKA.SOUTH") 
 -- Sys.Error("Let's crash out until the next section has been put in")
 end
 
