@@ -88,7 +88,7 @@ MapText("COOK1")
 MapShow("Keuken")
 MapText("COOK2")
 SetActive("Wendicka")
-Actors.Spawn("Wendicka","PLAYER","PLAYER")
+Actors.Spawn("Wendicka","GFX/Actors/PLAYER","PLAYER")
 Actors.ChoosePic("PLAYER","WENDICKA.SOUTH")
 local ak
 for ak=1,40 do
@@ -110,7 +110,7 @@ for ak=1,40 do
     Flip()
     end
 LoadMap("Excalibur_AllQuiet")
-Actors.Spawn("Keuken_Start","PLAYER","PLAYER")
+Actors.Spawn("Keuken_Start","GFX/Actors/PLAYER","PLAYER")
 TurnPlayer("South")   
 Actors.ChoosePic("PLAYER","WENDICKA.SOUTH") 
 -- Sys.Error("Let's crash out until the next section has been put in")
