@@ -13,7 +13,7 @@ If you see your name below and you think I'm using your stuff against your licen
 
 Author | Contributions | Kind of contributions
 ---|---|---
-Aaron Krogh | 7 | Music; 
+Aaron Krogh | 13 | Music; 
 Alexander | 2 | Audio; Misc files; 
 Angela Nagtzaam | 11 | Art; 
 Ann | 1 | Art; 
@@ -25,6 +25,7 @@ Fake Music Generator | 1 | Music;
 FlamingText.com | 12 | Art; 
 GR-Sites | 2 | Art; Audio; 
 Kevin McLeod | 6 | Music; 
+Knight Of Fire | 2 | Music; 
 Man of Steel | 45 | Art; Misc files; 
 Matt McFarland | 2 | Music; 
 Mohammed Ibrahim | 2 | Art; 
