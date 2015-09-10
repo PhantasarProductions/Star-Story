@@ -302,7 +302,7 @@ FeatureHandleArray = {
                               end
                            end   
                       end
-                  if CVV("%CHOSENITEM.SOCKET")==0 and mousehit(2) then -- Should be executed when user didn't click an item with right
+                  if CVV("%CHOSENITEM.SOCKET")==0 and mousehit(2) and returnto=="COMBAT" then -- Should be executed when user didn't click an item with right
                      Var.D("%CHOSENITEM.SOCKET",-1)
                      LAURA.Flow("COMBAT")                     
                      end    
