@@ -2,109 +2,108 @@
 
 ## Demo Release
 
-1. Script/CharStats/AutoUse.lua
-1. Script/CharStats/Briggs.lua
-1. Script/CharStats/General.lua
-1. Script/CharStats/Wendicka.lua
-1. Script/Flow/Achievements.lsv
-1. Script/Flow/Achievements.lua
-1. Script/Flow/AutoUse.lua
-1. Script/Flow/Combat.lsv
-1. Script/Flow/Combat.lua
-1. Script/Flow/Field.lsv
-1. Script/Flow/Field.lua
-1. Script/Flow/GameOver.lua
-1. Script/Flow/Menu.LSV
-1. Script/Flow/Menu.lua
-1. Script/Flow/Quit.lua
-1. Script/Flow/SaveGame.lsv
-1. Script/Flow/SaveGame.lua
-1. Script/Flow/Vault.lua
-1. Script/Init/AutoUse.lua
-1. Script/Init/LoadGame.lua
-1. Script/Init/Start.lua
-1. Script/JINC/Big/Achievements.lua
-1. Script/JINC/Foes/Boss/BrainDroid.lua
-1. Script/JINC/Foes/Reg/astrilopup.lua
-1. Script/JINC/Foes/Reg/BattleDroid.lua
-1. Script/JINC/IAA/ABL_FOE_PHOTON.lua
-1. Script/JINC/IAA/ABL_WENDICKA_PROLOGUE_SHOCK.lua
-1. Script/JINC/IAA/ABL_WENDICKA_SHOCK.lua
-1. Script/JINC/IAA/ARM_DART.lua
-1. Script/JINC/IAA/ARM_HEALINGSPRAY.lua
-1. Script/JINC/IAA/ITM_ADHBANDAGE.lua
-1. Script/JINC/IAA/ITM_BANDAGE.lua
-1. Script/JINC/IAA/ITM_KEY_YAQIRPA.lua
-1. Script/JINC/IAA/ITM_VLUGZOUT.lua
-1. Script/JINC/InitChar/Briggs.lua
-1. Script/JINC/InitChar/Crystal.lua
-1. Script/JINC/InitChar/Share/Crystal.lua
-1. Script/JINC/InitChar/Share/Wendicka.lua
-1. Script/JINC/InitChar/UniCrystal.lua
-1. Script/JINC/InitChar/UniWendicka.lua
-1. Script/JINC/InitChar/Wendicka.lua
-1. Script/Maps/AutoUse.lua
-1. Script/Maps/Excalibur_AllQuiet.lua
-1. Script/Maps/Excalibur_Home.lua
-1. Script/Maps/Excalibur_Sickbay.lua
-1. Script/Maps/Prologue_Yaqirpa.lua
-1. Script/OSBOOT/Mac.x86.lua
-1. Script/OSBOOT/Win32.x86.lua
-1. Script/SubRoutines/AutoUse.lua
-1. Script/SubRoutines/BoxText.lua
-1. Script/SubRoutines/BoxTextKthuraBackGround.lua
-1. Script/SubRoutines/Flip.lua
-1. Script/SubRoutines/IO.lua
-1. Script/SubRoutines/Items and Abilities.lua
-1. Script/SubRoutines/Party.lua
-1. Script/SubRoutines/SFX.lua
-1. Script/SubRoutines/TrueMusic.lua
-1. Script/System/Bye.lua
-1. Script/System/Console.lsv
-1. Script/System/Console.lua
-1. Script/Use/Anyway/AAAAAAAAAAA.lua
-1. Script/Use/Anyway/CombatStuff.lua
-1. Script/Use/Anyway/Experience.lua
-1. Script/Use/Anyway/Flip.lua
-1. Script/Use/Anyway/Fonts.lua
-1. Script/Use/Anyway/GetCoords.lua
-1. Script/Use/Anyway/Hide-and-seek.lua
-1. Script/Use/Anyway/LevelCaps.lua
-1. Script/Use/Anyway/Libs.lua
-1. Script/Use/Anyway/Mouse.lua
-1. Script/Use/Anyway/Music.lua
 1. SCRIPT/USE/ANYWAY/MUSICAVAILABLE.LUA (only available when you have the version WITH music)
-1. Script/Use/Anyway/Resistance names.lua
-1. Script/Use/Anyway/Sex.lua
-1. Script/Use/Anyway/TutorialInit.lua
-1. Script/Use/Anyway/WalkWait.lua
-1. Script/Use/Combat/CAction.lua
-1. Script/Use/Combat/CDrawFighters.lua
-1. Script/Use/Combat/CDrawScreen.lua
-1. Script/Use/Combat/CFoeInput.lua
-1. Script/Use/Combat/CHurt.lua
-1. Script/Use/Combat/CLoadFoe.lua
-1. Script/Use/Combat/CombatStuffSpecificForStarStory.lua
-1. Script/Use/Combat/CPlayerInput.lua
-1. Script/Use/Combat/CTargetInfo.lua
-1. Script/Use/Combat/Foe_AI/0000000.lua
-1. Script/Use/Combat/Foe_AI/Default_AI.lua
-1. Script/Use/Combat/SpellAni/AAAAAAAAAAAAAAAAAAA.lua
-1. Script/Use/Combat/SpellAni/Shoot.lua
-1. Script/Use/Goto/GoToMenu.lua
-1. Script/Use/Goto/GoToSave.lua
-1. Script/Use/Linkers/AchieveLinker.lua
-1. Script/Use/Linkers/BoxTextLinker.lua
-1. Script/Use/Linkers/CombatLinker.lua
-1. Script/Use/Linkers/FieldLinker.lua
-1. Script/Use/Linkers/Inventory and Abilities Linker.lua
-1. Script/Use/Linkers/PartyLinker.lua
-1. Script/Use/Linkers/SFXLinker.lua
-1. Script/Use/Menu/LearnSpellMessages.lua
 
 ## Full Release
 
-1. SCRIPT/USE/ANYWAY/FULL.LUA
+1. SCRIPT/CHARSTATS/AUTOUSE.LUA
+1. SCRIPT/CHARSTATS/BRIGGS.LUA
+1. SCRIPT/CHARSTATS/GENERAL.LUA
+1. SCRIPT/CHARSTATS/WENDICKA.LUA
+1. SCRIPT/FLOW/ACHIEVEMENTS.LSV
+1. SCRIPT/FLOW/ACHIEVEMENTS.LUA
+1. SCRIPT/FLOW/AUTOUSE.LUA
+1. SCRIPT/FLOW/COMBAT.LSV
+1. SCRIPT/FLOW/COMBAT.LUA
+1. SCRIPT/FLOW/FIELD.LSV
+1. SCRIPT/FLOW/FIELD.LUA
+1. SCRIPT/FLOW/GAMEOVER.LUA
+1. SCRIPT/FLOW/MENU.LSV
+1. SCRIPT/FLOW/MENU.LUA
+1. SCRIPT/FLOW/QUIT.LUA
+1. SCRIPT/FLOW/SAVEGAME.LSV
+1. SCRIPT/FLOW/SAVEGAME.LUA
+1. SCRIPT/FLOW/VAULT.LUA
+1. SCRIPT/INIT/AUTOUSE.LUA
+1. SCRIPT/INIT/LOADGAME.LUA
+1. SCRIPT/INIT/START.LUA
+1. SCRIPT/JINC/BIG/ACHIEVEMENTS.LUA
+1. SCRIPT/JINC/FOES/BOSS/BRAINDROID.LUA
+1. SCRIPT/JINC/FOES/REG/ASTRILOPUP.LUA
+1. SCRIPT/JINC/FOES/REG/BATTLEDROID.LUA
+1. SCRIPT/JINC/IAA/ABL_FOE_PHOTON.LUA
+1. SCRIPT/JINC/IAA/ABL_WENDICKA_PROLOGUE_SHOCK.LUA
+1. SCRIPT/JINC/IAA/ABL_WENDICKA_SHOCK.LUA
+1. SCRIPT/JINC/IAA/ARM_DART.LUA
+1. SCRIPT/JINC/IAA/ARM_HEALINGSPRAY.LUA
+1. SCRIPT/JINC/IAA/ITM_ADHBANDAGE.LUA
+1. SCRIPT/JINC/IAA/ITM_BANDAGE.LUA
+1. SCRIPT/JINC/IAA/ITM_KEY_YAQIRPA.LUA
+1. SCRIPT/JINC/IAA/ITM_VLUGZOUT.LUA
+1. SCRIPT/JINC/INITCHAR/BRIGGS.LUA
+1. SCRIPT/JINC/INITCHAR/CRYSTAL.LUA
+1. SCRIPT/JINC/INITCHAR/SHARE/CRYSTAL.LUA
+1. SCRIPT/JINC/INITCHAR/SHARE/WENDICKA.LUA
+1. SCRIPT/JINC/INITCHAR/UNICRYSTAL.LUA
+1. SCRIPT/JINC/INITCHAR/UNIWENDICKA.LUA
+1. SCRIPT/JINC/INITCHAR/WENDICKA.LUA
+1. SCRIPT/MAPS/AUTOUSE.LUA
+1. SCRIPT/MAPS/EXCALIBUR_ALLQUIET.LUA
+1. SCRIPT/MAPS/EXCALIBUR_HOME.LUA
+1. SCRIPT/MAPS/EXCALIBUR_SICKBAY.LUA
+1. SCRIPT/MAPS/PROLOGUE_YAQIRPA.LUA
+1. SCRIPT/OSBOOT/MAC.X86.LUA
+1. SCRIPT/OSBOOT/WIN32.X86.LUA
+1. SCRIPT/SUBROUTINES/AUTOUSE.LUA
+1. SCRIPT/SUBROUTINES/BOXTEXT.LUA
+1. SCRIPT/SUBROUTINES/BOXTEXTKTHURABACKGROUND.LUA
+1. SCRIPT/SUBROUTINES/FLIP.LUA
+1. SCRIPT/SUBROUTINES/IO.LUA
+1. SCRIPT/SUBROUTINES/ITEMS AND ABILITIES.LUA
+1. SCRIPT/SUBROUTINES/PARTY.LUA
+1. SCRIPT/SUBROUTINES/SFX.LUA
+1. SCRIPT/SUBROUTINES/TRUEMUSIC.LUA
+1. SCRIPT/SYSTEM/BYE.LUA
+1. SCRIPT/SYSTEM/CONSOLE.LSV
+1. SCRIPT/SYSTEM/CONSOLE.LUA
+1. SCRIPT/USE/ANYWAY/AAAAAAAAAAA.LUA
+1. SCRIPT/USE/ANYWAY/COMBATSTUFF.LUA
+1. SCRIPT/USE/ANYWAY/EXPERIENCE.LUA
+1. SCRIPT/USE/ANYWAY/FLIP.LUA
+1. SCRIPT/USE/ANYWAY/FONTS.LUA
+1. SCRIPT/USE/ANYWAY/GETCOORDS.LUA
+1. SCRIPT/USE/ANYWAY/HIDE-AND-SEEK.LUA
+1. SCRIPT/USE/ANYWAY/LEVELCAPS.LUA
+1. SCRIPT/USE/ANYWAY/LIBS.LUA
+1. SCRIPT/USE/ANYWAY/MOUSE.LUA
+1. SCRIPT/USE/ANYWAY/MUSIC.LUA
+1. SCRIPT/USE/ANYWAY/RESISTANCE NAMES.LUA
+1. SCRIPT/USE/ANYWAY/SEX.LUA
+1. SCRIPT/USE/ANYWAY/TUTORIALINIT.LUA
+1. SCRIPT/USE/ANYWAY/WALKWAIT.LUA
+1. SCRIPT/USE/COMBAT/CACTION.LUA
+1. SCRIPT/USE/COMBAT/CDRAWFIGHTERS.LUA
+1. SCRIPT/USE/COMBAT/CDRAWSCREEN.LUA
+1. SCRIPT/USE/COMBAT/CFOEINPUT.LUA
+1. SCRIPT/USE/COMBAT/CHURT.LUA
+1. SCRIPT/USE/COMBAT/CLOADFOE.LUA
+1. SCRIPT/USE/COMBAT/COMBATSTUFFSPECIFICFORSTARSTORY.LUA
+1. SCRIPT/USE/COMBAT/CPLAYERINPUT.LUA
+1. SCRIPT/USE/COMBAT/CTARGETINFO.LUA
+1. SCRIPT/USE/COMBAT/FOE_AI/0000000.LUA
+1. SCRIPT/USE/COMBAT/FOE_AI/DEFAULT_AI.LUA
+1. SCRIPT/USE/COMBAT/SPELLANI/AAAAAAAAAAAAAAAAAAA.LUA
+1. SCRIPT/USE/COMBAT/SPELLANI/SHOOT.LUA
+1. SCRIPT/USE/GOTO/GOTOMENU.LUA
+1. SCRIPT/USE/GOTO/GOTOSAVE.LUA
+1. SCRIPT/USE/LINKERS/ACHIEVELINKER.LUA
+1. SCRIPT/USE/LINKERS/BOXTEXTLINKER.LUA
+1. SCRIPT/USE/LINKERS/COMBATLINKER.LUA
+1. SCRIPT/USE/LINKERS/FIELDLINKER.LUA
+1. SCRIPT/USE/LINKERS/INVENTORY AND ABILITIES LINKER.LUA
+1. SCRIPT/USE/LINKERS/PARTYLINKER.LUA
+1. SCRIPT/USE/LINKERS/SFXLINKER.LUA
+1. SCRIPT/USE/MENU/LEARNSPELLMESSAGES.LUA
 
 
 
@@ -130,4 +129,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Thu 10 September 2015; 01:59:23 CET
+### Last updated: Thu 10 September 2015; 10:15:26 CET

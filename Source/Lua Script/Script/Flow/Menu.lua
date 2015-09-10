@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 15.09.09
+  Version: 15.09.10
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -50,7 +50,7 @@ tuts = {
     ["FIELD.Order"] = "Click the characters in the menu (not the bar below) to switch the combat order",
     
     ["VAULT.Items"] = "Drag items from or to other characters\nor into or out of the vault.",
-    ["VAULT.Vault"] = "",
+    ["VAULT.Vault"] = "\n\n",
     
     ["COMBAT.Status"] = "",
     ["COMBAT.Items"] = "Click any item with either left or right to use it,\nor click the status bar to cancel",
@@ -388,7 +388,10 @@ FeatureHandleArray = {
 function DrawScreen()
 Feature.VAULT = Feature.VAULT or "Items"
 Feature[returnto] = Feature[returnto] or "Status"
-if not Done("&"..returnto.."."..Feature[returnto]) then Tutorial(tuts[returnto.."."..Feature[returnto]]) end
+if not Done("&"..returnto.."."..Feature[returnto]) then 
+   Tutorial(tuts[returnto.."."..Feature[returnto]])
+   CSay("Showing menu tutorial: "..returnto.."."..Feature[returnto]) 
+   end
 Image.Cls()
 Image.Draw(back,0,0)
 Image.Draw(chpointer,(pcharn*200)+100,450)

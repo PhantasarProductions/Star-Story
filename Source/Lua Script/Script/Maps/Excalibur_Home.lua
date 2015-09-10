@@ -76,6 +76,7 @@ Music("Sys/Silence.ogg")
 DrawScreen()
 Flip()
 Party("Wendicka")
+Maps.Obj.Kill("Crystal Awake",1)
 Sys.Error("Let's crash out until the next section has been put in")
 end
 
