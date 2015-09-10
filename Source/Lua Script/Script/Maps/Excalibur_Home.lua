@@ -103,18 +103,20 @@ WalkWait()
 MapText("COOK3")    
 Actors.WalkToSpot("PLAYER","Wendicka")
 WalkWait()
+-- Maps.Obj.Kill("PLAYER")
+Actors.Actor("PLAYER").Visible = 0
 for ak=1,40 do
     Maps.Obj.Obj("Deur_Links" ).X = Maps.Obj.Obj("Deur_Links" ).X + 1
     Maps.Obj.Obj("Deur_Rechts").X = Maps.Obj.Obj("Deur_Rechts").X - 1
     DrawScreen()
     Flip()
-    end
+    end    
 LoadMap("Excalibur_AllQuiet")
 Actors.Spawn("Keuken_Start","GFX/Actors/PLAYER","PLAYER")
 MapShow("Keuken")
 TurnPlayer("South")   
 Actors.ChoosePic("PLAYER","WENDICKA.SOUTH") 
--- Sys.Error("Let's crash out until the next section has been put in")
+Done("%DONE.PROLOGUE")
 end
 
 
