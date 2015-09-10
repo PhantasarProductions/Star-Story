@@ -23,7 +23,7 @@ Emily Esposito | 1 | Art;
 Eric Matyas | 2 | Music; 
 Fake Music Generator | 1 | Music; 
 FlamingText.com | 12 | Art; 
-GR-Sites | 5 | Art; Audio; Misc files; 
+GR-Sites | 5 | Art; Audio; 
 Kevin McLeod | 6 | Music; 
 Knight Of Fire | 2 | Music; 
 Man of Steel | 45 | Art; Misc files; 
