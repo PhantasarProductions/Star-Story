@@ -111,6 +111,7 @@ for ak=1,40 do
     end
 LoadMap("Excalibur_AllQuiet")
 Actors.Spawn("Keuken_Start","GFX/Actors/PLAYER","PLAYER")
+MapShow("Keuken")
 TurnPlayer("South")   
 Actors.ChoosePic("PLAYER","WENDICKA.SOUTH") 
 -- Sys.Error("Let's crash out until the next section has been put in")

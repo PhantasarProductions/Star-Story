@@ -106,8 +106,9 @@ Actors.ChoosePic("PLAYER",upper(replace(activeplayer,"Uni","")).."."..upper(w))
 end
 
 function TurnPlayer(w)
-if cplayer~="PLAYER" then return end
+if cplayer~="PLAYER" then return CSay("No PLAYER to turn") end
 Actors.ChoosePic("PLAYER",upper(replace(activeplayer,"Uni","")).."."..upper(w))
+Actors.Actor("PLAYER").Wind = w
 end
 
 function DrawScreen()

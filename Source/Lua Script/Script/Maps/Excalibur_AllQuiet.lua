@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.09
+version: 15.09.10
 ]]
 
 function Internal_Transporter(spot,text,labels)
@@ -166,6 +166,8 @@ SetDoor("Deur_Johnson_Links",-40)
 SetDoor("Deur_Johnson_Rechts",40)
 SetDoor("Deur_Thuis_Links",-40)
 SetDoor("Deur_Thuis_Rechts",40)
+SetDoor("Deur_Keuken_Links",-80)
+SetDoor("Deur_Keuken_Rechts",80)
 if RPGChar.CharExists("Briggs")==1 then RPGChar.DelChar("Briggs") end
 ZA_Enter("Sickbay_NoBusiness",NoBusiness)
 ZA_Enter("Johnson_NoBusiness",NoBusiness)
