@@ -37,7 +37,7 @@ version: 15.09.10
 
 function Internal_Transporter(spot,text,labels)
 local ac = GetActive()
-local Bundle = "GFX/Actors/Heroes"
+local Bundle = "GFX/Actors/Player"
 if ac=="UniWendicka" then Bundle = "GFX/Actors/Uniform" end
 TurnPlayer("South")
 MapText(text)
@@ -158,6 +158,10 @@ MapText("CRYSTAL_UNIFORM")
 -- Sys.Error("Next part not yet scripted")
 end
 
+function VanDeKeukenNaarHuis()
+Internal_Transporter( "Galahad" , "TELEPORT_KITCHEN2HOME" , "Galahad" )
+end
+
 function GALE_OnLoad()
 Music("Excalibur/Blip Stream.ogg")
 SetDoor("LeftDoorSickBay",-40)
@@ -173,8 +177,12 @@ ZA_Enter("Sickbay_NoBusiness",NoBusiness)
 ZA_Enter("Johnson_NoBusiness",NoBusiness)
 ZA_Enter("Johnson2_NoBusiness",NoBusiness)
 ZA_Enter("NoBusiness_Galahad",NoBusiness)
+ZA_Enter("NoBusiness_Keuken1",NoBusiness)
+ZA_Enter("NoBusiness_Keuken2",NoBusiness)
 ZA_Enter("Transporter_Sickbay",function() Internal_Transporter("Johnson_Entrance","TELEPORT_SICK2STAFF","Staff") end)
 ZA_Enter("Transporter_Johnson",Transporter_Johnson)
+ZA_Enter("Keuken_Transporter_Een" ,VanDeKeukenNaarHuis)
+ZA_Enter("Keuken_Transporter_Twee",VanDeKeukenNaarHuis)
 ZA_Enter("Crystal_Panic",Crystal_Panic)
 AddClickable("Deur_Johnson")
 AddClickable("GERDO")

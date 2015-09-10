@@ -77,6 +77,7 @@ DrawScreen()
 Flip()
 Party("Wendicka")
 Maps.Obj.Kill("Crystal Awake",1)
+Maps.Obj.Kill("CrystalUniform",1)
 Image.Cls(); Flip(); Time.Sleep(500)
 Image.Font("Fonts/Robotica.ttf",40)
 White()
@@ -117,6 +118,7 @@ MapShow("Keuken")
 TurnPlayer("South")   
 Actors.ChoosePic("PLAYER","WENDICKA.SOUTH") 
 Done("%DONE.PROLOGUE")
+Award("SCENARIO_PROLOGUE")
 end
 
 
