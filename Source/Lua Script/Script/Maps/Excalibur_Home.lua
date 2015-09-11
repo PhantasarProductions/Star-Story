@@ -215,7 +215,8 @@ Music("Excalibur/Attacked.ogg")
 Maps.Obj.Kill("Crystal")
 Maps.Obj.Kill("ExHuRU")
 Party("Wendicka","Crystal","ExHuRU")
-TurnPlayer("South")    
+TurnPlayer("South") 
+Var.D("&ATTACKED.EXCALIBUR","TRUE")   
 end
 
 function GALE_OnLoad()
