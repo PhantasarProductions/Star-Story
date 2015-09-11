@@ -38,6 +38,7 @@
 1. Script/JINC/IAA/ITM_VLUGZOUT.lua
 1. Script/JINC/InitChar/Briggs.lua
 1. Script/JINC/InitChar/Crystal.lua
+1. Script/JINC/InitChar/ExHuRU.lua
 1. Script/JINC/InitChar/Share/Crystal.lua
 1. Script/JINC/InitChar/Share/Wendicka.lua
 1. Script/JINC/InitChar/UniCrystal.lua
@@ -131,4 +132,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Fri 11 September 2015; 21:40:36 CET
+### Last updated: Sat 12 September 2015; 00:10:30 CET

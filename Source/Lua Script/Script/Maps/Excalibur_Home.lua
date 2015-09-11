@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.11
+version: 15.09.12
 ]]
 
 function CLICK_ARRIVAL_Vlag_Brabant()
@@ -145,6 +145,9 @@ if Maps.Obj.Exists("Crystal")==1 then
 end
 
 function CrystalHome()
+if (not CVV("&DONE.PROLOGUE")) then return end
+if (not CVV("&DONE.HOME.CRYSTAL.HOME")) then return end
+if Done("&DONE.HOME.EXHURU") then return end
 Actors.StopWalking("PLAYER")
 Actors.MoveToSpot("PLAYER","Crystal_Wendicka")
 TurnPlayer("North")
@@ -165,13 +168,59 @@ for ak=1,5 do
     Time.Sleep(500)
     end
 Music("Scenario/Panic Stations")
+TurnPlayer("North")
 MapText("CRYSTAL_REDALERT")
-Sys.Error("Rest not scripted yet")    
+Maps.Obj.Obj("ExD1").Visible = 1
+Maps.Obj.Obj("ExD2").Visible = 2
+local EXD = { Maps.Obj.Obj("ExD1"), Maps.Obj.Obj("ExD2") }
+local ED
+local EXDto = { {x=682,y=120, rs=45},{ x=907, y=101, rs=-45}}
+for ED in each(EXD) do
+  ED.X = 786
+  ED.Y = 411
+  ED.Labels="Woonkamer"
+  end
+Actors.Spawn("Voordeur","GFX/Actors/Player","ExHuRU")
+Actors.ChoosePic("ExHuRU","EXHURU.NORTH")  
+local ok,i  
+local timeout = 10000
+repeat
+timeout = timeout - 1
+if timeout<=0 then Sys.Error("Break door time-out") end
+ok = true
+for i,ED in ipairs(EXD) do
+    if ED.X>EXDto[i].x then ED.X=ED.X-1 end
+    if ED.X<EXDto[i].x then ED.X=ED.X+1 end
+    if ED.Y>EXDto[i].y then ED.Y=ED.Y-2 end
+    ok = ok and ED.X==EXDto[i].x and ED.Y<=EXDto[i].y
+    ED.Rotation = ED.Rotation + EXDto[i].rs
+    if EXDto[i].rs>0 then EXDto[i].rs=EXDto[i].rs-(rand(1,4)*.1) if EXDto[i].rs<0 then EXDto[i].rs=0 end
+    elseif EXDto[i].rs<0 then EXDto[i].rs=EXDto[i].rs+(rand(1,4)*.1) if EXDto[i].rs>0 then EXDto[i].rs=0 end end
+    ok = ok and EXDto[i].rs==0
+    end
+Maps.Obj.Seal("ExD1")
+Maps.Obj.Seal("ExD2")    
+DrawScreen()
+Flip()
+until ok  
+TurnPlayer("South")
+MapText("EXHURU_BREAK")
+Actors.MoveToSpot("ExHuRU","Crystal")
+MapText("EXHURU_CRYSTAL")
+Actors.MoveToSpot("ExHuRU","ExHuRU_Spot")
+Actors.ChoosePic("ExHuRU","EXHURU.EAST")
+TurnPlayer("West")
+MapText("EXHURU_COMEWITHME")
+Music("Excalibur/Attacked.ogg")
+Maps.Obj.Kill("Crystal")
+Maps.Obj.Kill("ExHuRU")
+Party("Wendicka","Crystal","ExHuRU")
+TurnPlayer("South")    
 end
 
 function GALE_OnLoad()
 if not CVV("&DONE.PROLOGUE")      then Music("Scenario/Panic Stations.ogg") 
-elseif CVV("&DONE.EXHURU")        then Music("Scenario/Panic Stations.ogg")
+--elseif CVV("&DONE.EXHURU")        then Music("Scenario/Panic Stations.ogg")
 elseif CVV("&ATTACKED.EXCALIBUR") then Music("Excalibur/Attacked.ogg")
 else                                   Music("Scenario/Calm Indoors.ogg") end
 ZA_Enter("Zone_CrystalHome",CrystalHome)
