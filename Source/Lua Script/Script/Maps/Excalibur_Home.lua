@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.10
+version: 15.09.11
 ]]
 
 function CLICK_ARRIVAL_Vlag_Brabant()
@@ -121,17 +121,39 @@ Done("&DONE.PROLOGUE")
 Award("SCENARIO_PROLOGUE")
 end
 
+function WendickaRoom()
+MapShow("Wendicka")
+if CVV("&DONE.PROLOGUE") and (not Done("&DONE.HOME.CRYSTAL.HOME")) then
+   MapText("CRYSTAL_HOME") 
+   Actors.Spawn("Crystal_Home","GFX/Actors/SinglePic/Heroes/Crystal.png","Crystal",1)
+   -- Actors.Actor("Crystal").Visible = 0
+   end
+HideCrystal()   
+end
+
+function Woonkamer() 
+MapShow("Woonkamer")
+if Maps.Obj.Exists("Crystal")==1 then
+    Actors.Actor("Crystal").Visible = 1 -- Will show Crystal in the living room if she's there
+    end
+end
+
+function HideCrystal()
+if Maps.Obj.Exists("Crystal")==1 then
+    Actors.Actor("Crystal").Visible = 0 -- Will hide Crystal in the living room if she's there
+    end
+end
 
 function GALE_OnLoad()
 if not CVV("&DONE.PROLOGUE")      then Music("Scenario/Panic Stations.ogg") 
 elseif CVV("&DONE.EXHURU")        then Music("Scenario/Panic Stations.ogg")
 elseif CVV("&ATTACKED.EXCALIBUR") then Music("Excalibur/Attacked.ogg")
 else                                   Music("Scenario/Calm Indoors.ogg") end
-ZA_Enter("Kamer_Wendicka" ,function() MapShow("Wendicka")  end)
-ZA_Enter("Kamer_Crystal"  ,function() MapShow("Crystal")   end)
-ZA_Enter("Kamer_Woonkamer",function() MapShow("Woonkamer") end)
-ZA_Enter("Kamer_Keuken",   function() MapShow("Keuken")    end)
-ZA_Enter("Kamer_Badkamer" ,function() MapShow("Badkamer")  end)
+ZA_Enter("Kamer_Wendicka" ,WendickaRoom)
+ZA_Enter("Kamer_Woonkamer",Woonkamer)
+ZA_Enter("Kamer_Crystal"  ,function() MapShow("Crystal")   HideCrystal() end)
+ZA_Enter("Kamer_Keuken",   function() MapShow("Keuken")    HideCrystal() end)
+ZA_Enter("Kamer_Badkamer" ,function() MapShow("Badkamer")  HideCrystal() end)
 AddClickable("Vlag_Brabant")
 AddClickable("Computer")
 AddClickable("Scyndi") -- The name "Scyndi refers to a cabinet in my home of which I did have a picture of Scyndi (from Secrets of Dyrt) and named the cabinet after it. The picture is removed by now, but the name remained.
