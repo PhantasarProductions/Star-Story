@@ -21,8 +21,6 @@ Rem
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
 Version: 15.09.02
-End Rem
-Rem
 /*
 	LAURA II - Lua-based Advanced Utility for Roleplaying and Adventuring - Version II
 	As the name suggests, a Lua based interpreter for RPG and adventure games.
