@@ -144,11 +144,37 @@ if Maps.Obj.Exists("Crystal")==1 then
     end
 end
 
+function CrystalHome()
+Actors.StopWalking("PLAYER")
+Actors.MoveToSpot("PLAYER","Crystal_Wendicka")
+TurnPlayer("North")
+MapText("CRYSTAL_FIX")
+Music("Sys/Silence.ogg")
+local ak
+local rood
+for ak=1,5 do
+    rood = not rood
+    DrawScreen()
+    if rood then
+       Red()
+       Image.SetAlphaPC(25)
+       Image.Rect(0,0,800,600)
+       Image.SetAlphaPC(100)
+       end
+    Flip()
+    Time.Sleep(500)
+    end
+Music("Scenario/Panic Stations")
+MapText("CRYSTAL_REDALERT")
+Sys.Error("Rest not scripted yet")    
+end
+
 function GALE_OnLoad()
 if not CVV("&DONE.PROLOGUE")      then Music("Scenario/Panic Stations.ogg") 
 elseif CVV("&DONE.EXHURU")        then Music("Scenario/Panic Stations.ogg")
 elseif CVV("&ATTACKED.EXCALIBUR") then Music("Excalibur/Attacked.ogg")
 else                                   Music("Scenario/Calm Indoors.ogg") end
+ZA_Enter("Zone_CrystalHome",CrystalHome)
 ZA_Enter("Kamer_Wendicka" ,WendickaRoom)
 ZA_Enter("Kamer_Woonkamer",Woonkamer)
 ZA_Enter("Kamer_Crystal"  ,function() MapShow("Crystal")   HideCrystal() end)
