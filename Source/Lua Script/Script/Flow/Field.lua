@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.09.10
+  Version: 15.09.12
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -179,7 +179,7 @@ end
 
 function Click()
 local mx,my = MouseCoords()
-local ak
+local ak,ch
 if mousehit(1) then -- Left Mouse button    
    if my>500 then  -- must come prior to checks in the field
       for ak=0,5 do
@@ -196,6 +196,16 @@ if mousehit(1) then -- Left Mouse button
       -- Actors.MoveTo(cplayer,mx+Maps.CamX,my+Maps.CamY)
       end
    end
+if mousehit(2) then
+   if my>500 then  -- must come prior to checks in the field
+      for ak=0,5 do
+          if RightClickedChar(ak) then
+             ch = RPGChar.PartyTag(ak)
+             if ch~="" and ch~="UniWendicka" and ch~="UniCrystal" and ch~="Briggs" then activeplayer = ch end 
+             end
+          end
+      end
+   end   
 end
 
 function SetPlayer(P) cplayer=P end

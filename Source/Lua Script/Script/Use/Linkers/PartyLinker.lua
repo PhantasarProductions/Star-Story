@@ -1,6 +1,6 @@
 --[[
   PartyLinker.lua
-  Version: 15.09.05
+  Version: 15.09.12
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -55,6 +55,10 @@ end
 
 function ClickedChar(chn)
 if chn<3 then return RPGChar.PartyTag(chn)~="" and mousehit(1) and INP.MouseY()>500 and INP.MouseX()>=chn*200 and INP.MouseX()<(chn+1)*200 end
+end    
+
+function RightClickedChar(chn)
+if chn<3 then return RPGChar.PartyTag(chn)~="" and mousehit(2) and INP.MouseY()>500 and INP.MouseX()>=chn*200 and INP.MouseX()<(chn+1)*200 end
 end    
 
 function MINI(...)
