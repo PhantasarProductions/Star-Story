@@ -13,6 +13,8 @@ You can follow the some progress on:
 
 A live worklog is kept at: http://starstory.sourceforge.net/uTBBS/index.php?C=QuickWorkLog&A=Show&Board=1
 
+A small "Work in progress" video can be watched here: https://www.youtube.com/watch?v=O4B7y37vcdM&feature=youtu.be
+
 When some open testing can begin will be announced on either site.
 
 

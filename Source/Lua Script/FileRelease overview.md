@@ -27,6 +27,7 @@
 1. Script/JINC/Foes/Boss/BrainDroid.lua
 1. Script/JINC/Foes/Reg/astrilopup.lua
 1. Script/JINC/Foes/Reg/BattleDroid.lua
+1. Script/JINC/Foes/Reg/Cyborg Gunner.lua
 1. Script/JINC/Foes/Reg/Cyborg Medic.lua
 1. Script/JINC/IAA/ABL_FOE_PHOTON.lua
 1. Script/JINC/IAA/ABL_WENDICKA_PROLOGUE_SHOCK.lua
@@ -135,4 +136,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Sun 13 September 2015; 12:46:11 CET
+### Last updated: Sun 13 September 2015; 23:13:15 CET
