@@ -27,6 +27,7 @@
 1. Script/JINC/Foes/Boss/BrainDroid.lua
 1. Script/JINC/Foes/Reg/astrilopup.lua
 1. Script/JINC/Foes/Reg/BattleDroid.lua
+1. Script/JINC/Foes/Reg/Cyborg Medic.lua
 1. Script/JINC/IAA/ABL_FOE_PHOTON.lua
 1. Script/JINC/IAA/ABL_WENDICKA_PROLOGUE_SHOCK.lua
 1. Script/JINC/IAA/ABL_WENDICKA_SHOCK.lua
@@ -34,6 +35,7 @@
 1. Script/JINC/IAA/ARM_HEALINGSPRAY.lua
 1. Script/JINC/IAA/ITM_ADHBANDAGE.lua
 1. Script/JINC/IAA/ITM_BANDAGE.lua
+1. Script/JINC/IAA/ITM_HEALINGCAPSULE.lua
 1. Script/JINC/IAA/ITM_KEY_YAQIRPA.lua
 1. Script/JINC/IAA/ITM_VLUGZOUT.lua
 1. Script/JINC/InitChar/Briggs.lua
@@ -49,6 +51,7 @@
 1. Script/Maps/Excalibur_Home.lua
 1. Script/Maps/Excalibur_Kitchen.lua
 1. Script/Maps/Excalibur_Sickbay.lua
+1. Script/Maps/Excalibur_UnderAttack.lua
 1. Script/Maps/Prologue_Yaqirpa.lua
 1. Script/OSBOOT/Mac.x86.lua
 1. Script/OSBOOT/Win32.x86.lua
@@ -132,4 +135,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Sat 12 September 2015; 03:52:43 CET
+### Last updated: Sun 13 September 2015; 12:46:11 CET
