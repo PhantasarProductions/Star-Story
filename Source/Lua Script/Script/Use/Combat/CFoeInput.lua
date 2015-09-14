@@ -1,6 +1,6 @@
 --[[
   CFoeInput.lua
-  Version: 15.09.14
+  Version: 15.09.15
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -37,7 +37,7 @@
 FoeTargetSelector = {
 
   ["1A"] = function(me)
-           local t = rand(1,3)
+           local t = rand(1,9)
            local myhero = Fighters.Foe[t]
            if not myhero then return false,false end
            local mytag = myhero.Tag

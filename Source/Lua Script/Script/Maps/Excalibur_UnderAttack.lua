@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.14
+version: 15.09.15
 ]]
 function Morgue()
 MapText("MORGUE")
@@ -40,11 +40,28 @@ MapEXP()
 end
 
 function GoFurtherOrNot()
-if not(CVV("$DONE.EXCALIBUR.UNDERATTACK.TRANSPORTER")) then CharMapText("TRANSPORTERFIRST") return end
+if not(CVV("&DONE.EXCALIBUR.UNDERATTACK.TRANSPORTER")) then CharMapText("TRANSPORTERFIRST") return end
 MapShow('Galahad,Galahad2')
+end
+
+function TransporterKaduuk()
+if Done("&DONE.EXCALIBUR.UNDERATTACK.TRANSPORTER") then return end
+SetActive("Wendicka")
+TurnPlayer("South")
+MapText("NOTRANSPORT")
+Maps.Obj.Obj("Block4Transporter").Impassible = 0
+Maps.PermaWrite('Maps.Obj.Obj("Block4Transporter").Impassible = 0; Maps.Remap()')
+Maps.Remap()
+end
+
+function GoHome()
+LoadMap("Excalibur_Home")
+SpawnPlayer("Voordeur","North")
 end
 
 function GALE_OnLoad()
 Music("Excalibur/Attacked.ogg")
-ZA_Enter("Check_Transporter_First",GoFurhterOrNot)
+ZA_Enter("Check_Transporter_First",GoFurtherOrNot)
+ZA_Enter("BrokenTransporter",TransporterKaduuk)
+ZA_Enter("Go Home",GoHome)
 end
