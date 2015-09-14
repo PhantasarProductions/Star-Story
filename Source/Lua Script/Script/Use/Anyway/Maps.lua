@@ -42,8 +42,8 @@ repeat
 ptv = ptv - 1
 pty = "PT"..right("   "..ptv,3).." Level"
 if ptv<=0 then return 1 end
-until GetData(ptv)~=""
-return Sys.Val(GetData(ptv))
+until Maps.GetData(ptv)~=""
+return Sys.Val(Maps.GetData(ptv))
 end
 
 function MapEXP(modifier,typemodifier)
