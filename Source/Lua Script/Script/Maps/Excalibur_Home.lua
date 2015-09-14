@@ -222,21 +222,22 @@ end
 -- Leave the room if you are allowed to do so
 function Opzouten()
 if not CVV("&ATTACKED.EXCALIBUR") then return MapText("DONTLEAVE") end
-local l = MapLevel()
 CleanCombat()
 LoadMap("Excalibur_UnderAttack")
 SpawnPlayer("Start","South")
 MapShow("Galahad")
 if Done("&DONE.EXCALIBUR.UNDERATTACK.WELCOME") then return end
 MapText("WELCOME")
+local l = MapLevel()
+CSay("Level cyborgs must be in range ("..Sys.Val(l/3).." - "..l..")")
 Var.D("$COMBAT.BACKGROUND","Excalibur.png")
 Var.D("$COMBAT.BEGIN","Default")
 Var.D("$COMBAT.FOE1","Cyborg Medic")
 Var.D("$COMBAT.FOE2","Cyborg Captain")
-Var.D("$COMBAT.FOE2","Cyborg Gunner")
+Var.D("$COMBAT.FOE3","Cyborg Gunner")
 Var.D("%COMBAT.LVFOE1",rand(l/3,l))
 Var.D("%COMBAT.LVFOE2",rand(l/3,l))
-Var.D("%COMBAT.LVFOE2",rand(l/3,l))
+Var.D("%COMBAT.LVFOE3",rand(l/3,l))
 Var.D("$COMBAT.MUSIC","ENCOUNTER/002.ogg")
 local ak
 for ak=1,3 do Maps.Obj.Kill("Cyborg"..ak,1) end

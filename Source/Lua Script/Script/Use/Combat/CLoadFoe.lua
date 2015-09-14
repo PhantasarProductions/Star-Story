@@ -1,6 +1,6 @@
 --[[
   CLoadFoe.lua
-  Version: 15.09.03
+  Version: 15.09.14
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -56,7 +56,9 @@ local lvmax = lvrange[2]
 local rng = math.abs(lvmax - lvmin)
 local sint,sinc,ldif
 local i1,v1
+local tstat
 if rng==0 then rng=1 end
+if Foe.Level<1 then Foe.Level=1 end
 RPGChar.DefStat(Foe.Tag,"Level",Foe.Level)
 RPGChar.SetName(Foe.Tag,FoeData.Name)
 for ckey,cvalue in spairs(FoeData.Stat) do
@@ -65,7 +67,9 @@ for ckey,cvalue in spairs(FoeData.Stat) do
     --CSay("Compiling stat: "..ckey)
     if Foe.Level<lvmin then 
        ldif = lvmin - Foe.Level
-       RPGStats.DefStat(Foe.Tag,"BASE_"..ckey,round(cvalue[1]-(sinc*ldif)))
+       tstat = round(cvalue[1]-(sinc*ldif))
+       if tstat<5 then tstat = 5 end
+       RPGStats.DefStat(Foe.Tag,"BASE_"..ckey,tstat)
        CSay("Setting BASE_"..ckey.." (neg)")       
     else   
        ldif = Foe.Level - lvmin

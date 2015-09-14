@@ -1,6 +1,6 @@
 --[[
   Experience.lua
-  Version: 15.09.03
+  Version: 15.09.14
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -49,6 +49,15 @@ ret1,ret2 = ({
     ["string"] = function(p1,p2)
                  return {p1},p2
                  end,
+    ["number"] = function(p1,p2)
+                 local ret = {}
+                 local ch
+                 for ak=0,5 do 
+                     ch = RPGChar.PartyTag(ak)
+                     if ch~="" then table.insert(ret,ch) end
+                     end
+                 return ret,p1    
+                 end,             
     ["nil"] = function(p1,p2)
               local ret = {}
               local ch
@@ -71,9 +80,12 @@ end
 
 function GrantExperienceOnLevel(c1,c2)
 local chl,lv = EXPGetCharList(c1,c2)
+local exp
 local ch
 for ch in each(chl) do
-    RPGChar.Points(ch,"EXP").Inc((RPGChar.Stat(ch,"Level")/lv)*250)
+    exp = (RPGChar.Stat(ch,"Level")/lv)*250
+    CSay(ch.." gets "..exp.." experience points")
+    RPGChar.Points(ch,"EXP").Inc(exp)
     end
 end    
 

@@ -67,7 +67,7 @@ Data = {
 local temp
 
 
-Data.ActMinLevel["Abl.ABL_FOE_PHOTON"] = 1		for ak=1,100 do table.insert(Data.Acts,"Abl.ABL_FOE_PHOTON") end
+Data.ActMinLevel["Abl.ABL_FOE_PHOTON"] = 0		for ak=1,100 do table.insert(Data.Acts,"Abl.ABL_FOE_PHOTON") end
 temp = { ITM='ITM_ADHBANDAGE', LVL=1, VLT=false }
 for ak=1,1 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,1 do table.insert(Data.ItemSteal,temp) end

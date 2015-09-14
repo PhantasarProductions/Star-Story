@@ -69,7 +69,7 @@ local temp
 
 Data.ActMinLevel["Abl.ITM_ADHBANDAGE"] = 1		for ak=1,1 do table.insert(Data.Acts,"Abl.ITM_ADHBANDAGE") end
 Data.ActMinLevel["Abl.ITM_BANDAGE"] = 1		for ak=1,1 do table.insert(Data.Acts,"Abl.ITM_BANDAGE") end
-Data.ActMinLevel["Abl.ITM_HEALINGCAPSULE"] = 1		for ak=1,100 do table.insert(Data.Acts,"Abl.ITM_HEALINGCAPSULE") end
+Data.ActMinLevel["Abl.ITM_HEALINGCAPSULE"] = 0		for ak=1,100 do table.insert(Data.Acts,"Abl.ITM_HEALINGCAPSULE") end
 temp = { ITM='ITM_HEALINGCAPSULE', LVL=1, VLT=false }
 for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,100 do table.insert(Data.ItemSteal,temp) end

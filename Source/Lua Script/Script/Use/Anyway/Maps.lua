@@ -40,10 +40,11 @@ local ptv = ngpcount + 1
 local ptg
 repeat
 ptv = ptv - 1
-pty = "PT"..right("   "..ptv,3).." Level"
+ptg = "PT"..right("   "..ptv,3).." Level"
 if ptv<=0 then return 1 end
-until Maps.GetData(ptv)~=""
-return Sys.Val(Maps.GetData(ptv))
+CSay("Checking "..ptv.." >> '"..ptg.."' >>> "..Maps.GetData(ptg))
+until Maps.GetData(ptg)~=""
+return Sys.Val(Maps.GetData(ptg))
 end
 
 function MapEXP(modifier,typemodifier)
@@ -55,7 +56,15 @@ local l = MapLevel();
     ["+"] = function() l=l+m end,
     ["-"] = function() l=l-m end,
     ["/"] = function() l=l/m end})[t]()
-GrantExperienceOnLevel(l)    
+local ch
+local chi
+for chi=0,5 do
+    ch = RPGChar.PartyTag(chi)
+    if ch~="" then
+       CSay(ch.." gains expierence based on level "..l) 
+       GrantExperienceOnLevel(ch,l)
+       end
+    end    
 end
 
 function SpawnPlayer(spot,Wind,teleporteffect,Labels,Bundle)
