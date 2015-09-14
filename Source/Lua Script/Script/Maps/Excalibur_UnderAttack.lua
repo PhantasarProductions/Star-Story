@@ -39,7 +39,12 @@ MapText("MORGUE")
 MapEXP()
 end
 
+function GoFurtherOrNot()
+if not(CVV("$DONE.EXCALIBUR.UNDERATTACK.TRANSPORTER")) then CharMapText("TRANSPORTERFIRST") return end
+MapShow('Galahad,Galahad2')
+end
 
 function GALE_OnLoad()
 Music("Excalibur/Attacked.ogg")
+ZA_Enter("Check_Transporter_First",GoFurhterOrNot)
 end

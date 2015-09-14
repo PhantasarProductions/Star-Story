@@ -1,6 +1,6 @@
 --[[
   Console.lua
-  Version: 15.09.10
+  Version: 15.09.14
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -419,5 +419,12 @@ if Maps.Obj.Exists("PLAYER")==0 then
 local l
 for l in each(mysplit(Actors.Actor("PLAYER").HavePics(),";")) do
     CWrite( l , rand(0,255), rand(0,255), rand(0,255))
+    end
+end
+
+function ALLHP()
+local foeid
+for foeid in ICHARS() do
+    CSay("Character: "..foeid.." has "..RPGChar.Points(foeid,"HP").Have.."/"..RPGChar.Points(foeid,"HP").Maximum.." HP") 
     end
 end

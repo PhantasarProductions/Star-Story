@@ -83,8 +83,8 @@ local chl,lv = EXPGetCharList(c1,c2)
 local exp
 local ch
 for ch in each(chl) do
-    exp = (RPGChar.Stat(ch,"Level")/lv)*250
-    CSay(ch.." gets "..exp.." experience points")
+    exp = (lv/RPGChar.Stat(ch,"Level"))*250
+    CSay(ch.." gets "..exp.." experience points (char has: "..RPGChar.Stat(ch,"Level").." Challenge is:"..lv..")")
     RPGChar.Points(ch,"EXP").Inc(exp)
     end
 end    
@@ -93,6 +93,6 @@ function GrantEventExperience(c1,c2)
 local chl,lv = EXPGetCharList(c1,c2)
 local ch
 for ch in each (chl) do
-    RPGChar.Points(ch,"EXP").Inc((RPGChar.Stat(ch,"Level")/lv)*rand(200,200+(320-(skill*100))))
+    RPGChar.Points(ch,"EXP").Inc(lv/(RPGChar.Stat(ch,"Level"))*rand(200,200+(320-(skill*100))))
     end
 end    
