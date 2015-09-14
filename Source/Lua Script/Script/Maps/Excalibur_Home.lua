@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.12
+version: 15.09.14
 ]]
 
 function CLICK_ARRIVAL_Vlag_Brabant()
@@ -219,6 +219,30 @@ TurnPlayer("South")
 Var.D("&ATTACKED.EXCALIBUR","TRUE")   
 end
 
+-- Leave the room if you are allowed to do so
+function Opzouten()
+if not CVV("&ATTACKED.EXCALIBUR") then return MapText("DONTLEAVE") end
+local l = MapLevel()
+CleanCombat()
+LoadMap("Excalibur_UnderAttack")
+if Done("&DONE.EXCALIBUR.UNDERATTACK.WELCOME") then return end
+MapText("WELCOME")
+Var.D("$COMBAT.BACKGROUND","Excalibur.png")
+Var.D("$COMBAT.BEGIN","Default")
+Var.D("$COMBAT.FOE1","Cyborg Medic")
+Var.D("$COMBAT.FOE2","Cyborg Captain")
+Var.D("$COMBAT.FOE2","Cyborg Gunner")
+Var.D("%COMBAT.LVFOE1",rand(l/3,l))
+Var.D("%COMBAT.LVFOE2",rand(l/3,l))
+Var.D("%COMBAT.LVFOE2",rand(l/3,l))
+Var.D("$COMBAT.MUSIC","ENCOUNTER/002.ogg")
+local ak
+for ak=1,3 do Maps.Obj.Kill("Cyborg"..ak,1) end
+Schedule("MAP","Morgue")
+StartCombat()
+end
+
+
 function GALE_OnLoad()
 if not CVV("&DONE.PROLOGUE")      then Music("Scenario/Panic Stations.ogg") 
 --elseif CVV("&DONE.EXHURU")        then Music("Scenario/Panic Stations.ogg")
@@ -227,6 +251,7 @@ else                                   Music("Scenario/Calm Indoors.ogg") end
 ZA_Enter("Zone_CrystalHome",CrystalHome)
 ZA_Enter("Kamer_Wendicka" ,WendickaRoom)
 ZA_Enter("Kamer_Woonkamer",Woonkamer)
+ZA_Enter("Exit",Opzouten)
 ZA_Enter("Kamer_Crystal"  ,function() MapShow("Crystal")   HideCrystal() end)
 ZA_Enter("Kamer_Keuken",   function() MapShow("Keuken")    HideCrystal() end)
 ZA_Enter("Kamer_Badkamer" ,function() MapShow("Badkamer")  HideCrystal() end)

@@ -27,9 +27,11 @@
 1. Script/JINC/Foes/Boss/BrainDroid.lua
 1. Script/JINC/Foes/Reg/astrilopup.lua
 1. Script/JINC/Foes/Reg/BattleDroid.lua
+1. Script/JINC/Foes/Reg/Cyborg Captain.lua
 1. Script/JINC/Foes/Reg/Cyborg Gunner.lua
 1. Script/JINC/Foes/Reg/Cyborg Medic.lua
 1. Script/JINC/IAA/ABL_FOE_PHOTON.lua
+1. Script/JINC/IAA/ABL_FOE_TASER.lua
 1. Script/JINC/IAA/ABL_WENDICKA_PROLOGUE_SHOCK.lua
 1. Script/JINC/IAA/ABL_WENDICKA_SHOCK.lua
 1. Script/JINC/IAA/ARM_DART.lua
@@ -77,6 +79,7 @@
 1. Script/Use/Anyway/Hide-and-seek.lua
 1. Script/Use/Anyway/LevelCaps.lua
 1. Script/Use/Anyway/Libs.lua
+1. Script/Use/Anyway/Maps.lua
 1. Script/Use/Anyway/Mouse.lua
 1. Script/Use/Anyway/Music.lua
 1. SCRIPT/USE/ANYWAY/MUSICAVAILABLE.LUA (only available when you have the version WITH music)
@@ -136,4 +139,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Sun 13 September 2015; 23:13:15 CET
+### Last updated: Mon 14 September 2015; 19:19:00 CET

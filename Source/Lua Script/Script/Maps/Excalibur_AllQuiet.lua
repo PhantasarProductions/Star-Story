@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.10
+version: 15.09.14
 ]]
 
 function Internal_Transporter(spot,text,labels)
@@ -120,7 +120,6 @@ MapText("JONES")
 MapShow("Staff")
 TurnPlayer("South")
 NoDoorAction = false
-
 end
 
 function Crystal_Panic()
@@ -167,6 +166,7 @@ end
 function VanDeKeukenNaarHuis()
 Internal_Transporter( "Galahad" , "TELEPORT_KITCHEN2HOME" , "Galahad" )
 end
+
 
 function GALE_OnLoad()
 Music("Excalibur/Blip Stream.ogg")

@@ -32,8 +32,14 @@
   
  **********************************************
  
-version: 15.09.13
+version: 15.09.14
 ]]
+function Morgue()
+MapText("MORGUE")
+MapEXP()
+end
+
+
 function GALE_OnLoad()
 Music("Excalibur/Attacked.ogg")
 end

@@ -1,8 +1,25 @@
 --[[
-  ABL_FOE_PHOTON.lua
+  ABL_FOE_TASER.lua
+  Version: 15.09.14
+  Copyright (C) 2015 Jeroen Petrus Broks
   
-  version: 15.09.14
-  Copyright (C) 2015 Jeroen P. Broks
+  ===========================
+  This file is part of a project related to the Phantasar Chronicles or another
+  series or saga which is property of Jeroen P. Broks.
+  This means that it may contain references to a story-line plus characters
+  which are property of Jeroen Broks. These references may only be distributed
+  along with an unmodified version of the game. 
+  
+  As soon as you remove or replace ALL references to the storyline or character
+  references, or any termology specifically set up for the Phantasar universe,
+  or any other univers a story of Jeroen P. Broks is set up for,
+  the restrictions of this file are removed and will automatically become
+  zLib licensed (see below).
+  
+  Please note that doing so counts as a modification and must be marked as such
+  in accordance to the zLib license.
+  ===========================
+  zLib license terms:
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
   arising from the use of this software.
@@ -27,15 +44,15 @@
 		["ABL_DblPower"] = 0,
 		["ABL_DblSpeed"] = 0,
 		["ABL_Instant"] = 0,
-		["ABL_Speed"] = 250,
+		["ABL_Speed"] = 0,
 		["ARM_Hit%"] = 0,
 		["ARM_MaxAmmo"] = 0,
 		["ARM_XPower"] = 0,
 		["ActSpeed"] = 250,
 		["AniIsEffectScript"] = false,
 		["AniScriptDefaultPath"] = true,
-		["AniScriptFile"] = "@COMBAT@ShootPhoton",
-		["AttackElement"] = "Non-Elemental",
+		["AniScriptFile"] = "",
+		["AttackElement"] = "Thunder",
 		["AttackPower"] = 100,
 		["AttackStat"] = "Strength",
 		["CauseAmnesia"] = false,
@@ -65,9 +82,9 @@
 		["EffectScriptFunction"] = "EFFECT_MAIN",
 		["Healing"] = 0,
 		["HealingType"] = "Absolute",
-		["Icon"] = "GFX/Abilities/Gun.png",
+		["Icon"] = "",
 		["ItemType"] = "Consumable",
-		["Name"] = "Photon Gun",
+		["Name"] = "Taser",
 		["Target"] = "1F",
 		["UseCombat"] = true,
 		["UseField"] = true}
