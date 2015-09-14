@@ -225,6 +225,8 @@ if not CVV("&ATTACKED.EXCALIBUR") then return MapText("DONTLEAVE") end
 local l = MapLevel()
 CleanCombat()
 LoadMap("Excalibur_UnderAttack")
+SpawnPlayer("Start","South")
+MapShow("Galahad")
 if Done("&DONE.EXCALIBUR.UNDERATTACK.WELCOME") then return end
 MapText("WELCOME")
 Var.D("$COMBAT.BACKGROUND","Excalibur.png")
@@ -251,7 +253,6 @@ else                                   Music("Scenario/Calm Indoors.ogg") end
 ZA_Enter("Zone_CrystalHome",CrystalHome)
 ZA_Enter("Kamer_Wendicka" ,WendickaRoom)
 ZA_Enter("Kamer_Woonkamer",Woonkamer)
-ZA_Enter("Exit",Opzouten)
 ZA_Enter("Kamer_Crystal"  ,function() MapShow("Crystal")   HideCrystal() end)
 ZA_Enter("Kamer_Keuken",   function() MapShow("Keuken")    HideCrystal() end)
 ZA_Enter("Kamer_Badkamer" ,function() MapShow("Badkamer")  HideCrystal() end)
@@ -260,4 +261,5 @@ AddClickable("Computer")
 AddClickable("Scyndi") -- The name "Scyndi refers to a cabinet in my home of which I did have a picture of Scyndi (from Secrets of Dyrt) and named the cabinet after it. The picture is removed by now, but the name remained.
 if Maps.Obj.Exists("Crystal_Asleep")>0 then AddClickable("Crystal_Asleep") end
 SetScrollBoundaries(432,-96,576,-96)
+ZA_Enter("Exit",Opzouten)
 end

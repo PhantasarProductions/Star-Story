@@ -57,3 +57,23 @@ local l = MapLevel();
     ["/"] = function() l=l/m end})[t]()
 GrantExperienceOnLevel(l)    
 end
+
+function SpawnPlayer(spot,Wind,teleporteffect,Labels,Bundle)
+Actors.Spawn(spot,Bundle or "GFX/Actors/Player","PLAYER")
+Maps.CamX = Actors.PX("PLAYER")-400
+Maps.CamY = Actors.PY("PLAYER")-300
+if eleporteffect==true then
+   Actors.ChoosePic("PLAYER","TELEPORT")
+   Actors.Actor("PLAYER").NotInMotionThen0 = 0
+   MapShow(Labels)
+   for f=99,0,-1 do
+       Image.Cls()
+       Actors.Actor("PLAYER").Frame = f 
+       Maps.Draw()
+       Flip()    
+       end
+   end   
+local cp = GetActive()    
+Actors.ChoosePic("PLAYER",upper(cp).."."..upper(Wind or "SOUTH"))     
+TurnPlayer(Wind or "South")  
+end

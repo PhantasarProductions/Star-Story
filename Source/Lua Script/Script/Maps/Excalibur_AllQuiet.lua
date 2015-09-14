@@ -37,6 +37,7 @@ version: 15.09.14
 
 function Internal_Transporter(spot,text,labels)
 local ac = GetActive()
+local cp
 local Bundle = "GFX/Actors/Player"
 if ac=="UniWendicka" then Bundle = "GFX/Actors/Uniform" end
 TurnPlayer("South")
