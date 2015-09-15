@@ -137,7 +137,7 @@ ABLKIND = {
           local ak
           local abl,abldata
           local x
-          local mx,my = MouseCoords()   my=my+100
+          local mx,my = MouseCoords()   my=my-100
           local mh = mousehit(1)
           local cancel = mousehit(2)
           local choice = nil
@@ -147,9 +147,10 @@ ABLKIND = {
               White()
               ItemIcon(abl,30,y,size)
               x=100
-              Image.Color(0,180,255)              
+              Image.Color(0,180,255)
+              --Image.DText("Mouse: "..mx..","..my,mx,my)              
               if my>y-(size/2) and my<y+(size/2) then
-                 if mousehit(1) then choice=abl end
+                 if mousehit(1) then choice=abl; CSay("Chosen: "..abl) end
                  Image.Color(180,180,255)
                  end
               Image.DText(abldata.Name,x,y,0,2)
@@ -159,7 +160,7 @@ ABLKIND = {
               if mousehit(2) then choice="cancel" end
               y = y + size,choice
               end
-          return y + size
+          return y + size,choice
           end,
     ARM = function()
           SetFont('AbilityList')
@@ -169,7 +170,7 @@ ABLKIND = {
           local abl,abldata,ablshort
           local x
           local ammo,choice
-          local mx,my = MouseCoords()   my=my+100
+          local mx,my = MouseCoords()   my=my-100
           for ak=1,abilities do
               ablshort = RPGStat.ListItem(pchar,"ARMS",ak)
               abl = "ARM_"..ablshort
@@ -426,10 +427,12 @@ FeatureHandleArray = {
                   local y,choice = f()
                   if choice and returnto=='COMBAT' then
                      Var.D("$CHOSENABILITY",choice) 
+                     LAURA.Flow("COMBAT")
                      end
                   SetFont("Tutorial")
                   White()
                   Image.DText(learnspellmessages[pchar](),350,y,2)
+                  --Image.DText('returnto = '..returnto,350,y+30,2) -- debug line
                   Image.ViewPort(0,0,800,600)
                   Image.Origin(0,0)
                   end,
@@ -478,6 +481,7 @@ ClickArray = {
             for ak=0,5 do
                 if ClickedChar(ak) then
                    Var.D("%CHOSENITEM.SOCKET",-1)
+                   Var.D("$CHOSENABILITY","")
                    LAURA.Flow("COMBAT")                     
                    end
                 end   
