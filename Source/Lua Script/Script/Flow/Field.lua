@@ -348,7 +348,7 @@ for obj in KthuraEach() do
           -- new
           repeat
           num = rand(1,9)
-          until num<2 or rand(1,num*((4-skill)*(4-skill)))<=skill
+          until num<1+(4-skill) or rand(1,num*((4-skill)*(4-skill)))<=skill
           hilevel = 0
           for ak=1,num do
               foe.Enemies[ak] = 
