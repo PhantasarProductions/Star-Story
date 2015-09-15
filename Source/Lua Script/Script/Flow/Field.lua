@@ -448,6 +448,9 @@ end
 
 function StartEncounter(foe)
 FX.FallDown("PARTY","ShowParty")
+Image.Cls()
+MS.Run("PARTY","ShowParty")
+Loading()
 local k,v,i
 -- Destroy all old shit we got
 for k in IVARS() do
@@ -514,7 +517,7 @@ for obj in KthuraEach("Actor") do
           AS = function() -- Altijd Stilstaan
                end     
        })[foe.Go] or function() Sys.Error("Unknown go code for foe #"..obj.IdNum,"Tag,"..obj.Tag..";Go,"..foe.Go) end)()        
-       if Distance(player.X,player.Y,obj.X,obj.Y)<=16 then
+       if Distance(player.X,player.Y,obj.X,obj.Y)<=16 then      
           StartEncounter(foe)
           return -- An encounter has begun, so this way, we can make sure a second one won't start
           end
@@ -631,6 +634,7 @@ for obj in KthuraEach() do
 end
 
 function LoadMap(map)
+Loading()
 Maps.Load(map)
 SetUpFoes()
 SetUpTreasure()

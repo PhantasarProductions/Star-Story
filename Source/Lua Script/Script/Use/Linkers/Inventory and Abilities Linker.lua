@@ -50,8 +50,10 @@ if not realinventory then -- This if statement must prevent that the real Items 
    return Var.C("$RET")
    end
    
-   ItemIcon = function(I,x,y)
-   MS.Run("ITEMS","ItemIcon",I..";"..x..";"..y)
+   ItemIcon = function(I,x,y,max)
+   local para = I..";"..x..";"..y
+   if max then para = para ..";"..max end
+   MS.Run("ITEMS","ItemIcon",para)
    end
    
    ItemIconCode = function(I)
@@ -67,6 +69,7 @@ if not realinventory then -- This if statement must prevent that the real Items 
    ItemGet = function (I)
    ItemGetArray = ItemGetArray or {}
    if ItemGetArray[I] then return ItemGetArray[I] end
+   Loading()
    MS.Run("ITEMS","ItemGet",I)
    local f = loadstring(Var.C('$RET'))
    -- print(Var.C("$RET"))

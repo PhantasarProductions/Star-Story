@@ -137,24 +137,74 @@ ABLKIND = {
           local ak
           local abl,abldata
           local x
+          local mx,my = MouseCoords()   my=my+100
+          local mh = mousehit(1)
+          local cancel = mousehit(2)
+          local choice = nil
           for ak=1,abilities do
               abl = "ABL_"..RPGStat.ListItem(pchar,"ABL",ak)
               abldata = ItemGet(abl)
               White()
-              ItemIcon(abl,30,y)
+              ItemIcon(abl,30,y,size)
               x=100
               Image.Color(0,180,255)              
-              Image.DText(abldata.Name,x,y,2,2)
+              if my>y-(size/2) and my<y+(size/2) then
+                 if mousehit(1) then choice=abl end
+                 Image.Color(180,180,255)
+                 end
+              Image.DText(abldata.Name,x,y,0,2)
               Image.Color(255,180,0)
               if abldata.ABL_AP > RPGChar.Points(pchar,"AP").Have then Red() end
               Image.DText(abldata.ABL_AP,680,y,1,2)
-              y = y + size
+              if mousehit(2) then choice="cancel" end
+              y = y + size,choice
               end
           return y + size
           end,
     ARM = function()
-          local y = 0
-          return y
+          SetFont('AbilityList')
+          local size = Image.TextHeight("ABCDEFG")
+          local y = size/2
+          local abilities = RPGStat.CountList(pchar,"ARMS")
+          local abl,abldata,ablshort
+          local x
+          local ammo,choice
+          local mx,my = MouseCoords()   my=my+100
+          for ak=1,abilities do
+              ablshort = RPGStat.ListItem(pchar,"ARMS",ak)
+              abl = "ARM_"..ablshort
+              abldata = ItemGet(abl)
+              White()              
+              ItemIcon(abl,30,y,size)
+              x=100
+              -- name
+              Image.Color(0,180,255)              
+              if my>y-(size/2) and my<y+(size/2) then
+                 if mousehit(1) then choice=abl end
+                 Image.Color(180,180,255)
+                 end
+              Image.DText(abldata.Name,x,y,0,2)
+              Image.Color(255,180,0)
+              -- The ammo
+              ammo = RPGChar.Points(pchar,"ARM.AMMO."..ablshort,1)
+              if ammo.Maximum==0 then ammo.Maximum=abldata.ARM_MaxAmmo; ammo.have=abldata.ARM_MaxAmmo end
+              if ammo.Have==0 then Red() end
+              Image.DText(ammo.Have.."/"..ammo.Maximum,680,y,1,2)
+              -- Hit %
+              if RPGChar.StatExists(pchar,"ARM.HIT."..ablshort)==0 then RPGChar.DefStat(pchar,"ARM.HIT."..ablshort,abldata["ARM_Hit%"]) end
+              Image.DText(RPGChar.Stat(pchar,"ARM.HIT."..ablshort).."%",580,y,1,2)
+              -- Weight
+              if RPGChar.StatExists(pchar,"ARM.WEIGHT."..ablshort)==0 then RPGChar.DefStat(pchar,"ARM.WEIGHT."..ablshort,abldata["ARM_Weight"]) end
+              Image.DText("-"..RPGChar.Stat(pchar,"ARM.WEIGHT."..ablshort),500,y,1,2)
+              -- Extra Power
+              if RPGChar.StatExists(pchar,"ARM.XPOWER."..ablshort)==0 then RPGChar.DefStat(pchar,"ARM.XPOWER."..ablshort,abldata["ARM_XPower"]) end
+              Image.DText("+"..RPGChar.Stat(pchar,"ARM.XPOWER."..ablshort),450,y,1,2)
+              -- cancel
+              if mousehit(2) then choice="cancel" end                            
+              -- And this must be last, going to the next line
+              y = y + size
+              end
+          return y+size,choice
           end
     }
 
@@ -373,7 +423,10 @@ FeatureHandleArray = {
                   Image.Origin(50,100)
                   local a = RPGChar.Data(pchar,"ABLTYPE")
                   local f = ABLKIND[a] or ABLKIND.ABL
-                  local y = f()
+                  local y,choice = f()
+                  if choice and returnto=='COMBAT' then
+                     Var.D("$CHOSENABILITY",choice) 
+                     end
                   SetFont("Tutorial")
                   White()
                   Image.DText(learnspellmessages[pchar](),350,y,2)

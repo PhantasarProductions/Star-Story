@@ -1,6 +1,6 @@
 --[[
   CPlayerInput.lua
-  Version: 15.09.14
+  Version: 15.09.15
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -74,6 +74,7 @@ SelectTarget = {
                  Image.NoFont()
                  DarkText("Mouse = ("..mx..","..my..")",5,0)                 
                  -- @FI
+                 DarkText("Please select your target:",400,10,2,0,0,180,255)
                  for group in each(SelectTarget.AllowGroups) do
                      for i,f in pairs(Fighters[group]) do
                          fx,fy = CoordsFighter[group](i)
@@ -178,12 +179,42 @@ InputItems = {
               ret = ret and RPGStat.CountList(ch,"ABL")>0
               return ret
               end,
-      Input = function(ch)
+      Input = function(ch,pos)
+              local item
+              local iact
+              if CVV("$CHOSENABILITY")=='' then GoToMenu(ch,"Abilities") 
+              elseif CVV("$CHOSENABILITY")=='cancel' then 
+                     PIA=nil
+                     Var.D("$CHOSENABILITY",'') 
+              else
+                 item=ItemGet(CVV("$CHOSENABILITY"))
+                 iact = Act.Hero[pos]
+                 iact.Act = "ABL"
+                 iact.ActSpeed = item.ActSpeed
+                 iact.ItemCode = item
+                 iact.Item = item                 
+                 SelectTarget.AblSelectTarget(item.Target,ch,pos)
+                 end
               end,        
       Done = function()
              end  
     },
     
+    { Name = "ARMS",
+      Item = "ARM",
+      Allow = function(ch)
+              local ret = true
+              ret = ret and RPGStat.ListExist(ch,"ARMS")~=0
+              ret = ret and RPGStat.CountList(ch,"ARMS")>0
+              return ret
+              end,
+      Input = function(ch)
+              end,        
+      Done = function()
+             end  
+    },
+
+
     { Name = "Item",
       Item = "ITEM",
       Allow = function(ch) return ch~="Briggs" end,

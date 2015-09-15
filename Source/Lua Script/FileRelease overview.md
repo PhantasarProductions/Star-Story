@@ -79,6 +79,7 @@
 1. Script/Use/Anyway/Hide-and-seek.lua
 1. Script/Use/Anyway/LevelCaps.lua
 1. Script/Use/Anyway/Libs.lua
+1. Script/Use/Anyway/Loading.lua
 1. Script/Use/Anyway/Maps.lua
 1. Script/Use/Anyway/Mouse.lua
 1. Script/Use/Anyway/Music.lua
@@ -139,4 +140,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Tue 15 September 2015; 03:08:52 CET
+### Last updated: Tue 15 September 2015; 17:27:44 CET
