@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 15.09.10
+  Version: 15.09.15
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -266,7 +266,7 @@ FeatureHandleArray = {
                                     else
                                      RPGChar.DefStat(pchar,"INVAMNT"..ak,0)
                                      end
-                                    ChosenItem = { Taken=true, Item=temp, Char=pchar, Slot=ak, Spot=ak }
+                                    ChosenItem = { Taken=true, Item=upper(temp), Char=pchar, Slot=ak, Spot=ak }
                                     end
                             -- Grab an item from stack
                             elseif RPGChar.Stat(pchar,"INVAMNT"..ak)>1 then
@@ -275,7 +275,7 @@ FeatureHandleArray = {
                                   if ChosenItem.Item==RPGChar.Data(pchar,"INVITEM"..ak) and RPGChar.Stat(pchar,"INVAMNT"..ak)<InventoryMaxStack then RPGChar.DefStat(pchar,"INVAMNT"..ak,RPGChar.Stat(pchar,"INVAMNT"..ak)+1) ChosenItem={} end
                                   else
                                   temp = RPGChar.Data(pchar,"INVITEM"..ak)
-                                  ChosenItem = { Taken=true, Item=temp, Char=pchar, Slot=ak, Spot=ak }
+                                  ChosenItem = { Taken=true, Item=upper(temp), Char=pchar, Slot=ak, Spot=ak }
                                   RPGChar.DefStat(pchar,"INVAMNT"..ak,RPGChar.Stat(pchar,"INVAMNT"..ak)-1)
                                   end
                              -- Get rid of it if you click an empty socket

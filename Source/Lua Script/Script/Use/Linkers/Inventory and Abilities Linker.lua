@@ -1,6 +1,6 @@
 --[[
   Inventory and Abilities Linker.lua
-  Version: 15.09.09
+  Version: 15.09.15
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -80,7 +80,8 @@ if not realinventory then -- This if statement must prevent that the real Items 
 -- if RPGChar.CharExists("VAULT")==0 then RPGChar.CreateChar("VAULT") end   
 
 -- The statements below are general statements, but I placed them here as I saw no need to make a separate file for that.   
-function ItemGive(itemcode,chl,alwaysallowvault,nochat)
+function ItemGive(pitemcode,chl,alwaysallowvault,nochat)
+local itemcode = upper(pitemcode)
 if left ( itemcode,4 )~="ITM_" then return CSay("WARNING! "..itemcode.." may not be an item, or at least not one I can process!") end
 local ch
 local item = ItemGet(itemcode)
