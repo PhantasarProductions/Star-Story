@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.15
+version: 15.09.16
 ]]
 XCharAbility = {
 
@@ -53,7 +53,7 @@ XCharAbility = {
                    for i in each(indexes) do
                        a = "WENDICKA_"..spells[i] 
                        if i<=done then
-                          if RPGChar.ListHas("UniWendicka","ABL")==0 and RPGChar.ListHas("UniWendicka","LEARN")==0 then RPGChar.AddList("UniWendicka","LEARN","WENDICKA_"..a) return end
+                          if RPGChar.ListHas("UniWendicka","ABL")==0 and RPGChar.ListHas("UniWendicka","LEARN")==0 then RPGChar.AddList("UniWendicka","LEARN",a) return end
                           end
                        if i>done then Var.D("%WENDICKA.NEED",i) end   
                        end     
