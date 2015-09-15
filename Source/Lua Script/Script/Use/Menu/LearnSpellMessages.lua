@@ -50,7 +50,7 @@ learnspellmessages = {
       Wendicka    = function()
                     local need = CVV("%WENDICKA.NEED") - CVV("%WENDICKA.DONE")
                     -- if CVV("%WENDICKA.NEED")==0 then return end
-                    if RPGChar.ListHave("UniWendicka","WENDICKA_ELECTRICCHARGE") then return "" end
+                    if RPGChar.ListHas("UniWendicka","WENDICKA_ELECTRICCHARGE") then return "" end
                     if RPGChar.CountList("UniWendicka","LEARN")>0 then return "Attack any enemy to learn a new spell" end
                     if need==1 then return "Peform one more spell to unlock a new one" end
                     return "Perform "..need.." spells to unlock a new one"
