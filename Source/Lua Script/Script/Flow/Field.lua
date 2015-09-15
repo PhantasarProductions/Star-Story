@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.09.12
+  Version: 15.09.15
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -348,7 +348,7 @@ for obj in KthuraEach() do
           -- new
           repeat
           num = rand(1,9)
-          until rand(1,num)<=skill
+          until num<2 or rand(1,num*((4-skill)*(4-skill)))<=skill
           hilevel = 0
           for ak=1,num do
               foe.Enemies[ak] = 
