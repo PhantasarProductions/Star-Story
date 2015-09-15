@@ -176,7 +176,7 @@ if ag=="Foe" then -- Foes should use "FAI" in stead.
    return
    end
 local ch = FighterTag(ag,ai)
-local lrncode = RPGChar.ListItem(ch,"LEARN",0)
+local lrncode = RPGChar.ListItem(ch,"LEARN",1)
 act.ItemCode="ABL_"..lrncode
 act.Item = ItemGet(act.ItemCode)
 ;(({  ["1A"] = function() act.TargetGroup="Hero"; act.TargetIndividual=ai end,

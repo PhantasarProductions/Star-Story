@@ -1,6 +1,6 @@
 --[[
   LearnSpellMessages.lua
-  Version: 15.09.15
+  Version: 15.09.16
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -49,8 +49,10 @@ learnspellmessages = {
       Briggs      = function() return "Briggs is not able to learn new abilities" end,
       Wendicka    = function()
                     local need = CVV("%WENDICKA.NEED") - CVV("%WENDICKA.DONE")
-                    if CVV("%WENDICKA.NEED")==0 then return end
-                    if need<=0 then return "Attack any enemy to learn a new spell" end
+                    -- if CVV("%WENDICKA.NEED")==0 then return end
+                    if RPGChar.ListHave("UniWendicka","WENDICKA_ELECTRICCHARGE") then return "" end
+                    if RPGChar.CountList("UniWendicka","LEARN")>0 then return "Attack any enemy to learn a new spell" end
+                    if need==1 then return "Peform one more spell to unlock a new one" end
                     return "Perform "..need.." spells to unlock a new one"
                     end,
       Crystal     = function() return "" end,              
