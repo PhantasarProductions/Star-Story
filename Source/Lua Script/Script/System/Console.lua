@@ -1,6 +1,6 @@
 --[[
   Console.lua
-  Version: 15.09.14
+  Version: 15.09.15
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -123,7 +123,11 @@ end
 
 function SAVE(file)
 if LAURA.GetFlow()~="FIELD" then return CWrite("? You can only save in the field!",255,0,180) end
-if (not file) or file=="" then return CSay("? Cannot save when you don't gimme a filename") end
+if (not file) or file=="" then
+    GotoSave()
+    CWrite("Leaving the console now will pop-up the save screen",0,180,255) 
+    return 
+    end
 local myfile=file
 local dir = mysplit(file,"/")
 if #dir==1 then myfile = "Debug/"..myfile; dir = mysplit(myfile,"/") end 
