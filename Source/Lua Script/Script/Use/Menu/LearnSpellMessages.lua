@@ -1,6 +1,6 @@
 --[[
   LearnSpellMessages.lua
-  Version: 15.09.11
+  Version: 15.09.15
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -44,7 +44,7 @@ end
 
 learnspellmessages = {
 
-      UniWendicka = function() return "Wendicka will be able to learn new abilities after this prologue" end,
+--    UniWendicka = function() return "Wendicka will be able to learn new abilities after this prologue" end,
       UniCrystal  = function() return "Crystal will be able to learn new abilities after this prologue" end,
       Briggs      = function() return "Briggs is not able to learn new abilities" end,
       Wendicka    = function()

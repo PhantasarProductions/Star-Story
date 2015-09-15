@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ITM_HEALINGCAPSULE.lua
+  ABL_WENDICKA_JOLT.lua
   (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
@@ -38,23 +38,23 @@ version: 15.09.15
 -- 15 Sep 2015; 23:11:27
 -- License: If stripped from any reference to the story line and its characters, this file becomes zLib
 	ret = {
-		["ABL_AP"] = 0,
-		["ABL_APCut"] = 0,
+		["ABL_AP"] = 40,
+		["ABL_APCut"] = 5000,
 		["ABL_Cancel"] = 0,
-		["ABL_DblPower"] = 0,
-		["ABL_DblSpeed"] = 0,
+		["ABL_DblPower"] = 100000,
+		["ABL_DblSpeed"] = 10000,
 		["ABL_Instant"] = 0,
-		["ABL_Speed"] = 0,
+		["ABL_Speed"] = 100,
 		["ARM_Hit%"] = 0,
 		["ARM_MaxAmmo"] = 0,
 		["ARM_Weight"] = 0,
 		["ARM_XPower"] = 0,
-		["ActSpeed"] = 195,
+		["ActSpeed"] = 300,
 		["AniIsEffectScript"] = false,
 		["AniScriptDefaultPath"] = true,
 		["AniScriptFile"] = "",
-		["AttackElement"] = "Non-Elemental",
-		["AttackPower"] = 0,
+		["AttackElement"] = "Thunder",
+		["AttackPower"] = 50,
 		["AttackStat"] = "Strength",
 		["CauseAmnesia"] = false,
 		["CauseBagLock"] = false,
@@ -77,20 +77,20 @@ version: 15.09.15
 		["CureSleep"] = false,
 		["CureTerrified"] = false,
 		["DefenseStat"] = "Defense",
-		["Description"] = "Heals 60 HP",
+		["Description"] = "Shock the enemies",
 		["EffectScriptDefaultPath"] = true,
 		["EffectScriptFile"] = "",
 		["EffectScriptFunction"] = "EFFECT_MAIN",
-		["Healing"] = 60,
+		["Healing"] = 0,
 		["HealingType"] = "Absolute",
-		["Icon"] = "GFX/Inventory/Capsule - Rood-Blauw.png",
+		["Icon"] = "GFX/Abilities/Lightning.png",
 		["ItemType"] = "Consumable",
-		["Name"] = "Healing Capsule",
+		["Name"] = "Jolt",
 		["PRICE_ARM_Hit%"] = 0,
 		["PRICE_ARM_MaxAmmo"] = 0,
 		["PRICE_ARM_XPower"] = 0,
-		["Target"] = "1A",
+		["Target"] = "AF",
 		["UseCombat"] = true,
-		["UseField"] = true}
+		["UseField"] = false}
 
 return ret

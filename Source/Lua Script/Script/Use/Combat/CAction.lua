@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 15.09.15
+  Version: 15.09.16
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -166,6 +166,35 @@ act.EAI = true
 ActionFuncs.EAI(ag,ai,act)
 end   
 
+function ActionFuncs.LRN(ag,ai,act)
+if ag=="Foe" then -- Foes should use "FAI" in stead.
+   MINI("Action skipped! Enemies cannot use player abilities",255,0,0)
+   MINI("This must be the result of a bug",255,0,0)
+   MINI("Please write an issue about it on",255,0,0)
+   MINI("https://github.com/Tricky1975/Star-Story/issues",0,180,255)
+   MINI("(Unless somebody already did)",255,0,0)
+   return
+   end
+local ch = FighterTag(ag,ai)
+local lrncode = RPGChar.ListItem(ch,"LEARN",0)
+act.ItemCode="ABL_"..lrncode
+act.Item = ItemGet(act.ItemCode)
+;(({  ["1A"] = function() act.TargetGroup="Hero"; act.TargetIndividual=ai end,
+      ["AA"] = function() act.TargetGroup="Hero"; end,
+      ["OS"] = function() act.TargetGroup="Hero"; act.TargetIndividual=ai end})[act.Item.Target] or function() end)()  
+act.EAI = true
+(XCharAbility[ch] or function() end)()
+MS.LoadNew("BOXTEXT","Script/SubRoutines/BoxText.lua")
+MS.Run("BOXTEXT","RemoveData","NEWABILITY")
+MS.Run("BOXTEXT","LoadData","GENERAL/COMBAT;NEWABILITY")
+SerialBoxText("NEWABILITY","NEWABILITY."..upper(ch),"Combat")
+ActionFuncs.EAI(ag,ai,act)
+RPGChar.RemList(ch,"LEARN",lrncode)
+RPGChar.AddList(ch,"ABL",lrncode)
+MINI(RPGChar.GetName(ch).." learned '"..act.Item.Name.."'",180,0,255)
+end   
+
+
 function ActionFuncs.ABL(ag,ai,act)
 if ag=="Foe" then -- Foes should use "FAI" in stead.
    MINI("Action skipped! Enemies cannot use player abilities",255,0,0)
@@ -180,12 +209,13 @@ local ap = RPGChar.Points(ch,"AP")
 if ap.Have<act.Item.ABL_AP then MINI("Action cancelled",255,0,0); MINI(RPGChar.GetName(ch).." does not have enough AP!",255,180,0) return end
 ap.Dec(act.Item.ABL_AP)  
 act.EAI = true
+(XCharAbility[ch] or function() end)()
 ActionFuncs.EAI(ag,ai,act)
 end   
 
 
 function ActionFuncs.FAI(ag,ai,act)
-if ag=="Hero" then -- Foes should use "FAI" in stead.
+if ag=="Hero" then -- Heroes should use ITM, ABL or ARM in stead.
    MINI("Action skipped! FAI is an enemy-only setting, not the playable characters!",255,0,0)
    MINI("This must be the result of a bug",255,0,0)
    MINI("Please write an issue about it on",255,0,0)

@@ -32,8 +32,12 @@
 1. Script/JINC/Foes/Reg/Cyborg Medic.lua
 1. Script/JINC/IAA/ABL_FOE_PHOTON.lua
 1. Script/JINC/IAA/ABL_FOE_TASER.lua
+1. Script/JINC/IAA/ABL_WENDICKA_ELECTRICCHARGE.lua
+1. Script/JINC/IAA/ABL_WENDICKA_JOLT.lua
+1. Script/JINC/IAA/ABL_WENDICKA_MJOLNIR.lua
 1. Script/JINC/IAA/ABL_WENDICKA_PROLOGUE_SHOCK.lua
 1. Script/JINC/IAA/ABL_WENDICKA_SHOCK.lua
+1. Script/JINC/IAA/ABL_WENDICKA_SHOCKTHERAPY.lua
 1. Script/JINC/IAA/ARM_DART.lua
 1. Script/JINC/IAA/ARM_HEALINGSPRAY.lua
 1. Script/JINC/IAA/ITM_ADHBANDAGE.lua
@@ -101,6 +105,7 @@
 1. Script/Use/Combat/Foe_AI/Default_AI.lua
 1. Script/Use/Combat/SpellAni/AAAAAAAAAAAAAAAAAAA.lua
 1. Script/Use/Combat/SpellAni/Shoot.lua
+1. Script/Use/Combat/XChar.lua
 1. Script/Use/Goto/GoToMenu.lua
 1. Script/Use/Goto/GoToSave.lua
 1. Script/Use/Linkers/AchieveLinker.lua
@@ -140,4 +145,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Tue 15 September 2015; 19:31:01 CET
+### Last updated: Wed 16 September 2015; 00:26:55 CET

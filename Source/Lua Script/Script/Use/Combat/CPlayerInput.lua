@@ -1,6 +1,6 @@
 --[[
   CPlayerInput.lua
-  Version: 15.09.15
+  Version: 15.09.16
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -191,7 +191,7 @@ InputItems = {
                  iact = Act.Hero[pos]
                  iact.Act = "ABL"
                  iact.ActSpeed = item.ActSpeed
-                 iact.ItemCode = item
+                 iact.ItemCode = CVV("$CHOSENABILITY")
                  iact.Item = item                 
                  SelectTarget.AblSelectTarget(item.Target,ch,pos)
                  end
@@ -349,7 +349,11 @@ if InputDone then
    Fighters.Hero[pos].Act = Act.Hero[pos]
    UseInputItems = nil
    PIA = nil
-   InputDone = False
+   InputDone = false
+   if (Act.Hero[pos].Act=="ATK" or Act.Hero[pos].Act=="SHT") and (RPGChar.CountList(tag,"LEARN")>0) then
+      Act.Hero[pos].Act = "LRN"
+      Act.Hero[pos].ActSpeed = 2500
+      end
    end
 end
 

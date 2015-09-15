@@ -1,8 +1,25 @@
 --[[
-  ABL_FOE_PHOTON.lua
+  ABL_WENDICKA_ELECTRICCHARGE.lua
+  Version: 15.09.15
+  Copyright (C) 2015 Jeroen Petrus Broks
   
-  version: 15.09.15
-  Copyright (C) 2015 Jeroen P. Broks
+  ===========================
+  This file is part of a project related to the Phantasar Chronicles or another
+  series or saga which is property of Jeroen P. Broks.
+  This means that it may contain references to a story-line plus characters
+  which are property of Jeroen Broks. These references may only be distributed
+  along with an unmodified version of the game. 
+  
+  As soon as you remove or replace ALL references to the storyline or character
+  references, or any termology specifically set up for the Phantasar universe,
+  or any other univers a story of Jeroen P. Broks is set up for,
+  the restrictions of this file are removed and will automatically become
+  zLib licensed (see below).
+  
+  Please note that doing so counts as a modification and must be marked as such
+  in accordance to the zLib license.
+  ===========================
+  zLib license terms:
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
   arising from the use of this software.
@@ -21,13 +38,13 @@
 -- 15 Sep 2015; 23:11:27
 -- License: If stripped from any reference to the story line and its characters, this file becomes zLib
 	ret = {
-		["ABL_AP"] = 0,
+		["ABL_AP"] = 200,
 		["ABL_APCut"] = 0,
 		["ABL_Cancel"] = 0,
 		["ABL_DblPower"] = 0,
 		["ABL_DblSpeed"] = 0,
 		["ABL_Instant"] = 0,
-		["ABL_Speed"] = 250,
+		["ABL_Speed"] = 50,
 		["ARM_Hit%"] = 0,
 		["ARM_MaxAmmo"] = 0,
 		["ARM_Weight"] = 0,
@@ -35,9 +52,9 @@
 		["ActSpeed"] = 250,
 		["AniIsEffectScript"] = false,
 		["AniScriptDefaultPath"] = true,
-		["AniScriptFile"] = "@COMBAT@ShootPhoton",
+		["AniScriptFile"] = "",
 		["AttackElement"] = "Non-Elemental",
-		["AttackPower"] = 100,
+		["AttackPower"] = 0,
 		["AttackStat"] = "Strength",
 		["CauseAmnesia"] = false,
 		["CauseBagLock"] = false,
@@ -60,7 +77,7 @@
 		["CureSleep"] = false,
 		["CureTerrified"] = false,
 		["DefenseStat"] = "Defense",
-		["Description"] = "",
+		["Description"] = "Charge up energy for Voltsunami",
 		["EffectScriptDefaultPath"] = true,
 		["EffectScriptFile"] = "",
 		["EffectScriptFunction"] = "EFFECT_MAIN",
@@ -68,11 +85,11 @@
 		["HealingType"] = "Absolute",
 		["Icon"] = "GFX/Abilities/Gun.png",
 		["ItemType"] = "Consumable",
-		["Name"] = "Photon Gun",
+		["Name"] = "Electric Charge",
 		["PRICE_ARM_Hit%"] = 0,
 		["PRICE_ARM_MaxAmmo"] = 0,
 		["PRICE_ARM_XPower"] = 0,
-		["Target"] = "1F",
+		["Target"] = "AF",
 		["UseCombat"] = true,
 		["UseField"] = true}
 
