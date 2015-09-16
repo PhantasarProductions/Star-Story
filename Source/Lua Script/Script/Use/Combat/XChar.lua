@@ -65,6 +65,42 @@ XCharAbility.UniWendicka = XCharAbility.Wendicka
     
 XCharLearnAbility = {
 
-    Wendicka = XCharAbility.Wendicka
+    Wendicka = XCharAbility.Wendicka,
+    UniWendicka = XCharAbility.Wendicka
   
   }    
+  
+  
+  
+function XCharKillCount() -- ExHuRU, Rolf, and Johnson share this one.
+inc("%KILLS.DONE")
+local done
+local indexes = {3840,1920,960,480,240,120,60,30}
+local spells = {
+                        [  30] = "YSKI",
+                        [  60] = "KAKSI",
+                        [ 120] = "BATTLECRY",
+                        [ 240] = "KOLME",
+                        [ 480] = "STOMP",
+                        [ 960] = "NELJA",
+                        [1920] = "KUUSI",
+                        [3840] = "COCENTRATE"
+                        }
+if RPGChar.ListHas("ExHuRU","EXHURU_"..spells[200])==1 then Award("ALLABL_EXHURU") end
+local i,a                        
+for i in each(indexes) do
+    a = "EXHURU_"..spells[i] -- Due to the linked interfact the others will copy it all the same. 
+    if i<=done then
+       if RPGChar.ListHas("ExHuRU","ABL",a)==0 and RPGChar.ListHas("ExHuRU","LEARN",a)==0 then RPGChar.AddList("ExHuRU","LEARN",a) return end
+       end
+    if i>done then Var.D("%KILLS.NEED",i) end   
+    end     
+end  
+
+XCharKill = {
+
+    ExHuRU  = XCharKillCount,
+    Rolf    = XCharKillCount,
+    Johnson = XCharKillCount
+
+}
