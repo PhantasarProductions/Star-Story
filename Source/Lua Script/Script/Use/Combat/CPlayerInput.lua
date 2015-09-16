@@ -221,7 +221,7 @@ InputItems = {
       Input = function(ch,pos)
               local item
               local iact
-              if CVV("%CHOSENITEM.SOCKET")==0 then GoToMenu(ch,"Items") 
+              if CVV("%CHOSENITEM.SOCKET")==0 then GoToMenu(ch,"Items") ; CSay("Go to items for ch >> "..sval(ch))
               elseif CVV("%CHOSENITEM.SOCKET")<0 then 
                      PIA=nil
                      Var.D("%CHOSENITEM.SOCKET",0) 

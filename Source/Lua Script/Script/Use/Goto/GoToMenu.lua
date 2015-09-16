@@ -1,6 +1,6 @@
 --[[
   GoToMenu.lua
-  Version: 15.09.09
+  Version: 15.09.16
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -35,7 +35,8 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 function GoToMenu(ch,page)
-MS.LN_Run("MENU","Script/Flow/Menu.lua","PointChar",ch)
+MS.LoadNew("MENU","Script/Flow/Menu.lua")
+MS.Run("MENU","PointChar",ch)
 MS.Run("MENU","SetReturnTo",LAURA.GetFlow())
 if page then MS.Run("MENU","PointPage",page) end
 LAURA.Flow("MENU")
