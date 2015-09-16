@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ARM_HEALINGSPRAY.lua
+  ABL_EXHURU_NELJA.lua
   (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
@@ -38,23 +38,23 @@ version: 15.09.16
 -- 16 Sep 2015; 14:13:04
 -- License: If stripped from any reference to the story line and its characters, this file becomes zLib
 	ret = {
-		["ABL_AP"] = 0,
-		["ABL_APCut"] = 0,
+		["ABL_AP"] = 100,
+		["ABL_APCut"] = 80000,
 		["ABL_Cancel"] = 0,
-		["ABL_DblPower"] = 0,
-		["ABL_DblSpeed"] = 0,
+		["ABL_DblPower"] = 40000,
+		["ABL_DblSpeed"] = 40000,
 		["ABL_Instant"] = 0,
-		["ABL_Speed"] = 100,
-		["ARM_Hit%"] = 90,
-		["ARM_MaxAmmo"] = 3,
+		["ABL_Speed"] = 50,
+		["ARM_Hit%"] = 0,
+		["ARM_MaxAmmo"] = 0,
 		["ARM_Weight"] = 0,
 		["ARM_XPower"] = 0,
-		["ActSpeed"] = 100,
+		["ActSpeed"] = 50,
 		["AniIsEffectScript"] = false,
 		["AniScriptDefaultPath"] = true,
 		["AniScriptFile"] = "",
-		["AttackElement"] = "Healing",
-		["AttackPower"] = 100,
+		["AttackElement"] = "Non-Elemental",
+		["AttackPower"] = 400,
 		["AttackStat"] = "Strength",
 		["CauseAmnesia"] = false,
 		["CauseBagLock"] = false,
@@ -77,19 +77,19 @@ version: 15.09.16
 		["CureSleep"] = false,
 		["CureTerrified"] = false,
 		["DefenseStat"] = "Defense",
-		["Description"] = "Heals an ally",
+		["Description"] = "Mesa gonna hurt you, very bad!",
 		["EffectScriptDefaultPath"] = true,
 		["EffectScriptFile"] = "",
 		["EffectScriptFunction"] = "EFFECT_MAIN",
 		["Healing"] = 0,
 		["HealingType"] = "Absolute",
-		["Icon"] = "GFX/Abilities/Gun.png",
-		["ItemType"] = "EquipItem",
-		["Name"] = "Healing spray",
-		["PRICE_ARM_Hit%"] = 100,
-		["PRICE_ARM_MaxAmmo"] = 800,
-		["PRICE_ARM_XPower"] = 1000,
-		["Target"] = "1A",
+		["Icon"] = "GFX/Abilities/Fist.png",
+		["ItemType"] = "Consumable",
+		["Name"] = "Nelja",
+		["PRICE_ARM_Hit%"] = 0,
+		["PRICE_ARM_MaxAmmo"] = 0,
+		["PRICE_ARM_XPower"] = 0,
+		["Target"] = "1F",
 		["UseCombat"] = true,
 		["UseField"] = true}
 

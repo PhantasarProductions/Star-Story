@@ -34,46 +34,12 @@
  
 version: 15.09.16
 ]]
-XCharAbility = {
 
-        Wendicka = function()
-                   inc("%WENDICKA.DONE")
-                   local done = CVV("%WENDICKA.DONE")
-                   local need = CVV("%WENDICKA.NEED") 
-                   local indexes = {200,90,30,15}
-                   local spells = {
-                        [15] = "JOLT",
-                        [30] = "SHOCKTHERAPY",
-                        [90] = "MJOLNIR",
-                        [200] = "ELECTRICCHARGE"
-                        }
-                   local i,a
-                   if RPGChar.ListHas("UniWendicka","WENDICKA_"..spells[200])==1 then Award("ALLABL_WENDICKA") end
-                   if done>200 then return end
-                   for i in each(indexes) do
-                       a = "WENDICKA_"..spells[i] 
-                       if i<=done then
-                          if RPGChar.ListHas("UniWendicka","ABL",a)==0 and RPGChar.ListHas("UniWendicka","LEARN",a)==0 then RPGChar.AddList("UniWendicka","LEARN",a) return end
-                          end
-                       if i>done then Var.D("%WENDICKA.NEED",i) end   
-                       end     
-                   end
-
-    }
-    
-XCharAbility.UniWendicka = XCharAbility.Wendicka
-    
-XCharLearnAbility = {
-
-    Wendicka = XCharAbility.Wendicka,
-    UniWendicka = XCharAbility.Wendicka
-  
-  }    
+-- Kills for ExHuRU (and his "representatives")  
   
   
-  
-function XCharKillCount() -- ExHuRU, Rolf, and Johnson share this one.
-inc("%KILLS.DONE")
+function XCharKillCount(DoNotCount) -- ExHuRU, Rolf, and Johnson share this one.
+if not DoNotCount then inc("%KILLS.DONE") end
 local done
 local indexes = {3840,1920,960,480,240,120,60,30}
 local spells = {
@@ -104,3 +70,47 @@ XCharKill = {
     Johnson = XCharKillCount
 
 }
+
+
+-- Abilities executed for Wendicka
+
+XCharAbility = {
+
+        Wendicka = function()
+                   inc("%WENDICKA.DONE")
+                   local done = CVV("%WENDICKA.DONE")
+                   local need = CVV("%WENDICKA.NEED") 
+                   local indexes = {200,90,30,15}
+                   local spells = {
+                        [15] = "JOLT",
+                        [30] = "SHOCKTHERAPY",
+                        [90] = "MJOLNIR",
+                        [200] = "ELECTRICCHARGE"
+                        }
+                   local i,a
+                   if RPGChar.ListHas("UniWendicka","WENDICKA_"..spells[200])==1 then Award("ALLABL_WENDICKA") end
+                   if done>200 then return end
+                   for i in each(indexes) do
+                       a = "WENDICKA_"..spells[i] 
+                       if i<=done then
+                          if RPGChar.ListHas("UniWendicka","ABL",a)==0 and RPGChar.ListHas("UniWendicka","LEARN",a)==0 then RPGChar.AddList("UniWendicka","LEARN",a) return end
+                          end
+                       if i>done then Var.D("%WENDICKA.NEED",i) end   
+                       end     
+                   end
+                   
+                   
+
+    }
+    
+XCharAbility.UniWendicka = XCharAbility.Wendicka
+    
+XCharLearnAbility = {
+
+    Wendicka = XCharAbility.Wendicka,
+    UniWendicka = XCharAbility.Wendicka,
+    ExHuRU = function() XCharKillCount(false) end,
+    Rolf = function() XCharKillCount(false) end,
+    Johnson = function() XCharKillCount(false) end
+  
+  }    

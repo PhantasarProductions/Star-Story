@@ -30,6 +30,14 @@
 1. Script/JINC/Foes/Reg/Cyborg Captain.lua
 1. Script/JINC/Foes/Reg/Cyborg Gunner.lua
 1. Script/JINC/Foes/Reg/Cyborg Medic.lua
+1. Script/JINC/IAA/ABL_EXHURU_BATTLECRY.lua
+1. Script/JINC/IAA/ABL_EXHURU_CONCENTRATE.lua
+1. Script/JINC/IAA/ABL_EXHURU_KAKSI.lua
+1. Script/JINC/IAA/ABL_EXHURU_KOLME.lua
+1. Script/JINC/IAA/ABL_EXHURU_KUUSI.lua
+1. Script/JINC/IAA/ABL_EXHURU_NELJA.lua
+1. Script/JINC/IAA/ABL_EXHURU_STOMP.lua
+1. Script/JINC/IAA/ABL_EXHURU_YKSI.lua
 1. Script/JINC/IAA/ABL_FOE_PHOTON.lua
 1. Script/JINC/IAA/ABL_FOE_TASER.lua
 1. Script/JINC/IAA/ABL_WENDICKA_ELECTRICCHARGE.lua
@@ -145,4 +153,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Wed 16 September 2015; 02:56:44 CET
+### Last updated: Wed 16 September 2015; 14:43:52 CET

@@ -1,6 +1,6 @@
 --[[
   Combat.lua
-  Version: 15.09.14
+  Version: 15.09.16
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -231,7 +231,9 @@ end
 
 function DefaultVictory()
 local i,v
-for i,v in pairs(Fighters.Foe) do return false end -- Return false only gets executed if an enemy exists, if it doesn't exist we got an entirely empty "for" loop as 'return false' will be called for zero times.
+for i,v in pairs(Fighters.Foe) do 
+    if RPGChar.Points(Fighters.Foe.Tag).Have>0 then return false end 
+    end -- Return false only gets executed if an enemy exists, if it doesn't exist we got an entirely empty "for" loop as 'return false' will be called for zero times.
 return true
 end
 

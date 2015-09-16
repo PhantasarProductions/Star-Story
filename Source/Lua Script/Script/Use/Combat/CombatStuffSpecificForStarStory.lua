@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.03
+version: 15.09.16
 ]]
 -- @IF IGNORE
 VicCheck = {}
@@ -138,6 +138,12 @@ if Fighters.Hero[gip] and Fighters.Hero[gip].Tag~="" and Fighters.Hero[gip].Tag~
    -- DBGSerialize(myfoe)
    GiveItem(Fighters.Hero[gip].Tag,myfoe.ItemDrop[gii].ITM,myfoe.ItemDrop[gii].VLT)
    end
+-- Count enemies for characters who gain something by that (front row only, he he)
+local ch
+for ak=0,2 do
+    ch = RPGChar.PartyTag(ak)
+    if XCharKill[ch] then XCharKill[ch]() end   
+    end
 -- Remove the enemy from memory           
 Fighters.Foe[idx] = nil
 if RPGChar.CharExists(myfoe.Tag)==1 then RPGStat.DelChar(myfoe.Tag) else CSay("!! WARNING !! Tried to destroy non-existent foe: "..myfoe.Tag) end
