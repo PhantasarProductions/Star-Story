@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 15.09.15
+  Version: 15.09.16
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -64,6 +64,10 @@ ChosenItem = {}
 function PointChar(chp)
 pcharn = Sys.Val(chp)
 pchar = RPGChar.PartyTag(pcharn)
+end
+
+function PointCharByName(ch)
+pchar = ch
 end
 
 function PointPage(v)

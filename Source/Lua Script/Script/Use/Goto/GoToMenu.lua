@@ -36,7 +36,8 @@
 ]]
 function GoToMenu(ch,page)
 MS.LoadNew("MENU","Script/Flow/Menu.lua")
-MS.Run("MENU","PointChar",ch)
+;({ ["string"] = function() MS.Run("MENU","PointCharByName",ch) end,
+    ["number"] = function() MS.Run("MENU","PointChar",ch) end})[type(ch)]() 
 MS.Run("MENU","SetReturnTo",LAURA.GetFlow())
 if page then MS.Run("MENU","PointPage",page) end
 LAURA.Flow("MENU")
