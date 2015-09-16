@@ -232,7 +232,7 @@ end
 function DefaultVictory()
 local i,v
 for i,v in pairs(Fighters.Foe) do 
-    if RPGChar.Points(v.Tag).Have>0 then return false end 
+    if RPGChar.Points(v.Tag,"HP").Have>0 then return false end 
     end -- Return false only gets executed if an enemy exists, if it doesn't exist we got an entirely empty "for" loop as 'return false' will be called for zero times.
 return true
 end
