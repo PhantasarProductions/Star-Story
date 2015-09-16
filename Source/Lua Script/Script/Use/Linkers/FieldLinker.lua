@@ -1,6 +1,6 @@
 --[[
   FieldLinker.lua
-  Version: 15.09.10
+  Version: 15.09.16
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -53,4 +53,12 @@ SetAutoScroll = SetAutoScroll or function(yes) MS.LN_Run("FIELD","Flow/Field.lua
 
 SetScrollBoundaries = SetScrollBoundaries or function(xmin,ymin,xmax,ymax)
 MS.LN_Run("FIELD","Flow/Field.Lua","SetScrollBoundaries",strval(xmin)..";"..strval(ymin)..";"..strval(xmax)..";"..strval(ymax))
+end
+
+PartyPop = PartyPop or function(prefix,wind)
+MS.LN_Run("FIELD","Flow/Field.Lua","PartyPop",prefix..";"..(wind or "North")) 
+end
+
+PartyUnPop = PartyUnPop or function() 
+MS.LN_Run("FIELD","Flow/Field.Lua","PartyUnPop") 
 end

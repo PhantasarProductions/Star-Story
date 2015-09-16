@@ -60,7 +60,7 @@ SpawnPlayer("Voordeur","North")
 end
 
 function SecretPassage()
-Actors.MoveToSpot("Secret_Wendicka")
+Actors.WalkToSpot("PLAYER","Secret_Wendicka")
 WalkWait()
 PartyPop("Secret")
 MapText("SECRET")
@@ -73,7 +73,7 @@ for ak=1,30 do
     end
 MapText("SECRET.2")  
 local ch
-for ch in each({"POP_Wendicka","POP_Crystal","POP_ExHuRU"}) do Actors.MoveTo("POP_"..ch,Actors.Actor("POP_"..ch).X,Actors.Actor("POP_"..ch).Y-200,1) end
+for ch in each({"POP_Wendicka","POP_Crystal","POP_ExHuRU"}) do Actors.MoveTo(ch,Actors.Actor(ch).X,Actors.Actor(ch).Y-200,1) end
 for ak=1,100 do
     DrawScreen()
     Flip()
@@ -96,5 +96,5 @@ ZA_Enter("Go Home",GoHome)
 ZA_Enter("ShowAllZones",function() MapShow("Galahad","Galahad2","Guinevere","Lancelot","Gawain") end)
 ZA_Enter("Guinevere",function() CharMapText("GUINEVERE") end)
 ZA_Enter("Lancelot",function() CharMapText("LANCELOT") end)
-ZA_Enter("Transpoter_Gawain",SecretPassage)
+ZA_Enter("Transporter_Gawain",SecretPassage)
 end
