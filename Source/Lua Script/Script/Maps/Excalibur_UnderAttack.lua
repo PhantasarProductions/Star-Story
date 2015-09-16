@@ -65,4 +65,6 @@ ZA_Enter("Check_Transporter_First",GoFurtherOrNot)
 ZA_Enter("BrokenTransporter",TransporterKaduuk)
 ZA_Enter("Go Home",GoHome)
 ZA_Enter("ShowAllZones",function() MapShow("Galahad","Galahad2","Guinevere","Lancelot","Gawain") end)
+ZA_Enter("Guinevere",function() CharMapText("GUINEVERE") end)
+ZA_Enter("Lancelot",function() CharMapText("LANCELOT") end)
 end
