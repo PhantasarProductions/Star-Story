@@ -135,7 +135,7 @@ for ak=0,5 do
     if ch~="" then
        hp = RPGChar.Points(ch,"HP")
        ap = RPGChar.Points(ch,"AP")
-       if skill>2 and (not dontresetap) then ap.Have=0 end
+       if skill>=2 and (not dontresetap) then ap.Have=0 end
        hp.Have = hp.Maximum
        end
     if ch=="Crystal" and (not dontresetap) then -- Reload all ARMS
