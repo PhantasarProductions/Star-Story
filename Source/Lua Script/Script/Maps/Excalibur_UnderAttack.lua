@@ -59,6 +59,35 @@ LoadMap("Excalibur_Home")
 SpawnPlayer("Voordeur","North")
 end
 
+function SecretPassage()
+Actors.MoveToSpot("Secret_Wendicka")
+WalkWait()
+PartyPop("Secret")
+MapText("SECRET")
+local ak
+for ak=1,30 do
+    Maps.Obj.Obj("Geheim_Links") .X = Maps.Obj.Obj("Geheim_Links") .X - 1
+    Maps.Obj.Obj("Geheim_Rechts").X = Maps.Obj.Obj("Geheim_Rechts").X + 1
+    DrawScreen()
+    Flip()
+    end
+MapText("SECRET.2")  
+local ch
+for ch in each({"POP_Wendicka","POP_Crystal","POP_ExHuRU"}) do Actors.MoveTo("POP_"..ch,Actors.Actor("POP_"..ch).X,Actors.Actor("POP_"..ch).Y-200,1) end
+for ak=1,100 do
+    DrawScreen()
+    Flip()
+    end
+for ak=1,30 do
+    Maps.Obj.Obj("Geheim_Links") .X = Maps.Obj.Obj("Geheim_Links") .X + 1
+    Maps.Obj.Obj("Geheim_Rechts").X = Maps.Obj.Obj("Geheim_Rechts").X - 1
+    DrawScreen()
+    Flip()
+    end    
+Sys.Error("Next section not yet scripted")    
+end
+
+
 function GALE_OnLoad()
 Music("Excalibur/Attacked.ogg")
 ZA_Enter("Check_Transporter_First",GoFurtherOrNot)
@@ -67,4 +96,5 @@ ZA_Enter("Go Home",GoHome)
 ZA_Enter("ShowAllZones",function() MapShow("Galahad","Galahad2","Guinevere","Lancelot","Gawain") end)
 ZA_Enter("Guinevere",function() CharMapText("GUINEVERE") end)
 ZA_Enter("Lancelot",function() CharMapText("LANCELOT") end)
+ZA_Enter("Transpoter_Gawain",SecretPassage)
 end

@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.09.15
+  Version: 15.09.16
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -51,6 +51,9 @@ IconClicked = nil
 
 Scheduled = {}
 ScrollBoundaries = ScrollBoundaries or {}
+
+-- This array is used by the party pop routine. If not in use it should always be "nil".
+PartyPopArray = nil
 
 IconFunction = 
 {
@@ -635,6 +638,7 @@ end
 
 function LoadMap(map)
 Loading()
+PartyPopArray = nil
 Maps.Load(map)
 SetUpFoes()
 SetUpTreasure()
@@ -643,6 +647,37 @@ ScrollBoundaries = {}
 Var.Clear("$MAP.MAPSHOW.LASTREQUEST")
 Var.Clear("$MAP.MAPSHOW.LASTALWAYSSHOW")
 end
+
+function PartyPop(TagPrefix,Wind)
+Actors.Actor("PLAYER").Visible = 0
+local ak,ch
+PartyPopArray = {}
+PartyPopArray.Actors = {}
+for ak=0,5 do
+    ch = RPGChar.PartyTag(ak)
+    if ch~="" then 
+       table.insert(PartyPopArray.Actors,ch)
+       Actors.Spawn("PLAYER","GFX/Actors/Player","POP_"..ch)
+       Actors.MoveToSpot("POP_"..ch,TagPrefix.."_"..ch)
+       Actors.ChoosePic("POP_"..ch,upper(ch).."."..upper(Wind or "North"))
+       end
+    end
+end
+
+function PartyUnPop()
+if not PartyPopArray then return end
+local ch
+for ch in each(PartyPopArray.Actors) do
+    Actors.MoveToSpot("POP_"..ch,"PLAYER")    
+    end
+WalkWait(PartyPopArray.Actors)    
+for ch in each(PartyPopArray.Actors) do
+    Maps.Obj.Kill("POP_"..ch)    
+    end
+Actors.Actor("PLAYER").Visible = 1    
+end
+
+
 
 function Termination()
 -- DarkText(INP.Terminate,10,10)
