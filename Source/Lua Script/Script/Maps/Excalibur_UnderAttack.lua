@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.15
+version: 15.09.16
 ]]
 function Morgue()
 MapText("MORGUE")
@@ -64,4 +64,5 @@ Music("Excalibur/Attacked.ogg")
 ZA_Enter("Check_Transporter_First",GoFurtherOrNot)
 ZA_Enter("BrokenTransporter",TransporterKaduuk)
 ZA_Enter("Go Home",GoHome)
+ZA_Enter("ShowAllZones",function() MapShow("Galahad","Galahad2","Guinevere","Lancelot","Gawain") end)
 end
