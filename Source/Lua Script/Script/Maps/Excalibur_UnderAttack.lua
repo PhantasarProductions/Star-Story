@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.16
+version: 15.09.17
 ]]
 function Morgue()
 MapText("MORGUE")
@@ -60,7 +60,8 @@ SpawnPlayer("Voordeur","North")
 end
 
 function SecretPassage()
-Actors.WalkToSpot("PLAYER","Secret_Wendicka")
+Actors.StopWalking("PLAYER")
+Actors.MoveToSpot("PLAYER","Secret_Wendicka",1)
 WalkWait()
 PartyPop("Secret")
 MapText("SECRET")
