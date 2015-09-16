@@ -43,7 +43,7 @@ if not DoNotCount then inc("%KILLS.DONE") end
 local done
 local indexes = {3840,1920,960,480,240,120,60,30}
 local spells = {
-                        [  30] = "YSKI",
+                        [  30] = "YKSI",
                         [  60] = "KAKSI",
                         [ 120] = "BATTLECRY",
                         [ 240] = "KOLME",
