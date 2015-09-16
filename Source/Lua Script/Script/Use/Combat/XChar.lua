@@ -52,7 +52,7 @@ local spells = {
                         [1920] = "KUUSI",
                         [3840] = "COCENTRATE"
                         }
-if RPGChar.ListHas("ExHuRU","EXHURU_"..spells[200])==1 then Award("ALLABL_EXHURU") end
+if RPGChar.ListHas("ExHuRU","EXHURU_"..spells[3840])==1 then Award("ALLABL_EXHURU") end
 local i,a                        
 for i in each(indexes) do
     a = "EXHURU_"..spells[i] -- Due to the linked interfact the others will copy it all the same. 
