@@ -68,6 +68,11 @@ end
 
 function PointCharByName(ch)
 pchar = ch
+pcharn=-1
+for ak=0,5 do 
+    if PGChar.PartyTag(ak)==ch then pcharn=ak end
+    end
+if pcharn<0 then Sys.Error("No chacter "..ch.." in the party") end
 end
 
 function PointPage(v)
