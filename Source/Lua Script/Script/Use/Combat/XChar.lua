@@ -108,10 +108,10 @@ XCharAbility.UniWendicka = XCharAbility.Wendicka
     
 XCharLearnAbility = {
 
-    Wendicka = XCharAbility.Wendicka,
-    UniWendicka = XCharAbility.Wendicka,
-    ExHuRU = function() XCharKillCount(false) end,
-    Rolf = function() XCharKillCount(false) end,
-    Johnson = function() XCharKillCount(false) end
+    Wendicka = function() XCharAbility.Wendicka(); RPGChar.Points("UniWendicka","EXP").Inc(2000) end,
+    UniWendicka = function() XCharAbility.Wendicka(); RPGChar.Points("UniWendicka","EXP").Inc(2000) end,
+    ExHuRU = function() XCharKillCount(false) RPGChar.Points("ExHuRU","EXP").Inc(1250) end,
+    Rolf = function() XCharKillCount(false) RPGChar.Points("ExHuRU","EXP").Inc(1250) end,
+    Johnson = function() XCharKillCount(false) RPGChar.Points("ExHuRU","EXP").Inc(1250) end
   
   }    
