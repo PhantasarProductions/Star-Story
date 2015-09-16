@@ -34,10 +34,11 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-function needkills()
+function needkills(name)
 local need = CVV("%KILLS.NEED") - CVV("%KILLS.DONE")
-if CVV("%KILLS.NEED")<=0 then return end
-if need==0 then return "Attack any enemy" end
+if CVV("%KILLS.NEED")<=0 then return "" end
+if need==0 then return "Attack any enemy while "..name.." is on front" end
+if RPGChar.CountList("UniWendicka","LEARN")>0 then return "Attack any enemy" end
 return "Perform "..need.." kills"
 end
 
@@ -49,7 +50,7 @@ learnspellmessages = {
       Briggs      = function() return "Briggs is not able to learn new abilities" end,
       Wendicka    = function()
                     local need = CVV("%WENDICKA.NEED") - CVV("%WENDICKA.DONE")
-                    -- if CVV("%WENDICKA.NEED")==0 then return end
+                    if CVV("%WENDICKA.NEED")==0 then return "" end
                     if RPGChar.ListHas("UniWendicka","WENDICKA_ELECTRICCHARGE")==1 then return "" end
                     if RPGChar.CountList("UniWendicka","LEARN")>0 then return "Attack any enemy to learn a new spell" end
                     if need==1 then return "Peform one more spell to unlock a new one" end
@@ -65,13 +66,13 @@ learnspellmessages = {
       Foxy        = function() return "???" end,
       Xenobi      = function()              
                     local need = CVV("%MONEY.NEED") - CVV("%MONEY.DONE")
-                    if CVV("%XENOBI.NEED")==0 then return end
+                    if CVV("%XENOBI.NEED")==0 then return "" end
                     if need<=0 then return "Attack any enemy" end
                     return "Gain "..need.." levels to learn a new spell"
                     end,
-      ExHuRU      = needkills,
-      Rolf        = needkills,
-      Johnson     = needkills              
+      ExHuRU      = function() return needkills("ExHuRU") end,
+      Rolf        = function() return needkills("Rolf") end,
+      Johnson     = function() return needkills("Admiral Johnson") end              
 
 }
 
