@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.14
+version: 15.09.16
 ]]
 
 function CLICK_ARRIVAL_Vlag_Brabant()
@@ -251,6 +251,7 @@ if not CVV("&DONE.PROLOGUE")      then Music("Scenario/Panic Stations.ogg")
 --elseif CVV("&DONE.EXHURU")        then Music("Scenario/Panic Stations.ogg")
 elseif CVV("&ATTACKED.EXCALIBUR") then Music("Excalibur/Attacked.ogg")
 else                                   Music("Scenario/Calm Indoors.ogg") end
+RecoverParty()
 ZA_Enter("Zone_CrystalHome",CrystalHome)
 ZA_Enter("Kamer_Wendicka" ,WendickaRoom)
 ZA_Enter("Kamer_Woonkamer",Woonkamer)

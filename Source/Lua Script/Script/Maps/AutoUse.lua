@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 15.09.14
+  version: 15.09.16
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -126,4 +126,25 @@ function CharMapText(Tag)
 local a = GetActive()
 local t = upper (Tag.."."..a)
 MapText(t)
+end
+
+function RecoverParty(dontresetap)
+local ak,ch,hp,ap,arm
+for ak=0,5 do
+    ch = RPGChar.PartyTag(ak)
+    if ch~="" then
+       hp = RPGChar.Points(ch,"HP")
+       ap = RPGChar.Points(ch,"AP")
+       if skill>2 and (not dontresetap) then ap.Have=0 end
+       hp.Have = hp.Maximum
+       end
+    if ch=="Crystal" and (not dontresetap) then -- Reload all ARMS
+       for arm in each(mysplit(RPGChar.PointsFields('Crystal'))) do
+           if prefixed(arm,"ARM.AMMO") then RPGChar.Points(ch,arm).Have = RPGChar.Points(ch,arm).Maximum end
+           end
+       end   
+    end
+end
+
+function RecoveryPad()
 end
