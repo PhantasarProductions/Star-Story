@@ -34,8 +34,23 @@
  
 version: 15.09.17
 ]]
+
+
+function Open_Exit() 
+if Done("&DONE.EXCALIBUR.HIDDEN.EXIT") then return end
+MapEXP()
+Actors.StopWalking("PLAYER")
+local i
+for i=0,30 do
+    Maps.Obj.Obj("Exit_Links" ).X = Maps.Obj.Obj("Exit_Links" ).X - 1
+    Maps.Obj.Obj("Exit_Rechts").X = Maps.Obj.Obj("Exit_Rechts").X + 1
+    DrawScreen(); Flip()
+    end
+end
+
 function GALE_OnLoad()
 Music('Dungeon/Spiedkiks_-_05_-_Freak_Boutique.ogg')
+ZA_Enter("Open_Exit",Open_Exit)
 end
 
 
@@ -45,7 +60,7 @@ for ak=0,10 do
     o = Maps.Obj.Obj("CLOUD"..ak)
     o.X = Maps.CamX
     o.Y = Maps.CamY
-    o.InsertX = (-o.X) * (ak/0.75)
-    o.InsertY = (-o.Y) * (ak/0.75)
+    o.InsertX = math.floor((-o.X) * (ak*0.075))
+    o.InsertY = math.floor((-o.Y) * (ak*0.075))
     end
 end
