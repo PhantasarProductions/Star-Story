@@ -30,6 +30,7 @@
 1. Script/JINC/Foes/Reg/Cyborg Captain.lua
 1. Script/JINC/Foes/Reg/Cyborg Gunner.lua
 1. Script/JINC/Foes/Reg/Cyborg Medic.lua
+1. Script/JINC/Foes/Reg/Rat.lua
 1. Script/JINC/IAA/ABL_EXHURU_BATTLECRY.lua
 1. Script/JINC/IAA/ABL_EXHURU_CONCENTRATE.lua
 1. Script/JINC/IAA/ABL_EXHURU_KAKSI.lua
@@ -155,4 +156,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Thu 17 September 2015; 17:46:36 CET
+### Last updated: Thu 17 September 2015; 19:17:27 CET

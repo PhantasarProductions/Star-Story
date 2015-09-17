@@ -37,3 +37,15 @@ version: 15.09.17
 function GALE_OnLoad()
 Music('Dungeon/Spiedkiks_-_05_-_Freak_Boutique.ogg')
 end
+
+
+function MAP_FLOW()
+local ak,o
+for ak=0,10 do
+    o = Maps.Obj.Obj("CLOUD"..ak)
+    o.X = Maps.CamX
+    o.Y = Maps.CamY
+    o.InsertX = (-o.X) * (ak/0.75)
+    o.InsertY = (-o.Y) * (ak/0.75)
+    end
+end
