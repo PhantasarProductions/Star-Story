@@ -49,6 +49,7 @@
 1. Script/JINC/IAA/ARM_DART.lua
 1. Script/JINC/IAA/ARM_HEALINGSPRAY.lua
 1. Script/JINC/IAA/ITM_ADHBANDAGE.lua
+1. Script/JINC/IAA/ITM_ANTIDOTE.lua
 1. Script/JINC/IAA/ITM_BANDAGE.lua
 1. Script/JINC/IAA/ITM_HEALINGCAPSULE.lua
 1. Script/JINC/IAA/ITM_KEY_YAQIRPA.lua
@@ -65,6 +66,7 @@
 1. Script/Maps/Excalibur_AllQuiet.lua
 1. Script/Maps/Excalibur_Home.lua
 1. Script/Maps/Excalibur_Kitchen.lua
+1. Script/Maps/Excalibur_SecretPassage.lua
 1. Script/Maps/Excalibur_Sickbay.lua
 1. Script/Maps/Excalibur_UnderAttack.lua
 1. Script/Maps/Prologue_Yaqirpa.lua
@@ -153,4 +155,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Thu 17 September 2015; 10:11:39 CET
+### Last updated: Thu 17 September 2015; 17:46:36 CET

@@ -85,7 +85,9 @@ for ak=1,30 do
     DrawScreen()
     Flip()
     end    
-Sys.Error("Next section not yet scripted")    
+LoadMap("Excalibur_SecretPassage")
+SpawnPlayer("Start","North")    
+--Sys.Error("Next section not yet scripted")    
 end
 
 

@@ -1,6 +1,6 @@
 --[[
   Maps.lua
-  Version: 15.09.14
+  Version: 15.09.17
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -71,7 +71,7 @@ function SpawnPlayer(spot,Wind,teleporteffect,Labels,Bundle)
 Actors.Spawn(spot,Bundle or "GFX/Actors/Player","PLAYER")
 Maps.CamX = Actors.PX("PLAYER")-400
 Maps.CamY = Actors.PY("PLAYER")-300
-if eleporteffect==true then
+if teleporteffect==true then
    Actors.ChoosePic("PLAYER","TELEPORT")
    Actors.Actor("PLAYER").NotInMotionThen0 = 0
    MapShow(Labels)

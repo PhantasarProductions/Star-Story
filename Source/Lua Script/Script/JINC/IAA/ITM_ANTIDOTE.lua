@@ -1,5 +1,5 @@
 --[[
-  ABL_FOE_TASER.lua
+  ITM_ANTIDOTE.lua
   Version: 15.09.17
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -53,8 +53,8 @@
 		["AniIsEffectScript"] = false,
 		["AniScriptDefaultPath"] = true,
 		["AniScriptFile"] = "",
-		["AttackElement"] = "Thunder",
-		["AttackPower"] = 100,
+		["AttackElement"] = "Non-Elemental",
+		["AttackPower"] = 0,
 		["AttackStat"] = "Strength",
 		["CauseAmnesia"] = false,
 		["CauseBagLock"] = false,
@@ -70,26 +70,26 @@
 		["CureConfusion"] = false,
 		["CureDeathFull"] = false,
 		["CureDeathOne"] = false,
-		["CureDisease"] = false,
+		["CureDisease"] = true,
 		["CureHandicapped"] = false,
 		["CureParalysis"] = false,
 		["CurePoison"] = false,
 		["CureSleep"] = false,
 		["CureTerrified"] = false,
 		["DefenseStat"] = "Defense",
-		["Description"] = "",
+		["Description"] = "Cures \"Poison\"",
 		["EffectScriptDefaultPath"] = true,
 		["EffectScriptFile"] = "",
 		["EffectScriptFunction"] = "EFFECT_MAIN",
 		["Healing"] = 0,
 		["HealingType"] = "Absolute",
-		["Icon"] = "GFX/Abilities/Gun.png",
+		["Icon"] = "GFX/Inventory/Green_tube.png",
 		["ItemType"] = "Consumable",
-		["Name"] = "Taser",
+		["Name"] = "Antidote",
 		["PRICE_ARM_Hit%"] = 0,
 		["PRICE_ARM_MaxAmmo"] = 0,
 		["PRICE_ARM_XPower"] = 0,
-		["Target"] = "1F",
+		["Target"] = "1A",
 		["UseCombat"] = true,
 		["UseField"] = true}
 
