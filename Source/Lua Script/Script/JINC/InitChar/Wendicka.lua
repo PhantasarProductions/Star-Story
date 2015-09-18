@@ -26,13 +26,8 @@
  **********************************************
 Wendicka.lua
 (c) 2015 Jeroen Petrus Broks
-Version: 15.09.11
-
-Sys.Error("Wendicka not yet ready")
-
-local f = loadstring(JCR6.LoadString("Script/JINC/InitChar/Share/Wendicka.lua")); f()
-]
-]] 
+Version: 15.09.18
+]]
 
 function mysplit(inputstr, sep) -- I had to copy this, as loadstring includes do not support the compiler directives of GALE.
         if sep == nil then
