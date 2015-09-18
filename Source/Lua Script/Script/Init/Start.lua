@@ -1,6 +1,6 @@
 --[[
   Start.lua
-  Version: 15.09.04
+  Version: 15.09.18
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -41,6 +41,7 @@ local stars = Image.Load("GFX/INTRO/STARFIELD.PNG")
 local sound
 local channel = "LovejoyChannel"
 local y = 0.5
+Done("&SYS.ABLPOWERUPFIXED") -- In a new game everything should be in order from the start (though this will require a test later).
 repeat
 INP.Grab()
 y = y - .05

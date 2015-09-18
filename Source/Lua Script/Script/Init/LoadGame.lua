@@ -1,6 +1,6 @@
 --[[
   LoadGame.lua
-  Version: 15.09.05
+  Version: 15.09.18
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -34,6 +34,18 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
+
+function FixAblPowerup()
+-- This function came to be because the implementation of ABL powerups rendered old savegames unusable
+-- I already had too much at the time to fix them all manually so that's why this routine came to be.
+if Done("&SYS.ABLPOWERUPFIXED") then return end -- If fixed before, let's not fix it again!
+local ch
+for ch in each ( mysplit(RPGChar.CharList())) do
+    if RPGChar.ListExist(ch,"ABL_POWERUP")==0 then RPGChar.CreateList(ch,"ABL_POWERUP") end
+    end
+if RPGChar.CharExists("Wendicka") then RPGChar.LinkList("UniWendicka","Wendicka","ABL_POWERUP") end    
+end
+
 function LoadGame()
 Console.Write("Anything to do, after loading the game?")
 LoadFlowsScripts()
@@ -41,4 +53,5 @@ LoadBaseGraphics()
 MS.LN_Run("FIELD","Script/Flow/Field.lua","PlaceTreasures")
 MS.Run("FIELD","SetUpAutoClickables")
 RedoMapShow()
+FixAblPowerup()
 end

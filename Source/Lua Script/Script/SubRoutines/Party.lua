@@ -104,6 +104,7 @@ RPGChar.Points(ch,"AMMO").Have = RPGChar.Points(ch,"AMMO").Maximum
 RPGChar.SetData(ch,'ABLTYPE',"ABL")
 -- Create spell list
 RPGChar.CreateList(ch,"ABL")    
+RPGChar.CreateList(ch,"ABL_POWERUP")
 -- Elemental Resistance
 for _,element in ipairs({"Fire","Wind","Water","Earth","Light","Dark","Lightning","Frost"}) do
    CSay("Standard setup element: "..element) 

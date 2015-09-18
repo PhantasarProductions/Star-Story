@@ -211,6 +211,9 @@ ap.Dec(act.Item.ABL_AP)
 act.EAI = true
 (XCharAbility[ch] or function() end)()
 ActionFuncs.EAI(ag,ai,act)
+local uch = ch
+if uch=="UniWendicka" then uch="Wendicka" end
+Inc("%ABL.USED."..upper(uch).."."..upper(act.ItemCode))
 end   
 
 
