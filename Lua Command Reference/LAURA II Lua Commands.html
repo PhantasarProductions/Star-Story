@@ -1,0 +1,1451 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html><html lang="English" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">  <head>    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />    <title>Lua Commands you can use for making a game in LAURA II</title>    <meta name="author" content="Jeroen &quot;Tricky&quot; Broks" />    <style>    body{      background-image: url("Back.jpg");        background-color: black;        color: #ffffff    }      a{        color: #99ff99;        text-decoration: none;      }      a:hover{        color: #bbffbb;        text-decoration: overline underline;      }     .code          {          color: #00ff00;          background-color: #005500;        }     .info          {          color: #ccffcc;          background-color: #003800;        }     .head          {          color: #ffffff;          background-color: #006600;        }    </style>  <!-- Hmm, from here the jEdit syntax highlighter doesn't work too well any more. Oh well -->    </head>  <body>    <img src='witch.png' style='float:left'>    <p>Hi folks;</p>    <p>This is a quick command overview of all the commands the LAURA II engine and      its supportive engine GALE provide to create or modify games in the LAURA II engine.<br />      You cannot use pre-compiled Lua scripts, you'll have to provide Lua source      only (LAURA II (or rather GALE) just doesn't support it).</p>    <p>Now I take it that you know how Lua works. So I won't go into the deep of      that, and if you don't then just google around for some good tutorials      about Lua. Here I only list the stuff that LAURA II and GALE add to Lua in order to      enable you to create an RPG or Zelda-inspired adventure in LAURA II<br />    </p>    <br />    <center>      <table width="90%">        <tr valign="top">          <td width="400">            <div width="100%" style="height:600pt; overflow-y: auto">              <h2>*</h2><a href='#*DEVELOPMENT'>*DEVELOPMENT</a><br><h2>A</h2><a href='#Actors'>Actors</a><br><a href='#Actors.ChoosePic'>Actors.ChoosePic</a><br><a href='#Actors.CountMoving'>Actors.CountMoving</a><br><a href='#Actors.CountWalking'>Actors.CountWalking</a><br><a href='#Actors.MoveTo'>Actors.MoveTo</a><br><a href='#Actors.MoveToSpot'>Actors.MoveToSpot</a><br><a href='#Actors.PWind'>Actors.PWind</a><br><a href='#Actors.PX'>Actors.PX</a><br><a href='#Actors.PY'>Actors.PY</a><br><a href='#Actors.Pick'>Actors.Pick</a><br><a href='#Actors.RenewActor'>Actors.RenewActor</a><br><a href='#Actors.Spawn'>Actors.Spawn</a><br><a href='#Actors.StopMoving'>Actors.StopMoving</a><br><a href='#Actors.StopWalking'>Actors.StopWalking</a><br><a href='#Actors.WalkTo'>Actors.WalkTo</a><br><a href='#Actors.WalkToSpot'>Actors.WalkToSpot</a><br><a href='#Actors.Walking'>Actors.Walking</a><br><a href='#Audio'>Audio</a><br><a href='#Audio.Crash'>Audio.Crash</a><br><a href='#Audio.Free'>Audio.Free</a><br><a href='#Audio.FreeChannel'>Audio.FreeChannel</a><br><a href='#Audio.Load'>Audio.Load</a><br><a href='#Audio.LoadLoop'>Audio.LoadLoop</a><br><a href='#Audio.LoadX'>Audio.LoadX</a><br><a href='#Audio.Play'>Audio.Play</a><br><a href='#Audio.Playing'>Audio.Playing</a><br><a href='#Audio.QuickSound'>Audio.QuickSound</a><br><a href='#Audio.Stop'>Audio.Stop</a><br><h2>B</h2><a href='#BlopPlasma'>BlopPlasma</a><br><a href='#BlopPlasma.Draw'>BlopPlasma.Draw</a><br><a href='#BlopPlasma.DrawCol'>BlopPlasma.DrawCol</a><br><a href='#BlopPlasma.InitBlopPlasma'>BlopPlasma.InitBlopPlasma</a><br><a href='#BlopPlasma.NewBlopPlasma'>BlopPlasma.NewBlopPlasma</a><br><h2>C</h2><a href='#CASE'>CASE</a><br><a href='#Console'>Console</a><br><a href='#Console.Flip'>Console.Flip</a><br><a href='#Console.Print'>Console.Print</a><br><a href='#Console.Show'>Console.Show</a><br><a href='#Console.Write'>Console.Write</a><br><h2>D</h2><a href='#DEFAULT'>DEFAULT</a><br><a href='#DEFINE'>DEFINE</a><br><a href='#Dir'>Dir</a><br><a href='#Dir.DirEntry'>Dir.DirEntry</a><br><a href='#Dir.DirExists'>Dir.DirExists</a><br><a href='#Dir.DirLen'>Dir.DirLen</a><br><a href='#Dir.GetDir'>Dir.GetDir</a><br><a href='#Dir.GetTree'>Dir.GetTree</a><br><h2>E</h2><a href='#ELSEIF'>ELSEIF</a><br><a href='#ENDIF'>ENDIF</a><br><a href='#ENDSELECT'>ENDSELECT</a><br><h2>F</h2><a href='#FI'>FI</a><br><h2>G</h2><a href='#GALE_ prefix'>GALE_ prefix</a><br><a href='#GALE_OnLoad() function'>GALE_OnLoad() function</a><br><a href='#GALE_OnUnload() function'>GALE_OnUnload() function</a><br><h2>I</h2><a href='#IF'>IF</a><br><a href='#INP'>INP</a><br><a href='#INP.Autograb'>INP.Autograb</a><br><a href='#INP.Grab'>INP.Grab</a><br><a href='#INP.IncMouse'>INP.IncMouse</a><br><a href='#INP.JoyD'>INP.JoyD</a><br><a href='#INP.JoyX'>INP.JoyX</a><br><a href='#INP.JoyY'>INP.JoyY</a><br><a href='#INP.KeyD'>INP.KeyD</a><br><a href='#INP.KeyH'>INP.KeyH</a><br><a href='#INP.MouseD'>INP.MouseD</a><br><a href='#INP.MouseH'>INP.MouseH</a><br><a href='#INP.MouseHide'>INP.MouseHide</a><br><a href='#INP.MouseShow'>INP.MouseShow</a><br><a href='#INP.MouseX'>INP.MouseX</a><br><a href='#INP.MouseY'>INP.MouseY</a><br><a href='#INP.MoveMouse'>INP.MoveMouse</a><br><a href='#INP.Terminate'>INP.Terminate</a><br><a href='#Image'>Image</a><br><a href='#Image.Assign'>Image.Assign</a><br><a href='#Image.AssignLoad'>Image.AssignLoad</a><br><a href='#Image.Blend'>Image.Blend</a><br><a href='#Image.CFont'>Image.CFont</a><br><a href='#Image.Circle'>Image.Circle</a><br><a href='#Image.Cls'>Image.Cls</a><br><a href='#Image.Color'>Image.Color</a><br><a href='#Image.ColorHSV'>Image.ColorHSV</a><br><a href='#Image.DText'>Image.DText</a><br><a href='#Image.DontUseSpecial'>Image.DontUseSpecial</a><br><a href='#Image.Draw'>Image.Draw</a><br><a href='#Image.Exist'>Image.Exist</a><br><a href='#Image.Flip'>Image.Flip</a><br><a href='#Image.Font'>Image.Font</a><br><a href='#Image.Free'>Image.Free</a><br><a href='#Image.GrabScreen'>Image.GrabScreen</a><br><a href='#Image.Hot'>Image.Hot</a><br><a href='#Image.HotCenter'>Image.HotCenter</a><br><a href='#Image.Image2Anim'>Image.Image2Anim</a><br><a href='#Image.Line'>Image.Line</a><br><a href='#Image.Load'>Image.Load</a><br><a href='#Image.LoadAnim'>Image.LoadAnim</a><br><a href='#Image.LoadNew'>Image.LoadNew</a><br><a href='#Image.Loaded'>Image.Loaded</a><br><a href='#Image.Negative'>Image.Negative</a><br><a href='#Image.NoFont'>Image.NoFont</a><br><a href='#Image.NoFontIsConsoleFont'>Image.NoFontIsConsoleFont</a><br><a href='#Image.Origin'>Image.Origin</a><br><a href='#Image.Rect'>Image.Rect</a><br><a href='#Image.Rotate'>Image.Rotate</a><br><a href='#Image.Scale'>Image.Scale</a><br><a href='#Image.ScalePC'>Image.ScalePC</a><br><a href='#Image.SetAlpha'>Image.SetAlpha</a><br><a href='#Image.SetAlphaBlend'>Image.SetAlphaBlend</a><br><a href='#Image.SetAlphaPC'>Image.SetAlphaPC</a><br><a href='#Image.SetBlend'>Image.SetBlend</a><br><a href='#Image.Show'>Image.Show</a><br><a href='#Image.Text'>Image.Text</a><br><a href='#Image.TextHeight'>Image.TextHeight</a><br><a href='#Image.TextWidth'>Image.TextWidth</a><br><a href='#Image.Tile'>Image.Tile</a><br><a href='#Image.Viewport'>Image.Viewport</a><br><h2>J</h2><a href='#JCR6'>JCR6</a><br><a href='#JCR6.Close'>JCR6.Close</a><br><a href='#JCR6.DirTable'>JCR6.DirTable</a><br><a href='#JCR6.Eof'>JCR6.Eof</a><br><a href='#JCR6.Exists'>JCR6.Exists</a><br><a href='#JCR6.LoadString'>JCR6.LoadString</a><br><a href='#JCR6.ReadB'>JCR6.ReadB</a><br><a href='#JCR6.ReadD'>JCR6.ReadD</a><br><a href='#JCR6.ReadF'>JCR6.ReadF</a><br><a href='#JCR6.ReadFile'>JCR6.ReadFile</a><br><a href='#JCR6.ReadI'>JCR6.ReadI</a><br><a href='#JCR6.ReadL'>JCR6.ReadL</a><br><a href='#JCR6.ReadLn'>JCR6.ReadLn</a><br><a href='#JCR6.ReadNullStr'>JCR6.ReadNullStr</a><br><a href='#JCR6.ReadStr'>JCR6.ReadStr</a><br><h2>L</h2><a href='#LAURA'>LAURA</a><br><a href='#LAURA.AutoINP'>LAURA.AutoINP</a><br><a href='#LAURA.ConsoleInput'>LAURA.ConsoleInput</a><br><a href='#LAURA.Flow'>LAURA.Flow</a><br><a href='#LAURA.GetFlow'>LAURA.GetFlow</a><br><a href='#LAURA.GetSaveDir'>LAURA.GetSaveDir</a><br><a href='#LAURA.KillSaveGame'>LAURA.KillSaveGame</a><br><a href='#LAURA.Save'>LAURA.Save</a><br><a href='#LAURA.Terminate'>LAURA.Terminate</a><br><a href='#LAURA.TerminateBye'>LAURA.TerminateBye</a><br><a href='#LAURA.ToggleFullScreen'>LAURA.ToggleFullScreen</a><br><a href='#LAURA.User'>LAURA.User</a><br><h2>M</h2><a href='#MS'>MS</a><br><a href='#MS.AddBye'>MS.AddBye</a><br><a href='#MS.ContainsScript'>MS.ContainsScript</a><br><a href='#MS.Destroy'>MS.Destroy</a><br><a href='#MS.LN_Run'>MS.LN_Run</a><br><a href='#MS.Load'>MS.Load</a><br><a href='#MS.LoadNew'>MS.LoadNew</a><br><a href='#MS.Run'>MS.Run</a><br><a href='#MS.Update'>MS.Update</a><br><a href='#Maps'>Maps</a><br><a href='#Maps.ActorInZone'>Maps.ActorInZone</a><br><a href='#Maps.CamX'>Maps.CamX</a><br><a href='#Maps.CamY'>Maps.CamY</a><br><a href='#Maps.CodeName'>Maps.CodeName</a><br><a href='#Maps.CoordsInObject'>Maps.CoordsInObject</a><br><a href='#Maps.CreateObstacle'>Maps.CreateObstacle</a><br><a href='#Maps.DebugBlockMap'>Maps.DebugBlockMap</a><br><a href='#Maps.Draw'>Maps.Draw</a><br><a href='#Maps.GetData'>Maps.GetData</a><br><a href='#Maps.HideLabels'>Maps.HideLabels</a><br><a href='#Maps.HideObject'>Maps.HideObject</a><br><a href='#Maps.Load'>Maps.Load</a><br><a href='#Maps.Obj'>Maps.Obj</a><br><a href='#Maps.Obj.Exists'>Maps.Obj.Exists</a><br><a href='#Maps.Obj.Kill'>Maps.Obj.Kill</a><br><a href='#Maps.Obj.MyObject:TKthuraObject'>Maps.Obj.MyObject:TKthuraObject</a><br><a href='#Maps.Obj.Obj'>Maps.Obj.Obj</a><br><a href='#Maps.Obj.PickCurrentActor'>Maps.Obj.PickCurrentActor</a><br><a href='#Maps.Obj.PickListedObject'>Maps.Obj.PickListedObject</a><br><a href='#Maps.Obj.Seal'>Maps.Obj.Seal</a><br><a href='#Maps.Obj.SetColor'>Maps.Obj.SetColor</a><br><a href='#Maps.Obj.X'>Maps.Obj.X</a><br><a href='#Maps.Obj.Y'>Maps.Obj.Y</a><br><a href='#Maps.ObjectList'>Maps.ObjectList</a><br><a href='#Maps.ObjectList.CurrentPick'>Maps.ObjectList.CurrentPick</a><br><a href='#Maps.ObjectList.GotList'>Maps.ObjectList.GotList</a><br><a href='#Maps.ObjectList.GotPick'>Maps.ObjectList.GotPick</a><br><a href='#Maps.ObjectList.Pick'>Maps.ObjectList.Pick</a><br><a href='#Maps.ObjectList.Start'>Maps.ObjectList.Start</a><br><a href='#Maps.ObjectList.ToScript'>Maps.ObjectList.ToScript</a><br><a href='#Maps.ObjectList.X'>Maps.ObjectList.X</a><br><a href='#Maps.ObjectList.Y'>Maps.ObjectList.Y</a><br><a href='#Maps.PermaKill'>Maps.PermaKill</a><br><a href='#Maps.PermaWrite'>Maps.PermaWrite</a><br><a href='#Maps.Remap'>Maps.Remap</a><br><a href='#Maps.SetData'>Maps.SetData</a><br><a href='#Maps.ShowLabel'>Maps.ShowLabel</a><br><a href='#Maps.ShowObject'>Maps.ShowObject</a><br><a href='#Maps.ShowOnlyLabel'>Maps.ShowOnlyLabel</a><br><a href='#Math'>Math</a><br><a href='#Math.AlwaysPos'>Math.AlwaysPos</a><br><a href='#Math.Cos'>Math.Cos</a><br><a href='#Math.Dist2D'>Math.Dist2D</a><br><a href='#Math.Dist3D'>Math.Dist3D</a><br><a href='#Math.Rand'>Math.Rand</a><br><a href='#Math.Sin'>Math.Sin</a><br><a href='#Math.Tan'>Math.Tan</a><br><a href='#Math.TanCrash'>Math.TanCrash</a><br><h2>P</h2><a href='#Preset Definitions'>Preset Definitions</a><br><h2>R</h2><a href='#RPGChar'>RPGChar</a><br><a href='#RPGChar.AddList'>RPGChar.AddList</a><br><a href='#RPGChar.CharByNum'>RPGChar.CharByNum</a><br><a href='#RPGChar.CharExists'>RPGChar.CharExists</a><br><a href='#RPGChar.CharList'>RPGChar.CharList</a><br><a href='#RPGChar.ClearList'>RPGChar.ClearList</a><br><a href='#RPGChar.ClearParty'>RPGChar.ClearParty</a><br><a href='#RPGChar.CountChars'>RPGChar.CountChars</a><br><a href='#RPGChar.CountList'>RPGChar.CountList</a><br><a href='#RPGChar.CreateChar'>RPGChar.CreateChar</a><br><a href='#RPGChar.CreateList'>RPGChar.CreateList</a><br><a href='#RPGChar.DataFields'>RPGChar.DataFields</a><br><a href='#RPGChar.DecStat'>RPGChar.DecStat</a><br><a href='#RPGChar.DefStat'>RPGChar.DefStat</a><br><a href='#RPGChar.DelChar'>RPGChar.DelChar</a><br><a href='#RPGChar.DelCharacter'>RPGChar.DelCharacter</a><br><a href='#RPGChar.DelData'>RPGChar.DelData</a><br><a href='#RPGChar.DelStat'>RPGChar.DelStat</a><br><a href='#RPGChar.DestroyList'>RPGChar.DestroyList</a><br><a href='#RPGChar.GetData'>RPGChar.GetData</a><br><a href='#RPGChar.GetName'>RPGChar.GetName</a><br><a href='#RPGChar.IncStat'>RPGChar.IncStat</a><br><a href='#RPGChar.LinkData'>RPGChar.LinkData</a><br><a href='#RPGChar.LinkList'>RPGChar.LinkList</a><br><a href='#RPGChar.LinkPoints'>RPGChar.LinkPoints</a><br><a href='#RPGChar.LinkStat'>RPGChar.LinkStat</a><br><a href='#RPGChar.ListChars'>RPGChar.ListChars</a><br><a href='#RPGChar.ListExist'>RPGChar.ListExist</a><br><a href='#RPGChar.ListFields'>RPGChar.ListFields</a><br><a href='#RPGChar.ListHas'>RPGChar.ListHas</a><br><a href='#RPGChar.ListItem'>RPGChar.ListItem</a><br><a href='#RPGChar.ModStat'>RPGChar.ModStat</a><br><a href='#RPGChar.NewData'>RPGChar.NewData</a><br><a href='#RPGChar.NewParty'>RPGChar.NewParty</a><br><a href='#RPGChar.NewStat'>RPGChar.NewStat</a><br><a href='#RPGChar.PartyTag'>RPGChar.PartyTag</a><br><a href='#RPGChar.Points'>RPGChar.Points</a><br><a href='#RPGChar.PointsFields'>RPGChar.PointsFields</a><br><a href='#RPGChar.Portrait'>RPGChar.Portrait</a><br><a href='#RPGChar.RemList'>RPGChar.RemList</a><br><a href='#RPGChar.RemoveFromParty'>RPGChar.RemoveFromParty</a><br><a href='#RPGChar.ScriptStat'>RPGChar.ScriptStat</a><br><a href='#RPGChar.SetData'>RPGChar.SetData</a><br><a href='#RPGChar.SetName'>RPGChar.SetName</a><br><a href='#RPGChar.SetParty'>RPGChar.SetParty</a><br><a href='#RPGChar.SetStat'>RPGChar.SetStat</a><br><a href='#RPGChar.Stat'>RPGChar.Stat</a><br><a href='#RPGChar.StatExists'>RPGChar.StatExists</a><br><a href='#RPGChar.StatFields'>RPGChar.StatFields</a><br><a href='#RPGChar.ValueList'>RPGChar.ValueList</a><br><h2>S</h2><a href='#SELECT'>SELECT</a><br><a href='#Shell'>Shell</a><br><a href='#Shell.Shell'>Shell.Shell</a><br><a href='#Str'>Str</a><br><a href='#Str.ASCII'>Str.ASCII</a><br><a href='#Str.BackSpace'>Str.BackSpace</a><br><a href='#Str.Char'>Str.Char</a><br><a href='#Str.FirstUpper'>Str.FirstUpper</a><br><a href='#Str.Left'>Str.Left</a><br><a href='#Str.Length'>Str.Length</a><br><a href='#Str.Lower'>Str.Lower</a><br><a href='#Str.Mid'>Str.Mid</a><br><a href='#Str.Prefixed'>Str.Prefixed</a><br><a href='#Str.Replace'>Str.Replace</a><br><a href='#Str.Right'>Str.Right</a><br><a href='#Str.Suffixed'>Str.Suffixed</a><br><a href='#Str.Trim'>Str.Trim</a><br><a href='#Str.Upper'>Str.Upper</a><br><a href='#Sys'>Sys</a><br><a href='#Sys.AddByeScript'>Sys.AddByeScript</a><br><a href='#Sys.Alert'>Sys.Alert</a><br><a href='#Sys.Bye'>Sys.Bye</a><br><a href='#Sys.Error'>Sys.Error</a><br><a href='#Sys.ErrorFound'>Sys.ErrorFound</a><br><a href='#Sys.RequestTerminate'>Sys.RequestTerminate</a><br><a href='#Sys.Sure'>Sys.Sure</a><br><a href='#Sys.TerminateWhenRequested'>Sys.TerminateWhenRequested</a><br><a href='#Sys.Val'>Sys.Val</a><br><h2>T</h2><a href='#Time'>Time</a><br><a href='#Time.Date'>Time.Date</a><br><a href='#Time.MSecs'>Time.MSecs</a><br><a href='#Time.Sleep'>Time.Sleep</a><br><a href='#Time.Time'>Time.Time</a><br><h2>U</h2><a href='#UNDEF'>UNDEF</a><br><a href='#USE'>USE</a><br><a href='#USEDIR'>USEDIR</a><br><h2>V</h2><a href='#Var'>Var</a><br><a href='#Var.C'>Var.C</a><br><a href='#Var.Clear'>Var.Clear</a><br><a href='#Var.ClearAll'>Var.ClearAll</a><br><a href='#Var.Count'>Var.Count</a><br><a href='#Var.D'>Var.D</a><br><a href='#Var.Got'>Var.Got</a><br><a href='#Var.Key'>Var.Key</a><br><a href='#Var.S'>Var.S</a><br> </div>          </td>          <td>            <div width="100%" style="background-color:#001100; height:600pt; overflow-y: auto">              <a id='*DEVELOPMENT' name='*DEVELOPMENT'></a><h1>*DEVELOPMENT</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>*DEVELOPMENT</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Compiler Directive</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>-- @*DEVELOPMENT</td></tr>
+</table><p> Compiler directive. If set it means you are running the Development version. The pre-processor can react to this if you use the -- @IF directive.
+</p><hr><a id='Actors' name='Actors'></a><h1>Actors</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Actors</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Object</td></tr>
+</table><p>A collection of functions needed to work with actors.</p><hr><a id='Actors.ChoosePic' name='Actors.ChoosePic'></a><h1>Actors.ChoosePic</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Actors.ChoosePic</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Actors.ChoosePic(Tag,Pic)</td></tr>
+</table><p> Will select a picture in a PicBundle Actor
+</p><hr><a id='Actors.CountMoving' name='Actors.CountMoving'></a><h1>Actors.CountMoving</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Actors.CountMoving</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Actors.CountMoving()</td></tr>
+</table><p> Returns the number of moving actors (Actors set on the move with both WalkTo or MoveTo will be counted).
+</p><hr><a id='Actors.CountWalking' name='Actors.CountWalking'></a><h1>Actors.CountWalking</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Actors.CountWalking</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Actors.CountWalking()</td></tr>
+</table><p> Returns the number of walking actors.
+</p><hr><a id='Actors.MoveTo' name='Actors.MoveTo'></a><h1>Actors.MoveTo</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Actors.MoveTo</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Actors.MoveTo(Tag,X,Y,IgnoreBlock)</td></tr>
+</table><p> Tries to move the character to the destination. Contrary to 'WalkTo' this routine does not use a pathfinder, and will cause the character to stop as soon as an obstacle is in the way (unless IngoreBlock is set to 1, then the character will ignore obstacles). This routine also supports a more precize position to move to, due to it and it also doesn't eat so much memory (like WalkTo does).
+</p><hr><a id='Actors.MoveToSpot' name='Actors.MoveToSpot'></a><h1>Actors.MoveToSpot</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Actors.MoveToSpot</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Actors.MoveToSpot(ActorTag,Spot,IgnoreBlock=0)</td></tr>
+</table><p> Moves character to a spot
+</p><hr><a id='Actors.PWind' name='Actors.PWind'></a><h1>Actors.PWind</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Actors.PWind</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Actors.PWind(Tag="")</td></tr>
+</table><p> Return the wind value of an actor. If no tag is given the picked actor will be returned, otherwise the auhtor in the tag.<p>The returned value could be either "North", "East", "West" or "South".
+</p><hr><a id='Actors.PX' name='Actors.PX'></a><h1>Actors.PX</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Actors.PX</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Actors.PX(Tag="")</td></tr>
+</table><p> Return the X value of an actor. If no tag is given the picked actor will be returned, otherwise the auhtor in the tag.
+</p><hr><a id='Actors.PY' name='Actors.PY'></a><h1>Actors.PY</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Actors.PY</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Actors.PY(Tag="")</td></tr>
+</table><p> Return the Y value of an actor. If no tag is given the picked actor will be returned, otherwise the auhtor in the tag.
+</p><hr><a id='Actors.Pick' name='Actors.Pick'></a><h1>Actors.Pick</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Actors.Pick</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Actors.Pick(Tag)</td></tr>
+</table><p> Pick an actor for some quick functions.
+</p><hr><a id='Actors.RenewActor' name='Actors.RenewActor'></a><h1>Actors.RenewActor</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Actors.RenewActor</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Actors.RenewActor:TKthuraActor(actor)</td></tr>
+</table><p> Recreates an existing actor.<br>Sometimes actors can get a little faulty. This feature creates a new actor and destroys the old one. This should basically destroy all impurities that ended up in it as well.
+</p><hr><a id='Actors.Spawn' name='Actors.Spawn'></a><h1>Actors.Spawn</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Actors.Spawn</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Actors.Spawn(Spot,Pics,Tag,single=0)</td></tr>
+</table><p> Spawns an actor<p>Due to the limited amount of parameters Lua can transfer to the underylying LAURA II engine it will only be possible to spawn an actor this way and not on precise XY coordinates.
+</p><hr><a id='Actors.StopMoving' name='Actors.StopMoving'></a><h1>Actors.StopMoving</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Actors.StopMoving</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Actors.StopMoving(Tag)</td></tr>
+</table><p> Stop all movement of an actor
+</p><hr><a id='Actors.StopWalking' name='Actors.StopWalking'></a><h1>Actors.StopWalking</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Actors.StopWalking</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Actors.StopWalking(Tag)</td></tr>
+</table><p> The selected actor will stop walking immediately regardless if he/she/it reached his/her/its desitnation.
+</p><hr><a id='Actors.WalkTo' name='Actors.WalkTo'></a><h1>Actors.WalkTo</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Actors.WalkTo</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Actors.WalkTo(Tag,X,Y)</td></tr>
+</table><p> Make an actor walk to X,Y. If the position cannot be reached in any way the request will be ignored.<p>This feature uses a pathfinder routine, so it will make the actor go around any obstacles if possible.
+</p><hr><a id='Actors.WalkToSpot' name='Actors.WalkToSpot'></a><h1>Actors.WalkToSpot</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Actors.WalkToSpot</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Actors.WalkToSpot(ActorTag,Spot)</td></tr>
+</table><p> Moves character to a spot
+</p><hr><a id='Actors.Walking' name='Actors.Walking'></a><h1>Actors.Walking</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Actors.Walking</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Actors.Walking(Tag)</td></tr>
+</table><p> Returns 1 if an actor is walking returns 0 if not.
+</p><hr><a id='Audio' name='Audio'></a><h1>Audio</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Audio</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Object</td></tr>
+</table><p>This object contains all kinds of neat audio features.</p><hr><a id='Audio.Crash' name='Audio.Crash'></a><h1>Audio.Crash</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Audio.Crash</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Variable</td></tr>
+</table><p> When set the system will crash on certain error. When set false the system will try to ignore such errors if possible.
+</p><hr><a id='Audio.Free' name='Audio.Free'></a><h1>Audio.Free</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Audio.Free</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Audio.Free(Slot)</td></tr>
+</table><p> Releases the audio buffer stored on this slot. The sound will be removed from the memory by the BlitzMax Garbage Collector eventually.
+</p><hr><a id='Audio.FreeChannel' name='Audio.FreeChannel'></a><h1>Audio.FreeChannel</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Audio.FreeChannel</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Audio.FreeChannel(Channel)</td></tr>
+</table><p> Removes a channel from the memory.
+</p><hr><a id='Audio.Load' name='Audio.Load'></a><h1>Audio.Load</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Audio.Load</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Audio.Load(Sound,Assign="")</td></tr>
+</table><p> Loads and audio file and stores it in slot 'Assign'. If the Assign value is not set the computer will assign it to a slot and return the slot name. When the load is not succesful "*ERROR*" is returned.
+</p><hr><a id='Audio.LoadLoop' name='Audio.LoadLoop'></a><h1>Audio.LoadLoop</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Audio.LoadLoop</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Audio.LoadLoop(Sound,Assign="")</td></tr>
+</table><p> Loads and audio file and stores it in slot 'Assign'. When played back the loaded sound will loop. If the Assign value is not set the computer will assign it to a slot and return the slot name.
+</p><hr><a id='Audio.LoadX' name='Audio.LoadX'></a><h1>Audio.LoadX</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Audio.LoadX</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Audio.LoadX(Sound,Loop,Hardware,Assign="")</td></tr>
+</table><p> Loads and audio file and stores it in slot 'Assign'. If the Assign value is not set the computer will assign it to a slot and return the slot name. You can use this function for some specific configuration.
+</p><hr><a id='Audio.Play' name='Audio.Play'></a><h1>Audio.Play</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Audio.Play</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Audio.Play(Slot,Channel="")</td></tr>
+</table><p> Plays a sound. If Channel is set the system will store the channel there for you.
+</p><hr><a id='Audio.Playing' name='Audio.Playing'></a><h1>Audio.Playing</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Audio.Playing</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Audio.Playing(Channel)</td></tr>
+</table><p> Returns 1 if a channel is playing otherwise 0. Please note that in Lua 0 counts as 'true' in boolean comparing.
+</p><hr><a id='Audio.QuickSound' name='Audio.QuickSound'></a><h1>Audio.QuickSound</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Audio.QuickSound</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Audio.QuickSound(Sound)</td></tr>
+</table><p> Loads an audio file from a JCR file, plays it and forgets it immediately.
+</p><hr><a id='Audio.Stop' name='Audio.Stop'></a><h1>Audio.Stop</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Audio.Stop</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Audio.Stop(Channel)</td></tr>
+</table><p> Stop a channel from playing. If the channel is not properly set, this routine will be ignored.
+</p><hr><a id='BlopPlasma' name='BlopPlasma'></a><h1>BlopPlasma</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>BlopPlasma</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Object</td></tr>
+</table><p>This object contains features to create a plasma</p><hr><a id='BlopPlasma.Draw' name='BlopPlasma.Draw'></a><h1>BlopPlasma.Draw</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>BlopPlasma.Draw</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>BlopPlasma.Draw(Blops)</td></tr>
+</table><p> Simple drawplasma function. If Blops is not set it will use the default value set by InitBlopPlasma or NewBlopPlasma.
+</p><hr><a id='BlopPlasma.DrawCol' name='BlopPlasma.DrawCol'></a><h1>BlopPlasma.DrawCol</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>BlopPlasma.DrawCol</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>BlopPlasma.DrawCol(R,G,B,Blops)</td></tr>
+</table><p> This allows you to set the color of the plasma and draw it accordingly. Please note this routine works on percentage, so R,G and B must be values between 0 and 100 in stead of 0-255.
+</p><hr><a id='BlopPlasma.InitBlopPlasma' name='BlopPlasma.InitBlopPlasma'></a><h1>BlopPlasma.InitBlopPlasma</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>BlopPlasma.InitBlopPlasma</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>BlopPlasma.InitBlopPlasma(Blops,Width,Height,Rad)</td></tr>
+</table><p> Initizes BlopPlasma. The other functions cannot be used without doing this first. Please note, best is to only use it once at the startup of your entire program and not later. And best is to never use it twice or more. The results might get a little spooky.
+</p><hr><a id='BlopPlasma.NewBlopPlasma' name='BlopPlasma.NewBlopPlasma'></a><h1>BlopPlasma.NewBlopPlasma</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>BlopPlasma.NewBlopPlasma</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>BlopPlasma.NewBlopPlasma(Blops,Width,Hight)</td></tr>
+</table><p> This function should set new values to a plasma. As you cannot use InitBlopPlasma again. Please note, the radius cannot be changed after being chosen with InitBlopPlasma
+</p><hr><a id='CASE' name='CASE'></a><h1>CASE</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>CASE</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Compiler Directive</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>-- @CASE &lt;value></td></tr>
+</table><p> Case command for @SELECT
+</p><hr><a id='Console' name='Console'></a><h1>Console</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Console</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Object</td></tr>
+</table><p>Allows a lua script to write something on the (debug) console</p><hr><a id='Console.Flip' name='Console.Flip'></a><h1>Console.Flip</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Console.Flip</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Console.Flip()</td></tr>
+</table><p> Same as Image.Flip, but included here just in case the Image object wasn't used in the particular project ;)
+</p><hr><a id='Console.Print' name='Console.Print'></a><h1>Console.Print</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Console.Print</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Console.Print(Txt,R=255,G=255,B=255)</td></tr>
+</table><p> Alias for Console.Write
+</p><hr><a id='Console.Show' name='Console.Show'></a><h1>Console.Show</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Console.Show</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Console.Show()</td></tr>
+</table><p> Show the console the way it looks now (you'll require to do a FLIP, to make it actually appear on the physical screen) :)
+</p><hr><a id='Console.Write' name='Console.Write'></a><h1>Console.Write</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Console.Write</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Console.Write(Txt,R=255,G=255,B=255)</td></tr>
+</table><p> Writes something onto the console in the desired color
+</p><hr><a id='DEFAULT' name='DEFAULT'></a><h1>DEFAULT</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>DEFAULT</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Compiler Directive</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>-- @DEFAULT</td></tr>
+</table><p> Default command for @SELECT
+</p><hr><a id='DEFINE' name='DEFINE'></a><h1>DEFINE</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>DEFINE</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Compiler Directive</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>-- @DEFINE &lt;DEF></td></tr>
+</table><p> Set a defition for IF/ELSEIF/FI to use.
+</p><hr><a id='Dir' name='Dir'></a><h1>Dir</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Dir</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Object</td></tr>
+</table><p>Contains some functions to read directories.</p><hr><a id='Dir.DirEntry' name='Dir.DirEntry'></a><h1>Dir.DirEntry</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Dir.DirEntry</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Dir.DirEntry(i)</td></tr>
+</table><p> Will return the file on the specified index number. 1 is the lowest number. Either GetTree() or GetDir() must be called before using this function or else it will throw an error.
+</p><hr><a id='Dir.DirExists' name='Dir.DirExists'></a><h1>Dir.DirExists</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Dir.DirExists</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Dir.DirExists(dir)</td></tr>
+</table><p> Returns 1 if a directory was succefully found and 0 if not. It might be an idea to call this function prior to using GetTree() or GetDir() as the system will crash if the requested path does not exist.
+</p><hr><a id='Dir.DirLen' name='Dir.DirLen'></a><h1>Dir.DirLen</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Dir.DirLen</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Dir.DirLen()</td></tr>
+</table><p> Will return the number of files found by the last GetTree() or GetDir() call. If both of them were never done, it will return 0.
+</p><hr><a id='Dir.GetDir' name='Dir.GetDir'></a><h1>Dir.GetDir</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Dir.GetDir</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Dir.GetDir(dir,OnlyFileType=0,auh=0)</td></tr>
+</table><p> Gets all files in the specified directory.<p>The OnlyFileType parameter may contain 0 for all files and directories, 1 for only files and 2 for directories only.<p>When auh is set to any value greater than 0 the hidden files (by unix standards, so all files starting with a ".") will be taken as well.
+</p><hr><a id='Dir.GetTree' name='Dir.GetTree'></a><h1>Dir.GetTree</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Dir.GetTree</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Dir.GetTree(dir)</td></tr>
+</table><p> Gets a full directory tree from the chosen path
+</p><hr><a id='ELSEIF' name='ELSEIF'></a><h1>ELSEIF</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>ELSEIF</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Compiler Directive</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>-- @ELSEIF &lt;DEF1> [&lt;DEF2>...]</td></tr>
+</table><p> Works with IF as an ELSEIF. Some bugs I cannot trace well make this directive irreliable so I recommend not to use it until I got that fixed.
+</p><hr><a id='ENDIF' name='ENDIF'></a><h1>ENDIF</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>ENDIF</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Compiler Directive</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>-- @ENDIF</td></tr>
+</table><p> Alias for FI
+</p><hr><a id='ENDSELECT' name='ENDSELECT'></a><h1>ENDSELECT</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>ENDSELECT</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Compiler Directive</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>-- @ENDSELECT</td></tr>
+</table><p> Closes Select statement
+</p><hr><a id='FI' name='FI'></a><h1>FI</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>FI</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Compiler Directive</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>-- @FI</td></tr>
+</table><p> Ends an IF statement made before
+</p><hr><a id='GALE_ prefix' name='GALE_ prefix'></a><h1>GALE_ prefix</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>GALE_ prefix</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Background information</td></tr>
+</table><p> This prefix is reserved for any features that GALE may react on or assign data to. So only use GALE_ prefixed stuff in accordance with this manual. When more functions are added in the future this prefix is very likely to be put in front of it. Some projects using GALE might also use their own prefixes (for example the LAURA engine uses "__" as reserved prefix), so check the data on that.
+</p><hr><a id='GALE_OnLoad() function' name='GALE_OnLoad() function'></a><h1>GALE_OnLoad() function</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>GALE_OnLoad() function</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Background information</td></tr>
+</table><p> When this function is present anywhere in the script GALE will automatically execute it after compiling
+</p><hr><a id='GALE_OnUnload() function' name='GALE_OnUnload() function'></a><h1>GALE_OnUnload() function</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>GALE_OnUnload() function</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Background information</td></tr>
+</table><p> When this function is present anywhere in the script GALE will automatically execute it when the script is removed from the memory. Please note that the BlitzMax garbage collector is responsible for this, and you never know when the garbage collector cleans up the memory as that is when the function will be called.
+</p><hr><a id='IF' name='IF'></a><h1>IF</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>IF</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Compiler Directive</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>-- @IF &lt;DEF1> [&lt;DEF2>...]</td></tr>
+</table><p> Is a definition set, then compile the next stuff, if not, ignore it. When you put a "!" before a definition it will count as a 'NOT' statement.<br>NOTE:You cannot make an IF in an IF. If not done before, this IF will automatically close the IF statement made before.
+</p><hr><a id='INP' name='INP'></a><h1>INP</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>INP</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Object</td></tr>
+</table><p>Input functions. (This only works on engines build on the M2D driver for GALE).</p><hr><a id='INP.Autograb' name='INP.Autograb'></a><h1>INP.Autograb</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>INP.Autograb</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Variable</td></tr>
+</table><p> Engines automatically calling for Grab should only do so if this value is set to any other value than 0 (by default it's set to 1). 
+</p><hr><a id='INP.Grab' name='INP.Grab'></a><h1>INP.Grab</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>INP.Grab</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>INP.Grab()</td></tr>
+</table><p> Grabs all keyboard input, mouse buttons and joypad buttons. Please note that some engines based on GALE may do this automatically at certain events (like the start of a new cycle for example). 
+</p><hr><a id='INP.IncMouse' name='INP.IncMouse'></a><h1>INP.IncMouse</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>INP.IncMouse</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>INP.IncMouse(X,Y)</td></tr>
+</table><p> Moves the mouse by x or Y pixels.<p>If the mouse is about to "leave" the screen, this function corrects that.
+</p><hr><a id='INP.JoyD' name='INP.JoyD'></a><h1>INP.JoyD</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>INP.JoyD</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>INP.JoyD(a)</td></tr>
+</table><p> was the joypad button held on the moment of the last grab?
+</p><hr><a id='INP.JoyX' name='INP.JoyX'></a><h1>INP.JoyX</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>INP.JoyX</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>INP.JoyX()</td></tr>
+</table><p> Joystick X position (does not require grab)
+</p><hr><a id='INP.JoyY' name='INP.JoyY'></a><h1>INP.JoyY</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>INP.JoyY</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>INP.JoyY()</td></tr>
+</table><p> Joystick Y position (does not require grab)
+</p><hr><a id='INP.KeyD' name='INP.KeyD'></a><h1>INP.KeyD</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>INP.KeyD</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>INP.KeyD(a)</td></tr>
+</table><p> Is the key held down on the moment of the last grab?
+</p><hr><a id='INP.KeyH' name='INP.KeyH'></a><h1>INP.KeyH</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>INP.KeyH</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>INP.KeyH(a)</td></tr>
+</table><p> Was the key hit at the mometn of the last grab?
+</p><hr><a id='INP.MouseD' name='INP.MouseD'></a><h1>INP.MouseD</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>INP.MouseD</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>INP.MouseD(a)</td></tr>
+</table><p> Was the mouse button held on the moment of the last grab?
+</p><hr><a id='INP.MouseH' name='INP.MouseH'></a><h1>INP.MouseH</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>INP.MouseH</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>INP.MouseH(a)</td></tr>
+</table><p> Was the mouse button hit at the moment of the last grab?
+</p><hr><a id='INP.MouseHide' name='INP.MouseHide'></a><h1>INP.MouseHide</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>INP.MouseHide</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>INP.MouseHide()</td></tr>
+</table><p> Hide the OS mouse pointer
+</p><hr><a id='INP.MouseShow' name='INP.MouseShow'></a><h1>INP.MouseShow</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>INP.MouseShow</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>INP.MouseShow()</td></tr>
+</table><p> Show the OS mouse pointer
+</p><hr><a id='INP.MouseX' name='INP.MouseX'></a><h1>INP.MouseX</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>INP.MouseX</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>INP.MouseX()</td></tr>
+</table><p> Mouse X (does not require grab)
+</p><hr><a id='INP.MouseY' name='INP.MouseY'></a><h1>INP.MouseY</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>INP.MouseY</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>INP.MouseY()</td></tr>
+</table><p> MouseY (does not require grab)
+</p><hr><a id='INP.MoveMouse' name='INP.MoveMouse'></a><h1>INP.MoveMouse</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>INP.MoveMouse</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>INP.MoveMouse(X,Y)</td></tr>
+</table><p> Moves the mouse to specific coordinates
+</p><hr><a id='INP.Terminate' name='INP.Terminate'></a><h1>INP.Terminate</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>INP.Terminate</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Variable</td></tr>
+</table><p> When Grab is called (either manually or manually) this value will contain 1 if the user requested to terminate the application, if not it will contain 0.<br>(NOTE: Though it technically is possible to assign a value to this variable, doing so is pretty pointless as the next Grab will reassign it automatically anyway).
+</p><hr><a id='Image' name='Image'></a><h1>Image</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Object</td></tr>
+</table><p>In this object you can find all sorts of stuff on the graphic front and most of all images</p><hr><a id='Image.Assign' name='Image.Assign'></a><h1>Image.Assign</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Assign</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Assign(Image,NewImageName,KeepOriginal=0)</td></tr>
+</table><p> Assigns an image to a new name so that it can be used in an easier way with other scripts.<pre class=code>function Main()
+ img = Image.Load("MyImage.png")
+ Image.Assign(img,"MyImage")
+ Image.Show("MyImage",10,10)
+end</pre>Of course, the code above can also be made shorter. Like this:<pre class=code>function Main()
+ Image.Assign(Image.Load("MyImage.png"),"MyImage")
+ Image.Draw("MyImage",10,10)
+end</pre>
+<b>Notes</b><ul><li>You don't have to release the original image code. That happens automatically unless you set the KeepOriginal parameter.<li>If an image is already on that spot it's automatically removed. You do not have to free it first.<li>The strings you use for this feature are CASE SENSITIVE!</ul>
+</p><hr><a id='Image.AssignLoad' name='Image.AssignLoad'></a><h1>Image.AssignLoad</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.AssignLoad</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.AssignLoad(Image,File)</td></tr>
+</table><p> Loads an image and assings it automatically to the correct name.
+</p><hr><a id='Image.Blend' name='Image.Blend'></a><h1>Image.Blend</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Blend</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Blend()</td></tr>
+</table><p> Returns the number of the current blend setting
+</p><hr><a id='Image.CFont' name='Image.CFont'></a><h1>Image.CFont</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.CFont</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.CFont()</td></tr>
+</table><p> Use the console font
+</p><hr><a id='Image.Circle' name='Image.Circle'></a><h1>Image.Circle</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Circle</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Circle(X,Y,Rad,Filled=0)</td></tr>
+</table><p> Draws a circle
+</p><hr><a id='Image.Cls' name='Image.Cls'></a><h1>Image.Cls</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Cls</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Cls()</td></tr>
+</table><p> CLear Screen. Oldest command in the box I think!
+</p><hr><a id='Image.Color' name='Image.Color'></a><h1>Image.Color</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Color</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Color(R,G,B)</td></tr>
+</table><p> Set the color in RGB format. Min = 0, max=255
+</p><hr><a id='Image.ColorHSV' name='Image.ColorHSV'></a><h1>Image.ColorHSV</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.ColorHSV</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.ColorHSV(Hue,Saturation,Value)</td></tr>
+</table><p> Tries to set the color based on HSV.<p>NOTE! This routine is not yet toroughly tested, so bugs could be expected!
+</p><hr><a id='Image.DText' name='Image.DText'></a><h1>Image.DText</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.DText</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.DText(T,X,Y,HA=0,VA=0)</td></tr>
+</table><p> Puts in text like Image.Text. The argument order is only different for easier access when you are too used to BlitzMAX order.
+</p><hr><a id='Image.DontUseSpecial' name='Image.DontUseSpecial'></a><h1>Image.DontUseSpecial</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.DontUseSpecial</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Variable</td></tr>
+</table><p> When set to 1 the Special load abilties of Image.Load will be ignored. When set to 0, everything will load
+</p><hr><a id='Image.Draw' name='Image.Draw'></a><h1>Image.Draw</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Draw</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Draw(Image,X,Y,F=0)</td></tr>
+</table><p> Alias for Image.Show
+</p><hr><a id='Image.Exist' name='Image.Exist'></a><h1>Image.Exist</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Exist</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Exist(image)</td></tr>
+</table><p> Returns 1 if an image exists, 0 if it doesn't<p>Note that Lua does not count 0 as false!
+</p><hr><a id='Image.Flip' name='Image.Flip'></a><h1>Image.Flip</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Flip</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Flip()</td></tr>
+</table><p> Shows the result of all graphic actions you did since the last Image.Flip().
+</p><hr><a id='Image.Font' name='Image.Font'></a><h1>Image.Font</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Font</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Font(FontFile,size)</td></tr>
+</table><p> Sets the font to work with.
+This font will basically remain set until another call to this is made over a lua script or by some internal features of the engine.
+It will only load the font once and cache it after that for later use.
+Image.NoFont() can be used to go back to the default font!
+</p><hr><a id='Image.Free' name='Image.Free'></a><h1>Image.Free</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Free</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Free(Image)</td></tr>
+</table><p> Removes an image from the storage.<br>It's very important (especially for images only used on occasion) that they are removed from the storage before the script ends otherwise they'll be living there forever without any way to access them.
+</p><hr><a id='Image.GrabScreen' name='Image.GrabScreen'></a><h1>Image.GrabScreen</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.GrabScreen</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.GrabScreen(imgid="")</td></tr>
+</table><p> Grab the entire screen and return the image code. If you set the <i>imgid</i> parameter this code will be used.
+</p><hr><a id='Image.Hot' name='Image.Hot'></a><h1>Image.Hot</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Hot</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Hot(Image,X,Y)</td></tr>
+</table><p> Set the hotspot of an image to the X and Y of the image
+</p><hr><a id='Image.HotCenter' name='Image.HotCenter'></a><h1>Image.HotCenter</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.HotCenter</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.HotCenter(Image)</td></tr>
+</table><p> Set the hotspot of an image to the center of the image
+</p><hr><a id='Image.Image2Anim' name='Image.Image2Anim'></a><h1>Image.Image2Anim</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Image2Anim</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Image2Anim(Image,W,H,S,A,Frame,KeepOriginal=0)</td></tr>
+</table><p> Converts an image into an animated image.<p>Please note if the original is already an animation you can only pick one frame and convert it into an animation.<p>If KeepOriginal is 0 the animated image will overwrite the original. If you keep the original, this function will keep the original an return a value containing the newly created animated image in stead.
+</p><hr><a id='Image.Line' name='Image.Line'></a><h1>Image.Line</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Line</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Line(SX,SY,EX,EY)</td></tr>
+</table><p> Draws a line
+</p><hr><a id='Image.Load' name='Image.Load'></a><h1>Image.Load</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Load</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Load(File)</td></tr>
+</table><p> Loads an image (from the JCR file if the project uses that. And it reacts automatically on patches) and stores it into the image buffer and storage and leaves returns an ID to find it back there.<p>When you load mypic.png and mypic.png.hot is loaded the picture will automatically be hotspotted according to the settings inside the .hot file. When a mypic.png.frame file exists, it'll be automatically loaded as an animated picture with the settings inside the file. When the files don't exist they will be ignored. When you want to prevent Image.Load() to check this then set the Image.DontUseSpecial variable to 1.
+</p><hr><a id='Image.LoadAnim' name='Image.LoadAnim'></a><h1>Image.LoadAnim</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.LoadAnim</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.LoadAnim(File,W,H,S,A)</td></tr>
+</table><p> Loads an animated image (same way as Image.Load).
+<p>W = Image width<br>H = Image height<br>S = Start frame (leave at 0 unless you know what you are doing)<br>A = Number of animation Frames
+</p><hr><a id='Image.LoadNew' name='Image.LoadNew'></a><h1>Image.LoadNew</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.LoadNew</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.LoadNew(Tag,File)</td></tr>
+</table><p> Loads an image to the specified tag, but only if the tag has not yet been assigned with another image.
+</p><hr><a id='Image.Loaded' name='Image.Loaded'></a><h1>Image.Loaded</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Loaded</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Loaded(Tag)</td></tr>
+</table><p> Returns 1 if there is a loaded picture found on the requested tag, and 0 if not. Please note that Lua deems both values as "true" when used in a direct boolean check!
+</p><hr><a id='Image.Negative' name='Image.Negative'></a><h1>Image.Negative</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Negative</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Negative(Image,ToImage="")</td></tr>
+</table><p> Inverts an image into a negative and return the new adress. If you place data in "ToImage" it will directly assign the data to the requested adress. Placing the same adress for both Image and ToImage, the original image will be overwritten. :)
+</p><hr><a id='Image.NoFont' name='Image.NoFont'></a><h1>Image.NoFont</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.NoFont</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.NoFont()</td></tr>
+</table><p> Sets the font back to the default font
+</p><hr><a id='Image.NoFontIsConsoleFont' name='Image.NoFontIsConsoleFont'></a><h1>Image.NoFontIsConsoleFont</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.NoFontIsConsoleFont</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Variable</td></tr>
+</table><p> When set to any value other than 0 (which is the default value), the NoFont function will use the standard debug console function in stead of the default font. This function came to be because Windows appears to hate the original BMax fonts in some projects.
+</p><hr><a id='Image.Origin' name='Image.Origin'></a><h1>Image.Origin</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Origin</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Origin(X,Y)</td></tr>
+</table><p> origin point
+</p><hr><a id='Image.Rect' name='Image.Rect'></a><h1>Image.Rect</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Rect</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Rect(X,Y,W,H)</td></tr>
+</table><p> Draws a rectangle
+</p><hr><a id='Image.Rotate' name='Image.Rotate'></a><h1>Image.Rotate</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Rotate</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Rotate(D)</td></tr>
+</table><p> Set rotation by <i>D</i> degrees. Remains until script is over or another Image.Rotation is called.
+</p><hr><a id='Image.Scale' name='Image.Scale'></a><h1>Image.Scale</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Scale</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Scale(X,Y)</td></tr>
+</table><p> Scales the next graphic actions. 1 = full size, 0 = so small that you won't see it. 0.5 = half as big, 2 = twice as big. Remains until script is over or another Image.Scale is called
+</p><hr><a id='Image.ScalePC' name='Image.ScalePC'></a><h1>Image.ScalePC</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.ScalePC</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.ScalePC(W,H)</td></tr>
+</table><p> Scale based on percent. So 100 is actual size and 50 is half size.<p>This is very handy when working on a project that should work on both PPC and x86, as the scaling was serious trouble there. This is a BlitzMax issue which never got fixed, and from this API it seems to work. Don't ask me why.
+</p><hr><a id='Image.SetAlpha' name='Image.SetAlpha'></a><h1>Image.SetAlpha</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.SetAlpha</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.SetAlpha(Alpha:Double)</td></tr>
+</table><p> Sets the alpha value (if the blend is in Alpha setting)
+</p><hr><a id='Image.SetAlphaBlend' name='Image.SetAlphaBlend'></a><h1>Image.SetAlphaBlend</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.SetAlphaBlend</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.SetAlphaBlend()</td></tr>
+</table><p> Set the blend setting to ALPHABLEND
+</p><hr><a id='Image.SetAlphaPC' name='Image.SetAlphaPC'></a><h1>Image.SetAlphaPC</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.SetAlphaPC</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.SetAlphaPC(Alpha)</td></tr>
+</table><p> Sets the alpha value in a scale from 1 till 100 (floats and doubles are not always carried over from Lua too well, so this function will have to suffice).
+</p><hr><a id='Image.SetBlend' name='Image.SetBlend'></a><h1>Image.SetBlend</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.SetBlend</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.SetBlend(Blend)</td></tr>
+</table><p> Set the blend for next drawing features
+</p><hr><a id='Image.Show' name='Image.Show'></a><h1>Image.Show</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Show</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Show(Image,X,Y,F=0)</td></tr>
+</table><p> Shows the image. When the image is not animated (or if you want ot show frame #0) you can skip the F parameter (which is the frame) :)
+</p><hr><a id='Image.Text' name='Image.Text'></a><h1>Image.Text</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Text</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Text(X,Y,Txt,Align=0,Valign=0)</td></tr>
+</table><p> Puts in text. For the alignment codes<br>Left/top = 0, Right/Bottom = 1, Center = 2
+</p><hr><a id='Image.TextHeight' name='Image.TextHeight'></a><h1>Image.TextHeight</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.TextHeight</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.TextHeight(Txt)</td></tr>
+</table><p> Returns the height of a textstring in pixels
+</p><hr><a id='Image.TextWidth' name='Image.TextWidth'></a><h1>Image.TextWidth</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.TextWidth</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.TextWidth(Txt)</td></tr>
+</table><p> Returns the width of a textstring in pixels
+</p><hr><a id='Image.Tile' name='Image.Tile'></a><h1>Image.Tile</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Tile</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Tile(image,X,Y,F)</td></tr>
+</table><p> Tile image inside the current viewport
+</p><hr><a id='Image.Viewport' name='Image.Viewport'></a><h1>Image.Viewport</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Image.Viewport</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Viewport(X,Y,W,H)</td></tr>
+</table><p> Set current viewport
+</p><hr><a id='JCR6' name='JCR6'></a><h1>JCR6</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>JCR6</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Object</td></tr>
+</table><p>Contains an object for reading JCR6 from Lua in GALE.</p><hr><a id='JCR6.Close' name='JCR6.Close'></a><h1>JCR6.Close</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>JCR6.Close</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>JCR6.Close(BT)</td></tr>
+</table><p> Closes a JCR stream.
+</p><hr><a id='JCR6.DirTable' name='JCR6.DirTable'></a><h1>JCR6.DirTable</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>JCR6.DirTable</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>JCR6.DirTable(M)</td></tr>
+</table><p> Returns a Lua script in which a table variable is defined with all entries inside a JCR file. In order to use this table you need loadstring(). <pre style='background:black; color:white'>-- A way to do this<br>function JCR6DirTable()<br>&nbsp;local f=loadstring(JCR6.DirTable())<br>&nbsp;return f()<br>end</pre><p>Include this in the Lua script and you should have a table containing all files inside the Lua file. :)<p>NOTE! In most applications the M should not be defined unless you use an engine where free JCR6 access is allowed.
+</p><hr><a id='JCR6.Eof' name='JCR6.Eof'></a><h1>JCR6.Eof</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>JCR6.Eof</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>JCR6.Eof(BT)</td></tr>
+</table><p> 1 is the end of the file is reached otherwise 0. Please note, 0 is taken for true by Lua is "if JCR6.Eof(mystream) then" will always be true, so use "if JCR6.Eof(mystream)==1 then" in stead!
+</p><hr><a id='JCR6.Exists' name='JCR6.Exists'></a><h1>JCR6.Exists</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>JCR6.Exists</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>JCR6.Exists(M,F)</td></tr>
+</table><p> Returns 1 if an entry exists, and 0 if not.<br>(The F parameter is not needed unless you have an engine that allows you to pick any JCR file, then M is the JCR file and F the entry. Most engines are configured not to support this though).<p>Please note that Lua counts 0 as true. You gotta remember this or you'll easily create a bug ;)
+</p><hr><a id='JCR6.LoadString' name='JCR6.LoadString'></a><h1>JCR6.LoadString</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>JCR6.LoadString</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>JCR6.LoadString(M,F)</td></tr>
+</table><p> Loads the content of an entire file and returns it as a string (In windows it's recommended only to use this feature as Windows appears allergic to the other read file functions. Cause unknown).
+</p><hr><a id='JCR6.ReadB' name='JCR6.ReadB'></a><h1>JCR6.ReadB</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>JCR6.ReadB</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>JCR6.ReadB(BT)</td></tr>
+</table><p> Reads and returns a byte from the JCR file
+</p><hr><a id='JCR6.ReadD' name='JCR6.ReadD'></a><h1>JCR6.ReadD</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>JCR6.ReadD</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>JCR6.ReadD:Double(BT)</td></tr>
+</table><p> Reads and a double from the JCR file
+</p><hr><a id='JCR6.ReadF' name='JCR6.ReadF'></a><h1>JCR6.ReadF</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>JCR6.ReadF</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>JCR6.ReadF:Float(BT)</td></tr>
+</table><p> Reads and a float from the JCR file. (Please note. Floats are not a very reliable data type in BlitzMax in which this API was written, so only read them when you got no other choice).
+</p><hr><a id='JCR6.ReadFile' name='JCR6.ReadFile'></a><h1>JCR6.ReadFile</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>JCR6.ReadFile</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>JCR6.ReadFile(M,F="")</td></tr>
+</table><p> Loads a file from the main JCR dir. (The F parameter is not needed unless you have an engine that allows you to pick any JCR file, then M is the JCR file and F the entry. Most engines are configured not to support this though).
+</p><hr><a id='JCR6.ReadI' name='JCR6.ReadI'></a><h1>JCR6.ReadI</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>JCR6.ReadI</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>JCR6.ReadI(BT)</td></tr>
+</table><p> Reads and returns an int from the JCR file
+</p><hr><a id='JCR6.ReadL' name='JCR6.ReadL'></a><h1>JCR6.ReadL</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>JCR6.ReadL</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>JCR6.ReadL:Long(BT)</td></tr>
+</table><p> Reads and returns an long from the JCR file.<p>Warning, Lua can become unreliable when you're dealing with high numbers. This function does NOT take that in account!! So use this function with care!
+</p><hr><a id='JCR6.ReadLn' name='JCR6.ReadLn'></a><h1>JCR6.ReadLn</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>JCR6.ReadLn</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>JCR6.ReadLn(BT)</td></tr>
+</table><p> Reads and a line from the JCR file. (Basically as well UNIX single byte EOLNs as Windows/DOS styled two byte EOLNs should be read).
+</p><hr><a id='JCR6.ReadNullStr' name='JCR6.ReadNullStr'></a><h1>JCR6.ReadNullStr</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>JCR6.ReadNullStr</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>JCR6.ReadNullStr(BT)</td></tr>
+</table><p> Reads a string terminated by null in the JCR file, like most C and C++ programs do by default.
+</p><hr><a id='JCR6.ReadStr' name='JCR6.ReadStr'></a><h1>JCR6.ReadStr</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>JCR6.ReadStr</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>JCR6.ReadStr(BT,L=0)</td></tr>
+</table><p> Reads and a string from the JCR file.<br>If L is 0 the interpreter will read an int to determine the length and then read the string itself. If the length is any other number this step will be skipped and the system will read the string with the given length.
+</p><hr><a id='LAURA' name='LAURA'></a><h1>LAURA</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>LAURA</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Object</td></tr>
+</table><p>This object contains a few core features of LAURA</p><hr><a id='LAURA.AutoINP' name='LAURA.AutoINP'></a><h1>LAURA.AutoINP</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>LAURA.AutoINP</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>LAURA.AutoINP(SetValue)</td></tr>
+</table><p> Sets the keyboard autograbber on or off (alternatively you can assign INP.AutoGrab yourself, as basically, that's all this function does :P)<p>When set to 1, the keys will automatically be grabbed prior to running a new MAIN_FLOW cycle.
+</p><hr><a id='LAURA.ConsoleInput' name='LAURA.ConsoleInput'></a><h1>LAURA.ConsoleInput</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>LAURA.ConsoleInput</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>LAURA.ConsoleInput()</td></tr>
+</table><p> Requests input over the console. This command is only meant for debug purposes.
+</p><hr><a id='LAURA.Flow' name='LAURA.Flow'></a><h1>LAURA.Flow</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>LAURA.Flow</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>LAURA.Flow(Tag)</td></tr>
+</table><p> Will put the general flow to the script with the requested tag.<p>The script MUST have a function called "MAIN_FLOW" or your game will crash. It must be defined as 'function MAIN_FLOW()'! 'MAIN_FLOW = function()' will NOT do, and extra stuff like 'local' is also forbidden. The line MUST SOLELY contain the definition as I just placed it. Comments after the defintion should be okay, but I recommend against it! The function will not receive any parameters and any returned data will be ignored.<p>The game will keep on repeating this MAIN_FLOW function until the system is set to perform this function of an other script.
+</p><hr><a id='LAURA.GetFlow' name='LAURA.GetFlow'></a><h1>LAURA.GetFlow</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>LAURA.GetFlow</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>LAURA.GetFlow()</td></tr>
+</table><p> Returns the current flow tag
+</p><hr><a id='LAURA.GetSaveDir' name='LAURA.GetSaveDir'></a><h1>LAURA.GetSaveDir</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>LAURA.GetSaveDir</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>LAURA.GetSaveDir()</td></tr>
+</table><p> Returns the full path name of the directory where the savegames are being stored.
+</p><hr><a id='LAURA.KillSaveGame' name='LAURA.KillSaveGame'></a><h1>LAURA.KillSaveGame</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>LAURA.KillSaveGame</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>LAURA.KillSaveGame(File)</td></tr>
+</table><p> Deletes a savegame file, if it exists
+</p><hr><a id='LAURA.Save' name='LAURA.Save'></a><h1>LAURA.Save</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>LAURA.Save</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>LAURA.Save(File,DeleteOnLoad=0)</td></tr>
+</table><p> Saves the game to "File". If "DeleteOnLoad" is set to any value other than 0 the savegame will be deleted after it's loaded. If the value is set to 0 the savegame will stay.
+</p><hr><a id='LAURA.Terminate' name='LAURA.Terminate'></a><h1>LAURA.Terminate</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>LAURA.Terminate</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Variable</td></tr>
+</table><p> Contains 1 if an APP-Terminate event was triggered. This will only be checked at the start of a new cycle and not by INP.Grab() so it's better to rely on that<br>The existence of this variable is the result of a few errors in development of LAURA II, and should therefore be considered as "deprecated". Use INP.Terminate in stead!
+</p><hr><a id='LAURA.TerminateBye' name='LAURA.TerminateBye'></a><h1>LAURA.TerminateBye</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>LAURA.TerminateBye</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>LAURA.TerminateBye()</td></tr>
+</table><p> If called, the system will check if in the last INP.Grab or start of a cycle a request to close the application was detected. If so, LAURA II will ask for confirmation and if the user confirms LAURA II will terminate itself immediately.<br>Due to safety measures, this function will be ignored when in fullscreen (in which a termination call should be impossible to make anyway).
+</p><hr><a id='LAURA.ToggleFullScreen' name='LAURA.ToggleFullScreen'></a><h1>LAURA.ToggleFullScreen</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>LAURA.ToggleFullScreen</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>LAURA.ToggleFullScreen()</td></tr>
+</table><p> Toggle between full screen and windowed mode
+</p><hr><a id='LAURA.User' name='LAURA.User'></a><h1>LAURA.User</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>LAURA.User</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>LAURA.User()</td></tr>
+</table><p> Returns the username if one is given<br>This does not refer to a network name, just a justname used in LAURA II itself.
+</p><hr><a id='MS' name='MS'></a><h1>MS</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>MS</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Object</td></tr>
+</table><p>This object contains the manager for the multiscripter</p><hr><a id='MS.AddBye' name='MS.AddBye'></a><h1>MS.AddBye</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>MS.AddBye</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>MS.AddBye(Tag)</td></tr>
+</table><p> Adds a script from MultiScript to be executed when Bye or similar instruction is called.<p>Inside the requested script, the function GALE_BYE() will be searched for and executed. No parameters will be taken, and no values will be returned. If a script is not loaded on the moment Bye is called, this part in the sequence will be ignored
+</p><hr><a id='MS.ContainsScript' name='MS.ContainsScript'></a><h1>MS.ContainsScript</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>MS.ContainsScript</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>MS.ContainsScript(tag)</td></tr>
+</table><p> Returns 1 if a script is there on that entry, or false if there's not.
+</p><hr><a id='MS.Destroy' name='MS.Destroy'></a><h1>MS.Destroy</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>MS.Destroy</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>MS.Destroy(Tag)</td></tr>
+</table><p> Removes a scripts from the MS database. Variables marked as MS_SAVE in the .lsv file are automatically being updated. The GALE_OnUnload() function inside the script is being called on the moment the garbage collector picks this up. Please note that is pretty unstable and you can never tell when this will happen.
+</p><hr><a id='MS.LN_Run' name='MS.LN_Run'></a><h1>MS.LN_Run</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>MS.LN_Run</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>MS.LN_Run(Tag,File,f="main",p="")</td></tr>
+</table><p> Loads and runs a script, but only if the script has not been loaded before. <p>I set this one up, in order to allow you to load the script on the moment they are first called. My Star Story game took great advantage of this possibility
+</p><hr><a id='MS.Load' name='MS.Load'></a><h1>MS.Load</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>MS.Load</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>MS.Load(Tag,File)</td></tr>
+</table><p> Load a script to a tag
+</p><hr><a id='MS.LoadNew' name='MS.LoadNew'></a><h1>MS.LoadNew</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>MS.LoadNew</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>MS.LoadNew(Tag,File)</td></tr>
+</table><p> Loads a script only if no script is loaded to this tag.
+</p><hr><a id='MS.Run' name='MS.Run'></a><h1>MS.Run</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>MS.Run</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>MS.Run(Tag,f="main",p="")</td></tr>
+</table><p> Runs a script. If the second parameter is not given, it will automatically run the function called "main". The 3rd parameter should contain the function paramters in one string separated by ";". Please note, this function only accepts strings, so if you send numbers be sure you convert them to numbers in your called function!
+</p><hr><a id='MS.Update' name='MS.Update'></a><h1>MS.Update</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>MS.Update</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>MS.Update(Tag)</td></tr>
+</table><p> Updates all saved variables marked as MS_SAVE. When calling Destroy this function is called automatically. Same will happen when you overwrite an existing script with Load. When you load a script for which these variables exist they are automatically loaded.
+</p><hr><a id='Maps' name='Maps'></a><h1>Maps</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Object</td></tr>
+</table><p>Contains the map features, LAURA II provide. <p>Please note that LAURA II uses the Kthura map engine, which is not a tile based map engine, but an object based engine. Therefore its usage may appear a little awkward at first, but you may learn to truly understand its possibilities, and see if this is better than old-fashioned tile based way of working ;-)</p><hr><a id='Maps.ActorInZone' name='Maps.ActorInZone'></a><h1>Maps.ActorInZone</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.ActorInZone</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.ActorInZone(ActorTag,ZoneTag)</td></tr>
+</table><p> Returns 1 if the actor is within a Zone or TiledArea and will return 0 if not.<br><span style='color:red'>NOTES</span><ol type=lower-greek><li>Lua will deem both 0 and 1 as "true" so you really MUST check on the value. BlitzMax in which the underlying API was written is does not support Booleans and only uses bytes containing either 1 or 0 in stead, that is why.</li><li>Actor tags may ONLY be used for actors. Obstacles will not do and result in an error!</li><li>If you use the zone tag for anything else but TiledAreas or Zones, this feature will not work and throw an error!</li><li>Though the system will handle it just the same, using 'Impassible' objects for the zone is mostly a dumb thing to do.</ol>
+</p><hr><a id='Maps.CamX' name='Maps.CamX'></a><h1>Maps.CamX</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.CamX</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Variable</td></tr>
+</table><p> Assign a value to this to assign the X coordinate of the camera
+</p><hr><a id='Maps.CamY' name='Maps.CamY'></a><h1>Maps.CamY</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.CamY</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Variable</td></tr>
+</table><p> Assign a value to this to assign the Y coordiante of the camera
+</p><hr><a id='Maps.CodeName' name='Maps.CodeName'></a><h1>Maps.CodeName</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.CodeName</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Variable</td></tr>
+</table><p> Contains the code name of the last loaded map. <p>Though it is possible I recommend you NEVER to assign any data to this variable.
+</p><hr><a id='Maps.CoordsInObject' name='Maps.CoordsInObject'></a><h1>Maps.CoordsInObject</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.CoordsInObject</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.CoordsInObject(ObjectTag,x,y)</td></tr>
+</table><p> Detects whether or not the given coordinates are in an object or not. Returns 1 if so, and 0 if not.
+</p><hr><a id='Maps.CreateObstacle' name='Maps.CreateObstacle'></a><h1>Maps.CreateObstacle</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.CreateObstacle</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.CreateObstacle(X,Y,Pic,Tag="",Permanent=0)</td></tr>
+</table><p> Creates an obstacle into the field. If you don't enter a tag, the system will create one for you and return it. When you make this permanent, this creation will be logged and redone when the map is reloaded.
+</p><hr><a id='Maps.DebugBlockMap' name='Maps.DebugBlockMap'></a><h1>Maps.DebugBlockMap</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.DebugBlockMap</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.DebugBlockMap()</td></tr>
+</table><p> Shows the blockmap of the current map and position.<p>I should note that this function is strictly meant for debugging purposes
+</p><hr><a id='Maps.Draw' name='Maps.Draw'></a><h1>Maps.Draw</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.Draw</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.Draw()</td></tr>
+</table><p> Draw the map taking the camera coordinates in mind
+</p><hr><a id='Maps.GetData' name='Maps.GetData'></a><h1>Maps.GetData</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.GetData</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.GetData(key)</td></tr>
+</table><p> Retrieves the data from the Kthura map.
+</p><hr><a id='Maps.HideLabels' name='Maps.HideLabels'></a><h1>Maps.HideLabels</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.HideLabels</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.HideLabels(Labels)</td></tr>
+</table><p> Hide objects with set up labels
+</p><hr><a id='Maps.HideObject' name='Maps.HideObject'></a><h1>Maps.HideObject</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.HideObject</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.HideObject(Tag)</td></tr>
+</table><p> Hides an object. This function works on any object including actors
+</p><hr><a id='Maps.Load' name='Maps.Load'></a><h1>Maps.Load</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.Load</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.Load(Mapname)</td></tr>
+</table><p> Loads a map into the memory.<p>If a a file named script.lua is present in the Kthura map folder it will be loaded under scripttag "MAP", if not the system will see if a file named <mapname>.lua is present in the Script/Maps/ folder and load it under scripttag "MAP". If both do not exist an empty script file will be loaded in stead.
+</p><hr><a id='Maps.Obj' name='Maps.Obj'></a><h1>Maps.Obj</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.Obj</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Object</td></tr>
+</table><p></p><hr><a id='Maps.Obj.Exists' name='Maps.Obj.Exists'></a><h1>Maps.Obj.Exists</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.Obj.Exists</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.Obj.Exists(Tag)</td></tr>
+</table><p> Returns 1 if an object with the specified tag exists otherwise 0. Please note Lua regards both values as "true" so you need specific expression in boolean compiration.<br>This function works on all objects including actors.
+</p><hr><a id='Maps.Obj.Kill' name='Maps.Obj.Kill'></a><h1>Maps.Obj.Kill</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.Obj.Kill</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.Obj.Kill(Tag="",Permanent=0)</td></tr>
+</table><p> Destroys the object chosen by Pick unless you give up a Tag, then it will destroy the object under that tag.<p>Warning! This method can be dangerous when you make use of the direct access features. The underlying API uses BlitzMax and BlitzMax uses an automated garbage collector to destroy all objects BlitzMax has no more references to. However the garbage collector has no support for the stuff Lua refers to. If you use this function make sure you reset the direct access features to make 100% sure you got good access once more before you go into this. Neglecting to do this properly will most likely lead to a crash (without a proper error message).<p>This function works on both actors as reguar objects.<p>If "permanent" is set to any value other than 0, the system will log this removal and this log is always loaded when loading a new map. Important notice on this, the more permanent changes you have the slower the re-load of this map can become. Therefore it's important you perma-remove (or perma-change in general) as little as you can.
+</p><hr><a id='Maps.Obj.MyObject:TKthuraObject' name='Maps.Obj.MyObject:TKthuraObject'></a><h1>Maps.Obj.MyObject:TKthuraObject</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.Obj.MyObject:TKthuraObject</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Variable</td></tr>
+</table><p> The variable containing the current object data and you can even write data with it DIRECLY into the core of the Kthura object, but you can better only use it if you know the core of Kthura and thus know what you are doing.
+</p><hr><a id='Maps.Obj.Obj' name='Maps.Obj.Obj'></a><h1>Maps.Obj.Obj</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.Obj.Obj</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.Obj.Obj:TKthuraObject(Tag)</td></tr>
+</table><p> Returns the object directly into a Lua Var. Please note this is for the advanced user only. Best is NOT to use this on actors though it is possible. For actors use Actors.Actor() in stead.
+</p><hr><a id='Maps.Obj.PickCurrentActor' name='Maps.Obj.PickCurrentActor'></a><h1>Maps.Obj.PickCurrentActor</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.Obj.PickCurrentActor</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.Obj.PickCurrentActor()</td></tr>
+</table><p> You can get the currently chosen actor into the normal object reader. Please note that actors can do more than objects, but the features available to both can be found here.
+</p><hr><a id='Maps.Obj.PickListedObject' name='Maps.Obj.PickListedObject'></a><h1>Maps.Obj.PickListedObject</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.Obj.PickListedObject</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.Obj.PickListedObject()</td></tr>
+</table><p> Copy the currently listed object into the normal object API
+</p><hr><a id='Maps.Obj.Seal' name='Maps.Obj.Seal'></a><h1>Maps.Obj.Seal</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.Obj.Seal</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.Obj.Seal(Tag)</td></tr>
+</table><p> The next data of an object will be made permanent: Coordinates, width, height, insertionpoints, alpha, rotiation, dominance, labels, tag<br>Please note the object must exist at the time the permanent changes are being processed by LAURA. If the object does not exist it's simply ignored.
+</p><hr><a id='Maps.Obj.SetColor' name='Maps.Obj.SetColor'></a><h1>Maps.Obj.SetColor</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.Obj.SetColor</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.Obj.SetColor(R,G,B)</td></tr>
+</table><p> Sets the color of the chosen object.<p>This function with basically accept all objects, including actors. Keep in mind though that some objects may not respond to the color change.<br>(And using this on zones, is (since you can't see them) pretty pointless) :-P
+</p><hr><a id='Maps.Obj.X' name='Maps.Obj.X'></a><h1>Maps.Obj.X</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.Obj.X</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.Obj.X()</td></tr>
+</table><p> X coordinate picked object
+</p><hr><a id='Maps.Obj.Y' name='Maps.Obj.Y'></a><h1>Maps.Obj.Y</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.Obj.Y</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.Obj.Y()</td></tr>
+</table><p> Y coordinate picked object
+</p><hr><a id='Maps.ObjectList' name='Maps.ObjectList'></a><h1>Maps.ObjectList</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.ObjectList</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Object</td></tr>
+</table><p>This feature allows you to browse through the objects of a map.<br>All features require that you use Maps.ObjectList.Start() (or semilar function) first or LAURA II will crash out with an error!<p>Only one listout can be active at a time, and (very important) when you load a new map, all data will be reset, so you'll need to start up a new queue.</p><hr><a id='Maps.ObjectList.CurrentPick' name='Maps.ObjectList.CurrentPick'></a><h1>Maps.ObjectList.CurrentPick</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.ObjectList.CurrentPick</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.ObjectList.CurrentPick()</td></tr>
+</table><p> Returns -1 if we got no pick, otherwise it returns the number of the current pick
+</p><hr><a id='Maps.ObjectList.GotList' name='Maps.ObjectList.GotList'></a><h1>Maps.ObjectList.GotList</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.ObjectList.GotList</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.ObjectList.GotList()</td></tr>
+</table><p> Returns 1 if there is a list. Returns 0 otherwise
+</p><hr><a id='Maps.ObjectList.GotPick' name='Maps.ObjectList.GotPick'></a><h1>Maps.ObjectList.GotPick</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.ObjectList.GotPick</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.ObjectList.GotPick()</td></tr>
+</table><p> Returns 1 if a pick was done. returns 0 otherwise
+</p><hr><a id='Maps.ObjectList.Pick' name='Maps.ObjectList.Pick'></a><h1>Maps.ObjectList.Pick</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.ObjectList.Pick</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.ObjectList.Pick(idx)</td></tr>
+</table><p> Pick an object within the list. You must do this before trying to read out any objects. If you index a negative value this function will just flush the last pick.
+</p><hr><a id='Maps.ObjectList.Start' name='Maps.ObjectList.Start'></a><h1>Maps.ObjectList.Start</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.ObjectList.Start</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.ObjectList.Start(kind="")</td></tr>
+</table><p> Look up all objects of a certain kind. If you don't define a kind, all objects of the map will be listed. Once the listout is complete the number of entries will be returned. 
+</p><hr><a id='Maps.ObjectList.ToScript' name='Maps.ObjectList.ToScript'></a><h1>Maps.ObjectList.ToScript</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.ObjectList.ToScript</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.ObjectList.ToScript(idx=0)</td></tr>
+</table><p> Returns a script you can execute with LoadScript to create a function returning the values needed. When Idx is set to a negative value you'll get a big array containing all indexes of the current list. When Idx is a value of 0 or higher, you'll just get a table with all the stuff in the record.
+</p><hr><a id='Maps.ObjectList.X' name='Maps.ObjectList.X'></a><h1>Maps.ObjectList.X</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.ObjectList.X</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.ObjectList.X()</td></tr>
+</table><p> X coordinate picked object
+</p><hr><a id='Maps.ObjectList.Y' name='Maps.ObjectList.Y'></a><h1>Maps.ObjectList.Y</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.ObjectList.Y</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.ObjectList.Y()</td></tr>
+</table><p> Y coordinate picked object
+</p><hr><a id='Maps.PermaKill' name='Maps.PermaKill'></a><h1>Maps.PermaKill</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.PermaKill</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.PermaKill()</td></tr>
+</table><p> Removes all data from the current room's perma file.
+</p><hr><a id='Maps.PermaWrite' name='Maps.PermaWrite'></a><h1>Maps.PermaWrite</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.PermaWrite</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.PermaWrite(Str)</td></tr>
+</table><p> Writes script to the perma-change file of this map.<br>Anything can be written to this file, as long as it's valid Lua code. The more changes the slower the re-laod of the level becomes. Most functions supporting permanent changes already call this function.
+</p><hr><a id='Maps.Remap' name='Maps.Remap'></a><h1>Maps.Remap</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.Remap</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.Remap()</td></tr>
+</table><p> Remaps the Kthura map.<br>This feature can be needed if you used some direct access routines. Some stuff (like the blockmap) need to be rebuilt as a result. This feature should make sure everything works the way it should again.
+</p><hr><a id='Maps.SetData' name='Maps.SetData'></a><h1>Maps.SetData</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.SetData</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.SetData(key,Value,perm=0)</td></tr>
+</table><p> Sets new data inside the Kthura map. If you set perm to any other value than 0, this change will be stored, making the change permanent for the remainder of the game
+</p><hr><a id='Maps.ShowLabel' name='Maps.ShowLabel'></a><h1>Maps.ShowLabel</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.ShowLabel</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.ShowLabel(Labels)</td></tr>
+</table><p> Show objects with set up labels.
+</p><hr><a id='Maps.ShowObject' name='Maps.ShowObject'></a><h1>Maps.ShowObject</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.ShowObject</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.ShowObject(Tag)</td></tr>
+</table><p> Shows an object. This function works on any object including actors.
+</p><hr><a id='Maps.ShowOnlyLabel' name='Maps.ShowOnlyLabel'></a><h1>Maps.ShowOnlyLabel</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Maps.ShowOnlyLabel</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Maps.ShowOnlyLabel(Labels)</td></tr>
+</table><p> Show only object with required labels
+</p><hr><a id='Math' name='Math'></a><h1>Math</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Math</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Object</td></tr>
+</table><p>Some mathematical functions<p>Please note that as of version 15.02.18 most of this object has been deprecated as Lua already provides those routines itself and somewhere in 2016 or in the years later they might be removed. The randomizer and the routines based on the pythagorean theorism have remained. The object itself is not deprecated and may even be expanded in the future when there are calculations I don't expect to see in the in the Lua default features ever.</p><hr><a id='Math.AlwaysPos' name='Math.AlwaysPos'></a><h1>Math.AlwaysPos</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Math.AlwaysPos</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Math.AlwaysPos:Double(V:Double)</td></tr>
+</table><p> Will turn a number into a positive number if it were a negative<p>This function is deprecated as of version 15.02.18, and may be removed somewhere in 2016 or a few years later. Use the Lua's math.abs in stead.
+</p><hr><a id='Math.Cos' name='Math.Cos'></a><h1>Math.Cos</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Math.Cos</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Math.Cos:Double(V:Double)</td></tr>
+</table><p> Cosine<p>This function is deprecated as of version 15.02.18, and may be removed somewhere in 2016 or a few years later. Use the Lua variant in stead.
+</p><hr><a id='Math.Dist2D' name='Math.Dist2D'></a><h1>Math.Dist2D</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Math.Dist2D</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Math.Dist2D:Double(x1:Double,y1:Double,x2:Double,y2:Double)</td></tr>
+</table><p> Will calculate the distance between two points in a 2D image using the Pythagorean theorism
+</p><hr><a id='Math.Dist3D' name='Math.Dist3D'></a><h1>Math.Dist3D</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Math.Dist3D</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Math.Dist3D:Double(x1:Double,y1:Double,z1:Double,x2:Double,y2:Double,z2:Double)</td></tr>
+</table><p> Will calculate the distance between two points in a 3D image using the Pythagorean theorism
+</p><hr><a id='Math.Rand' name='Math.Rand'></a><h1>Math.Rand</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Math.Rand</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Math.Rand(MinV,MaxV)</td></tr>
+</table><p> Retuns a random number between MinV and MaxV<br><br>For the guys who know about seeding. This happens automatically when the game starts up.
+</p><hr><a id='Math.Sin' name='Math.Sin'></a><h1>Math.Sin</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Math.Sin</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Math.Sin:Double(V:Double)</td></tr>
+</table><p> Sine<p>This function is deprecated as of version 15.02.18, and may be removed somewhere in 2016 or a few years later. Use the Lua variant in stead.
+</p><hr><a id='Math.Tan' name='Math.Tan'></a><h1>Math.Tan</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Math.Tan</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Math.Tan:Double(V:Double)</td></tr>
+</table><p> Tangent<p>This function is deprecated as of version 15.02.18, and may be removed somewhere in 2016 or a few years later. Use the Lua variant in stead.
+</p><hr><a id='Math.TanCrash' name='Math.TanCrash'></a><h1>Math.TanCrash</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Math.TanCrash</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Variable</td></tr>
+</table><p> When set to any other value than 0, the game will crash when an invalid tangent is asked for
+</p><hr><a id='Preset Definitions' name='Preset Definitions'></a><h1>Preset Definitions</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Preset Definitions</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Background information</td></tr>
+</table><p> The next definitions can not be set/unset with DEFINE or UNDEF, but IF and ELSEIF can see them and they can be used there.<p><table><tr><td>$WINDOWS</td><td>Set if running from Windows</td></tr><tr><td>$MAC</td><td>Set if running from MacOS X</td></tr><tr><td>$MACOS</td><td>Alias for $MAC</td></tr><tr><td>$LINUX</td><td>Set if running from Linux</td></tr><tr><td>$DEBUGBUILD</td><td>Set if you happen to use the debug build of the engine</td><tr><td>$RELEASEBUILD</td><td>Set if you use the release build of your engine</td><tr><td>$LITTLEENDIAN</td><td>Set if processor uses LittleEndian</td><tr><td>$BIGENDIAN</td><td>Set if your processor uses BigEndian</td></tr><tr><td>$X86</td><td>Set if you have use and X86 processor (Intel or compatible)</td></tr><tr><td>$PPC</td><td>Set if you use a PowerPC processor</td></tr></table>
+</p><hr><a id='RPGChar' name='RPGChar'></a><h1>RPGChar</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Object</td></tr>
+</table><p>This object contains features you need for RPG Character and statistics</p><hr><a id='RPGChar.AddList' name='RPGChar.AddList'></a><h1>RPGChar.AddList</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.AddList</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.AddList(char,List,Item)</td></tr>
+</table><p> Create a list inside a character record. If the requested list does not yet exist, this function will create it.
+</p><hr><a id='RPGChar.CharByNum' name='RPGChar.CharByNum'></a><h1>RPGChar.CharByNum</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.CharByNum</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.CharByNum(index)</td></tr>
+</table><p> Returns the name of the character found at index number 'index'.<P>This function has only been designed for iteration purposes, and can better not be used if you are not sure what you are doing. If the index number is "out of bounds", an empty string will be returend. The first entry is number 0.
+</p><hr><a id='RPGChar.CharExists' name='RPGChar.CharExists'></a><h1>RPGChar.CharExists</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.CharExists</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.CharExists(Char)</td></tr>
+</table><p> Returns 1 if the character exists and returns 0 if it doesn't.<p>Always remember that 0 does count as "true" in Lua.
+</p><hr><a id='RPGChar.CharList' name='RPGChar.CharList'></a><h1>RPGChar.CharList</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.CharList</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.CharList(Char)</td></tr>
+</table><p> Retuns a string with all codenames of the loaded chars separated by ;
+</p><hr><a id='RPGChar.ClearList' name='RPGChar.ClearList'></a><h1>RPGChar.ClearList</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.ClearList</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.ClearList(char,List)</td></tr>
+</table><p> Empty a list
+</p><hr><a id='RPGChar.ClearParty' name='RPGChar.ClearParty'></a><h1>RPGChar.ClearParty</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.ClearParty</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.ClearParty()</td></tr>
+</table><p> Removes all characters from the party
+</p><hr><a id='RPGChar.CountChars' name='RPGChar.CountChars'></a><h1>RPGChar.CountChars</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.CountChars</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.CountChars()</td></tr>
+</table><p> Returns the number of characters currently stored in the memory. (Not necesarily the amount of party members) :)
+</p><hr><a id='RPGChar.CountList' name='RPGChar.CountList'></a><h1>RPGChar.CountList</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.CountList</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.CountList(char,List)</td></tr>
+</table><p> Count the number of entries in the list
+</p><hr><a id='RPGChar.CreateChar' name='RPGChar.CreateChar'></a><h1>RPGChar.CreateChar</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.CreateChar</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.CreateChar(Char)</td></tr>
+</table><p> Create a character (if a character already exists under that name, it will simply be deleted).
+</p><hr><a id='RPGChar.CreateList' name='RPGChar.CreateList'></a><h1>RPGChar.CreateList</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.CreateList</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.CreateList(char,List)</td></tr>
+</table><p> Create a list, but don't add any items yet
+</p><hr><a id='RPGChar.DataFields' name='RPGChar.DataFields'></a><h1>RPGChar.DataFields</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.DataFields</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.DataFields(char)</td></tr>
+</table><p> Returns a string with all stringdata fieldnames separated by ";". It is recommended to use a split function to split it (if you don't have one I'm sure you can find some scripts for that if you google for that).
+</p><hr><a id='RPGChar.DecStat' name='RPGChar.DecStat'></a><h1>RPGChar.DecStat</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.DecStat</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.DecStat(char,Statn,value=1)</td></tr>
+</table><p> Decreases a stat by the given number. If value is either 0 or undefined, the stat will be decreased by 1
+</p><hr><a id='RPGChar.DefStat' name='RPGChar.DefStat'></a><h1>RPGChar.DefStat</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.DefStat</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.DefStat(char,Stat,value=0,OnlyIfNotExist=0)</td></tr>
+</table><p> Defines a value. Please note that if a stat is scripted the scripts it refers to will always use this feature itself to define the value. If "OnlyIfNotExist" is checked to 1 or any higher number than that, the definition only takes place of the stat doesn't exist yet. This was a safety precaution if you want to add stats later without destroying the old data if it exists, but to create it if you added a stat which was (logically) not yet stored in older savegames.
+</p><hr><a id='RPGChar.DelChar' name='RPGChar.DelChar'></a><h1>RPGChar.DelChar</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.DelChar</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.DelChar(char)</td></tr>
+</table><p> Alias for DelCharacter. Some people (like me) are just lazy.
+</p><hr><a id='RPGChar.DelCharacter' name='RPGChar.DelCharacter'></a><h1>RPGChar.DelCharacter</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.DelCharacter</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.DelCharacter(char)</td></tr>
+</table><p> Deletes a character
+</p><hr><a id='RPGChar.DelData' name='RPGChar.DelData'></a><h1>RPGChar.DelData</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.DelData</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.DelData(char,key)</td></tr>
+</table><p> Delete data in a character	
+</p><hr><a id='RPGChar.DelStat' name='RPGChar.DelStat'></a><h1>RPGChar.DelStat</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.DelStat</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.DelStat(char,stat)</td></tr>
+</table><p> Delete a stat in a character
+</p><hr><a id='RPGChar.DestroyList' name='RPGChar.DestroyList'></a><h1>RPGChar.DestroyList</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.DestroyList</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.DestroyList(char,List)</td></tr>
+</table><p> Destroy the list
+</p><hr><a id='RPGChar.GetData' name='RPGChar.GetData'></a><h1>RPGChar.GetData</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.GetData</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.GetData(char,key)</td></tr>
+</table><p> Retrieve the data in a character
+</p><hr><a id='RPGChar.GetName' name='RPGChar.GetName'></a><h1>RPGChar.GetName</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.GetName</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.GetName(char)</td></tr>
+</table><p> Retrieve the name of a character
+</p><hr><a id='RPGChar.IncStat' name='RPGChar.IncStat'></a><h1>RPGChar.IncStat</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.IncStat</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.IncStat(char,Statn,value=1)</td></tr>
+</table><p> Increases a stat by the given number. If value is either 0 or undefined, the stat will be increased by 1
+</p><hr><a id='RPGChar.LinkData' name='RPGChar.LinkData'></a><h1>RPGChar.LinkData</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.LinkData</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.LinkData(sourcechar,targetchar,dataname)</td></tr>
+</table><p> The stat of two characters will be linked. Works similar to LinkStat but then with Data.
+</p><hr><a id='RPGChar.LinkList' name='RPGChar.LinkList'></a><h1>RPGChar.LinkList</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.LinkList</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.LinkList(sourcechar,targetchar,statname)</td></tr>
+</table><p> The list of two characters will be linked. This means that if one list changes the other will change and vice versa. Upon this definition, the targetchar's stat will be overwritten. After that the targetchar or the sourcechar do not matter any more, they will basically share the same stat. (This feature came to be due to its need in Star Story) :)<p>Should the targetchar's stat not exist it will be created in this function.
+</p><hr><a id='RPGChar.LinkPoints' name='RPGChar.LinkPoints'></a><h1>RPGChar.LinkPoints</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.LinkPoints</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.LinkPoints(sourcechar,targetchar,pointsname)</td></tr>
+</table><p> The stat of two characters will be linked. This means that if one stat changes the other will change and vice versa. Upon this definition, the targetchar's stat will be overwritten. After that the targetchar or the sourcechar do not matter any more, they will basically share the same stat. (This feature came to be due to its need in Star Story) :)<p>Should the targetchar's stat not exist it will be created in this function.
+</p><hr><a id='RPGChar.LinkStat' name='RPGChar.LinkStat'></a><h1>RPGChar.LinkStat</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.LinkStat</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.LinkStat(sourcechar,targetchar,statname)</td></tr>
+</table><p> The stat of two characters will be linked. This means that if one stat changes the other will change and vice versa. Upon this definition, the targetchar's stat will be overwritten. After that the targetchar or the sourcechar do not matter any more, they will basically share the same stat. (This feature came to be due to its need in Star Story) :)<p>Should the targetchar's stat not exist it will be created in this function.
+</p><hr><a id='RPGChar.ListChars' name='RPGChar.ListChars'></a><h1>RPGChar.ListChars</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.ListChars</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.ListChars()</td></tr>
+</table><p> Returns a string with all character codenames of characters currently stored in the memory. (They do not need to be in the party right now). The names are separated by ;
+</p><hr><a id='RPGChar.ListExist' name='RPGChar.ListExist'></a><h1>RPGChar.ListExist</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.ListExist</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.ListExist(char,List)</td></tr>
+</table><p> returns 1 if the character and the list tied to that character exist otherwise it returns 0
+</p><hr><a id='RPGChar.ListFields' name='RPGChar.ListFields'></a><h1>RPGChar.ListFields</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.ListFields</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.ListFields(char)</td></tr>
+</table><p> Returns a string with all list fieldnames separated by ";". It is recommended to use a split function to split it (if you don't have one I'm sure you can find some scripts for that if you google for that).
+</p><hr><a id='RPGChar.ListHas' name='RPGChar.ListHas'></a><h1>RPGChar.ListHas</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.ListHas</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.ListHas(char,list,itemstring)</td></tr>
+</table><p> returns 1 if the item was found in the list. If the list or the item does not exist it returns 0
+</p><hr><a id='RPGChar.ListItem' name='RPGChar.ListItem'></a><h1>RPGChar.ListItem</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.ListItem</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.ListItem(char,List,Index)</td></tr>
+</table><p> Return the item at an index on the list. When the index number is too high an error will pop up.<p>Please note, the api in this method has been adepted to Lua, so it starts with 1, and ends with the countnumber of the list. 0 is therefore not taken as a valid index! Always remember it!
+</p><hr><a id='RPGChar.ModStat' name='RPGChar.ModStat'></a><h1>RPGChar.ModStat</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.ModStat</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.ModStat(char,stat,modifier)</td></tr>
+</table><p> Set the modifier
+</p><hr><a id='RPGChar.NewData' name='RPGChar.NewData'></a><h1>RPGChar.NewData</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.NewData</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.NewData(Char,key,str)</td></tr>
+</table><p> If a data field does not exist, create it and define it. If it already exists, ignore it! (1 is returned if a definition took place, 0 is returned when no definition is done)
+</p><hr><a id='RPGChar.NewParty' name='RPGChar.NewParty'></a><h1>RPGChar.NewParty</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.NewParty</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.NewParty(MaxChars)</td></tr>
+</table><p> Creates a new party. If MaxChars is not set the default value 6 will be used. There is no "official" limit to the maximum amount of characters in a party, it's just how much memory you have.<p>If you never use this function you have a party of max 6 characters available.
+</p><hr><a id='RPGChar.NewStat' name='RPGChar.NewStat'></a><h1>RPGChar.NewStat</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.NewStat</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.NewStat(char,Stat,Value)</td></tr>
+</table><p> Shortcut to DefStat with OnlyIfNotExist defined ;)
+</p><hr><a id='RPGChar.PartyTag' name='RPGChar.PartyTag'></a><h1>RPGChar.PartyTag</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.PartyTag</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.PartyTag(pos)</td></tr>
+</table><p> Returns the codename of a character on the specific tag
+</p><hr><a id='RPGChar.Points' name='RPGChar.Points'></a><h1>RPGChar.Points</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.Points</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.Points:RPGPoints(char,points,docreate=0)</td></tr>
+</table><p> Points. Has two fields. "Have" and "Maximum". These can be used for Hit Points, Mana, Skill Points, maybe even experience points. Whatever. There is also a field called "MaxCopy" which is a string. When you copy this field, the system will always copy the value of the stat noted in this string for the Maximum value. When the value "docreate" is set to 1 the system will create a new value if it doesn't exist yet, when it's set to 2, it will always create a new value and destroy the old, any other value will not allow creation and cause an error if the points do not exist.
+</p><hr><a id='RPGChar.PointsFields' name='RPGChar.PointsFields'></a><h1>RPGChar.PointsFields</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.PointsFields</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.PointsFields(char)</td></tr>
+</table><p> Returns a string with all stringdata fieldnames separated by ";". It is recommended to use a split function to split it (if you don't have one I'm sure you can find some scripts for that if you google for that).
+</p><hr><a id='RPGChar.Portrait' name='RPGChar.Portrait'></a><h1>RPGChar.Portrait</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.Portrait</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.Portrait(Char,x,y)</td></tr>
+</table><p> Show a character picture if it exists.
+</p><hr><a id='RPGChar.RemList' name='RPGChar.RemList'></a><h1>RPGChar.RemList</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.RemList</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.RemList(char,List,Item)</td></tr>
+</table><p> Remove an item from a list
+</p><hr><a id='RPGChar.RemoveFromParty' name='RPGChar.RemoveFromParty'></a><h1>RPGChar.RemoveFromParty</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.RemoveFromParty</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.RemoveFromParty(Tag)</td></tr>
+</table><p> The character with the tag specified will be removed from the party and the party will automatically remove the empty spaces.
+</p><hr><a id='RPGChar.ScriptStat' name='RPGChar.ScriptStat'></a><h1>RPGChar.ScriptStat</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.ScriptStat</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.ScriptStat(char,stat,script,func)</td></tr>
+</table><p> Define the script for a stat. Please note, if either the script or the function is not properly defined the system will ignore the scripting.
+</p><hr><a id='RPGChar.SetData' name='RPGChar.SetData'></a><h1>RPGChar.SetData</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.SetData</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.SetData(char,key,str)</td></tr>
+</table><p> Define data in a character
+</p><hr><a id='RPGChar.SetName' name='RPGChar.SetName'></a><h1>RPGChar.SetName</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.SetName</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.SetName(char,name)</td></tr>
+</table><p> Name the character
+</p><hr><a id='RPGChar.SetParty' name='RPGChar.SetParty'></a><h1>RPGChar.SetParty</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.SetParty</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.SetParty(pos,Tag)</td></tr>
+</table><p> Assign a party member to a slot. Please note depending on the engine there can be a maximum of slots.
+</p><hr><a id='RPGChar.SetStat' name='RPGChar.SetStat'></a><h1>RPGChar.SetStat</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.SetStat</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.SetStat(char,Stat,value=0,OnlyIfNotExist=0)</td></tr>
+</table><p> Alias for DefStat
+</p><hr><a id='RPGChar.Stat' name='RPGChar.Stat'></a><h1>RPGChar.Stat</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.Stat</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.Stat(Char,Stat,nomod=0)</td></tr>
+</table><p> Returns the stat value
+</p><hr><a id='RPGChar.StatExists' name='RPGChar.StatExists'></a><h1>RPGChar.StatExists</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.StatExists</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.StatExists(char,Stat)</td></tr>
+</table><p> Returns 1 if the stat exists, returns 0 if stat does not exist
+</p><hr><a id='RPGChar.StatFields' name='RPGChar.StatFields'></a><h1>RPGChar.StatFields</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.StatFields</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.StatFields(char)</td></tr>
+</table><p> Returns a string with all statistics fieldnames separated by ";". It is recommended to use a split function to split it (if you don't have one I'm sure you can find some scripts for that if you google for that).
+</p><hr><a id='RPGChar.ValueList' name='RPGChar.ValueList'></a><h1>RPGChar.ValueList</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>RPGChar.ValueList</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>RPGChar.ValueList(Char,List,Index)</td></tr>
+</table><p> Return the value at the index. <br>This routine has been adepted to Lua starting with 1 and ending on the max number!
+</p><hr><a id='SELECT' name='SELECT'></a><h1>SELECT</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>SELECT</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Compiler Directive</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>-- @SELECT &lt;var/function></td></tr>
+</table><p> You can use this directive to create a "SELECT" statement (same as "switch" in C-syntax languages). As Lua doesn't support that itself I made this preprocessor do it.<br>You cannot place a remark behind this statement or the preprocessor will create faulty Lua scripts. If you want a remark with this, put it either above or below it :)<br>NOTE: Only one SELECT can be open at a time. When you open a new one, the old one will be closed, however keep closing your SELECT statements anyway, as you never know if I might improve this in the future :)
+</p><hr><a id='Shell' name='Shell'></a><h1>Shell</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Shell</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Object</td></tr>
+</table><p>Includes "shell" to Lua.</p><hr><a id='Shell.Shell' name='Shell.Shell'></a><h1>Shell.Shell</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Shell.Shell</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Shell.Shell(Script,LoadSavedVars=0)</td></tr>
+</table><p> Loads a script, executes it's Main() function and removes it from the memory.<br>If you have a .lsv file of the script it will store all variables with the "SAVE" tag into the memory and include them to the script if the LoadSavedVars parameter is set to 1 when you load the script again at a later occurance
+</p><hr><a id='Str' name='Str'></a><h1>Str</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Str</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Object</td></tr>
+</table><p>String features<p><span style='color:#ff0000'>Note! Several features in this object have been deprecated as of version 15.08.06 and may be removed somewhere after the year 2017 or later. The object itself is not deprecated and may even be expanded in the future.<br>Several deprecated features are now brought into my strings.lua file which can be found in several repositories of mine. I hope to give it (along with a few other lua "libraries" of mine their own repository soon).</p><hr><a id='Str.ASCII' name='Str.ASCII'></a><h1>Str.ASCII</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Str.ASCII</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Str.ASCII(S)</td></tr>
+</table><p> returns ASCII code of first byte in a string
+</p><hr><a id='Str.BackSpace' name='Str.BackSpace'></a><h1>Str.BackSpace</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Str.BackSpace</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Str.BackSpace(S)</td></tr>
+</table><p> Removes the last char from a string
+</p><hr><a id='Str.Char' name='Str.Char'></a><h1>Str.Char</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Str.Char</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Str.Char(A)</td></tr>
+</table><p> returns the char of an ASCII code<p style='color:#ff0000;background-color:#000000; font-family:impact; font-size:20'>DEPRECATED!</p>
+</p><hr><a id='Str.FirstUpper' name='Str.FirstUpper'></a><h1>Str.FirstUpper</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Str.FirstUpper</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Str.FirstUpper(S)</td></tr>
+</table><p> Returns strings in first letter upper case, the rest lowercase
+</p><hr><a id='Str.Left' name='Str.Left'></a><h1>Str.Left</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Str.Left</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Str.Left(S,L)</td></tr>
+</table><p> <p style='color:#ff0000;background-color:#000000; font-family:impact; font-size:20'>DEPRECATED!</p>
+</p><hr><a id='Str.Length' name='Str.Length'></a><h1>Str.Length</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Str.Length</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Str.Length(S)</td></tr>
+</table><p> Returns length of a string<p style='color:#ff0000;background-color:#000000; font-family:impact; font-size:20'>DEPRECATED!</p>
+</p><hr><a id='Str.Lower' name='Str.Lower'></a><h1>Str.Lower</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Str.Lower</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Str.Lower(S)</td></tr>
+</table><p> Returns string in lowercase<p style='color:#ff0000;background-color:#000000; font-family:impact; font-size:20'>DEPRECATED!</p>
+</p><hr><a id='Str.Mid' name='Str.Mid'></a><h1>Str.Mid</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Str.Mid</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Str.Mid(S,Ofs,Ln=1)</td></tr>
+</table><p> returns a part of a string<p style='color:#ff0000;background-color:#000000; font-family:impact; font-size:20'>DEPRECATED!</p>
+</p><hr><a id='Str.Prefixed' name='Str.Prefixed'></a><h1>Str.Prefixed</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Str.Prefixed</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Str.Prefixed(S,Prefix)</td></tr>
+</table><p> Returns 1 if prefixed with the requested prefix and 0 if not
+</p><hr><a id='Str.Replace' name='Str.Replace'></a><h1>Str.Replace</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Str.Replace</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Str.Replace(S,SBS,REP)</td></tr>
+</table><p> Replaces a substring with another substring inside a string.<p style='color:#ff0000;background-color:#000000; font-family:impact; font-size:20'>DEPRECATED!</p>
+</p><hr><a id='Str.Right' name='Str.Right'></a><h1>Str.Right</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Str.Right</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Str.Right(S,L)</td></tr>
+</table><p> <p style='color:#ff0000;background-color:#000000; font-family:impact; font-size:20'>DEPRECATED!</p>
+</p><hr><a id='Str.Suffixed' name='Str.Suffixed'></a><h1>Str.Suffixed</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Str.Suffixed</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Str.Suffixed(S,Prefix)</td></tr>
+</table><p> Returns 1 if suffixed with the requested suffix and 0 if not
+</p><hr><a id='Str.Trim' name='Str.Trim'></a><h1>Str.Trim</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Str.Trim</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Str.Trim(S)</td></tr>
+</table><p> Trim function <p style='color:#ff0000;background-color:#000000; font-family:impact; font-size:20'>DEPRECATED!</p>
+</p><hr><a id='Str.Upper' name='Str.Upper'></a><h1>Str.Upper</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Str.Upper</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Str.Upper(S)</td></tr>
+</table><p> returns string in uppercase<p style='color:#ff0000;background-color:#000000; font-family:impact; font-size:20'>DEPRECATED!</p>
+</p><hr><a id='Sys' name='Sys'></a><h1>Sys</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Sys</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Object</td></tr>
+</table><p>This object contains a few system features that the game could use.</p><hr><a id='Sys.AddByeScript' name='Sys.AddByeScript'></a><h1>Sys.AddByeScript</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Sys.AddByeScript</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Sys.AddByeScript(LuaScript)</td></tr>
+</table><p> Adds a Lua Script to be executed on the moment Sys.Bye() is called or when the application is terminated by TerminateWhenRequested(). Some applications may also be linked to this feature.
+</p><hr><a id='Sys.Alert' name='Sys.Alert'></a><h1>Sys.Alert</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Sys.Alert</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Sys.Alert(A)</td></tr>
+</table><p> Pops up a dialog box with A$ as message<br>
+(Does not work in full screen games)
+</p><hr><a id='Sys.Bye' name='Sys.Bye'></a><h1>Sys.Bye</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Sys.Bye</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Sys.Bye()</td></tr>
+</table><p> Ends the game immediately.<br>Please note that if there was any closure to be done, that it's skipped now. The game ends, and there it ends.<p>NOTE: NEVER use os.exit() for the job. GALE is able to clean up it's own shit before exitting your program. os.exit() will skip that and that can lead to things to properly closed. Depending on your GALE version this might lead to leaks.
+</p><hr><a id='Sys.Error' name='Sys.Error'></a><h1>Sys.Error</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Sys.Error</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Sys.Error(Message,R="")</td></tr>
+</table><p> Causes a script to report an error, following the complete GALE tradtions. Depending on the underlying application this can cause the entire program to crash out or not, though the setting is taken from the moment the last script was started. When the application has not been set to crash out entirely, the script will just resume after this error has taken place.
+</p><hr><a id='Sys.ErrorFound' name='Sys.ErrorFound'></a><h1>Sys.ErrorFound</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Sys.ErrorFound</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Variable</td></tr>
+</table><p> Increases by 1 if an error has been found. Should you have configured gale not to crash out when an error occurs, you'll have to set to back this variable to 0 manually if you want to check if any errors have occured.
+</p><hr><a id='Sys.RequestTerminate' name='Sys.RequestTerminate'></a><h1>Sys.RequestTerminate</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Sys.RequestTerminate</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Sys.RequestTerminate()</td></tr>
+</table><p> Returns 1 if the user requested to close down the app that runs this Lua Script otherwise it returns 0.<p>This only works in MAX2D based apps, so don't even try this with GALE.MGUI
+</p><hr><a id='Sys.Sure' name='Sys.Sure'></a><h1>Sys.Sure</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Sys.Sure</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Sys.Sure(Q,Cancel=0)</td></tr>
+</table><p> Opens a dialog box that asks the user for confirmation.<br>The question is in Q$. When Cancel is 0 it's only a yes or no question (though some platforms may ask "OK" and "Cancel"), when Cancel is 1, it will ask "yes", "no" or "cancel".<br>Answer yes returns 1, no returns 0 and cancel returns -1. Please note that LUA does not see "0" as false!
+</p><hr><a id='Sys.TerminateWhenRequested' name='Sys.TerminateWhenRequested'></a><h1>Sys.TerminateWhenRequested</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Sys.TerminateWhenRequested</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Sys.TerminateWhenRequested()</td></tr>
+</table><p> When the user requested to close down the app that runs this Lua Script, the application will do so. <p>USE WITH CAUTION!!!<br>The system will NOT ask for confirmation and if things need to be done before closing down it won't happen. Only use this feature when you are sure closing down is no trouble at all. (This does not work with GALE.MGUI)
+</p><hr><a id='Sys.Val' name='Sys.Val'></a><h1>Sys.Val</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Sys.Val</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Sys.Val(S)</td></tr>
+</table><p> Tuns a number in a string into an integer.<br>This function is brought in as BlitzMax (in which the project was written) can only send in strings for arguments, but LUA will sometimes need an integer and nothing else.<br>Sys.Val was brought in to solve that.<br>Sys.Val("10") just returns the integer 10 ;)
+</p><hr><a id='Time' name='Time'></a><h1>Time</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Time</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Object</td></tr>
+</table><p> Contains some functions for time usage</p><hr><a id='Time.Date' name='Time.Date'></a><h1>Time.Date</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Time.Date</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Time.Date()</td></tr>
+</table><p> Returns the current date in a format like 12 jan 2011
+</p><hr><a id='Time.MSecs' name='Time.MSecs'></a><h1>Time.MSecs</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Time.MSecs</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Time.MSecs()</td></tr>
+</table><p> The number of milliseconds that have passed since the last start up of your OS
+</p><hr><a id='Time.Sleep' name='Time.Sleep'></a><h1>Time.Sleep</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Time.Sleep</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Time.Sleep(ms)</td></tr>
+</table><p> Makes the system wait for <i>ms</i> milliseconds
+</p><hr><a id='Time.Time' name='Time.Time'></a><h1>Time.Time</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Time.Time</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Time.Time()</td></tr>
+</table><p> Retuns the current time as 12:34:42
+</p><hr><a id='UNDEF' name='UNDEF'></a><h1>UNDEF</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>UNDEF</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Compiler Directive</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>-- @UNDEF &lt;DEF></td></tr>
+</table><p> Unset a definition for IF/ELSEIF/FI. It also undoes DEFINE
+</p><hr><a id='USE' name='USE'></a><h1>USE</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>USE</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Compiler Directive</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>-- @USE <FILE></td></tr>
+</table><p> This directive makes you add a script to this script.<br>Note: It does not include on the spot, the new file will be added below the current script file<br>Note: Files are added in the order in which they are called.<br>Note: When you don't enter a path the preprocessor will either use the same path as the main file or the path set in the project the Lua processor has been included to. If you are picky about your paths, set it well!
+</p><hr><a id='USEDIR' name='USEDIR'></a><h1>USEDIR</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>USEDIR</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Compiler Directive</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>-- @USEDIR &lt;DIR></td></tr>
+</table><p> In JCR based projects, this directive can include all .lua files in a directory within the JCR patchlist and it works recursive.
+</p><hr><a id='Var' name='Var'></a><h1>Var</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Var</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Object</td></tr>
+</table><p>This contains the variables of the game.These variables are pretty important. While LUA has its own variable system, it must be noted that all variables only live inside the script they are declared in. They have no power whatsoever in other scripts. The variables here are able to communicate with all scripts in the entire game and even some system features respond to them (read for that the system documentation)</p><hr><a id='Var.C' name='Var.C'></a><h1>Var.C</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Var.C</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Var.C(K)</td></tr>
+</table><p> Retuns the value of a variable<br><b>NOTE:</b>The returned variable will always be a string. When you need it to be numeric you can do that with Sys.Val()
+</p><hr><a id='Var.Clear' name='Var.Clear'></a><h1>Var.Clear</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Var.Clear</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Var.Clear(K)</td></tr>
+</table><p> Deletes a variable
+</p><hr><a id='Var.ClearAll' name='Var.ClearAll'></a><h1>Var.ClearAll</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Var.ClearAll</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Var.ClearAll(K)</td></tr>
+</table><p> Delets all variables
+</p><hr><a id='Var.Count' name='Var.Count'></a><h1>Var.Count</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Var.Count</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Var.Count()</td></tr>
+</table><p> Returns the number of variables
+</p><hr><a id='Var.D' name='Var.D'></a><h1>Var.D</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Var.D</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Var.D(K,V)</td></tr>
+</table><p> Defines a variable.
+
+<pre>Var.D("$NAME","Jeroen")
+a = Var.C("$NAME") -- will put "Jeroen" in lua variable a</pre>
+</p><hr><a id='Var.Got' name='Var.Got'></a><h1>Var.Got</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Var.Got</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Var.Got(k)</td></tr>
+</table><p> returns 1 if a var exists 0 if it doesn't.
+</p><hr><a id='Var.Key' name='Var.Key'></a><h1>Var.Key</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Var.Key</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Var.Key(i)</td></tr>
+</table><p> Returns the key on a specific index (better not to use this function unless you know what you are doing, though it's not likely to cause any harm with this) :)
+</p><hr><a id='Var.S' name='Var.S'></a><h1>Var.S</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
+<tr valign=top class=info><td width=200>Name</td><td>Var.S</td></tr>
+<tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Var.S(St)</td></tr>
+</table><p> Will automatically fill out all vars in a given string and return that.<pre>Var.D("$NAME","Jeroen")
+a = Var.S("My name is $NAME") -- Lua variable a will now contain 'My name is Jeroen'</pre>
+
+<b>IMPORTANT NOTE:</b> It must be noted that the system sees no diffrence between text and variables. As soon as it recognizes a variable it will start replacing. That's why I prefer to start all my vars with $ (like in php). Sometimes I another char that put itself apart. This way you can prevent a lot of misery.
+
+Oh yeah, and the variable names are CASE SENISTIVE!!
+</p> </div>          </td>        </tr>      </table>    </center>    <div><br />    </div>  </body></html>
