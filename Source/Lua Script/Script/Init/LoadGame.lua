@@ -40,7 +40,7 @@ function FixAblPowerup()
 -- I already had too much at the time to fix them all manually so that's why this routine came to be.
 if Done("&SYS.ABLPOWERUPFIXED") then return end -- If fixed before, let's not fix it again!
 local ch
-for ch in each ( mysplit(RPGChar.CharList(),",")) do
+for ch in each ( mysplit(RPGChar.CharList(),";") ) do
     if RPGChar.ListExist(ch,"ABL_POWERUP")==0 then RPGChar.CreateList(ch,"ABL_POWERUP") end
     end
 if RPGChar.CharExists("Wendicka") then RPGChar.LinkList("UniWendicka","Wendicka","ABL_POWERUP") end    
