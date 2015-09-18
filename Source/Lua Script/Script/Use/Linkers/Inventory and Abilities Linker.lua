@@ -1,6 +1,6 @@
 --[[
   Inventory and Abilities Linker.lua
-  Version: 15.09.15
+  Version: 15.09.18
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -69,10 +69,12 @@ if not realinventory then -- This if statement must prevent that the real Items 
    ItemGet = function (I)
    ItemGetArray = ItemGetArray or {}
    if ItemGetArray[I] then return ItemGetArray[I] end
-   Loading()
-   MS.Run("ITEMS","ItemGet",I)
-   local f = loadstring(Var.C('$RET'))
+   -- Loading()
+   --MS.Run("ITEMS","ItemGet",I)
+   -- local f = loadstring(Var.C('$RET'))   
    -- print(Var.C("$RET"))
+   local gotstring = JCR6.LoadString("Script/JINC/IAA/"..I..".lua")
+   local f = loadstring(gotstring)
    ItemGetArray[I] = f()
    return ItemGetArray[I]
    end
