@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 15.09.16
+  Version: 15.09.18
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -41,6 +41,14 @@ pchar = 0
 returnto = "ERROR"
 FeatureArray = {FIELD = { "Status" , "Items" , "Abilities", "Order" }, VAULT = { "Items", "Vault" } }
 Feature = {}
+
+ABL_PowerUpColors = {
+                          INSTANT  = {255,255,  0},
+                          CANCEL   = {255,180,  0},
+                          DBLSPEED = {  0,180,255},
+                          DBLPOWER = {255,  0,  0},
+                          APCUT    = {180,255,  0} 
+                    }
 
 tuts = {
 
@@ -144,14 +152,17 @@ ABLKIND = {
           local y = size/2
           local abilities = RPGStat.CountList(pchar,"ABL")
           local ak
-          local abl,abldata
+          local abl,ablshort,abldata
           local x
           local mx,my = MouseCoords()   my=my-100
           local mh = mousehit(1)
           local cancel = mousehit(2)
+          local col
           local choice = nil
+          local i,pu
           for ak=1,abilities do
-              abl = "ABL_"..RPGStat.ListItem(pchar,"ABL",ak)
+              ablshort = RPGStat.ListItem(pchar,"ABL",ak)
+              abl = "ABL_"..ablshort
               abldata = ItemGet(abl)
               White()
               ItemIcon(abl,30,y,size)
@@ -163,6 +174,11 @@ ABLKIND = {
                  Image.Color(180,180,255)
                  end
               Image.DText(abldata.Name,x,y,0,2)
+              for i,pu in ipairs(ABL_PowerUp) do
+                  col = ABL_PowerUpColors[ablshort.."."..pu] or {255,0,255} -- If a socket is purple, we got an error! :)
+                  Image.Color(col[1],col[2],col[3])
+                  Image.Show("ABL_Socket",(i*36)+300,y)
+                  end
               Image.Color(255,180,0)
               if abldata.ABL_AP > RPGChar.Points(pchar,"AP").Have then Red() end
               Image.DText(abldata.ABL_AP,680,y,1,2)
