@@ -35,7 +35,7 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 
-ABL_PowerUps = {"INSTANT","CANCEL","APCUT","DBLSPEED","DBLPOWER"}
+ABL_PowerUps = {"Instant","Cancel","APCut","DblSpeed","DblPower"}
 
 if not realinventory then -- This if statement must prevent that the real Items and Abilities routine (which incldues this file as well and I cannot prevent that) gets destroyed by these definitions!
 
