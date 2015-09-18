@@ -174,7 +174,7 @@ ABLKIND = {
                  Image.Color(180,180,255)
                  end
               Image.DText(abldata.Name,x,y,0,2)
-              for i,pu in ipairs(ABL_PowerUp) do
+              for i,pu in ipairs(ABL_PowerUps) do
                   col = ABL_PowerUpColors[ablshort.."."..pu] or {255,0,255} -- If a socket is purple, we got an error! :)
                   Image.Color(col[1],col[2],col[3])
                   Image.Show("ABL_Socket",(i*36)+300,y)
