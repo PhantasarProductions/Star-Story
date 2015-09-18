@@ -228,7 +228,7 @@ for pu in each(ABL_PowerUps) do
        r = rand(0,act.Item["ABL_"..pu])
        CSay("We rolled "..r.." for "..pu.."; It must be lower than "..groundvar)
        if r<groundvar then 
-          RPGChar.AddList(ch,ablshort.."."..puu)
+          RPGChar.AddList(ch,"ABL_POWERUP",ablshort.."."..puu)
           MINI(RPGChar.GetName(ch).." earned powerup '"..pufullnames[puu].."' on '"..act.Item.Name.."'",180,0,255)          
           end
        end
