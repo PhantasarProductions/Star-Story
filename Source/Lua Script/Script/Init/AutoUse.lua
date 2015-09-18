@@ -83,5 +83,6 @@ for pu in each(ABL_PowerUps) do
     CSay("Loaded icon for ability power up: "..pu)
     Image.HotCenter("ABL_"..pu)
     end
-Image.AssignLoad("ABL_Socket","GFX/StatusBar/AbilityPowerup/Socket.png")    
+Image.AssignLoad("ABL_Socket","GFX/StatusBar/AbilityPowerup/Socket.png")
+Image.HotCenter("ABL_Socket")    
 end

@@ -175,9 +175,11 @@ ABLKIND = {
                  end
               Image.DText(abldata.Name,x,y,0,2)
               for i,pu in ipairs(ABL_PowerUps) do
-                  col = ABL_PowerUpColors[ablshort.."."..pu] or {255,0,255} -- If a socket is purple, we got an error! :)
-                  Image.Color(col[1],col[2],col[3])
-                  Image.Show("ABL_Socket",(i*36)+300,y)
+                  if abldata["ABL_"..pu] then
+                     col = ABL_PowerUpColors[pu] or {255,0,255} -- If a socket is purple, we got an error! :)
+                     Image.Color(col[1],col[2],col[3])
+                     Image.Show("ABL_Socket",(i*36)+300,y)
+                     end
                   end
               Image.Color(255,180,0)
               if abldata.ABL_AP > RPGChar.Points(pchar,"AP").Have then Red() end
