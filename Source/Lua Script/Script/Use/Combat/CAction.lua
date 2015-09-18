@@ -225,7 +225,7 @@ for pu in each(ABL_PowerUps) do
     puu = upper(pu)
     CSay("Checking: ABL_"..pu.."; Item:"..sval(act.Item['ABL_'..pu]).."; List has: "..RPGChar.ListHas(ch,"ABL_POWERUP",ablshort.."."..puu))
     if act.Item["ABL_"..pu] and RPGChar.ListHas(ch,"ABL_POWERUP",ablshort.."."..puu)==0 then 
-       r = rand(0,act.item["ABL_"..pu])
+       r = rand(0,act.Item["ABL_"..pu])
        CSay("We rolled "..r.." for "..pu.."; It must be lower than "..groundvar)
        if r<groundvar then 
           RPGChar.AddList(ch,ablshort.."."..puu)
