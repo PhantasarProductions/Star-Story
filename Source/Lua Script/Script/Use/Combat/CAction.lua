@@ -204,16 +204,34 @@ if ag=="Foe" then -- Foes should use "FAI" in stead.
    MINI("(Unless somebody already did)",255,0,0)
    return
    end
+local ablshort = right(act.ItemCode,len(act.ItemCode)-4)   
 local ch = FighterTag(ag,ai)   
 local ap = RPGChar.Points(ch,"AP")
-if ap.Have<act.Item.ABL_AP then MINI("Action cancelled",255,0,0); MINI(RPGChar.GetName(ch).." does not have enough AP!",255,180,0) return end
-ap.Dec(act.Item.ABL_AP)  
+local pu,puu,r
+local pufullnames = { INSTANT = "Instant Execution", CANCEL = "Cancel move", DBLSPEED = "Double speed", DBLPWR="Double Power",APCUT="Half AP Cost" }
+local APCost = act.Item.ABL_AP
+if RPGChar.ListHas(ch,"ABL_POWERUP",ablshort..".APCUT")~=0 then APCost = math.ceil(APCost/2) end
+ap.Dec(APCost)  
+if ap.Have<APCost then MINI("Action cancelled",255,0,0); MINI(RPGChar.GetName(ch).." does not have enough AP!",255,180,0) return end
 act.EAI = true
 (XCharAbility[ch] or function() end)()
 ActionFuncs.EAI(ag,ai,act)
 local uch = ch
 if uch=="UniWendicka" then uch="Wendicka" end
+-- Award powerups
 Inc("%ABL.USED."..upper(uch).."."..upper(act.ItemCode))
+local groundvar = CVV("%ABL.USED."..upper(uch).."."..upper(act.ItemCode)) + RPGChar.Stat(ch,"Level")
+for pu in each(ABL_PowerUps) do
+    puu = upper(pu)
+    if act.item["ABL_"..pu] and RPGChar.ListHas(ch,"ABL_POWERUP",ablshort.."."..puu)~=0 then 
+       r = rand(0,act.item["ABL_"..pu])
+       CSay("We rolled "..r.." for "..pu.."; It must be lower than "..groundvar)
+       if r<groundvar then 
+          RPGChar.AddList(ch,ablshort.."."..puu)
+          MINI(RPGChar.GetName(ch).." earned powerup '"..pufullnames[puu].."' on '"..act.Item.Name.."'",180,0,255)          
+          end
+       end
+    end
 end   
 
 

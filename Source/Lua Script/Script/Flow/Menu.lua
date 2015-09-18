@@ -160,6 +160,7 @@ ABLKIND = {
           local col
           local choice = nil
           local i,pu,puu
+          local APCost
           for ak=1,abilities do
               ablshort = RPGStat.ListItem(pchar,"ABL",ak)
               abl = "ABL_"..ablshort
@@ -181,15 +182,17 @@ ABLKIND = {
                      col = ABL_PowerUpColors[puu] or {255,0,255} -- If a socket is purple, we got an error! :)
                      Image.Color(col[1],col[2],col[3])
                      Image.Show("ABL_Socket",(i*18)+300,y)
-                     if RPGChar.ListHas(pchar,ablshort.."."..pu) then
+                     if RPGChar.ListHas(pchar,"ABL_POWERUP",ablshort.."."..puu)~=0 then
                         Image.Show("ABL_"..pu,(i*18)+300,y) 
                         end
                      end
                   end
               Image.ScalePC(100,100)    
               Image.Color(255,180,0)
-              if abldata.ABL_AP > RPGChar.Points(pchar,"AP").Have then Red() end
-              Image.DText(abldata.ABL_AP,680,y,1,2)
+              APCost = abldata.ABL_AP
+              
+              if APCost > RPGChar.Points(pchar,"AP").Have then Red() end
+              Image.DText(APCost,680,y,1,2)
               if mousehit(2) then choice="cancel" end
               y = y + size,choice
               end
