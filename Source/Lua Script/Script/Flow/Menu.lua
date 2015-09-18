@@ -190,7 +190,7 @@ ABLKIND = {
               Image.ScalePC(100,100)    
               Image.Color(255,180,0)
               APCost = abldata.ABL_AP
-              
+              if RPGChar.ListHas(pchar,"ABL_POWERUP",ablshort..".APCUT")~=0 then APCost = math.ceil(APCost/2) end
               if APCost > RPGChar.Points(pchar,"AP").Have then Red() end
               Image.DText(APCost,680,y,1,2)
               if mousehit(2) then choice="cancel" end
