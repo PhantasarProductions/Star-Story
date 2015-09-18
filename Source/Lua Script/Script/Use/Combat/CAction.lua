@@ -223,7 +223,7 @@ inc("%ABL.USED."..upper(uch).."."..upper(act.ItemCode))
 local groundvar = CVV("%ABL.USED."..upper(uch).."."..upper(act.ItemCode)) + RPGChar.Stat(ch,"Level")
 for pu in each(ABL_PowerUps) do
     puu = upper(pu)
-    if act.item["ABL_"..pu] and RPGChar.ListHas(ch,"ABL_POWERUP",ablshort.."."..puu)~=0 then 
+    if act.Item["ABL_"..pu] and RPGChar.ListHas(ch,"ABL_POWERUP",ablshort.."."..puu)~=0 then 
        r = rand(0,act.item["ABL_"..pu])
        CSay("We rolled "..r.." for "..pu.."; It must be lower than "..groundvar)
        if r<groundvar then 
