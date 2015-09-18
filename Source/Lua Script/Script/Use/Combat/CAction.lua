@@ -219,7 +219,7 @@ ActionFuncs.EAI(ag,ai,act)
 local uch = ch
 if uch=="UniWendicka" then uch="Wendicka" end
 -- Award powerups
-Inc("%ABL.USED."..upper(uch).."."..upper(act.ItemCode))
+inc("%ABL.USED."..upper(uch).."."..upper(act.ItemCode))
 local groundvar = CVV("%ABL.USED."..upper(uch).."."..upper(act.ItemCode)) + RPGChar.Stat(ch,"Level")
 for pu in each(ABL_PowerUps) do
     puu = upper(pu)
