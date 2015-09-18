@@ -62,7 +62,7 @@ if abl.Healing and abl.Healing>0 then
    })[abl.HealingType] or function() Sys.Error("Unknown healing type: "..sval(abl.HealingType)) end )()               
    end
 -- Hurt target (can also heal if the element is being absored)
-if abl.AttackPower>0 then
+if abl.AttackPower and abl.AttackPower>0 then
    atkdata = {
        atk = abl.AttackStat,
        def = abl.DefenseStat,
@@ -211,8 +211,8 @@ local pu,puu,r
 local pufullnames = { INSTANT = "Instant Execution", CANCEL = "Cancel move", DBLSPEED = "Double speed", DBLPWR="Double Power",APCUT="Half AP Cost" }
 local APCost = act.Item.ABL_AP
 if RPGChar.ListHas(ch,"ABL_POWERUP",ablshort..".APCUT")~=0 then APCost = math.ceil(APCost/2) end
-ap.Dec(APCost)  
 if ap.Have<APCost then MINI("Action cancelled",255,0,0); MINI(RPGChar.GetName(ch).." does not have enough AP!",255,180,0) return end
+ap.Dec(APCost)  
 act.EAI = true
 (XCharAbility[ch] or function() end)()
 ActionFuncs.EAI(ag,ai,act)
