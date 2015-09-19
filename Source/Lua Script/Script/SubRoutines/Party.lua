@@ -1,6 +1,6 @@
 --[[
   Party.lua
-  Version: 15.09.18
+  Version: 15.09.19
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -248,7 +248,7 @@ if JCR6.Exists(picfile)==0 then CSay("WARNING! Cannot find: "..picfile) end
 if Image.Exist(picref)==0 and JCR6.Exists(picfile)==1 then 
    Image.AssignLoad(picref,picfile) 
    portret[picref]=true 
-   CSay('Loaded '..picfile..' on '..picref) 
+   CSay('Loaded '..picfile..' on '..picref.." (party)") 
 elseif Image.Exist(picref)==1 then 
    portret[picref]=true 
    end

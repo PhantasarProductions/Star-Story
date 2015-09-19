@@ -1,6 +1,6 @@
 --[[
   BoxText.lua
-  Version: 15.09.04
+  Version: 15.09.19
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -108,7 +108,9 @@ for k,tag in pairs(ret) do for i,rec in pairs(tag) do
      if Image.Exist(picref)==0 and JCR6.Exists(picfile)==1 then 
         Image.AssignLoad(picref,picfile) 
         portret[picref]=true 
-        CSay('Loaded '..picfile..' on '..picref) 
+        CSay('Loaded '..picfile..' on '..picref.." (BoxText)") 
+     elseif Image.Exist(picref)~=0 then
+        portret[picref]=true
         end
      if portret[picref] then rec.PicRef=picref; end 
      end end
