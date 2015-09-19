@@ -70,6 +70,7 @@ if abl.AttackPower and abl.AttackPower>0 then
        element
            = abl.AttackElement
       }
+   if act.DoublePower then atkdata.atk = atkdata.atk * 2 end   
    Attack(ag,ai,act,atkdata)   
    end
 -- Scripted stuff
@@ -233,6 +234,25 @@ for pu in each(ABL_PowerUps) do
           end
        end
     end
+end   
+
+function ActionFuncs.ARM(ag,ai,act)
+if ag=="Foe" then -- Foes should use "FAI" in stead.
+   MINI("Action skipped! Enemies cannot use ARMs",255,0,0)
+   MINI("This must be the result of a bug",255,0,0)
+   MINI("Please write an issue about it on",255,0,0)
+   MINI("https://github.com/Tricky1975/Star-Story/issues",0,180,255)
+   MINI("(Unless somebody already did)",255,0,0)
+   return
+   end
+local ablshort = right(act.ItemCode,len(act.ItemCode)-4)   
+local ch = FighterTag(ag,ai)   
+local ap = RPGChar.Points(ch,"ARM.AMMO."..ablshort)
+if ap.Have<1 then MINI("Action cancelled",255,0,0); MINI(RPGChar.GetName(ch).."'s ARM is out of ammo!",255,180,0) return end
+ap.Dec(1)
+act.EAI = true
+(XCharAbility[ch] or function() end)()
+ActionFuncs.EAI(ag,ai,act)
 end   
 
 

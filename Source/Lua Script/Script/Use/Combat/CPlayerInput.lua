@@ -198,6 +198,7 @@ InputItems = {
                  SelectTarget.AblSelectTarget(item.Target,ch,pos)
                  if RPGChar.ListHas(ch,"ABL_POWERUP",ablshort..".DBLSPEED")~=0 then item.ActSpeed = item.ActSpeed * 2 end
                  if RPGChar.ListHas(ch,"ABL_POWERUP",ablshort..".INSTANT" )~=0 then item.ActSpeed = 10000 end
+                 iact.DoublePower = RPGChar.ListHas(ch,"ABL_POWERUP",ablshort..".DBLPOWER" )~=0 
                  end
               end,        
       Done = function()
@@ -213,6 +214,26 @@ InputItems = {
               return ret
               end,
       Input = function(ch)
+              local item
+              local iact
+              local ablshort
+              if CVV("$CHOSENABILITY")=='' then GoToMenu(ch,"Abilities") 
+              elseif CVV("$CHOSENABILITY")=='cancel' then 
+                     PIA=nil
+                     Var.D("$CHOSENABILITY",'') 
+              else                                 
+                 item=ItemGet(CVV("$CHOSENABILITY"))
+                 iact = Act.Hero[pos]
+                 iact.Act = "ABL"
+                 iact.ActSpeed = item.ActSpeed
+                 iact.ItemCode = CVV("$CHOSENABILITY")                 
+                 iact.Item = item
+                 ablshort = right(ablshort,len(ablshort)-4)                 
+                 SelectTarget.AblSelectTarget(item.Target,ch,pos)
+                 iact.ActSpeed = iact.ActSpeed + RPGChar.Stat(ch,"ARM.WEIGHT."..ablshort)
+                 iact.HitPercentage = RPGChar.Stat(ch,"ARM.HIT."   ..ablshort)
+                 iact.XPower        = RPGChar.Stat(ch,"ARM.XPOWER."..ablshort)
+                 end
               end,        
       Done = function()
              end  
