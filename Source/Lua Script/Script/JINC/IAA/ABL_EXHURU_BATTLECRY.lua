@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.19
+version: 15.09.20
 ]]
 ret = {
 	["ABL_AP"] = 25,
@@ -52,8 +52,7 @@ ret = {
 	["ItemType"] = "Consumable",
 	["Name"] = "Battle Cry!",
 	["Target"] = "AA",
-	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseCombat"] = true}
 
 return ret
 

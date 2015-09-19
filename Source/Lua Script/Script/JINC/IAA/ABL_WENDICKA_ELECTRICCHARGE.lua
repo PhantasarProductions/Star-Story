@@ -1,6 +1,6 @@
 --[[
   ABL_WENDICKA_ELECTRICCHARGE.lua
-  Version: 15.09.19
+  Version: 15.09.20
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -50,8 +50,7 @@ ret = {
 	["ItemType"] = "Consumable",
 	["Name"] = "Electric Charge",
 	["Target"] = "AF",
-	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseCombat"] = true}
 
 return ret
 

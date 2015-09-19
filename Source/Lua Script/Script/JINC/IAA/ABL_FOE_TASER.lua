@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_TASER.lua
-  Version: 15.09.19
+  Version: 15.09.20
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -49,8 +49,7 @@ ret = {
 	["ItemType"] = "Consumable",
 	["Name"] = "Taser",
 	["Target"] = "1F",
-	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseCombat"] = true}
 
 return ret
 

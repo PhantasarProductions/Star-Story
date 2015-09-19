@@ -1,7 +1,7 @@
 --[[
   ABL_FOE_PHOTON.lua
   
-  version: 15.09.19
+  version: 15.09.20
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -34,8 +34,7 @@ ret = {
 	["ItemType"] = "Consumable",
 	["Name"] = "Photon Gun",
 	["Target"] = "1F",
-	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseCombat"] = true}
 
 return ret
 

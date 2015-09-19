@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 15.09.19
+  Version: 15.09.20
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -114,6 +114,28 @@ else
    RPGChar.SetData(ch,"INVITEM"..ak,ChosenItem.Item)
    end
 ChosenItem = {}   
+end
+
+function ItemEffect(ch,item)
+end
+
+function UseItem(pch,item,socket)
+local ch = pch or pchar
+;(({
+     Consumable = function()
+                  if ItemEffect(ch,item) then RPGChar.DecStat("INVAMNT"..socket,1) else MINI("It's senseless to do that now!",255,0,0) end
+                  end,
+     EndlesslyUsable =
+                  function()
+                  if not ItemEffect(ch,item) then MINI("It's senseless to do that now!",255,0,0) end 
+                  end,
+     KeyItem =    function()
+                  MINI("This item is automatically used when it's needed",255,0,0)
+                  end,
+     EquipItem =  function()
+                  MINI("This item is automatically used when you have it in your inventory",255,0,0) 
+                  end                                       
+})[item.ItemType] or function() Sys.Error("Unknown Item Type: "..sval(item.ItemType)) end)(ch,item)
 end
 
 DrawArray = {
@@ -407,10 +429,13 @@ FeatureHandleArray = {
                              dy = dy + Image.TextHeight(dl)
                              end
                           SetFont("Tutorial")
-                          for dl in each(mousetxt or {}) do
-                              FitText(dl,mx,16,dy,255,180,255)
+                          for dl in each(mousetxt[returnto] or {}) do
+                              FitText(dl,mx+16,dy,255,180,0)
                               dy = dy + Image.TextHeight(dl) 
-                              end  
+                              end 
+                         if returnto=="FIELD" and mousehit(2) then
+                            UseItem(pchar,item,hoverdata.i) 
+                            end      
                          end    
                   -- @IF *DEVELOPMENT
                   y = 20

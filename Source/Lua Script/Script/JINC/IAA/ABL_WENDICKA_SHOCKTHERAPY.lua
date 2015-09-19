@@ -15,8 +15,7 @@ ret = {
 	["ItemType"] = "Consumable",
 	["Name"] = "Shock Therapy",
 	["Target"] = "1A",
-	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseCombat"] = true}
 
 return ret
 
