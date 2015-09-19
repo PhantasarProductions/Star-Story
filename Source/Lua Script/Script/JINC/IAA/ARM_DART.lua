@@ -44,6 +44,7 @@ ret = {
 	["ActSpeed"] = 400,
 	["AniScriptDefaultPath"] = true,
 	["AttackElement"] = "Non-Elemental",
+	["AttackPower"] = 75,
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "Simple dart, not much damage, but cancels the enemy",
