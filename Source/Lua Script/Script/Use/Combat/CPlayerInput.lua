@@ -1,6 +1,6 @@
 --[[
   CPlayerInput.lua
-  Version: 15.09.16
+  Version: 15.09.19
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -182,18 +182,22 @@ InputItems = {
       Input = function(ch,pos)
               local item
               local iact
+              local ablshort
               if CVV("$CHOSENABILITY")=='' then GoToMenu(ch,"Abilities") 
               elseif CVV("$CHOSENABILITY")=='cancel' then 
                      PIA=nil
                      Var.D("$CHOSENABILITY",'') 
-              else
+              else                                 
                  item=ItemGet(CVV("$CHOSENABILITY"))
                  iact = Act.Hero[pos]
                  iact.Act = "ABL"
                  iact.ActSpeed = item.ActSpeed
                  iact.ItemCode = CVV("$CHOSENABILITY")
-                 iact.Item = item                 
+                 iact.Item = item
+                 ablshort = right(ablshort,len(ablshort)-4)                 
                  SelectTarget.AblSelectTarget(item.Target,ch,pos)
+                 if RPGChar.ListHas(ch,"ABL_POWERUP",ablshort..".DBLSPEED")~=0 then item.ActSpeed = item.ActSpeed * 2 end
+                 if RPGChar.ListHas(ch,"ABL_POWERUP",ablshort..".INSTANT" )~=0 then item.ActSpeed = 10000 end
                  end
               end,        
       Done = function()
