@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 15.09.18
+  Version: 15.09.19
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -191,7 +191,7 @@ SerialBoxText("NEWABILITY","NEWABILITY."..upper(ch),"Combat")
 ActionFuncs.EAI(ag,ai,act)
 RPGChar.RemList(ch,"LEARN",lrncode)
 RPGChar.AddList(ch,"ABL",lrncode)
-MINI(RPGChar.GetName(ch).." learned '"..act.Item.Name.."'",180,0,255)
+MINI(RPGChar.GetName(ch).." learned '"..Var.S(act.Item.Name).."'",180,0,255)
 end   
 
 
@@ -229,7 +229,7 @@ for pu in each(ABL_PowerUps) do
        CSay("We rolled "..r.." for "..pu.."; It must be lower than "..groundvar)
        if r<groundvar then 
           RPGChar.AddList(ch,"ABL_POWERUP",ablshort.."."..puu)
-          MINI(RPGChar.GetName(ch).." earned powerup '"..pufullnames[puu].."' on '"..act.Item.Name.."'",180,0,255)          
+          MINI(RPGChar.GetName(ch).." earned powerup '"..pufullnames[puu].."' on '"..Var.S(act.Item.Name).."'",180,0,255)          
           end
        end
     end

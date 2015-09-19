@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 15.09.18
+  Version: 15.09.19
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -174,7 +174,7 @@ ABLKIND = {
                  if mousehit(1) then choice=abl; CSay("Chosen: "..abl) end
                  Image.Color(180,180,255)
                  end
-              Image.DText(abldata.Name,x,y,0,2)
+              Image.DText(Var.S(abldata.Name),x,y,0,2)
               Image.ScalePC(50,50)
               for i,pu in ipairs(ABL_PowerUps) do
                   puu = upper(pu)
