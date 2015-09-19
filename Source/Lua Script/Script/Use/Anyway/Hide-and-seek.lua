@@ -1,6 +1,6 @@
 --[[
   Hide-and-seek.lua
-  Version: 15.09.09
+  Version: 15.09.19
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -79,6 +79,7 @@ if ThisIsAMapScript then
   local fas = loadstring(CVV("$MAP.MAPSHOW.LASTALWAYSSHOW").."\nreturn ret")
   local tas = alwaysshow
   local as
+  if not req then CSay("No mapshow request to be repeated") return end
   CSay("Redo Map Show")
   CSay("- Last request = "..sval(req))
   alwaysshow = fas() or tas
