@@ -213,7 +213,7 @@ InputItems = {
               ret = ret and RPGStat.CountList(ch,"ARMS")>0
               return ret
               end,
-      Input = function(ch)
+      Input = function(ch,pos)
               local item
               local iact
               local ablshort
@@ -224,7 +224,7 @@ InputItems = {
               else                                 
                  item=ItemGet(CVV("$CHOSENABILITY"))
                  iact = Act.Hero[pos]
-                 iact.Act = "ABL"
+                 iact.Act = "ARM"
                  iact.ActSpeed = item.ActSpeed
                  iact.ItemCode = CVV("$CHOSENABILITY")                 
                  iact.Item = item
