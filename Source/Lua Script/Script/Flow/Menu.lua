@@ -318,6 +318,7 @@ FeatureHandleArray = {
                   local temp
                   local hover,hoverdata
                   local item,cmbitem
+                  local mousetxt = { FIELD = {"Left = Pick up","Right = Use on "..RPGChar.GetName(pchar)},COMBAT={"Click to use"},VAULT={"Left = pickup"}}
                   White()
                   for ak=1,InventorySockets do
                       -- Get some needed values
@@ -405,6 +406,11 @@ FeatureHandleArray = {
                              FitText(dl,mx+16,dy,0,180,255)
                              dy = dy + Image.TextHeight(dl)
                              end
+                          SetFont("Tutorial")
+                          for dl in each(mousetxt or {}) do
+                              FitText(dl,mx,16,dy,255,180,255)
+                              dy = dy + Image.TextHeight(dl) 
+                              end  
                          end    
                   -- @IF *DEVELOPMENT
                   y = 20
