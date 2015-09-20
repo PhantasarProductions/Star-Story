@@ -32,26 +32,37 @@
   
  **********************************************
  
-version: 15.09.14
+version: 15.09.20
 ]]
 
 
--- Version 15.09.14
+-- Version 15.09.20
 
 
 
 Data = {
 	Name = "Cyborg Gunner",
 	Desc = "An expert with a photon gun.",
-	ImageFile = "Reg/Cyborg Gunner.png",
+	ImageFile = "Boss/Brain.png",
 	AI = "Default",
+	Boss = true,
+	EleRes_Fire = 5,
+	EleRes_Wind = 5,
+	EleRes_Water = 1,
+	EleRes_Earth = 5,
+	EleRes_Cold = 5,
+	EleRes_Thunder = 5,
+	EleRes_Light = 5,
+	EleRes_Darkness = 5,
+	EleRes_Healing = 5,
+	EleRes_DarkHealing = 5,
 	Stat = {
 		["Strength"] = {24,30},
-		["Defense"] = {18,20},
-		["Will"] = {19,40},
-		["Resistance"] = {17,80},
+		["Defense "] = {0,0},
+		["Will "] = {0,0},
+		["Resistance "] = {0,0},
 		["Agility"] = {10,15},
-		["Accuracy"] = {14,20},
+		["Accuracy "] = {0,0},
 		["Evasion"] = {3,5},
 		["HP"] = {65,70},
 		["AP"] = {20,25},
@@ -67,13 +78,23 @@ Data = {
 local temp
 
 
+Data.ActMinLevel["Sys.Attack"] = 1		for ak=1,10 do table.insert(Data.Acts,"Sys.Attack") end
+Data.ActMinLevel["Abl.ABL_EXHURU_KAKSI"] = 10		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_EXHURU_KAKSI") end
+Data.ActMinLevel["Abl.ABL_EXHURU_KOLME"] = 15		for ak=1,30 do table.insert(Data.Acts,"Abl.ABL_EXHURU_KOLME") end
+Data.ActMinLevel["Abl.ABL_EXHURU_KUUSI"] = 30		for ak=1,60 do table.insert(Data.Acts,"Abl.ABL_EXHURU_KUUSI") end
+Data.ActMinLevel["Abl.ABL_EXHURU_NELJA"] = 120		for ak=1,20 do table.insert(Data.Acts,"Abl.ABL_EXHURU_NELJA") end
 Data.ActMinLevel["Abl.ABL_FOE_PHOTON"] = 0		for ak=1,100 do table.insert(Data.Acts,"Abl.ABL_FOE_PHOTON") end
+Data.ActMinLevel["Abl.ABL_FOE_TASER"] = 5		for ak=1,1 do table.insert(Data.Acts,"Abl.ABL_FOE_TASER") end
 temp = { ITM='ITM_ADHBANDAGE', LVL=1, VLT=false }
 for ak=1,1 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,1 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_ANTIDOTE', LVL=2, VLT=false }
+for ak=1,10 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,5 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_BANDAGE', LVL=6, VLT=false }
 for ak=1,6 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,6 do table.insert(Data.ItemSteal,temp) end
+Data.ActMinLevel["Abl.ITM_HEALINGCAPSULE"] = 20		for ak=1,1 do table.insert(Data.Acts,"Abl.ITM_HEALINGCAPSULE") end
 temp = { ITM='ITM_HEALINGCAPSULE', LVL=8, VLT=false }
 for ak=1,8 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,8 do table.insert(Data.ItemSteal,temp) end
