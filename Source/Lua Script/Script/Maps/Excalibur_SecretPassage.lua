@@ -52,20 +52,36 @@ function Pass_Exit()
 local heroes = {"Wendicka","Crystal","ExHuRU"}
 LoadMap("Excalibur_Hangar")
 SpawnPlayer("Start"); Actors.Actor("PLAYER").X=-5000 -- Crash prevention. Nothing more.
+Maps.CamX = 0
+Maps.CamY = 16
 for ch in each(heroes) do
-    Actors.Spawn('Start','GFX/Actors/Heroes',"ch"..ch)
-    Actors.ChoosePic("ch"..ch,upper(ch)..".NORTH")
-    Actors.MoveTo("ch"..ch,ch)
+    Actors.Spawn('Start','GFX/Actors/Player',"ch"..ch)
+    Actors.ChoosePic("ch"..ch,upper(ch)..".NORTH")    
     end
+for ch in each(heroes) do Actors.MoveToSpot("ch"..ch,ch) end -- Why were all three moving to Crystal's spot before?     
 MapText("ESCAPE")
 for ch in each(heroes) do
     Actors.MoveTo("ch"..ch,"ShipSpot")
     end
 Award("SCENARIO_ESCAPEEXCALIBUR")    
+local timer=1000
 repeat
 DrawScreen()
-until Actors.Actor("chWendicka").Move==0 and Actors.Actor("chCrystal").Move==0 and Actors.Actor("chExHuRU").Move==0
+Flip()
+timer = timer - 1
+until timer<=0 or (Actors.Actor("chWendicka").Moving==0 and Actors.Actor("chCrystal").Moving==0 and Actors.Actor("chExHuRU").Moving==0)
 for ch in each(heroes) do Maps.Obj.Kill("ch"..ch) end
+-- Open Sesame
+local BayDoor = Maps.Obj.Obj("BayDoor")
+local Pod = Maps.Obj.Obj("EscapePod")
+local DoorClosed = BayDoor.Y
+local DoorOpen   = -124 + BayDoor.Y
+for y=DoorClosed,DoorOpen,-1 do BayDoor.Y=y; DrawScreen(); Flip() end
+-- To Boldly Go Where No One has gone Before
+local spd = .01
+repeat spd = spd + .01; Pod.Y=Pod.Y-spd; DrawScreen(); Flip() until Pod.Y<-10
+-- Close Sesame
+for y=DoorOpen,DoorClosed do BayDoor.Y=y; DrawScreen(); Flip() end
 Sys.Error("Unfortunately, the rest is not scripted yet! Hang on!")    
 end
 
