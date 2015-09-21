@@ -13,7 +13,7 @@ If you see your name below and you think I'm using your stuff against your licen
 
 Author | Contributions | Kind of contributions
 ---|---|---
-Aaron Krogh | 13 | Music; 
+Aaron Krogh | 14 | Music; 
 Alexander | 3 | Audio; Misc files; Music; 
 Angela Nagtzaam | 11 | Art; 
 Ann | 1 | Art; 
@@ -35,7 +35,7 @@ PacDV | 1 | Audio;
 Shockwave-sound.com | 1 | Audio; 
 Spiedkiks | 1 | Music; 
 TheSkull | 1 | Art; 
-Tricky (this is me) :sunglasses: | 1663 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
+Tricky (this is me) :sunglasses: | 1666 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
 Unknown Artist | 15 | Art; 
 Utopia | 2 | Font; Misc files; 
 Varazuvi(TM) | 4 | Audio; 

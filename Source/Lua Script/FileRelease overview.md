@@ -65,6 +65,7 @@
 1. Script/JINC/InitChar/Wendicka.lua
 1. Script/Maps/AutoUse.lua
 1. Script/Maps/Excalibur_AllQuiet.lua
+1. Script/Maps/Excalibur_Hangar.lua
 1. Script/Maps/Excalibur_Home.lua
 1. Script/Maps/Excalibur_Kitchen.lua
 1. Script/Maps/Excalibur_SecretPassage.lua
@@ -156,4 +157,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Mon 21 September 2015; 00:36:19 CET
+### Last updated: Mon 21 September 2015; 20:48:35 CET

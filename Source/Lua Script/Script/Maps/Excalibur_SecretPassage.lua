@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.17
+version: 15.09.21
 ]]
 
 
@@ -48,9 +48,30 @@ for i=0,30 do
     end
 end
 
+function Pass_Exit()
+local heroes = {"Wendicka","Crystal","ExHuRU"}
+LoadMap("Excalibur_Hangar")
+for ch in each(heroes) do
+    Actors.Spawn('Start','GFX/Actors/Heroes',ch)
+    Actors.ChoosePic(ch,Upper(ch)..".NORTH")
+    Actors.MoveTo(ch,ch)
+    end
+MapText("ESCAPE")
+for ch in each(heroes) do
+    Actors.MoveTo(ch,"ShipSpot")
+    end
+Award("SCENARIO_ESCAPEEXCALIBUR")    
+repeat
+DrawScreen()
+until Actors.Actor("Wendicka").Move==0 and Actors.Actor("Crystal").Move==0 and Actors.Actor("ExHuRU").Move==0
+for ch in each(heroes) do Maps.Obj.Kill(ch) end
+    
+end
+
 function GALE_OnLoad()
 Music('Dungeon/Spiedkiks_-_05_-_Freak_Boutique.ogg')
 ZA_Enter("Open_Exit",Open_Exit)
+ZA_Enter("Exit",Pass_Exit)
 end
 
 
