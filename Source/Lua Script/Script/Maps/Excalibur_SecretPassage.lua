@@ -61,7 +61,7 @@ for ch in each(heroes) do
 for ch in each(heroes) do Actors.MoveToSpot("ch"..ch,ch) end -- Why were all three moving to Crystal's spot before?     
 MapText("ESCAPE")
 for ch in each(heroes) do
-    Actors.MoveTo("ch"..ch,"ShipSpot")
+    Actors.MoveToSpot("ch"..ch,"ShipSpot")
     end
 Award("SCENARIO_ESCAPEEXCALIBUR")    
 local timer=1000
