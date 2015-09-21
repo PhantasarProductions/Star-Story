@@ -50,7 +50,7 @@ end
 
 function Pass_Exit()
 local heroes = {"Wendicka","Crystal","ExHuRU"}
-LoadMap("Excalibur Hangar")
+LoadMap("Excalibur_Hangar")
 for ch in each(heroes) do
     Actors.Spawn('Start','GFX/Actors/Heroes',"ch"..ch)
     Actors.ChoosePic("ch"..ch,upper(ch)..".NORTH")
