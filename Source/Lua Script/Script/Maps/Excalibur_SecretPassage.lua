@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.21
+version: 15.09.22
 ]]
 
 
@@ -82,6 +82,15 @@ local spd = .01
 repeat spd = spd + .01; Pod.Y=Pod.Y-spd; DrawScreen(); Flip() until Pod.Y<-10
 -- Close Sesame
 for y=DoorOpen,DoorClosed do BayDoor.Y=y; DrawScreen(); Flip() end
+BoxTextBack = "MAP"
+MapText("Space","MAP")
+BoxTextBack = "BOXTEXT.KTHURA"
+local pod = Maps.Obj.Obj("PodInSpace")
+local space = Maps.Obj.Obj("Space")
+repeat
+pod.Y = pod.Y - 1
+space.InsertY = space.InsertY + 1
+until pod.Y < -100
 Sys.Error("Unfortunately, the rest is not scripted yet! Hang on!")    
 end
 

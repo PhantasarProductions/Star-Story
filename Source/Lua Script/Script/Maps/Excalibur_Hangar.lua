@@ -32,8 +32,20 @@
   
  **********************************************
  
-version: 15.09.21
+version: 15.09.22
 ]]
 function GALE_OnLoad()
 Music("Excalibur/Final.ogg")
+end
+
+
+function BoxTextBackGround()
+Maps.CamX=1024
+Maps.CamY=0
+local space = Maps.Obj.Obj("Space")
+local pod = Maps.Obj.Obj("PodInSpace")
+if pod.Y>300 then pod.Y=pod.Y-1 end
+space.InsertY = space.InsertY + 1
+if space.InsertY>799 then space.insertY = space.insertY-800 end
+Maps.Draw()
 end

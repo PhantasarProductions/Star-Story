@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 15.09.16
+  version: 15.09.22
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -39,8 +39,8 @@ f()
 -- I could not yet use the functions from BoxTextLinker, as they are not loaded on the moment this function is called, for the other functions, it doesn't matter.
 end; InitMapText()
 
-function MapText(tag)
-SerialBoxText("MAP",tag,"Field")
+function MapText(tag,mapaltMS)
+SerialBoxText("MAP",tag,mapaltMS or "FIELD")
 end
 
 

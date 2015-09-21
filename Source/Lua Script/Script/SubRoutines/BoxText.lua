@@ -1,6 +1,6 @@
 --[[
   BoxText.lua
-  Version: 15.09.19
+  Version: 15.09.22
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -126,6 +126,9 @@ end
 function ShowBox(data,boxback)
 local bb = boxback or "BOXTEXT"
 MS.Run(bb,"BoxTextBackGround")
+-- @IF BOXTEXTDEBUG
+DarkText("background: "..bb,10,400,2,0)
+-- @FI
 setfont("BoxText")
 local fh = Image.TextHeight("TEST")
 local bh = (fh * #data.Lines) + (fh)
@@ -241,7 +244,11 @@ Flip()
 until mousehit(1)
 end
 
-function SerialBoxText(file,tag,boxback)
+function SerialBoxText(file,ptag,boxback)
+-- @IF BOXTEXTDEBUG
+CSay('SerialBoxText("'..file..'","'..ptag..'","'..sval(boxback)..'");')
+-- @FI
+local tag = upper(ptag or '*TAGLESS*')
 local f = btdata[file]
 if not f then Sys.Error("Boxtext file "..file.." has not yet been loaded!") end
 local t = f[tag]
