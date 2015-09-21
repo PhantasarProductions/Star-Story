@@ -52,20 +52,20 @@ function Pass_Exit()
 local heroes = {"Wendicka","Crystal","ExHuRU"}
 LoadMap("Excalibur Hangar")
 for ch in each(heroes) do
-    Actors.Spawn('Start','GFX/Actors/Heroes',ch)
-    Actors.ChoosePic(ch,Upper(ch)..".NORTH")
-    Actors.MoveTo(ch,ch)
+    Actors.Spawn('Start','GFX/Actors/Heroes',"ch"..ch)
+    Actors.ChoosePic("ch"..ch,Upper(ch)..".NORTH")
+    Actors.MoveTo("ch"..ch,ch)
     end
 MapText("ESCAPE")
 for ch in each(heroes) do
-    Actors.MoveTo(ch,"ShipSpot")
+    Actors.MoveTo("ch"..ch,"ShipSpot")
     end
 Award("SCENARIO_ESCAPEEXCALIBUR")    
 repeat
 DrawScreen()
-until Actors.Actor("Wendicka").Move==0 and Actors.Actor("Crystal").Move==0 and Actors.Actor("ExHuRU").Move==0
-for ch in each(heroes) do Maps.Obj.Kill(ch) end
-    
+until Actors.Actor("chWendicka").Move==0 and Actors.Actor("chCrystal").Move==0 and Actors.Actor("chExHuRU").Move==0
+for ch in each(heroes) do Maps.Obj.Kill("ch"..ch) end
+Sys.Error("Unfortunately, the rest is not scripted yet! Hang on!")    
 end
 
 function GALE_OnLoad()
