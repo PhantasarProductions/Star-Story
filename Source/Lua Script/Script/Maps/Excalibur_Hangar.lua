@@ -35,5 +35,5 @@
 version: 15.09.21
 ]]
 function GALE_OnLoad()
-Music("Excalibur_Final")
+Music("Excalibur/Final.ogg")
 end
