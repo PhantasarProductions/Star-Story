@@ -90,6 +90,8 @@ local space = Maps.Obj.Obj("Space")
 repeat
 pod.Y = pod.Y - 1
 space.InsertY = space.InsertY + 1
+DrawScreen()
+Flip()
 until pod.Y < -100
 Sys.Error("Unfortunately, the rest is not scripted yet! Hang on!")    
 end

@@ -1,6 +1,6 @@
 --[[
   LoadGame.lua
-  Version: 15.09.18
+  Version: 15.09.22
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -43,7 +43,7 @@ local ch
 for ch in each ( mysplit(RPGChar.CharList(),";") ) do
     if RPGChar.ListExist(ch,"ABL_POWERUP")==0 then RPGChar.CreateList(ch,"ABL_POWERUP") end
     end
-if RPGChar.CharExists("Wendicka") then RPGChar.LinkList("UniWendicka","Wendicka","ABL_POWERUP") end    
+if RPGChar.CharExists("Wendicka")~=0 then RPGChar.LinkList("UniWendicka","Wendicka","ABL_POWERUP") end    
 end
 
 function LoadGame()
