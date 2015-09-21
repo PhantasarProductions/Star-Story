@@ -53,7 +53,7 @@ local heroes = {"Wendicka","Crystal","ExHuRU"}
 LoadMap("Excalibur Hangar")
 for ch in each(heroes) do
     Actors.Spawn('Start','GFX/Actors/Heroes',"ch"..ch)
-    Actors.ChoosePic("ch"..ch,Upper(ch)..".NORTH")
+    Actors.ChoosePic("ch"..ch,upper(ch)..".NORTH")
     Actors.MoveTo("ch"..ch,ch)
     end
 MapText("ESCAPE")
