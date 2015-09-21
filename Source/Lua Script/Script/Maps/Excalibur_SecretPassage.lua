@@ -50,6 +50,7 @@ end
 
 function Pass_Exit()
 local heroes = {"Wendicka","Crystal","ExHuRU"}
+SpawnPlayer("Start"); Actors.Actor("PLAYER").X=-5000 -- Crash prevention. Nothing more.
 LoadMap("Excalibur_Hangar")
 for ch in each(heroes) do
     Actors.Spawn('Start','GFX/Actors/Heroes',"ch"..ch)
