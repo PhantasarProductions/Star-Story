@@ -51,6 +51,7 @@ end
 function Pass_Exit()
 local heroes = {"Wendicka","Crystal","ExHuRU"}
 LoadMap("Excalibur_Hangar")
+RecoverParty()
 SpawnPlayer("Start"); Actors.Actor("PLAYER").X=-5000 -- Crash prevention. Nothing more.
 Maps.CamX = 0
 Maps.CamY = 16
@@ -96,9 +97,10 @@ until pod.Y < -100
 LoadMap("LostPlanet_GrassJungle")
 SpawnPlayer("Start")
 PartyPop("Start")
-Actors.ChoosePic("PopWendicka","WENDICKA.EAST")
-Actors.ChoosePic("PopCrystal" ,"CRYSTAL.WEST")
-Actors.ChoosePic("PopExHuRU"  ,"EXHURU.NORTH")
+DrawScreen(); Flip()
+Actors.ChoosePic("POP_Wendicka","WENDICKA.EAST")
+Actors.ChoosePic("POP_Crystal" ,"CRYSTAL.WEST")
+Actors.ChoosePic("POP_ExHuRU"  ,"EXHURU.NORTH")
 MapText("START")
 PartyUnPop()
 -- Sys.Error("Unfortunately, the rest is not scripted yet! Hang on!")    
