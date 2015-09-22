@@ -93,7 +93,15 @@ space.InsertY = space.InsertY + 1
 DrawScreen()
 Flip()
 until pod.Y < -100
-Sys.Error("Unfortunately, the rest is not scripted yet! Hang on!")    
+LoadMap("LostPlanet_GrassJungle")
+SpawnPlayer("Start")
+PartyPop("Start")
+Actors.ChoosePic("PopWendicka","WENDICKA.EAST")
+Actors.ChoosePic("PopCrystal" ,"CRYSTAL.WEST")
+Actors.ChoosePic("PopExHuRU"  ,"EXHURU.NORTH")
+MapText("START")
+PartyUnPop()
+-- Sys.Error("Unfortunately, the rest is not scripted yet! Hang on!")    
 end
 
 function GALE_OnLoad()
