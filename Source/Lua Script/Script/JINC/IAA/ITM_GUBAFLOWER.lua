@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ABL_WENDICKA_MJOLNIR.lua
+  ITM_GUBAFLOWER.lua
   (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
@@ -35,26 +35,23 @@
 version: 15.09.23
 ]]
 ret = {
-	["ABL_AP"] = 100,
-	["ABL_APCut"] = 500000,
-	["ABL_DblPower"] = 1000000,
-	["ABL_DblSpeed"] = 500000,
-	["ABL_Speed"] = 10,
 	["ActSpeed"] = 250,
 	["AniScriptDefaultPath"] = true,
-	["AttackElement"] = "Thunder",
-	["AttackPower"] = 250,
+	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
+	["CurePoison"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Electrocute the enemy to his death",
+	["Description"] = "Heals 45 HP and cures poison",
 	["EffectScriptDefaultPath"] = true,
 	["EffectScriptFunction"] = "EFFECT_MAIN",
+	["Healing"] = 45,
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Lightning.png",
+	["Icon"] = "GFX/Inventory/Yellow Flower.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Mj<ouml>lnir",
-	["Target"] = "1F",
-	["UseCombat"] = true}
+	["Name"] = "Guba Flower",
+	["Target"] = "1A",
+	["UseCombat"] = true,
+	["UseField"] = true}
 
 return ret
 
