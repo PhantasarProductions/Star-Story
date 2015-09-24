@@ -163,4 +163,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Fri 25 September 2015; 00:33:50 CET
+### Last updated: Fri 25 September 2015; 00:42:32 CET

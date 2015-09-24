@@ -39,7 +39,7 @@ function Internal_Transporter(spot,text,labels)
 local ac = GetActive()
 local cp
 local Bundle = "GFX/Actors/Player"
-if RPGChar.ParyTag(0)=="UniWendicka" then Bundle = "GFX/Actors/Uniform" end
+if RPGChar.PartyTag(0)=="UniWendicka" then Bundle = "GFX/Actors/Uniform" end
 TurnPlayer("South")
 MapText(text)
 -- Beam Out
@@ -151,7 +151,7 @@ for ak=0,40 do
     end
 NoDoorAction = true
 LoadMap("Excalibur_Home")
-if CVV("%DONE.PROLOGUE") then
+if RPGChar.PartyTag(0)~="UniWendicka" then 
    Actors.Spawn("Voordeur","GFX/Actors/Player","PLAYER")
    MapShow("Woonkamer")
    TurnPlayer("North")
