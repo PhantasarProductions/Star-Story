@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 15.09.19
+  Version: 15.09.24
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -34,6 +34,24 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
+
+function PerformSpellAni(ag,ai,act)
+local ch = FighterTag(ag,ai) --RPGChar.PartyTag(ag,ai)
+local tg,ti = TargetFromAct(act)
+local item = act.Item
+if not item.SpellAni_Reference then return end
+({[true] = function()
+           local ref = item.SpellAni_Reference
+           if not suffixed(upper(ref),".LUA") then ref = ref .. ".lua" end
+           MS.Load("SPELLANI","Scripts/External/SpellAni/"..ref)
+           local parameters = ag..";"..ai..";"..tg..";"..ti
+           if item.SpellAni_Parameters then parameters = parameters .. ";"..item.SpellAniParameters end
+           MS.Run("SPELLANI",parameters)
+           end,
+ [false] = function()
+           SpellAni[item.SpellAni_Reference](ag,ai,tg,ti,item.SpellAni_Parameters)  
+           end})[item.SpellAni_External]() 
+end
 
 function CheckTarget(tg,ti,allowdead)
 local ret = true
