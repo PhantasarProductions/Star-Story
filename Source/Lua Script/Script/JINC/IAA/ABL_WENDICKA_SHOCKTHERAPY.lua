@@ -4,7 +4,6 @@ ret = {
 	["ABL_Instant"] = 20000,
 	["ABL_Speed"] = 300,
 	["ActSpeed"] = 250,
-	["AniScriptDefaultPath"] = true,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["CureDeathOne"] = true,

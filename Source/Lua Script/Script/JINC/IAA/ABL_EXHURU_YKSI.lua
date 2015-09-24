@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.23
+version: 15.09.24
 ]]
 ret = {
 	["ABL_AP"] = 15,
@@ -42,14 +42,11 @@ ret = {
 	["ABL_Instant"] = 20000,
 	["ABL_Speed"] = 750,
 	["ActSpeed"] = 750,
-	["AniScriptDefaultPath"] = true,
 	["AttackElement"] = "Non-Elemental",
 	["AttackPower"] = 75,
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "A quick attack",
-	["EffectScriptDefaultPath"] = true,
-	["EffectScriptFunction"] = "EFFECT_MAIN",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Abilities/Fist.png",
 	["ItemType"] = "Consumable",

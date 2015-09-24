@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ABL_EXHURU_KOLME.lua
+  LostPlanet_GrassJungle_2.lua
   (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
@@ -34,26 +34,7 @@
  
 version: 15.09.24
 ]]
-ret = {
-	["ABL_AP"] = 80,
-	["ABL_APCut"] = 40000,
-	["ABL_DblPower"] = 20000,
-	["ABL_DblSpeed"] = 20000,
-	["ABL_Speed"] = 100,
-	["ActSpeed"] = 100,
-	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 300,
-	["AttackStat"] = "Strength",
-	["DefenseStat"] = "Defense",
-	["Description"] = "No pain, no gain!",
-	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Fist.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Kolme",
-	["Target"] = "1F",
-	["UseCombat"] = true}
-
-return ret
-
--- This file is an automatically generated file!
-
+function GALE_OnLoad()
+Music("Dungeon/Weirdomusic_-_34_-_Fiber_visits_the_Q_Continuum.ogg")
+SetScrollBoundaries(nil,-50,nil,1824)
+end

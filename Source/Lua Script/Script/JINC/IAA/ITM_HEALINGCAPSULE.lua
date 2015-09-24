@@ -32,17 +32,14 @@
   
  **********************************************
  
-version: 15.09.23
+version: 15.09.24
 ]]
 ret = {
 	["ActSpeed"] = 195,
-	["AniScriptDefaultPath"] = true,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "Heals 60 HP",
-	["EffectScriptDefaultPath"] = true,
-	["EffectScriptFunction"] = "EFFECT_MAIN",
 	["Healing"] = 60,
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Inventory/Capsule - Rood-Blauw.png",

@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.23
+version: 15.09.24
 ]]
 ret = {
 	["ABL_AP"] = 100,
@@ -41,14 +41,11 @@ ret = {
 	["ABL_DblSpeed"] = 40000,
 	["ABL_Speed"] = 50,
 	["ActSpeed"] = 50,
-	["AniScriptDefaultPath"] = true,
 	["AttackElement"] = "Non-Elemental",
 	["AttackPower"] = 400,
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "Mesa gonna hurt you, very bad!",
-	["EffectScriptDefaultPath"] = true,
-	["EffectScriptFunction"] = "EFFECT_MAIN",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Abilities/Fist.png",
 	["ItemType"] = "Consumable",

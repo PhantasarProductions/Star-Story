@@ -30,6 +30,7 @@
 1. Script/JINC/Foes/Reg/Cyborg Captain.lua
 1. Script/JINC/Foes/Reg/Cyborg Gunner.lua
 1. Script/JINC/Foes/Reg/Cyborg Medic.lua
+1. Script/JINC/Foes/Reg/GrassTiger.lua
 1. Script/JINC/Foes/Reg/Rat.lua
 1. Script/JINC/IAA/ABL_EXHURU_BATTLECRY.lua
 1. Script/JINC/IAA/ABL_EXHURU_CONCENTRATE.lua
@@ -40,6 +41,7 @@
 1. Script/JINC/IAA/ABL_EXHURU_STOMP.lua
 1. Script/JINC/IAA/ABL_EXHURU_YKSI.lua
 1. Script/JINC/IAA/ABL_FOE_PHOTON.lua
+1. Script/JINC/IAA/ABL_FOE_SCRATCH.lua
 1. Script/JINC/IAA/ABL_FOE_TASER.lua
 1. Script/JINC/IAA/ABL_WENDICKA_ELECTRICCHARGE.lua
 1. Script/JINC/IAA/ABL_WENDICKA_JOLT.lua
@@ -74,6 +76,7 @@
 1. Script/Maps/Excalibur_Sickbay.lua
 1. Script/Maps/Excalibur_UnderAttack.lua
 1. Script/Maps/LostPlanet_GrassJungle.lua
+1. Script/Maps/LostPlanet_GrassJungle_2.lua
 1. Script/Maps/Prologue_Yaqirpa.lua
 1. Script/OSBOOT/Mac.x86.lua
 1. Script/OSBOOT/Win32.x86.lua
@@ -160,4 +163,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Wed 23 September 2015; 20:08:45 CET
+### Last updated: Thu 24 September 2015; 21:34:02 CET

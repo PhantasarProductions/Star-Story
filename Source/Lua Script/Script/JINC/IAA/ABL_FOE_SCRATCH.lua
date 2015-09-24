@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ABL_EXHURU_KOLME.lua
+  ABL_FOE_SCRATCH.lua
   (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
@@ -35,23 +35,17 @@
 version: 15.09.24
 ]]
 ret = {
-	["ABL_AP"] = 80,
-	["ABL_APCut"] = 40000,
-	["ABL_DblPower"] = 20000,
-	["ABL_DblSpeed"] = 20000,
-	["ABL_Speed"] = 100,
-	["ActSpeed"] = 100,
+	["ABL_AP"] = 0,
+	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 300,
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "No pain, no gain!",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Abilities/Fist.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Kolme",
 	["Target"] = "1F",
-	["UseCombat"] = true}
+	["UseCombat"] = true,
+	["UseField"] = true}
 
 return ret
 

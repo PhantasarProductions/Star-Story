@@ -1,7 +1,7 @@
 --[[
   ABL_FOE_PHOTON.lua
   
-  version: 15.09.23
+  version: 15.09.24
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -21,14 +21,10 @@ ret = {
 	["ABL_AP"] = 0,
 	["ABL_Speed"] = 250,
 	["ActSpeed"] = 250,
-	["AniScriptDefaultPath"] = true,
-	["AniScriptFile"] = "@COMBAT@ShootPhoton",
 	["AttackElement"] = "Non-Elemental",
 	["AttackPower"] = 100,
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["EffectScriptDefaultPath"] = true,
-	["EffectScriptFunction"] = "EFFECT_MAIN",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",

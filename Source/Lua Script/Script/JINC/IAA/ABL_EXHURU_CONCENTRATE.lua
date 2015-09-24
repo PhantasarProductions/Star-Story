@@ -32,19 +32,16 @@
   
  **********************************************
  
-version: 15.09.23
+version: 15.09.24
 ]]
 ret = {
 	["ABL_AP"] = 200,
 	["ABL_Speed"] = 50,
 	["ActSpeed"] = 250,
-	["AniScriptDefaultPath"] = true,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "Charge up energy for BlitzKrieg",
-	["EffectScriptDefaultPath"] = true,
-	["EffectScriptFunction"] = "EFFECT_MAIN",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Abilities/Fist.png",
 	["ItemType"] = "Consumable",

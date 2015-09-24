@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.23
+version: 15.09.24
 ]]
 ret = {
 	["ABL_AP"] = 200,
@@ -41,14 +41,11 @@ ret = {
 	["ABL_DblSpeed"] = 80000,
 	["ABL_Speed"] = 25,
 	["ActSpeed"] = 25,
-	["AniScriptDefaultPath"] = true,
 	["AttackElement"] = "Non-Elemental",
 	["AttackPower"] = 400,
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "KILL! KILL! KILL!",
-	["EffectScriptDefaultPath"] = true,
-	["EffectScriptFunction"] = "EFFECT_MAIN",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Abilities/Fist.png",
 	["ItemType"] = "Consumable",

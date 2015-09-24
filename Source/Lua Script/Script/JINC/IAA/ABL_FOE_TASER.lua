@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_TASER.lua
-  Version: 15.09.23
+  Version: 15.09.24
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -37,13 +37,10 @@
 ret = {
 	["ABL_AP"] = 0,
 	["ActSpeed"] = 250,
-	["AniScriptDefaultPath"] = true,
 	["AttackElement"] = "Thunder",
 	["AttackPower"] = 100,
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["EffectScriptDefaultPath"] = true,
-	["EffectScriptFunction"] = "EFFECT_MAIN",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",

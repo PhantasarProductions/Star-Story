@@ -32,17 +32,14 @@
   
  **********************************************
  
-version: 15.09.23
+version: 15.09.24
 ]]
 ret = {
 	["ActSpeed"] = 250,
-	["AniScriptDefaultPath"] = true,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "Heals 75 HP",
-	["EffectScriptDefaultPath"] = true,
-	["EffectScriptFunction"] = "EFFECT_MAIN",
 	["Healing"] = 75,
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Inventory/Blue Flower.png",

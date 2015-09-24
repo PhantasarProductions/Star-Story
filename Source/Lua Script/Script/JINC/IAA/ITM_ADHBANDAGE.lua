@@ -15,17 +15,14 @@ not longer than 70 years ago, you can deem this file
 with basically comes down to the same lack of
 restriction the public domain offers. (YAY!)
 *********************************************************** 
-Version 15.09.23
+Version 15.09.24
 ]]
 ret = {
 	["ActSpeed"] = 400,
-	["AniScriptDefaultPath"] = true,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "Heals 25 HP",
-	["EffectScriptDefaultPath"] = true,
-	["EffectScriptFunction"] = "EFFECT_MAIN",
 	["Healing"] = 25,
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Inventory/Patch.png",

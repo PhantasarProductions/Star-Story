@@ -1,6 +1,6 @@
 --[[
   ABL_WENDICKA_ELECTRICCHARGE.lua
-  Version: 15.09.23
+  Version: 15.09.24
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -38,13 +38,10 @@ ret = {
 	["ABL_AP"] = 200,
 	["ABL_Speed"] = 50,
 	["ActSpeed"] = 250,
-	["AniScriptDefaultPath"] = true,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "Charge up energy for Voltsunami",
-	["EffectScriptDefaultPath"] = true,
-	["EffectScriptFunction"] = "EFFECT_MAIN",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",

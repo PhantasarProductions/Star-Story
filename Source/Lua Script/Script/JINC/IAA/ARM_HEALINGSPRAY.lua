@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.23
+version: 15.09.24
 ]]
 ret = {
 	["ARM_Hit%"] = 90,
@@ -42,14 +42,11 @@ ret = {
 	["ARM_PRICE_XPower"] = 1000,
 	["ARM_XPower"] = 0,
 	["ActSpeed"] = 100,
-	["AniScriptDefaultPath"] = true,
 	["AttackElement"] = "Healing",
 	["AttackPower"] = 100,
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "Heals an ally",
-	["EffectScriptDefaultPath"] = true,
-	["EffectScriptFunction"] = "EFFECT_MAIN",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "EquipItem",

@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.23
+version: 15.09.24
 ]]
 ret = {
 	["ABL_AP"] = 15,
@@ -41,14 +41,11 @@ ret = {
 	["ABL_Instant"] = 20000,
 	["ABL_Speed"] = 250,
 	["ActSpeed"] = 300,
-	["AniScriptDefaultPath"] = true,
 	["AttackElement"] = "Thunder",
 	["AttackPower"] = 50,
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "Shock the enemy",
-	["EffectScriptDefaultPath"] = true,
-	["EffectScriptFunction"] = "EFFECT_MAIN",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Abilities/Lightning.png",
 	["ItemType"] = "Consumable",

@@ -1,6 +1,6 @@
 --[[
   ITM_ANTIDOTE.lua
-  Version: 15.09.23
+  Version: 15.09.24
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -36,14 +36,11 @@
 ]]
 ret = {
 	["ActSpeed"] = 250,
-	["AniScriptDefaultPath"] = true,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["CureDisease"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Cures \"Poison\"",
-	["EffectScriptDefaultPath"] = true,
-	["EffectScriptFunction"] = "EFFECT_MAIN",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Inventory/Green_tube.png",
 	["ItemType"] = "Consumable",
