@@ -84,7 +84,6 @@ Data.ActMinLevel["Abl.ABL_EXHURU_KOLME"] = 15		for ak=1,30 do table.insert(Data.
 Data.ActMinLevel["Abl.ABL_EXHURU_KUUSI"] = 30		for ak=1,60 do table.insert(Data.Acts,"Abl.ABL_EXHURU_KUUSI") end
 Data.ActMinLevel["Abl.ABL_EXHURU_NELJA"] = 120		for ak=1,20 do table.insert(Data.Acts,"Abl.ABL_EXHURU_NELJA") end
 Data.ActMinLevel["Abl.ABL_FOE_PHOTON"] = 10		for ak=1,1 do table.insert(Data.Acts,"Abl.ABL_FOE_PHOTON") end
-Data.ActMinLevel["Abl.ABL_FOE_SCRATCH"] = 10		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_FOE_SCRATCH") end
 Data.ActMinLevel["Abl.ABL_FOE_TASER"] = 5		for ak=1,1 do table.insert(Data.Acts,"Abl.ABL_FOE_TASER") end
 temp = { ITM='ITM_ADHBANDAGE', LVL=1, VLT=false }
 for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
