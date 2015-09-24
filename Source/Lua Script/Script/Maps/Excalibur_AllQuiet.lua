@@ -32,14 +32,14 @@
   
  **********************************************
  
-version: 15.09.14
+version: 15.09.25
 ]]
 
 function Internal_Transporter(spot,text,labels)
 local ac = GetActive()
 local cp
 local Bundle = "GFX/Actors/Player"
-if ac=="UniWendicka" then Bundle = "GFX/Actors/Uniform" end
+if RPGChar.ParyTag(0)=="UniWendicka" then Bundle = "GFX/Actors/Uniform" end
 TurnPlayer("South")
 MapText(text)
 -- Beam Out
@@ -65,7 +65,7 @@ for f=99,0,-1 do
     Maps.Draw()
     Flip()    
     end
-cp = GetActive()
+cp = ac
 if cp=="UniWendicka" then cp="Wendicka" end    
 Actors.ChoosePic("PLAYER",upper(cp)..".SOUTH")     
 TurnPlayer("South")  

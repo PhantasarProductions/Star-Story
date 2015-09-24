@@ -32,11 +32,9 @@
   
  **********************************************
  
-version: 15.09.22
+version: 15.09.25
 ]]
 
--- CSay("Welcome to the grass jungle")
 function GALE_OnLoad()
--- CSay("Let's change the music for the occasion")
 Music("Dungeon/Weirdomusic_-_34_-_Fiber_visits_the_Q_Continuum.ogg")
 end
