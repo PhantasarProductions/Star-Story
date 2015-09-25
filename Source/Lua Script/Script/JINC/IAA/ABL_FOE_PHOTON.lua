@@ -1,7 +1,7 @@
 --[[
   ABL_FOE_PHOTON.lua
   
-  version: 15.09.24
+  version: 15.09.25
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -19,6 +19,7 @@
 ]]
 ret = {
 	["ABL_AP"] = 0,
+	["ABL_Pose"] = "Attack",
 	["ABL_Speed"] = 250,
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",

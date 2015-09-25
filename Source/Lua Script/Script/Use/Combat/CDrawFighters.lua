@@ -1,6 +1,6 @@
 --[[
   CDrawFighters.lua
-  Version: 15.09.03
+  Version: 15.09.25
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -132,7 +132,7 @@ local x,y = CoordsFighter.Hero(idx)
 data.Pick = data.Pick or "Default"
 local pick = data.Pick
 if RPGChar.Points(data.Tag,"HP").Have<=0 then pick="Dead" end
-local ptag = "COMBAT.HERO."..data.Tag.."."..(pick or "default")
+local ptag = "COMBAT.HERO."..data.Tag.."."..(pick or "Default")
 local Targeted = isorcontains(TargetedGroup,"Hero") and isorcontains(TargetedFighter,idx)
 if Image.Loaded(ptag)==0 then -- Load if needed!
    Image.AssignLoad(ptag,"GFX/Combat/Fighters/Hero/"..data.Tag..'.'..pick..".png")
@@ -180,7 +180,32 @@ for k=1,5 do
 Neg[idx]=nil    
 end
 
+
+
 function AnimateHero(idx,act)
+local myhero = Fighters.Hero[idx]
+local poses = {
+        Attack = function()
+                 MINI("Hero attack pose not yet implemented!",180,255,0) 
+                 end,
+        Cast   = function()
+                 Fighters.Hero[idx].Pick="Cast"
+                 for ak=1,50 do
+                     DrawScreen()
+                     Flip()
+                     end
+                 end, 
+        ARM =    function() MINI("Crystal's ARM pose has not yet been drawn",180,0,255) end         
+   }
+CSay(serialize("ACT",act))   
+;(({
+     ATK = poses.Attack,
+     SHT = poses.Attack,
+     RLD = poses.Cast,
+     ITM = poses.Cast,
+     ABL = poses[(act.Item or { ABL_Pose="Cast"}).ABL_Pose or 'Cast'], -- Crash prevention when we don't have an ability but another kind of move.
+     ARM = poses.ARM
+    })[act.Act] or function() MINI("WARNING! Unknown act! I don't know how to animate the hero (Action "..idx..":"..sval(act.Act)..")",255,180,0) MINI("Please report this in the bug tracker if somebody didn't do this before!",255,0,180) MINI("And don't forget to mention the action code above!",255,0,180) end)()   
 end
 
 SpriteAnim = {

@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 15.09.24
+  Version: 15.09.25
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -102,6 +102,7 @@ Sys.Error("Unknown Action Tag: "..sval(act.Act))
 end
 
 function ActionFuncs.SHT(ag,ai,act)
+SpriteAnim[ag](ai,act)
 local ch = FighterTag(ag,ai) --RPGChar.PartyTag(ag,ai)
 if RPGChar.Points(ch,"AMMO",1).Have<=0 then return MINI(RPGChar.Name(ch).." cannot shoot! Out of ammo!") end
 local tg,ti = TargetFromAct(act)
@@ -116,20 +117,24 @@ SpellAni[RPGChar.GetData(ch,"ShootSpellAni")](ag,ai,tg,ti)
 Attack(ag,ai,act)
 -- Remove one bullet
 RPGChar.Points(ch,"AMMO").Have = RPGChar.Points(ch,"AMMO",1).Have - 1
+Fighters[ag][ai].Pick="Default"
 end
 
 
 function ActionFuncs.RLD(ag,ai,act)
+SpriteAnim[ag](ai,act)
 SFX("Audio/SFX/Gun-Cocking-Sound.ogg")
 if ag~="Hero" then Sys.Error("Reloading can only be done by heroes") end
 local t = FighterTag(ag,ai)
 local h = {UniWendicka="her",UniCrystal="her"}
 RPGChar.Points(t,"AMMO").Have = RPGChar.Points(t,"AMMO").Maximum
 MINI( RPGChar.GetName(t) .. " has reloaded "..(h[t] or "his").." gun")
+Fighters[ag][ai].Pick="Default"
 end 
 
 
 function ActionFuncs.ATK(ag,ai,act)
+SpriteAnim[ag](ai,act)
 local ch = FighterTag(ag,ai) --RPGChar.PartyTag(ag,ai)
 local tg,ti = TargetFromAct(act)
 if not CheckTarget(tg,ti) then MINI("Attack cancelled",255,0,0); MINI("There's no enemy on that spot anymore",255,180,0); return end
@@ -138,6 +143,8 @@ CSay(sval(ag).."["..sval(ai).."]: "..sval(ch).." attacks")
 SpriteAnim[ag](ai,act)
 -- Perform Attack
 Attack(ag,ai,act)
+-- Reset character sprit
+Fighters[ag][ai].Pick="Default"      
 end
 
 function ActionFuncs.EAI(ag,ai,act)
@@ -163,6 +170,7 @@ local function GroupEffect(ag,ai,act)
                for tg,group in pairs(Fighters) do for ti,_ in pairs(group) do AbilityEffect(ag,ai,act,tg,ti) end end
                end
       })[act.Item.Target] or function() Sys.Error("EAI: Unknown target type"..act.Item.Target) end)(ag,ai,act)
+Fighters.Hero[ai].Pick="Default"      
 end
 
 function ActionFuncs.ITM(ag,ai,act)
@@ -183,6 +191,7 @@ if RPGChar.Stat(ch,"INVAMNT"..act.ItemSocket)<=0 then
 RPGChar.DecStat(ch,"INVAMNT"..act.ItemSocket)   
 act.EAI = true
 ActionFuncs.EAI(ag,ai,act)
+
 end   
 
 function ActionFuncs.LRN(ag,ai,act)

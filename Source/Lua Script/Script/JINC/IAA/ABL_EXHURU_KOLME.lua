@@ -32,13 +32,14 @@
   
  **********************************************
  
-version: 15.09.24
+version: 15.09.25
 ]]
 ret = {
 	["ABL_AP"] = 80,
 	["ABL_APCut"] = 40000,
 	["ABL_DblPower"] = 20000,
 	["ABL_DblSpeed"] = 20000,
+	["ABL_Pose"] = "Attack",
 	["ABL_Speed"] = 100,
 	["ActSpeed"] = 100,
 	["AttackElement"] = "Non-Elemental",

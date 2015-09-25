@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_TASER.lua
-  Version: 15.09.24
+  Version: 15.09.25
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -36,6 +36,7 @@
 ]]
 ret = {
 	["ABL_AP"] = 0,
+	["ABL_Pose"] = "Attack",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Thunder",
 	["AttackPower"] = 100,

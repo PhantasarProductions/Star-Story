@@ -1,6 +1,6 @@
 --[[
   ABL_WENDICKA_ELECTRICCHARGE.lua
-  Version: 15.09.24
+  Version: 15.09.25
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -36,6 +36,7 @@
 ]]
 ret = {
 	["ABL_AP"] = 200,
+	["ABL_Pose"] = "Cast",
 	["ABL_Speed"] = 50,
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
