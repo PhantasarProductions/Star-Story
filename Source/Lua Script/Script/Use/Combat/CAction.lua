@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 15.09.25
+  Version: 15.09.26
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -102,7 +102,6 @@ Sys.Error("Unknown Action Tag: "..sval(act.Act))
 end
 
 function ActionFuncs.SHT(ag,ai,act)
-SpriteAnim[ag](ai,act)
 local ch = FighterTag(ag,ai) --RPGChar.PartyTag(ag,ai)
 if RPGChar.Points(ch,"AMMO",1).Have<=0 then return MINI(RPGChar.Name(ch).." cannot shoot! Out of ammo!") end
 local tg,ti = TargetFromAct(act)
@@ -134,7 +133,6 @@ end
 
 
 function ActionFuncs.ATK(ag,ai,act)
-SpriteAnim[ag](ai,act)
 local ch = FighterTag(ag,ai) --RPGChar.PartyTag(ag,ai)
 local tg,ti = TargetFromAct(act)
 if not CheckTarget(tg,ti) then MINI("Attack cancelled",255,0,0); MINI("There's no enemy on that spot anymore",255,180,0); return end
