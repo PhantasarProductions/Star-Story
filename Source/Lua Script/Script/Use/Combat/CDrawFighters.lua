@@ -195,7 +195,14 @@ local poses = {
                      Flip()
                      end
                  end, 
-        ARM =    function() MINI("Crystal's ARM pose has not yet been drawn",180,0,255) end         
+        ARM =    function()
+                 SFX("Audio/SFX/Crystal ARM.ogg") 
+                 Fighters.Hero[idx].Pick="ARM"
+                 for ak=1,50 do
+                     DrawScreen()
+                     Flip()
+                     end
+                 end         
    }
 CSay(serialize("ACT",act))   
 ;(({
