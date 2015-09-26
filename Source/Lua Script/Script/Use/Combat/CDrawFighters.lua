@@ -1,6 +1,6 @@
 --[[
   CDrawFighters.lua
-  Version: 15.09.25
+  Version: 15.09.26
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -186,7 +186,17 @@ function AnimateHero(idx,act)
 local myhero = Fighters.Hero[idx]
 local poses = {
         Attack = function()
-                 MINI("Hero attack pose not yet implemented!",180,255,0) 
+                 -- MINI("Hero attack pose not yet implemented!",180,255,0) 
+                 Fighters.Hero[idx].Pick="Attack.1"
+                 for ak=1,25 do
+                     DrawScreen()
+                     Flip()
+                     end
+                 Fighters.Hero[idx].Pick="Attack.2"
+                 for ak=1,15 do
+                     DrawScreen()
+                     Flip()
+                     end
                  end,
         Cast   = function()
                  Fighters.Hero[idx].Pick="Cast"
