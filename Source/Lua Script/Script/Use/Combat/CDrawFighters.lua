@@ -214,7 +214,7 @@ local poses = {
                      end
                  end         
    }
-CSay(serialize("ACT",act))   
+-- CSay(serialize("ACT",act))   
 ;(({
      ATK = poses.Attack,
      SHT = poses.Attack,
