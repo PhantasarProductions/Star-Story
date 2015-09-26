@@ -32,8 +32,16 @@
   
  **********************************************
  
-version: 15.09.25
+version: 15.09.26
 ]]
+
+function TUT_PAD()
+if Done("&DONE.TUT.TRANSPORTERPAD") then return end
+PartyPop("Pad","North")
+MapText("TUT_PAD")
+PartyUnPop()
+end
+
 
 function GALE_OnLoad()
 Music("Dungeon/Weirdomusic_-_34_-_Fiber_visits_the_Q_Continuum.ogg")
