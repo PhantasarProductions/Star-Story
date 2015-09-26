@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ITM_GUBAFLOWER.lua
+  ABL_FOE_POISONCLOUD.lua
   (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
@@ -35,18 +35,18 @@
 version: 15.09.26
 ]]
 ret = {
+	["ABL_AP"] = 0,
+	["ABL_Pose"] = "Cast",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
-	["CurePoison"] = true,
+	["CausePoison"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Heals 45 HP and cures poison",
-	["Healing"] = 45,
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Inventory/Yellow Flower.png",
+	["Icon"] = "GFX/Inventory/Poison Cloud.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Guba Flower",
-	["Target"] = "1A",
+	["Name"] = "Poison Cloud",
+	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}
 
