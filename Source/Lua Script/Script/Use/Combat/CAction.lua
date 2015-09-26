@@ -168,7 +168,7 @@ local function GroupEffect(ag,ai,act)
                for tg,group in pairs(Fighters) do for ti,_ in pairs(group) do AbilityEffect(ag,ai,act,tg,ti) end end
                end
       })[act.Item.Target] or function() Sys.Error("EAI: Unknown target type"..act.Item.Target) end)(ag,ai,act)
-Fighters.Hero[ai].Pick="Default"      
+Fighters[ag][ai].Pick="Default"      
 end
 
 function ActionFuncs.ITM(ag,ai,act)

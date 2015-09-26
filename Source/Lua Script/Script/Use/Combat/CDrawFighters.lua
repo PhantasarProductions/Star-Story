@@ -51,7 +51,7 @@ while i>3 do
       i=i-3
       end
 foec = foec or {}
-foec[idx] = {(cnt*50)+30,(i*100)+150}      
+foec[idx] = {(cnt*70)+40,(i*100)+150}      
 end
 
 function CoordsFighter.Foe(idx)
