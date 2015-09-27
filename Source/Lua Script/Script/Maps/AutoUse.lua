@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 15.09.22
+  version: 15.09.27
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -146,5 +146,47 @@ for ak=0,5 do
     end
 end
 
-function RecoveryPad()
+function ActivatePad(tag,transporter)
+if ActivatedPads[tag] then return end
+if transporter=="General" then MS.LN_Run("TRANS","Scripts/Flow/Transporter.lua","ActivatePad",tag) end 
+Maps.Obj.Obj("Transporter.Pad."..tag).TextureFile = "GFX/Teleport Pads/"..transporter..".png" 
 end
+
+function TransporterPad(tag)
+ActivatePad(tag,"General")
+MINI("Transporter routine not yet present")
+end
+
+function ReturnOnlyPad(tag)
+ActivatePad(tag,"ReturnOnly")
+MINI("Return only transporter routine not yet present")
+end
+
+function RecoveryPad(tag)
+ActivatePad(tag,"Recover")
+RecoverParty(true)
+end
+
+function InitPads()
+ActivatedPads = ActivatedPads or {}
+local function puretag(tag) return replace(tag,"Trans.Spot.","Trans.Pad.") end
+local function dimnonactive(tag)
+      if not ActivatedPads[tag] then
+         Maps.Obj.Obj("Transporter.Pad."..tag).TextureFile = "GFX/Teleport Pads/Deactivated.png" 
+         end
+      end
+for obj in KthuraEach() do
+    (({
+      ["$TransporterGeneral"] = function() 
+                                ZA_Enter(obj.Tag,loadstring('MS.Run("MAP","TransporterPad","'..puretag(obj.Tag)..'")'))
+                                end,
+      ["$TransporterRecover"] = function() 
+                                ZA_Enter(obj.Tag,loadstring('MS.Run("MAP","RecoveryPad","'..puretag(obj.Tag)..'")'))
+                                end,                          
+      ["$TransporterReturnOnly"] 
+                              = function() 
+                                ZA_Enter(obj.Tag,loadstring('MS.Run("MAP","ReturnOnlyPad","'..puretag(obj.Tag)..'")'))
+                                end                          
+    })[obj.Kind] or function() end)()
+    end
+end; InitPads()
