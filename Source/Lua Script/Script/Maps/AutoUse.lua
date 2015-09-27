@@ -169,8 +169,8 @@ end
 
 function ActivatePad(tag,transporter)
 if ActivatedPads[tag] then return end
-if transporter=="General" then MS.LN_Run("TRANS","Scripts/Flow/Transporter.lua","ActivatePad",tag) end 
-Maps.Obj.Obj("Transporter.Pad."..tag).TextureFile = "GFX/Teleport Pads/"..transporter..".png" 
+if transporter=="General" then MS.LN_Run("TRANS","Script/Flow/Transporter.lua","ActivatePad",tag) end 
+Maps.Obj.Obj("Trans.Pad."..tag).TextureFile = "GFX/Textures/Teleporter Pad/"..transporter..".png" 
 end
 
 function TransporterPad(tag)
@@ -188,25 +188,39 @@ ActivatePad(tag,"Recover")
 RecoverParty(true)
 end
 
+-- for obj in KthuraEach() do Console.Write("*"..obj.Tag.."*",255,255,0) end      
+
+
 function InitPads()
+local pad
+Maps.Remap()
 ActivatedPads = ActivatedPads or {}
-local function puretag(tag) return replace(tag,"Trans.Spot.","Trans.Pad.") end
+local function puretag(tag) return replace(tag,"Trans.Spot.","") end
 local function dimnonactive(tag)
       if not ActivatedPads[tag] then
-         Maps.Obj.Obj("Transporter.Pad."..tag).TextureFile = "GFX/Teleport Pads/Deactivated.png" 
+         -- CSay("Got tag: "..tag)
+         Maps.Obj.Obj("Trans.Pad."..tag).TextureFile = "GFX/Textures/Teleporter Pad/Deactivated.png" 
          end
       end
-for obj in KthuraEach() do
+for obj in KthuraEach() do    
     (({
       ["$TransporterGeneral"] = function() 
-                                ZA_Enter(obj.Tag,loadstring('MS.Run("MAP","TransporterPad","'..puretag(obj.Tag)..'")'))
+                                Console.Write("Get pad : "..puretag(obj.Tag),255,255,255)
+                                pad = Maps.Obj.Obj("Trans.Pad."..puretag(obj.Tag))
+                                Console.Write("Done!",255,255,255)
+                                dimnonactive(puretag(obj.Tag))
+                                ZA_Enter(pad.Tag,loadstring('MS.Run("MAP","TransporterPad","'..puretag(obj.Tag)..'")'))
                                 end,
       ["$TransporterRecover"] = function() 
-                                ZA_Enter(obj.Tag,loadstring('MS.Run("MAP","RecoveryPad","'..puretag(obj.Tag)..'")'))
+                                pad = Maps.Obj.Obj("Trans.Pad."..puretag(obj.Tag))
+                                dimnonactive(puretag(obj.Tag))
+                                ZA_Enter(pad.Tag,loadstring('MS.Run("MAP","RecoveryPad","'..puretag(obj.Tag)..'")'))
                                 end,                          
       ["$TransporterReturnOnly"] 
-                              = function() 
-                                ZA_Enter(obj.Tag,loadstring('MS.Run("MAP","ReturnOnlyPad","'..puretag(obj.Tag)..'")'))
+                              = function()
+                                pad = Maps.Obj.Obj("Transr.Pad."..puretag(obj.Tag)) 
+                                dimnonactive(puretag(obj.Tag))
+                                ZA_Enter(pad.Tag,loadstring('MS.Run("MAP","ReturnOnlyPad","'..puretag(obj.Tag)..'")'))
                                 end                          
     })[obj.Kind] or function() end)()
     end

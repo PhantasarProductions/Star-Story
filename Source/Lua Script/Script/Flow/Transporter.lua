@@ -38,18 +38,18 @@ Transporters = Transporters or { Nodes = {}, Worlds={} }
 
 
 function ActivatePad(tag)
-local obj = Maps.Obj.Obj("Transporter.Spot."..tag)
-local pad = Maps.Obj.Obj("Transporter.Pad." ..tag)
+local obj = Maps.Obj.Obj("Trans.Spot."..tag)
+local pad = Maps.Obj.Obj("Trans.Pad." ..tag)
 local node = upper(Maps.CodeName.."."..tag)
 if Transporters.Nodes[node] then return end
 CSay("Activating transporter: "..tag)
-Transporters.Nodes[node] = { Map = Maps.CodeName, Transporter = "Transporter.Spot."..tag }
+Transporters.Nodes[node] = { Map = Maps.CodeName, Transporter = "Trans.Spot."..tag }
 Transporters.Worlds[obj.DataGet("WORLD")] = {Location = obj.DataGet("LOCATION"), Node=node} 
 end
 
 function ActivateRemotePad(tag,mapcode,world,location)
 local node = upper(mapcode.."."..tag)
 CSay("Activating transporter: "..tag)
-Transporters.Nodes[node] = { Map = mapcode, Transporter = "Transporter.Spot."..tag }
+Transporters.Nodes[node] = { Map = mapcode, Transporter = "Trans.Spot."..tag }
 Transporters.Worlds[world] = {Location = location, Node=node} 
 end
