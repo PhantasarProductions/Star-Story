@@ -171,6 +171,7 @@ function ActivatePad(tag,transporter)
 if ActivatedPads[tag] then return end
 if transporter=="General" then MS.LN_Run("TRANS","Script/Flow/Transporter.lua","ActivatePad",tag) end 
 Maps.Obj.Obj("Trans.Pad."..tag).TextureFile = "GFX/Textures/Teleporter Pad/"..transporter..".png" 
+ActivatedPads[tag] = true
 end
 
 function TransporterPad(tag)
