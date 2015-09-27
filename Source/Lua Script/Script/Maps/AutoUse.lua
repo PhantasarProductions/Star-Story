@@ -146,6 +146,27 @@ for ak=0,5 do
     end
 end
 
+
+function KthuraEach(kind) -- This is just a copy, because the normal usage routine did not yet load the Kthura.lua file causing errors. No other way to "fix" that.
+-- CSay("Startup Kthura-Each: "..sval(kind))
+local c = Maps.ObjectList.Start(kind or "")
+local k
+local tab = {}
+-- CSay("objects to go through: "..c)
+for k=0,c-1 do
+    -- CSay(k.."   "..c)
+    Maps.ObjectList.Pick(k)
+    -- CSay(Maps.ObjectList.MyObject.Kind)
+    table.insert(tab,Maps.ObjectList.MyObject)
+    end
+local i=0    
+return function()
+       i = i + 1
+       if tab[i] then return tab[i] end
+       end    
+end       
+
+
 function ActivatePad(tag,transporter)
 if ActivatedPads[tag] then return end
 if transporter=="General" then MS.LN_Run("TRANS","Scripts/Flow/Transporter.lua","ActivatePad",tag) end 
