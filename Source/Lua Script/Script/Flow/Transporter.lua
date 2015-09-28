@@ -1,6 +1,6 @@
 --[[
   Transporter.lua
-  Version: 15.09.27
+  Version: 15.09.28
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -36,12 +36,16 @@
 ]]
 Transporters = Transporters or { Nodes = {}, Worlds={} }
 
+DemoMapsFunction = loadstring(JCR.LoadString("Script/JINC/Demo/Maps"))
+DemoMaps = DemoMapsFunction()
 
 function ActivatePad(tag)
 local obj = Maps.Obj.Obj("Trans.Spot."..tag)
 local pad = Maps.Obj.Obj("Trans.Pad." ..tag)
 local node = upper(Maps.CodeName.."."..tag)
+local demo = false
 if Transporters.Nodes[node] then return end
+for m in each(DemoMaps) do demo = demo or upper(Maps.CodeName)==m end
 CSay("Activating transporter: "..tag)
 Transporters.Nodes[node] = { Map = Maps.CodeName, Transporter = "Trans.Spot."..tag }
 Transporters.Worlds[obj.DataGet("WORLD")] = {Location = obj.DataGet("LOCATION"), Node=node} 

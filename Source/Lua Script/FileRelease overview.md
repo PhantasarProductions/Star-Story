@@ -26,6 +26,7 @@
 1. Script/Init/LoadGame.lua
 1. Script/Init/Start.lua
 1. Script/JINC/Big/Achievements.lua
+1. Script/JINC/Demo/Maps.lua
 1. Script/JINC/Foes/Boss/BrainDroid.lua
 1. Script/JINC/Foes/Reg/astrilopup.lua
 1. Script/JINC/Foes/Reg/BattleDroid.lua
@@ -169,4 +170,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Mon 28 September 2015; 19:01:18 CET
+### Last updated: Mon 28 September 2015; 21:05:37 CET
