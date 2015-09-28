@@ -185,7 +185,8 @@ Actors.Actor("PLAYER").NotInMotionThen0 = 0
 for f=start[inorout],eind[inorout],stap[inorout] do
     Image.Cls()
     Actors.Actor("PLAYER").Frame = f 
-    Maps.Draw()
+    --Maps.Draw()
+    DrawScreen()
     Flip()    
     end
 local cp = GetActive()    
@@ -193,11 +194,14 @@ if inorout==2 then
    Actors.ChoosePic("PLAYER",upper(cp)..".SOUTH")
    TurnPlayer("South")
    Actors.Actor("PLAYER").NotInMotionThen0 = 1
+   DrawScreen()
+   Flip()
    end
 end
 
 function TransporterPad(tag)
 ActivatePad(tag,"General")
+if Done("&TELPADINUSE") then Var.Clear("&TELPADINUSE") return end
 Actors.StopWalking("PLAYER")
 Actors.StopMoving("PLAYER")
 Actors.MoveToSpot("PLAYER","Trans.Spot."..tag)
@@ -221,6 +225,7 @@ Actors.MoveToSpot("PLAYER","Trans.Spot."..tag)
      end,
      })[RunQuestion("SCOTTY","GENERAL")]()
 --MINI("Transporter routine not yet present")
+Var.Clear("&TELPADINUSE")
 end
 
 function ReturnOnlyPad(tag)
