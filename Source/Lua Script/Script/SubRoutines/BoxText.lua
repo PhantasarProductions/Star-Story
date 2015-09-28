@@ -269,6 +269,7 @@ function RunQuestion(file,tag,pidx,boxback)
 local chosen=nil
 local idx=pidx or 1
 local f = btdata[file]
+local width = 700
 if not f then Sys.Error("Boxtext file "..file.." has not yet been loaded!") end
 local t = f[tag]
 if not t then Sys.Error("Boxtext file "..file.." has no tag called "..tag) end
@@ -281,6 +282,9 @@ if rec.AltTxtFont then
   else
    setfont("BoxText")
    end   
+if rec.PicRef then
+   width = width - Image.Width(rec.PicRef)   
+   end
 sb_data.width=width    
 sb_data.PicRef=rec.PicRef
 INP.Grab()
