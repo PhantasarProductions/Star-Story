@@ -48,7 +48,7 @@ MS.LoadNew("PARTY","Script/SubRoutines/Party.lua")
 -- Flow
 MS.LoadNew("FIELD","Script/Flow/Field.lua")
 -- Make sure BoxText has a few core setups loaded
-MS.Run("BOXTEXT","GENERAL/SCOTTY","SCOTTY")
+MS.Run("BOXTEXT","LoadData","GENERAL/SCOTTY;SCOTTY")
 end
 
 function LoadBaseGraphics()
