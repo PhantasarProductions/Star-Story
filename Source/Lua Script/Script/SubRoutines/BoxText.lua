@@ -190,6 +190,8 @@ for ay=1,#data.Lines do
     y = (ay-1)*fh
     if highlight and my>starty+y and my<starty+y+fh then 
       ret=ay
+       LightBlue()
+    elseif highlight then
       Image.Color(0,0,180)
     else 
        LightBlue()
@@ -290,7 +292,7 @@ sb_data.PicRef=rec.PicRef
 INP.Grab()
 repeat
 INP.Grab()
-chosen = ShowBox(sb_data,boxback,true)
+chosen = ShowBox(sb_data,boxback or "BOXTEXT.KTHURA",true)
 Flip()
 until mousehit(1) and chosen
 Var.D("%RET",chosen)
