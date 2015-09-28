@@ -47,7 +47,7 @@ local demo = false
 if Transporters.Nodes[node] then return end
 for m in each(DemoMaps) do demo = demo or upper(Maps.CodeName)==m end
 CSay("Activating transporter: "..tag)
-Transporters.Nodes[node] = { Map = Maps.CodeName, Transporter = "Trans.Spot."..tag }
+Transporters.Nodes[node] = { Map = Maps.CodeName, Transporter = "Trans.Spot."..tag, Demo=demo }
 Transporters.Worlds[obj.DataGet("WORLD")] = {Location = obj.DataGet("LOCATION"), Node=node} 
 end
 
