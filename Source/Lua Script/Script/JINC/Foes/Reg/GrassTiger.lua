@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 15.09.26
+version: 15.09.29
 ]]
 
 
--- Version 15.09.26
+-- Version 15.09.28
 
 
 
@@ -66,7 +66,7 @@ Data = {
 		["Evasion"] = {10,12},
 		["HP"] = {100,500},
 		["AP"] = {0,0},
-		["LevelRange"] = {5,10},
+		["LevelRange"] = {5,15},
 	},
 	Acts = {}, -- Data itself defined below
 	ActMinLevel = {}, -- Data itself defined below

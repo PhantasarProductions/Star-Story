@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.26
+version: 15.09.29
 ]]
 
 function TUT_PAD()
@@ -42,6 +42,11 @@ MapText("TUT_PAD")
 PartyUnPop()
 end
 
+function GotoNext()
+if not Done("&DONE.LOSTWORLD.GJ1") then MapEXP() end
+LoadMap("LostWorld_GrassJungle_2")
+SpawnPlayer("Start")
+end
 
 function GALE_OnLoad()
 Music("Dungeon/Weirdomusic_-_34_-_Fiber_visits_the_Q_Continuum.ogg")

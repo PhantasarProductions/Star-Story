@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.16
+version: 15.09.29
 ]]
 -- @IF IGNORE
 VicCheck = {}
@@ -147,6 +147,8 @@ for ak=0,2 do
 -- Remove the enemy from memory           
 Fighters.Foe[idx] = nil
 if RPGChar.CharExists(myfoe.Tag)==1 then RPGStat.DelChar(myfoe.Tag) else CSay("!! WARNING !! Tried to destroy non-existent foe: "..myfoe.Tag) end
+-- Optimize time gauge
+InitGaugeSpeed()
 end
 
 function VicCheck.YaqirpaBrain()
