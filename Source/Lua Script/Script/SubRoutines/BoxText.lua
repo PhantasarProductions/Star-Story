@@ -293,8 +293,10 @@ INP.Grab()
 repeat
 INP.Grab()
 chosen = ShowBox(sb_data,boxback or "BOXTEXT.KTHURA",true)
+ShowMouse()
 Flip()
 until mousehit(1) and chosen
 Var.D("%RET",chosen)
+CSay("Chosen: "..sval(chosen))
 return chosen
 end

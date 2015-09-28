@@ -64,7 +64,7 @@ if not boxtextroutine then
     if boxback then param = param .. ";"..idx end
     end
  MS.Run("BOXTEXT","RunQuestion",param)
- local ret = Var.C("%RET"); Var.Clear("%RET")
+ local ret =  CVV("%RET"); Var.Clear("%RET")
  return ret   
  end
  

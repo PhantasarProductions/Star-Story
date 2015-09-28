@@ -198,6 +198,9 @@ end
 
 function TransporterPad(tag)
 ActivatePad(tag,"General")
+Actors.StopWalking("PLAYER")
+Actors.StopMoving("PLAYER")
+Actors.MoveToSpot("PLAYER","Trans.Spot."..tag)
 ;({
      function() -- Recover & Save
      TelEffect(TEL_OUT)
@@ -210,7 +213,7 @@ ActivatePad(tag,"General")
      end,
      
      function() -- Beam me up, Scotty!
-     if not CVV("&GOT.HAWK") then BoxText("SCOTTY","NOSHIP") return end
+     if not CVV("&GOT.HAWK") then SerialBoxText("SCOTTY","NOSHIP") return end
      MINI("Beaming up not yet properly set up")
      end,
      
@@ -222,11 +225,17 @@ end
 
 function ReturnOnlyPad(tag)
 ActivatePad(tag,"ReturnOnly")
+Actors.StopWalking("PLAYER")
+Actors.StopMoving("PLAYER")
+Actors.MoveToSpot("PLAYER","Trans.Spot."..tag)
 MINI("Return only transporter routine not yet present")
 end
 
 function RecoveryPad(tag)
 ActivatePad(tag,"Recover")
+Actors.StopWalking("PLAYER")
+Actors.StopMoving("PLAYER")
+Actors.MoveToSpot("PLAYER","Trans.Spot."..tag)
 RecoverParty(true)
 end
 
