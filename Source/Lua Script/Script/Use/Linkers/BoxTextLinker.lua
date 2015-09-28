@@ -1,6 +1,6 @@
 --[[
   BoxTextLinker.lua
-  Version: 15.09.22
+  Version: 15.09.28
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -56,6 +56,16 @@ if not boxtextroutine then
 
  function MapText(tag,bck)
  SerialBoxText("MAP",tag)
+ end
+ 
+ function RunQuestion(file,tag,idx,boxback)
+ local param = file..";"..tag
+ if idx then param = param .. ";"..idx 
+    if boxback then param = param .. ";"..idx end
+    end
+ MS.Run("BOXTEXT","RunQuestion",param)
+ local ret = Var.C("%RET"); Var.Clear("%RET")
+ return ret   
  end
  
 end 

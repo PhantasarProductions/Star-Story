@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 15.09.27
+  version: 15.09.28
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -174,9 +174,50 @@ Maps.Obj.Obj("Trans.Pad."..tag).TextureFile = "GFX/Textures/Teleporter Pad/"..tr
 ActivatedPads[tag] = true
 end
 
+TEL_OUT = 1
+TEL_IN  = 2
+function TelEffect(inorout)
+local start = {0,99}
+local eind  = {99,0}
+local stap  = {1,-1}
+Actors.ChoosePic("PLAYER","TELEPORT")
+Actors.Actor("PLAYER").NotInMotionThen0 = 0
+for f=start[inorout],eind[inorout],stap[inorout] do
+    Image.Cls()
+    Actors.Actor("PLAYER").Frame = f 
+    Maps.Draw()
+    Flip()    
+    end
+local cp = GetActive()    
+if inorout==2 then
+   Actors.ChoosePic("PLAYER",upper(cp)..".SOUTH")
+   TurnPlayer("South")
+   Actors.Actor("PLAYER").NotInMotionThen0 = 1
+   end
+end
+
 function TransporterPad(tag)
 ActivatePad(tag,"General")
-MINI("Transporter routine not yet present")
+;({
+     function() -- Recover & Save
+     TelEffect(TEL_OUT)
+     RecoverParty()
+     Time.Sleep(250)
+     MS.Run("FIELD","SetUpFoes")
+     MS.Run("FIELD","SetUpTreasure")
+     TelEffect(TEL_IN)
+     GotoSave()
+     end,
+     
+     function() -- Beam me up, Scotty!
+     if not CVV("&GOT.HAWK") then BoxText("SCOTTY","NOSHIP") return end
+     MINI("Beaming up not yet properly set up")
+     end,
+     
+     function() -- Cancel 
+     end,
+     })[RunQuestion("SCOTTY","GENERAL")]()
+--MINI("Transporter routine not yet present")
 end
 
 function ReturnOnlyPad(tag)

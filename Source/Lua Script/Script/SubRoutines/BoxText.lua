@@ -1,6 +1,6 @@
 --[[
   BoxText.lua
-  Version: 15.09.22
+  Version: 15.09.28
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -123,8 +123,9 @@ end
 function BoxTextBackGround()
 end
 
-function ShowBox(data,boxback)
+function ShowBox(data,boxback,highlight)
 local bb = boxback or "BOXTEXT"
+local ret
 MS.Run(bb,"BoxTextBackGround")
 -- @IF BOXTEXTDEBUG
 DarkText("background: "..bb,10,400,2,0)
@@ -136,6 +137,7 @@ local startx = 750-data.width
 local starty = 600-bh
 local bstarty = (starty - 20) - Image.Height(piccorner)
 local ak,av,ac
+local mx,my = MouseCoords()
 -- @IF BOXTEXTDEBUG
 White()
 Image.NoFont()
@@ -178,7 +180,6 @@ Image.DText(data.Header,startx,starty-20)
 --print(serialize("boxtext",data))
 -- Text itself
 local ax,ay,y
-LightBlue()
 if data.AltTxtFont then
    CSay("Setting font: "..data.AltTxtFont,fonts.BoxText[2])
    Image.Font(data.AltTxtFont,fonts.BoxText[2])
@@ -187,6 +188,12 @@ if data.AltTxtFont then
    end
 for ay=1,#data.Lines do
     y = (ay-1)*fh
+    if highlight and my>starty+y and my<starty+y+fh then 
+      ret=ay
+      Image.Color(0,0,180)
+    else 
+       LightBlue()
+       end
     if ay<data.SL then
        Image.DText(data.Lines[ay],startx,starty+y)
     elseif ay==data.SL then
@@ -198,6 +205,7 @@ if data.SL<=#data.Lines then
    if data.SP>string.len(data.Lines[data.SL]) then data.SP=1 data.SL=data.SL+1 end
    -- print(serialize("data",data)) -- Debug only!!!
    end    
+return ret   
 end
 
 
@@ -255,4 +263,32 @@ local t = f[tag]
 if not t then Sys.Error("Boxtext file "..file.." has no tag called "..tag) end
 local ak
 for ak=1,#t do RunBoxText(file,tag,ak,boxback) end
+end
+
+function RunQuestion(file,tag,idx,boxback)
+local chosen=nil
+local tidx=idx or 1
+local f = btdata[file]
+if not f then Sys.Error("Boxtext file "..file.." has not yet been loaded!") end
+local t = f[tag]
+if not t then Sys.Error("Boxtext file "..file.." has no tag called "..tag) end
+local rec = t[idx]
+if not rec then Sys.Error("Boxtext file "..file.." tag "..tag.." does not have a record #"..idx.." (max is "..#t..")") end
+local sb_data = { Header = rec.Header, PicDir = rec.PicDir, PicSpc = rec.PicSpc, Lines = rec.Lines, SL = 1, SP=1, AltTxtFont = rec.AltTxtFont }
+if rec.AltTxtFont then
+   CSay("Setting font: "..rec.AltTxtFont..","..fonts.BoxText[2])
+   Image.Font(rec.AltTxtFont,fonts.BoxText[2])
+  else
+   setfont("BoxText")
+   end   
+sb_data.width=width    
+sb_data.PicRef=rec.PicRef
+INP.Grab()
+repeat
+INP.Grab()
+chosen = ShowBox(sb_data,boxback,true)
+Flip()
+until mousehit(1) and chosen
+Var.D("%RET",chosen)
+return chosen
 end
