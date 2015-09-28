@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.09.11
+Version: 15.09.28
 End Rem
 Strict
 
@@ -38,11 +38,11 @@ The fact that the Lua scripts communiticate directly with
 the APIs which are part of LAURA2 (And thus of the GNU license)
 play no role in that. 
 
-I must thank Yasha of the BlitzMax forums For sorting stuff out
+I must thank Yasha of the BlitzMax forums for sorting stuff out
 For me in that department:
 http://www.gnu.org/licenses/gpl-faq.html#IfInterpreterIsGPL
 
-In a Short clarification in the statment from that site:
+In a Short clarification in the statement from that site:
 = Calling out to the LAURA II apis from Lua does not
   require GNU License.
 = Using third party Lua scripts that are GNU licensed
@@ -80,7 +80,7 @@ In order to compile this source code you need the next stuff
 = BlitzMax itself (www.blitzmax.com)
 = Brucey's Volumes module
 = The modules prefixed with "gale", "jcr6" and "tricky_"
-  all of them can be downloaded from http://trickymods.tbbs.nl
+  all of them can be downloaded from https://github.com/Tricky1975/TrickyMod
   Please note, that the download from that site is updated
   as I upgrade these modules, as good as real-time, so I 
   cannot guarantee a stable version. I always try to avoid
@@ -91,8 +91,9 @@ A few tools you may need if you want to use LAURA II
 = JCR6, you can download it on http://jcr5.sourceforge.net
   (please note the 5 in the URL! I couldn't change that name
   anymore, when I moved from JCR5 to JCR6). 
-= Kthura Map Editor. It was not yet released when I wrote
-  this notice, it very likely will be over time.
+  You can find the "active" build on: https://github.com/Tricky1975/JCR6Tools
+= Kthura Map Editor.
+  https://github.com/Tricky1975/Kthura
 
 This line contains security material and is therefore not given away. The engine
 should compile without it. In the case of Star Story this will mean that the
@@ -158,7 +159,7 @@ GaleCon = New GALEMainCon2
 
 ' Version
 MKL_Lic     "LAURA II - LAURA2.bmx","GNU General Public License 3"
-MKL_Version "LAURA II - LAURA2.bmx","15.09.11"
+MKL_Version "LAURA II - LAURA2.bmx","15.09.28"
 
 ' Platform information
 ?MacOS
