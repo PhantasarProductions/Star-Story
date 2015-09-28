@@ -265,9 +265,9 @@ local ak
 for ak=1,#t do RunBoxText(file,tag,ak,boxback) end
 end
 
-function RunQuestion(file,tag,idx,boxback)
+function RunQuestion(file,tag,pidx,boxback)
 local chosen=nil
-local tidx=idx or 1
+local idx=pidx or 1
 local f = btdata[file]
 if not f then Sys.Error("Boxtext file "..file.." has not yet been loaded!") end
 local t = f[tag]
