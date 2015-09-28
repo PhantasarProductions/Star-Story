@@ -185,8 +185,8 @@ Actors.Actor("PLAYER").NotInMotionThen0 = 0
 for f=start[inorout],eind[inorout],stap[inorout] do
     Image.Cls()
     Actors.Actor("PLAYER").Frame = f 
-    --Maps.Draw()
-    DrawScreen()
+    Maps.Draw()
+    --DrawScreen()
     Flip()    
     end
 local cp = GetActive()    
@@ -194,7 +194,8 @@ if inorout==2 then
    Actors.ChoosePic("PLAYER",upper(cp)..".SOUTH")
    TurnPlayer("South")
    Actors.Actor("PLAYER").NotInMotionThen0 = 1
-   DrawScreen()
+   Maps.Draw()
+   --DrawScreen()
    Flip()
    end
 end
