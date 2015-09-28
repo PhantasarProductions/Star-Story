@@ -36,7 +36,7 @@
 ]]
 Transporters = Transporters or { Nodes = {}, Worlds={} }
 
-DemoMapsFunction = loadstring(JCR6.LoadString("Script/JINC/Demo/Maps"))
+DemoMapsFunction = loadstring(JCR6.LoadString("Script/JINC/Demo/Maps.lua"))
 DemoMaps = DemoMapsFunction()
 
 function ActivatePad(tag)
