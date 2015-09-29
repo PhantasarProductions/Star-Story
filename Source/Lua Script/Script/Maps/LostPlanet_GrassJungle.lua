@@ -44,7 +44,7 @@ end
 
 function GotoNext()
 if not Done("&DONE.LOSTWORLD.GJ1") then MapEXP() end
-LoadMap("LostWorld_GrassJungle_2")
+LoadMap("LostPlanet_GrassJungle_2")
 SpawnPlayer("Start")
 end
 
@@ -52,4 +52,5 @@ function GALE_OnLoad()
 Music("Dungeon/Weirdomusic_-_34_-_Fiber_visits_the_Q_Continuum.ogg")
 ZA_Enter("Pad_Tutorial",TUT_PAD)
 ZA_Enter("Next",GotoNext)
+AddClickable("ClickNext")
 end

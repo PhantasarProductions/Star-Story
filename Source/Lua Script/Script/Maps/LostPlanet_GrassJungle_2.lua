@@ -37,13 +37,18 @@ version: 15.09.29
 
 function GotoNext()
 if not Done("&DONE.LOSTWORLD.GJ2") then MapEXP() end
-LoadMap("LostWorld_GrassJungle_3")
+LoadMap("LostPlanet_GrassJungle_3")
 SpawnPlayer("Start")
 end
 
-function GotoNextPrev()
-LoadMap("LostWorld_GrassJungle")
+function GotoPrev()
+LoadMap("LostPlanet_GrassJungle")
 SpawnPlayer("Einde")
+end
+
+function Reveal_Secret()
+if not Done("&DONE.REVEAL.SECRET.GRASS2") then MapEXP(); MapEXP() end
+MapShow("II","Secret")
 end
 
 function GALE_OnLoad()
@@ -51,4 +56,7 @@ Music("Dungeon/Weirdomusic_-_34_-_Fiber_visits_the_Q_Continuum.ogg")
 SetScrollBoundaries(nil,-50,nil,1824)
 ZA_Enter("Next",GotoNext)
 ZA_Enter("Previous",GotoPrev)
+ZA_Enter("REVEAL_SECRET",Reveal_Secret)
+ZA_Enter("HIDE_SECRET",function() MapShow("II") end)
+MapShow("II")
 end
