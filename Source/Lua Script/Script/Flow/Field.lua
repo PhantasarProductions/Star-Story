@@ -179,6 +179,10 @@ if mousehit(1) then
               Actors.WalkToSpot(cplayer,ARMSpot)
               WalkArrival = "GRANT_ARM"
               Var.D("$ARMSPOT",ARMSpot)
+              CSay("Gimme that ARM at "..Maps.Obj.Obj(ARMSpot).x..","..Maps.Obj.Obj(ARMSpot).y)
+              CSay(" = Arrival call: "..WalkArrival)
+              CSay(" = ARMSpot:      "..ARMSpot)
+              ret = true
           else
             Actors.WalkToSpot(cplayer,"SPOT_"..c)
             WalkArrival = "CLICK_ARRIVAL_"..c

@@ -291,18 +291,20 @@ local SPOT = Maps.Obj.Obj(SPOTTAG)
 local ARMTAG = SPOT.DataGet("ARM")
 local ARM = ItemGet("ARM_"..ARMTAG)
 local ok
+CSay("We're there. Now let's check this out!")
 for ak=0,5 do
     ok = ok or RPGChar.PartyTag(ak)=="Crystal"
     end
 if not ok then
    SerialBoxText("ARMS","NOCRYSTAL","BOXTEXT.KTHURA")
+   CSay("Oh bummer! Crystal's not in the group!")
    return
    end    
 Var.D("$ARMOBTAINED",ARM.Name)
 SetActive("Crystal")
 TurnPlayer("North")
 Maps.Obj.Obj(SPOTTAG).Frame=1
-SerialBoxText("ARMS","NOCRYSTAL","BOXTEXT.KTHURA")
+SerialBoxText("ARMS","CRYSTAL","BOXTEXT.KTHURA")
 RPGChar.AddList("Crystal","ARMS",ARMTAG)
 Maps.PermaWrite("-- NOKILL:")
 Maps.Obj.Kill(SPOTTAG,1)
