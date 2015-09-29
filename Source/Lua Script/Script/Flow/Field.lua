@@ -712,6 +712,7 @@ if LAURA.GetFlow()~="FIELD" then return end
 if ES_Time~=Time.Time() then
    EM_Second = (EM_Second or -1) + 1
    if EM_Second>=maxtime then
+      Loading()
       LAURA.Save("System/Emergency",1)
       EM_Second = nil
       MINI("Emergency file has been written")
