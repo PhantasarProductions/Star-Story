@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ABL_WENDICKA_MJOLNIR.lua
+  Hawk.lua
   (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
@@ -34,27 +34,4 @@
  
 version: 15.09.29
 ]]
-ret = {
-	["ABL_AP"] = 100,
-	["ABL_APCut"] = 500000,
-	["ABL_DblPower"] = 1000000,
-	["ABL_DblSpeed"] = 500000,
-	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 10,
-	["ActSpeed"] = 250,
-	["AttackElement"] = "Thunder",
-	["AttackPower"] = 250,
-	["AttackStat"] = "Strength",
-	["DefenseStat"] = "Defense",
-	["Description"] = "Electrocute the enemy to his death",
-	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Lightning.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Mj<ouml>lnir",
-	["Target"] = "1F",
-	["UseCombat"] = true}
-
-return ret
-
--- This file is an automatically generated file!
-
+Done("&GOT.HAWK")

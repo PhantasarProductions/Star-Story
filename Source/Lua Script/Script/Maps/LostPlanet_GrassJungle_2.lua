@@ -54,9 +54,10 @@ end
 function GALE_OnLoad()
 Music("Dungeon/Weirdomusic_-_34_-_Fiber_visits_the_Q_Continuum.ogg")
 SetScrollBoundaries(nil,-50,nil,1824)
+MapShow("II")
 ZA_Enter("Next",GotoNext)
 ZA_Enter("Previous",GotoPrev)
 ZA_Enter("REVEAL_SECRET",Reveal_Secret)
+ZA_Enter("ALSO_SECRET",Reveal_Secret)
 ZA_Enter("HIDE_SECRET",function() MapShow("II") end)
-MapShow("II")
 end

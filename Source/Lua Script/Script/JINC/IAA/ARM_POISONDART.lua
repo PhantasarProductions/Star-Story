@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ABL_WENDICKA_MJOLNIR.lua
+  ARM_POISONDART.lua
   (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
@@ -35,24 +35,26 @@
 version: 15.09.29
 ]]
 ret = {
-	["ABL_AP"] = 100,
-	["ABL_APCut"] = 500000,
-	["ABL_DblPower"] = 1000000,
-	["ABL_DblSpeed"] = 500000,
-	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 10,
+	["ARM_Hit%"] = 75,
+	["ARM_MaxAmmo"] = 4,
+	["ARM_PRICE_Hit%"] = 750,
+	["ARM_PRICE_MaxAmmo"] = 800,
+	["ARM_PRICE_XPower"] = 1200,
+	["ARM_XPower"] = 0,
 	["ActSpeed"] = 250,
-	["AttackElement"] = "Thunder",
-	["AttackPower"] = 250,
+	["AttackElement"] = "Non-Elemental",
+	["AttackPower"] = 100,
 	["AttackStat"] = "Strength",
+	["CausePoison"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Electrocute the enemy to his death",
+	["Description"] = "Hurts and poisons the enemy",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Lightning.png",
+	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Mj<ouml>lnir",
+	["Name"] = "Poison Dart",
 	["Target"] = "1F",
-	["UseCombat"] = true}
+	["UseCombat"] = true,
+	["UseField"] = true}
 
 return ret
 

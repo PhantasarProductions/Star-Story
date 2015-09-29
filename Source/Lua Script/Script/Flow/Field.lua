@@ -158,9 +158,15 @@ end
 function CheckClickables()
 local i,c
 local mx,my = TrueMouseCoords()
-local ret
+local ret,ARMSpot
 if mousehit(1) then
    for i,c in ipairs(Clickables) do
+       --[[
+       ({['string'] = function() 
+                      end,
+         ['table'] = function()
+                     end})[type(cd)]()
+         ]]                                
        -- CSay("Clicked in object: "..c.." ("..mx..","..my..") ==> "..Maps.CoordsInObject(c,mx,my))
        if Maps.CoordsInObject(c,mx,my)==1 then
           if prefixed(c,"NPC_MT_") then
@@ -168,6 +174,11 @@ if mousehit(1) then
             WalkArrival = "NPC_MapText"
             Var.D("$NPC_MAPTEXT",c)
             ret=true
+          elseif prefixed(c,"ARMCHST") then -- This block until the next "else" statement is specifically for Star Story.
+              ARMSpot = replace(c,"ARMCHST","ARMSPOT")
+              Actors.WalkToSpot(cplayer,ARMSpot)
+              WalkArrival = "GRAND_ARM"
+              Var.D("$ARMSPOT",ARMSpot)
           else
             Actors.WalkToSpot(cplayer,"SPOT_"..c)
             WalkArrival = "CLICK_ARRIVAL_"..c
@@ -628,7 +639,7 @@ for k,t in spairs(FieldTreasure) do
 end
 
 function SetUpAutoClickables()
-local prefixes = {"NPC_MT_"}
+local prefixes = {"NPC_MT_","ARMCHST"}
 local p
 for obj in KthuraEach() do
     for p in each(prefixes) do 
@@ -636,6 +647,8 @@ for obj in KthuraEach() do
         end
     end
 end
+
+
 
 function LoadMap(map)
 Loading()
