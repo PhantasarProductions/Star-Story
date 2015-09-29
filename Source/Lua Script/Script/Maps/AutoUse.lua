@@ -288,6 +288,8 @@ end; InitPads()
 function GRANT_ARM()
 local SPOTTAG = CVV("$ARMSPOT")
 local SPOT = Maps.Obj.Obj(SPOTTAG)
+local CHESTTAG = replace(SPOTTAG,"ARMSPOT","ARMCHST")
+local CHEST = Maps.Obj.Obj(CHESTTAG)
 local ARMTAG = SPOT.DataGet("ARM")
 local ARM = ItemGet("ARM_"..ARMTAG)
 local ok
@@ -303,10 +305,11 @@ if not ok then
 Var.D("$ARMOBTAINED",ARM.Name)
 SetActive("Crystal")
 TurnPlayer("North")
-Maps.Obj.Obj(SPOTTAG).Frame=1
+Maps.Obj.Obj(CHESTTAG).Frame=1
 SerialBoxText("ARMS","CRYSTAL","BOXTEXT.KTHURA")
 RPGChar.AddList("Crystal","ARMS",ARMTAG)
+RPGChar.Points("Crystal","EXP").Inc(1000)
 Maps.PermaWrite("-- NOKILL:")
-Maps.Obj.Kill(SPOTTAG,1)
+Maps.Obj.Kill(CHESTTAG,1)
 Maps.Remap()   
 end
