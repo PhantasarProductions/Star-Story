@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.09.26
+  Version: 15.09.29
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -278,7 +278,8 @@ local lvrange
 local hilevel,diflevel
 local myleveltotal,partymembers,ptag
 local enemiesmain = Maps.GetData("Foes")
-if (not enemiesmain) or enemiesmain=="" then FieldFoes = {} return CSay("No enemy data found in this map") end
+FieldFoes = {} 
+if (not enemiesmain) or enemiesmain=="" then return CSay("No enemy data found in this map") end
 local enemymainlist = mysplit(enemiesmain,";")
 local enemies = {}
 local es,ea
