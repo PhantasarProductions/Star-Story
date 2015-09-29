@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 15.09.28
+  version: 15.09.29
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -282,3 +282,29 @@ for obj in KthuraEach() do
     })[obj.Kind] or function() end)()
     end
 end; InitPads()
+
+
+
+function GRANT_ARM()
+local SPOTTAG = CVV("$ARMSPOT")
+local SPOT = Maps.Obj.Obj(SPOTTAG)
+local ARMTAG = SPOT.DataGet("ARM")
+local ARM = ItemGet("ARM_"..ARMTAG)
+local ok
+for ak=0,5 do
+    ok = ok or RPGChar.PartyTag(ak)=="Crystal"
+    end
+if not ok then
+   SerialBoxText("ARMS","NOCRYSTAL","BOXTEXT.KTHURA")
+   return
+   end    
+Var.D("$ARMOBTAINED",ARM.Name)
+SetActive("Crystal")
+TurnPlayer("North")
+Maps.Obj.Obj(SPOTTAG).Frame=1
+SerialBoxText("ARMS","NOCRYSTAL","BOXTEXT.KTHURA")
+RPGChar.AddList("Crystal","ARMS",ARMTAG)
+Maps.PermaWrite("-- NOKILL:")
+Maps.Obj.Kill(SPOTTAG,1)
+Maps.Remap()   
+end

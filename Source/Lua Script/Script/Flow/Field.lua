@@ -177,7 +177,7 @@ if mousehit(1) then
           elseif prefixed(c,"ARMCHST") then -- This block until the next "else" statement is specifically for Star Story.
               ARMSpot = replace(c,"ARMCHST","ARMSPOT")
               Actors.WalkToSpot(cplayer,ARMSpot)
-              WalkArrival = "GRAND_ARM"
+              WalkArrival = "GRANT_ARM"
               Var.D("$ARMSPOT",ARMSpot)
           else
             Actors.WalkToSpot(cplayer,"SPOT_"..c)

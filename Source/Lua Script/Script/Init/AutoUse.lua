@@ -1,6 +1,6 @@
 --[[
   AutoUse.lua
-  Version: 15.09.28
+  Version: 15.09.29
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -49,6 +49,7 @@ MS.LoadNew("PARTY","Script/SubRoutines/Party.lua")
 MS.LoadNew("FIELD","Script/Flow/Field.lua")
 -- Make sure BoxText has a few core setups loaded
 MS.Run("BOXTEXT","LoadData","GENERAL/SCOTTY;SCOTTY")
+MS.Run("BOXTEXT","LoadData","GENERAL/ARMS;ARMS")
 end
 
 function LoadBaseGraphics()
