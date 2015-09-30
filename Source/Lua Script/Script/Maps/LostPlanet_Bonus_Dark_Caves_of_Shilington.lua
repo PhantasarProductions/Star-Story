@@ -34,6 +34,6 @@
  
 version: 15.09.30
 ]]
-function GALE_Load()
+function GALE_OnLoad()
 Music("Dungeon/Dark_City.ogg")
 end
