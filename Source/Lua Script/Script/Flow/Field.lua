@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.09.29
+  Version: 15.09.30
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -655,6 +655,7 @@ end
 
 
 function LoadMap(map)
+FieldFoes = nil -- Let's just FORCE enemies will NOT mess this up.
 Loading()
 PartyPopArray = nil
 Maps.Load(map)
