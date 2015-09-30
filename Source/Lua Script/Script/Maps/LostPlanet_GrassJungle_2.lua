@@ -53,6 +53,8 @@ end
 
 function DarkCaves()
 LoadMap("LostPlanet_Dark_Caves_of_Shilington")
+SpawnPlayer("Start")
+TurnPlayer("North")
 SecretDungeon()
 end
 
