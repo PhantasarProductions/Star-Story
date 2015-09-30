@@ -1,6 +1,6 @@
 --[[
   Transporter.lua
-  Version: 15.09.30
+  Version: 15.10.01
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -57,4 +57,5 @@ CSay("Activating transporter: "..tag)
 Transporters.Nodes[node] = { Map = mapcode, Transporter = "Trans.Spot."..tag }
 Transporters.Worlds[world] = Transporters.Worlds[world] or {}
 table.insert(Transporters.Worlds[world],{Location = location, Node=node}) 
+CSay('We now have '..#Transporters.Worlds[world].." transporters activated in world "..world)
 end
