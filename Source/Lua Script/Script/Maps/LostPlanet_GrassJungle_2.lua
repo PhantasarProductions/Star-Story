@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.29
+version: 15.09.30
 ]]
 
 function GotoNext()
@@ -51,6 +51,11 @@ if not Done("&DONE.REVEAL.SECRET.GRASS2") then MapEXP(); MapEXP() end
 MapShow("II","Secret")
 end
 
+function DarkCaves()
+LoadMap("LostPlanet_Dark_Caves_of_Shilington")
+SecretDungeon()
+end
+
 function GALE_OnLoad()
 Music("Dungeon/Weirdomusic_-_34_-_Fiber_visits_the_Q_Continuum.ogg")
 SetScrollBoundaries(nil,-50,nil,1824)
@@ -60,4 +65,5 @@ ZA_Enter("Previous",GotoPrev)
 ZA_Enter("REVEAL_SECRET",Reveal_Secret)
 ZA_Enter("ALSO_SECRET",Reveal_Secret)
 ZA_Enter("HIDE_SECRET",function() MapShow("II") end)
+ZA_Enter("TOSECRETDUNGEON",DarkCaves)
 end

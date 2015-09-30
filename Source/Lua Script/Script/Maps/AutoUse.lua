@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 15.09.29
+  version: 15.09.30
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -312,4 +312,9 @@ RPGChar.Points("Crystal","EXP").Inc(1000)
 Maps.PermaWrite("-- NOKILL:")
 Maps.Obj.Kill(CHESTTAG,1)
 Maps.Remap()   
+end
+
+function SecretDungeon()
+if Done("&ANNOUNCEDSECRET."..upper(Maps.CodeName)) then return end
+SerialBoxText("SECRETDUNGEON","SECRETDUNGEON","BOXTEXT.KTHURA")
 end
