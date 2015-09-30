@@ -1,6 +1,6 @@
 --[[
   Transporter.lua
-  Version: 15.09.28
+  Version: 15.09.30
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -55,5 +55,6 @@ function ActivateRemotePad(tag,mapcode,world,location)
 local node = upper(mapcode.."."..tag)
 CSay("Activating transporter: "..tag)
 Transporters.Nodes[node] = { Map = mapcode, Transporter = "Trans.Spot."..tag }
-Transporters.Worlds[world] = {Location = location, Node=node} 
+Transporters.Worlds[world] = Transporters.Worlds[world] or {}
+table.insert(Transporters.Worlds[world],{Location = location, Node=node}) 
 end
