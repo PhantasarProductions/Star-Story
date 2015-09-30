@@ -52,7 +52,7 @@ MapShow("II","Secret")
 end
 
 function DarkCaves()
-LoadMap("LostPlanet_Dark_Caves_of_Shilington")
+LoadMap("LostPlanet_Bonus_Dark_Caves_of_Shilington")
 SpawnPlayer("Start")
 TurnPlayer("North")
 SecretDungeon()
