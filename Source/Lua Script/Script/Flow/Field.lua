@@ -414,6 +414,7 @@ end
 
 function ResetFoePositions()
 local k,foe,obj
+if not FieldFoes then return end
 for k,foe in spairs(FieldFoes) do
     if not foe.OriPos then
       CSay("WARNING! No OriPos set for foe: "..k)
