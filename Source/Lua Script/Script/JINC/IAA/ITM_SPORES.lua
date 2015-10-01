@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ARM_HEALINGSPRAY.lua
+  ITM_SPORES.lua
   (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
@@ -35,23 +35,17 @@
 version: 15.10.01
 ]]
 ret = {
-	["ARM_Hit%"] = 90,
-	["ARM_MaxAmmo"] = 3,
-	["ARM_PRICE_Hit%"] = 100,
-	["ARM_PRICE_MaxAmmo"] = 800,
-	["ARM_PRICE_XPower"] = 1000,
-	["ARM_XPower"] = 0,
-	["ActSpeed"] = 100,
-	["AttackElement"] = "Healing",
-	["AttackPower"] = 200,
+	["ActSpeed"] = 250,
+	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
+	["CausePoison"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Heals an ally",
+	["Description"] = "Poisons all enemies",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Gun.png",
-	["ItemType"] = "EquipItem",
-	["Name"] = "Healing spray",
-	["Target"] = "1A",
+	["Icon"] = "GFX/Abilities/Fist.png",
+	["ItemType"] = "Consumable",
+	["Name"] = "Spores",
+	["Target"] = "AF",
 	["UseCombat"] = true,
 	["UseField"] = true}
 

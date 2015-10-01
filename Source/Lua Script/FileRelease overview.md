@@ -65,6 +65,7 @@
 1. Script/JINC/IAA/ITM_GUBAFLOWER.lua
 1. Script/JINC/IAA/ITM_HEALINGCAPSULE.lua
 1. Script/JINC/IAA/ITM_KEY_YAQIRPA.lua
+1. Script/JINC/IAA/ITM_SPORES.lua
 1. Script/JINC/IAA/ITM_VLUGZOUT.lua
 1. Script/JINC/InitChar/Briggs.lua
 1. Script/JINC/InitChar/Crystal.lua
@@ -173,4 +174,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Thu 01 October 2015; 01:30:03 CET
+### Last updated: Thu 01 October 2015; 03:35:02 CET

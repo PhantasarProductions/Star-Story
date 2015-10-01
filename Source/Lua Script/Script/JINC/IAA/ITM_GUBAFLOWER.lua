@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.29
+version: 15.10.01
 ]]
 ret = {
 	["ActSpeed"] = 250,
@@ -40,8 +40,8 @@ ret = {
 	["AttackStat"] = "Strength",
 	["CurePoison"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Heals 45 HP and cures poison",
-	["Healing"] = 45,
+	["Description"] = "Heals 47 HP and cures poison",
+	["Healing"] = 75,
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Inventory/Yellow Flower.png",
 	["ItemType"] = "Consumable",

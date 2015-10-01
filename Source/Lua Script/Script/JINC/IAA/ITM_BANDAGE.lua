@@ -15,15 +15,15 @@ not longer than 70 years ago, you can deem this file
 with basically comes down to the same lack of
 restriction the public domain offers. (YAY!)
 *********************************************************** 
-Version 15.09.29
+Version 15.10.01
 ]]
 ret = {
 	["ActSpeed"] = 200,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Heals 50 HP",
-	["Healing"] = 50,
+	["Description"] = "Heals 100 HP",
+	["Healing"] = 100,
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Inventory/Roll.png",
 	["ItemType"] = "Consumable",

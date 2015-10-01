@@ -32,15 +32,15 @@
   
  **********************************************
  
-version: 15.09.29
+version: 15.10.01
 ]]
 ret = {
 	["ActSpeed"] = 195,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Heals 60 HP",
-	["Healing"] = 60,
+	["Description"] = "Heals 112 HP",
+	["Healing"] = 112,
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Inventory/Capsule - Rood-Blauw.png",
 	["ItemType"] = "Consumable",
