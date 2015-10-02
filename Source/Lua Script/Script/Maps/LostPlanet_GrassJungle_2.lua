@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.30
+version: 15.10.03
 ]]
 
 function GotoNext()
@@ -55,6 +55,7 @@ function DarkCaves()
 LoadMap("LostPlanet_Bonus_Dark_Caves_of_Shilington")
 SpawnPlayer("Start")
 TurnPlayer("North")
+MapShow("Main")
 SecretDungeon()
 end
 
