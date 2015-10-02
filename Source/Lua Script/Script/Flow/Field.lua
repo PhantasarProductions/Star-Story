@@ -415,6 +415,7 @@ for obj in KthuraEach() do
 end 
 
 function ResetFoePositions()
+--[[
 local k,foe,obj
 if not FieldFoes then return end
 for k,foe in spairs(FieldFoes) do
@@ -426,6 +427,7 @@ for k,foe in spairs(FieldFoes) do
       obj.Y = foe.OriPos.Y
       end
     end
+]]    
 end
 
 -- @IF *DEVELOPMENT
