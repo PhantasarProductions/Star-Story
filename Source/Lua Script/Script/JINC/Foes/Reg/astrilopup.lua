@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 15.09.26
+version: 15.10.03
 ]]
 
 
--- Version 15.09.25
+-- Version 15.10.02
 
 
 
@@ -54,8 +54,8 @@ Data = {
 	EleRes_Thunder = 3,
 	EleRes_Light = 3,
 	EleRes_Darkness = 3,
-	EleRes_Healing = 3,
-	EleRes_DarkHealing = 3,
+	EleRes_Healing = 6,
+	EleRes_DarkHealing = 0,
 	Stat = {
 		["Strength"] = {5,20000},
 		["Defense"] = {1,30000},
@@ -99,6 +99,9 @@ Data.ActMinLevel["Abl.ITM_HEALINGCAPSULE"] = 50		for ak=1,1 do table.insert(Data
 temp = { ITM='ITM_HEALINGCAPSULE', LVL=8, VLT=false }
 for ak=1,3 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,1 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_SPORES', LVL=3, VLT=false }
+for ak=1,3 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,3 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_VLUGZOUT', LVL=5, VLT=false }
 for ak=1,5 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,5 do table.insert(Data.ItemSteal,temp) end

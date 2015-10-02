@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 15.09.29
+version: 15.10.03
 ]]
 
 
--- Version 15.09.28
+-- Version 15.10.02
 
 
 
@@ -93,6 +93,9 @@ temp = { ITM='ITM_GUBAFLOWER', LVL=15, VLT=false }
 for ak=1,5 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_HEALINGCAPSULE', LVL=8, VLT=false }
 for ak=1,1 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_SPORES', LVL=3, VLT=false }
+for ak=1,3 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,3 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_VLUGZOUT', LVL=7, VLT=false }
 for ak=1,3 do table.insert(Data.ItemSteal,temp) end
 
