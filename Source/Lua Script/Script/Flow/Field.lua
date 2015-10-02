@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.09.30
+  Version: 15.10.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -341,7 +341,7 @@ FieldFoes = {}
 CSay("Resetting Foes")
 for obj in KthuraEach() do
     -- CSay("   = Seen: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind) -- Debugline
-    if prefixed(obj.Kind,"$Enemy") then
+    if prefixed(obj.Kind,"$Enemy") and (not suffixed(obj.Kind,"Boss")) then
        CSay("  = Process: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind)
        FieldFoes[obj.Tag] = {  }       
        foe = FieldFoes[obj.Tag]
@@ -408,6 +408,8 @@ for obj in KthuraEach() do
           Maps.Obj.SetColor(R,G,B)
           --foe.obj = nil
           end
+    elseif suffixed("Boss") and prefixed("$Enemy") then
+       CSay("WARNING! This level contains a boss, but the system is not yet set up for that.")      
        end
     end
 end 
