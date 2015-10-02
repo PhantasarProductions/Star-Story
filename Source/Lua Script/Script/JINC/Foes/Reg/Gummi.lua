@@ -36,7 +36,7 @@ version: 15.10.03
 ]]
 
 
--- Version 15.10.02
+-- Version 15.10.03
 
 
 
@@ -64,9 +64,9 @@ Data = {
 		["Agility"] = {7,20},
 		["Accuracy"] = {100,1000},
 		["Evasion"] = {1,1},
-		["HP"] = {100,800},
+		["HP"] = {100,200},
 		["AP"] = {0,0},
-		["LevelRange"] = {5,8},
+		["LevelRange"] = {5,10},
 	},
 	Acts = {}, -- Data itself defined below
 	ActMinLevel = {}, -- Data itself defined below
