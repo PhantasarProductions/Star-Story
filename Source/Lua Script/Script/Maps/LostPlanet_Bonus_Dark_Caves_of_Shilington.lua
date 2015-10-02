@@ -44,7 +44,8 @@ ZA_Enter("Secret5",function() MapShow("Secret1","Main") end)
 ZA_Leave("Secret1",function() MapShow("Main") end)
 ZA_Leave("Secret2",function() MapShow("Main") end)
 ZA_Leave("Secret3",function() MapShow("Main") end)
-ZA_Leave("Secret4",function() MapShow("Main") end)
 ZA_Leave("Secret5",function() MapShow("Main") end)
+
+ZA_Enter("ByeSecret4",function() MapShow("Main") end)
 MapShow("Main")
 end
