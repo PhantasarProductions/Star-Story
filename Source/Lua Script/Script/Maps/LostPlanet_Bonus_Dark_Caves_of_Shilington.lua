@@ -32,8 +32,19 @@
   
  **********************************************
  
-version: 15.09.30
+version: 15.10.02
 ]]
 function GALE_OnLoad()
 Music("Dungeon/Dark_City.ogg")
+ZA_Enter("Secret1",function() MapShow("Secret1","Main") end)
+ZA_Enter("Secret2",function() MapShow("Secret1","Main") end)
+ZA_Enter("Secret3",function() MapShow("Secret1","Main") end)
+ZA_Enter("Secret4",function() MapShow("Secret1","Main") end)
+ZA_Enter("Secret5",function() MapShow("Secret1","Main") end)
+ZA_Leave("Secret1",function() MapShow("Main") end)
+ZA_Leave("Secret2",function() MapShow("Main") end)
+ZA_Leave("Secret3",function() MapShow("Main") end)
+ZA_Leave("Secret4",function() MapShow("Main") end)
+ZA_Leave("Secret5",function() MapShow("Main") end)
+MapShow("Main")
 end

@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.01
+version: 15.10.02
 ]]
 ret = {
 	["ActSpeed"] = 250,
@@ -42,7 +42,7 @@ ret = {
 	["DefenseStat"] = "Defense",
 	["Description"] = "Poisons all enemies",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Fist.png",
+	["Icon"] = "GFX/Inventory/Spores.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Spores",
 	["Target"] = "AF",

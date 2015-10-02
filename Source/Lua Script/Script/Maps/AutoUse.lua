@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 15.09.30
+  version: 15.10.02
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -210,6 +210,7 @@ Actors.MoveToSpot("PLAYER","Trans.Spot."..tag)
      function() -- Recover & Save
      TelEffect(TEL_OUT)
      RecoverParty()
+     Loading()
      Time.Sleep(250)
      MS.Run("FIELD","SetUpFoes")
      MS.Run("FIELD","SetUpTreasure")

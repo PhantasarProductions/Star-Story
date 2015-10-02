@@ -1,6 +1,6 @@
 --[[
   ITM_ANTIDOTE.lua
-  Version: 15.10.01
+  Version: 15.10.02
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
