@@ -51,7 +51,7 @@ if not item.SpellAni_Reference then return end
  [false] = function()
            if item.SpellAni_Reference=="" then CSay("No SpellAni for this ability or so it seems."); return end
            SpellAni[item.SpellAni_Reference](ag,ai,tg,ti,item.SpellAni_Parameters)  
-           end})[item.SpellAni_External]() 
+           end})[item.SpellAni_External==true]() 
 end
 
 function CheckTarget(tg,ti,allowdead)

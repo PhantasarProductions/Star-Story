@@ -43,7 +43,7 @@ local sx,sy = FighterCoords(TarG,TarT)
 local ak,x,y
 -- SFX('SFX/Abilities/Spark.ogg')
 for ak=1,50 do
-    Combat_DrawScreen()    
+    DrawScreen()    
     for al=1,25 do
         x = rand(sx-16,sx+16)
         y = rand(sy-64,sy)
