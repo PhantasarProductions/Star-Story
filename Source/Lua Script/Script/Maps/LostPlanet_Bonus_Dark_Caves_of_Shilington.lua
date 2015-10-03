@@ -55,6 +55,17 @@ RandomBossTune()
 StartCombat()
 end
 
+function FirstJump()
+Actors.StopWalking("PLAYER")
+Actors.MoveToSpot("FirstJumpStart")
+WalkWait()
+TurnPlayer("South")
+for y=1854,1984,2 do
+    Actors.Actor("PLAYER").Y = y
+    DrawScreen()
+    Flip()
+    end
+end
 
 function GALE_OnLoad()
 Music("Dungeon/Dark_City.ogg")
@@ -69,5 +80,6 @@ ZA_Leave("Secret3",function() MapShow("Main") end)
 ZA_Leave("Secret5",function() MapShow("Main") end)
 
 ZA_Enter("ByeSecret4",function() MapShow("Main") end)
+ZA_Enter("FirstJump",FirstJump)
 --MapShow("Main")
 end
