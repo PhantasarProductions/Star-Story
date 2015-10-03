@@ -74,18 +74,19 @@ local atkdata
 local cha = FighterTag(ag,ai)..""
 local cht = FighterTag(tg,ti).."" -- This way of forming FORCES a <nil> value error if this should happen. I need to know if the evil's done here or not :)
 -- Cure death if asked or miss if not asked and the character is dead. (Must come first)
-if     RPGChar.Points(cht,"HP").Have==0 and abl.CureDeathOne  then RPGChar.Points(cht,"HP").Have=1; CharReport(tg,ti,"Revive",{180,255,0})
-elseif RPGChar.Points(cht,"HP").Have==0 and abl.CureDeathFull then RPGChar.Points(cht,"HP").Have=RPGChar.Points(cht,"HP").Maximum; CharReport(tg,ti,"Resurrect",{180,255,0})
+if     RPGChar.Points(cht,"HP").Have==0 and abl.CureDeathOne  then RPGChar.Points(cht,"HP").Have=1; CharReport(tg,ti,"Revive",{180,255,0}); effect=true
+elseif RPGChar.Points(cht,"HP").Have==0 and abl.CureDeathFull then RPGChar.Points(cht,"HP").Have=RPGChar.Points(cht,"HP").Maximum; CharReport(tg,ti,"Resurrect",{180,255,0}); effect=true
 elseif RPGChar.Points(cht,"HP").Have==0 then Miss(tg,ti); return end     
 -- Cure status changes (this must always be the first thing to do after raising death spells)
 -- Heal absolute or by percent
 if abl.Healing and abl.Healing>0 then
-   (({ Absolute = function() Heal(tg,ti,abl.Healing) end,
+   (({ Absolute = function() Heal(tg,ti,abl.Healing); effect=true end,
       Percent  = function()
                  local hpt = RPGChar.Points(cht,"HP")
                  local hpm = hpt.Maximum
                  local points = (hpm/100)*abl.Healing
                  Heal(tg,ti,points)
+                 effect=true
                  end
    })[abl.HealingType] or function() Sys.Error("Unknown healing type: "..sval(abl.HealingType)) end )()               
    end
@@ -100,6 +101,7 @@ if abl.AttackPower and abl.AttackPower>0 then
       }
    if act.DoublePower then atkdata.atk = atkdata.atk * 2 end   
    Attack(ag,ai,act,atkdata)   
+   effect=true
    end
 -- Scripted stuff
 -- Cause status changes (this must always be the last thing to do)

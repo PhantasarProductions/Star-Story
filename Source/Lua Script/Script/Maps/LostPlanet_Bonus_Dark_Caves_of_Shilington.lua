@@ -34,6 +34,29 @@
  
 version: 15.10.03
 ]]
+
+function Boss()
+CleanCombat()
+Var.D("$COMBAT.BACKGROUND","Dark Caves.png")
+Var.D("$COMBAT.BEGIN","Default")
+Var.D("$COMBAT.FOE1","Syss")
+Var.D("$COMBAT.FOE2","Boss/SuperSyss")
+Var.D("$COMBAT.FOE3","Syss")
+if skill==3 then
+   Var.D("$COMBAT.FOE4","Gummi")
+   Var.D("$COMBAT.FOE5","Gummi")
+   Var.D("$COMABT.FOE6","Gummi")
+   end
+for i=1,6 do
+    Var.D("%COMBAT.LVFOE"..i,rand(skill*10,math.ceil(MapLevel()/(4-skill))))
+    end   
+Var.D("%COMBAT.LVFOE2",MapLevel())
+Var.D("$COMBAT.VICTORYCHECK","YaqirpaBrain")
+RandomBossTune()
+StartCombat()
+end
+
+
 function GALE_OnLoad()
 Music("Dungeon/Dark_City.ogg")
 ZA_Enter("Secret1",function() MapShow("Secret1","Main") end)

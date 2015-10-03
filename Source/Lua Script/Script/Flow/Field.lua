@@ -409,7 +409,20 @@ for obj in KthuraEach() do
           --foe.obj = nil
           end
     elseif suffixed("Boss") and prefixed("$Enemy") then
-       CSay("WARNING! This level contains a boss, but the system is not yet set up for that.")      
+       FieldFoes[obj.Tag] = {  }       
+       foe = FieldFoes[obj.Tag]
+       foe.me = obj.Tag
+       foe.go = "Boss"
+       foe.OriPos = { X = obj.X, Y = obj.Y }
+       foe.event = obj.DataGet("BOSSFUNCTION")
+       foe.barrier = obj.DataGet("LINKEDBARRIER")
+       Maps.Obj.Obj(foe.barrier).Impassible = 1
+       Maps.Obj.Obj(foe.barrier).Visible = 1
+       Maps.Remap()
+       Actors.Spawn(obj.Tag,"GFX/FIELD/Boss.PNG",foe.Tag,1)
+       Maps.Obj.Pick(foe.Tag)
+       Maps.Obj.SetColor(255,0,0)
+       --CSay("WARNING! This level contains a boss, but the system is not yet set up for that.")      
        end
     end
 end 
@@ -474,44 +487,55 @@ function StartEncounter(foe)
 FX.FallDown("PARTY","ShowParty")
 Image.Cls()
 MS.Run("PARTY","ShowParty")
-Loading()
-local k,v,i
--- Destroy all old shit we got
-for k in IVARS() do
+if foe.event then
+   MS.Run("MAP",foe.event)
+else   
+   Loading()
+   local k,v,i
+   -- Destroy all old shit we got
+   for k in IVARS() do
     if prefixed(k,"$COMBAT.") or prefixed(k,"%COMBAT.") or prefixed(k,"&COMBAT.") then 
        Var.Clear(k)
        CSay("Destroyed: "..k) 
        end 
     end
--- Let's now define the new shit we got    
-Var.D("$COMBAT.BACKGROUND",arena)
-Var.D("$COMBAT.BEGIN","Default")
-encmusic = encmusic or GetEncTracks()    
-if Maps.GetData("AltEncounterMusic")~="" then Var.D("$COMBAT.MUSIC",Maps.GetData("AltEncounterMusic")) else Var.D("$COMBAT.MUSIC",encmusic[rand(1,#encmusic)]) end
-for i,v in ipairs(foe.Enemies) do
-    Var.D("$COMBAT.FOE"  ..i,v.foe)
-    Var.D("%COMBAT.LVFOE"..i,v.level)
-    end
+   -- Let's now define the new shit we got    
+   Var.D("$COMBAT.BACKGROUND",arena)
+   Var.D("$COMBAT.BEGIN","Default")
+   encmusic = encmusic or GetEncTracks()    
+   if Maps.GetData("AltEncounterMusic")~="" then Var.D("$COMBAT.MUSIC",Maps.GetData("AltEncounterMusic")) else Var.D("$COMBAT.MUSIC",encmusic[rand(1,#encmusic)]) end
+   for i,v in ipairs(foe.Enemies) do
+       Var.D("$COMBAT.FOE"  ..i,v.foe)
+       Var.D("%COMBAT.LVFOE"..i,v.level)
+       end
+   end    
 -- Remove the foe from the field
 if not foe.me then -- This routine was needed due to an old bug. It may not serve much purpose in the main game.
    for k,v in pairs(FieldFoes) do if v==foe then foe.me=k end end
    end
 FieldFoes[foe.me] = nil
 Maps.Obj.Kill(foe.Tag)    
--- --[[ Debugging. Music routine claims to have receive a nil value (which is not possible no matter how you explain things, but still it reports it, so let's see what we got here.       
+--[[ Debugging. Music routine claims to have receive a nil value (which is not possible no matter how you explain things, but still it reports it, so let's see what we got here.       
 for k in IVARS() do
     CSay(k.." = "..Var.C(k))  
     end
 --]]     
 -- All the shit defined so let combat commence.    
-StartCombat()
+if not foe.event then StartCombat() end -- Events need to start the combat by itself. This makes "fake bosses" possible :)
+if foe.barrier then
+   Maps.Obj.Obj(foe.barrier).Impassible = 0
+   Maps.Obj.Obj(foe.barrier).Visible = 0
+   Maps.Remap()
+   end
 end
 
 function ControlFoes()
 local foe
 local player = Actors.Actor(cplayer)
+local maxdistance
 if not FieldFoes then return end
-for obj in KthuraEach("Actor") do    
+for obj in KthuraEach("Actor") do
+    maxdistance=16 -- When the player comes within this distance, let's kill him/her :)    
     foe = FieldFoes[replace(obj.Tag," FoeActor","")]
     -- CSay("We got a foe on  : "..obj.Tag.." >> "..sval(foe~=nil))
     -- CSay("We got suffix on : "..obj.Tag.." >> "..sval(suffixed(obj.Tag,"FoeActor")))
@@ -539,9 +563,12 @@ for obj in KthuraEach("Actor") do
                  end 
                end,
           AS = function() -- Altijd Stilstaan
-               end     
+               end  ,
+          Boss = function() -- Eindbazen staan altijd stil
+                 maxdistance = 32 -- Bosses are bigger, so a bigger range to start the battle!
+                 end        
        })[foe.Go] or function() Sys.Error("Unknown go code for foe #"..obj.IdNum,"Tag,"..obj.Tag..";Go,"..foe.Go) end)()        
-       if Distance(player.X,player.Y,obj.X,obj.Y)<=16 then      
+       if Distance(player.X,player.Y,obj.X,obj.Y)<=maxdistance then      
           StartEncounter(foe)
           return -- An encounter has begun, so this way, we can make sure a second one won't start
           end

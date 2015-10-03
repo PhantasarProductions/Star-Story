@@ -28,6 +28,7 @@
 1. Script/JINC/Big/Achievements.lua
 1. Script/JINC/Demo/Maps.lua
 1. Script/JINC/Foes/Boss/BrainDroid.lua
+1. Script/JINC/Foes/Boss/Supersyss.lua
 1. Script/JINC/Foes/Reg/astrilopup.lua
 1. Script/JINC/Foes/Reg/BattleDroid.lua
 1. Script/JINC/Foes/Reg/Cyborg Captain.lua
@@ -37,6 +38,7 @@
 1. Script/JINC/Foes/Reg/Gummi.lua
 1. Script/JINC/Foes/Reg/Rat.lua
 1. Script/JINC/Foes/Reg/Syss.lua
+1. Script/JINC/Foes/Supersyss.lua
 1. Script/JINC/IAA/ABL_EXHURU_BATTLECRY.lua
 1. Script/JINC/IAA/ABL_EXHURU_CONCENTRATE.lua
 1. Script/JINC/IAA/ABL_EXHURU_KAKSI.lua
@@ -180,4 +182,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Sat 03 October 2015; 16:15:26 CET
+### Last updated: Sat 03 October 2015; 20:10:09 CET
