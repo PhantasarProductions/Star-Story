@@ -412,8 +412,10 @@ for obj in KthuraEach() do
        CSay("Boss found: "..obj.Tag)
        FieldFoes[obj.Tag] = {  }       
        foe = FieldFoes[obj.Tag]
+       foe.Actor = obj.Tag .. " FoeActor"
+       foe.Tag = foe.Actor 
        foe.me = obj.Tag
-       foe.go = "Boss"
+       foe.Go = "Boss"
        foe.OriPos = { X = obj.X, Y = obj.Y }
        foe.event = obj.DataGet("BOSSFUNCTION")
        foe.barrier = obj.DataGet("LINKEDBARRIER")
@@ -572,7 +574,8 @@ for obj in KthuraEach("Actor") do
                  maxdistance = 32 -- Bosses are bigger, so a bigger range to start the battle!
                  end        
        })[foe.Go] or function() Sys.Error("Unknown go code for foe #"..obj.IdNum,"Tag,"..obj.Tag..";Go,"..foe.Go) end)()        
-       if Distance(player.X,player.Y,obj.X,obj.Y)<=maxdistance then      
+       if Distance(player.X,player.Y,obj.X,obj.Y)<=maxdistance then  
+          CSay("Start encounter: "..obj.Tag)    
           StartEncounter(foe)
           return -- An encounter has begun, so this way, we can make sure a second one won't start
           end

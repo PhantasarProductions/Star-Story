@@ -51,7 +51,6 @@ for i=1,6 do
     Var.D("%COMBAT.LVFOE"..i,rand(skill*10,math.ceil(MapLevel()/(4-skill))))
     end   
 Var.D("%COMBAT.LVFOE2",MapLevel())
-Var.D("$COMBAT.VICTORYCHECK","YaqirpaBrain")
 RandomBossTune()
 StartCombat()
 end
