@@ -1,5 +1,5 @@
 --[[
-  ITM_ANTIDOTE.lua
+  ThunderSpells.lua
   Version: 15.10.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -34,22 +34,23 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-ret = {
-	["ActSpeed"] = 250,
-	["AttackElement"] = "Non-Elemental",
-	["AttackStat"] = "Strength",
-	["CureDisease"] = true,
-	["DefenseStat"] = "Defense",
-	["Description"] = "Cures \"Poison\"",
-	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Inventory/Green_tube.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Antidote",
-	["Target"] = "1A",
-	["UseCombat"] = true,
-	["UseField"] = true}
+-- @IF IGNORE
+SpellAni = {}
+-- @FI
 
-return ret
-
--- This file is an automatically generated file!
-
+function SpellAni.Spark(ActG,ActT,TarG,TarT)
+local sx,sy = FighterCoords(TarG,TarT)
+local ak,x,y
+-- SFX('SFX/Abilities/Spark.ogg')
+for ak=1,50 do
+    Combat_DrawScreen()    
+    for al=1,25 do
+        x = rand(sx-16,sx+16)
+        y = rand(sy-64,sy)
+        Image.Rotate(rand(0,360))
+        Image.Draw('SA_SPARK',x,y)
+        Image.Rotate(0)
+        end
+    Flip()
+    end
+end

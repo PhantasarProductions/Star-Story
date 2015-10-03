@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.02
+version: 15.10.03
 ]]
 ret = {
 	["ABL_AP"] = 15,
@@ -51,6 +51,7 @@ ret = {
 	["Icon"] = "GFX/Abilities/Lightning.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Shock",
+	["SpellAni_Reference"] = "Spark",
 	["Target"] = "1F",
 	["UseCombat"] = true}
 

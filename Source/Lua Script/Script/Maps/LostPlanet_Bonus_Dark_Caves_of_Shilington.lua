@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.02
+version: 15.10.03
 ]]
 function GALE_OnLoad()
 Music("Dungeon/Dark_City.ogg")
@@ -47,5 +47,5 @@ ZA_Leave("Secret3",function() MapShow("Main") end)
 ZA_Leave("Secret5",function() MapShow("Main") end)
 
 ZA_Enter("ByeSecret4",function() MapShow("Main") end)
-MapShow("Main")
+--MapShow("Main")
 end
