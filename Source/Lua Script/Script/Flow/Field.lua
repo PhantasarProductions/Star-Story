@@ -409,6 +409,7 @@ for obj in KthuraEach() do
           --foe.obj = nil
           end
     elseif suffixed("Boss") and prefixed("$Enemy") then
+       CSay("Boss found: "..obj.Tag)
        FieldFoes[obj.Tag] = {  }       
        foe = FieldFoes[obj.Tag]
        foe.me = obj.Tag
@@ -416,6 +417,8 @@ for obj in KthuraEach() do
        foe.OriPos = { X = obj.X, Y = obj.Y }
        foe.event = obj.DataGet("BOSSFUNCTION")
        foe.barrier = obj.DataGet("LINKEDBARRIER")
+       CSay("= Function: "..foe.event)
+       CSay("= Barrier:  "..foe.barrier)
        Maps.Obj.Obj(foe.barrier).Impassible = 1
        Maps.Obj.Obj(foe.barrier).Visible = 1
        Maps.Remap()
