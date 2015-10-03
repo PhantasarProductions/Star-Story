@@ -421,7 +421,7 @@ for obj in KthuraEach() do
        foe.barrier = obj.DataGet("LINKEDBARRIER")
        CSay("= Function: "..foe.event)
        CSay("= Barrier:  "..foe.barrier)
-       CSay("= Datadump: "..obj.DataDump())
+       --CSay("= Datadump: "..obj.DataDump())
        Maps.Obj.Obj(foe.barrier).Impassible = 1
        Maps.Obj.Obj(foe.barrier).Visible = 1
        Maps.Remap()
