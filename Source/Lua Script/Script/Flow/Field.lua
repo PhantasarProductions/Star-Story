@@ -408,7 +408,7 @@ for obj in KthuraEach() do
           Maps.Obj.SetColor(R,G,B)
           --foe.obj = nil
           end
-    elseif suffixed("Boss") and prefixed("$Enemy") then
+    elseif suffixed(obj.Tag,"Boss") and prefixed(obj.Tag,"$Enemy") then
        CSay("Boss found: "..obj.Tag)
        FieldFoes[obj.Tag] = {  }       
        foe = FieldFoes[obj.Tag]
@@ -419,6 +419,7 @@ for obj in KthuraEach() do
        foe.barrier = obj.DataGet("LINKEDBARRIER")
        CSay("= Function: "..foe.event)
        CSay("= Barrier:  "..foe.barrier)
+       CSay("= Datadump: "..obj.DataDump())
        Maps.Obj.Obj(foe.barrier).Impassible = 1
        Maps.Obj.Obj(foe.barrier).Visible = 1
        Maps.Remap()
