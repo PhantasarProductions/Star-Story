@@ -57,7 +57,7 @@ end
 
 function FirstJump()
 Actors.StopWalking("PLAYER")
-Actors.MoveToSpot("FirstJumpStart")
+Actors.MoveToSpot("PLAYER","FirstJumpStart")
 WalkWait()
 TurnPlayer("South")
 for y=1854,1984,2 do
