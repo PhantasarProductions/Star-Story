@@ -28,6 +28,7 @@ ret = {
 	["Icon"] = "GFX/Inventory/Roll.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Bandage",
+	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true}

@@ -51,6 +51,7 @@ ret = {
 	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "EquipItem",
 	["Name"] = "Healing spray",
+	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true}

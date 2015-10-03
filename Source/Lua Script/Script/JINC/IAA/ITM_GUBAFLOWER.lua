@@ -46,6 +46,7 @@ ret = {
 	["Icon"] = "GFX/Inventory/Yellow Flower.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Guba Flower",
+	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true}

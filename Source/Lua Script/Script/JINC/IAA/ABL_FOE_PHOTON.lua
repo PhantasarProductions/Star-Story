@@ -30,6 +30,7 @@ ret = {
 	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Photon Gun",
+	["SpellAni_Reference"] = "PhotonGun",
 	["Target"] = "1F",
 	["UseCombat"] = true}
 

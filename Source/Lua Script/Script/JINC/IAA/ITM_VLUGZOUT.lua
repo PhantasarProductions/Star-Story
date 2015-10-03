@@ -28,6 +28,7 @@ ret = {
 	["Icon"] = "GFX/Inventory/Vlugzout.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Ammonium carbonate",
+	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true}

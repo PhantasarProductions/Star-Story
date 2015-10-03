@@ -47,6 +47,7 @@ ret = {
 	["Icon"] = "GFX/Abilities/Fist.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Electric Charge",
+	["SpellAni_Reference"] = "SingleHealing",
 	["Target"] = "AF",
 	["UseCombat"] = true}
 

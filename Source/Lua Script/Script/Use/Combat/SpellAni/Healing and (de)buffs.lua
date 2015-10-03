@@ -1,5 +1,5 @@
 --[[
-  ITM_ANTIDOTE.lua
+  Healing and (de)buffs.lua
   Version: 15.10.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -34,23 +34,26 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-ret = {
-	["ActSpeed"] = 250,
-	["AttackElement"] = "Non-Elemental",
-	["AttackStat"] = "Strength",
-	["CureDisease"] = true,
-	["DefenseStat"] = "Defense",
-	["Description"] = "Cures \"Poison\"",
-	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Inventory/Green_tube.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Antidote",
-	["SpellAni_Reference"] = "SingleHeal",
-	["Target"] = "1A",
-	["UseCombat"] = true,
-	["UseField"] = true}
+-- @IF IGNORE
+SpellAni = {}
+-- @FI
 
-return ret
+function SpellAni.SingleHeal(ActG,ActT,TarG,TarT)
+local sx,sy = FighterCoords(TarG,TarT)
+local ak,x,y
+Image.LoadNew("SA_GLITTER_BASE","GFX/COMBAT/SPELLANI/GLITTER/BASE.PNG")
+for ak=1,50 do
+    DrawScreen()    
+    Image.Color(rand(0,255),rand(0,255),rand(0,255))
+    for al=1,25 do
+        x = rand(sx-16,sx+16)
+        y = rand(sy-64,sy)
+        Image.Rotate(rand(0,360))
+        Image.Draw('SA_GLITTER_BASE',x,y)
+        Image.Rotate(0)
+        end
+    Flip()
+    end
+end
 
--- This file is an automatically generated file!
-
+SpellAni.SingleHealing = SpellAni.SingleHeal -- An alias to prevent needless debug sessions.

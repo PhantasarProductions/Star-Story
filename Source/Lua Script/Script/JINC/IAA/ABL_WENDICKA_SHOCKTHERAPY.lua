@@ -14,6 +14,7 @@ ret = {
 	["Icon"] = "GFX/Abilities/Lightning.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Shock Therapy",
+	["SpellAni_Reference"] = "Spark",
 	["Target"] = "1A",
 	["UseCombat"] = true}
 

@@ -45,6 +45,7 @@ ret = {
 	["Icon"] = "GFX/Inventory/Capsule - Rood-Blauw.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Healing Capsule",
+	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true}
