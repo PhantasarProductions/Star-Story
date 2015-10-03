@@ -74,8 +74,8 @@ local atkdata
 local cha = FighterTag(ag,ai)..""
 local cht = FighterTag(tg,ti).."" -- This way of forming FORCES a <nil> value error if this should happen. I need to know if the evil's done here or not :)
 -- Cure death if asked or miss if not asked and the character is dead. (Must come first)
-if     RPGChar.Points(cht,"HP").Have==0 and abl.CureDeathOne  then RPGChar.Points(cht,"HP").Have=1; CharReport(tg,ti,"Revive",180,255,0)
-elseif RPGChar.Points(cht,"HP").Have==0 and abl.CureDeathFull then RPGChar.Points(cht,"HP").Have=RPGChar.Points(cht,"HP").Maximum; CharReport(tg,ti,"Resurrect",180,255,0)
+if     RPGChar.Points(cht,"HP").Have==0 and abl.CureDeathOne  then RPGChar.Points(cht,"HP").Have=1; CharReport(tg,ti,"Revive",{180,255,0})
+elseif RPGChar.Points(cht,"HP").Have==0 and abl.CureDeathFull then RPGChar.Points(cht,"HP").Have=RPGChar.Points(cht,"HP").Maximum; CharReport(tg,ti,"Resurrect",{180,255,0})
 elseif RPGChar.Points(cht,"HP").Have==0 then Miss(tg,ti); return end     
 -- Cure status changes (this must always be the first thing to do after raising death spells)
 -- Heal absolute or by percent
