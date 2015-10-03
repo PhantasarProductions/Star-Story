@@ -41,9 +41,11 @@ SpellAni = {}
 function SpellAni.Spark(ActG,ActT,TarG,TarT)
 local sx,sy = FighterCoords(TarG,TarT)
 local ak,x,y
--- SFX('SFX/Abilities/Spark.ogg')
+Image.LoadNew("SA_SPARK","GFX/COMBAT/SPELLANI/THUNDER/SPARK.PNG")
+SFX('Audio/SFX/SpellAni/Thunder/Spark.ogg')
 for ak=1,50 do
     DrawScreen()    
+    White()
     for al=1,25 do
         x = rand(sx-16,sx+16)
         y = rand(sy-64,sy)
