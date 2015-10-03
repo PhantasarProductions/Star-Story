@@ -63,12 +63,21 @@ ret = ret and (allowdead or RPGChar.Points(fd.Tag,"HP").Have>0)
 return ret
 end
 
+function Miss(tg,ti)
+CharReport(tg,ti,"Miss",{0,180,255})
+end   
+
 function AblEffect(ag,ai,act,tg,ti)
+local effect
 local abl=act.Item
 local atkdata
 local cha = FighterTag(ag,ai)..""
 local cht = FighterTag(tg,ti).."" -- This way of forming FORCES a <nil> value error if this should happen. I need to know if the evil's done here or not :)
--- Cure status changes (this must always be the first thing to do)
+-- Cure death if asked or miss if not asked and the character is dead. (Must come first)
+if     RPGChar.Points(cht,"HP").Have==0 and abl.CureDeathOne  then RPGChar.Points(cht,"HP").Have=1; CharReport(tg,ti,"Revive",180,255,0)
+elseif RPGChar.Points(cht,"HP").Have==0 and abl.CureDeathFull then RPGChar.Points(cht,"HP").Have=RPGChar.Points(cht,"HP").Maximum; CharReport(tg,ti,"Resurrect",180,255,0)
+elseif RPGChar.Points(cht,"HP").Have==0 then Miss(tg,ti); return end     
+-- Cure status changes (this must always be the first thing to do after raising death spells)
 -- Heal absolute or by percent
 if abl.Healing and abl.Healing>0 then
    (({ Absolute = function() Heal(tg,ti,abl.Healing) end,
@@ -94,6 +103,8 @@ if abl.AttackPower and abl.AttackPower>0 then
    end
 -- Scripted stuff
 -- Cause status changes (this must always be the last thing to do)
+-- If nothing happened along the way display "Miss"
+if not effect then Miss(tg,ti) end
 end; AbilityEffect = AblEffect
 
 ActionFuncs = {}
