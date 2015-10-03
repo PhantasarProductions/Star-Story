@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 15.09.26
+  Version: 15.10.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -49,6 +49,7 @@ if not item.SpellAni_Reference then return end
            MS.Run("SPELLANI",parameters)
            end,
  [false] = function()
+           if item.SpellAni_Reference=="" then CSay("No SpellAni for this ability or so it seems."); return end
            SpellAni[item.SpellAni_Reference](ag,ai,tg,ti,item.SpellAni_Parameters)  
            end})[item.SpellAni_External]() 
 end
@@ -149,6 +150,7 @@ function ActionFuncs.EAI(ag,ai,act)
 if not act.EAI then Sys.Error("Illegally set up act for EAI") end
 NewMessage(act.Item.Name,ItemIconCode(act.ItemCode))
 SpriteAnim[ag](ai,act)
+PerformSpellAni(ag,ai,act)
 local ch = FighterTag(ag,ai)
 local tg,ti
 local function SingleEffect(ag,ai,act) AbilityEffect(ag,ai,act,act.TargetGroup,act.TargetIndividual) end
