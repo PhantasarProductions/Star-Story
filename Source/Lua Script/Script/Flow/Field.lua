@@ -408,7 +408,7 @@ for obj in KthuraEach() do
           Maps.Obj.SetColor(R,G,B)
           --foe.obj = nil
           end
-    elseif suffixed(obj.Tag,"Boss") and prefixed(obj.Tag,"$Enemy") then
+    elseif suffixed(obj.Kind,"Boss") and prefixed(obj.Kind,"$Enemy") then
        CSay("Boss found: "..obj.Tag)
        FieldFoes[obj.Tag] = {  }       
        foe = FieldFoes[obj.Tag]
