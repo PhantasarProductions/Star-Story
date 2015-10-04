@@ -660,7 +660,7 @@ for obj in KthuraEach("$SpecialItem") do
     vtag = "%TREASURE_RATE["..ctag.."]"
     iratesk1=nil
     irate = obj.DataGet("RATE")
-    item = ItemGet('ITM_'..itemcode)
+    item = ItemGet('ITM_'..obj.DataGet("ITEM"))
     if obj.DataGet("RATE")=="INF" then
        crate=nil
     elseif obj.DataGet("RATE")=="UNIQUE" then
