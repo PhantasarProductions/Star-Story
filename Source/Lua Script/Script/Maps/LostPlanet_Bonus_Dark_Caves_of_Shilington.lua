@@ -67,10 +67,29 @@ for y=1854,1984,2 do
     end
 end
 
+function JumpDown()
+Actors.StopWalking("PLAYER")
+Actors.MoveToSpot("PLAYER","JumpDownStart")
+WalkWait()
+TurnPlayer("South")
+for y=3264,3364,2 do
+    Actors.Actor("PLAYER").Y = y
+    DrawScreen()
+    Flip()
+    end
+end
+
 function Complete()
 if Done("&DONE.SECRET.DARK_CAVES_SHILINGTON") then return end
 MapEXP(9/skill)
 Award("SECRETDUNGEON_DARKCAVES")
+end
+
+function Byebye()
+LoadMap("LostPlanet_GrassJungle_2")
+SpawnPlayer("FromExit")
+TurnPlayer("South")
+MapShow("II","Secret")
 end
 
 function GALE_OnLoad()
@@ -88,5 +107,7 @@ ZA_Leave("Secret5",function() MapShow("Main") end)
 ZA_Enter("ByeSecret4",function() MapShow("Main") end)
 ZA_Enter("FirstJump",FirstJump)
 ZA_Enter("Complete",Complete)
+ZA_Enter("JumpDown",JumpDown)
+ZA_Enter("Exit",Byebye)
 --MapShow("Main")
 end

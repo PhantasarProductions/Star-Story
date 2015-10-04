@@ -78,7 +78,10 @@ function ER_Frost(ch)        ELEMRESIST(ch,"Frost") end
 function TRUESTATUSRESIST(ch,status)
 local r = 0
 local stat = Str.Replace(status,"EQ_TRUE_","")
-for i,v in ipairs( { "BASE_", "BUFF_", "EQBF_" }) do r = r + RPGStat.SafeStat(ch,"SR_"..v..stat) end
+for i,v in ipairs( { "BASE_", "BUFF_", "EQBF_" }) do 
+    r = r + RPGStat.SafeStat(ch,"SR_"..v..stat)
+    -- CSay(ch.."."..v..stat.." = "..RPGStat.SafeStat(ch,"SR_"..v..stat).." >> "..r) 
+    end
 --CSay(ch.."."..stat.." ==> "..r)
 RPGStat.DefStat(ch,"SR_TRUE_"..stat,r)
 end
