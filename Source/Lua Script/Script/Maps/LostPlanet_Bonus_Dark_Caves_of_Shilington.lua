@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.03
+version: 15.10.04
 ]]
 
 function Boss()
@@ -67,6 +67,12 @@ for y=1854,1984,2 do
     end
 end
 
+function Complete()
+if Done("&DONE.SECRET.DARK_CAVES_SHILINGTON") then return end
+MapEXP(9/skill)
+Award("SECRETDUNGEON_DARKCAVES")
+end
+
 function GALE_OnLoad()
 Music("Dungeon/Dark_City.ogg")
 ZA_Enter("Secret1",function() MapShow("Secret1","Main") end)
@@ -81,5 +87,6 @@ ZA_Leave("Secret5",function() MapShow("Main") end)
 
 ZA_Enter("ByeSecret4",function() MapShow("Main") end)
 ZA_Enter("FirstJump",FirstJump)
+ZA_Enter("Complete",Complete)
 --MapShow("Main")
 end

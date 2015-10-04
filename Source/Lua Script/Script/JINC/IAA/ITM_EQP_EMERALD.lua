@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ARM_HEALINGSPRAY.lua
+  ITM_EQP_EMERALD.lua
   (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
@@ -35,24 +35,17 @@
 version: 15.10.04
 ]]
 ret = {
-	["ARM_Hit%"] = 90,
-	["ARM_MaxAmmo"] = 3,
-	["ARM_PRICE_Hit%"] = 100,
-	["ARM_PRICE_MaxAmmo"] = 800,
-	["ARM_PRICE_XPower"] = 1000,
-	["ARM_XPower"] = 0,
-	["ActSpeed"] = 100,
-	["AttackElement"] = "Healing",
-	["AttackPower"] = 200,
+	["ActSpeed"] = 250,
+	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Heals an ally",
+	["Description"] = "Raises poison resistance of its owner by 10%",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Gun.png",
+	["ITM_EQP_SRes_Poison"] = 10,
+	["Icon"] = "GFX/Inventory/EQ_JW_Emerald.png",
 	["ItemType"] = "EquipItem",
-	["Name"] = "Healing spray",
-	["SpellAni_Reference"] = "SingleHeal",
-	["Target"] = "1A",
+	["Name"] = "Emerald",
+	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}
 
