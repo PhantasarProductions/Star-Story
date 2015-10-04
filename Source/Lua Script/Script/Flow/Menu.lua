@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 15.09.20
+  Version: 15.10.04
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -370,6 +370,7 @@ FeatureHandleArray = {
                                   if ChosenItem.Taken and RPGChar.Data(pchar,"INVITEM"..ak)==ChosenItem.Item then -- Stack if same
                                      RPGChar.DefStat(pchar,"INVAMNT"..ak,1+RPGChar.Stat(pchar,"INVAMNT"..ak))
                                      ChosenItem={}
+                                     EquipEffect(pchar)
                                   else   
                                     if ChosenItem.Taken then -- Swap
                                      RPGChar.SetData(pchar,"INVITEM"..ak,ChosenItem.Item)
@@ -377,28 +378,31 @@ FeatureHandleArray = {
                                      RPGChar.DefStat(pchar,"INVAMNT"..ak,0)
                                      end
                                     ChosenItem = { Taken=true, Item=upper(temp), Char=pchar, Slot=ak, Spot=ak }
+                                    EquipEffect(pchar)
                                     end
                             -- Grab an item from stack
                             elseif RPGChar.Stat(pchar,"INVAMNT"..ak)>1 then
                                if ChosenItem.Taken then
                                   -- Add to stack if possible
                                   if ChosenItem.Item==RPGChar.Data(pchar,"INVITEM"..ak) and RPGChar.Stat(pchar,"INVAMNT"..ak)<InventoryMaxStack then RPGChar.DefStat(pchar,"INVAMNT"..ak,RPGChar.Stat(pchar,"INVAMNT"..ak)+1) ChosenItem={} end
+                                  EquipEffect(pchar)
                                   else
                                   temp = RPGChar.Data(pchar,"INVITEM"..ak)
                                   ChosenItem = { Taken=true, Item=upper(temp), Char=pchar, Slot=ak, Spot=ak }
                                   RPGChar.DefStat(pchar,"INVAMNT"..ak,RPGChar.Stat(pchar,"INVAMNT"..ak)-1)
+                                  EquipEffect(pchar)
                                   end
                              -- Get rid of it if you click an empty socket
                              elseif ChosenItem.Taken and RPGChar.Stat(pchar,"INVAMNT"..ak)<=1 and RPGChar.Stat(pchar,"INVAMNT"..ak)<InventoryMaxStack then
                                RPGChar.SetData(pchar,"INVITEM"..ak,ChosenItem.Item)  
                                RPGChar.DefStat(pchar,"INVAMNT"..ak,1+RPGChar.Stat(pchar,"INVAMNT"..ak))
                                ChosenItem = {}
+                               EquipEffect(pchar)
                                -- All done
                                end   
                             if ChosenItem.Taken then ChosenItem.Icon=ItemIconCode("ITM_"..ChosenItem.Item) end   
                             end -- end field click
-                         end -- end of returnto FIELD   
-                        
+                         end -- end of returnto FIELD                           
                         if returnto=="COMBAT" and hover and pchar~="Briggs" then
                            if mousehit(1) or mousehit(2) then
                                if RPGChar.Stat(pchar,"INVAMNT"..ak)>0 then

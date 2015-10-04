@@ -1,6 +1,6 @@
 --[[
   Inventory and Abilities Linker.lua
-  Version: 15.09.18
+  Version: 15.10.04
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -36,6 +36,34 @@
 ]]
 
 ABL_PowerUps = {"Instant","Cancel","APCut","DblSpeed","DblPower"}
+
+
+-- Let's recalc the effects of equipment
+function EquipEffect(ch)
+-- Status changes
+local SR = {}
+local itemcode
+local item
+local SRitempref = "ITM_EQP_SRes_"
+local value
+for n in iStatus() do SR[n] = 0 end 
+for i=1,InventorySockets do
+    itemcode = RPGChar.Data(ch,"INVITEM"..i)
+    if prefixed(itemcode,"EQP_") and RPGChar.Stat(ch,"INVAMNT"..i)>0 then
+       item = ItemGet("ITM_"..itemcode)
+       for ak=1,RPGChar.Stat(ch,"INVAMNT"..i) do        
+           for n in iStatus() do 
+               value = item[SRitempref..n]
+               if value then SR[n] = SR[n] + value end
+               end
+           end           
+       end
+    end
+for n in iStatus() do RPGStat.DefStat(ch,"SR_EQBF_"..n,SR[n]) end     
+-- Elements
+end
+
+
 
 if not realinventory then -- This if statement must prevent that the real Items and Abilities routine (which incldues this file as well and I cannot prevent that) gets destroyed by these definitions!
 
@@ -117,11 +145,12 @@ for ch in each(allowchars) do
     for ak=1,InventorySockets do
         if (not spot) and RPGChar.Stat(ch,"INVAMNT"..ak)==0 then spot = spot or ak  tochar = tochar or ch end
         end    
+    EquipEffect(ch)    
     end -- chars allowed
 if spot and tochar then   
    RPGChar.SetData(tochar,"INVITEM"..spot,right(itemcode,len(itemcode)-4))
    RPGChar.IncStat(tochar,"INVAMNT"..spot)
-   if not nochat then MINI(RPGChar.GetName(tochar).." received a "..item.Name) end
+   if not nochat then MINI(RPGChar.GetName(tochar).." received: "..item.Name,0,180,255) end
    return true       
    end       
 if (not alwaysallowvault) and item.ItemType~="KeyItem" then return false end

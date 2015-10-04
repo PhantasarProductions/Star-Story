@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 15.10.03
+  Version: 15.10.04
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -201,10 +201,10 @@ if RPGChar.Stat(ch,"INVAMNT"..act.ItemSocket)<=0 then
    MINI("Item socket empty",255,180,0)
    return
    end
-RPGChar.DecStat(ch,"INVAMNT"..act.ItemSocket)   
+RPGChar.DecStat(ch,"INVAMNT"..act.ItemSocket)
+EquipEffect(ch)   
 act.EAI = true
 ActionFuncs.EAI(ag,ai,act)
-
 end   
 
 function ActionFuncs.LRN(ag,ai,act)

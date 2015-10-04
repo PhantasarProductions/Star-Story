@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.29
+version: 15.10.04
 ]]
 -- @IF IGNORE
 VicCheck = {}
@@ -89,12 +89,13 @@ else
    end       
 -- Right oh, if the script is still being processed it means the item was accepted one way or another. Let's report that to the player.
 CSay(ch.." receives "..item)
-MINI(RPGChar.GetName(ch).." gets a "..ItemName(item),0,180,255)
+MINI(RPGChar.GetName(ch).." received "..ItemName(item),0,180,255)
 if not spot then 
    MINI("however "..heshe[ch].." could not carry that any more since "..hisher[ch].." inventory is full",255,180,180)
    if putinvault then MINI("so the item has been put in the vault in stead") end
    end   
-if not Done("&TUT.ITEMSINBATTLE") then Tutorial("Occasionally when an enemy dies\nit may drop an item which a random character will pick up\nHowever only if he or she has room in his or her inventory for that item\n\n\nIf an item is vital and the character who finds it cannot pick it up it will be dropped\nin the vault in stead. This will however ONLY\nhappen with VITAL items and not common items!") end   
+if not Done("&TUT.ITEMSINBATTLE") then Tutorial("Occasionally when an enemy dies\nit may drop an item which a random character will pick up\nHowever only if he or she has room in his or her inventory for that item\n\n\nIf an item is vital and the character who finds it cannot pick it up it will be dropped\nin the vault in stead. This will however ONLY\nhappen with VITAL items and not common items!") end
+EquipEffect(ch)   
 end
 
 
