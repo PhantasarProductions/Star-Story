@@ -717,7 +717,7 @@ for k,t in spairs(FieldTreasure) do
           FieldTreasure[k]=nil 
           Maps.Obj.Kill(t.objtag) 
           if idata.rate then
-             if rand(1,idata.iratech or 1)<=1 then Var.D(idata.vtag,idata.irate or 1) end
+             if rand(1,idata.iratech or 1)<=1 then Var.D(idata.vtag,(idata.crate or 1) + (idata.irate or 1)) end
              end         
           end   
        end
