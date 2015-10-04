@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.04
+version: 15.10.05
 ]]
 ret = {
 	"EXCALIBUR_HOME",
@@ -51,6 +51,7 @@ ret = {
 	"LOSTPLANET_GRASSJUNGLE",
 	"LOSTPLANET_GRASSJUNGLE_2",
 	"TEST TRANSPORTERS",
-	"LOSTPLANET_BONUS_DARK_CAVES_OF_SHILINGTON"}
+	"LOSTPLANET_BONUS_DARK_CAVES_OF_SHILINGTON",
+	"LOSTPLANET_GRASSJUNGLE_3"}
 
 return ret

@@ -1,6 +1,6 @@
 --[[
   SaveGame.lua
-  Version: 15.09.29
+  Version: 15.10.05
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -44,6 +44,7 @@ local ak
 for ak=1,Dir.DirLen() do
     table.insert(files,Dir.DirEntry(ak))
     end
+Scrolled = false    
 end
 
 function LoadPics()
@@ -64,11 +65,13 @@ Image.DText("Saving",400,300,2,2)
 Flip()
 LAURA.Save(LAURA.User().."/"..SaveName)
 Mini("The game has been saved",255,180,0)
+Scrolled=false
 end
 
 function PerformCancel()
 Mini("Saving the game has been cancelled",255,0,0)
 LAURA.Flow("FIELD")
+Scrolled=false
 end
 
 function MAIN_FLOW()
@@ -104,9 +107,12 @@ if keyhit(27) then return PerformCancel() end
 Image.Viewport(200,150,Image.Width(imglist),Image.Height(imglist))
 local y,i,f
 setfont('SaveFiles')
+WH = WH or ImageHeight(imglist)
 for i,f in ipairs(files) do
     y = 160 + ((i*15)-PM)
-    if mx>200 and mx<200+Image.Width(imglist) and my>=y and my<=y+14 then
+    if y<160    and SaveName==f and (not Scrolled) then PM=PM-1 end
+    if y>160+WH and SaveName==f and (not Scrolled) then PM=PM+1 end
+    if my<150+WH and my>150 and mx>200 and mx<200+Image.Width(imglist) and my>=y and my<=y+14 then
        Image.Color(0,180,255)
        if mousehit(1) then SaveName = f end
     else
