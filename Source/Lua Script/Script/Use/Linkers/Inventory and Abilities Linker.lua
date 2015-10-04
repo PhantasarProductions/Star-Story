@@ -144,18 +144,18 @@ for ch in each(allowchars) do
     -- Now we'll do the same for an empty socket if no filled socket matched our requiments before    
     for ak=1,InventorySockets do
         if (not spot) and RPGChar.Stat(ch,"INVAMNT"..ak)==0 then spot = spot or ak  tochar = tochar or ch end
-        end    
-    EquipEffect(ch)    
+        end           
     end -- chars allowed
 if spot and tochar then   
    RPGChar.SetData(tochar,"INVITEM"..spot,right(itemcode,len(itemcode)-4))
    RPGChar.IncStat(tochar,"INVAMNT"..spot)
    if not nochat then MINI(RPGChar.GetName(tochar).." received: "..item.Name,0,180,255) end
+   EquipEffect(tochar)
    return true       
    end       
 if (not alwaysallowvault) and item.ItemType~="KeyItem" then return false end
 inc("%VAULT."..itemcode)    
-if not nochat then MINI(item.Name.." has been put into the vault.") end
+if not nochat then MINI(item.Name.." has been put into the vault.",0,180,255) end
 return true                     
 end
 

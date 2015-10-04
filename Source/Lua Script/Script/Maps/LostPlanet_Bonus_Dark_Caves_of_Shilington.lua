@@ -87,7 +87,7 @@ end
 
 function Byebye()
 LoadMap("LostPlanet_GrassJungle_2")
-SpawnPlayer("FromExit")
+SpawnPlayer("FromSecret")
 TurnPlayer("South")
 MapShow("II","Secret")
 end
