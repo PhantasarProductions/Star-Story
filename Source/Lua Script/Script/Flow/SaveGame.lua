@@ -107,7 +107,7 @@ if keyhit(27) then return PerformCancel() end
 Image.Viewport(200,150,Image.Width(imglist),Image.Height(imglist))
 local y,i,f
 setfont('SaveFiles')
-WH = WH or ImageHeight(imglist)
+WH = WH or Image.Height(imglist)
 for i,f in ipairs(files) do
     y = 160 + ((i*15)-PM)
     if y<160    and SaveName==f and (not Scrolled) then PM=PM-1 end
