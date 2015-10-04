@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.10.03
+  Version: 15.10.04
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -606,6 +606,7 @@ local treasurestringarray = {}
 local treasures = {}
 local pt = ngpcount or 1
 local i,t,tra
+local crate,ctag,addit,vtag,iratesk1,irate -- all needed for the Special Items
 -- Get treasures from map itself
 CSay("Find treasure from map itself")
 CSay("Playthrough #"..pt)
@@ -653,17 +654,55 @@ for obj in KthuraEach('$Item') do
        FieldTreasure[obj.Tag] = add          
        end
     end
+for obj in KthuraEach("$SpecialItem") do
+    ctag = obj.Tag
+    addit = true
+    vtag = "%TREASURE_RATE["..ctag.."]"
+    iratesk1=nil
+    irate = obj.DataGet("RATE")
+    item = ItemGet('ITM_'..itemcode)
+    if obj.DataGet("RATE")=="INF" then
+       crate=nil
+    elseif obj.DataGet("RATE")=="UNIQUE" then
+       addit = not( CVVN(vtag) and CVV(vtag)>0 )
+       crate=1
+    else
+       crate = CVVN(vtag) or 1
+       addit = rand(1,crate)<=1
+       if skill==1 then iratesk1=obj.DataGet('S1RI') end
+       end        
+    add = {
+          x = obj.X,
+          y = obj.Y,
+          spottag = obj.Tag,
+          labels = obj.Labels,
+          dominance = obj.Dominance,
+          objtag = "Item."..obj.Tag,
+          item = obj.DataGet("ITEM"),
+          rate = crate,
+          irate = irate,
+          iratech = iratesk1,
+          vtag = vtag,
+          icon = item.Icon
+       }
+    if addit then
+       CSay("Added special item: "..add.item) 
+       FieldTreasure[obj.Tag]=add
+    else
+       CSay("Addition of special item \""..add.item.."\" has been rejected")    
+       end   
+    end    
 PlaceTreasures()    
 end
 
 function FindTreasures()
 local k,t
-local px,py,given
+local px,py,given,idata
 Maps.Obj.Pick(cplayer)
 px = Maps.Obj.MyObject.X
 py = Maps.Obj.MyObject.Y
 for k,t in spairs(FieldTreasure) do
-    if Distance(px,py,t.x,t.y)<16 then
+    if Distance(px,py,t.x,t.y)<32 then
        given = ItemGive("ITM_"..t.item,{activeplayer})
        if (not given) and (not Done("&TUTORIAL.BAGSFULL")) then
           Actors.StopWalking(cplayer)
@@ -674,8 +713,12 @@ for k,t in spairs(FieldTreasure) do
           MS.Run("BOXTEXT","RemoveData","BAGSFULL")
           end
        if given then 
+          idata = FieldTreasure[k]
           FieldTreasure[k]=nil 
-          Maps.Obj.Kill(t.objtag)          
+          Maps.Obj.Kill(t.objtag) 
+          if idata.rate then
+             if rand(1,idata.iratech or 1)<=1 then Var.D(idata.vtag,idata.irate or 1) end
+             end         
           end   
        end
     end
