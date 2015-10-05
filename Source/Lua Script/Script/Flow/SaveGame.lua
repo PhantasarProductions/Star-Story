@@ -53,6 +53,8 @@ imgsave = Image.Load("GFX/Save/Save.png")
 imgcncl = Image.Load("GFX/Save/Cancel.png")
 imgname = Image.Load("GFX/Save/Name.png")
 imglist = Image.Load("GFX/Save/FileList.png")
+imgup   = Image.Load("GFX/Save/Up.png")
+imgdown = Image.Load("GFX/Save/Down.png")
 return true
 end
 
@@ -76,6 +78,7 @@ end
 
 function MAIN_FLOW()
 local mx,my = mousecoords()
+local allowdown = false
 -- If not loaded, load the pictures
 imgloaded = imgloaded or LoadPics()
 -- Clear screen
@@ -99,7 +102,7 @@ local ch = nil
 for ak=65,65+26 do if keyhit(ak) then ch=ak end end
 if keyhit(32) and SaveName~="" then ch=32 end
 for ak=48,57 do if keyhit(ak) then ch=ak end end
-if ch and Image.TextWidth(SaveName)<365 then SaveName = SaveName .. string.char(ch) return end
+if ch and Image.TextWidth(SaveName)<365 then SaveName = SaveName .. string.char(ch) Scrolled=false return end
 if keyhit(8) and SaveName~="" then SaveName = left(SaveName,len(SaveName)-1) end
 if keyhit(13) and Str.Trim(SaveName)~="" then return PerformSave() end
 if keyhit(27) then return PerformCancel() end
@@ -108,10 +111,12 @@ Image.Viewport(200,150,Image.Width(imglist),Image.Height(imglist))
 local y,i,f
 setfont('SaveFiles')
 WH = WH or Image.Height(imglist)
+WW = WW or Image.Width (imglist)
 for i,f in ipairs(files) do
     y = 160 + ((i*15)-PM)
-    if y<160    and SaveName==f and (not Scrolled) then PM=PM-1 end
-    if y>160+WH and SaveName==f and (not Scrolled) then PM=PM+1 end
+    if y<160         and SaveName==f and (not Scrolled) then PM=PM-1 end
+    if y>(160+WH)-40 and SaveName==f and (not Scrolled) then PM=PM+1 end
+    allowdown = allowdown or y>(160+WH)-45
     if my<150+WH and my>150 and mx>200 and mx<200+Image.Width(imglist) and my>=y and my<=y+14 then
        Image.Color(0,180,255)
        if mousehit(1) then SaveName = f end
@@ -123,6 +128,15 @@ for i,f in ipairs(files) do
 Image.Viewport(0,0,800,600)    
 White()
 Image.Draw(imglist,200,150)
+-- Scroll arrows
+if PM>0 then
+   Image.Show(imgup,200+WW+40,150)
+   if INP.MouseD(1)==1 and my>150 and my<150+40 and mx>200+WW+40 and mx<200+ww+64 then PM=PM-1; Scrolled=true end
+   end
+if allowdown then
+   Image.Show(imgdown,200+WW+40,(150+WH)-Image.Height(imgdown))
+   if INP.MouseD(1)==1 and my>150+(WH-Image.Height(imgdown)) and my<150+40+WH and mx>200+WW+40 and mx<200+ww+64 then PM=PM+1; Scrolled=true end
+   end   
 -- The button clicks
 if mx<100 and mousehit(1) then
    if my>200 and my<250 then return PerformSave() end
