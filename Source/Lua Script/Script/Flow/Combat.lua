@@ -1,6 +1,6 @@
 --[[
   Combat.lua
-  Version: 15.09.16
+  Version: 15.10.06
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -188,13 +188,17 @@ if skill~=3 then -- Nope, not in the hard mode. HAHA!
 local GaugeID = 48
 local GiveID
 local FoeCount = 0
-local fx,fy 
+local fx,fy , fget
 for k,v in spairs(CombatData) do
     if left(k,3)=="FOE" and type(v)=='string' then
        FoeCount = FoeCount + 1
        CSay('New Foe','Foe #'..FoeCount,"key: "..k,"Foe File: "..v)
        if CombatData["IDFOE"..k] then GiveID=CombatData["IDFOE"..k] else GiveID=GaugeID; GaugeID=GaugeID+1 end
        InitFoeCoords(FoeCount)
+       if CombatData["ALTCOORDSFOE"..right(k,len(k)-3)] then
+          fget = loadstring("return "..CombatData["ALTCOORDSFOE"..right(k,len(k)-3)])
+          foec[FoeCount][1],foec[FoeCount][2] = fget()
+          end
        fx,fy = foec[FoeCount][1],foec[FoeCount][2]
        Fighters.Foe[FoeCount] = {
                Tag = "FOE_"..FoeCount,
