@@ -32,15 +32,15 @@
   
  **********************************************
  
-version: 15.10.05
+version: 15.10.06
 ]]
 ret = {
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Heals 100 HP",
-	["Healing"] = 150,
+	["Description"] = "Heals 250 HP",
+	["Healing"] = 250,
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Inventory/Blue Flower.png",
 	["ItemType"] = "Consumable",
