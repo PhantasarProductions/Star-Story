@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.05
+version: 15.10.06
 ]]
 function GotoPrev()
 LoadMap("LostPlanet_GrassJungle_2")
@@ -47,7 +47,8 @@ end
 
 function Boss()
 if CVV("&DONE.GRASSJUNGLE") then inc("%LEVEL.BIGGRASSTIGER") end
-Var.D("$COMBAT.BACKGROUND","Dark Caves.png")
+CleanCombat()
+Var.D("$COMBAT.BACKGROUND","GrassJungle.png")
 Var.D("$COMBAT.BEGIN","Default")
 Var.D("$COMBAT.FOE1","Boss/BigGrassTiger")
 Var.D("%COMBAT.LVFOE1",MapLevel()+CVV("%LEVEL.BIGGRASSTIGER"))
@@ -58,7 +59,8 @@ end
 
 function BossTutorial()
 if not Done("&DONE.TUTORIAL.BOSSINFIELD") then
-   MapCharText("BOSS")
+   Actors.StopWalking("PLAYER")
+   CharMapText("BOSS")
    MapText("BOSS.TUTORIAL")
    end
 end
