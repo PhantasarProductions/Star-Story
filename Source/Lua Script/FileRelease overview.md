@@ -93,6 +93,7 @@
 1. Script/Maps/Excalibur_UnderAttack.lua
 1. Script/Maps/Hawk.lua
 1. Script/Maps/LostPlanet_Bonus_Dark_Caves_of_Shilington.lua
+1. Script/Maps/LostPlanet_GrassJunge_3.lua
 1. Script/Maps/LostPlanet_GrassJungle.lua
 1. Script/Maps/LostPlanet_GrassJungle_2.lua
 1. Script/Maps/Prologue_Yaqirpa.lua
@@ -183,4 +184,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Mon 05 October 2015; 04:10:16 CET
+### Last updated: Mon 05 October 2015; 18:50:35 CET

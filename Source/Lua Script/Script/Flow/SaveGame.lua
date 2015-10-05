@@ -119,7 +119,7 @@ for i,f in ipairs(files) do
     allowdown = allowdown or y>(160+WH)-45
     if my<150+WH and my>150 and mx>200 and mx<200+Image.Width(imglist) and my>=y and my<=y+14 then
        Image.Color(0,180,255)
-       if mousehit(1) then SaveName = f end
+       if mousehit(1) then SaveName = f; Scrolled=false end
     else
        Image.Color(0,90,128)
        end

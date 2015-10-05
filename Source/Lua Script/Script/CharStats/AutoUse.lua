@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 15.10.04
+  version: 15.10.05
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -83,6 +83,7 @@ for i,v in ipairs( { "BASE_", "BUFF_", "EQBF_" }) do
     -- CSay(ch.."."..v..stat.." = "..RPGStat.SafeStat(ch,"SR_"..v..stat).." >> "..r) 
     end
 --CSay(ch.."."..stat.." ==> "..r)
+if r>100 then r=100 end
 RPGStat.DefStat(ch,"SR_TRUE_"..stat,r)
 end
 
