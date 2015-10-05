@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.10.04
+  Version: 15.10.05
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -159,6 +159,7 @@ function CheckClickables()
 local i,c
 local mx,my = TrueMouseCoords()
 local ret,ARMSpot
+if not Clickables then return end
 if mousehit(1) then
    for i,c in ipairs(Clickables) do
        --[[
