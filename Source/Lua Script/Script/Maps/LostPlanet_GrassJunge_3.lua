@@ -44,6 +44,10 @@ LoadMap("LostPlanet_GrassJungle_2")
 SpawnPlayer("Einde")
 end
 
+function Boss()
+Sys.Error("Boss not yet scripted")
+end
+
 
 function GALE_OnLoad()
 Music("Dungeon/Weirdomusic_-_34_-_Fiber_visits_the_Q_Continuum.ogg")
