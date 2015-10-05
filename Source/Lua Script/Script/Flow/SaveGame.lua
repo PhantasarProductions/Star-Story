@@ -131,11 +131,11 @@ Image.Draw(imglist,200,150)
 -- Scroll arrows
 if PM>0 then
    Image.Show(imgup,200+WW+40,150)
-   if INP.MouseD(1)==1 and my>150 and my<150+40 and mx>200+WW+40 and mx<200+ww+64 then PM=PM-1; Scrolled=true end
+   if INP.MouseD(1)==1 and my>150 and my<150+40 and mx>200+WW+40 and mx<200+WW+64 then PM=PM-1; Scrolled=true end
    end
 if allowdown then
    Image.Show(imgdown,200+WW+40,(150+WH)-Image.Height(imgdown))
-   if INP.MouseD(1)==1 and my>150+(WH-Image.Height(imgdown)) and my<150+40+WH and mx>200+WW+40 and mx<200+ww+64 then PM=PM+1; Scrolled=true end
+   if INP.MouseD(1)==1 and my>150+(WH-Image.Height(imgdown)) and my<150+40+WH and mx>200+WW+40 and mx<200+WW+64 then PM=PM+1; Scrolled=true end
    end   
 -- The button clicks
 if mx<100 and mousehit(1) then
