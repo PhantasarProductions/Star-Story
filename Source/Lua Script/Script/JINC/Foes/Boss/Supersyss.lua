@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 15.10.03
+version: 15.10.05
 ]]
 
 
--- Version 15.10.03
+-- Version 15.10.05
 
 
 
@@ -79,10 +79,14 @@ local temp
 
 
 Data.ActMinLevel["Sys.Attack"] = 1		for ak=1,100 do table.insert(Data.Acts,"Sys.Attack") end
+Data.ActMinLevel["Abl.ABL_EXHURU_BATTLECRY"] = 0		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_EXHURU_BATTLECRY") end
 Data.ActMinLevel["Abl.ABL_FOE_VENOMBITE"] = 10		for ak=1,65 do table.insert(Data.Acts,"Abl.ABL_FOE_VENOMBITE") end
 temp = { ITM='ITM_BLUBAFLOWER', LVL=1, VLT=false }
 for ak=1,1 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,1 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_EQP_EMERALD', LVL=60, VLT=false }
+for ak=1,2 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,3 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_GUBAFLOWER', LVL=15, VLT=false }
 for ak=1,6 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,5 do table.insert(Data.ItemSteal,temp) end

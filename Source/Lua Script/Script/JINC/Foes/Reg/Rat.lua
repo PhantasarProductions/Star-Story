@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 15.10.03
+version: 15.10.05
 ]]
 
 
--- Version 15.10.02
+-- Version 15.10.05
 
 
 
@@ -79,6 +79,7 @@ local temp
 
 
 Data.ActMinLevel["Sys.Attack"] = 1		for ak=1,100 do table.insert(Data.Acts,"Sys.Attack") end
+Data.ActMinLevel["Abl.ABL_EXHURU_BATTLECRY"] = 0		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_EXHURU_BATTLECRY") end
 Data.ActMinLevel["Abl.ABL_EXHURU_KAKSI"] = 10		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_EXHURU_KAKSI") end
 Data.ActMinLevel["Abl.ABL_EXHURU_KOLME"] = 15		for ak=1,30 do table.insert(Data.Acts,"Abl.ABL_EXHURU_KOLME") end
 Data.ActMinLevel["Abl.ABL_EXHURU_KUUSI"] = 30		for ak=1,60 do table.insert(Data.Acts,"Abl.ABL_EXHURU_KUUSI") end
@@ -94,6 +95,9 @@ for ak=1,1 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,1 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_BLUBAFLOWER', LVL=1, VLT=false }
 for ak=1,10 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_EQP_EMERALD', LVL=60, VLT=false }
+for ak=1,2 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,3 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_GUBAFLOWER', LVL=15, VLT=false }
 for ak=1,5 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_HEALINGCAPSULE', LVL=8, VLT=false }
@@ -102,6 +106,9 @@ for ak=1,1 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_SPORES', LVL=3, VLT=false }
 for ak=1,3 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,3 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_THUNDER_DIAMOND', LVL=50, VLT=false }
+for ak=1,1 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,8 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_VLUGZOUT', LVL=7, VLT=false }
 for ak=1,6 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,3 do table.insert(Data.ItemSteal,temp) end

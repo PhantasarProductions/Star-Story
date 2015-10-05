@@ -1,5 +1,5 @@
 --[[
-  ITM_ANTIDOTE.lua
+  ABL_FOE_LICKYOURWOUNDS.lua
   Version: 15.10.05
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,16 +35,28 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
+	["ABL_AP"] = 0,
+	["ABL_Pose"] = "Cast",
+	["ABL_Speed"] = 250,
 	["ActSpeed"] = 250,
-	["AttackElement"] = "Non-Elemental",
+	["AttackElement"] = "Healing",
+	["AttackPower"] = 200,
 	["AttackStat"] = "Strength",
+	["CureAmnesia"] = true,
+	["CureBagLock"] = true,
+	["CureConfusion"] = true,
 	["CureDisease"] = true,
-	["DefenseStat"] = "Defense",
-	["Description"] = "Cures \"Poison\"",
+	["CureHandicapped"] = true,
+	["CureParalysis"] = true,
+	["CurePoison"] = true,
+	["CureSleep"] = true,
+	["CureTerrified"] = true,
+	["DefenseStat"] = "Resistance",
+	["Description"] = "Heal",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Inventory/Green_tube.png",
+	["Icon"] = "GFX/Inventory/Patch.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Antidote",
+	["Name"] = "Lick your wounds",
 	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1A",
 	["UseCombat"] = true,

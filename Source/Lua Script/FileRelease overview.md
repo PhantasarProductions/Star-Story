@@ -27,6 +27,7 @@
 1. Script/Init/Start.lua
 1. Script/JINC/Big/Achievements.lua
 1. Script/JINC/Demo/Maps.lua
+1. Script/JINC/Foes/Boss/BigGrassTiger.lua
 1. Script/JINC/Foes/Boss/BrainDroid.lua
 1. Script/JINC/Foes/Boss/Supersyss.lua
 1. Script/JINC/Foes/Reg/astrilopup.lua
@@ -47,6 +48,7 @@
 1. Script/JINC/IAA/ABL_EXHURU_NELJA.lua
 1. Script/JINC/IAA/ABL_EXHURU_STOMP.lua
 1. Script/JINC/IAA/ABL_EXHURU_YKSI.lua
+1. Script/JINC/IAA/ABL_FOE_LICKYOURWOUNDS.lua
 1. Script/JINC/IAA/ABL_FOE_PHOTON.lua
 1. Script/JINC/IAA/ABL_FOE_POISONCLOUD.lua
 1. Script/JINC/IAA/ABL_FOE_POSIONCLOUD.lua
@@ -184,4 +186,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Mon 05 October 2015; 21:11:08 CET
+### Last updated: Mon 05 October 2015; 23:57:43 CET
