@@ -66,6 +66,20 @@ if not Done("&DONE.TUTORIAL.BOSSINFIELD") then
    end
 end
 
+function Jump(Side)
+Actors.StopWalking("PLAYER")
+TurnPlayer("South")
+Actors.MoveToSpot("PLAYER","StartJump"..Side)
+WalkWait()
+for y=304,412 do
+    Actors.Actor('PLAYER').Y=y
+    DrawScreen()
+    Flip()
+    end
+TurnPlayer(({West="East",East="West"})[Side]) 
+Actors.MoveToSpot("PLAYER","AfterJump")
+end
+
 
 function GALE_OnLoad()
 Music("Dungeon/Weirdomusic_-_34_-_Fiber_visits_the_Q_Continuum.ogg")
@@ -73,4 +87,6 @@ SetScrollBoundaries(-5,5,1648,1744)
 ZA_Enter("Pub",GotoPub)
 ZA_Enter("Previous",GotoPrev)
 ZA_Enter("BossTutorial",BossTutorial)
+ZA_Enter("JumpWest",function() Jump("West") end)
+ZA_Enter("JumpEast",function() Jump("East") end)
 end
