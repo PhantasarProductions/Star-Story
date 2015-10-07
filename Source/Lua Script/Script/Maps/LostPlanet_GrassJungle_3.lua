@@ -42,7 +42,7 @@ end
 function GotoPub()
 if not Done("&DONE.GRASSJUNGLE") then MapEXP() end
 LoadMap("LostPlanet_Pub_Outside")
-SpawnPlayer("Einde")
+SpawnPlayer("Start")
 end
 
 function Boss()
