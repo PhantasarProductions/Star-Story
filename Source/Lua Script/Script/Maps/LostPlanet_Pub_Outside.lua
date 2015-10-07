@@ -34,6 +34,22 @@
  
 version: 15.10.07
 ]]
+
+
+function IntroBar()
+if not Done("&DONE.MAP.INTROBAR") then
+   PartyPop("Bar")
+   MapText("INTROBAR")
+   PartyUnPop()
+   end
+end
+
 function GALE_OnLoad()
 Music("Scenario/Dream Culture.ogg")
+SetScrollBoundaries(0,0,0,384)
+-- Zone Action
+ZA_Enter("IntroBar",IntroBar)
+-- Hide the "Rickrolled" banner.
+Maps.Obj.Obj("BANNER_RICKROLLED").Visible=0
+Maps.Remap()
 end
