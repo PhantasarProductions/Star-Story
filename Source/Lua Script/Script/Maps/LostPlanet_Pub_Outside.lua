@@ -54,7 +54,7 @@ function NPC_RICKROLL()
 local a = GetActive()
 if a~="Wendicka" and a~="Crystal" and a~="Foxy" then MapText("RICKSILENT") return end
 MapText("RICKROLL.1")
-CharMapText("ROCKROLL.2")
+CharMapText("RICKROLL.2")
 MapText("RICKROLL.3")
 BoxTextBack = "MAP"
 Music("Scenario/RICKROLLED.ogg")
