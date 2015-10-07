@@ -48,6 +48,7 @@ function BoxTextBackGround() -- Used for Rickrolling
 rickrollcounter = (rickrollcounter or 0) + 1
 if rickrollcounter>100 then Maps.Obj.Obj("BANNER_RICKROLLED").Visible = boolbt[Maps.Obj.Obj("BANNER_RICKROLLED").Visible~=1] rickrollcounter=0 end
 Maps.Remap() 
+Maps.Draw()
 end
 
 function NPC_RICKROLL()
@@ -61,7 +62,7 @@ Music("Scenario/RICKROLLED.ogg")
 MapText("RICKROLL.4","MAP")
 BoxTextBack = "BOXTEXT.KTHURA"
 Music("Sys/Silence.ogg")
-Maps.Obj("BANNER_RICKROLLED").Visible = 0
+Maps.Obj.Obj("BANNER_RICKROLLED").Visible = 0
 Maps.Remap()
 CharMapText("RICKROLL.5")
 Music("Scenario/Dream Culture.ogg")
