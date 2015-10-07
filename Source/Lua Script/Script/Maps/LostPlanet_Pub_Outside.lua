@@ -76,7 +76,7 @@ end
 function NPC_PoepAurina()
 if not Done("&DONE.TALK.POEP.AURINA") then MapText("POEP") end
 if CVV("%AURINAS")==0 then MapText("POEPGEENAURINA") return end
-Var.D(CVVN("%AURINARATE") or (5-skill))
+Var.D("%AURINARATE",CVVN("%AURINARATE") or (5-skill))
 local aurina = CVV("%AURINAS")
 local rate = CVV("%AURINARATE")
 local total = aurina * rate
@@ -84,6 +84,12 @@ Var.D("%AURINACREDITS",total)
 MapText("POEPAURINA")
 inc("%CASH",total)
 Var.Clear("%AURINAS")
+end
+
+function Exit()
+LoadMap("LostPlanet_GrassJungle_3")
+SpawnPlayer("Einde")
+TurnPlayer("South")
 end
 
 function GALE_OnLoad()
