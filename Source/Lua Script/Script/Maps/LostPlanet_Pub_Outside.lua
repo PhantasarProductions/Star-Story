@@ -46,8 +46,9 @@ end
 
 function BoxTextBackGround() -- Used for Rickrolling
 rickrollcounter = (rickrollcounter or 0) + 1
-if rickrollcounter>100 then Maps.Obj.Obj("BANNER_RICKROLLED").Visible = boolbt[Maps.Obj.Obj("BANNER_RICKROLLED").Visible~=1] rickrollcounter=0 end
+if rickrollcounter>50 then Maps.Obj.Obj("BANNER_RICKROLLED").Visible = boolbt[Maps.Obj.Obj("BANNER_RICKROLLED").Visible~=1] rickrollcounter=0 end
 Maps.Remap() 
+Image.Cls()
 Maps.Draw()
 end
 
