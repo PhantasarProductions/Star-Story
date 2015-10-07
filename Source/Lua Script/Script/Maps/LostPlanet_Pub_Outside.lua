@@ -44,9 +44,36 @@ if not Done("&DONE.MAP.INTROBAR") then
    end
 end
 
+function BoxTextBackGround() -- Used for Rickrolling
+rickrollcounter = (rickrollcounter or 0) + 1
+if rickrollcounter>100 then Maps.Obj("BANNER_RICKROLLED").Visible = boolbt[Maps.Obj("BANNER_RICKROLLED").Visible~=1] end
+Maps.Remap() 
+end
+
+function NPC_RICKROLL()
+local a = GetActive()
+if a~="Wendicka" and a~="Crystal" and a~="Foxy" then MapText("RICKSILENT") return end
+MapText("RICKROLL.1")
+CharMapText("ROCKROLL.2")
+MapText("RICKROLL.3")
+BoxTextBack = "MAP"
+Music("Scenario/RICKROLLED.ogg")
+MapText("RICKROLL.4","MAP")
+BoxTextBack = "BOXTEXT.KTHURA"
+Music("Sys/Silence.ogg")
+Maps.Obj("BANNER_RICKROLLED").Visible = 0
+Maps.Remap()
+CharMapText("RICKROLL.5")
+Music("Scenario/Dream Culture.ogg")
+if not Done("&RICKROLLED") then
+   MapEXP()
+   Award("RICKROLLED")
+   end
+end
+
 function GALE_OnLoad()
 Music("Scenario/Dream Culture.ogg")
-SetScrollBoundaries(0,0,0,384)
+SetScrollBoundaries(1,1,1,384)
 -- Zone Action
 ZA_Enter("IntroBar",IntroBar)
 -- Hide the "Rickrolled" banner.

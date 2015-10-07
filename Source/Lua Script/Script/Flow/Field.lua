@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.10.05
+  Version: 15.10.07
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -175,6 +175,11 @@ if mousehit(1) then
             WalkArrival = "NPC_MapText"
             Var.D("$NPC_MAPTEXT",c)
             ret=true
+          elseif prefixed(c,"NPC_") then
+            if c=="NPC_MapText" then Sys.Error("Illegal NPC tag!") end
+            Actors.WalkTo(cplayer,Maps.Obj.Obj(c).X,Maps.Obj.Obj(c).Y+32)
+            WalkArrival = c
+            ret=true            
           elseif prefixed(c,"ARMCHST") then -- This block until the next "else" statement is specifically for Star Story.
               ARMSpot = replace(c,"ARMCHST","ARMSPOT")
               Actors.WalkToSpot(cplayer,ARMSpot)
@@ -726,7 +731,7 @@ for k,t in spairs(FieldTreasure) do
 end
 
 function SetUpAutoClickables()
-local prefixes = {"NPC_MT_","ARMCHST"}
+local prefixes = {"NPC_","ARMCHST"}
 local p
 for obj in KthuraEach() do
     for p in each(prefixes) do 
