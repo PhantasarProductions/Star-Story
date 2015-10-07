@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  Maps.lua
+  LostPlanet_Pub_Outside.lua
   (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
@@ -34,24 +34,6 @@
  
 version: 15.10.07
 ]]
-ret = {
-	"EXCALIBUR_HOME",
-	"INTRO_SHIP_TRANSPORTER",
-	"PROLOGUE_YAQIRPA",
-	"TEST MAP",
-	"EXCALIBUR_SICKBAY",
-	"EXCALIBUR_ALLQUIET",
-	"EXCALIBUR_KITCHEN",
-	"TEST INSERTION AND ROTATION",
-	"EXCALIBUR_UNDERATTACK",
-	"EXCALIBUR_SECRETPASSAGE",
-	"TEST COLOR AND ANIMATION",
-	"EXCALIBUR_HANGAR",
-	"HAWK",
-	"LOSTPLANET_GRASSJUNGLE",
-	"LOSTPLANET_GRASSJUNGLE_2",
-	"TEST TRANSPORTERS",
-	"LOSTPLANET_BONUS_DARK_CAVES_OF_SHILINGTON",
-	"LOSTPLANET_GRASSJUNGLE_3"}
-
-return ret
+function GALE_OnLoad()
+Music("Scenario/Dream Culture.ogg")
+end

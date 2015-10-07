@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.06
+version: 15.10.07
 ]]
 function GotoPrev()
 LoadMap("LostPlanet_GrassJungle_2")
@@ -41,7 +41,7 @@ end
 
 function GotoPub()
 if not Done("&DONE.GRASSJUNGLE") then MapEXP() end
-LoadMap("LostPlanet_GrassJungle_2")
+LoadMap("LostPlanet_Pub_Outside")
 SpawnPlayer("Einde")
 end
 

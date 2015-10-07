@@ -98,6 +98,7 @@
 1. Script/Maps/LostPlanet_GrassJungle.lua
 1. Script/Maps/LostPlanet_GrassJungle_2.lua
 1. Script/Maps/LostPlanet_GrassJungle_3.lua
+1. Script/Maps/LostPlanet_Pub_Outside.lua
 1. Script/Maps/Prologue_Yaqirpa.lua
 1. Script/OSBOOT/Mac.x86.lua
 1. Script/OSBOOT/Win32.x86.lua
@@ -186,4 +187,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Tue 06 October 2015; 19:40:41 CET
+### Last updated: Wed 07 October 2015; 04:13:11 CET
