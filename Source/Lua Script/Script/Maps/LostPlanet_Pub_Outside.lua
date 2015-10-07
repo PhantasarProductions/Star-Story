@@ -97,6 +97,7 @@ Music("Scenario/Dream Culture.ogg")
 SetScrollBoundaries(1,1,1,384)
 -- Zone Action
 ZA_Enter("IntroBar",IntroBar)
+ZA_Enter("Exit",Exit)
 -- Hide the "Rickrolled" banner.
 Maps.Obj.Obj("BANNER_RICKROLLED").Visible=0
 Maps.Remap()

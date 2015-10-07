@@ -746,11 +746,11 @@ function LoadMap(map)
 FieldFoes = nil -- Let's just FORCE enemies will NOT mess this up.
 Loading()
 PartyPopArray = nil
+ScrollBoundaries = {}
 Maps.Load(map)
 SetUpFoes()
 SetUpTreasure()
 SetUpAutoClickables()
-ScrollBoundaries = {}
 Var.Clear("$MAP.MAPSHOW.LASTREQUEST")
 Var.Clear("$MAP.MAPSHOW.LASTALWAYSSHOW")
 end
