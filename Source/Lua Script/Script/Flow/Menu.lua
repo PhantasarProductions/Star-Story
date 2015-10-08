@@ -554,7 +554,7 @@ CSay("Loading store: "..storefile)
 local tempstore = jinc("Script/JINC/Shops/"..storefile..".lua")
 Store = { Name = tempstore.StoreName, Stock = {} }
 for i=1,10 do
-    if tempstore~="*Nothing*" then table.insert(Store.Stock,replace(tempstore,".lua","")) end
+    if tempstore~="*Nothing*" then table.insert(Store.Stock,replace(tempstore["Stock"..i],".lua","")) end
     end
 end
 
