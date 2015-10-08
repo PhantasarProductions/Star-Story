@@ -501,7 +501,7 @@ FeatureHandleArray = {
                       end
                   if hover then
                      SetFont("ItemDescription")
-                     for dl in each(mysplit(item.Description,"\n")) do
+                     for dl in each(mysplit(hover.Description,"\n")) do
                              FitText(dl,mx+16,dy,255,180,0)
                              dy = dy + Image.TextHeight(dl)
                              end
