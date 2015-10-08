@@ -480,6 +480,9 @@ FeatureHandleArray = {
                   local mx,my = MouseCoords()
                   local item,itemcode
                   local cg,cb
+                  local hover
+                  local dy = my + 16
+                  local dx = mx + 16
                   DarkText(Store.Name,400,100,2,2,255,0,0)
                   for itemcode in each(Store.Stock) do
                       White()
@@ -491,11 +494,21 @@ FeatureHandleArray = {
                       if my>y and my<y+32 then 
                          hover = item
                          cg = 180
-                         gb = 255
+                         cb = 255
                          end
                       DarkText(item.Name,100,y,0,2,0,cg,cb)
                       y = y + 32
                       end
+                  if hover then
+                     for dl in each(mysplit(item.Description,"\n")) do
+                             FitText(dl,mx+16,dy,255,180,0)
+                             dy = dy + Image.TextHeight(dl)
+                             end
+                     for dl in each({"Left = Buy & pickup","Right = Buy and put in "..RPGChar.CharName(pchar).."'s inventory"}) do
+                              FitText(dl,mx+16,dy,255,180,0)
+                              dy = dy + Image.TextHeight(dl) 
+                              end                       
+                     end    
                   end,            
       Vault     = function()
                   local y = 15
