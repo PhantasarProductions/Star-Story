@@ -447,21 +447,21 @@ FeatureHandleArray = {
                              dy = dy + Image.TextHeight(dl)
                              end
                           SetFont("Tutorial")
+                          if returnto=="FIELD" and mousehit(2) then
+                             UseItem(pchar,item,hoverdata.i) 
+                             end      
+                          if returnto=="STORE" then 
+                             if not item.ITM_Sellable then
+                                mousetxt[returnto][2] = "You cannot sell this item"
+                             else
+                                mousetxt[returnto][2] = "Sell for "..(item.ITM_SellPrice or "no").." credits"
+                                end
+                             if mousehit(2) then SellItem(pchar,item,hoverdata.i) end
+                             end   
                           for dl in each(mousetxt[returnto] or {}) do
                               FitText(dl,mx+16,dy,255,180,0)
                               dy = dy + Image.TextHeight(dl) 
                               end 
-                         if returnto=="FIELD" and mousehit(2) then
-                            UseItem(pchar,item,hoverdata.i) 
-                            end      
-                         if returnto=="STORE" then 
-                            if not item.ITM_Sellable then
-                               mousetxt[returnto][2] = "You cannot sell this item"
-                            else
-                               mousetxt[returnto][2] = "Sell for "..item.ITM_SellPrice.." credits"
-                               end
-                            if mousehit(2) then SellItem(pchar,item,hoverdata.i) end
-                            end   
                          end    
                   -- @IF *DEVELOPMENT
                   y = 20
