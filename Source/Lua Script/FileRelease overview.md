@@ -84,6 +84,7 @@
 1. Script/JINC/InitChar/UniCrystal.lua
 1. Script/JINC/InitChar/UniWendicka.lua
 1. Script/JINC/InitChar/Wendicka.lua
+1. Script/JINC/Shops/LOSTPLANET_BAR_ITEMS.lua
 1. Script/Maps/AutoUse.lsv
 1. Script/Maps/AutoUse.lua
 1. Script/Maps/Excalibur_AllQuiet.lua
@@ -187,4 +188,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Wed 07 October 2015; 23:57:56 CET
+### Last updated: Thu 08 October 2015; 14:08:47 CET

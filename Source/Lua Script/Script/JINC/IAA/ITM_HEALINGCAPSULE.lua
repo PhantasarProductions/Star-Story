@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.06
+version: 15.10.08
 ]]
 ret = {
 	["ActSpeed"] = 195,
@@ -42,6 +42,9 @@ ret = {
 	["Description"] = "Heals 112 HP",
 	["Healing"] = 112,
 	["HealingType"] = "Absolute",
+	["ITM_BuyPrice"] = 75,
+	["ITM_SellPrice"] = 25,
+	["ITM_Sellable"] = true,
 	["Icon"] = "GFX/Inventory/Capsule - Rood-Blauw.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Healing Capsule",

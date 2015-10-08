@@ -15,7 +15,7 @@ not longer than 70 years ago, you can deem this file
 with basically comes down to the same lack of
 restriction the public domain offers. (YAY!)
 *********************************************************** 
-Version 15.10.06
+Version 15.10.08
 ]]
 ret = {
 	["ActSpeed"] = 400,
@@ -25,6 +25,9 @@ ret = {
 	["Description"] = "Heals 25 HP",
 	["Healing"] = 60,
 	["HealingType"] = "Absolute",
+	["ITM_BuyPrice"] = 5,
+	["ITM_SellPrice"] = 1,
+	["ITM_Sellable"] = true,
 	["Icon"] = "GFX/Inventory/Patch.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Adhesive Bandage",

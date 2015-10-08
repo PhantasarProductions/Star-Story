@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.06
+version: 15.10.08
 ]]
 ret = {
 	["ActSpeed"] = 250,
@@ -42,6 +42,9 @@ ret = {
 	["Description"] = "Heals 250 HP",
 	["Healing"] = 250,
 	["HealingType"] = "Absolute",
+	["ITM_BuyPrice"] = 100,
+	["ITM_SellPrice"] = 75,
+	["ITM_Sellable"] = true,
 	["Icon"] = "GFX/Inventory/Blue Flower.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Bluba Flower",

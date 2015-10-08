@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.06
+version: 15.10.08
 ]]
 ret = {
 	["ActSpeed"] = 250,
@@ -43,6 +43,9 @@ ret = {
 	["DefenseStat"] = "Resistance",
 	["Description"] = "Electric attack on one enemy",
 	["HealingType"] = "Absolute",
+	["ITM_BuyPrice"] = 250,
+	["ITM_SellPrice"] = 175,
+	["ITM_Sellable"] = true,
 	["Icon"] = "GFX/Inventory/Blue Diamond.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Thunder Diamond",

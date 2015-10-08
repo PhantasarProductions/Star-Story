@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.06
+version: 15.10.08
 ]]
 ret = {
 	["ActSpeed"] = 250,
@@ -43,6 +43,7 @@ ret = {
 	["Description"] = "Heals 47 HP and cures poison",
 	["Healing"] = 75,
 	["HealingType"] = "Absolute",
+	["ITM_Sellable"] = true,
 	["Icon"] = "GFX/Inventory/Yellow Flower.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Guba Flower",
