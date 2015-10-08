@@ -446,7 +446,6 @@ FeatureHandleArray = {
                              FitText(dl,mx+16,dy,0,180,255)
                              dy = dy + Image.TextHeight(dl)
                              end
-                          SetFont("Tutorial")
                           if returnto=="FIELD" and mousehit(2) then
                              UseItem(pchar,item,hoverdata.i) 
                              end      
@@ -462,6 +461,7 @@ FeatureHandleArray = {
                                 end
                              if mousehit(2) then SellItem(pchar,item,hoverdata.i) end
                              end   
+                          SetFont("Tutorial")
                           for dl in each(mousetxt[returnto] or {}) do
                               FitText(dl,mx+16,dy,255,180,0)
                               dy = dy + Image.TextHeight(dl) 
@@ -500,12 +500,14 @@ FeatureHandleArray = {
                       y = y + 32
                       end
                   if hover then
+                     SetFont("ItemDescription")
                      for dl in each(mysplit(item.Description,"\n")) do
                              FitText(dl,mx+16,dy,255,180,0)
                              dy = dy + Image.TextHeight(dl)
                              end
+                     SetFont("Tutorial")
                      for dl in each({"Left = Buy & pickup","Right = Buy and put in "..RPGChar.GetName(pchar).."'s inventory"}) do
-                              FitText(dl,mx+16,dy,255,180,0)
+                              FitText(dl,mx+16,dy,255,180,100)
                               dy = dy + Image.TextHeight(dl) 
                               end                       
                      end    
