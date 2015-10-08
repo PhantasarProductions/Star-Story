@@ -89,7 +89,7 @@ end
 function NPC_Merchant()
 MapText("MERCHANT")
 -- MINI("Stores are not yet present")
-GoToStore()
+GoToStore("LOSTPLANET_BAR_ITEMS")
 end
 
 function Exit()
