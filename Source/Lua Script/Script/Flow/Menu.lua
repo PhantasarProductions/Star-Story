@@ -479,13 +479,21 @@ FeatureHandleArray = {
                   local y=116
                   local mx,my = MouseCoords()
                   local item,itemcode
+                  local cg,cb
                   DarkText(Store.Name,400,100,2,2,255,0,0)
                   for itemcode in each(Store.Stock) do
                       White()
                       ItemIcon(itemcode,60,y)
                       item = ItemGet(itemcode)
                       SetFont("ItemHeader")
-                      DarkText(item.Name,100,y,0,2,255,0,0)
+                      cg = 100
+                      cb = 180
+                      if my>y and my<y+32 then 
+                         hover = item
+                         cg = 180
+                         gb = 255
+                         end
+                      DarkText(item.Name,100,y,0,2,0,cg,cb)
                       y = y + 32
                       end
                   end,            
