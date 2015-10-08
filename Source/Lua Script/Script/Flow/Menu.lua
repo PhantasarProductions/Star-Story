@@ -504,7 +504,7 @@ FeatureHandleArray = {
                              FitText(dl,mx+16,dy,255,180,0)
                              dy = dy + Image.TextHeight(dl)
                              end
-                     for dl in each({"Left = Buy & pickup","Right = Buy and put in "..RPGChar.CharName(pchar).."'s inventory"}) do
+                     for dl in each({"Left = Buy & pickup","Right = Buy and put in "..RPGChar.GetName(pchar).."'s inventory"}) do
                               FitText(dl,mx+16,dy,255,180,0)
                               dy = dy + Image.TextHeight(dl) 
                               end                       
