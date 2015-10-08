@@ -54,11 +54,13 @@ LAURA.Flow("MENU")
 end
 
 
-function GoToStore()
+function GoToStore(store)
 local ch = RPGChar.PartyTag(0)
+if not store then Sys.Error("No Store file entered") end
 MS.LN_Run("MENU","Script/Flow/Menu.lua","PointChar",ch)
 MS.Run("MENU","SetReturnTo","STORE")
 MS.Run("MENU","PointPage","Store")
+MS.Run("MENU","LoadStore",store)
 LAURA.Flow("MENU")
 end
 

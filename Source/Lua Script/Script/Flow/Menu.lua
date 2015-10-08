@@ -476,6 +476,14 @@ FeatureHandleArray = {
                   -- @FI    
                   end,
       Store     = function()
+                  local y=116
+                  local mx,my = MouseCoords()
+                  local item,itemcode
+                  DarkText(Store.Name,400,100,2,2,255,0,0)
+                  for itemcode in each(Store.Stock) do
+                      ItemIcon(itemcode,20,y)
+                      y = y + 32
+                      end
                   end,            
       Vault     = function()
                   local y = 15
@@ -539,6 +547,16 @@ FeatureHandleArray = {
                   end,                             
    
 }
+
+
+function LoadStore(storefile)
+CSay("Loading store: "..storefile)
+local tempstore = jinc("Scripts/JINC/Shops/"..storefile..".lua")
+Store = { Name = tempstore.StoreName, Stock = {} }
+for i=1,10 do
+    if tempstore~="*Nothing*" then table.insert(Store.Stock,replace(tempstore,".lua","")) end
+    end
+end
 
 function DrawScreen()
 Feature.VAULT = Feature.VAULT or "Items"

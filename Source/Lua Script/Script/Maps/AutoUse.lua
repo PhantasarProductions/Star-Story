@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 15.10.02
+  version: 15.10.08
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -76,7 +76,10 @@ local ZK,ZZ
 for ZK,ZZ in pairs(ZA.Enter) do
     if ROOM_ME==Maps.CodeName then
        b = Maps.ActorInZone(actor,ZZ.Z)==1
-       if (not ZAChkEnter[ZZ.Z]) and b then ZZ.F() end
+       if (not ZAChkEnter[ZZ.Z]) and b then 
+          KillWalkArrival() 
+          ZZ.F() 
+          end
        ZAChkEnter[ZZ.Z] = b
        end 
     end
@@ -87,7 +90,10 @@ local b
 local ZK,ZZ 
 for ZK,ZZ in pairs(ZA.Leave) do
     b = Maps.ActorInZone(actor,ZZ.Z)==1
-    if ZAChkLeave[ZZ.Z] and (not b) then ZZ.F() end
+    if ZAChkLeave[ZZ.Z] and (not b) then 
+       KillWalkArrival() 
+       ZZ.F() 
+       end
     ZAChkLeave[ZZ.Z] = b 
     end
 end
@@ -97,7 +103,10 @@ local b
 local ZK,ZZ 
 for ZK,ZZ in pairs(ZA.Flow) do
     b = Maps.ActorInZone(actor,ZZ.Z)==1
-    if b then ZZ.F() end
+    if b then
+       KillWalkArrival() 
+       ZZ.F() 
+       end
     end
 end
 

@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.10.07
+  Version: 15.10.08
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -198,6 +198,10 @@ if mousehit(1) then
        end
    end    
 return ret   
+end
+
+function KillWalkArrival()
+WalkArrival = nil
 end
 
 
