@@ -479,7 +479,7 @@ FeatureHandleArray = {
                   local y=116
                   local mx,my = MouseCoords()
                   local item,itemcode
-                  local cg,cb
+                  local cg,cb,cr
                   local hover
                   local dy = my + 16
                   local dx = mx + 16
@@ -489,14 +489,20 @@ FeatureHandleArray = {
                       ItemIcon(itemcode,60,y)
                       item = ItemGet(itemcode)
                       SetFont("ItemHeader")
+                      cr = 0
                       cg = 100
                       cb = 180
-                      if my>y and my<y+32 then 
+                      if my>y-16 and my<y+16 then 
                          hover = item
                          cg = 180
                          cb = 255
                          end
                       DarkText(item.Name,100,y,0,2,0,cg,cb)
+                      cr = 255
+                      cg = 180
+                      cb = 0
+                      if item.ITM_BuyPrice>CVV("%CASH") then cg=0 end
+                      DarkText(item.ITM_BuyPrice.." cr",780,y,1,2,cr,cg,cb)
                       y = y + 32
                       end
                   if hover then
