@@ -60,8 +60,8 @@ tuts = {
     ["VAULT.Items"] = "Drag items from or to other characters\nor into or out of the vault.",
     ["VAULT.Vault"] = "\n\n",
     
-    ["STORE.Store"] = "",
-    ["STORE.Items"] = "",
+    ["STORE.Store"] = "\n\n",
+    ["STORE.Items"] = "\n\n",
     
     ["COMBAT.Status"] = "",
     ["COMBAT.Items"] = "Click any item with either left or right to use it,\nor click the status bar to cancel",
@@ -554,7 +554,8 @@ CSay("Loading store: "..storefile)
 local tempstore = jinc("Script/JINC/Shops/"..storefile..".lua")
 Store = { Name = tempstore.StoreName, Stock = {} }
 for i=1,10 do
-    if tempstore~="*Nothing*" then Store.Stock[#Store.Stock] = replace(tempstore["Stock"..i],".lua","") end
+    CSay(i..">"..tempstore["Stock"..i])
+    if tempstore["Stock"..i]~="*Nothing*" then Store.Stock[#Store.Stock+1] = replace(tempstore["Stock"..i],".lua","") end
     end
 end
 
