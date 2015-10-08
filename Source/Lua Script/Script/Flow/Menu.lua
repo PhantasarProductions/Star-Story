@@ -454,7 +454,11 @@ FeatureHandleArray = {
                              if not item.ITM_Sellable then
                                 mousetxt[returnto][2] = "You cannot sell this item"
                              else
-                                mousetxt[returnto][2] = "Sell for "..(item.ITM_SellPrice or "no").." credits"
+                                if item.ITM_SellPrice==1 then
+                                   mousetxt[returnto][2] = "Sell for 1 credit"
+                                else   
+                                   mousetxt[returnto][2] = "Sell for "..(item.ITM_SellPrice or "no").." credits"
+                                   end
                                 end
                              if mousehit(2) then SellItem(pchar,item,hoverdata.i) end
                              end   
