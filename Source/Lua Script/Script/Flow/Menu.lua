@@ -572,6 +572,14 @@ ClickArray = {
                    end
                 end
             end,
+   STORE  = function()
+            local ak
+            for ak=0,5 do
+                if ClickedChar(ak) then
+                   if ak==pcharn then ReturnItem() LAURA.FLOW("FIELD") else pcharn=ak; pchar=RPGChar.PartyTag(pcharn) end
+                   end
+                end
+            end,
    COMBAT = function()
             for ak=0,5 do
                 if ClickedChar(ak) then
