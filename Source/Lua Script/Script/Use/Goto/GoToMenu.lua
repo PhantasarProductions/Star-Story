@@ -34,6 +34,8 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
+
+
 function GoToMenu(ch,page)
 MS.LoadNew("MENU","Script/Flow/Menu.lua")
 ;({ ["string"] = function() MS.Run("MENU","PointCharByName",ch) end,
@@ -46,7 +48,8 @@ end
 function GoToVault()
 local ch = RPGChar.PartyTag(0)
 MS.LN_Run("MENU","Script/Flow/Menu.lua","PointChar",ch)
-MS.Run("MENU","SetReturnTo","VAULT","Items")
+MS.Run("MENU","SetReturnTo","VAULT")
+MS.Run("MENU","PointPage","Items")
 LAURA.Flow("MENU")
 end
 
@@ -54,7 +57,8 @@ end
 function GoToStore()
 local ch = RPGChar.PartyTag(0)
 MS.LN_Run("MENU","Script/Flow/Menu.lua","PointChar",ch)
-MS.Run("MENU","SetReturnTo","STORE","Store")
+MS.Run("MENU","SetReturnTo","STORE")
+MS.Run("MENU","PointPage","Store")
 LAURA.Flow("MENU")
 end
 
