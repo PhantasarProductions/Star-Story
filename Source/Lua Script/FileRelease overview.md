@@ -131,6 +131,7 @@
 1. SCRIPT/USE/ANYWAY/MUSICAVAILABLE.LUA (only available when you have the version WITH music)
 1. Script/Use/Anyway/Resistance names.lua
 1. Script/Use/Anyway/Sex.lua
+1. Script/Use/Anyway/SpendMoney.lua
 1. Script/Use/Anyway/TutorialInit.lua
 1. Script/Use/Anyway/WalkWait.lua
 1. Script/Use/Combat/CAction.lua
@@ -188,4 +189,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Thu 08 October 2015; 14:08:47 CET
+### Last updated: Thu 08 October 2015; 16:44:04 CET

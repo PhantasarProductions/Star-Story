@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.07
+version: 15.10.08
 ]]
 
 
@@ -84,6 +84,11 @@ Var.D("%AURINACREDITS",total)
 MapText("POEPAURINA")
 inc("%CASH",total)
 Var.Clear("%AURINAS")
+end
+
+function NPC_Merchant()
+MapText("MERCHANT")
+MINI("Stores are not yet present")
 end
 
 function Exit()
