@@ -165,6 +165,17 @@ DrawArray = {
                 if mousehit(1) and mx>x-16 and mx<x+16 and my>y-16 and my<y+16 then Feature[returnto] = v end 
                 end
             end,
+   STORE  = function()
+            local i,v,x,y
+            local mx,my = MouseCoords()
+            for i,v in ipairs(FeatureArray.STORE) do
+                if v==Feature[returnto] then Image.Color(0,180,255) else Image.Color(0,90,128) end
+                Image.Draw(FeaturePics[v],(i*64)+100,25)
+                y = 25
+                x = (i*64)+100
+                if mousehit(1) and mx>x-16 and mx<x+16 and my>y-16 and my<y+16 then Feature[returnto] = v end 
+                end
+            end,         
    COMBAT = function()
             end,
 }
