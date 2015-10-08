@@ -1,6 +1,6 @@
 --[[
   GoToMenu.lua
-  Version: 15.09.16
+  Version: 15.10.08
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -47,6 +47,14 @@ function GoToVault()
 local ch = RPGChar.PartyTag(0)
 MS.LN_Run("MENU","Script/Flow/Menu.lua","PointChar",ch)
 MS.Run("MENU","SetReturnTo","VAULT","Items")
+LAURA.Flow("MENU")
+end
+
+
+function GoToStore()
+local ch = RPGChar.PartyTag(0)
+MS.LN_Run("MENU","Script/Flow/Menu.lua","PointChar",ch)
+MS.Run("MENU","SetReturnTo","STORE","Store")
 LAURA.Flow("MENU")
 end
 

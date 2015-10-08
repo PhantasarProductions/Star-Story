@@ -88,7 +88,8 @@ end
 
 function NPC_Merchant()
 MapText("MERCHANT")
-MINI("Stores are not yet present")
+-- MINI("Stores are not yet present")
+GoToStore()
 end
 
 function Exit()

@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 15.10.04
+  Version: 15.10.08
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -39,7 +39,7 @@
 
 pchar = 0
 returnto = "ERROR"
-FeatureArray = {FIELD = { "Status" , "Items" , "Abilities", "Order" }, VAULT = { "Items", "Vault" } }
+FeatureArray = {FIELD = { "Status" , "Items" , "Abilities", "Order" }, VAULT = { "Items", "Vault" }, STORE = {"Store","Items"} }
 Feature = {}
 
 ABL_PowerUpColors = {
@@ -59,6 +59,9 @@ tuts = {
     
     ["VAULT.Items"] = "Drag items from or to other characters\nor into or out of the vault.",
     ["VAULT.Vault"] = "\n\n",
+    
+    ["STORE.Store"] = "",
+    ["STORE.Items"] = "",
     
     ["COMBAT.Status"] = "",
     ["COMBAT.Items"] = "Click any item with either left or right to use it,\nor click the status bar to cancel",
@@ -340,7 +343,7 @@ FeatureHandleArray = {
                   local temp
                   local hover,hoverdata
                   local item,cmbitem
-                  local mousetxt = { FIELD = {"Left = Pick up","Right = Use on "..RPGChar.GetName(pchar)},COMBAT={"Click to use"},VAULT={"Left = pickup"}}
+                  local mousetxt = { FIELD = {"Left = Pick up","Right = Use on "..RPGChar.GetName(pchar)},COMBAT={"Click to use"},VAULT={"Left = pickup"},STORE={"Left = Pickup","Right = Sell"}}
                   White()
                   for ak=1,InventorySockets do
                       -- Get some needed values
@@ -361,7 +364,7 @@ FeatureHandleArray = {
                       hover = mx>x-14 and mx<x+14 and my>y-14 and my<y+14
                       if hover then hoverdata = { i = ak, x = x, y = y} end
                       -- Field clicks
-                      if (returnto=="FIELD" or returnto=="VAULT") and hover and pchar~="Briggs" then -- Briggs will be without items as a guest character!
+                      if (returnto=="FIELD" or returnto=="VAULT" or returnto=="STORE") and hover and pchar~="Briggs" then -- Briggs will be without items as a guest character!
                          -- Move items
                          if mousehit(1) then
                             -- Grab an item
@@ -440,6 +443,14 @@ FeatureHandleArray = {
                          if returnto=="FIELD" and mousehit(2) then
                             UseItem(pchar,item,hoverdata.i) 
                             end      
+                         if returnto=="STORE" then 
+                            if not item.ITM_Sellable then
+                               mousetxt[returnto][2] = "You cannot sell this item"
+                            else
+                               mousetxt[returnto][2] = "Sell for "..Item.ITM_SellPrice.." credits"
+                               end
+                            if mousehit(2) then SellItem(pchar,item,hoverdata.i) end
+                            end   
                          end    
                   -- @IF *DEVELOPMENT
                   y = 20
@@ -449,6 +460,8 @@ FeatureHandleArray = {
                       end                
                   -- @FI    
                   end,
+      Store     = function()
+                  end,            
       Vault     = function()
                   local y = 15
                   local hover = nil
