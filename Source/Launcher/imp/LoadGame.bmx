@@ -21,7 +21,7 @@ Rem
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
 Version: 15.09.02
-End Rem
+End Rem ''
 Rem
 /*
 	Star Story - Load Game
@@ -106,8 +106,12 @@ Type TLoadGamePanel Extends tfpanelbase
 	?
 	CreateLabel "Users:",0,0,600,25,panel
 	Users = CreateListBox(0,25,600,75,Panel)
+	SetGadgetColor Users,0,30,40,1
+	SetGadgetColor Users,0,180,255,0
 	CreateLabel "Files:",0,100,600,25,panel
 	Files = CreateListBox(0,125,600,600,Panel)
+	SetGadgetColor Files,40,30,0,1
+	SetGadgetColor files,255,180,0,0
 	' Get the users
 	CreateDir Dirry(Save),2
 	GetUsers()

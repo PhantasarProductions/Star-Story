@@ -171,7 +171,7 @@ if mousehit(1) then
    for i,c in ipairs(Clickables) do
 	   if type(c)=='table' then obj=c.obj else obj=c end
 	   --Image.NoFont()
-	   CSay("#"..i.." Click: "..obj.." >> "..Maps.CoordsInObject(obj,mx,my)) -- Debug line!
+	   --CSay("#"..i.." Click: "..obj.." >> "..Maps.CoordsInObject(obj,mx,my)) -- Debug line!
 	    
        --[[
        ({['string'] = function() 
@@ -182,9 +182,10 @@ if mousehit(1) then
        -- CSay("Clicked in object: "..c.." ("..mx..","..my..") ==> "..Maps.CoordsInObject(c,mx,my))
        if Maps.CoordsInObject(obj,mx,my)==1 then
           if type(c)=='table' then
-            if c.spot then Actors.WalkToSpot(cplayer,c.spot) end
+			CSay("Request from table")  
+            if c.spot then Actors.WalkToSpot(cplayer,c.spot) CSay("Walking To Spot: "..c.spot) end
             if c.coords then Acotrs.WalkTo(cplayer,c.coods.x,c.coords.y) end
-            WalkArrival = c.arrival      
+            WalkArrival = c.arrival   ; CSay("Execute: "..WalkArrival)   
 			WalkArrivalArg = c.arrivalarg			
           elseif prefixed(c,"NPC_MT_") then
             Actors.WalkTo(cplayer,Maps.Obj.Obj(c).X,Maps.Obj.Obj(c).Y+32)
