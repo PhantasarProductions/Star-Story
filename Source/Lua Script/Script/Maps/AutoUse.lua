@@ -150,10 +150,13 @@ for ak=0,5 do
        hp.Have = hp.Maximum
        end
     if ch=="Crystal" and (not dontresetap) then -- Reload all ARMS
-	   CSay("Reloading Crystal's ARMS")
-       for arm in each(mysplit(RPGChar.PointsFields('Crystal'))) do
-		   CSay("arm = "..arm.." >> "..sval(prefixed(arm,"ARM.AMMO"))
-           if prefixed(arm,"ARM.AMMO") then RPGChar.Points(ch,arm).Have = RPGChar.Points(ch,arm).Maximum; CSay("= "..arm) end
+	   --CSay("Reloading Crystal's ARMS")
+       for arm in each(mysplit(RPGChar.PointsFields('Crystal'),";")) do
+		   --CSay("arm = "..arm.." >> "..sval(prefixed(arm,"ARM.AMMO")))
+           if prefixed(arm,"ARM.AMMO") then 
+			   RPGChar.Points(ch,arm).Have = RPGChar.Points(ch,arm).Maximum; 
+			   --CSay("= "..arm) 
+			   end
            end
        end   
     end
@@ -228,6 +231,7 @@ Actors.MoveToSpot("PLAYER","Trans.Spot."..tag)
      Time.Sleep(250)
      MS.Run("FIELD","SetUpFoes")
      MS.Run("FIELD","SetUpTreasure")
+	 RedoMapShow() 
      TelEffect(TEL_IN)
      GotoSave()
      end,
