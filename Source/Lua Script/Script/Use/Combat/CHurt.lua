@@ -106,11 +106,11 @@ end
 
 function Attack(ag,ai,act,pdata,ptg,pti)
 local chactor = FighterTag(ag,ai)
-local chtarget = FighterTag(act.TargetGroup,act.TargetIndividual)
 local data = pdata or {}
 local tg,ti = ptg,pti 
 CSay("tg = "..sval(tg).."; ti = "..sval(ti))
 if not(tg and ti) then tg,ti = TargetFromAct(act) end
+local chtarget = FighterTag(tg,ti)
 local atkstat = data.atk or "Strength"
 local defstat = data.def or "Defense"
 local modifier = data.mod or 1
