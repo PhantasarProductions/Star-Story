@@ -150,8 +150,10 @@ for ak=0,5 do
        hp.Have = hp.Maximum
        end
     if ch=="Crystal" and (not dontresetap) then -- Reload all ARMS
+	   CSay("Reloading Crystal's ARMS")
        for arm in each(mysplit(RPGChar.PointsFields('Crystal'))) do
-           if prefixed(arm,"ARM.AMMO") then RPGChar.Points(ch,arm).Have = RPGChar.Points(ch,arm).Maximum end
+		   CSay("arm = "..arm.." >> "..sval(prefixed(arm,"ARM.AMMO"))
+           if prefixed(arm,"ARM.AMMO") then RPGChar.Points(ch,arm).Have = RPGChar.Points(ch,arm).Maximum; CSay("= "..arm) end
            end
        end   
     end
@@ -273,7 +275,7 @@ ActivatedPads = {}
 for _,Pad in ipairs(ActivatedPadsList) do ActivatedPads[Pad] = true end
 local function puretag(tag) return replace(tag,"Trans.Spot.","") end
 local function dimnonactive(tag)
-      if not(ActivatedPads[upper(Maps.CodeName.."."..tag)] or CVV("&PAD.ACTIVE["..tag.."]") then
+      if not(ActivatedPads[upper(Maps.CodeName.."."..tag)] or Var.C("&PAD.ACTIVE["..tag.."]")=="TRUE") then
          -- CSay("Got tag: "..tag)
          Maps.Obj.Obj("Trans.Pad."..tag).TextureFile = "GFX/Textures/Teleporter Pad/Deactivated.png" 
          end
