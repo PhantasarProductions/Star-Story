@@ -138,13 +138,20 @@ end
 function ListClickables()
 local i,k
 if #Clickables==0 then Console.Write("No clickables on this map",255,100,0) end
-for i,k in ipairs(Clickables) do CSay(i..">"..k) end
+for i,k in ipairs(Clickables) do CSay(serialize("Click #"..i,k)) end
 end 
 
 function AddClickable(c)
 if tablecontains(Clickables,c) then CSay('Duplicate clickable definiation '..c); return end
+CSay(serialize("AddingClickable",c))
 table.insert(Clickables,c)
 end
+
+function AddClickableScript(c)
+  local f,e = loadstring(c)
+  if not f then Sys.Error("LoadString Error: "..e) end  
+  AddClickable(f())
+  end
 
 function RemoveClickable(c)
 local v,i,r
@@ -158,10 +165,14 @@ end
 function CheckClickables()
 local i,c
 local mx,my = TrueMouseCoords()
-local ret,ARMSpot
+local ret,ARMSpot,obj
 if not Clickables then return end
 if mousehit(1) then
    for i,c in ipairs(Clickables) do
+	   if type(c)=='table' then obj=c.obj else obj=c end
+	   --Image.NoFont()
+	   CSay("#"..i.." Click: "..obj.." >> "..Maps.CoordsInObject(obj,mx,my)) -- Debug line!
+	    
        --[[
        ({['string'] = function() 
                       end,
@@ -169,21 +180,29 @@ if mousehit(1) then
                      end})[type(cd)]()
          ]]                                
        -- CSay("Clicked in object: "..c.." ("..mx..","..my..") ==> "..Maps.CoordsInObject(c,mx,my))
-       if Maps.CoordsInObject(c,mx,my)==1 then
-          if prefixed(c,"NPC_MT_") then
+       if Maps.CoordsInObject(obj,mx,my)==1 then
+          if type(c)=='table' then
+            if c.spot then Actors.WalkToSpot(cplayer,c.spot) end
+            if c.coords then Acotrs.WalkTo(cplayer,c.coods.x,c.coords.y) end
+            WalkArrival = c.arrival      
+			WalkArrivalArg = c.arrivalarg			
+          elseif prefixed(c,"NPC_MT_") then
             Actors.WalkTo(cplayer,Maps.Obj.Obj(c).X,Maps.Obj.Obj(c).Y+32)
             WalkArrival = "NPC_MapText"
+			WalkArrivalArg = nil
             Var.D("$NPC_MAPTEXT",c)
             ret=true
           elseif prefixed(c,"NPC_") then
             if c=="NPC_MapText" then Sys.Error("Illegal NPC tag!") end
             Actors.WalkTo(cplayer,Maps.Obj.Obj(c).X,Maps.Obj.Obj(c).Y+32)
             WalkArrival = c
+			WalkArrivalArg = nil
             ret=true            
           elseif prefixed(c,"ARMCHST") then -- This block until the next "else" statement is specifically for Star Story.
               ARMSpot = replace(c,"ARMCHST","ARMSPOT")
               Actors.WalkToSpot(cplayer,ARMSpot)
               WalkArrival = "GRANT_ARM"
+			  WalkArrivalArg = nil  
               Var.D("$ARMSPOT",ARMSpot)
               CSay("Gimme that ARM at "..Maps.Obj.Obj(ARMSpot).x..","..Maps.Obj.Obj(ARMSpot).y)
               CSay(" = Arrival call: "..WalkArrival)
@@ -279,7 +298,7 @@ function WalkArrivalCheck()
 if WalkArrival and Actors.Walking(cplayer)==0 then
   -- @SELECT type(WalkArrival)
   -- @CASE "string"
-     MS.Run("MAP",WalkArrival)
+     MS.Run("MAP",WalkArrival,WalkArrivalArg)
      CSay("Arrival>MAP>"..WalkArrival) -- Debug line
   -- @CASE "function"
      WalkArrival()
