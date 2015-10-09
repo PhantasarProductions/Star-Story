@@ -144,7 +144,7 @@ end
 
 function SellItem(ch,item,socket)
 	SFX("Audio/SFX/Shopping/ChaChing.ogg")
-	RPGChar.DecStat("INVAMNT"..socket,1)
+	RPGChar.DecStat(ch,"INVAMNT"..socket,1)
 	inc("%CASH",item.ITM_SellPrice)
 end
 
