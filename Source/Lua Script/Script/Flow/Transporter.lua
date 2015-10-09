@@ -52,6 +52,15 @@ Transporters.Worlds[obj.DataGet("WORLD")] = Transporters.Worlds[obj.DataGet("WOR
 table.insert(Transporters.Worlds[obj.DataGet("WORLD")],{Location = obj.DataGet("LOCATION"), Node=node}) 
 end
 
+function TransferActivatedPads()
+local ret = "{ "
+for k,v in pairs(Transporters.Nodes) do 
+	if ret~="{ " then ret = ret .." , " end
+	ret = ret .. '"'..k..'"'
+    end
+Var.D("$RET",ret.." }")
+end
+
 function ActivateRemotePad(tag,mapcode,world,location)
 local node = upper(mapcode.."."..tag)
 CSay("Activating transporter: "..tag)

@@ -186,7 +186,8 @@ if mousehit(1) then
             if c.spot then Actors.WalkToSpot(cplayer,c.spot) CSay("Walking To Spot: "..c.spot) end
             if c.coords then Acotrs.WalkTo(cplayer,c.coods.x,c.coords.y) end
             WalkArrival = c.arrival   ; CSay("Execute: "..WalkArrival)   
-			WalkArrivalArg = c.arrivalarg			
+			WalkArrivalArg = c.arrivalarg		
+			ret = true
           elseif prefixed(c,"NPC_MT_") then
             Actors.WalkTo(cplayer,Maps.Obj.Obj(c).X,Maps.Obj.Obj(c).Y+32)
             WalkArrival = "NPC_MapText"
