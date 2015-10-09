@@ -119,6 +119,8 @@ else
 ChosenItem = {}   
 end
 
+
+
 function ItemEffect(ch,item,socket)
 	
 end
@@ -147,6 +149,17 @@ function SellItem(ch,item,socket)
 	RPGChar.DecStat(ch,"INVAMNT"..socket,1)
 	inc("%CASH",item.ITM_SellPrice)
 end
+
+function SellTaken()
+	local item
+	if ChosenItem.Taken then
+		item = ItemGet("ITM_"..ChosenItem.Item)
+		SFX("Audio/SFX/Shopping/ChaChing.ogg")
+		ChosenItem = {}
+		inc("%CASH",item.ITM_SellPrice)		
+	end	
+end
+
 
 
 
@@ -525,7 +538,17 @@ FeatureHandleArray = {
                               FitText(dl,mx+16,dy,255,180,100)
                               dy = dy + Image.TextHeight(dl) 
                               end                       
-                     end    
+                     end   
+				   if mousehit(1) then
+					if ChosenItem.Taken then
+						SellTaken()
+					elseif hover then
+						BuyHover(hover)
+						end
+					end   
+				   if mousehit(2) and hover then
+					BuyHover(hover,pchar)
+					end
                   end,            
       Vault     = function()
                   local y = 15
