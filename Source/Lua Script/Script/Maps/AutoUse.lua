@@ -181,7 +181,7 @@ end
 function ActivatePad(tag,transporter)
 --if ActivatedPads[tag] then return end
 if ActivatedPads[upper(Maps.CodeName.."."..tag)] then return end
-if transporter=="General" then MS.LN_Run("TRANS","Script/Flow/Transporter.lua","ActivatePad",tag) end 
+if transporter=="General" then MS.LN_Run("TRANS","Script/Flow/Transporter.lua","ActivatePad",tag) else Done("&PAD.ACTIVE["..tag.."]") end 
 Maps.Obj.Obj("Trans.Pad."..tag).TextureFile = "GFX/Textures/Teleporter Pad/"..transporter..".png" 
 ActivatedPads[tag] = true
 end
@@ -273,7 +273,7 @@ ActivatedPads = {}
 for _,Pad in ipairs(ActivatedPadsList) do ActivatedPads[Pad] = true end
 local function puretag(tag) return replace(tag,"Trans.Spot.","") end
 local function dimnonactive(tag)
-      if not ActivatedPads[upper(Maps.CodeName.."."..tag)] then
+      if not(ActivatedPads[upper(Maps.CodeName.."."..tag)] or CVV("&PAD.ACTIVE["..tag.."]") then
          -- CSay("Got tag: "..tag)
          Maps.Obj.Obj("Trans.Pad."..tag).TextureFile = "GFX/Textures/Teleporter Pad/Deactivated.png" 
          end
