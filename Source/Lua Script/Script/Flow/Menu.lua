@@ -119,7 +119,8 @@ else
 ChosenItem = {}   
 end
 
-function ItemEffect(ch,item)
+function ItemEffect(ch,item,socket)
+	
 end
 
 function UseItem(pch,item,socket)
@@ -140,6 +141,14 @@ local ch = pch or pchar
                   end                                       
 })[item.ItemType] or function() Sys.Error("Unknown Item Type: "..sval(item.ItemType)) end)(ch,item)
 end
+
+function SellItem(ch,item,socket)
+	SFX("Audio/SFX/Shopping/ChaChing.ogg")
+	RPGChar.DecStat("INVAMNT"..socket,1)
+	inc("%CASH",item.ITM_SellPrice)
+end
+
+
 
 DrawArray = {
    ERROR  = function() Sys.Error("Draw called in an unknown environment","RT,"..returnto) end,
