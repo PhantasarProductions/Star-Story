@@ -540,7 +540,7 @@ FeatureHandleArray = {
                               end                       
                      end   
 				   if mousehit(1) then
-					if ChosenItem.Taken then
+					if ChosenItem.Taken and my>116 then
 						SellTaken()
 					elseif hover then
 						BuyHover(hover)
