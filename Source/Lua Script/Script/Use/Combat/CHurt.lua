@@ -109,6 +109,8 @@ local chactor = FighterTag(ag,ai)
 local chtarget = FighterTag(act.TargetGroup,act.TargetIndividual)
 local data = pdata or {}
 local tg,ti = ptg,pti 
+CSay("tg = "..sval(tg).."; ti = "..sval(ti))
+if not(tg and ti) then tg,ti = TargetFromAct(act) end
 local atkstat = data.atk or "Strength"
 local defstat = data.def or "Defense"
 local modifier = data.mod or 1
@@ -118,8 +120,6 @@ local atk = RPGStat.Stat(chactor,"END_"..atkstat)
 local def = RPGStat.Stat(chtarget,"END_"..defstat)                              
 local damage = atk + rand(0,round(atk*.75))
 local defense = def + rand(0,round(def*.25))
-CSay("tg = "..sval(tg).."; ti = "..sval(ti))
-if not(tg and ti) then tg,ti = TargetFromAct(act) end
 if data.ignoredefense then defense=0 end
 local totaldamage = damage - defense
 if totaldamage<1 then totaldamage=1 end
