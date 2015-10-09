@@ -160,6 +160,20 @@ function SellTaken()
 	end	
 end
 
+function BuyHover(item,icode,char)
+	local ok
+	if not char then
+		ChosenItem = {Taken=true,item=icode}
+		ok = true
+	else
+		ok = ItemGive("ITM_"..icode,char)
+	end	
+ok = ok and CVV("%CASH")>item.ITM_BuyPrice
+if ok then
+	dec("%CASH",item.ITM_BuyPrice)
+	SFX("Audio/SFX/Shopping/ChaChing.ogg")
+	end
+end
 
 
 
@@ -502,7 +516,7 @@ FeatureHandleArray = {
                   local mx,my = MouseCoords()
                   local item,itemcode
                   local cg,cb,cr
-                  local hover
+                  local hover,hoveritemcode
                   local dy = my + 16
                   local dx = mx + 16
                   DarkText(Store.Name,400,100,2,2,255,0,0)
@@ -516,6 +530,7 @@ FeatureHandleArray = {
                       cb = 180
                       if my>y-16 and my<y+16 then 
                          hover = item
+						  hoveritemcode = replace(itemcode,"ITM_","")
                          cg = 180
                          cb = 255
                          end
@@ -543,11 +558,11 @@ FeatureHandleArray = {
 					if ChosenItem.Taken and my>116 then
 						SellTaken()
 					elseif hover then
-						BuyHover(hover)
+						BuyHover(hover,hoveritemcode)
 						end
 					end   
 				   if mousehit(2) and hover then
-					BuyHover(hover,pchar)
+					BuyHover(hover,hoveritemcode,pchar)
 					end
                   end,            
       Vault     = function()
