@@ -163,7 +163,7 @@ end
 function BuyHover(item,icode,char)
 	local ok
 	if not char then
-		ChosenItem = {Taken=true,item=icode}
+		ChosenItem = {Taken=true,Item=icode}
 		ok = true
 	else
 		ok = ItemGive("ITM_"..icode,char)
