@@ -345,7 +345,17 @@ end
 
 function JACK()
 Toggle("&CHEAT.JACK")
-CSay("Jack the Ripper mode is now: "..Var.C("&CHEAT.GOD"))
+CSay("Jack the Ripper mode is now: "..Var.C("&CHEAT.JACK"))
+end
+
+function MERILIN()
+Toggle("&CHEAT.MERLIN")
+CSay("Merlin mode is now: "..Var.C("&CHEAT.MERLIN"))
+end
+
+function RAMBO()
+Toggle("&CHEAT.RAMBO")
+CSay("Merlin mode is now: "..Var.C("&CHEAT.RAMBO"))
 end
 
 function COMBATMESSAGE(...)

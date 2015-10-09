@@ -73,4 +73,5 @@ function EnemyInput(pos,tag)
 -- Fighters.Foe[pos].Gauge = 0 -- Original line to prevent crashes when the enemies were still in "IDLE" mode as I was first testing the player moves.
 local myfoe=Fighters.Foe[pos];
 (Foe_AI[myfoe.AI] or function() Sys.Error("Unknown enemy AI setup: "..sval(myfoe.AI)) end)(pos)
+Fighters.Foe[pos].Act = Act.Foe[pos]
 end

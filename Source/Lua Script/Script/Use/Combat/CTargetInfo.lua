@@ -33,7 +33,7 @@
   2. Altered source versions must be plainly marked as such, and must not be
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
-]]
+]] --
 --[[
 /* 
   Combat - Target Info
@@ -149,10 +149,11 @@ if skill==3 then return end -- In the hard mode, no more information than this :
 Image.NoFont()
 Black()
 Image.Rect(cx,cy,cw,Image.TextHeight("?"))
-local show = true
+local show = skill==1 or group=="Hero" or Bestiary[upper(data.File)]
 local hp  = RPGChar.Points(tag,"HP").Have
 local hpm = RPGChar.Points(tag,"HP").Maximum
 local r,g,b
+local TarData
 if show then
    g = round((hp/hpm)*255)
    b = 0
@@ -160,6 +161,50 @@ if show then
    Image.Color(r,g,b)
    Image.Rect(cx+1,cy+1,((hp/hpm)*(cw-2)),Image.TextHeight("?")-2)
 else
-   Image.DText("?",cx+(cw/2),cy,2,0)   
-   end
+   DarkText("?",cx+(cw/2),cy,2,0,rand(0,255),rand(0,255),rand(0,255)   )
 end
+cy = cy + Image.TextHeight("?") + 3
+
+if data.Gauge==10000 then	
+	DarkText(({Foe="Thinking...",Hero="Enter Command..."})[group],cx,cy,0,0,255,180,0)
+elseif data.Gauge>10000 then
+	-- Sys.Error(serialize('Data',Data));  -- Debug line
+	(({
+				ATK = function() DarkText("Attack",cx,cy,0,0,255,0,0) end,
+				FAI = function() 
+					  local i = data.Act.Item
+					  DarkText(i.Name,cx,cy,0,0,0,180,255)
+					end,  
+				ABL = function() 
+					  local i = data.Act.Item
+					  DarkText(i.Name,cx,cy,0,0,0,0,255)
+					end,  
+				ARM = function() 
+					  local i = data.Act.Item
+					  DarkText(i.Name,cx,cy,0,0,0,255,255)
+					end,  
+				ITM = function() 
+					  local i = data.Act.Item
+					  DarkText(i.Name,cx,cy,0,0,0,180,0)
+				  end,
+				LRN = function()
+					  DarkText("Learning...",0,0,255,80,0)
+					end,  
+				GRD = function() DarkText("Guard",cx,cy,0,0,180,180,180) end
+				})[data.Act.Act])()
+	if data.Act.TargetGroup and data.Act.TargetIndividual then
+		TarData = Fighters[ data.Act.TargetGroup ][ data.Act.TargetIndividual ];
+		(({
+					Hero = function()
+						White()
+						Image.Show("COMBAT.GAUGE.CHAR."..TarData.Tag,cx+cw,cy+Image.TextHeight(nm))
+					   end,
+					Foe = function()
+						local letter = left(TarData.Letter or "?",1)
+						DarkText(letter,cx+cw,cy,1,0)
+					   end
+		})[data.Act.TargetGroup])()
+	end	
+end	
+
+end -- func
