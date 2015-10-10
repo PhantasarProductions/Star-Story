@@ -12,6 +12,13 @@ end
 NPC_Astrilopup1 = Astrilopups
 NPC_Astrilopup2 = Astrilopups
 
+function NPC_Yirl()
+	if not CVV("&DONE.STORK") then
+		MapText("YIRL_NOGO")
+		return
+	end
+end
+
 
 
 function GALE_OnLoad()
