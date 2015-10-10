@@ -25,6 +25,17 @@ function ByeBye()
 	TurnPlayer("South")
 end
 
+function NPC_Stork()
+	if Done("&DONE.STORK") then
+		MapText("STORK_AGAIN")
+	else
+		PartyPop("Stork")
+		MapText("STORK")
+		PartyUnPope()
+	end
+end
+
+
 
 function GALE_OnLoad()
 	Music("Location_Pub_Jungle/1 - TDCi - Don't Talk Too Much.ogg")
