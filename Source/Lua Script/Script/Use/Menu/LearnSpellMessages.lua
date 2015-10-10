@@ -37,9 +37,9 @@
 function needkills(name)
 local need = CVV("%KILLS.NEED") - CVV("%KILLS.DONE")
 if CVV("%KILLS.NEED")<=0 then return "" end
-if need==0 then return "Attack any enemy while "..name.." is on front" end
+-- if need==0 then return "Attack any enemy while "..name.." is on front" end
 if RPGChar.CountList("UniWendicka","LEARN")>0 then return "Attack any enemy" end
-return "Perform "..need.." kills"
+return "Perform "..need.." kills with "..name.." on the front row"
 end
 
 
@@ -65,7 +65,7 @@ learnspellmessages = {
                     end,
       Foxy        = function() return "???" end,
       Xenobi      = function()              
-                    local need = CVV("%MONEY.NEED") - CVV("%MONEY.DONE")
+                    local need = CVV("%XENOBI.NEED") - CVV("%MONEY.DONE")
                     if CVV("%XENOBI.NEED")==0 then return "" end
                     if need<=0 then return "Attack any enemy" end
                     return "Gain "..need.." levels to learn a new spell"

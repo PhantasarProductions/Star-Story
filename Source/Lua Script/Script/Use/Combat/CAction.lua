@@ -252,8 +252,10 @@ local pu,puu,r
 local pufullnames = { INSTANT = "Instant Execution", CANCEL = "Cancel move", DBLSPEED = "Double speed", DBLPWR="Double Power",APCUT="Half AP Cost" }
 local APCost = act.Item.ABL_AP
 if RPGChar.ListHas(ch,"ABL_POWERUP",ablshort..".APCUT")~=0 then APCost = math.ceil(APCost/2) end
-if ap.Have<APCost then MINI("Action cancelled",255,0,0); MINI(RPGChar.GetName(ch).." does not have enough AP!",255,180,0) return end
-ap.Dec(APCost)  
+if not CVV("&CHEAT.MERLIN") then
+   if ap.Have<APCost then MINI("Action cancelled",255,0,0); MINI(RPGChar.GetName(ch).." does not have enough AP!",255,180,0) return end
+   ap.Dec(APCost)  
+   end        
 act.EAI = true
 (XCharAbility[ch] or function() end)()
 ActionFuncs.EAI(ag,ai,act)
@@ -288,8 +290,10 @@ if ag=="Foe" then -- Foes should use "FAI" in stead.
 local ablshort = right(act.ItemCode,len(act.ItemCode)-4)   
 local ch = FighterTag(ag,ai)   
 local ap = RPGChar.Points(ch,"ARM.AMMO."..ablshort)
-if ap.Have<1 then MINI("Action cancelled",255,0,0); MINI(RPGChar.GetName(ch).."'s ARM is out of ammo!",255,180,0) return end
-ap.Dec(1)
+if not CVV("&CHEAT.RAMBO") then
+	if ap.Have<1 then MINI("Action cancelled",255,0,0); MINI(RPGChar.GetName(ch).."'s ARM is out of ammo!",255,180,0) return end
+	ap.Dec(1)
+	end
 act.EAI = true
 (XCharAbility[ch] or function() end)()
 ActionFuncs.EAI(ag,ai,act)

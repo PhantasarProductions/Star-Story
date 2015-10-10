@@ -95,6 +95,7 @@
 1. Script/Maps/Excalibur_Sickbay.lua
 1. Script/Maps/Excalibur_UnderAttack.lua
 1. Script/Maps/Hawk.lua
+1. Script/Maps/LostPlanet_BarInside.lua
 1. Script/Maps/LostPlanet_Bonus_Dark_Caves_of_Shilington.lua
 1. Script/Maps/LostPlanet_GrassJungle.lua
 1. Script/Maps/LostPlanet_GrassJungle_2.lua
@@ -189,4 +190,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Sat 10 October 2015; 01:45:23 CET
+### Last updated: Sat 10 October 2015; 15:55:40 CET

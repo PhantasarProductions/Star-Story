@@ -98,6 +98,16 @@ SpawnPlayer("Einde")
 TurnPlayer("South")
 end
 
+function CLICK_ARRIVAL_EnterPub()
+	if CVV("&DONE.YIRLJOIN") then
+		MapText("NO_ENTER")
+	else
+		LoadMap("LOSTPLANET_BARINSIDE")
+		SpawnPlayer("Entrance")
+	end	
+end
+
+
 function GALE_OnLoad()
 Music("Scenario/Dream Culture.ogg")
 SetScrollBoundaries(1,1,1,384)
