@@ -19,9 +19,15 @@ function NPC_Yirl()
 	end
 end
 
+function ByeBye()
+	LoadMap("LostPlanet_Pub_Outside")
+	SpawnPlayer("SPOT_EnterPub")
+	TurnPlayer("South")
+end
 
 
 function GALE_OnLoad()
 	Music("Location_Pub_Jungle/1 - TDCi - Don't Talk Too Much.ogg")
 	SetScrollBoundaries(0,0,0,0)
+	ZA_Enter("Exit",ByeBye)	
 end
