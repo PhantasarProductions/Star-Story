@@ -1,6 +1,6 @@
 --[[
   CHurt.lua
-  Version: 15.10.03
+  Version: 15.10.10
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
