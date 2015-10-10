@@ -36,7 +36,7 @@ function NPC_Stork()
 end
 
 function NPC_Bladeh()
-	if GetActive("Wendicka") then
+	if GetActive()=="Wendicka" then
 		MapText("ALIEN_WENDICKA")
 	else
 		MapText("ALIEN")
