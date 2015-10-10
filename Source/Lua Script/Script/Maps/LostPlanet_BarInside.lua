@@ -35,6 +35,14 @@ function NPC_Stork()
 	end
 end
 
+function NPC_Bladeh()
+	if GetActive("Wendicka") then
+		MapText("ALIEN_WENDICKA")
+	else
+		MapText("ALIEN")
+	end
+end
+
 
 
 function GALE_OnLoad()
