@@ -31,7 +31,7 @@ function NPC_Stork()
 	else
 		PartyPop("Stork")
 		MapText("STORK")
-		PartyUnPope()
+		PartyUnPop()
 	end
 end
 
