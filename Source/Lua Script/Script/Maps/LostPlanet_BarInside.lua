@@ -56,7 +56,7 @@ function Fight()
 		DrawScreen()
 		White()
 		if #FightTable==0 or rand(1,10)==1 then FightTable[#FightTable+1] = { x=rand(30,770), y = rand(30,570), pic=rand(1,5) } end
-		if rand(1,50)=1 then table.remove(FightTable,1) end
+		if rand(1,50)==1 then table.remove(FightTable,1) end
 		for f in each(FightTable) do Image.Show(FightPics[f.pic],f.x,f.y) end
 		if alpha>0 then
 			Black()
