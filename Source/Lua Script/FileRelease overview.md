@@ -70,6 +70,7 @@
 1. Script/JINC/IAA/ITM_BANDAGE.lua
 1. Script/JINC/IAA/ITM_BLUBAFLOWER.lua
 1. Script/JINC/IAA/ITM_EQP_EMERALD.lua
+1. Script/JINC/IAA/ITM_FISTAIDKIT.lua
 1. Script/JINC/IAA/ITM_GUBAFLOWER.lua
 1. Script/JINC/IAA/ITM_HEALINGCAPSULE.lua
 1. Script/JINC/IAA/ITM_KEY_YAQIRPA.lua
@@ -79,11 +80,13 @@
 1. Script/JINC/InitChar/Briggs.lua
 1. Script/JINC/InitChar/Crystal.lua
 1. Script/JINC/InitChar/ExHuRU.lua
+1. Script/JINC/InitChar/Foxy.lua
 1. Script/JINC/InitChar/Share/Crystal.lua
 1. Script/JINC/InitChar/Share/Wendicka.lua
 1. Script/JINC/InitChar/UniCrystal.lua
 1. Script/JINC/InitChar/UniWendicka.lua
 1. Script/JINC/InitChar/Wendicka.lua
+1. Script/JINC/InitChar/Yirl.lua
 1. Script/JINC/Shops/LOSTPLANET_BAR_ITEMS.lua
 1. Script/Maps/AutoUse.lsv
 1. Script/Maps/AutoUse.lua
@@ -190,4 +193,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Sun 11 October 2015; 13:13:05 CET
+### Last updated: Mon 12 October 2015; 01:02:17 CET

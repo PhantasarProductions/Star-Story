@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.11
+version: 15.10.12
 ]]
 
 
@@ -81,6 +81,7 @@ function NPC_Yirl()
 	PartyPop("Yirl")
 	MapText("YIRL")
 	Fight()
+	Party("Wendicka","Crystal","ExHuRU","Foxy")
 	Sys.Crash("The rest is not yet scripted. Be back later!")
 end
 

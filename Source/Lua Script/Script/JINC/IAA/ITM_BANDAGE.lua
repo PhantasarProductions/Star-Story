@@ -15,7 +15,7 @@ not longer than 70 years ago, you can deem this file
 with basically comes down to the same lack of
 restriction the public domain offers. (YAY!)
 *********************************************************** 
-Version 15.10.08
+Version 15.10.11
 ]]
 ret = {
 	["ActSpeed"] = 200,

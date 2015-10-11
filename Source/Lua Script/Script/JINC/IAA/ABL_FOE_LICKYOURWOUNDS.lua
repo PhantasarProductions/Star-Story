@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_LICKYOURWOUNDS.lua
-  Version: 15.10.08
+  Version: 15.10.11
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
