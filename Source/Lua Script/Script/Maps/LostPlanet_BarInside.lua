@@ -49,7 +49,7 @@ function Fight()
 	local FightPics = {}
 	for i=1,5 do 
 		FightPics[i] = Image.Load("GFX/Scenario/Fight/"..i..".png") 
-		Image.HotCenter(FightPics[i]
+		Image.HotCenter(FightPics[i])
 	end	
 	local FightTable = {}
 	for alpha=-200,100 do
