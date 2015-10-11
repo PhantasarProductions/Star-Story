@@ -60,7 +60,7 @@ function Fight()
 		for f in each(FightTable) do Image.Show(FightPics[f.pic],f.x,f.y) end
 		if alpha>0 then
 			Black()
-			Image.AlphaPC(alpha)
+			Image.SetAlphaPC(alpha)
 			Image.Rect(0,0,800,600)
 		end
 		Flip()
