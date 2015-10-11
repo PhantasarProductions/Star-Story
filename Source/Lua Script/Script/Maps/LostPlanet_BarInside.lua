@@ -45,6 +45,31 @@ function Astrilopups()
 	end	
 end
 
+function Fight()
+	local FightPics = {}
+	for i=1,5 do 
+		FightPics[i] = Image.Load("GFX/Scenario/Fight/"..i..".png") 
+		Image.HotCenter(FightPics[i]
+	end	
+	local FightTable = {}
+	for alpha=-200,100 do
+		DrawScreen()
+		White()
+		if #FightTable==0 or rand(1,10)==1 then FightTable[#FightTable+1] = { x=rand(30,770), y = rand(30,570), pic=rand(1,5) } end
+		if rand(1,50)=1 then table.remove(FightTable,1) end
+		for f in each(FightTable) do Image.Show(FightPics[f.pic],f.x,f.y) end
+		if alpha>0 then
+			Black()
+			Image.AlphaPC(alpha)
+			Image.Rect(0,0,800,600)
+		end
+		Flip()
+	end	
+	for i=1,5 do Image.Free(FightPics[i]) end
+end
+
+	
+
 NPC_Astrilopup1 = Astrilopups
 NPC_Astrilopup2 = Astrilopups
 
@@ -55,6 +80,7 @@ function NPC_Yirl()
 	end
 	PartyPop("Yirl")
 	MapText("YIRL")
+	Fight()
 	Sys.Crash("The rest is not yet scripted. Be back later!")
 end
 
