@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.10
+version: 15.10.11
 ]]
 
 
@@ -53,6 +53,9 @@ function NPC_Yirl()
 		MapText("YIRL_NOGO")
 		return
 	end
+	PartyPop("Yirl")
+	MapText("YIRL")
+	Sys.Crash("The rest is not yet scripted. Be back later!")
 end
 
 function ByeBye()

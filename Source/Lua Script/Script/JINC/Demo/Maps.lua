@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.10
+version: 15.10.11
 ]]
 ret = {
 	"EXCALIBUR_HOME",
@@ -54,6 +54,7 @@ ret = {
 	"LOSTPLANET_BONUS_DARK_CAVES_OF_SHILINGTON",
 	"LOSTPLANET_GRASSJUNGLE_3",
 	"LOSTPLANET_PUB_OUTSIDE",
-	"LOSTPLANET_BARINSIDE"}
+	"LOSTPLANET_BARINSIDE",
+	"TEST CHANGED NOT FOR KTHURA"}
 
 return ret
