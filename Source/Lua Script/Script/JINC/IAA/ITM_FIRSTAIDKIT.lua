@@ -1,5 +1,5 @@
 --[[
-  ITM_ANTIDOTE.lua
+  ITM_FIRSTAIDKIT.lua
   Version: 15.10.13
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,21 +35,20 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ActSpeed"] = 250,
+	["ActSpeed"] = 100,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
-	["CureDisease"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Cures \"Poison\"",
+	["Description"] = "Heals 400 HP",
+	["Healing"] = 400,
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 50,
-	["ITM_SellPrice"] = 25,
+	["ITM_BuyPrice"] = 500,
+	["ITM_SellPrice"] = 175,
 	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/Green_tube.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Antidote",
+	["Name"] = "First Aid Kit",
 	["SpellAni_Reference"] = "SingleHeal",
-	["Target"] = "1A",
+	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}
 
