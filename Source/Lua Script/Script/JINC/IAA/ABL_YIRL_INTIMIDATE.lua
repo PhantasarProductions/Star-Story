@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  Foxy.lua
+  ABL_YIRL_INTIMIDATE.lua
   (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
@@ -34,15 +34,27 @@
  
 version: 15.10.13
 ]]
-skill = Sys.Val(Var.C("%SKILL"))
-RPGChar.SetData("Foxy","INVITEM1","HEALINGCAPSULE")
-RPGStat.SetStat("Foxy","INVAMNT1",3)
-RPGChar.SetData("Foxy","INVITEM2","FIRSTAIDKIT")
-RPGStat.SetStat("Foxy","INVAMNT2",7)
-RPGChar.SetData("Foxy","INVITEM2","ANTIDOTE")
-RPGStat.SetStat("Foxy","INVAMNT2",8)
-RPGChar.DefStat("Foxy","AMMO_BASE",6)
-RPGChar.DefStat("Foxy","Level",30/skill)
-RPGStat.AddList("Foxy","ABL","FOXY_MULTISTAB")
-RPGStat.AddList("Foxy","ABL","FOXY_PICKPOCKET")
-Console.Write("Let's welcome Foxy!",0,255,0)
+ret = {
+	["ABL_AP"] = 10,
+	["ABL_APCut"] = 20000,
+	["ABL_Instant"] = 1000,
+	["ABL_Pose"] = "Cast",
+	["ABL_Speed"] = 400,
+	["ActSpeed"] = 250,
+	["AttackElement"] = "Non-Elemental",
+	["AttackStat"] = "Strength",
+	["DefenseStat"] = "Defense",
+	["Description"] = "Cancel enemy move",
+	["HealingType"] = "Absolute",
+	["Icon"] = "GFX/Abilities/Fist.png",
+	["ItemType"] = "Consumable",
+	["Name"] = "Intimidate",
+	["ScriptEffect_Reference"] = "Cancel",
+	["Target"] = "1F",
+	["UseCombat"] = true,
+	["UseField"] = true}
+
+return ret
+
+-- This file is an automatically generated file!
+

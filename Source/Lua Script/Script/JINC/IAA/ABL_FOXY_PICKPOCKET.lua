@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  Foxy.lua
+  ABL_FOXY_PICKPOCKET.lua
   (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
@@ -34,15 +34,20 @@
  
 version: 15.10.13
 ]]
-skill = Sys.Val(Var.C("%SKILL"))
-RPGChar.SetData("Foxy","INVITEM1","HEALINGCAPSULE")
-RPGStat.SetStat("Foxy","INVAMNT1",3)
-RPGChar.SetData("Foxy","INVITEM2","FIRSTAIDKIT")
-RPGStat.SetStat("Foxy","INVAMNT2",7)
-RPGChar.SetData("Foxy","INVITEM2","ANTIDOTE")
-RPGStat.SetStat("Foxy","INVAMNT2",8)
-RPGChar.DefStat("Foxy","AMMO_BASE",6)
-RPGChar.DefStat("Foxy","Level",30/skill)
-RPGStat.AddList("Foxy","ABL","FOXY_MULTISTAB")
-RPGStat.AddList("Foxy","ABL","FOXY_PICKPOCKET")
-Console.Write("Let's welcome Foxy!",0,255,0)
+ret = {
+	["ABL_AP"] = ,
+	["ABL_Pose"] = "Cast",
+	["ActSpeed"] = 250,
+	["AttackElement"] = "Non-Elemental",
+	["AttackStat"] = "Strength",
+	["DefenseStat"] = "Defense",
+	["HealingType"] = "Absolute",
+	["ItemType"] = "Consumable",
+	["Target"] = "1F",
+	["UseCombat"] = true,
+	["UseField"] = true}
+
+return ret
+
+-- This file is an automatically generated file!
+

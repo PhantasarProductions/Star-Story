@@ -1,5 +1,5 @@
 --[[
-  Yirl.lua
+  ABL_FOXY_MULTISTAB.lua
   Version: 15.10.13
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -34,11 +34,29 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-RPGChar.SetData("Yirl","INVITEM1","HEALINGCAPSULE")
-RPGStat.SetStat("Yirl","INVAMNT1",5)
-RPGChar.SetData("Yirl","INVITEM2","FIRSTAIDKIT")
-RPGStat.SetStat("Yirl","INVAMNT2",1)
-RPGChar.DefStat("Yirl","AMMO_BASE",6)
-RPGChar.DefStat("Yirl","Level",RPGChar.Stat("Wendicka","Level")+5)
-RPGStat.AddList("Yirl","ABL","Yirl_Intimidate")
-Console.Write("Let's welcome Yirl!",0,255,0)
+ret = {
+	["ABL_AP"] = 25,
+	["ABL_APCut"] = 15000,
+	["ABL_Cancel"] = 100,
+	["ABL_DblPower"] = 50000,
+	["ABL_Instant"] = 1500,
+	["ABL_Pose"] = "Attack",
+	["ABL_Speed"] = 500,
+	["ActSpeed"] = 250,
+	["AttackElement"] = "Non-Elemental",
+	["AttackPower"] = 100,
+	["AttackStat"] = "Strength",
+	["DefenseStat"] = "Defense",
+	["Description"] = "Quick attack on multiple targets",
+	["HealingType"] = "Absolute",
+	["Icon"] = "GFX/Inventory/Dagger.png",
+	["ItemType"] = "Consumable",
+	["Name"] = "Multi-stab",
+	["Target"] = "1F",
+	["UseCombat"] = true,
+	["UseField"] = true}
+
+return ret
+
+-- This file is an automatically generated file!
+
