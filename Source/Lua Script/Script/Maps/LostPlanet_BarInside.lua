@@ -85,6 +85,7 @@ function NPC_Yirl()
 	LoadMap("LostPlanet_Dungeon_Cell")
 	SpawnPlayer("Start")
 	SetActive("Wendicka")
+	Actors.ChoosePic("PLAYER","Wendicka.South")
 	MapText("CAPTURED")
 	for i=0,100 do
 		Maps.Obj.Obj("KijkGat").Alpha = Maps.Obj.Obj("KijkGat").Alpha - 0.01
@@ -98,7 +99,7 @@ function NPC_Yirl()
 		if ak~=6 then KickReggie(({"West","East"})[rand(1,2)],false) end
 	end
 	Done("&DONE.YIRLJOIN")
-	for c in each("Crystal","ExHuRU","Yirl","Foxy") do Maps.Obj.Kill(c,1) end
+	for c in each({"Crystal","ExHuRU","Yirl","Foxy"}) do Maps.Obj.Kill(c,1) end
 	Actors.Actor("PLAYER").y = Actors.Actor("PLAYER").y - 32
 	Maps.Remap()
 end
