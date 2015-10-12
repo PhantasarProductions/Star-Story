@@ -32,8 +32,9 @@
   
  **********************************************
  
-version: 15.10.12
+version: 15.10.13
 ]]
+skill = Sys.Val(Var.C("%SKILL"))
 RPGChar.SetData("Foxy","INVITEM1","HEALINGCAPSULE")
 RPGStat.SetStat("Foxy","INVAMNT1",3)
 RPGChar.SetData("Foxy","INVITEM2","FIRSTAIDKIT")
