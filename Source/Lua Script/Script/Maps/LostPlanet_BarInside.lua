@@ -84,6 +84,7 @@ function NPC_Yirl()
 	Party("Wendicka","Crystal","ExHuRU","Foxy")
 	LoadMap("LostPlanet_Dungeon_Cell")
 	SpawnPlayer("Start")
+	SetActive("Wendicka")
 	MapText("CAPTURED")
 	for i=0,100 do
 		Maps.Obj.Obj("KijkGat").Alpha = Maps.Obj.Obj("KijkGat").Alpha - 0.01
@@ -93,7 +94,7 @@ function NPC_Yirl()
 	Maps.Obj.Obj("KijkGat").Visible = 0
 	Maps.PermaWrite('Maps.Obj.Obj("KijkGat").Visible=0')
 	for ak=2,6 do
-		MapText("CAPTURE_"..ak)
+		MapText("CAPTURED_"..ak)
 		if ak~=6 then KickReggie(({"West","East"})[rand(1,2)],false) end
 	end
 	Done("&DONE.YIRLJOIN")
