@@ -81,11 +81,11 @@ function NPC_Yirl()
 	PartyPop("Yirl")
 	MapText("YIRL")
 	Fight()
-	Party("Wendicka","Crystal","ExHuRU","Foxy")
+	Party("Wendicka","Crystal","ExHuRU","Yirl","Foxy")
 	LoadMap("LostPlanet_Dungeon_Cell")
 	SpawnPlayer("Start")
 	SetActive("Wendicka")
-	Actors.ChoosePic("PLAYER","Wendicka.South")
+	Actors.ChoosePic("PLAYER","WENDICKA.SOUTH")
 	MapText("CAPTURED")
 	for i=0,100 do
 		Maps.Obj.Obj("KijkGat").Alpha = Maps.Obj.Obj("KijkGat").Alpha - 0.01
