@@ -38,5 +38,5 @@ version: 15.10.13
 
 function GALE_OnLoad()
 	SetScrollBoundaries(-32,0,-32,0)
-	Music("Prisoner Of War.ogg")
+	Music("Dungeon/Prisoner Of War.ogg")
 end
