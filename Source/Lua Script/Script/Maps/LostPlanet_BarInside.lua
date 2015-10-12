@@ -98,6 +98,9 @@ function NPC_Yirl()
 		if ak~=6 then KickReggie(({"West","East"})[rand(1,2)],false) end
 	end
 	Done("&DONE.YIRLJOIN")
+	for c in each("Crystal","ExHuRU","Yirl","Foxy") do Maps.Obj.Kill(c,1) end
+	Actors.Actor("PLAYER").y = Actors.Actor("PLAYER").y - 32
+	Maps.Remap()
 end
 
 function ByeBye()
