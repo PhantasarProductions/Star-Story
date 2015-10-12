@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 15.10.10
+  version: 15.10.13
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -346,3 +346,18 @@ function SecretDungeon()
 if Done("&ANNOUNCEDSECRET."..upper(Maps.CodeName)) then return end
 SerialBoxText("SECRETDUNGEON","SECRETDUNGEON","BOXTEXT.KTHURA")
 end
+
+function KickReggie(direction,foxy)
+	-- Turn Foxy if possible
+	if foxy~=false then
+		Actors.ChoosePic(foxy or "PLAYER","FOXY."..direction)
+	end
+	-- Make Reggie fly
+	-- Cuckoo
+	SFX("Audio/SFX/Cuckoo-Clock-Sound.ogg")
+	Time.Sleep(500)
+	-- Make Reggie go back
+end
+
+	
+	

@@ -14,7 +14,7 @@ If you see your name below and you think I'm using your stuff against your licen
 Author | Contributions | Kind of contributions
 ---|---|---
 Aaron Krogh | 14 | Music; 
-Alexander | 3 | Audio; Misc files; Music; 
+Alexander | 4 | Audio; Misc files; Music; 
 Angela Nagtzaam | 11 | Art; 
 Ann | 1 | Art; 
 Benboncan | 1 | Audio; 
@@ -38,13 +38,13 @@ Rockit Maxx | 1 | Music;
 Shockwave-sound.com | 1 | Audio; 
 Spiedkiks | 1 | Music; 
 TheSkull | 1 | Art; 
-Tricky (this is me) :sunglasses: | 1801 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
+Tricky (this is me) :sunglasses: | 1808 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
 Unknown Artist | 26 | Art; 
 Utopia | 2 | Font; Misc files; 
 Varazuvi(TM) | 4 | Audio; 
 Vickie | 1 | Art; 
 WeirdoMusic | 1 | Music; 
-Widzy | 2 | Music; 
+Widzy | 3 | Music; 
 YADOT | 1 | Art; 
 eady | 2 | Art; Misc files; 
 http://www.freesfx.co.uk | 1 | Audio; 

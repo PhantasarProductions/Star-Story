@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.12
+version: 15.10.13
 ]]
 
 
@@ -82,7 +82,21 @@ function NPC_Yirl()
 	MapText("YIRL")
 	Fight()
 	Party("Wendicka","Crystal","ExHuRU","Foxy")
-	Sys.Crash("The rest is not yet scripted. Be back later!")
+	LoadMap("LostPlanet_Dungeon_Cell")
+	SpawnPlayer("Start")
+	MapText("CAPTURED")
+	for i=0,100 do
+		Maps.Obj.Obj("KijkGat").Alpha = Maps.Obj.Obj("KijkGat").Alpha - 0.01
+		Maps.Draw()
+		Flip()
+	end
+	Maps.Obj.Obj("KijkGat").Visible = 0
+	Maps.PermaWrite('Maps.Obj.Obj("KijkGat").Visible=0')
+	for ak=2,6 do
+		MapText("CAPTURE_"..ak)
+		if ak~=6 then KickReggie(({"West","East"})[rand(1,2)],false) end
+	end
+	Done("&DONE.YIRLJOIN")
 end
 
 function ByeBye()
