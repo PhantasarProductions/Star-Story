@@ -104,7 +104,7 @@ if not realinventory then -- This if statement must prevent that the real Items 
    -- print(Var.C("$RET"))
    local gotstring = JCR6.LoadString("Script/JINC/IAA/"..I..".lua")
    local f,err = loadstring(gotstring)
-   if not f then Sys.Error("ItemGet error!","Item,"..I..";Error,"..err)   
+   if not f then Sys.Error("ItemGet error!","Item,"..I..";Error,"..err) end   
    ItemGetArray[I] = f()
    return ItemGetArray[I]
    end
