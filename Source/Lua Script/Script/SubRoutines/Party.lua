@@ -335,6 +335,7 @@ function ShowMiniPic(ch,ppos)
 	White()
 	Image.LoadNew("COMBAT.GAUGE.CHAR."..ch,"GFX/Combat/GaugeIcons/"..ch..".png")
 	ShowImage("COMBAT.GAUGE.CHAR."..ch,(tpos*40)+650,550)
+	-- Marker((tpos*40)+650,550)
 	end
 
 function ShowParty()
