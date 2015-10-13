@@ -629,7 +629,7 @@ FeatureHandleArray = {
 					local ch,chd 
 					local picfile,picref
 					for i=0,5 do
-						x = ({100,350,600,110,360,610})[i+1]
+						x = ({ 50,300,550, 60,310,560})[i+1]
 						y = ({ 50, 75,100,225,250,275})[i+1]
 						ch = RPGChar.PartyTag(i)
 						chd = ch
