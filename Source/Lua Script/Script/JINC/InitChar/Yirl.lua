@@ -41,4 +41,15 @@ RPGStat.SetStat("Yirl","INVAMNT2",1)
 RPGChar.DefStat("Yirl","AMMO_BASE",6)
 RPGChar.DefStat("Yirl","Level",RPGChar.Stat("Wendicka","Level")+5)
 RPGStat.AddList("Yirl","ABL","Yirl_Intimidate")
+
+ch = "Yirl"
+skill = Sys.Val(Var.C("%SKILL"))
+RPGStat.DefStat(ch,"SR_BASE_Poison",30/skill)
+RPGStat.DefStat(ch,"SR_BASE_Paralysis",math.ceil(99/skill))
+RPGStat.DefStat(ch,"SR_BASE_Disease",60/skill)
+RPGStat.DefStat(ch,"SR_BASE_Will",24/skill)
+RPGStat.DefStat(ch,"SR_BASE_Block",54/skill)
+RPGStat.DefStat(ch,"SR_BASE_Death",66/skill)
+RPGStat.DefStat(ch,"SR_BASE_Damned",60-(skill*10))
+
 Console.Write("Let's welcome Yirl!",0,255,0)

@@ -35,6 +35,7 @@
 version: 15.10.13
 ]]
 skill = Sys.Val(Var.C("%SKILL"))
+ch = "Foxy"
 RPGChar.SetData("Foxy","INVITEM1","HEALINGCAPSULE")
 RPGStat.SetStat("Foxy","INVAMNT1",3)
 RPGChar.SetData("Foxy","INVITEM2","FIRSTAIDKIT")
@@ -45,4 +46,12 @@ RPGChar.DefStat("Foxy","AMMO_BASE",6)
 RPGChar.DefStat("Foxy","Level",30/skill)
 RPGStat.AddList("Foxy","ABL","FOXY_MULTISTAB")
 RPGStat.AddList("Foxy","ABL","FOXY_PICKPOCKET")
+RPGStat.DefStat(ch,"SR_BASE_Poison",30/skill)
+RPGStat.DefStat(ch,"SR_BASE_Paralysis",math.ceil(99/skill))
+RPGStat.DefStat(ch,"SR_BASE_Disease",60/skill)
+RPGStat.DefStat(ch,"SR_BASE_Will",100-((skill-1)*10)
+RPGStat.DefStat(ch,"SR_BASE_Block",72/skill)
+RPGStat.DefStat(ch,"SR_BASE_Death",90/skill)
+RPGStat.DefStat(ch,"SR_BASE_Damned",70-(skill*10))
+
 Console.Write("Let's welcome Foxy!",0,255,0)

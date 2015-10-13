@@ -35,8 +35,11 @@
 version: 15.10.13
 ]]
 ret = {
-	["ABL_AP"] = 0,
+	["ABL_AP"] = 14,
+	["ABL_APCut"] = 2500,
+	["ABL_Instant"] = 100,
 	["ABL_Pose"] = "Cast",
+	["ABL_Speed"] = 600,
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
