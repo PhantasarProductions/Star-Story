@@ -332,6 +332,8 @@ function ShowMiniPic(ch,ppos)
 	local tpos = ppos - 3
 	if ch=="" then return end
 	if not ch then return end
+	Image.Color(40,40,40)
+	Image.Rect(tpos*40+640,550,30,30)
 	White()
 	Image.LoadNew("COMBAT.GAUGE.CHAR."..ch,"GFX/Combat/GaugeIcons/"..ch..".png")
 	ShowImage("COMBAT.GAUGE.CHAR."..ch,(tpos*40)+650,550)

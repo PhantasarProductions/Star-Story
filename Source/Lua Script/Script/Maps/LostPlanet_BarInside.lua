@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.13
+version: 15.10.14
 ]]
 
 
@@ -83,6 +83,8 @@ function NPC_Yirl()
 	Fight()
 	Party("Wendicka","Crystal","ExHuRU","Yirl","Foxy")
 	LoadMap("LostPlanet_Dungeon_Cell")
+	Maps.Obj.Obj("KijkGat").X = -32
+	Maps.Obj.Obj("KijkGat").Y = 0
 	SpawnPlayer("Start")
 	SetActive("Wendicka")
 	Actors.ChoosePic("PLAYER","WENDICKA.SOUTH")
