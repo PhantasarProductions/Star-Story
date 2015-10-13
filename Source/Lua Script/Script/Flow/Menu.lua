@@ -650,11 +650,11 @@ FeatureHandleArray = {
 							SetFont('StatusStat')
 							Image.Color(255,180,0) Image.DText("#"..Sys.Val(i+1),x+115,y)
 							Red(); Image.DText(RPGChar.GetName(ch),x+120,y+50)	
-							if mousehit(1) and mx>x and mx<x+250 and my>y and my<my+Image.Height(picref) and (not havechosen) then
+							if mousehit(1) and mx>x and mx<x+250 and my>y and my<y+Image.Height(picref) and (not havechosen) then
 								havechosen=true
 								if orderchosen then
-									tempch = RPGChar.PartyTag(chosen)
-									RPGChar.SetParty(chosen,ch)
+									tempch = RPGChar.PartyTag(orderchosen)
+									RPGChar.SetParty(orderchosen,ch)
 									RPGChar.SetParty(i,tempch)
 									orderchosen = nil
 								else
