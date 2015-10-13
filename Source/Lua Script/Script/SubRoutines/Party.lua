@@ -1,6 +1,6 @@
 --[[
   Party.lua
-  Version: 15.09.19
+  Version: 15.10.13
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -328,6 +328,15 @@ if levelupanim[ch] then
    end   
 end
 
+function ShowMiniPic(ch,ppos)
+	local tpos = ppos - 3
+	if ch=="" then return end
+	if not ch then return end
+	White()
+	Image.LoadNew("COMBAT.GAUGE.CHAR."..ch,"GFX/Combat/GaugeIcons/"..ch..".png")
+	ShowImage("COMBAT.GAUGE.CHAR."..ch,(tpos*40)+650,550)
+	end
+
 function ShowParty()
 local ak
 White()
@@ -341,5 +350,8 @@ for ak=0,2 do
    ShowStats(RPGChar.PartyTag(ak),ak)
    end    
 -- And the mini messages (if there are any)
+for ak=3,5 do
+	ShowMiniPic(RPGChar.PartyTag(ak),ak)
+	end
 ShowMini()   
 end
