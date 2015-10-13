@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 15.10.10
+  Version: 15.10.13
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -624,6 +624,26 @@ FeatureHandleArray = {
                   Image.Origin(0,0)
                   end,
       Order     = function()
+					local x
+					local y
+					local ch,chd 
+					local picfile,picref
+					for i=0,5 do
+						x = ({300,500,600,300,500,600})[i]
+						y = ({100,150,200,400,450,400})[i]
+						ch = RPGChar.PartyTag(i)
+						chd = ch
+						if left(ch,3)=="Uni" then chd = replace(ch,"Uni","") end
+						picfile = "GFX/Portret/"..sval(chd).."/"..RPGChar.GetData(ch,"Pic")..".png"
+						picref = upper(chd).."."..upper(RPGChar.GetData(ch,"Pic"))
+						Image.LoadNew(picref,picfile)
+						White()
+						Image.Show(picref,x,y)
+						SetFont('StatusName')
+						Image.SetColor(255,180,0) Image.DText("#"..i,x+115,y)
+						Red(); Image.DText(RPGChar.GetName(ch),x+120,y+50)
+						end
+					end
                   end,                             
    
 }
