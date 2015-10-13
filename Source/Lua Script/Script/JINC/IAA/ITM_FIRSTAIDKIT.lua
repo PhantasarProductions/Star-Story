@@ -45,6 +45,7 @@ ret = {
 	["ITM_BuyPrice"] = 500,
 	["ITM_SellPrice"] = 175,
 	["ITM_Sellable"] = true,
+	["Icon"] = "GFX/Inventory/FirstAidKit.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "First Aid Kit",
 	["SpellAni_Reference"] = "SingleHeal",
