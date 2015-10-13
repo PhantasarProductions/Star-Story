@@ -60,6 +60,7 @@ end
 
 function RightClickedChar(chn)
 if chn<3 then return RPGChar.PartyTag(chn)~="" and mousehit(2) and INP.MouseY()>500 and INP.MouseX()>=chn*200 and INP.MouseX()<(chn+1)*200 end
+return RPGChar.PartyTag(chn)~="" and mousehit(2) and INP.MouseY()>550 and INP.MouseY()<580 and INP.MouseX()>=650+((chn-3)*30) and INP.MouseX()<=680+((chn-3)*30)
 end    
 
 function MINI(...)
