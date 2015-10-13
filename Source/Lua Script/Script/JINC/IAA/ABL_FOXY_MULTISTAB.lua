@@ -53,8 +53,7 @@ ret = {
 	["ItemType"] = "Consumable",
 	["Name"] = "Multi-stab",
 	["Target"] = "1F",
-	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseCombat"] = true}
 
 return ret
 

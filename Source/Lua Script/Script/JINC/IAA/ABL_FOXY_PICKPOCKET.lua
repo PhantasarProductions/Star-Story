@@ -35,17 +35,20 @@
 version: 15.10.13
 ]]
 ret = {
-	["ABL_AP"] = ,
+	["ABL_AP"] = 0,
 	["ABL_Pose"] = "Cast",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
+	["Description"] = "Steals item from the enemy",
 	["HealingType"] = "Absolute",
+	["Icon"] = "GFX/Inventory/Dagger.png",
 	["ItemType"] = "Consumable",
+	["Name"] = "Pickpocket",
+	["ScriptEffect_Reference"] = "PlayerSteal",
 	["Target"] = "1F",
-	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseCombat"] = true}
 
 return ret
 
