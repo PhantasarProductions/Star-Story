@@ -37,9 +37,9 @@ version: 15.10.14
 
 
 function CLICK_ARRIVAL_Tralies()
-	if GetActive("Foxy") then
+	if GetActive()="Foxy" then
 		Maps.Obj.Obj("Tralies").Y=1200
-		PermaWrite('Maps.Obj.Obj("Tralies").Y=1200')
+		Maps.PermaWrite('Maps.Obj.Obj("Tralies").Y=1200')
 		RPGChar.Points("Foxy","EXP").Inc(600/skill)
 	else
 		CharMapText("TRALIES")
