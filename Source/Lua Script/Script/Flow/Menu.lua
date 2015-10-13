@@ -629,8 +629,8 @@ FeatureHandleArray = {
 					local ch,chd 
 					local picfile,picref
 					for i=0,5 do
-						x = ({200,450,700,210,460,710})[i+1]
-						y = ({ 25, 50, 75,200,225,250})[i+1]
+						x = ({100,350,600,110,360,610})[i+1]
+						y = ({ 50, 75,100,225,250,275})[i+1]
 						ch = RPGChar.PartyTag(i)
 						chd = ch
 						if ch and ch~="" then						
@@ -641,7 +641,7 @@ FeatureHandleArray = {
 							White()
 							Image.Show(picref,x,y)
 							SetFont('StatusName')
-							Image.Color(255,180,0) Image.DText("#"..i,x+115,y)
+							Image.Color(255,180,0) Image.DText("#"..Sys.Val(i+1),x+115,y)
 							Red(); Image.DText(RPGChar.GetName(ch),x+120,y+50)						
 						end					
 					end
