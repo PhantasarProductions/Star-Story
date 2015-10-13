@@ -41,7 +41,7 @@ RPGStat.SetStat("Yirl","INVAMNT2",1)
 RPGChar.DefStat("Yirl","AMMO_BASE",6)
 RPGChar.DefStat("Yirl","Level",RPGChar.Stat("Wendicka","Level")+5)
 RPGStat.AddList("Yirl","ABL","Yirl_Intimidate")
-RPGChar.DefStat("Yirl","PXM",52)
+RPGChar.DefStat("Yirl","PXM",42)
 
 ch = "Yirl"
 skill = Sys.Val(Var.C("%SKILL"))
