@@ -640,7 +640,7 @@ FeatureHandleArray = {
 							Image.LoadNew(picref,picfile)
 							White()
 							Image.Show(picref,x,y)
-							SetFont('StatusName')
+							SetFont('StatusStat')
 							Image.Color(255,180,0) Image.DText("#"..Sys.Val(i+1),x+115,y)
 							Red(); Image.DText(RPGChar.GetName(ch),x+120,y+50)						
 						end					
