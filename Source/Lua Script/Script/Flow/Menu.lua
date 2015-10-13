@@ -629,22 +629,23 @@ FeatureHandleArray = {
 					local ch,chd 
 					local picfile,picref
 					for i=0,5 do
-						x = ({300,500,600,300,500,600})[i]
-						y = ({100,150,200,400,450,400})[i]
+						x = ({300,500,600,300,500,600})[i+1]
+						y = ({100,150,200,400,450,400})[i+1]
 						ch = RPGChar.PartyTag(i)
 						chd = ch
-						if left(ch,3)=="Uni" then chd = replace(ch,"Uni","") end
-						picfile = "GFX/Portret/"..sval(chd).."/"..RPGChar.GetData(ch,"Pic")..".png"
-						picref = upper(chd).."."..upper(RPGChar.GetData(ch,"Pic"))
-						Image.LoadNew(picref,picfile)
-						White()
-						Image.Show(picref,x,y)
-						SetFont('StatusName')
-						Image.SetColor(255,180,0) Image.DText("#"..i,x+115,y)
-						Red(); Image.DText(RPGChar.GetName(ch),x+120,y+50)
-						end
+						if ch then						
+							if left(ch,3)=="Uni" then chd = replace(ch,"Uni","") end
+							picfile = "GFX/Portret/"..sval(chd).."/"..RPGChar.GetData(ch,"Pic")..".png"						
+							picref = upper(chd).."."..upper(RPGChar.GetData(ch,"Pic"))
+							Image.LoadNew(picref,picfile)
+							White()
+							Image.Show(picref,x,y)
+							SetFont('StatusName')
+							Image.Color(255,180,0) Image.DText("#"..i,x+115,y)
+							Red(); Image.DText(RPGChar.GetName(ch),x+120,y+50)						
+						end					
 					end
-                  end,                             
+                  end                             
    
 }
 
