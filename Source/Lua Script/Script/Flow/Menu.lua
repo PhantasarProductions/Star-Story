@@ -627,7 +627,8 @@ FeatureHandleArray = {
 					local x
 					local y
 					local ch,chd 
-					local picfile,picref
+					local picfile,picref		
+					local tempch
 					for i=0,5 do
 						x = ({ 50,300,550, 60,310,560})[i+1]
 						y = ({ 50, 75,100,225,250,275})[i+1]
@@ -638,11 +639,22 @@ FeatureHandleArray = {
 							picfile = "GFX/Portret/"..sval(chd).."/"..RPGChar.GetData(ch,"Pic")..".png"						
 							picref = upper(chd).."."..upper(RPGChar.GetData(ch,"Pic"))
 							Image.LoadNew(picref,picfile)
+							if chosen==i then
+								Image.Color(0,0,math.abs(sin(Time.MSecs()/100)*255))
+								Image.Rect(x,y,150,Image.Height(picref))
+							end							
 							White()
 							Image.Show(picref,x,y)
 							SetFont('StatusStat')
 							Image.Color(255,180,0) Image.DText("#"..Sys.Val(i+1),x+115,y)
-							Red(); Image.DText(RPGChar.GetName(ch),x+120,y+50)						
+							Red(); Image.DText(RPGChar.GetName(ch),x+120,y+50)	
+							if mousehit(1) then
+								if chosen then
+									tempch = RPGChar.PartyTag(chosen)
+									RPGChar.SetParty(chosen,ch)
+									RPGChar.SetParty(i,tempch)
+								end
+							end							
 						end					
 					end
                   end                             
