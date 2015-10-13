@@ -633,7 +633,7 @@ FeatureHandleArray = {
 						y = ({100,150,200,400,450,400})[i+1]
 						ch = RPGChar.PartyTag(i)
 						chd = ch
-						if ch then						
+						if ch and ch~="" then						
 							if left(ch,3)=="Uni" then chd = replace(ch,"Uni","") end
 							picfile = "GFX/Portret/"..sval(chd).."/"..RPGChar.GetData(ch,"Pic")..".png"						
 							picref = upper(chd).."."..upper(RPGChar.GetData(ch,"Pic"))
