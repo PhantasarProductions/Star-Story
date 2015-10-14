@@ -768,6 +768,7 @@ end
 
 function SwitchLayer(layer,forcenewsetup) -- forcenewsetup may ONLY be done by LoadMap() and MUST also be done by LoadMap() :)
 	if Maps.Multi()==0 then return end -- when we got not layer, we cannot switch layers anyway
+	CSay("Switching to map layer: "..layer)
 	Maps.GotoLayer(layer)
 	MS.Run("MAP","OnLayerSwitch",layer)
 	local l = 2
