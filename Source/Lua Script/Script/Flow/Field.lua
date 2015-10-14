@@ -686,7 +686,7 @@ for lay in each(layers) do
               dominance = obj.Dominance,
               objtag = "Item."..obj.Tag,
               item = itemcode,
-			  layer = Maps.Multi()~=0 and Maps.LayerCodeName
+			  layer = Maps.Multi()~=0 and Maps.LayerCodeName,
               icon = item.Icon
           }
 		FieldTreasure[obj.Tag] = add          
