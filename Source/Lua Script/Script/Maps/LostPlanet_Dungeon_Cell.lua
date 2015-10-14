@@ -52,6 +52,8 @@ end
 function NextFloor()
 	LoadMap("LostPlanet_Dungeon","#001")
 	CSay("We are on layer: "..Maps.CheckLayer())
+	CSay("We got the next tags!")
+	for k in each(mysplit(Maps.TagMap(),";")) do CSay(" = "..k) end 
 	SpawnPlayer("Start")
 	end
 
