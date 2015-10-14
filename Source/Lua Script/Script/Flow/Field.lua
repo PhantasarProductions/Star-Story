@@ -663,7 +663,7 @@ local layers = {"*"} -- In non multi-map we need at least one "layer"
 local orilayer
 if Maps.Multi()==1 then layers = mysplit(Maps.Layers(),";") orilayer=Maps.LayerCodeName end
 for lay in each(layers) do
-	if Maps.Multi()==1 then Maps.GotoLayer(layer) end
+	if Maps.Multi()==1 then Maps.GotoLayer(lay) end
 	for obj in KthuraEach('$Item') do
 		if (rand(1,(skill)*3)==1) then
 		itemnr = rand(1,#treasures)
@@ -694,7 +694,7 @@ for lay in each(layers) do
     end -- for obj
 end -- for layer
 for lay in each(layers) do
-	if Maps.Multi()==1 then Maps.GotoLayer(layer) end
+	if Maps.Multi()==1 then Maps.GotoLayer(lay) end
 	for obj in KthuraEach("$SpecialItem") do
 		ctag = obj.Tag
 		addit = true
