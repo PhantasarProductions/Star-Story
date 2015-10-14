@@ -336,7 +336,7 @@ function ShowMiniPic(ch,ppos)
 	Image.Rect(tpos*40+640,550,30,30)
 	White()
 	Image.LoadNew("PARTY.CHAR."..ch,"GFX/Combat/GaugeIcons/"..ch..".png")
-	Image.HotCenter("PARTY.CHAR") -- Override initial hotspot settings to make sure this is drawn the way it should (Wendicka's portrait was acting odd before)
+	Image.HotCenter("PARTY.CHAR."..ch) -- Override initial hotspot settings to make sure this is drawn the way it should (Wendicka's portrait was acting odd before)
 	ShowImage("PARTT.CHAR."..ch,(tpos*40)+650+15,550+15)
 	-- Marker((tpos*40)+650,550)
 	end
