@@ -686,7 +686,7 @@ for lay in each(layers) do
               dominance = obj.Dominance,
               objtag = "Item."..obj.Tag,
               item = itemcode,
-			  layer = Maps.Multi()~=0 and Maps.LayerCodeName,
+			  layer = lay,
               icon = item.Icon
           }
 		FieldTreasure[obj.Tag] = add          
@@ -724,7 +724,7 @@ for lay in each(layers) do
 			irate = irate,
 			iratech = iratesk1,
 			vtag = vtag,
-			layer = Maps.Multi()~=0 and Maps.LayerCodeName,
+			layer = lay,
 			icon = item.Icon
 		}
 		if addit then
