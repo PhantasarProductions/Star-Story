@@ -104,6 +104,7 @@
 1. Script/Maps/Hawk.lua
 1. Script/Maps/LostPlanet_BarInside.lua
 1. Script/Maps/LostPlanet_Bonus_Dark_Caves_of_Shilington.lua
+1. Script/Maps/LostPlanet_Dungeon.lua
 1. Script/Maps/LostPlanet_Dungeon_Cell.lua
 1. Script/Maps/LostPlanet_GrassJungle.lua
 1. Script/Maps/LostPlanet_GrassJungle_2.lua
@@ -199,4 +200,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Wed 14 October 2015; 00:45:27 CET
+### Last updated: Wed 14 October 2015; 22:16:33 CET

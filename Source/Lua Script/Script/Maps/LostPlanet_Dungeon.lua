@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  LostPlanet_Dungeon_Cell.lua
+  LostPlanet_Dungeon.lua
   (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
@@ -34,29 +34,12 @@
  
 version: 15.10.14
 ]]
-
-
-
-function CLICK_ARRIVAL_Tralies()
-	if GetActive()=="Foxy" then
-		Maps.Obj.Obj("Tralies").Y=1200
-		Maps.PermaWrite('Maps.Obj.Obj("Tralies").Y=1200')
-		Maps.Remap()
-		RPGChar.Points("Foxy","EXP").Inc(600/skill)
-	else
-		CharMapText("TRALIES")
-		MapText("TRALIES.TUTORIAL")
-	end
+function OnLayerSwitch(layer)
+	CSay("Switched to layer")
 end
 
-function NextFloor()
-	LoadMap("LostPlanet_Dungeon","#001")
-	SpawnPlayer("Start")
-	end
 
 
 function GALE_OnLoad()
-	SetScrollBoundaries(-32,0,-32,0)
-	Music("Dungeon/Prisoner Of War.ogg")
-	AddClickable("Tralies")
+	Music('Dungeon/Dungeon1.ogg')
 end

@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.10.10
+  Version: 15.10.14
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -313,7 +313,7 @@ if WalkArrival and Actors.Walking(cplayer)==0 then
   end      
 end
 
-function SetUpFoes()
+function SetUpFoes(layeronly) -- layeronly parameter is explaned at the SetUpTreasures function
 local ak,num
 local obj,foe
 local R,G,B
@@ -631,7 +631,7 @@ for k,treas in spairs(FieldTreasure or {}) do
 Maps.Remap()    
 end
 
-function SetUpTreasure()
+function SetUpTreasure(layerswitch) -- if layerswitch is set to 1 only reset this layer. if layerswitch is set to 2 only setup if the layer has not been setup yet. If not a multi-map or if layerswitch is nil, everything will work normally.
 local treasurestring
 local treasurestringarray = {}
 local treasures = {}
@@ -766,15 +766,30 @@ for obj in KthuraEach() do
 end
 
 
+function SwitchLayer(layer,forcenewsetup) -- forcenewsetup may ONLY be done by LoadMap() and MUST also be done by LoadMap() :)
+	if Maps.Multi()==0 then return end -- when we got not layer, we cannot switch layers anyway
+	Maps.GotoLayer(layer)
+	MS.Run("MAP","OnLayerSwitch",layer)
+	local l = 2
+	if forcenewsetup then l = nil end
+	SetUpFoes(l)
+	SetUpTreasure(l)
+end
 
-function LoadMap(map)
+
+
+function LoadMap(map,layer)
 FieldFoes = nil -- Let's just FORCE enemies will NOT mess this up.
 Loading()
 PartyPopArray = nil
 ScrollBoundaries = {}
-Maps.Load(map)
-SetUpFoes()
-SetUpTreasure()
+Maps.Load(map,layer)
+if Maps.Multi()==1 then 
+	SwitchLayer(layer,true)
+else
+	SetUpFoes()
+	SetUpTreasure()
+	end
 SetUpAutoClickables()
 Var.Clear("$MAP.MAPSHOW.LASTREQUEST")
 Var.Clear("$MAP.MAPSHOW.LASTALWAYSSHOW")

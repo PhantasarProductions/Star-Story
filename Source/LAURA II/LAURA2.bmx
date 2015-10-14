@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.09.28
+Version: 15.10.14
 End Rem
 Strict
 
@@ -151,15 +151,20 @@ Import	tricky_units.advdatetime
 Import	brl.pngloader
 Import	brl.oggloader
 Import	brl.freeaudioaudio
+Import	BRL.OpenALAudio
 Import	brl.glmax2d
 Import	brl.freetypefont
+
+
+' This line has been put in by recommendation from skidracer to prevent calls to an outdated audio unit.
+ SetAudioDriver "OpenAL"
 
 
 GaleCon = New GALEMainCon2
 
 ' Version
 MKL_Lic     "LAURA II - LAURA2.bmx","GNU General Public License 3"
-MKL_Version "LAURA II - LAURA2.bmx","15.09.28"
+MKL_Version "LAURA II - LAURA2.bmx","15.10.14"
 
 ' Platform information
 ?MacOS

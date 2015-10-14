@@ -20,68 +20,13 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.09.02
-End Rem
-Rem
-/*
-	LAURA II - Savegame routines
-	
-	
-	
-	
-	(c) Jeroen P. Broks, 2015, All rights reserved
-	
-		This program is free software: you can redistribute it and/or modify
-		it under the terms of the GNU General Public License as published by
-		the Free Software Foundation, either version 3 of the License, or
-		(at your option) any later version.
-		
-		This program is distributed in the hope that it will be useful,
-		but WITHOUT ANY WARRANTY; without even the implied warranty of
-		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-		GNU General Public License for more details.
-		You should have received a copy of the GNU General Public License
-		along with this program.  If not, see <http://www.gnu.org/licenses/>.
-		
-	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
-	to the project the exceptions are needed for.
-*/
-
-
-Version: 15.08.26
-
+Version: 15.10.14
 End Rem
 
-Function SaveGame(File$,DeleteMe=0)
-' Create dir
-Local FD$ = ExtractDir(SaveDir+"/"+File)
-If FileType(FD)=1 GALE_Error "Cannot create a folder due to a file with the same name!"
-If FileType(FD)=0 CreateDir FD,2; ConsoleWrite "Creating folder: "+FD,255,95,10
-' Open
-Local BT:TJCRCreate = JCR_Create(SaveDir+"/"+File)
+Function GetActorSaveDump$(SMap:TKthura)
+Local save$
 Local K$
-Local Save$
-ConsoleWrite "Saving: "+file,255,95,10
-'SSecuInit
-' Check and save the Lua variables
-GALE_SaveMSVars BT,"zlib","MS_Save/",True
-'For K=EachIn MapKeys(GALE_MapMSSavedVars()) Ssecu "MS_Save/"+K,GALE_MapMSSavedVars().value(k) Next
-' Save the gamevars
-'ssecustringmap "M:Vars",LauraGameVars
-SaveStringMap bt,"LAURA/Vars",LauraGameVars,"zlib"
-' Sytem 
-Save$ = "FullScreen = "+GraphicsFullScreen+"~n"
-Save :+ "Flow = "+CurrentFlow$+"~n"
-Save :+ "Maps.File = "+LAURA2Maps.CodeName+"~n"
-Save :+ "Maps.Cam.X = "+LAURA2Maps.CamX+"~n"
-Save :+ "Maps.Cam.Y = "+LAURA2Maps.CamY+"~n"
-Save :+ "User = "+startup.C("User")+"~n"
-If DeleteMe Then Save :+ "DeleteMe = true~n"
-'ssecu "LAURA/System",save
-bt.addstring save,"LAURA/System","zlib"
-' Actors
-Save = "-- Actors: "+LAURA2MAPS.CodeName+"~n~n"
-For Local A:TKthuraActor = EachIn map.fullobjectlist
+For Local A:TKthuraActor = EachIn Smap.fullobjectlist
 	If a.kind="Actor"
 		Save$ :+"~n~nNEW"
 		Save$ :+"~n~tTag = "+a.tag
@@ -106,6 +51,47 @@ For Local A:TKthuraActor = EachIn map.fullobjectlist
 		save$ :+"~n~tWind = "+a.Wind
 		EndIf
 	Next
+Return Save
+End Function
+
+Function SaveGame(File$,DeleteMe=0)
+' Create dir
+Local FD$ = ExtractDir(SaveDir+"/"+File)
+If FileType(FD)=1 GALE_Error "Cannot create a folder due to a file with the same name!"
+If FileType(FD)=0 CreateDir FD,2; ConsoleWrite "Creating folder: "+FD,255,95,10
+' Open
+Local BT:TJCRCreate = JCR_Create(SaveDir+"/"+File)
+Local K$
+Local Save$
+ConsoleWrite "Saving: "+file,255,95,10
+'SSecuInit
+' Check and save the Lua variables
+GALE_SaveMSVars BT,"zlib","MS_Save/",True
+'For K=EachIn MapKeys(GALE_MapMSSavedVars()) Ssecu "MS_Save/"+K,GALE_MapMSSavedVars().value(k) Next
+' Save the gamevars
+'ssecustringmap "M:Vars",LauraGameVars
+SaveStringMap bt,"LAURA/Vars",LauraGameVars,"zlib"
+' Sytem 
+Save$ = "FullScreen = "+GraphicsFullScreen+"~n"
+Save :+ "Flow = "+CurrentFlow$+"~n"
+If Map.Multi Save:+"Maps.Layer = "+LAURA2Maps.LayerCodeName+"~n"  ' FIRST the layer, then the map reference! Very important, may NOT be mixed up or bugs will arrive.
+Save :+ "Maps.File = "+LAURA2Maps.CodeName+"~n"
+Save :+ "Maps.Cam.X = "+LAURA2Maps.CamX+"~n"
+Save :+ "Maps.Cam.Y = "+LAURA2Maps.CamY+"~n"
+Save :+ "User = "+startup.C("User")+"~n"
+If DeleteMe Then Save :+ "DeleteMe = true~n"
+'ssecu "LAURA/System",save
+bt.addstring save,"LAURA/System","zlib"
+' Actors
+Save = "-- Actors: "+LAURA2MAPS.CodeName+"~n~n"
+If map.multi
+	For Local K$=EachIn MapKeys(map.Multi)
+		save:+"~n~nLayer = "+K
+		save:+GetActorSaveDump(map.GetMultiLayer(K))
+	Next
+Else
+	save:+GetActorSaveDump(map)
+EndIf
 'ssecu "Map/Actors",save
 bt.addstring save,"Map/Actors","zlib"
 ' Characters
@@ -135,7 +121,7 @@ ConsoleWrite "Loading: "+file,255,95,10
 Local BD:TJCRDir = JCR_Dir(File)
 Local ls$[]
 Local DeleteWhenLoaded = False
-Local MapFile$
+Local MapFile$,LayerTag$
 ' GameVars
 LauraGamevars = LoadStringMap(BD,"LAURA/Vars")
 VarReg LauraGameVars ' We need to register this again, or the game will use an empty map, this empty map will now be destroyed by the garbage collector.
@@ -155,8 +141,8 @@ For Local line$=EachIn JCR_ListFile(BD,"LAURA/System")
 		Select ls[0]
 			Case "FullScreen"	graphicsfullscreen=ls[1].toint()
 			Case "Flow"		currentflow = ls[1]
-			Case "Maps.File"	MapFIle = ls[1]; LAURA2MAPS.Load MapFile 
-
+			Case "Maps.Layer" LayerTag = ls[1]
+			Case "Maps.File"	MapFIle = ls[1]; LAURA2MAPS.Load MapFile,LayerTag
 			Case "Maps.Cam.X"	LAURA2MAPS.CamX = ls[1].toint()
 			Case "Maps.Cam.Y" LAURA2MAPS.CAMY = ls[1].toint()
 			Case "DeleteMe"	DeleteWhenLoaded = ls[1].tolower()="true"
@@ -171,21 +157,24 @@ For Local line$=EachIn JCR_ListFile(BD,"LAURA/System")
 Map.RemoveActors
 Local A:TKthuraActor
 Local O:TKthuraObject
+Local layer:TKthura = map
 For Local Line$=EachIn JCR_ListFile(BD,"MAP/Actors")
 	If line And Trim(Left(line,2))<>"--"
 		If Trim(line)="NEW"
 			a = New TKthuraActor
-			a.parent = map
+			a.parent = layer
 			a.Kind="Actor"
-			For o=EachIn map.FullObjectList
+			For o=EachIn layer.FullObjectList
 				If o.IDNum>=a.idnum a.idnum=o.idnum+1
 				Next
-			ListAddLast map.fullobjectlist,a
+			ListAddLast layer.fullobjectlist,a
 			Print "Creating New Actor #"+a.idnum
 		Else
 			ls=Trim(line).split("=")
 			For Local ak=0 Until Len ls ls[ak]=Trim(ls[ak]) Next
 			Select Trim(ls[0])
+				Case "Layer"	If Not map.multi GALE_Error("This savegame actor list has layers requiring a multi-map.")
+							layer = map.getmultilayer(ls[1])
 				Case "Tag"		a.tag = ls[1]; DebugLog "We got an actor named: "+a.tag
 				Case "x"		a.x = ls[1].toint()
 				Case "y"		a.y = ls[1].toint()
@@ -209,7 +198,7 @@ For Local Line$=EachIn JCR_ListFile(BD,"MAP/Actors")
 			EndIf
 		EndIf
 	Next	
-map.totalremap
+If map.multi map.multiremap; Else map.totalremap
 ' Swap files
 If FileType(Swapdir)
 	?Win32
