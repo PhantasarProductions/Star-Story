@@ -150,14 +150,14 @@ Import	tricky_units.advdatetime
 ' Lastly some brl modules I really need
 Import	brl.pngloader
 Import	brl.oggloader
-Import	brl.freeaudioaudio
+'Import	brl.freeaudioaudio
 Import	BRL.OpenALAudio
 Import	brl.glmax2d
 Import	brl.freetypefont
 
 
 ' This line has been put in by recommendation from skidracer to prevent calls to an outdated audio unit.
- SetAudioDriver "OpenAL"
+SetAudioDriver "OpenAL"
 
 
 GaleCon = New GALEMainCon2

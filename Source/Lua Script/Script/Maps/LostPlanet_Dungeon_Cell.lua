@@ -59,4 +59,5 @@ function GALE_OnLoad()
 	SetScrollBoundaries(-32,0,-32,0)
 	Music("Dungeon/Prisoner Of War.ogg")
 	AddClickable("Tralies")
+	ZA_Enter("Next",NextFloor)
 end

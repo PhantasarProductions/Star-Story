@@ -785,7 +785,7 @@ PartyPopArray = nil
 ScrollBoundaries = {}
 Maps.Load(map,layer)
 if Maps.Multi()==1 then 
-	SwitchLayer(layer,true)
+	if layer and layer~="" then SwitchLayer(layer,true) end
 else
 	SetUpFoes()
 	SetUpTreasure()

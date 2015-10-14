@@ -1,6 +1,6 @@
 --[[
   FieldLinker.lua
-  Version: 15.10.10
+  Version: 15.10.14
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -34,9 +34,12 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-LoadMap = LoadMap or function(map) -- This way of defining makes sure we won't (by accident) overwrite the 'real' routine if it's present.
-MS.LN_Run("FIELD","Flow/Field.lua","LoadMap",map)
+LoadMap = LoadMap or function(map,layer) -- This way of defining makes sure we won't (by accident) overwrite the 'real' routine if it's present.
+	parameter = map
+	if layer then parameter = parameter .. ";" .. layer end	
+	MS.LN_Run("FIELD","Flow/Field.lua","LoadMap",parameter)
 end
+
 
 
 Schedule = Schedule or function (scr,func)
