@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 15.10.13
+  version: 15.10.15
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -75,7 +75,7 @@ local b
 local ZK,ZZ 
 for ZK,ZZ in pairs(ZA.Enter) do
     if ROOM_ME==Maps.CodeName then
-       b = Maps.ActorInZone(actor,ZZ.Z)==1
+       b = Maps.Obj.Exists(ZZ.z) and Maps.ActorInZone(actor,ZZ.Z)==1
        if (not ZAChkEnter[ZZ.Z]) and b then 
           KillWalkArrival() 
           ZZ.F() 
@@ -89,8 +89,8 @@ function ZA_CheckLeave(actor)
 local b
 local ZK,ZZ 
 for ZK,ZZ in pairs(ZA.Leave) do
-    b = Maps.ActorInZone(actor,ZZ.Z)==1
-    if ZAChkLeave[ZZ.Z] and (not b) then 
+    b = Maps.Obj.Exists(ZZ.z) and Maps.ActorInZone(actor,ZZ.Z)==1
+    if Maps.Obj.Exists(ZZ.z) and ZAChkLeave[ZZ.Z] and (not b) then 
        KillWalkArrival() 
        ZZ.F() 
        end
@@ -102,7 +102,7 @@ function ZA_CheckFlow(actor)
 local b
 local ZK,ZZ 
 for ZK,ZZ in pairs(ZA.Flow) do
-    b = Maps.ActorInZone(actor,ZZ.Z)==1
+    b = Maps.Obj.Exists(ZZ.z) and Maps.ActorInZone(actor,ZZ.Z)==1
     if b then
        KillWalkArrival() 
        ZZ.F() 

@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.10.14
+  Version: 15.10.15
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -180,7 +180,7 @@ if mousehit(1) then
                      end})[type(cd)]()
          ]]                                
        -- CSay("Clicked in object: "..c.." ("..mx..","..my..") ==> "..Maps.CoordsInObject(c,mx,my))
-       if Maps.CoordsInObject(obj,mx,my)==1 then
+       if Maps.Obj.Exists(obj) and Maps.CoordsInObject(obj,mx,my)==1 then
           if type(c)=='table' then
 			CSay("Request from table")  
             if c.spot then Actors.WalkToSpot(cplayer,c.spot) CSay("Walking To Spot: "..c.spot) end
