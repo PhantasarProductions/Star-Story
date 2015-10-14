@@ -756,6 +756,7 @@ function FindTreasures()
 					SerialBoxText("BAGSFULL",upper("FULL."..activeplayer)) --,"Field")
           SerialBoxText("BAGSFULL","TUTORIAL_FULL") --,"Field")
           MS.Run("BOXTEXT","RemoveData","BAGSFULL")
+		end  
 	  end
 	  if given then 
           idata = FieldTreasure[k]
@@ -785,10 +786,12 @@ function SwitchLayer(layer,forcenewsetup) -- forcenewsetup may ONLY be done by L
 	CSay("Switching to map layer: "..layer)
 	Maps.GotoLayer(layer)
 	MS.Run("MAP","OnLayerSwitch",layer)
+	--[[ I thought of a better more efficient solution than the crap I had in mind first.
 	local l = 2
 	if forcenewsetup then l = nil end
 	SetUpFoes(l)
 	SetUpTreasure(l)
+	]]
 end
 
 
@@ -801,10 +804,9 @@ ScrollBoundaries = {}
 Maps.Load(map,layer)
 if Maps.Multi()==1 then 
 	if layer and layer~="" then SwitchLayer(layer,true) end
-else
-	SetUpFoes()
-	SetUpTreasure()
 	end
+SetUpFoes()
+SetUpTreasure()
 SetUpAutoClickables()
 Var.Clear("$MAP.MAPSHOW.LASTREQUEST")
 Var.Clear("$MAP.MAPSHOW.LASTALWAYSSHOW")
