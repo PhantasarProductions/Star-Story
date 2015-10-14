@@ -35,7 +35,7 @@
 version: 15.10.14
 ]]
 function OnLayerSwitch(layer)
-	CSay("Switched to layer")
+	CSay("Switched to layer: "..layer)
 end
 
 

@@ -51,6 +51,7 @@ end
 
 function NextFloor()
 	LoadMap("LostPlanet_Dungeon","#001")
+	CSay("We are on layer: "..Maps.CheckLayer())
 	SpawnPlayer("Start")
 	end
 
