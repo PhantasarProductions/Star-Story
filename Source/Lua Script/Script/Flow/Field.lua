@@ -115,7 +115,7 @@ Actors.Actor("PLAYER").Wind = w
 end
 
 function DrawScreen()
-local s = math.abs(math.sin(MilliSecs()/1000))
+local s = math.abs(math.sin(Time.MSecs()/1000))
 Image.Cls()
 Maps.Draw()
 MS.Run("MAP","MAP_FLOW")
