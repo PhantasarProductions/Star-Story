@@ -377,8 +377,10 @@ if lvrange[2]<lvrange[1] then GALE_Error("Negative level range for playthrough #
 FieldFoes = {}
 CSay("Resetting Foes")
 local layers = { [0]={"* NOT MULTIMAP *"},[1]=mysplit(Maps.Layers(),";") }
+local orilay = Maps.LayerCodeName
 for lay in each(layers[Maps.Multi()]) do
 	CSay(' = Foes on Layer: '..lay)
+	if Maps.Multi()==1 then Maps.GotoLayer(lay) end
 	for obj in KthuraEach() do
 		-- CSay("   = Seen: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind) -- Debugline
 		if prefixed(obj.Kind,"$Enemy") and (not suffixed(obj.Kind,"Boss")) then
@@ -473,6 +475,7 @@ for lay in each(layers[Maps.Multi()]) do
 		end
 	end
 end 
+if Maps.Multi()==1 then Maps.GotoLayer(orilay) end
 end
 
 
