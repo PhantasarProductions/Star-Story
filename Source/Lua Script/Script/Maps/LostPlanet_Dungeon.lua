@@ -57,9 +57,17 @@ function GoPrev()
 	SpawnPlayer("Einde")
 end
 
+function ToCell()
+	LoadMap("LostPlanet_Dungeon_Cell")
+	SpawnPlayer("Einde")
+	TurnPlayer("South")
+end
+
+
 
 function GALE_OnLoad()
 	Music('Dungeon/Dungeon1.ogg')
 	ZA_Enter("Next",GoNext)
 	ZA_Enter("Prev",GoPrev)
+	ZA_Enter("ToCell",ToCell)
 end
