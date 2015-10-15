@@ -817,7 +817,7 @@ FieldFoes = nil -- Let's just FORCE enemies will NOT mess this up.
 Loading()
 PartyPopArray = nil
 ScrollBoundaries = {}
-Maps.Load(map,layer)
+Maps.Load(map)
 if Maps.Multi()==1 then 
 	if layer and layer~="" then SwitchLayer(layer,true) end
 	end
