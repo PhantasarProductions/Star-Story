@@ -473,6 +473,7 @@ for lay in each(layers[Maps.Multi()]) do
 		end
 	end
 end 
+end
 
 
 
@@ -645,112 +646,111 @@ Maps.Remap()
 end
 
 function SetUpTreasure(layerswitch) -- if layerswitch is set to 1 only reset this layer. if layerswitch is set to 2 only setup if the layer has not been setup yet. If not a multi-map or if layerswitch is nil, everything will work normally.
-local treasurestring
-local treasurestringarray = {}
-local treasures = {}
-local pt = ngpcount or 1
-local i,t,tra
-local crate,ctag,addit,vtag,iratesk1,irate -- all needed for the Special Items
--- Get treasures from map itself
-CSay("Find treasure from map itself")
-CSay("Playthrough #"..pt)
-for i = 1 , pt do
-    t = Maps.GetData("PT"..right("   "..pt,3).." Items")
-    if t~="" then table.insert(treasurestringarray,t) end    
-    end
--- Compile into a workable array
-treasurestring=join(treasurestringarray,";")
-for t in each(mysplit(treasurestring,";")) do
-    tra = mysplit(t,",")
-    if #tra~=2 then Sys.Error("Invalid treasure definition in this map! > "..t) end
-    for i=1,Sys.Val(tra[2]) do        
-        table.insert(treasures,trim(tra[1]))
-        end
-    end
-if #treasures==0 then CSay("No treasure in this map."); return end
--- Let's place in all the treasure
-FieldTreasure = {}
-local add,itemnr,itemcode,item
-local layers = {"*"} -- In non multi-map we need at least one "layer"
-local orilayer
-if Maps.Multi()==1 then layers = mysplit(Maps.Layers(),";") orilayer=Maps.LayerCodeName end
-for lay in each(layers) do
-	if Maps.Multi()==1 then Maps.GotoLayer(lay) end
-	for obj in KthuraEach('$Item') do
-		if (rand(1,(skill)*3)==1) then
-		itemnr = rand(1,#treasures)
-		itemcode = treasures[itemnr]
-		if prefixed(itemcode,"ONCE:") then
-			itemcode = right(itemcode,len(itemcode)-5)
-			table.remove(treasures,itemnr)
+	local treasurestring
+	local treasurestringarray = {}
+	local treasures = {}
+	local pt = ngpcount or 1
+	local i,t,tra
+	local crate,ctag,addit,vtag,iratesk1,irate -- all needed for the Special Items
+	-- Get treasures from map itself
+	CSay("Find treasure from map itself")
+	CSay("Playthrough #"..pt)
+	for i = 1 , pt do
+		t = Maps.GetData("PT"..right("   "..pt,3).." Items")
+		if t~="" then table.insert(treasurestringarray,t) end    
+	end
+	-- Compile into a workable array
+	treasurestring=join(treasurestringarray,";")
+	for t in each(mysplit(treasurestring,";")) do
+		tra = mysplit(t,",")
+		if #tra~=2 then Sys.Error("Invalid treasure definition in this map! > "..t) end
+		for i=1,Sys.Val(tra[2]) do        
+			table.insert(treasures,trim(tra[1]))
+		end
+	end
+	if #treasures==0 then CSay("No treasure in this map."); return end
+	-- Let's place in all the treasure
+	FieldTreasure = {}
+	local add,itemnr,itemcode,item
+	local layers = {"*"} -- In non multi-map we need at least one "layer"
+	local orilayer
+	if Maps.Multi()==1 then layers = mysplit(Maps.Layers(),";") orilayer=Maps.LayerCodeName end
+	for lay in each(layers) do
+		if Maps.Multi()==1 then Maps.GotoLayer(lay) end
+		for obj in KthuraEach('$Item') do
+			if (rand(1,(skill)*3)==1) then
+				itemnr = rand(1,#treasures)
+				itemcode = treasures[itemnr]
+				if prefixed(itemcode,"ONCE:") then
+					itemcode = right(itemcode,len(itemcode)-5)
+					table.remove(treasures,itemnr)
+				end
+				if not itemcode then
+					CSay("Error! Item code became 'nil'. Let's sort this out!")
+					DBGSerialize(treasures)
+					CSay("itemnr = "..itemnr)
+				end   
+				item = ItemGet("ITM_"..itemcode)
+				add = {
+					x = obj.X,
+					y = obj.Y,
+					spottag = obj.Tag,
+					labels = obj.Labels,
+					dominance = obj.Dominance,
+					objtag = "Item."..obj.Tag,
+					item = itemcode,
+					layer = lay,
+					icon = item.Icon
+				}
+				FieldTreasure[obj.Tag] = add          
 			end
-		if not itemcode then
-			CSay("Error! Item code became 'nil'. Let's sort this out!")
-			DBGSerialize(treasures)
-			CSay("itemnr = "..itemnr)
-			end   
-			item = ItemGet("ITM_"..itemcode)
+		end -- for obj
+	end -- for layer
+	for lay in each(layers) do
+		if Maps.Multi()==1 then Maps.GotoLayer(lay) end
+		for obj in KthuraEach("$SpecialItem") do
+			ctag = obj.Tag
+			addit = true
+			vtag = "%TREASURE_RATE["..ctag.."]"
+			iratesk1=nil
+			irate = obj.DataGet("RATE")
+			item = ItemGet('ITM_'..obj.DataGet("ITEM"))
+			if obj.DataGet("RATE")=="INF" then
+				crate=nil
+			elseif obj.DataGet("RATE")=="UNIQUE" then
+				addit = not( CVVN(vtag) and CVV(vtag)>0 )
+				crate=1
+			else
+				crate = CVVN(vtag) or 1
+				addit = rand(1,crate)<=1
+				if skill==1 then iratesk1=obj.DataGet('S1RI') end
+			end        
 			add = {
-              x = obj.X,
-              y = obj.Y,
-              spottag = obj.Tag,
-              labels = obj.Labels,
-              dominance = obj.Dominance,
-              objtag = "Item."..obj.Tag,
-              item = itemcode,
-			  layer = lay,
-              icon = item.Icon
-          }
-		FieldTreasure[obj.Tag] = add          
-		end
-    end -- for obj
-end -- for layer
-for lay in each(layers) do
-	if Maps.Multi()==1 then Maps.GotoLayer(lay) end
-	for obj in KthuraEach("$SpecialItem") do
-		ctag = obj.Tag
-		addit = true
-		vtag = "%TREASURE_RATE["..ctag.."]"
-		iratesk1=nil
-		irate = obj.DataGet("RATE")
-		item = ItemGet('ITM_'..obj.DataGet("ITEM"))
-		if obj.DataGet("RATE")=="INF" then
-			crate=nil
-		elseif obj.DataGet("RATE")=="UNIQUE" then
-			addit = not( CVVN(vtag) and CVV(vtag)>0 )
-			crate=1
-		else
-			crate = CVVN(vtag) or 1
-			addit = rand(1,crate)<=1
-			if skill==1 then iratesk1=obj.DataGet('S1RI') end
-		end        
-		add = {
-			x = obj.X,
-			y = obj.Y,
-			spottag = obj.Tag,
-			labels = obj.Labels,
-			dominance = obj.Dominance,
-			objtag = "Item."..obj.Tag,
-			item = obj.DataGet("ITEM"),
-			rate = crate,
-			irate = irate,
-			iratech = iratesk1,
-			vtag = vtag,
-			layer = lay,
-			icon = item.Icon
-		}
-		if addit then
-			CSay("Added special item: "..add.item) 
-			FieldTreasure[obj.Tag]=add
-		else
-			CSay("Addition of special item \""..add.item.."\" has been rejected")    
-		end
-	end -- for obj
-end -- for layer
-PlaceTreasures()
-Maps.GotoLayer(orilayer)
-end -- for layer
-end -- function
+				x = obj.X,
+				y = obj.Y,
+				spottag = obj.Tag,
+				labels = obj.Labels,
+				dominance = obj.Dominance,
+				objtag = "Item."..obj.Tag,
+				item = obj.DataGet("ITEM"),
+				rate = crate,
+				irate = irate,
+				iratech = iratesk1,
+				vtag = vtag,
+				layer = lay,
+				icon = item.Icon
+			}
+			if addit then
+				CSay("Added special item: "..add.item) 
+				FieldTreasure[obj.Tag]=add
+			else
+				CSay("Addition of special item \""..add.item.."\" has been rejected")    
+			end
+		end -- for obj
+	end -- for layer
+	PlaceTreasures()
+	Maps.GotoLayer(orilayer)
+end 
 
 function FindTreasures()
 	local k,t
