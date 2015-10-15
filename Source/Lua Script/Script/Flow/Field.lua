@@ -125,7 +125,7 @@ ShowParty()
 if Maps.Multi()==1 and prefixed(Maps.LayerCodeName,"#") then 
 	setfont('LayerInField')	
 	DarkText("Area ",5,5,0,0,(s*155)+100,(s*80)+100,0)
-	DarkText(Maps.LayerCodeName,5,5+Image.TextWidth("Area "),0,0,0,(s*80)+100,(s*155)+100)
+	DarkText(Maps.LayerCodeName,5+Image.TextWidth("Area "),5,0,0,0,(s*80)+100,(s*155)+100)
     end
 ShowMouse()
 end
@@ -376,99 +376,105 @@ if lvrange[2]<lvrange[1] then GALE_Error("Negative level range for playthrough #
 -- setting up the foes     
 FieldFoes = {}
 CSay("Resetting Foes")
-for obj in KthuraEach() do
-    -- CSay("   = Seen: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind) -- Debugline
-    if prefixed(obj.Kind,"$Enemy") and (not suffixed(obj.Kind,"Boss")) then
-       CSay("  = Process: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind)
-       FieldFoes[obj.Tag] = {  }       
-       foe = FieldFoes[obj.Tag]
-       foe.me = obj.Tag
-       foe.Work = right(trim(obj.Kind),3)
-       foe.Go = left(foe.Work,2)
-       foe.Skill = Sys.Val(right(foe.Work,1))     
-       if skill<foe.Skill then
-          CWrite("  = Rejected. Not meant for this skill level",255,0,0)
-          FieldFoes[obj.Tag] = nil
-         else
-          foe.OriPos = { X = obj.X, Y = obj.Y }
-          foe.Actor = obj.Tag .. " FoeActor"
-          foe.Tag = foe.Actor
-          CSay("  = Spawning actor")
-          Actors.Spawn(obj.Tag,"GFX/FIELD/ENCOUNTER.PNG",foe.Tag,1)
-          CSay("  = Configuring actor ( skill = "..skill.." ) ")
-          Maps.Obj.Pick(foe.Tag)
-          foe.Enemies = {}
-          --[[ old
-          num = rand(minenemies[skill],maxenemies[skill])
-          ]]
-          -- new
-          repeat
-          num = rand(1,9)
-          until num<1+(4-skill) or (rand(1,num*((4-skill)*(4-skill)))<=skill and rand(1,num*num*(4-skill))==1)
-          hilevel = 0
-          for ak=1,num do
-              foe.Enemies[ak] = 
-                {
-                    level = rand(lvrange[1],lvrange[2]),
-                    foe   = enemies[rand(1,#enemies)]
-                }
-              if hilevel<foe.Enemies[ak].level then hilevel=foe.Enemies[ak].level end
-              end
-          diflevel = hilevel - mylevel
-          CSay("  = MyLevel="..mylevel.."; HiLevel="..hilevel.."; DifLevel="..diflevel)    
-          if diflevel<-10 then
-             R = 0
-             G = 255
-             B = 0
-             foe.radius = 50
-             CSay("  = Too Easy")
-          elseif diflevel<=0 then
-             R = 180
-             G = 255
-             B = 0
-             foe.radius = 150
-             CSay("  = Easy")
-          elseif diflevel<10 then
-             R = 255
-             G = 180
-             B = 0
-             foe.radius = 300
-             CSay("  = Hard")
-          else
-             R = 255
-             G = 0
-             B = 0
-             foe.radius = 600
-             CSay("  = Too Hard")
-             end   
-          CWrite("  = Adjusting color of object "..Maps.Obj.MyObject.Tag.."  to ("..R..","..G..","..B..")",R,G,B)   
-          Maps.Obj.SetColor(R,G,B)
-          --foe.obj = nil
-          end
-    elseif suffixed(obj.Kind,"Boss") and prefixed(obj.Kind,"$Enemy") then
-       CSay("Boss found: "..obj.Tag)
-       FieldFoes[obj.Tag] = {  }       
-       foe = FieldFoes[obj.Tag]
-       foe.Actor = obj.Tag .. " FoeActor"
-       foe.Tag = foe.Actor 
-       foe.me = obj.Tag
-       foe.Go = "Boss"
-       foe.OriPos = { X = obj.X, Y = obj.Y }
-       foe.event = obj.DataGet("BOSSFUNCTION")
-       foe.barrier = obj.DataGet("LINKEDBARRIER")
-       CSay("= Function: "..foe.event)
-       CSay("= Barrier:  "..foe.barrier)
-       --CSay("= Datadump: "..obj.DataDump())
-       Maps.Obj.Obj(foe.barrier).Impassible = 1
-       Maps.Obj.Obj(foe.barrier).Visible = 1
-       Maps.Remap()
-       Actors.Spawn(obj.Tag,"GFX/FIELD/Boss.PNG",foe.Tag,1)
-       Maps.Obj.Pick(foe.Tag)
-       Maps.Obj.SetColor(255,0,0)
-       --CSay("WARNING! This level contains a boss, but the system is not yet set up for that.")      
-       end
-    end
+local layers = { [0]={"* NOT MULTIMAP *"},[1]=mysplit(Maps.Layers(),";") }
+for lay in each(layers[Maps.Multi()]) do
+	CSay(' = Foes on Layer: '..lay)
+	for obj in KthuraEach() do
+		-- CSay("   = Seen: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind) -- Debugline
+		if prefixed(obj.Kind,"$Enemy") and (not suffixed(obj.Kind,"Boss")) then
+			CSay("  = Process: "..obj.IDNum.."; "..obj.Tag.."; "..obj.Kind)
+			FieldFoes[obj.Tag] = {  }       
+			foe = FieldFoes[obj.Tag]
+			foe.me = obj.Tag
+			foe.Work = right(trim(obj.Kind),3)
+			foe.Go = left(foe.Work,2)
+			foe.Skill = Sys.Val(right(foe.Work,1))     
+			if skill<foe.Skill then
+				CWrite("  = Rejected. Not meant for this skill level",255,0,0)
+				FieldFoes[obj.Tag] = nil
+			else
+				foe.OriPos = { X = obj.X, Y = obj.Y }
+				foe.Actor = obj.Tag .. " FoeActor"
+				foe.Tag = foe.Actor
+				foe.Layer = lay
+				CSay("  = Spawning actor")
+				Actors.Spawn(obj.Tag,"GFX/FIELD/ENCOUNTER.PNG",foe.Tag,1)
+				CSay("  = Configuring actor ( skill = "..skill.." ) ")
+				Maps.Obj.Pick(foe.Tag)
+				foe.Enemies = {}
+				--[[ old
+				num = rand(minenemies[skill],maxenemies[skill])
+				]]
+				-- new
+				repeat
+					num = rand(1,9)
+				until num<1+(4-skill) or (rand(1,num*((4-skill)*(4-skill)))<=skill and rand(1,num*num*(4-skill))==1)
+				hilevel = 0
+				for ak=1,num do
+					foe.Enemies[ak] = 
+					{
+						level = rand(lvrange[1],lvrange[2]),
+						foe   = enemies[rand(1,#enemies)]
+					}
+					if hilevel<foe.Enemies[ak].level then hilevel=foe.Enemies[ak].level end
+				end
+				diflevel = hilevel - mylevel
+				CSay("  = MyLevel="..mylevel.."; HiLevel="..hilevel.."; DifLevel="..diflevel)    
+				if diflevel<-10 then
+					R = 0
+					G = 255
+					B = 0
+					foe.radius = 50
+					CSay("  = Too Easy")
+				elseif diflevel<=0 then
+					R = 180
+					G = 255
+					B = 0
+					foe.radius = 150
+					CSay("  = Easy")
+				elseif diflevel<10 then
+					R = 255
+					G = 180
+					B = 0
+					foe.radius = 300
+					CSay("  = Hard")
+				else
+					R = 255
+					G = 0
+					B = 0
+					foe.radius = 600
+					CSay("  = Too Hard")
+				end   
+				CWrite("  = Adjusting color of object "..Maps.Obj.MyObject.Tag.."  to ("..R..","..G..","..B..")",R,G,B)   
+				Maps.Obj.SetColor(R,G,B)
+				--foe.obj = nil
+			end
+		elseif suffixed(obj.Kind,"Boss") and prefixed(obj.Kind,"$Enemy") then
+			CSay("Boss found: "..obj.Tag)
+			FieldFoes[obj.Tag] = {  }       			
+			foe = FieldFoes[obj.Tag]
+			foe.Actor = obj.Tag .. " FoeActor"
+			foe.Tag = foe.Actor 
+			foe.me = obj.Tag
+			foe.Go = "Boss"
+			foe.OriPos = { X = obj.X, Y = obj.Y }
+			foe.event = obj.DataGet("BOSSFUNCTION")
+			foe.barrier = obj.DataGet("LINKEDBARRIER")
+			CSay("= Function: "..foe.event)
+			CSay("= Barrier:  "..foe.barrier)
+			--CSay("= Datadump: "..obj.DataDump())
+			Maps.Obj.Obj(foe.barrier).Impassible = 1
+			Maps.Obj.Obj(foe.barrier).Visible = 1
+			Maps.Remap()
+			Actors.Spawn(obj.Tag,"GFX/FIELD/Boss.PNG",foe.Tag,1)
+			Maps.Obj.Pick(foe.Tag)
+			Maps.Obj.SetColor(255,0,0)
+			--CSay("WARNING! This level contains a boss, but the system is not yet set up for that.")      
+		end
+	end
 end 
+
+
 
 function ResetFoePositions()
 --[[
@@ -582,7 +588,7 @@ for obj in KthuraEach("Actor") do
     foe = FieldFoes[replace(obj.Tag," FoeActor","")]
     -- CSay("We got a foe on  : "..obj.Tag.." >> "..sval(foe~=nil))
     -- CSay("We got suffix on : "..obj.Tag.." >> "..sval(suffixed(obj.Tag,"FoeActor")))
-    if foe and obj.Visible>0 and suffixed(obj.Tag,"FoeActor") then
+    if foe and obj.Visible>0 and suffixed(obj.Tag,"FoeActor")  and (Maps.Multi()==0 or Maps.LayerCodeName==foe.Layer) then
        (({   -- Switch
           HZ = function ()  -- Horizontaal
                if FoeActive(foe) then 
@@ -743,7 +749,8 @@ for lay in each(layers) do
 end -- for layer
 PlaceTreasures()
 Maps.GotoLayer(orilayer)
-end
+end -- for layer
+end -- function
 
 function FindTreasures()
 	local k,t
