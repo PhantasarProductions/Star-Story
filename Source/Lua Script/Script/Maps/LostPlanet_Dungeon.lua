@@ -32,14 +32,22 @@
   
  **********************************************
  
-version: 15.10.14
+version: 15.10.15
 ]]
 function OnLayerSwitch(layer)
 	CSay("Switched to layer: "..layer)
 end
 
 
+function GoNext()
+	local c = Sys.Val(Right(Maps.LayerCodeName,3))
+	c = c + 1
+	local lay = "#"..right("00"..c,3)
+	Maps.GotoLayer(lay)
+end
+
 
 function GALE_OnLoad()
 	Music('Dungeon/Dungeon1.ogg')
+	ZA_Enter("Next",GoNext)
 end
