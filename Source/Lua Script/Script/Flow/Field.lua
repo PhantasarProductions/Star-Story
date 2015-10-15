@@ -115,12 +115,17 @@ Actors.Actor("PLAYER").Wind = w
 end
 
 function DrawScreen()
+local s = math.abs(math.sin(MilliSecs()/1000))
 Image.Cls()
 Maps.Draw()
 MS.Run("MAP","MAP_FLOW")
 AutoPlayerWind()
 ShowIcons()
 ShowParty()
+if Maps.Multi()==1 and prefixed(Maps.LayerCodeName,"#") then 
+	setfont('LayerInField')	
+	DarkText(Maps.LayerCodeName,5,5,0,0,0,(s*80)+100,(s*155)+100)
+    end
 ShowMouse()
 end
 
