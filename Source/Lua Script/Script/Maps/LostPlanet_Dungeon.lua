@@ -40,10 +40,12 @@ end
 
 
 function GoNext()
-	local c = Sys.Val(Right(Maps.LayerCodeName,3))
+	local c = Sys.Val(right(Maps.LayerCodeName,3))
 	c = c + 1
 	local lay = "#"..right("00"..c,3)
+	Obj.Kill("PLAYER")
 	Maps.GotoLayer(lay)
+	SpawnPlayer("Start")
 end
 
 
