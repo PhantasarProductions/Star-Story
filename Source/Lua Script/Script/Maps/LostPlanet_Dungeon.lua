@@ -61,4 +61,5 @@ end
 function GALE_OnLoad()
 	Music('Dungeon/Dungeon1.ogg')
 	ZA_Enter("Next",GoNext)
+	ZA_Enter("Prev",GoPrev)
 end
