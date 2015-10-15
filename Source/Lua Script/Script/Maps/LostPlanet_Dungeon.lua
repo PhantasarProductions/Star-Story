@@ -48,6 +48,15 @@ function GoNext()
 	SpawnPlayer("Start")
 end
 
+function GoPrev()
+	local c = Sys.Val(right(Maps.LayerCodeName,3))
+	c = c - 1
+	local lay = "#"..right("00"..c,3)
+	Maps.Obj.Kill("PLAYER")
+	Maps.GotoLayer(lay)
+	SpawnPlayer("Einde")
+end
+
 
 function GALE_OnLoad()
 	Music('Dungeon/Dungeon1.ogg')
