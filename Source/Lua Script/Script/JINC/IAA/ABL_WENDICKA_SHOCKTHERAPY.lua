@@ -1,7 +1,7 @@
 ret = {
 	["ABL_AP"] = 30,
-	["ABL_APCut"] = 10000,
-	["ABL_Instant"] = 20000,
+	["ABL_APCut"] = 1000,
+	["ABL_Instant"] = 2000,
 	["ABL_Pose"] = "Cast",
 	["ABL_Speed"] = 300,
 	["ActSpeed"] = 250,

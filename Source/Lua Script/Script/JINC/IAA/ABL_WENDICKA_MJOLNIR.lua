@@ -32,13 +32,13 @@
   
  **********************************************
  
-version: 15.10.13
+version: 15.10.15
 ]]
 ret = {
 	["ABL_AP"] = 100,
 	["ABL_APCut"] = 500000,
 	["ABL_DblPower"] = 1000000,
-	["ABL_DblSpeed"] = 500000,
+	["ABL_DblSpeed"] = 50000,
 	["ABL_Pose"] = "Cast",
 	["ABL_Speed"] = 10,
 	["ActSpeed"] = 250,
