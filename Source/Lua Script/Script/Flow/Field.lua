@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.10.15
+  Version: 15.10.16
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -752,7 +752,7 @@ function SetUpTreasure(layerswitch) -- if layerswitch is set to 1 only reset thi
 		end -- for obj
 	end -- for layer
 	PlaceTreasures()
-	Maps.GotoLayer(orilayer)
+	if Maps.Multi()==1 then Maps.GotoLayer(orilayer) end
 end 
 
 function FindTreasures()
@@ -818,7 +818,7 @@ Loading()
 PartyPopArray = nil
 ScrollBoundaries = {}
 Maps.Load(map)
-if Maps.Multi()==1 then 
+ if Maps.Multi()==1 then 
 	if layer and layer~="" then SwitchLayer(layer,true) end
 	end
 SetUpFoes()
