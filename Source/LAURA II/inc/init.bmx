@@ -20,9 +20,9 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.09.28
+Version: 15.10.16
 End Rem
-MKL_Version "LAURA II - init.bmx","15.09.28"
+MKL_Version "LAURA II - init.bmx","15.10.16"
 MKL_Lic     "LAURA II - init.bmx","GNU General Public License 3"
 
 Function Init()
@@ -126,10 +126,10 @@ screenheight = s[1].toint()
 Local bit[] = [32,24,16]
 Local cbit
 ?debug
-If fullscreen fullscreen = Proceed("We're running in debug mode.~n~nDo you want fullscreen?")
+If fullscreen id.Get("Windowed").toUpper()<>"YES" fullscreen = Proceed("We're running in debug mode.~n~nDo you want fullscreen?")
 If fullscreen=-1 Bye
 ?
-If fullscreen
+If fullscreen And id.Get("Windowed").toUpper()<>"YES"
 	For Local abit=EachIn bit
 		If GraphicsModeExists(screenwidth,screenheight,abit)
 			cbit = abit
@@ -150,7 +150,7 @@ If Upper(i.Get("OSMousePointer"))="NO" Or Upper(i.Get("OSMousePointer"))="OFF"
 	HideMouse
 	DebugLog "OS Mouse Pointer has been turned off"
 	EndIf
-kthura_grabboundaries	
+Kthura_GrabBoundaries	
 End Function	
 
 Function InitScript()

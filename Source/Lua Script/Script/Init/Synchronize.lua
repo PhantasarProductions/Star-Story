@@ -51,12 +51,14 @@ version: 15.10.16
 
 -- @IF *GAMEJOLT
 function Synchronize()
+	CSay("Synchronize achievements ... ")
 	-- Odd as it may seem this must be done, or the game cannot operate at all of ANY action.
 	LoadFlowsScripts()
 	LoadBaseGraphics()
 	-- And here is the actual action.
 	MS.LoadNew("ACH","Script/Flow/Achievements.lua")
 	MS.Run("ACH","SynchronizeGameJolt")
+	Sys.Error("If this message appears, it appears a failed request is done to synchronize achievements. Why?")
 end
 -- @FI
 

@@ -64,11 +64,11 @@ Type TLoadGamePanel Extends tfpanelbase
 	SetGadgetPixmap Crystal,PixCrystal
 	?Not MacOS
 	Go = CreateButton("Load Game",0,CH-25,CW,25,Crystal,Button_ok)
-	Sync = CreateButton("Synchronize",CW-150,CH-60,CW,25,Crystal,Button_Ok)
+	Sync = CreateButton("Synchronize",CW-150,CH-60,CW,25,Crystal)
 	?
 	?MacOS
 	Go = CreateButton("Load Game",CW-150,CH-25,150,25,Crystal,Button_ok)
-	Sync = CreateButton("Synchronize",CW-150,CH-60,150,25,Crystal,Button_Ok)
+	Sync = CreateButton("Synchronize",CW-150,CH-50,150,25,Crystal)
 	RefreshButton = CreateButton("Refresh",CW-150,CH-75,150,25,Crystal)
 	?
 	CreateLabel "Users:",0,0,600,25,panel
@@ -153,7 +153,8 @@ Type TLoadGamePanel Extends tfpanelbase
 	WriteLine bt,"Var:Title=Star Story"
 	WriteLine bt,"Var:StartUpFunction="+fun[sync]
 	WriteLine Bt,"Var:CodeName=StarStory"
-	If IgnoreGameJolt Or Sync WriteLine bt,"Var:IgnoreGameJolt="+YesNo[ButtonState(IgnoreGameJolt) Or Sync]
+	If IgnoreGameJolt And (Not Sync) WriteLine bt,"Var:IgnoreGameJolt="+YesNo[ButtonState(IgnoreGameJolt) And (Not Sync)]
+	If Sync WriteLine BT,"Var:Windowed=Yes"
 	CloseStream BT
 	?Not MacOS
 	HideGadget window
