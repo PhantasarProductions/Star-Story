@@ -37,9 +37,9 @@ InitGraphics id,GraphicsFullScreen
 InitNetwork Original
 InitDevelopment
 InitLoading; Loading
+InitClosure
 InitScript
 InitShowMouseOrNot
-InitClosure
 'WaitKey ' Must be removed when init routines are complete!
 End Function
 
