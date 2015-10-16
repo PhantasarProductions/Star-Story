@@ -690,7 +690,6 @@ function DrawScreen()
 	Image.Draw(back,0,0)
 	if pcharn<3 then
 		Image.Draw(chpointer,(pcharn*200)+100,450)
-		Image.Rect(tpos*40+640,550,30,30,1)
 	end
 	local f = DrawArray[returnto or "ERROR"] or DrawArray.ERROR
 	f()
@@ -700,6 +699,7 @@ function DrawScreen()
 	if pcharn>2 then		
 		tpos = pcharn - 3
 		Image.Color(0,180,255)
+		Image.Rect(tpos*40+640,550,30,30,1)
 		end
 	ShowMouse(ChosenItem.Icon)
 end
