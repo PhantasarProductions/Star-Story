@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.10.10
+Version: 15.10.16
 End Rem
 Strict
 
@@ -52,6 +52,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	Field Users:TGadget
 	Field Files:TGadget
 	Field Go:TGadget
+	Field Sync:TGadget
 	Field IgnoreGameJolt:TGadget
 	Field OldMinute ',OldUser$,OldFile$
 	Field User$,CFile$
@@ -63,10 +64,12 @@ Type TLoadGamePanel Extends tfpanelbase
 	SetGadgetPixmap Crystal,PixCrystal
 	?Not MacOS
 	Go = CreateButton("Load Game",0,CH-25,CW,25,Crystal,Button_ok)
+	Sync = CreateButton("Synchronize",CW-150,CH-60,CW,25,Crystal,Button_Ok)
 	?
 	?MacOS
 	Go = CreateButton("Load Game",CW-150,CH-25,150,25,Crystal,Button_ok)
-	RefreshButton = CreateButton("Refresh",CW-150,CH-50,150,25,Crystal)
+	Sync = CreateButton("Synchronize",CW-150,CH-60,150,25,Crystal,Button_Ok)
+	RefreshButton = CreateButton("Refresh",CW-150,CH-75,150,25,Crystal)
 	?
 	CreateLabel "Users:",0,0,600,25,panel
 	Users = CreateListBox(0,25,600,75,Panel)
@@ -121,10 +124,12 @@ Type TLoadGamePanel Extends tfpanelbase
 	End Method
 
 	
-	Method RunLoadGame(File$)
+	Method RunLoadGame(File$,Sync=0)
 	Print "Setting up LAURA II to load game: "+File
 	Local syscommand$
 	Local platform$
+	Local fun$[] = ["LoadGame","Synchronize"]
+	Local lua$[] = ["LoadGame","Synchronize"]
 	?MacOS
 	platform = "Mac"
 	syscommand = "open "+lini.c("Mac")
@@ -144,11 +149,11 @@ Type TLoadGamePanel Extends tfpanelbase
 		EndIf
 	WriteLine bt,"Add:Resource,"+lini.c("Resource")
 	WriteLine bt,"Var:LoadGame="+File
-	WriteLine bt,"Var:StartScript=LoadGame.lua"
+	WriteLine bt,"Var:StartScript="+lua[sync]+".lua"
 	WriteLine bt,"Var:Title=Star Story"
-	WriteLine bt,"Var:StartUpFunction=LoadGame"
+	WriteLine bt,"Var:StartUpFunction="+fun[sync]
 	WriteLine Bt,"Var:CodeName=StarStory"
-	If IgnoreGameJolt WriteLine bt,"Var:IgnoreGameJolt="+YesNo[ButtonState(IgnoreGameJolt)]
+	If IgnoreGameJolt Or Sync WriteLine bt,"Var:IgnoreGameJolt="+YesNo[ButtonState(IgnoreGameJolt)]
 	CloseStream BT
 	?Not MacOS
 	HideGadget window
@@ -167,7 +172,8 @@ Type TLoadGamePanel Extends tfpanelbase
 	If Not made make
 	'U = SelectedGadgetItem(Users)
 	Files.setenabled SelectedGadgetItem(Users)>=0
-	Go.setenabled SelectedGadgetItem(Users)>=0 And SelectedGadgetItem(Files)>=0
+	Go.setenabled    SelectedGadgetItem(Users)>=0 And SelectedGadgetItem(Files)>=0
+	Sync.SetEnabled  SelectedGadgetItem(Users)>=0 And SelectedGadgetItem(Files)>=0
 	Select EID
 		Case event_gadgetselect
 			Select ESource
@@ -190,13 +196,16 @@ Type TLoadGamePanel Extends tfpanelbase
 				EndSelect
 		Case Event_GadgetAction
 			Select ESource
-				Case Files,Go
+				Case Files,Go,Sync
+					If ESource=Sync 
+						If Proceed("This synchronizer will try to synchronize all your achievement to GameJolt.~n~nThis feature has come to life for two possible scenarios:~n-~tIf your login times take too long you may want to skip login~n~tfor most loads, and sync your achievements every once in awhile.~n-~tIf loggin in failed you may continue play and use this~n~tfeature to get your achiements synchronized.~n~nI cannot tell how long this synchronization will take (and this is also depended on how many you already obtained. Best is not to do this when you are in a hurry).~n~nContinue ?")<>1 Return
+						EndIf
 					U = SelectedGadgetItem(users)
 					F = SelectedGadgetItem(Files)
 					If U>=0 And F>=0
 						User  = GadgetItemText(Users,U)
 						cfile = GadgetItemText(Files,F)
-						RunLoadGame Dirry(Save)+"/"+User+"/"+CFile
+						RunLoadGame Dirry(Save)+"/"+User+"/"+CFile,ESource=Sync
 						EndIf
 				?MacOS		
 				Case RefreshButton

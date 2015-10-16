@@ -1,6 +1,6 @@
 --[[
   Achievements.lua
-  Version: 15.09.02
+  Version: 15.10.16
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -33,35 +33,6 @@
   2. Altered source versions must be plainly marked as such, and must not be
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
-]]
---[[
-/* 
-  Achievements
-
-  Copyright (C) 2015 Jeroen P. Broks
-
-  This software is provided 'as-is', without any express or implied
-  warranty.  In no event will the authors be held liable for any damages
-  arising from the use of this software.
-
-  Permission is granted to anyone to use this software for any purpose,
-  including commercial applications, and to alter it and redistribute it
-  freely, subject to the following restrictions:
-
-  1. The origin of this software must not be misrepresented; you must not
-     claim that you wrote the original software. If you use this software
-     in a product, an acknowledgment in the product documentation would be
-     appreciated but is not required.
-  2. Altered source versions must be plainly marked as such, and must not be
-     misrepresented as being the original software.
-  3. This notice may not be removed or altered from any source distribution.
-
-*/
-
-
-
-Version: 15.08.26
-
 ]]
 -- @USEDIR Script/GameJolt
 achievementscript = true
@@ -98,6 +69,30 @@ GJ.Award(GameJoltAchievements[Tag])
 -- @FI
 Mini('Earned achievement: "'..Achievements[Tag].Title..'"')
 end
+
+-- @IF *GAMEJOLT
+function SychronizeGameJolt()
+	Console.Write("")
+	Console.Write("Synchronizing achievements with GameJolt",180,0,255)
+	Console.Show()
+	Console.Flip()
+	for key,ach in spairs(Achievements) do
+		if Achieved[key] then
+			Console.Write("= Sending: "..ach.Title,0,180,255)
+			Console.Show()
+			Console.Flip()
+			GJ.Award(GameJoltAchievements[key])
+		end
+	end
+	Console.Write("All done.",255,180,0)
+	Console.Write("This program will close in a few seconds.",255,180,0)
+	Console.Show()
+	Console.Flip()
+	Time.Delay(5000)
+	Sys.Bye()	
+end
+-- @FI
+
 
 function MAIN_FLOW()
 local y

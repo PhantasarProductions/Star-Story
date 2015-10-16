@@ -25,6 +25,7 @@
 1. Script/Init/AutoUse.lua
 1. Script/Init/LoadGame.lua
 1. Script/Init/Start.lua
+1. Script/Init/Synchronize.lua
 1. Script/JINC/Big/Achievements.lua
 1. Script/JINC/Demo/Maps.lua
 1. Script/JINC/Foes/Boss/BigGrassTiger.lua
@@ -200,4 +201,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Fri 16 October 2015; 20:27:35 CET
+### Last updated: Fri 16 October 2015; 23:40:35 CET
