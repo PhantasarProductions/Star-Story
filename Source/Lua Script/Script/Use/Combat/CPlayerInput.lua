@@ -278,7 +278,7 @@ InputItems = {
       Item = "SWT",
       Allow = function(ch) return RPGChar.PartyTag(3)~="" end,
       Input = function(ch,pos)
-				SetFont("StatusName")
+				SetFont("StatusDesc")
 				DarkText("Please select a character from the back row to replace: "..ch,400,300,2,2,0,180,255)
 				local s = math.sin(Time.MSecs()/250)
 				local c = s*255
@@ -290,6 +290,7 @@ InputItems = {
 					if cch then
 						x,y=t*40+640,550
 						Image.Color(c,c,c)
+						Image.Rect(x,y,30,300
 					end
 					if mousehit(1) and mx>=x and mx<=x+30 and my>=y and my<=y-30 then
 						RPGChar.SetParty(chl,RPGChar.PartyTag(pos))
@@ -298,6 +299,7 @@ InputItems = {
 						PIA=nil
 					end
 					if mousehit(2) then PIA=nil end
+					ShowMouse()
 				end				
               end
     }  
