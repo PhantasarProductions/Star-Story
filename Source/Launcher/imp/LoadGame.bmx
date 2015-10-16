@@ -153,7 +153,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	WriteLine bt,"Var:Title=Star Story"
 	WriteLine bt,"Var:StartUpFunction="+fun[sync]
 	WriteLine Bt,"Var:CodeName=StarStory"
-	If IgnoreGameJolt Or Sync WriteLine bt,"Var:IgnoreGameJolt="+YesNo[ButtonState(IgnoreGameJolt)]
+	If IgnoreGameJolt Or Sync WriteLine bt,"Var:IgnoreGameJolt="+YesNo[ButtonState(IgnoreGameJolt) Or Sync]
 	CloseStream BT
 	?Not MacOS
 	HideGadget window

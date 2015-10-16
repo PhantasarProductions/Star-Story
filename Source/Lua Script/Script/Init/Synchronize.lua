@@ -51,6 +51,10 @@ version: 15.10.16
 
 -- @IF *GAMEJOLT
 function Synchronize()
+	-- Odd as it may seem this must be done, or the game cannot operate at all of ANY action.
+	LoadFlowsScripts()
+	LoadBaseGraphics()
+	-- And here is the actual action.
 	MS.LoadNew("ACH","Script/Flow/Achievements.lua")
 	MS.Run("ACH","SynchronizeGameJolt")
 end
