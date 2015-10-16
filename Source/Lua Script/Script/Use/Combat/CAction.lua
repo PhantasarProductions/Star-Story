@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 15.10.10
+  Version: 15.10.16
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -117,7 +117,7 @@ end
 
 function ActionFuncs.SHT(ag,ai,act)
 local ch = FighterTag(ag,ai) --RPGChar.PartyTag(ag,ai)
-if RPGChar.Points(ch,"AMMO",1).Have<=0 then return MINI(RPGChar.Name(ch).." cannot shoot! Out of ammo!") end
+if RPGChar.Points(ch,"AMMO",1).Have<=0 then return MINI(RPGChar.GetName(ch).." cannot shoot! Out of ammo!") end
 local tg,ti = TargetFromAct(act)
 if not CheckTarget(tg,ti) then MINI("Shot cancelled",255,0,0); MINI("There's no enemy on that spot anymore",255,180,0); return end
 CSay(sval(ag).."["..sval(ai).."]: "..sval(ch).." shoots")

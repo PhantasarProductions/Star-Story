@@ -287,20 +287,21 @@ InputItems = {
 				for t=0,2 do
 					chl = t + 3
 					cch = RPGChar.PartyTag(chl)
-					if cch then
+					if cch and cch~="" then
 						x,y=t*40+640,550
 						Image.Color(c,c,c)
-						Image.Rect(x,y,30,30)
-					end
-					if mousehit(1) and mx>=x and mx<=x+30 and my>=y and my<=y-30 then
-						RPGChar.SetParty(chl,RPGChar.PartyTag(pos))
-						RPGChar.SetParty(pos,cch)
-						Fighters.Hero[pos+1] = { Tag = cch }
-						PIA=nil
-					end
-					if mousehit(2) then PIA=nil end
-					ShowMouse()
-				end				
+						Image.Rect(x,y,30,30,1)
+						if mousehit(1) and mx>=x and mx<=x+30 and my>=y and my<=y+30 then
+							RPGChar.SetParty(chl,RPGChar.PartyTag(pos-1))
+							RPGChar.SetParty(pos-1,cch)
+							Fighters.Hero[pos] = { Tag = cch, Gauge=9995 }
+							PIA=nil 
+							UseInputItems = nil
+						end
+					end					
+				end
+				ShowMouse()
+				if mousehit(2) then PIA=nil end
               end
     }  
 
