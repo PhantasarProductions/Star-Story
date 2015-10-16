@@ -18,7 +18,7 @@ Alexander | 4 | Audio; Misc files; Music;
 Angela Nagtzaam | 11 | Art; 
 Ann | 1 | Art; 
 Benboncan | 1 | Audio; 
-Courtney Novits | 3 | Font; Misc files; 
+Courtney Novits | 4 | Font; Misc files; 
 Cynix | 1 | Art; 
 Emily Esposito | 1 | Art; 
 Eric Matyas | 2 | Music; 
