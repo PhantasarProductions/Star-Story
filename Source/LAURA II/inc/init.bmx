@@ -20,9 +20,9 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.10.16
+Version: 15.10.17
 End Rem
-MKL_Version "LAURA II - init.bmx","15.10.16"
+MKL_Version "LAURA II - init.bmx","15.10.17"
 MKL_Lic     "LAURA II - init.bmx","GNU General Public License 3"
 
 Function Init()
@@ -126,11 +126,11 @@ screenheight = s[1].toint()
 Local bit[] = [32,24,16]
 Local cbit
 ?debug
-If fullscreen id.Get("Windowed").toUpper()<>"YES" fullscreen = Proceed("We're running in debug mode.~n~nDo you want fullscreen?")
+If fullscreen startup.c("Windowed").toUpper()<>"YES" fullscreen = Proceed("We're running in debug mode.~n~nDo you want fullscreen?")
 If fullscreen=-1 Bye
 ?
-ConsoleWrite "Request to force Windowed mode is: "+ id.Get("Windowed")
-If fullscreen And id.Get("Windowed").toUpper()<>"YES"
+ConsoleWrite "Request to force Windowed mode is: "+ startup.c("Windowed")
+If fullscreen And startup.c("Windowed").toUpper()<>"YES"
 	For Local abit=EachIn bit
 		If GraphicsModeExists(screenwidth,screenheight,abit)
 			cbit = abit
