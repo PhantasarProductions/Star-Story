@@ -1,6 +1,6 @@
 --[[
   CPlayerInput.lua
-  Version: 15.09.19
+  Version: 15.10.16
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -277,7 +277,28 @@ InputItems = {
     { Name = "Switch",
       Item = "SWT",
       Allow = function(ch) return RPGChar.PartyTag(3)~="" end,
-      Input = function(ch)
+      Input = function(ch,pos)
+				SetFont("StatusName")
+				DarkText("Please select a character from the back row to replace: "..ch,400,300,2,2,0,180,255)
+				local s = math.sin(Time.MSecs()/250)
+				local c = s*255
+				local x,y,chl,cch
+				local mx,my=MouseCoords()
+				for t=0,2 do
+					chl = t + 3
+					cch = RPGChar.PartyTag(chl)
+					if cch then
+						x,y=t*40+640,550
+						Image.Color(c,c,c)
+					end
+					if mousehit(1) and mx>=x and mx<=x+30 and my>=y and my<=y-30 then
+						RPGChar.SetParty(chl,RPGChar.PartyTag(pos))
+						RPGChar.SetParty(pos,cch)
+						Fighters.Hero[pos+1] = { Tag = cch }
+						PIA=nil
+					end
+					if mousehit(2) then PIA=nil end
+				end				
               end
     }  
 
