@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 15.10.13
+  Version: 15.10.16
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -679,21 +679,25 @@ for i=1,10 do
 end
 
 function DrawScreen()
-Feature.VAULT = Feature.VAULT or "Items"
-Feature[returnto] = Feature[returnto] or "Status"
-if not Done("&"..returnto.."."..Feature[returnto]) then 
-   Tutorial(tuts[returnto.."."..Feature[returnto]])
-   CSay("Showing menu tutorial: "..returnto.."."..Feature[returnto]) 
-   end
-Image.Cls()
-Image.Draw(back,0,0)
-Image.Draw(chpointer,(pcharn*200)+100,450)
-local f = DrawArray[returnto or "ERROR"] or DrawArray.ERROR
-f()
-f = FeatureHandleArray[Feature[returnto] or "ERROR"] or FeatureHandleArray.ERROR
-f()
-ShowParty()
-ShowMouse(ChosenItem.Icon)
+	Feature.VAULT = Feature.VAULT or "Items"
+	Feature[returnto] = Feature[returnto] or "Status"
+	if not Done("&"..returnto.."."..Feature[returnto]) then 
+		Tutorial(tuts[returnto.."."..Feature[returnto]])
+		CSay("Showing menu tutorial: "..returnto.."."..Feature[returnto]) 
+	end
+	Image.Cls()
+	Image.Draw(back,0,0)
+	if pcharn<3 then
+		Image.Draw(chpointer,(pcharn*200)+100,450)
+	else
+		-- This comes later.
+	end
+	local f = DrawArray[returnto or "ERROR"] or DrawArray.ERROR
+	f()
+	f = FeatureHandleArray[Feature[returnto] or "ERROR"] or FeatureHandleArray.ERROR
+	f()
+	ShowParty()
+	ShowMouse(ChosenItem.Icon)
 end
 
 ClickArray = {
