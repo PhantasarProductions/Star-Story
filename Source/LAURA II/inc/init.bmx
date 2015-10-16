@@ -129,6 +129,7 @@ Local cbit
 If fullscreen id.Get("Windowed").toUpper()<>"YES" fullscreen = Proceed("We're running in debug mode.~n~nDo you want fullscreen?")
 If fullscreen=-1 Bye
 ?
+ConsoleWrite "Request to force Windowed mode is: "+ id.Get("Windowed")
 If fullscreen And id.Get("Windowed").toUpper()<>"YES"
 	For Local abit=EachIn bit
 		If GraphicsModeExists(screenwidth,screenheight,abit)
@@ -136,6 +137,7 @@ If fullscreen And id.Get("Windowed").toUpper()<>"YES"
 			Print "Graphics mode: "+screenwidth+"x"+Screenheight+"; "+abit+"bit"
 			CurrentGraphicsMode = Graphics(screenwidth,screenheight,cbit)
 			SetBlend alphablend
+			Kthura_GrabBoundaries	
 			Return
 			EndIf
 		Next

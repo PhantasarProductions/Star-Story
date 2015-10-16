@@ -1,6 +1,6 @@
 --[[
   Achievements.lua
-  Version: 15.10.16
+  Version: 15.10.17
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -71,7 +71,7 @@ Mini('Earned achievement: "'..Achievements[Tag].Title..'"')
 end
 
 -- @IF *GAMEJOLT
-function SychronizeGameJolt()
+function SynchronizeGameJolt()
 	Console.Write("")
 	Console.Write("Synchronizing achievements with GameJolt",180,0,255)
 	Console.Show()
@@ -85,11 +85,6 @@ function SychronizeGameJolt()
 		end
 	end
 	Console.Write("All done.",255,180,0)
-	Console.Write("This program will close in a few seconds.",255,180,0)
-	Console.Show()
-	Console.Flip()
-	Time.Delay(5000)
-	Sys.Bye()	
 end
 -- @FI
 

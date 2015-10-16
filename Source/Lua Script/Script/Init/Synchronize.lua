@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.16
+version: 15.10.17
 ]]
 
 
@@ -58,7 +58,11 @@ function Synchronize()
 	-- And here is the actual action.
 	MS.LoadNew("ACH","Script/Flow/Achievements.lua")
 	MS.Run("ACH","SynchronizeGameJolt")
-	Sys.Error("If this message appears, it appears a failed request is done to synchronize achievements. Why?")
+	Console.Write("This program will close in a few seconds.",255,180,0)
+	Console.Show()
+	Console.Flip()
+	Time.Sleep(5000)
+	Sys.Bye()	
 end
 -- @FI
 
