@@ -679,6 +679,7 @@ for i=1,10 do
 end
 
 function DrawScreen()
+	local tpos
 	Feature.VAULT = Feature.VAULT or "Items"
 	Feature[returnto] = Feature[returnto] or "Status"
 	if not Done("&"..returnto.."."..Feature[returnto]) then 
@@ -689,8 +690,10 @@ function DrawScreen()
 	Image.Draw(back,0,0)
 	if pcharn<3 then
 		Image.Draw(chpointer,(pcharn*200)+100,450)
-	else
-		-- This comes later.
+	else		
+		tpos = pcharn - 3
+		Image.Color(0,180,255)
+		Image.Rect(tpos*40+640,550,30,30,1)
 	end
 	local f = DrawArray[returnto or "ERROR"] or DrawArray.ERROR
 	f()
