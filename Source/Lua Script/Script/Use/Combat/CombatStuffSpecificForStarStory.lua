@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.04
+version: 15.10.17
 ]]
 -- @IF IGNORE
 VicCheck = {}
@@ -100,6 +100,7 @@ end
 
 
 function KillFoe(idx,myfoe)
+local maxlvmargin = {10000,10,5}
 local f = upper(myfoe.File)
 Dbg("Let's kill foe #"..idx.."> "..sval(myfoe.Tag))
 inc("%COMBATSTAT.KILLS")
@@ -114,6 +115,8 @@ for i=0,5 do
     if herotag and herotag~="" then
        herolevel = RPGStat.Stat(herotag,"Level")
        gainexp = math.floor((enemylevel/herolevel)*maxfactor)
+	   if skill==3 then gainexp = gainexp - (Bestiary[f]-1) end -- In the hard mode you will gain less experience for enemies you've met before.
+	   if gainexp<0 or (herolevel-enemylevel)>maxlvmargin[skill] then gainexp=0 end
        if RPGStat.Points(herotag,"HP").Have==0 then
           ({
            function() end,
