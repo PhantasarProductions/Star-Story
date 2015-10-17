@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 15.10.15
+  version: 15.10.18
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -49,19 +49,19 @@ ZA = { Enter = {}, Leave = {}, Flow = {} }
 ZAChkEnter = {}
 ZAChkLeave = {}
 
-function ZA_SetAction(Z,A,F)
-table.insert(ZA[A],{Z = Z, F = F})
+function ZA_SetAction(Z,A,F,P)
+table.insert(ZA[A],{Z = Z, F = F, P = P})
 end
 
-function ZA_Enter(Z,F)
-ZA_SetAction(Z,"Enter",F)
+function ZA_Enter(Z,F,P)
+ZA_SetAction(Z,"Enter",F,P)
 end
 
 function ZA_Leave(Z,F)
-ZA_SetAction(Z,"Leave",F)
+ZA_SetAction(Z,"Leave",F,P)
 end
 
-function ZA_Flow(Z,F)
+function ZA_Flow(Z,F,P)
 ZA_SetAction(Z,"Flow",F)
 end
 
@@ -78,7 +78,7 @@ for ZK,ZZ in pairs(ZA.Enter) do
        b = Maps.Obj.Exists(ZZ.Z)==1 and Maps.ActorInZone(actor,ZZ.Z)==1
        if (not ZAChkEnter[ZZ.Z]) and b then 
           KillWalkArrival() 
-          ZZ.F() 
+          ZZ.F(ZZ.P) 
           end
        ZAChkEnter[ZZ.Z] = b
        end 
@@ -92,7 +92,7 @@ for ZK,ZZ in pairs(ZA.Leave) do
     b = Maps.Obj.Exists(ZZ.Z)==1 and Maps.ActorInZone(actor,ZZ.Z)==1
     if Maps.Obj.Exists(ZZ.Z)==1 and ZAChkLeave[ZZ.Z] and (not b) then 
        KillWalkArrival() 
-       ZZ.F() 
+       ZZ.F(ZZ.P) 
        end
     ZAChkLeave[ZZ.Z] = b 
     end
@@ -105,7 +105,7 @@ for ZK,ZZ in pairs(ZA.Flow) do
     b = Maps.Obj.Exists(ZZ.Z)==1 and Maps.ActorInZone(actor,ZZ.Z)==1
     if b then
        KillWalkArrival() 
-       ZZ.F() 
+       ZZ.F(ZZ.P) 
        end
     end
 end

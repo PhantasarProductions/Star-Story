@@ -32,13 +32,16 @@
   
  **********************************************
  
-version: 15.10.15
+version: 15.10.18
 ]]
+
+-- Switch routine (in case we need it)
 function OnLayerSwitch(layer)
 	CSay("Switched to layer: "..layer)
 end
 
 
+-- Stairways
 function GoNext()
 	local c = Sys.Val(right(Maps.LayerCodeName,3))
 	c = c + 1
@@ -57,14 +60,40 @@ function GoPrev()
 	SpawnPlayer("Einde")
 end
 
+-- Back to your cell
 function ToCell()
 	LoadMap("LostPlanet_Dungeon_Cell")
 	SpawnPlayer("Einde")
 	TurnPlayer("South")
 end
 
+-- "Rock around the clock" puzzle (#003)
+function ClockPlate(num)
+	local good
+	numorder = numorder or {}
+	numpressed = numpressed or {}
+	if numpressed[num] then return end
+	numorder[#numorder+1]=num
+	numpressed[num]=true
+	if #numorder==12 then
+		good=true
+		for i,v in ipairs(numorder) do 
+			good = good and i==v
+		end
+		if good then 
+			for i=1,12 do
+				Maps.PermaWrite("Maps.Obj.Obj('ClockPlate"..i.."').Frame=1") -- seal all doors.
+			end
+			Maps.Obj.Kill("ClockDoor",1)
+		end
+	end
+end
+
+	
 
 
+
+-- Init everything right
 function GALE_OnLoad()
 	Music('Dungeon/Dungeon1.ogg')
 	ZA_Enter("Next",GoNext)
