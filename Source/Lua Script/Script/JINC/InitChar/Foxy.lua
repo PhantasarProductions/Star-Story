@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.13
+version: 15.10.18
 ]]
 skill = Sys.Val(Var.C("%SKILL"))
 ch = "Foxy"
@@ -42,7 +42,7 @@ RPGChar.SetData("Foxy","INVITEM2","FIRSTAIDKIT")
 RPGStat.SetStat("Foxy","INVAMNT2",7)
 RPGChar.SetData("Foxy","INVITEM2","ANTIDOTE")
 RPGStat.SetStat("Foxy","INVAMNT2",8)
-RPGChar.DefStat("Foxy","AMMO_BASE",6)
+--RPGChar.DefStat("Foxy","AMMO_BASE",6)
 RPGChar.DefStat("Foxy","Level",30/skill)
 RPGStat.AddList("Foxy","ABL","FOXY_MULTISTAB")
 RPGStat.AddList("Foxy","ABL","FOXY_PICKPOCKET")
