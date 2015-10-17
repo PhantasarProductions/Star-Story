@@ -1,6 +1,6 @@
 --[[
   BoxText.lua
-  Version: 15.09.28
+  Version: 15.10.17
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -162,7 +162,7 @@ Image.Draw(piccorner,0,bstarty)
 Image.Color(255,255,255)
 Image.ViewPort(40,bstarty,800,3)
 Image.Tile(picup,40,0)
-Image.ViewPort(0,bstarty+19,19,bstarty)
+Image.ViewPort(0,bstarty+19,19,600-bstarty)
 Image.Tile(picside,0,0)
 Image.ViewPort(0,0,800,600)
 -- Portrait
