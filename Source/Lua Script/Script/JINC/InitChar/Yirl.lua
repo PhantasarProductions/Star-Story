@@ -1,6 +1,6 @@
 --[[
   Yirl.lua
-  Version: 15.10.13
+  Version: 15.10.17
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -52,5 +52,7 @@ RPGStat.DefStat(ch,"SR_BASE_Will",24/skill)
 RPGStat.DefStat(ch,"SR_BASE_Block",54/skill)
 RPGStat.DefStat(ch,"SR_BASE_Death",66/skill)
 RPGStat.DefStat(ch,"SR_BASE_Damned",60-(skill*10))
+
+RPGStat.SetData(ch,"ShootSpellAni","Yirl_Laser")
 
 Console.Write("Let's welcome Yirl!",0,255,0)

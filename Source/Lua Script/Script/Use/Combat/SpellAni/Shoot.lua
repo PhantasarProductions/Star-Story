@@ -1,6 +1,6 @@
 --[[
   Shoot.lua
-  Version: 15.10.03
+  Version: 15.10.17
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -55,6 +55,24 @@ y = y + gy
 DrawScreen()
 White()
 Image.Show("PROJECTILE_PHOTON",x,y)
+Flip()
+until x<-50 or x>850 or y<-50 or y>650
+end
+
+function SpellAni.Yirl_Laser(ActG,ActT,TarG,TarT)
+local ax,ay = FighterCoords(ActG,ActT)
+local tx,ty = FighterCoords(TarG,TarT)
+local gx = (tx-ax)/10
+local gy = (ty-ay)/10
+local x,y=ax,ay
+Image.LoadNew("PROJECTILE_YIRL_LASER","GFX/Combat/Projectiles/Yirl_Laser.png")
+SFX("Audio/SFX/Photon.ogg")
+repeat
+x = x + gx
+y = y + gy
+DrawScreen()
+White()
+Image.Show("PROJECTILE_YIRL_LASER",x,y)
 Flip()
 until x<-50 or x>850 or y<-50 or y>650
 end
