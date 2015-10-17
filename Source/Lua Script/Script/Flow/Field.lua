@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.10.16
+  Version: 15.10.17
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -636,6 +636,8 @@ for obj in KthuraEach('Obstacle') do -- Remove all existing items to prevent con
     end
 CSay("Placing in treasures")
 local k,treas
+local originallayer
+if Maps.Multi()==1 then originallayer = Maps.LayerCodeName end
 for k,treas in spairs(FieldTreasure or {}) do
 	if Maps.Multi()==1 then Maps.GotoLayer(treas.layer) end
     Maps.CreateObstacle(treas.x,treas.y,treas.icon,treas.objtag)
@@ -644,7 +646,8 @@ for k,treas in spairs(FieldTreasure or {}) do
     Maps.Obj.MyObject.Labels = treas.labels       -- CSay("Labels")
     Maps.Obj.MyObject.Impassible = 0
     CSay("  = Placed: "..k)
-    end
+	end
+if Maps.Multi()==1 then Maps.GotoLayer(originallayer) end
 Maps.Remap()    
 end
 

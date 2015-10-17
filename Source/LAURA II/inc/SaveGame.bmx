@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.10.14
+Version: 15.10.17
 End Rem
 
 Function GetActorSaveDump$(SMap:TKthura)
@@ -141,8 +141,8 @@ For Local line$=EachIn JCR_ListFile(BD,"LAURA/System")
 		Select ls[0]
 			Case "FullScreen"	graphicsfullscreen=ls[1].toint()
 			Case "Flow"		currentflow = ls[1]
-			Case "Maps.Layer" LayerTag = ls[1]
-			Case "Maps.File"	MapFIle = ls[1]; LAURA2MAPS.Load MapFile,LayerTag
+			Case "Maps.Layer" LayerTag = ls[1]; DebugLog "LG: Set layer is: "+ls[1]
+			Case "Maps.File"	MapFIle = ls[1]; LAURA2MAPS.Load MapFile,LayerTag; DebugLog "LG: Map is: "+ls[1]+";"+LayerTag
 			Case "Maps.Cam.X"	LAURA2MAPS.CamX = ls[1].toint()
 			Case "Maps.Cam.Y" LAURA2MAPS.CAMY = ls[1].toint()
 			Case "DeleteMe"	DeleteWhenLoaded = ls[1].tolower()="true"
@@ -158,6 +158,7 @@ Map.RemoveActors
 Local A:TKthuraActor
 Local O:TKthuraObject
 Local layer:TKthura = map
+Local clay$ = LAURA2MAPS.LayerCodeName
 For Local Line$=EachIn JCR_ListFile(BD,"MAP/Actors")
 	If line And Trim(Left(line,2))<>"--"
 		If Trim(line)="NEW"
@@ -175,6 +176,7 @@ For Local Line$=EachIn JCR_ListFile(BD,"MAP/Actors")
 			Select Trim(ls[0])
 				Case "Layer"	If Not map.multi GALE_Error("This savegame actor list has layers requiring a multi-map.")
 							layer = map.getmultilayer(ls[1])
+							DebugLog "LG: Go to Layer: "+ls[1]
 				Case "Tag"		a.tag = ls[1]; DebugLog "We got an actor named: "+a.tag
 				Case "x"		a.x = ls[1].toint()
 				Case "y"		a.y = ls[1].toint()
@@ -198,6 +200,7 @@ For Local Line$=EachIn JCR_ListFile(BD,"MAP/Actors")
 			EndIf
 		EndIf
 	Next	
+'layer = map.getmultilayer(ls[1])	
 If map.multi map.multiremap; Else map.totalremap
 ' Swap files
 If FileType(Swapdir)
@@ -217,8 +220,13 @@ For Local E$ = EachIn EntryList(BD)
 		JCR_Extract BD,E,OSFile,1
 		EndIf
 	Next
+' Make sure we are in the correct layer
+DebugLog "Forcing to layer: "+LayerTag
+If Map.Multi laura2maps.GotoLayer LayerTag
+DebugLog "Check after force: "+laura2maps.LayerCodeName
 ' Perform perma-change if it's there
 Local permafile$ = SwapDir+"/Perma-Map/"+laura2maps.CodeName+".lua"
+If Map.Multi permafile = SwapDir+"/Perma-Map/"+laura2maps.CodeName+"/"+Laura2maps.LayerCodeName+".lua"
 If FileType(permafile)
 	GALE_LoadScript(Raw2JCR(permafile,permafile),permafile)
 	EndIf	

@@ -126,7 +126,7 @@ screenheight = s[1].toint()
 Local bit[] = [32,24,16]
 Local cbit
 ?debug
-If fullscreen startup.c("Windowed").toUpper()<>"YES" fullscreen = Proceed("We're running in debug mode.~n~nDo you want fullscreen?")
+If fullscreen And startup.c("Windowed").toUpper()<>"YES" fullscreen = Proceed("We're running in debug mode.~n~nDo you want fullscreen?")
 If fullscreen=-1 Bye
 ?
 ConsoleWrite "Request to force Windowed mode is: "+ startup.c("Windowed")
