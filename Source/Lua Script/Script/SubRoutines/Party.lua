@@ -1,6 +1,6 @@
 --[[
   Party.lua
-  Version: 15.10.14
+  Version: 15.10.17
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -265,6 +265,21 @@ RPGStat.Points(ch,"HP").Have = RPGStat.Points(ch,"HP").Maximum
 RPGStat.Points(ch,"AP").Have = RPGStat.Points(ch,"AP").Maximum
 end
 
+function LevelUp(ch,pos)
+   local lv = RPGStat.Stat(ch,"Level")
+   RPGStat.DefStat(ch,"Level",lv+1) 
+   GrabLevel(ch,RPGChar.Stat(ch,"Level"));
+   RPGStat.Points(ch,"EXP").Have=0
+   if RPGStat.Points(ch,"HP").Have>0 then
+      ({ 
+	  [1] = function() RPGStat.Points(ch,"HP").Have = RPGStat.Points(ch,"HP").Maximum RPGStat.Points(ch,"AP").Have = RPGStat.Points(ch,"AP").Maximum end,
+      [2] = function() RPGStat.Points(ch,"HP").Have = RPGStat.Points(ch,"HP").Maximum end,
+      [3] = function() end })[skill](ch)
+	end
+   if RPGStat.Stat(ch,"Level")>=MaxLevel then RGPStat.Points(ch,EXP).Maximum=0 end   
+end   
+
+
 function ShowStats(ch,pos)
 if ch=="" then return end
 local col = math.abs(math.sin(Time.MSecs()/1000)*100)
@@ -301,17 +316,9 @@ if epm>0 then
    end
 DarkText(lv,sx+195,575,1,0)
 if Image.TextWidth(lv)<100 then DarkText("LV",sx+95,575,1,0,col+100,col+100,col+100) end   
-if epm>0 and ep==epm then
-   RPGStat.DefStat(ch,"Level",lv+1) 
-   GrabLevel(ch,RPGChar.Stat(ch,"Level"));
-   RPGStat.Points(ch,"EXP").Have=0
-   if RPGStat.Points(ch,"HP").Have>0 then
-   ({ [1] = function() RPGStat.Points(ch,"HP").Have = RPGStat.Points(ch,"HP").Maximum RPGStat.Points(ch,"AP").Have = RPGStat.Points(ch,"AP").Maximum end,
-      [2] = function() RPGStat.Points(ch,"HP").Have = RPGStat.Points(ch,"HP").Maximum end,
-      [3] = function() end })[skill](ch)
-      end
+if epm>0 and ep==epm then 
+	LevelUp(ch,pos)
    levelupanim[ch] = { scl=0; tme=150 }
-   if RPGStat.Stat(ch,"Level")>=MaxLevel then RGPStat.Points(ch,EXP).Maximum=0 end   
    SFX("Audio/SFX/MBOX2.ogg")
    end
 if levelupanim[ch] then
@@ -343,7 +350,8 @@ end
 
 
 function ShowParty()
-local ak
+local a,chk
+local ep,epm
 White()
 Image.Show(statusbar,0,500)
 -- First show all pictures, the data must be done in a separate loop or the pictures will overlap the data, and the data is more important than the pics.
@@ -356,7 +364,12 @@ for ak=0,2 do
    end    
 -- And the mini messages (if there are any)
 for ak=3,5 do
-	ShowMiniPic(RPGChar.PartyTag(ak),ak)
-	end
+	ch = RPGChar.PartyTag(ak)
+	if ch and ch~="" then		
+		ShowMiniPic(ch,ak)
+		ep,epm = RPGChar.Points(ch,"EXP").Have,RPGChar.Points(ch,"EXP").Maximum
+		if epm>0 and ep==epm then LevelUp(ch,ak) end
+	    end
+	end	
 ShowMini()   
 end
