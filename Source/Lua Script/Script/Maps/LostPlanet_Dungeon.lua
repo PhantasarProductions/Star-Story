@@ -90,7 +90,18 @@ function ClockPlate(num)
 end
 
 	
-
+function CLICK_ARRIVAL_ClockPlate1 () ClockPlate( 1) end
+function CLICK_ARRIVAL_ClockPlate2 () ClockPlate( 2) end
+function CLICK_ARRIVAL_ClockPlate3 () ClockPlate( 3) end
+function CLICK_ARRIVAL_ClockPlate4 () ClockPlate( 4) end
+function CLICK_ARRIVAL_ClockPlate5 () ClockPlate( 5) end
+function CLICK_ARRIVAL_ClockPlate6 () ClockPlate( 6) end
+function CLICK_ARRIVAL_ClockPlate7 () ClockPlate( 7) end
+function CLICK_ARRIVAL_ClockPlate8 () ClockPlate( 8) end
+function CLICK_ARRIVAL_ClockPlate9 () ClockPlate( 9) end
+function CLICK_ARRIVAL_ClockPlate10() ClockPlate(10) end
+function CLICK_ARRIVAL_ClockPlate11() ClockPlate(11) end
+function CLICK_ARRIVAL_ClockPlate12() ClockPlate(12) end
 
 
 -- Init everything right
@@ -99,4 +110,5 @@ function GALE_OnLoad()
 	ZA_Enter("Next",GoNext)
 	ZA_Enter("Prev",GoPrev)
 	ZA_Enter("ToCell",ToCell)
+	for i=1,12 do AddClickable("ClockPlate"..i) end
 end
