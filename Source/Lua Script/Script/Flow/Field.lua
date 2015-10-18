@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.10.17
+  Version: 15.10.18
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -216,8 +216,12 @@ if mousehit(1) then
               CSay(" = Arrival call: "..WalkArrival)
               CSay(" = ARMSpot:      "..ARMSpot)
               ret = true
-          else
-            Actors.WalkToSpot(cplayer,"SPOT_"..c)
+		  else
+			if Maps.Obj.Exists("SPOT_"..c)==1 then
+				Actors.WalkToSpot(cplayer,"SPOT_"..c)
+			else
+				Actors.WalkToSpot(cplayer,c)
+			end			
             WalkArrival = "CLICK_ARRIVAL_"..c
             ret=true
             end
