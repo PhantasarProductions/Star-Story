@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.18
+version: 15.10.19
 ]]
 
 -- Switch routine (in case we need it)
@@ -70,10 +70,11 @@ end
 -- "Rock around the clock" puzzle (#003)
 function ClockPlate(num)
 	local good
-	Actors.MoveToSpot("PLAYER","ClockPlate"..num")
+	Actors.MoveToSpot("PLAYER","ClockPlate"..num)
 	numorder = numorder or {}
 	numpressed = numpressed or {}
 	if numpressed[num] then return end
+	SFX("Audio/SFX/Gen/whoosh.ogg")
 	numorder[#numorder+1]=num
 	numpressed[num]=true
 	Maps.Obj.Obj("ClockPlate"..num).Frame=1
@@ -89,7 +90,7 @@ function ClockPlate(num)
 			Maps.Obj.Kill("ClockDoor",1)
 		else
 			for i=1,12 do 
-				Maps.Obj.Obj("ClockPlate"..num).Frame=0
+				Maps.Obj.Obj("ClockPlate"..i).Frame=0
 				numorder = nil
 				numpressed = nil
 			end			
