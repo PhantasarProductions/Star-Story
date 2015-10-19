@@ -36,6 +36,7 @@
 1. Script/JINC/Foes/Reg/Cyborg Captain.lua
 1. Script/JINC/Foes/Reg/Cyborg Gunner.lua
 1. Script/JINC/Foes/Reg/Cyborg Medic.lua
+1. Script/JINC/Foes/Reg/flirmouse.lua
 1. Script/JINC/Foes/Reg/GrassTiger.lua
 1. Script/JINC/Foes/Reg/Gummi.lua
 1. Script/JINC/Foes/Reg/Rat.lua
@@ -202,4 +203,4 @@
 1. SCRIPT/LIBS/TABLECONTAINS.LUA
 1. SCRIPT/LIBS/VALSTR.LUA
 
-### Last updated: Mon 19 October 2015; 00:25:12 CET
+### Last updated: Mon 19 October 2015; 03:44:20 CET
