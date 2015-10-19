@@ -635,27 +635,37 @@ for obj in KthuraEach("Actor") do
 end
 
 function PlaceTreasures()
-for obj in KthuraEach('Obstacle') do -- Remove all existing items to prevent conflicts
-    if prefixed(obj.Tag,"Item.") then Maps.Obj.Kill(obj.Tag) end
-    end
-CSay("Placing in treasures")
-local k,treas
-local originallayer
-if Maps.Multi()==1 then originallayer = Maps.LayerCodeName end
-for k,treas in spairs(FieldTreasure or {}) do
-	if Maps.Multi()==1 then Maps.GotoLayer(treas.layer) end
-    Maps.CreateObstacle(treas.x,treas.y,treas.icon,treas.objtag)
-    Maps.Obj.Pick(treas.objtag)  --CSay("Pick")
-    Maps.Obj.MyObject.Dominance = treas.dominance  -- CSay("Dominance")
-    Maps.Obj.MyObject.Labels = treas.labels       -- CSay("Labels")
-    Maps.Obj.MyObject.Impassible = 0
-    CSay("  = Placed: "..k)
+	local layers = {"*"} -- In non multi-map we need at least one "layer"
+	local originallayer
+	-- if Maps.Multi()==1 then originallayer = Maps.LayerCodeName end
+	if Maps.Multi()==1 then 
+		layers = mysplit(Maps.Layers(),";") 
+		originallayer=Maps.LayerCodeName 
+	end	
+	for lay in each(layers) do
+		if Maps.Multi()==1 then Maps.GotoLayer(lay) end
+		for obj in KthuraEach('Obstacle') do -- Remove all existing items to prevent conflicts			
+			if prefixed(obj.Tag,"Item.") then 
+				Maps.Obj.Kill(obj.Tag) 
+			end			
+		end	
 	end
-if Maps.Multi()==1 then 
-	Maps.MultiRemap()
-	Maps.GotoLayer(originallayer) 
+	CSay("Placing in treasures")
+	local k,treas
+	for k,treas in spairs(FieldTreasure or {}) do
+		if Maps.Multi()==1 then Maps.GotoLayer(treas.layer) end
+		Maps.CreateObstacle(treas.x,treas.y,treas.icon,treas.objtag)
+		Maps.Obj.Pick(treas.objtag)  --CSay("Pick")
+		Maps.Obj.MyObject.Dominance = treas.dominance  -- CSay("Dominance")
+		Maps.Obj.MyObject.Labels = treas.labels       -- CSay("Labels")
+		Maps.Obj.MyObject.Impassible = 0
+		CSay("  = Placed: "..k)
+	end
+	if Maps.Multi()==1 then 
+		Maps.MultiRemap()
+		Maps.GotoLayer(originallayer) 
 	else
-	Maps.Remap()    
+		Maps.Remap()    
 	end
 end
 
