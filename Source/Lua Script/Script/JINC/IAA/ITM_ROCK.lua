@@ -1,5 +1,5 @@
 --[[
-  ABL_WENDICKA_ELECTRICCHARGE.lua
+  ITM_ROCK.lua
   Version: 15.10.19
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,20 +35,22 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 200,
-	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 50,
 	["ActSpeed"] = 250,
-	["AttackElement"] = "Non-Elemental",
+	["AttackElement"] = "Earth",
+	["AttackPower"] = 150,
 	["AttackStat"] = "Strength",
-	["DefenseStat"] = "Defense",
-	["Description"] = "Charge up energy for Voltsunami",
+	["DefenseStat"] = "Resistance",
+	["Description"] = "Throw to the enemy",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Gun.png",
+	["ITM_BuyPrice"] = 100,
+	["ITM_SellPrice"] = 75,
+	["ITM_Sellable"] = true,
+	["Icon"] = "GFX/Inventory/Rock.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Electric Charge",
-	["Target"] = "AF",
-	["UseCombat"] = true}
+	["Name"] = "Rock",
+	["Target"] = "1F",
+	["UseCombat"] = true,
+	["UseField"] = true}
 
 return ret
 

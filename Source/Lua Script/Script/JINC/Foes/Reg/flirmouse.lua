@@ -61,7 +61,7 @@ Data = {
 		["Defense"] = {0,400},
 		["Will"] = {0,300},
 		["Resistance"] = {0,200},
-		["Agility"] = {0,300},
+		["Agility"] = {0,200},
 		["Accuracy"] = {0,1000},
 		["Evasion"] = {0,25},
 		["HP"] = {1,2000},
@@ -81,31 +81,30 @@ local temp
 Data.ActMinLevel["Sys.Attack"] = 1		for ak=1,10 do table.insert(Data.Acts,"Sys.Attack") end
 Data.ActMinLevel["Abl.ABL_FOE_VENOMBITE"] = 50		for ak=1,1 do table.insert(Data.Acts,"Abl.ABL_FOE_VENOMBITE") end
 temp = { ITM='ITM_ADHBANDAGE', LVL=1, VLT=false }
-for ak=1,5 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,5 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_ANTIDOTE', LVL=2, VLT=false }
-for ak=1,10 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,5 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_BANDAGE', LVL=20, VLT=false }
-for ak=1,5 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,5 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_BLUBAFLOWER', LVL=1, VLT=false }
+for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,10 do table.insert(Data.ItemSteal,temp) end
-temp = { ITM='ITM_EQP_EMERALD', LVL=60, VLT=false }
-for ak=1,2 do table.insert(Data.ItemDrop ,temp) end
+temp = { ITM='ITM_EQP_EMERALD', LVL=600, VLT=false }
+for ak=1,1 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,3 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_GUBAFLOWER', LVL=15, VLT=false }
 for ak=1,5 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_HEALINGCAPSULE', LVL=8, VLT=false }
-for ak=1,3 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,1 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_ROCK', LVL=20, VLT=false }
+for ak=1,25 do table.insert(Data.ItemDrop ,temp) end
 temp = { ITM='ITM_SPORES', LVL=3, VLT=false }
-for ak=1,3 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,5 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,3 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_THUNDER_DIAMOND', LVL=50, VLT=false }
 for ak=1,1 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,8 do table.insert(Data.ItemSteal,temp) end
-temp = { ITM='ITM_VLUGZOUT', LVL=5, VLT=false }
+temp = { ITM='ITM_VLUGZOUT', LVL=80, VLT=false }
 for ak=1,5 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,5 do table.insert(Data.ItemSteal,temp) end
 
