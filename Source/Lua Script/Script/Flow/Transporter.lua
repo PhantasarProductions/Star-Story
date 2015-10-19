@@ -1,6 +1,6 @@
 --[[
   Transporter.lua
-  Version: 15.10.10
+  Version: 15.10.19
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -44,10 +44,12 @@ local obj = Maps.Obj.Obj("Trans.Spot."..tag)
 local pad = Maps.Obj.Obj("Trans.Pad." ..tag)
 local node = upper(Maps.CodeName.."."..tag)
 local demo = false
+local layer = nil
+if Maps.Multi() then layer=Maps.LayerCodeName end
 if Transporters.Nodes[node] then return end
 for m in each(DemoMaps) do demo = demo or upper(Maps.CodeName)==m end
 CSay("Activating transporter: "..tag)
-Transporters.Nodes[node] = { Map = Maps.CodeName, Transporter = "Trans.Spot."..tag, Demo=demo }
+Transporters.Nodes[node] = { Map = Maps.CodeName, Transporter = "Trans.Spot."..tag, Demo=demo, Layer=layer }
 Transporters.Worlds[obj.DataGet("WORLD")] = Transporters.Worlds[obj.DataGet("WORLD")] or {}
 table.insert(Transporters.Worlds[obj.DataGet("WORLD")],{Location = obj.DataGet("LOCATION"), Node=node}) 
 end
