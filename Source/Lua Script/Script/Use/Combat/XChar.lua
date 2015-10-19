@@ -126,9 +126,9 @@ XCharAfterAction = {
 				local r
 				CSay("Let's see if Foxy learns something new!")
 				for abl,rate in pairs(abilities) do
-					hasit = RPGChar.ListHas("Foxy","ABL",abl)==1
+					hasit = RPGChar.ListHas("Foxy","ABL","FOXY_"..abl)==1
 					hasall = hasall and hasit
-					learnit = RPGChar.ListHas("Foxy","LEARN",abl)==1
+					learnit = RPGChar.ListHas("Foxy","LEARN","FOXY_"..abl)==1
 					allowlearn = not(hasit or learnit)
 					r = rand(1,rate)
 					CSay("Ability: "..abl.."; hasit: "..sval(hasit).."; hasall: "..sval(hasall).."; learnit: "..sval(learnit).."; allowlearn: "..sval(allowlearn).."; rate: "..rate.."; random: "..r)
