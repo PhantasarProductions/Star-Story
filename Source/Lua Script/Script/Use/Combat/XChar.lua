@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.16
+version: 15.10.19
 ]]
 
 -- Kills for ExHuRU (and his "representatives")  
@@ -89,7 +89,7 @@ XCharAbility = {
                         [200] = "ELECTRICCHARGE"
                         }
                    local i,a
-                   if RPGChar.ListHas("UniWendicka","WENDICKA_"..spells[200])==1 then Award("ALLABL_WENDICKA") end
+                   if RPGChar.ListHas("UniWendicka","ABL","WENDICKA_"..spells[200])==1 then Award("ALLABL_WENDICKA") end
                    if done>200 then return end
                    for i in each(indexes) do
                        a = "WENDICKA_"..spells[i] 
@@ -115,3 +115,29 @@ XCharLearnAbility = {
     Johnson = function() XCharKillCount(false) RPGChar.Points("ExHuRU","EXP").Inc(1250) end
   
   }    
+
+XCharAfterAction = {
+	
+	Foxy = function()
+				local lv = RPGChar.Stat("Foxy","Level")
+				local abilities = { DRAGON_BURN = 200, DRAGON_INFERNO = 400, BACKSTAB = 1600, CHEER = 25600, SMOKEBOMB = 4600, DRAGON_CHARGE = 6553600 }
+				local hasall = true
+				local hasit,learnit,allowlearn
+				local r
+				for abl,rate in pairs(abilities) do
+					hasit = RPGChar.ListHas("Foxy","ABL",abl)
+					hasall = hasall and hasit
+					learnit = RPGChar.ListHas("Foxy","LEARN",abl)
+					allowlearn = not(hasit or learnit)
+					r = rand(1,rate)
+					CSay("Ability: "..abl.."; hasit: "..sval(hasit).."; hasall: "..sval(hasall).."; learnit: "..sval(learnit).."; allowlearn: "..sval(allowlearn).."; rate: "..rate.."; random: "..r)
+					if allowlearn and r<lv then 
+						RPGChar.AddList("Foxy","LEARN","FOXY_"..abl)
+						CSay("Learn: "..abl)
+					end
+				end
+				if hasall then Award("ALLABL_FOXY") end				
+	        end
+	}
+	
+	

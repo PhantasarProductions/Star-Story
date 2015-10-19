@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.17
+version: 15.10.19
 ]]
 -- @IF IGNORE
 VicCheck = {}
@@ -57,6 +57,15 @@ if ft=="Hero" and rand(0,skill)==1 then UpPoint(i) end
 local ak
 for ak=1,3 do UpPoint(ak) end    
 end
+
+function GameSpecificAfterPerformAction(ft,i,fv)
+	local ch
+	if ft=="Hero" then
+		ch = RPGChar.PartyTag(i);
+		(XCharAfterAction[ch] or function() end)()
+	end
+end
+
 
 function GiveItem(ch,item,vault)
 -- DrawScreen()

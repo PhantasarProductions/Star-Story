@@ -1,6 +1,6 @@
 --[[
   Combat.lua
-  Version: 15.10.06
+  Version: 15.10.19
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -119,6 +119,7 @@ for l in each(mysplit(serialize("FIGHTER_IN_ACTION",Fighters[ft][p]),"\n")) do M
 (ActionFuncs[Fighters[ft][p].Act.Act] or ActionFuncs.Error)(ft,p,Fighters[ft][p].Act)
 -- Reset gauge
 if Fighters[ft][p].Gauge>9999 then Fighters[ft][p].Gauge = 0 end
+(GameSpecificAfterPerformAction or function() end)(ft,p,fv);
 end
 
 function FighterTag(t,i)
