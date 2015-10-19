@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ABL_WENDICKA_SHOCK.lua
+  ABL_FOXY_SMOKEBOMB.lua
   (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
@@ -35,25 +35,23 @@
 version: 15.10.19
 ]]
 ret = {
-	["ABL_AP"] = 15,
-	["ABL_APCut"] = 5000,
-	["ABL_Cancel"] = 1054,
-	["ABL_Instant"] = 527,
+	["ABL_AP"] = 8,
+	["ABL_APCut"] = 400,
+	["ABL_Instant"] = 800,
 	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 250,
-	["ActSpeed"] = 300,
-	["AttackElement"] = "Thunder",
-	["AttackPower"] = 50,
+	["ABL_Speed"] = 123,
+	["ActSpeed"] = 250,
+	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Shock the enemy",
+	["Description"] = "Make all enemies disappear (does not work on bosses)",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Lightning.png",
+	["Icon"] = "GFX/Inventory/Dagger.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Shock",
-	["SpellAni_Reference"] = "Spark",
-	["Target"] = "1F",
-	["UseCombat"] = true}
+	["Name"] = "Smoke Bomb",
+	["Target"] = "AF",
+	["UseCombat"] = true,
+	["UseField"] = true}
 
 return ret
 

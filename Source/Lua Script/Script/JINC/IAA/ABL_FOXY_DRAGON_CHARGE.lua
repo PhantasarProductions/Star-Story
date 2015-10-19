@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ABL_WENDICKA_SHOCK.lua
+  ABL_FOXY_DRAGON_CHARGE.lua
   (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
@@ -35,25 +35,17 @@
 version: 15.10.19
 ]]
 ret = {
-	["ABL_AP"] = 15,
-	["ABL_APCut"] = 5000,
-	["ABL_Cancel"] = 1054,
-	["ABL_Instant"] = 527,
+	["ABL_AP"] = ,
 	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 250,
-	["ActSpeed"] = 300,
-	["AttackElement"] = "Thunder",
-	["AttackPower"] = 50,
+	["ActSpeed"] = 250,
+	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Shock the enemy",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Lightning.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Shock",
-	["SpellAni_Reference"] = "Spark",
 	["Target"] = "1F",
-	["UseCombat"] = true}
+	["UseCombat"] = true,
+	["UseField"] = true}
 
 return ret
 

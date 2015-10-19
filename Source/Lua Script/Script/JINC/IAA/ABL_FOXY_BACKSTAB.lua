@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ABL_WENDICKA_SHOCK.lua
+  ABL_FOXY_BACKSTAB.lua
   (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
@@ -35,25 +35,23 @@
 version: 15.10.19
 ]]
 ret = {
-	["ABL_AP"] = 15,
-	["ABL_APCut"] = 5000,
-	["ABL_Cancel"] = 1054,
-	["ABL_Instant"] = 527,
+	["ABL_AP"] = 150,
+	["ABL_APCut"] = 2000,
+	["ABL_DblSpeed"] = 3000,
 	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 250,
-	["ActSpeed"] = 300,
-	["AttackElement"] = "Thunder",
-	["AttackPower"] = 50,
+	["ABL_Speed"] = 50,
+	["ActSpeed"] = 150,
+	["AttackElement"] = "Non-Elemental",
+	["AttackPower"] = 60,
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Shock the enemy",
+	["Description"] = "Kick a foe off the time gauge",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Lightning.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Shock",
-	["SpellAni_Reference"] = "Spark",
+	["Name"] = "Backstab",
 	["Target"] = "1F",
-	["UseCombat"] = true}
+	["UseCombat"] = true,
+	["UseField"] = true}
 
 return ret
 
