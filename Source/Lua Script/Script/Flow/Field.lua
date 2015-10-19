@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.10.18
+  Version: 15.10.19
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -651,8 +651,12 @@ for k,treas in spairs(FieldTreasure or {}) do
     Maps.Obj.MyObject.Impassible = 0
     CSay("  = Placed: "..k)
 	end
-if Maps.Multi()==1 then Maps.GotoLayer(originallayer) end
-Maps.Remap()    
+if Maps.Multi()==1 then 
+	Maps.MultiRemap()
+	Maps.GotoLayer(originallayer) 
+	else
+	Maps.Remap()    
+	end
 end
 
 function SetUpTreasure(layerswitch) -- if layerswitch is set to 1 only reset this layer. if layerswitch is set to 2 only setup if the layer has not been setup yet. If not a multi-map or if layerswitch is nil, everything will work normally.
