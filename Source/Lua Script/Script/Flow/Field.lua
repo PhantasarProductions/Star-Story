@@ -323,7 +323,7 @@ if WalkArrival and Actors.Walking(cplayer)==0 then
   end      
 end
 
-function SetUpFoes(layeronly) -- layeronly parameter is explaned at the SetUpTreasures function
+function SetUpFoes()
 local ak,num
 local obj,foe
 local R,G,B
@@ -339,6 +339,8 @@ if (not enemiesmain) or enemiesmain=="" then return CSay("No enemy data found in
 local enemymainlist = mysplit(enemiesmain,";")
 local enemies = {}
 local es,ea
+local layers = { [0]={"* NOT MULTIMAP *"},[1]=mysplit(Maps.Layers(),";") }
+local orilay = Maps.LayerCodeName
 for es in each(enemymainlist) do
     ea = mysplit(es,",")
     ea[2] = Sys.Val(ea[2] or "1")
@@ -350,12 +352,15 @@ arena = Maps.GetData("Arena")
 if not suffixed(upper(arena),".PNG") then arena = arena .. ".png" end
 -- Make sure there are no foes in the field
 CSay("Searching for existing foes")
-for obj in KthuraEach("Actor") do
-    CSay("Checking: "..obj.Kind.." "..obj.Tag.."; Got suffix "..sval(suffixed(obj.Tag,"FoeActor")))
-    if suffixed(obj.Tag,"FoeActor") then
-       Maps.Obj.Kill(obj.Tag); CSay("Killed foe: "..obj.Tag.." (Obj #"..obj.IDNum..")")
-       end 
-    end
+for lay in each(layers) do
+	if Maps.Multi()==1 then Maps.GotoLayer(lay) end
+	for obj in KthuraEach("Actor") do
+		CSay("Checking: "..obj.Kind.." "..obj.Tag.."; Got suffix "..sval(suffixed(obj.Tag,"FoeActor")))
+		if suffixed(obj.Tag,"FoeActor") then
+			Maps.Obj.Kill(obj.Tag); CSay("Killed foe: "..obj.Tag.." (Obj #"..obj.IDNum..")")
+			end 
+		end
+	end	
 -- calc level differences
 for ak=0,5 do
     ptag = RPGChar.PartyTag(ak)
@@ -380,8 +385,6 @@ if lvrange[2]<lvrange[1] then GALE_Error("Negative level range for playthrough #
 -- setting up the foes     
 FieldFoes = {}
 CSay("Resetting Foes")
-local layers = { [0]={"* NOT MULTIMAP *"},[1]=mysplit(Maps.Layers(),";") }
-local orilay = Maps.LayerCodeName
 for lay in each(layers[Maps.Multi()]) do
 	CSay(' = Foes on Layer: '..lay)
 	if Maps.Multi()==1 then Maps.GotoLayer(lay) end
