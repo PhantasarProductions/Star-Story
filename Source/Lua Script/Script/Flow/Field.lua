@@ -352,7 +352,7 @@ arena = Maps.GetData("Arena")
 if not suffixed(upper(arena),".PNG") then arena = arena .. ".png" end
 -- Make sure there are no foes in the field
 CSay("Searching for existing foes")
-for lay in each(layers) do
+for lay in each(layers[Maps.Multi()]) do
 	if Maps.Multi()==1 then Maps.GotoLayer(lay) end
 	for obj in KthuraEach("Actor") do
 		CSay("Checking: "..obj.Kind.." "..obj.Tag.."; Got suffix "..sval(suffixed(obj.Tag,"FoeActor")))
