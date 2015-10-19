@@ -124,6 +124,7 @@ XCharAfterAction = {
 				local hasall = true
 				local hasit,learnit,allowlearn
 				local r
+				CSay("Let's see if Foxy learns something new!")
 				for abl,rate in pairs(abilities) do
 					hasit = RPGChar.ListHas("Foxy","ABL",abl)
 					hasall = hasall and hasit

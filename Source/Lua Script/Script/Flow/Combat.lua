@@ -119,7 +119,7 @@ for l in each(mysplit(serialize("FIGHTER_IN_ACTION",Fighters[ft][p]),"\n")) do M
 (ActionFuncs[Fighters[ft][p].Act.Act] or ActionFuncs.Error)(ft,p,Fighters[ft][p].Act)
 -- Reset gauge
 if Fighters[ft][p].Gauge>9999 then Fighters[ft][p].Gauge = 0 end
-(GameSpecificAfterPerformAction or function() end)(ft,p,fv);
+(GameSpecificAfterPerformAction or function() CSay("No After action") end)(ft,p,fv);
 end
 
 function FighterTag(t,i)
