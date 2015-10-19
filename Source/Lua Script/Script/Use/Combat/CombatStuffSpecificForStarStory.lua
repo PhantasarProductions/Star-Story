@@ -61,7 +61,7 @@ end
 function GameSpecificAfterPerformAction(ft,i,fv)
 	local ch
 	if ft=="Hero" then
-		ch = RPGChar.PartyTag(i);
+		ch = RPGChar.PartyTag(i-1);
 		(XCharAfterAction[ch] or function() CSay(ch.." doesn't have an 'afteraction' function") end)()
 	end
 end
