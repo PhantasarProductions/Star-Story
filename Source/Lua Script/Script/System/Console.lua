@@ -1,6 +1,6 @@
 --[[
   Console.lua
-  Version: 15.10.10
+  Version: 15.10.20
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -348,14 +348,14 @@ Toggle("&CHEAT.JACK")
 CSay("Jack the Ripper mode is now: "..Var.C("&CHEAT.JACK"))
 end
 
-function MERILIN()
+function MERLIN()
 Toggle("&CHEAT.MERLIN")
 CSay("Merlin mode is now: "..Var.C("&CHEAT.MERLIN"))
 end
 
 function RAMBO()
 Toggle("&CHEAT.RAMBO")
-CSay("Merlin mode is now: "..Var.C("&CHEAT.RAMBO"))
+CSay("Rambo mode is now: "..Var.C("&CHEAT.RAMBO"))
 end
 
 function COMBATMESSAGE(...)

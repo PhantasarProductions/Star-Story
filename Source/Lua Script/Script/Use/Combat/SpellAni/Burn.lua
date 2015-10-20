@@ -40,10 +40,10 @@ SpellAni = {}
 -- @FI
 
 function Load_SAP_Flame()	
-	if Image.Exist("SAP_Flame") then
-		SAP_Flame = Image.LoadAnim('GFX/Combat/SpellAni/Flame.png',70,140,0,10)
+	if Image.Exist("SAP_Flame")==0 then
+		SAP_Flame = Image.LoadAnim('GFX/Combat/SpellAni/Flame/Flame.png',70,140,0,10)
 		Image.Assign("SAP_Flame",SAP_Flame)
-		Image.Hot(SAP_Flame,Image.Width(SAP_Flame)/2,Image.Height(SAP_Flame))
+		Image.Hot(SAP_Flame,Image.Width('SAP_Flame')/2,Image.Height('SAP_Flame'))
 	end
 	SAP_Flame = 'SAP_Flame'   	
 end
