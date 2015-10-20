@@ -47,6 +47,7 @@ ret = {
 	["DefenseStat"] = "Defense",
 	["Description"] = "Kick a foe off the time gauge",
 	["HealingType"] = "Absolute",
+	["Icon"] = "GFX/Inventory/Dagger.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Backstab",
 	["Target"] = "1F",
