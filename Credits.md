@@ -40,7 +40,7 @@ Rockit Maxx | 1 | Music;
 Shockwave-sound.com | 1 | Audio; 
 Spiedkiks | 1 | Music; 
 TheSkull | 1 | Art; 
-Tricky (this is me) :sunglasses: | 1847 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
+Tricky (this is me) :sunglasses: | 1848 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
 Unknown Artist | 27 | Art; 
 Utopia | 2 | Font; Misc files; 
 Varazuvi(TM) | 4 | Audio; 
@@ -53,4 +53,5 @@ glitch | 1 | Art;
 http://www.freesfx.co.uk | 1 | Audio; 
 jpd2010 | 1 | Art; 
 soundscrate.com | 1 | Audio; 
+tzunghaor | 1 | Art; 
 One final note. Since JCR6 uses an aliasing system some contributions are counted twice (or even more times) due to them being aliased. The system updating this list is (unfortunately) not able to tell a true contributions apart from aliases.

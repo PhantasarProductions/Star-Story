@@ -135,6 +135,7 @@ function IvoPlate(numivo)
 				Maps.PermaWrite("Maps.Obj.Obj('IvoPlate"..i.."').Frame=1") -- seal all doors.
 			end
 			Maps.Obj.Kill("IvoDoor",1)
+			Maps.Remap()
 		else
 			for i=1,12 do 
 				Maps.Obj.Obj("IvoPlate"..i).Frame=0
@@ -157,6 +158,11 @@ function CLICK_ARRIVAL_IvoPlate9 () IvoPlate( 9) end
 function CLICK_ARRIVAL_IvoPlate10() IvoPlate(10) end
 function CLICK_ARRIVAL_IvoPlate11() IvoPlate(11) end
 function CLICK_ARRIVAL_IvoPlate12() IvoPlate(12) end
+
+
+function Boss()
+end
+
 
 
 -- Init everything right
