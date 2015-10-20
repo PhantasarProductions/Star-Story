@@ -163,6 +163,7 @@ XCharAttacked = {
              RPGChar.SetParty(sw,RPGChar.PartyTag(pos))
 						 RPGChar.SetParty(pos,cch)
 						 Fighters.Hero[pos+1] = { Tag = cch, Gauge=9995 }
+						 if sw<3 then Fighters.Hero[sw+1] = { Tag = 'Foxy', Gauge=-2000 } end
 						 return false -- If true was returned the attack would be cancelled, but this is not the case for Foxy.
              end,
              
