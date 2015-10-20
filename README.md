@@ -19,3 +19,8 @@ A small "Work in progress" video can be watched here: https://www.youtube.com/wa
 When some open testing can begin will be announced on either site.
 
 
+
+
+
+
+P.S. This game is NOT compatible with Brucey's BlitzMax NG, nor do I plan to make it compatible with it.
