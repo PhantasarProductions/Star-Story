@@ -165,7 +165,7 @@ local ch = FighterTag(ag,ai) --RPGChar.PartyTag(ag,ai)
 local tg,ti = TargetFromAct(act)
 if tg=="Hero" then
    if (XCharAttacked[Fighters.Hero[ti].Tag] or function(ag,ai) end)(ag,ai) then
-      RepCancel() 
+      RepCancel(tg,ti) 
       return 
       end -- If "true" is returned it means the playable character cancelled the attack!
    end
