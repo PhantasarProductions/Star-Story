@@ -156,8 +156,9 @@ XCharAttacked = {
              if RPGStat.Points(cch,"HP").Have==0 then return end -- Foxy cannot swap with dead party members.	
              local pos
              for i=0,5 do 
-             	   if RPGStat.PartyTag(sw)=="Foxy" then pos = i end
+             	   if RPGStat.PartyTag(i)=="Foxy" then pos = i end
              	   end
+             if Fighters.Hero[pos+1]>9995 then return end -- Foxy cannot switch when she's about to perform a move             	   
              local cch = RPGStat.PartyTag(sw)	
              RPGChar.SetParty(sw,RPGChar.PartyTag(pos))
 						 RPGChar.SetParty(pos,cch)
@@ -178,7 +179,28 @@ XCharAttacked = {
              	   end
              ActionFuncs.ATK('Hero',pos+1,{TargetGroup='Foe',TargetIndividual=attackerindividual})
              return true
-             end
+             end,
+
+    Wendicka = function(attackergroup,attackterindividual) -- Odd as it may seem, this is not about Wendicka, but about ExHuRU who responds to Wendicka being attacked.
+               local pos,exu
+               local hp = RPGChar.Points("Wendicka","HP").Have
+               local hpm = RPGChar.Points("Wendicka","HP").Maximum
+               if hp>(hpm/2) then return end -- Only respond if Wendicka's health is below 50%
+               for i=0,5 do 
+             	      if RPGStat.PartyTag(i)=="Wendicka" then pos = i end
+             	      if RPGStat.PartyTag(i)=="ExHuRU" then exu=i end
+             	      end
+             	 if exu<3 then return end -- ExHuRU can only do this from the back row.
+             	 if Fighters.Hero[pos+1]>9995 then return end -- ExHuRU cannot cancel Wendicka's moves.
+               MS.LoadNew("BOXTEXT","Script/SubRoutines/BoxText.lua")
+               MS.Run("BOXTEXT","RemoveData","NEWABILITY")
+               MS.Run("BOXTEXT","LoadData","GENERAL/COMBAT;NEWABILITY")
+               SerialBoxText("NEWABILITY","SPECIAL.EXHURU","Combat")
+               -- And if Wendicka is now in danger and ExHuRU on the back row the two will automatically switch places.
+               RPGChar.SetParty(exu,"Wendicka")
+						   RPGChar.SetParty(pos,"ExHuRU")
+						   Fighters.Hero[pos+1] = { Tag = "ExHuRU", Gauge=9995 }             	      
+               end
 
 }	
 	
