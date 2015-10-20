@@ -62,7 +62,7 @@ function ShowReggie()
 		Image.SetAlphaPC(100)
 		DrawScreen()
 		Image.SetAlphaPC(ialpha)
-		Image.Show("REGGIE",300,400)
+		Image.Show("REGGIE",400,300)
 		Flip()
 	end
 	Image.SetAlphaPC(100)
