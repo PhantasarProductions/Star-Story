@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.19
+version: 15.10.20
 ]]
 
 -- Kills for ExHuRU (and his "representatives")  
@@ -140,5 +140,31 @@ XCharAfterAction = {
 				if hasall then Award("ALLABL_FOXY") end				
 	        end
 	}
+	
+	
+XCharAttacked = {
+ 
+    Foxy = function(attackergroup,attackterindividual)
+             MS.LoadNew("BOXTEXT","Script/SubRoutines/BoxText.lua")
+             MS.Run("BOXTEXT","RemoveData","NEWABILITY")
+             MS.Run("BOXTEXT","LoadData","GENERAL/COMBAT;NEWABILITY")
+             SerialBoxText("NEWABILITY","SPECIAL.FOXY","Combat")
+             if rand(1,100)>15 then return end -- Only 15% chance Foxy will do this, after this 15% some other factors may play a role.
+             local sw = rand(0,5)
+             if RPGStat.PartyTag(sw)=="Foxy" or RPGStat.PartyTag(sw)=="" then return end -- Nope, Foxy cannot swap places with herself, neither can she swap with an empty spot.
+             local cch = RPGStat.PartyTag(sw)
+             if RPGStat.Points(cch,"HP").Have==0 then return end -- Foxy cannot swap with dead party members.	
+             local pos
+             for i=0,5 do 
+             	   if RPGStat.PartyTag(sw)=="Foxy" then pos = i end
+             	   end
+             local cch = RPGStat.PartyTag(sw)	
+             RPGChar.SetParty(sw,RPGChar.PartyTag(pos))
+						 RPGChar.SetParty(pos,cch)
+						 Fighters.Hero[pos+1] = { Tag = cch, Gauge=9995 }
+						 return false -- If true was returned the attack would be cancelled, but this is not the case for Foxy.
+             end
+
+}	
 	
 	
