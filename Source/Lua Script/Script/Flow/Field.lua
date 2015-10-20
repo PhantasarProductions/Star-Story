@@ -786,6 +786,7 @@ function FindTreasures()
 	px = Maps.Obj.MyObject.X
 	py = Maps.Obj.MyObject.Y
 	for k,t in spairs(FieldTreasure) do
+	  given = false
 		if Maps.Multi()==0 or Maps.LayerCodeName==t.layer then
 			if Distance(px,py,t.x,t.y)<32 then
 				given = ItemGive("ITM_"..t.item,{activeplayer})
@@ -796,8 +797,8 @@ function FindTreasures()
 					SerialBoxText("BAGSFULL",upper("FULL."..activeplayer)) --,"Field")
           SerialBoxText("BAGSFULL","TUTORIAL_FULL") --,"Field")
           MS.Run("BOXTEXT","RemoveData","BAGSFULL")
-		end  
-	  end
+		    end -- if full  
+	  end -- distance ok
 	  if given then 
           idata = FieldTreasure[k]
           FieldTreasure[k]=nil 
