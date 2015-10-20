@@ -145,10 +145,6 @@ XCharAfterAction = {
 XCharAttacked = {
  
     Foxy = function(attackergroup,attackterindividual)
-             MS.LoadNew("BOXTEXT","Script/SubRoutines/BoxText.lua")
-             MS.Run("BOXTEXT","RemoveData","NEWABILITY")
-             MS.Run("BOXTEXT","LoadData","GENERAL/COMBAT;NEWABILITY")
-             SerialBoxText("NEWABILITY","SPECIAL.FOXY","Combat")
              if rand(1,100)>15 then return end -- Only 15% chance Foxy will do this, after this 15% some other factors may play a role.
              local sw = rand(0,5)
              if RPGStat.PartyTag(sw)=="Foxy" or RPGStat.PartyTag(sw)=="" then return end -- Nope, Foxy cannot swap places with herself, neither can she swap with an empty spot.
@@ -159,6 +155,10 @@ XCharAttacked = {
              	   if RPGStat.PartyTag(i)=="Foxy" then pos = i end
              	   end
              if Fighters.Hero[pos+1]>9995 then return end -- Foxy cannot switch when she's about to perform a move             	   
+             MS.LoadNew("BOXTEXT","Script/SubRoutines/BoxText.lua")
+             MS.Run("BOXTEXT","RemoveData","NEWABILITY")
+             MS.Run("BOXTEXT","LoadData","GENERAL/COMBAT;NEWABILITY")
+             SerialBoxText("NEWABILITY","SPECIAL.FOXY","Combat")
              local cch = RPGStat.PartyTag(sw)	
              RPGChar.SetParty(sw,RPGChar.PartyTag(pos))
 						 RPGChar.SetParty(pos,cch)
@@ -175,7 +175,7 @@ XCharAttacked = {
              SerialBoxText("NEWABILITY","SPECIAL.YIRL","Combat")
              local pos
              for i=0,5 do 
-             	   if RPGStat.PartyTag(sw)=="Yirl" then pos = i end
+             	   if RPGStat.PartyTag(i)=="Yirl" then pos = i end
              	   end
              ActionFuncs.ATK('Hero',pos+1,{TargetGroup='Foe',TargetIndividual=attackerindividual})
              return true
