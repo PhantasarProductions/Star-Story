@@ -32,20 +32,24 @@
   
  **********************************************
  
-version: 15.10.19
+version: 15.10.20
 ]]
 ret = {
-	["ABL_AP"] = ,
+	["ABL_AP"] = 500,
+	["ABL_APCut"] = 10000,
 	["ABL_Pose"] = "Cast",
+	["ABL_Speed"] = 100,
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
+	["Description"] = "Charge up for \"Sky Dragon Slash\"",
 	["HealingType"] = "Absolute",
+	["Icon"] = "GFX/Elements/Fire.png",
 	["ItemType"] = "Consumable",
-	["Target"] = "1F",
-	["UseCombat"] = true,
-	["UseField"] = true}
+	["Name"] = "Dragon Charge",
+	["Target"] = "AF",
+	["UseCombat"] = true}
 
 return ret
 

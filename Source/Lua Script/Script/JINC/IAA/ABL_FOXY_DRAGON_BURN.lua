@@ -1,6 +1,6 @@
 --[[
   ABL_FOXY_DRAGON_BURN.lua
-  Version: 15.10.19
+  Version: 15.10.20
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -51,6 +51,7 @@ ret = {
 	["Icon"] = "GFX/Elements/Fire.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Dragon Burn",
+	["SpellAni_Reference"] = "ReggieBurn",
 	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}

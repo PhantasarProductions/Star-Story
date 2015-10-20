@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ABL_EXHURU_KUUSI.lua
+  Reggie.lua
   (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
@@ -34,27 +34,43 @@
  
 version: 15.10.20
 ]]
-ret = {
-	["ABL_AP"] = 200,
-	["ABL_APCut"] = 160000,
-	["ABL_DblPower"] = 80000,
-	["ABL_DblSpeed"] = 80000,
-	["ABL_Pose"] = "Attack",
-	["ABL_Speed"] = 25,
-	["ActSpeed"] = 25,
-	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 400,
-	["AttackStat"] = "Strength",
-	["DefenseStat"] = "Defense",
-	["Description"] = "KILL! KILL! KILL!",
-	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Fist.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Kuusi",
-	["Target"] = "1F",
-	["UseCombat"] = true}
+-- @IF IGNOREME
+SpellAni = {}
+-- @FI
 
-return ret
+function ShowReggie()
+	Image.LoadNew("REGGIE","GFX/Portret/Reggie/General.png")
+	Image.HotCenter("REGGIE")
+	local dirs = { {900,300,-4,0} , {400,700,0,-4} , {400,-200,0,4} }
+	local dir = dirs[rand(1,#dirs)]
+	for ix = dir[1],400,dir[3] do
+		for iy = dir[2],300,dir[4] do
+			DrawScreen()
+			Image.Show("REGGIE",ix,iy)
+			Flip()
+		end
+	end
+	for ialpha=100,0,-1 do
+		Image.SetAlphaPC(100)
+		DrawScreen()
+		Image.SetAlphaPC(ialpha)
+		Image.Show("REGGIE",300,400)
+	end
+	Image.SetAlphaPC(100)
+end
 
--- This file is an automatically generated file!
 
+function SpellAni.ReggieBurn(ActG,ActT,TarG,TarT)
+	ShowReggie()
+	SpellAni.Burn(ActG,ActT,TarG,TarT)
+end
+
+function SpellAni.ReggieBurnAll(ActG,ActT,TarG,TarT)
+	ShowReggie()
+	SpellAni.BurnAll(ActG,ActT,TarG,TarT)
+end
+
+function SpellAni.ReggieInferno(ActG,ActT,TarG,TarT)
+	ShowReggie()
+	SpellAni.Inferno()
+end

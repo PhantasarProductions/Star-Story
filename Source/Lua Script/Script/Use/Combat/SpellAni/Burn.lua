@@ -1,5 +1,5 @@
 --[[
-  ITM_ROCK.lua
+  Burn.lua
   Version: 15.10.20
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -34,25 +34,17 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-ret = {
-	["ActSpeed"] = 250,
-	["AttackElement"] = "Earth",
-	["AttackPower"] = 150,
-	["AttackStat"] = "Strength",
-	["DefenseStat"] = "Resistance",
-	["Description"] = "Throw to the enemy",
-	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 100,
-	["ITM_SellPrice"] = 75,
-	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/Rock.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Rock",
-	["Target"] = "1F",
-	["UseCombat"] = true,
-	["UseField"] = true}
 
-return ret
+-- @IF IGNOREME
+SpellAni = {}
+-- @FI
 
--- This file is an automatically generated file!
 
+function SpellAni.Burn(ActG,ActT,TarG,TarT)
+end
+
+function SpellAni.BurnAll(ActG,ActT,TarG,TarT)
+end
+
+function SpellAni.Inferno()
+end
