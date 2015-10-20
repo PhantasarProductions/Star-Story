@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.10.19
+  Version: 15.10.20
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -417,7 +417,7 @@ for lay in each(layers[Maps.Multi()]) do
 				-- new
 				repeat
 					num = rand(1,9)
-				until num<1+(4-skill) or (rand(1,num*((4-skill)*(4-skill)))<=skill and rand(1,num*num*(4-skill))==1)
+				until num<1+(skill) or (rand(1,num*((4-skill)*(4-skill)))<=skill and rand(1,num*num*(4-skill))==1)
 				hilevel = 0
 				for ak=1,num do
 					foe.Enemies[ak] = 

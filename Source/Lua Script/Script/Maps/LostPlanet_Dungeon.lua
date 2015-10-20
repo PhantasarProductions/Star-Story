@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.19
+version: 15.10.20
 ]]
 
 -- Switch routine (in case we need it)
@@ -112,6 +112,50 @@ function CLICK_ARRIVAL_ClockPlate10() ClockPlate(10) end
 function CLICK_ARRIVAL_ClockPlate11() ClockPlate(11) end
 function CLICK_ARRIVAL_ClockPlate12() ClockPlate(12) end
 
+function IvoPlate(numivo)
+	local correct = {4,6,10}
+	local good
+	Actors.MoveToSpot("PLAYER","IvoPlate"..numivo)
+	numivoorder = numivoorder or {}
+	numivopressed = numivopressed or {}
+	if numivopressed[numivo] then return end
+	SFX("Audio/SFX/Gen/whoosh.ogg")
+	numivoorder[#numivoorder+1]=numivo
+	numivopressed[numivo]=true
+	Maps.Obj.Obj("IvoPlate"..numivo).Frame=1
+	if #numivoorder==3 then
+		good=true
+		for i,v in ipairs(correct) do 
+			good = good and numivopressed[v]
+		end
+		if good then 
+			for i=1,12 do
+				Maps.PermaWrite("Maps.Obj.Obj('IvoPlate"..i.."').Frame=1") -- seal all doors.
+			end
+			Maps.Obj.Kill("ClockDoor",1)
+		else
+			for i=1,12 do 
+				Maps.Obj.Obj("ClockPlate"..i).Frame=0
+				numivoorder = nil
+				numivopressed = nil
+			end			
+		end
+	end	
+end
+	
+function CLICK_ARRIVAL_IvoPlate1 () IvoPlate( 1) end
+function CLICK_ARRIVAL_IvoPlate2 () IvoPlate( 2) end
+function CLICK_ARRIVAL_IvoPlate3 () IvoPlate( 3) end
+function CLICK_ARRIVAL_IvoPlate4 () IvoPlate( 4) end
+function CLICK_ARRIVAL_IvoPlate5 () IvoPlate( 5) end
+function CLICK_ARRIVAL_IvoPlate6 () IvoPlate( 6) end
+function CLICK_ARRIVAL_IvoPlate7 () IvoPlate( 7) end
+function CLICK_ARRIVAL_IvoPlate8 () IvoPlate( 8) end
+function CLICK_ARRIVAL_IvoPlate9 () IvoPlate( 9) end
+function CLICK_ARRIVAL_IvoPlate10() IvoPlate(10) end
+function CLICK_ARRIVAL_IvoPlate11() IvoPlate(11) end
+function CLICK_ARRIVAL_IvoPlate12() IvoPlate(12) end
+
 
 -- Init everything right
 function GALE_OnLoad()
@@ -120,4 +164,5 @@ function GALE_OnLoad()
 	ZA_Enter("Prev",GoPrev)
 	ZA_Enter("ToCell",ToCell)
 	for i=1,12 do AddClickable("ClockPlate"..i) end
+	for i=1,12 do AddClickable("IvoPlate"..i) end
 end
