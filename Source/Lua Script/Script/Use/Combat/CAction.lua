@@ -252,7 +252,7 @@ local ablshort = right(act.ItemCode,len(act.ItemCode)-4)
 local ch = FighterTag(ag,ai)   
 local ap = RPGChar.Points(ch,"AP")
 local pu,puu,r
-local pufullnames = { INSTANT = "Instant Execution", CANCEL = "Cancel move", DBLSPEED = "Double speed", DBLPWR="Double Power",APCUT="Half AP Cost" }
+local pufullnames = { INSTANT = "Instant Execution", CANCEL = "Cancel move", DBLSPEED = "Double speed", DBLPWR="Double Power", DBLPOWER="Double Power", APCUT="Half AP Cost" }
 local APCost = act.Item.ABL_AP
 if RPGChar.ListHas(ch,"ABL_POWERUP",ablshort..".APCUT")~=0 then APCost = math.ceil(APCost/2) end
 if not CVV("&CHEAT.MERLIN") then
