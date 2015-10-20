@@ -154,7 +154,7 @@ XCharAttacked = {
              for i=0,5 do 
              	   if RPGStat.PartyTag(i)=="Foxy" then pos = i end
              	   end
-             if Fighters.Hero[pos+1]>9995 then return end -- Foxy cannot switch when she's about to perform a move             	   
+             if Fighters.Hero[pos+1].Gauge>9995 then return end -- Foxy cannot switch when she's about to perform a move             	   
              MS.LoadNew("BOXTEXT","Script/SubRoutines/BoxText.lua")
              MS.Run("BOXTEXT","RemoveData","NEWABILITY")
              MS.Run("BOXTEXT","LoadData","GENERAL/COMBAT;NEWABILITY")
@@ -191,7 +191,7 @@ XCharAttacked = {
              	      if RPGStat.PartyTag(i)=="ExHuRU" then exu=i end
              	      end
              	 if exu<3 then return end -- ExHuRU can only do this from the back row.
-             	 if Fighters.Hero[pos+1]>9995 then return end -- ExHuRU cannot cancel Wendicka's moves.
+             	 if Fighters.Hero[pos+1].Gauge>9995 then return end -- ExHuRU cannot cancel Wendicka's moves.
                MS.LoadNew("BOXTEXT","Script/SubRoutines/BoxText.lua")
                MS.Run("BOXTEXT","RemoveData","NEWABILITY")
                MS.Run("BOXTEXT","LoadData","GENERAL/COMBAT;NEWABILITY")
