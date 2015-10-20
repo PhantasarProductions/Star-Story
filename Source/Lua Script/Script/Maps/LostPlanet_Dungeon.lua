@@ -132,10 +132,10 @@ function IvoPlate(numivo)
 			for i=1,12 do
 				Maps.PermaWrite("Maps.Obj.Obj('IvoPlate"..i.."').Frame=1") -- seal all doors.
 			end
-			Maps.Obj.Kill("ClockDoor",1)
+			Maps.Obj.Kill("IvoDoor",1)
 		else
 			for i=1,12 do 
-				Maps.Obj.Obj("ClockPlate"..i).Frame=0
+				Maps.Obj.Obj("IvoPlate"..i).Frame=0
 				numivoorder = nil
 				numivopressed = nil
 			end			

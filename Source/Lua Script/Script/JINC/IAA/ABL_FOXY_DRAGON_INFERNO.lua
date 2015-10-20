@@ -50,6 +50,7 @@ ret = {
 	["Icon"] = "GFX/Elements/Fire.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Dragon Inferno",
+	["SpellAni_Reference"] = "ReggieInferno",
 	["Target"] = "AF",
 	["UseCombat"] = true,
 	["UseField"] = true}
