@@ -147,7 +147,7 @@
 1. Script/Use/Anyway/Maps.lua
 1. Script/Use/Anyway/Mouse.lua
 1. Script/Use/Anyway/Music.lua
-1. SCRIPT/USE/ANYWAY/MUSICAVAILABLE.LUA (only available when you have the version WITH music)
+1. Script/Use/AnyWay/MusicAvailable.lua (only available when you have the version WITH music)
 1. Script/Use/Anyway/Resistance names.lua
 1. Script/Use/Anyway/Sex.lua
 1. Script/Use/Anyway/SpendMoney.lua
@@ -184,32 +184,32 @@
 
 ## Full Release
 
-1. SCRIPT/JINC/NEWGAME+/PRESERVEVAR.LUA
-1. SCRIPT/USE/ANYWAY/FULL.LUA
+1. Script/JINC/NewGame+/PreserveVar.lua
+1. Script/Use/Anyway/Full.lua
 
 
 
 ## External Libraries
 
-1. SCRIPT/LIBS/A FEW MATHEMATICAL FUNCTIONS.LUA
-1. SCRIPT/LIBS/BOOL2INT.LUA
-1. SCRIPT/LIBS/COLORS.LUA
-1. SCRIPT/LIBS/CONSOLE.LUA
-1. SCRIPT/LIBS/CVV.LUA
-1. SCRIPT/LIBS/DARKTEXT.LUA
-1. SCRIPT/LIBS/DEBUG.LUA
-1. SCRIPT/LIBS/JINCLUDE.LUA
-1. SCRIPT/LIBS/JOIN.LUA
-1. SCRIPT/LIBS/KEYCODES_BLITZMAX.LUA
-1. SCRIPT/LIBS/KTHURA.LUA
-1. SCRIPT/LIBS/MARKERS.LUA
-1. SCRIPT/LIBS/MYSPLIT.LUA
-1. SCRIPT/LIBS/QUICK STRING ROUTINES.LUA
-1. SCRIPT/LIBS/QUICKIMAGE.LUA
-1. SCRIPT/LIBS/QUICKJCR6.LUA
-1. SCRIPT/LIBS/RPGSTAT_ITERATOR.LUA
-1. SCRIPT/LIBS/SWITCH.LUA
-1. SCRIPT/LIBS/TABLECONTAINS.LUA
-1. SCRIPT/LIBS/VALSTR.LUA
+1. Script/Libs/A few mathematical functions.lua
+1. Script/Libs/bool2int.lua
+1. Script/Libs/Colors.lua
+1. Script/Libs/Console.lua
+1. Script/Libs/CVV.lua
+1. Script/Libs/DarkText.lua
+1. Script/Libs/Debug.lua
+1. Script/Libs/jinclude.lua
+1. Script/Libs/join.lua
+1. Script/Libs/KeyCodes_BlitzMax.lua
+1. Script/Libs/Kthura.lua
+1. Script/Libs/Markers.lua
+1. Script/Libs/mysplit.lua
+1. Script/Libs/Quick String Routines.lua
+1. Script/Libs/QuickImage.lua
+1. Script/Libs/QuickJCR6.lua
+1. Script/Libs/RPGSTAT_Iterator.lua
+1. Script/Libs/switch.lua
+1. Script/Libs/tablecontains.lua
+1. Script/Libs/valstr.lua
 
-### Last updated: Tue 20 October 2015; 02:34:31 CET
+### Last updated: Tue 20 October 2015; 02:53:30 CET
