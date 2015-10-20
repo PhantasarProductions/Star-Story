@@ -67,6 +67,16 @@ function Miss(tg,ti)
 CharReport(tg,ti,"Miss",{0,180,255})
 end   
 
+function AccuracyEvasion(ag,ai,tg,ti)
+local ach = Fighters[ag][ai].Tag
+local tch = Fighters[tg][ti].Tag
+local acc = RPGStat.Stat(ach,"END_Accuracy")
+local eva = RPGStat.Stat(tch,"END_Evasion")
+local hit = acc + rand(1,math.ceil(acc*.75))
+local ddg = eva - rand(1,math.ceil(acc*.25))
+return ddg>hit
+end
+
 function AblEffect(ag,ai,act,tg,ti)
 local effect
 local abl=act.Item
@@ -157,7 +167,11 @@ CSay(sval(ag).."["..sval(ai).."]: "..sval(ch).." attacks")
 -- Animate character 
 SpriteAnim[ag](ai,act)
 -- Perform Attack
-Attack(ag,ai,act)
+if AccuracyEvasion(ag,ai,tg,ti) then
+   Miss(tg,ti)
+   else
+   Attack(ag,ai,act)
+   end
 -- Reset character sprit
 Fighters[ag][ai].Pick="Default"      
 end
