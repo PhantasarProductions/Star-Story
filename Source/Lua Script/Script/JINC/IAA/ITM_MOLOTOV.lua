@@ -36,9 +36,10 @@
 ]]
 ret = {
 	["ActSpeed"] = 200,
-	["AttackElement"] = "Non-Elemental",
-	["AttackStat"] = "Strength",
-	["DefenseStat"] = "Defense",
+	["AttackElement"] = "Fire",
+	["AttackPower"] = 116,
+	["AttackStat"] = "Will",
+	["DefenseStat"] = "Resistance",
 	["Description"] = "Put one enemy on fire",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 100,

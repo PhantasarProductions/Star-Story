@@ -72,8 +72,8 @@ local ach = Fighters[ag][ai].Tag
 local tch = Fighters[tg][ti].Tag
 local acc = RPGStat.Stat(ach,"END_Accuracy")
 local eva = RPGStat.Stat(tch,"END_Evasion")
-local hit = acc + rand(1,math.ceil(acc*.75))
-local ddg = eva - rand(1,math.ceil(acc*.25))
+local hit = rand(0,acc) -- acc + rand(1,math.ceil(acc*.75))
+local ddg = rand(1,eva) -- eva - rand(1,math.ceil(eva*.25))
 return ddg>hit
 end
 
