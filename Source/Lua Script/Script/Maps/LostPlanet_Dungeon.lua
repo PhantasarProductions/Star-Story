@@ -129,6 +129,8 @@ function IvoPlate(numivo)
 			good = good and numivopressed[v]
 		end
 		if good then 
+		  SFX("Audio/SFX/MBOX1.ogg")
+		  if not Done("&DONE.IVO") then MapEXP() end
 			for i=1,12 do
 				Maps.PermaWrite("Maps.Obj.Obj('IvoPlate"..i.."').Frame=1") -- seal all doors.
 			end
