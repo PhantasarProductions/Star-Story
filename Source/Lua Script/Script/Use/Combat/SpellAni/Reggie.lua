@@ -43,6 +43,8 @@ function ShowReggie()
 	Image.HotCenter("REGGIE")
 	local dirs = { {900,300,-4,0} , {400,700,0,-4} , {400,-200,0,4} }
 	local dir = dirs[rand(1,#dirs)]
+	local ix = 400
+	local iy = 300
 	if dir[1]~=400 then
 		for ix = dir[1],400,dir[3] do
 			DrawScreen()
