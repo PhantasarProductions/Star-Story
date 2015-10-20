@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.20
+version: 15.10.21
 ]]
 
 -- Kills for ExHuRU (and his "representatives")  
@@ -163,6 +163,21 @@ XCharAttacked = {
 						 RPGChar.SetParty(pos,cch)
 						 Fighters.Hero[pos+1] = { Tag = cch, Gauge=9995 }
 						 return false -- If true was returned the attack would be cancelled, but this is not the case for Foxy.
+             end,
+             
+    Yirl = function(attackergroup,attackterindividual)
+             if attackergroup=='Hero' then return end
+    		     if rand(1,100)>25 then return end  
+             MS.LoadNew("BOXTEXT","Script/SubRoutines/BoxText.lua")
+             MS.Run("BOXTEXT","RemoveData","NEWABILITY")
+             MS.Run("BOXTEXT","LoadData","GENERAL/COMBAT;NEWABILITY")
+             SerialBoxText("NEWABILITY","SPECIAL.YIRL","Combat")
+             local pos
+             for i=0,5 do 
+             	   if RPGStat.PartyTag(sw)=="Yirl" then pos = i end
+             	   end
+             ActionFuncs.ATK('Hero',pos+1,{TargetGroup='Foe',TargetIndividual=attackerindividual})
+             return true
              end
 
 }	

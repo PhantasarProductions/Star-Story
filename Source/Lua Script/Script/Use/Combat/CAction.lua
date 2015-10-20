@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 15.10.20
+  Version: 15.10.21
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -65,6 +65,10 @@ end
 
 function Miss(tg,ti)
 CharReport(tg,ti,"Miss",{0,180,255})
+end   
+
+function RepCancel(tg,ti)
+CharReport(tg,ti,"Cancel",{255,40,10})
 end   
 
 function AccuracyEvasion(ag,ai,tg,ti)
@@ -160,7 +164,10 @@ function ActionFuncs.ATK(ag,ai,act)
 local ch = FighterTag(ag,ai) --RPGChar.PartyTag(ag,ai)
 local tg,ti = TargetFromAct(act)
 if tg=="Hero" then
-   if (XCharAttacked[Fighters.Hero[ai].Tag] or function(ag,ai) end)(ag,ai) then return end -- If "true" is returned it means the playable character cancelled the attack!
+   if (XCharAttacked[Fighters.Hero[ti].Tag] or function(ag,ai) end)(ag,ai) then
+      RepCancel() 
+      return 
+      end -- If "true" is returned it means the playable character cancelled the attack!
    end
 if not CheckTarget(tg,ti) then MINI("Attack cancelled",255,0,0); MINI("There's no enemy on that spot anymore",255,180,0); return end
 CSay(sval(ag).."["..sval(ai).."]: "..sval(ch).." attacks")
