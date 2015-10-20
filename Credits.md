@@ -46,7 +46,7 @@ Utopia | 2 | Font; Misc files;
 Varazuvi(TM) | 4 | Audio; 
 Vickie | 1 | Art; 
 WeirdoMusic | 1 | Music; 
-Widzy | 3 | Music; 
+Widzy | 4 | Audio; Music; 
 YADOT | 1 | Art; 
 eady | 2 | Art; Misc files; 
 glitch | 1 | Art; 

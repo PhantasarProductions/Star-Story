@@ -39,12 +39,98 @@
 SpellAni = {}
 -- @FI
 
+function Load_SAP_Flame()	
+	if Image.Exist("SAP_Flame") then
+		SAP_Flame = Image.LoadAnim('GFX/Combat/SpellAni/Flame.png',70,140,0,10)
+		Image.Assign("SAP_Flame",SAP_Flame)
+		Image.Hot(SAP_Flame,Image.Width(SAP_Flame)/2,Image.Height(SAP_Flame))
+	end
+	SAP_Flame = 'SAP_Flame'   	
+end
+
 
 function SpellAni.Burn(ActG,ActT,TarG,TarT)
+	local x,y = FighterCoords(TarG,TarT)
+	Load_SAP_Flame()
+	SFX('Audio/SFX/Spell_Ani/Fire.ogg')
+	for ak=0,9 do
+		DrawScreen()
+		Image.Draw(SAP_Flame,x,y,ak)
+		Flip()
+		Time.Sleep(150)
+	end 	
 end
 
 function SpellAni.BurnAll(ActG,ActT,TarG,TarT)
-end
+	local x,y
+	local tlist = {}
+	local t
+	-- @SELECT TarG
+	-- @CASE "Hero"
+	for ak=1,4 do
+		x,y = FighterCoords(TarG,ak)
+		if RPGStat.PartyTag(ak)~="" and RPGStat.Points(RPGStat.PartyTag(ak),"HP")>0 then table.insert(tlist,{x=x,y=y}) end
+	end
+	-- @CASE "Foe"
+	for ak=1,9 do
+		x,y = FighterCoords(TarG,ak)
+		if Fighters.Foe[ak] and RPGStat.Points(Fighters.Foe[ak].Tag,"HP")>0 then table.insert(tlist,{x=x,y=y}) end
+	end       
+	-- @ENDSELECT       
+	Load_SAP_Flame()
+	SFX('Audi/SFX/SpellAni/Fire.ogg')	
+	for ak=0,9 do
+		DrawScreen()
+		for t in each(tlist) do
+			Image.Draw(SAP_Flame,t.x,t.y,ak)
+		end
+		Flip()
+	end
+	Time.Sleep(75)
+end 
 
 function SpellAni.Inferno()
+	Load_SAP_Flame()
+	local c,x,y
+	local screen=Image.GrabScreen()
+	local fl = {}
+	local f
+	local scaler
+	for c=255,0,-2 do
+		Image.Color(255,c,c)
+		Image.Draw(screen)
+		Flip()
+	end 
+	if SolarFire then
+		CSay("Solar Fire!")
+		for scaler=0,100,1 do
+			CSay("  scaler = "..scaler)
+			Image.Color(255,0,0)
+			Image.Draw(screen)
+			Image.Color(255,255,255)
+			Image.ScalePC(100,scaler) 
+			Image.Draw(SolarFire,0,600)
+			Image.ScalePC(100,100)
+			Flip()  
+		end
+		Time.Sleep(100)        
+	end    
+	CSay("Creating Flames")   
+	for y = 10,600,10 do
+		for x=1,5 do table.insert(fl,{x=rand(0,800),y=y}) end
+	end
+	SFX('Audio/SFX/SpellAni/Fire.ogg')    
+	for ak=0,9 do
+		CSay("Flame frame: "..ak)
+		Image.Color(255,0,0)
+		Image.Draw(screen)
+		Image.Color(255,255,255)
+		for _,f in ipairs(fl) do
+			Image.Draw(SAP_Flame,f.x,f.y,ak) 
+		end
+		Time.Sleep(75)    
+		Flip()        
+	end
+	Image.Free(screen)        
 end
+
