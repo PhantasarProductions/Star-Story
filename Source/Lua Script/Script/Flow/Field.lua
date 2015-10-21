@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.10.20
+  Version: 15.10.21
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -469,6 +469,7 @@ for lay in each(layers[Maps.Multi()]) do
 			foe.OriPos = { X = obj.X, Y = obj.Y }
 			foe.event = obj.DataGet("BOSSFUNCTION")
 			foe.barrier = obj.DataGet("LINKEDBARRIER")
+			foe.Layer = lay
 			CSay("= Function: "..foe.event)
 			CSay("= Barrier:  "..foe.barrier)
 			--CSay("= Datadump: "..obj.DataDump())
