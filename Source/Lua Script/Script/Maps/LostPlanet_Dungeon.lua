@@ -160,12 +160,17 @@ function CLICK_ARRIVAL_IvoPlate11() IvoPlate(11) end
 function CLICK_ARRIVAL_IvoPlate12() IvoPlate(12) end
 
 function ShowPreBoss()  MapShow("PreBoss") end
-function ShowPostBoss() MapShow("PostBoss") end
+function ShowPostBoss() 
+local door = Maps.Obj.Obj("BossDoor")
+MapShow("PostBoss") 
+door.Visible = door.Impassible
+Maps.Remap()
+end
 
 function AndCloseTheDoorBehindYou()
 local door = Maps.Obj.Obj("BossDoor")
-obj.Visible=1
-obj.Impassible=1
+door.Visible=1
+door.Impassible=1
 Maps.Remap()
 end 
 
