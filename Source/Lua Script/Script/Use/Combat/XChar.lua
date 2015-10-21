@@ -205,4 +205,28 @@ XCharAttacked = {
 
 }	
 	
-	
+XCharAlternateAttack = {
+
+    Wendicka = function(ai,ti,tg)               
+               if rand(1,100)>30 then return end -- 30% only that Wendicka even qualifies to do this.
+               if ti=="Hero" then return end -- This will not happen if Wendicka attacks one of her allies in confused state.
+               if Fighters.Foe[ti].Boss then return end -- No go on bosses! 
+               foetag = Fighters.Foe[ti].Tag
+               wentag = Fighters.Hero[ai].Tag -- (Important to know since Wendicka can also do this in her uniform form)
+               wenhp = RPGChar.Points("UniWendicka","HP").Have -- Wendicka and UniWendicka share their HP, so this is easy to do.
+               foehp = RPGChar.Points(foetag,'HP').Have
+               if rand(1,foehp)>rand(0,wenhp) then return end -- The better Wendicka's health and the worse the enemy's health the bigger the chance Wendicka will do this.
+               -- All stuff out of the way! Let's kill 'em, boys!
+               MS.LoadNew("BOXTEXT","Script/SubRoutines/BoxText.lua")
+               MS.Run("BOXTEXT","RemoveData","NEWABILITY")
+               MS.Run("BOXTEXT","LoadData","GENERAL/COMBAT;NEWABILITY")
+               SerialBoxText("NEWABILITY","SPECIAL."..upper(wentag),"Combat")
+               AnimateHero(ai,{ Act = "ATK"})
+               CharReport(tg,ti,"DEATH!",{255,0,0})
+               RPGChar.Points(foetag,'HP').Have = 0
+               return true      
+               end
+   
+}	
+
+XCharAlternateAttack.UniWendicka = XCharAlternateAttack.Wendicka

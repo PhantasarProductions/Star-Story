@@ -1,6 +1,6 @@
 --[[
   CLoadFoe.lua
-  Version: 15.10.03
+  Version: 15.10.21
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -84,6 +84,8 @@ for ckey,cvalue in spairs(FoeData.Stat) do
     end
 RPGStat.Points(Foe.Tag,"HP",1).MaxCopy = "END_HP"
 RPGStat.Points(Foe.Tag,"HP").Have = RPGStat.Points(Foe.Tag,"HP").Maximum    
+-- Boss?
+Foe.Boss = FoeData.Boss
 -- Elemental resistances
 for k,v in spairs(FoeData) do
     if prefixed(k,"EleRes_") then RPGStat.DefStat(Foe.Tag,replace(k,"EleRes_","ER_"),v) end

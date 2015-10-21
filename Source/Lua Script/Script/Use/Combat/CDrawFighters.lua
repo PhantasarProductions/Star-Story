@@ -1,6 +1,6 @@
 --[[
   CDrawFighters.lua
-  Version: 15.09.30
+  Version: 15.10.21
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -175,7 +175,7 @@ for k=1,5 do
     Neg[idx] = not Neg[idx]
     DrawScreen()
     Flip()
-    Time.Sleep(25)
+    Time.Sleep(75)
     end
 Neg[idx]=nil    
 end
