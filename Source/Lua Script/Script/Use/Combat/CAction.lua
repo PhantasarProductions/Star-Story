@@ -113,7 +113,7 @@ if abl.AttackPower and abl.AttackPower>0 then
        element
            = abl.AttackElement
       }
-   if act.DoublePower then atkdata.atk = atkdata.atk * 2 end   
+   if act.DoublePower then atkdata.mod = atkdata.mod * 2 end   
    Attack(ag,ai,act,atkdata,tg,ti)   
    effect=true
    end
