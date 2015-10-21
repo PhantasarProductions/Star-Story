@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.21
+version: 15.10.22
 ]]
 
 -- Switch routine (in case we need it)
@@ -176,6 +176,30 @@ end
 
 
 function Boss()
+CleanCombat()
+local lv = MapLevel()
+local subjects = ({2,4,8})[skill]
+local x,y,si
+-- Background data
+Var.D("$COMBAT.BACKGROUND","Dungeon.png")
+Var.D("$COMBAT.VICTORYCHECK","Flirmouse_King")
+Var.D("$COMBAT.BEGIN","Default")
+-- The king himself
+Var.D("$COMBAT.FOE1","Boss/Flirmouse_King")
+Var.D("%COMBAT.LVFOE1",lv)
+Var.D("$COMBAT.ALTCOORDSFOE1","300,400")
+-- The subjects
+for i=1,subjects do 
+    si = i + 1
+    Var.D("$COMBAT.FOE"..si,"Boss/Flirmouse_Subject")
+    Var.D('%COMBAT.LVFOE'..si,lv)
+    x = 300+(math.sin((i/subjects)*360)*100)
+    y = 400+(math.cos((i/subjects)*360)*100)
+    Var.D("%COMBAT.ALTCOORDSFOE"..si,x..","..y)
+    end
+-- Start the battle
+RandomBossTune()
+StartCombat()
 end
 
 

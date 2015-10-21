@@ -30,6 +30,8 @@
 1. Script/JINC/Demo/Maps.lua
 1. Script/JINC/Foes/Boss/BigGrassTiger.lua
 1. Script/JINC/Foes/Boss/BrainDroid.lua
+1. Script/JINC/Foes/Boss/Flirmouse_King.lua
+1. Script/JINC/Foes/Boss/Flirmouse_Subject.lua
 1. Script/JINC/Foes/Boss/Supersyss.lua
 1. Script/JINC/Foes/Reg/astrilopup.lua
 1. Script/JINC/Foes/Reg/BattleDroid.lua
@@ -213,4 +215,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Wed 21 October 2015; 23:15:18 CET
+### Last updated: Thu 22 October 2015; 01:54:57 CET

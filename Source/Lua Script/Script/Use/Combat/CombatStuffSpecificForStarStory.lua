@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.19
+version: 15.10.22
 ]]
 -- @IF IGNORE
 VicCheck = {}
@@ -184,6 +184,25 @@ if RPGChar.Points(BrainTag,"HP").Have==1 then
    -- DelEnemies()
    LAURA.Flow("FIELD")
    end   
+end
+
+
+function VicCheck.Flirmouse_King()
+local subjects = ({2,4,8})[skill]
+local r
+if not InitFlirmouse_King then
+   r = rand(2,subjects+2)
+   RPGStat.LinkPoints(Fighters.Foe[r].Tag,Fighters.Foe[1].Tag,"HP") -- If the chosen subject dies, so will the king.
+   end
+if not Fighters.Foe[1] then -- If the chosen subject and the king are gone, the other subjects will die too.
+   for i=1,9 do
+       if (Fighters.Foe[i]) then
+          CharReport("Foe",i,"DEATH!",{255,0,0})
+          RPGChar.Points(Fighters.Foe[i].Tag,"HP").Have=0
+          end
+       end        
+   end       
+return DefaultVictory()      
 end
 
 function RunVictory()
