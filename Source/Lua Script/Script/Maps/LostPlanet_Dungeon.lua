@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.20
+version: 15.10.21
 ]]
 
 -- Switch routine (in case we need it)
@@ -159,6 +159,16 @@ function CLICK_ARRIVAL_IvoPlate10() IvoPlate(10) end
 function CLICK_ARRIVAL_IvoPlate11() IvoPlate(11) end
 function CLICK_ARRIVAL_IvoPlate12() IvoPlate(12) end
 
+function ShowPreBoss()  MapShow("PreBoss") end
+function ShowPostBoss() MapShow("PostBoss") end
+
+function AndCloseTheDoorBehindYou()
+local door = Maps.Obj.Obj("BossDoor")
+obj.Visible=1
+obj.Impassible=1
+Maps.Remap()
+end 
+
 
 function Boss()
 end
@@ -171,6 +181,11 @@ function GALE_OnLoad()
 	ZA_Enter("Next",GoNext)
 	ZA_Enter("Prev",GoPrev)
 	ZA_Enter("ToCell",ToCell)
+	ZA_Enter("EnterBoss",ShowPreBoss)
+	ZA_Enter("BossRoom",ShowPreBoss)
+	ZA_Enter("ShowPostBoss",ShowPostBoss)
+	ZA_Enter("ExitBoss",ShowPostBoss)
+	ZA_Enter("CloseTheDoorBehindYou",AndCloseTheDoorBehindYou)
 	for i=1,12 do AddClickable("ClockPlate"..i) end
 	for i=1,12 do AddClickable("IvoPlate"..i) end
 end
