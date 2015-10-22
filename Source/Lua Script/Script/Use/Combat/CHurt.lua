@@ -1,6 +1,6 @@
 --[[
   CHurt.lua
-  Version: 15.10.10
+  Version: 15.10.22
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -49,6 +49,7 @@ local elementalresistance = ({
                                  [1] = function() return RPGStat.Stat(chtarget,"ER_"..element) end,
                                  [0] = function() return 3 end
                               })[RPGStat.StatExists(chtarget,"ER_"..(element or "Non-Elemental"))]();
+if RPGStat.GetData(Fighters[tg][ti].Tag,"IMMUNE")=="YES" then elementalresistance=5 end                              
 -- @IF DEBUG_HURT
    CSay("HURT: Received data "..tg..","..ti..","..hp..","..(element or "Non-Elemental"))
    CSay("HURT: Resistance is "..elementalresistance);
