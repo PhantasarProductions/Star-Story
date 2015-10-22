@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 15.10.21
+  Version: 15.10.22
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -167,7 +167,7 @@ if not CheckTarget(tg,ti) then MINI("Attack cancelled",255,0,0); MINI("There's n
 if tg=="Hero" then
    if (XCharAttacked[Fighters.Hero[ti].Tag] or function(ag,ai) end)(ag,ai) then
       RepCancel(ag,ai) 
-      Fighters[ag][ai] = -rand(0,4000-(skill*1000))
+      Fighters[ag][ai].Gauge = -rand(0,4000-(skill*1000))
       return 
       end -- If "true" is returned it means the playable character cancelled the attack!
    end
