@@ -1,6 +1,6 @@
 --[[
   Hide-and-seek.lua
-  Version: 15.09.19
+  Version: 15.10.22
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -43,6 +43,7 @@ if ThisIsAMapScript then
    Maps.ShowOnlyLabel(join(arg,","),1)
    Var.D("$MAP.MAPSHOW.LASTREQUEST",join(arg,","))
    Var.D("$MAP.MAPSHOW.LASTALWAYSSHOW",serialize("ret",alwaysshow))
+   if Maps.Multi()==1 then Var.D("$MAP.MAPSHOW.LASTLAYER",Maps.LayerCodeName) end
    local i,a
    --for i,a in ipairs(alwaysshow) do Maps.ShowObject(a) end
    local i,a
@@ -66,6 +67,7 @@ function OnlyMapShow(...) -- Same as mapshow but will skip the 'always show' var
    Maps.ShowOnlyLabel(join(arg,","),1)
    Var.D("$MAP.MAPSHOW.LASTREQUEST",join(arg,","))
    Var.D("$MAP.MAPSHOW.LASTALWAYSSHOW",serialize("ret",alwaysshow))
+   if Maps.Multi()==1 then Var.D("$MAP.MAPSHOW.LASTLAYER",Maps.LayerCodeName) end
    if ResetFoePositions then ResetFoePositions() else MS.Run("FIELD","ResetFoePositions") end
 --else
    --CSay("MapShow: Not called from Map Script so calling it from mapscript artifically")
@@ -81,6 +83,10 @@ if ThisIsAMapScript then
   local as
   if not req then CSay("No mapshow request to be repeated") return end
   CSay("Redo Map Show")
+  if Maps.Multi()==1 and Maps.LayerCodeName~=CVV("$MAP.MAPSHOW.LASTLAYER") then
+     CSay("= Ignore layermismatch")
+     return
+     end
   CSay("- Last request = "..sval(req))
   alwaysshow = fas() or tas
   for as in each(alwaysshow) do CSay("- Always show: "..as) end
