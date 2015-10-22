@@ -195,11 +195,12 @@ if not InitFlirmouse_King then
    CSay("The king with subject #"..r)
    RPGStat.LinkStat(Fighters.Foe[r].Tag,Fighters.Foe[1].Tag,"END_HP")
    RPGStat.LinkPoints(Fighters.Foe[r].Tag,Fighters.Foe[1].Tag,"HP") -- If the chosen subject dies, so will the king.
+   RPGStat.DefStat(Fighters.Foe[1].Tag,"Non-Elemental",5)
    InitFlirmouse_King = true
    end
 if not Fighters.Foe[1] then -- If the chosen subject and the king are gone, the other subjects will die too.
    for i=1,9 do
-       if (Fighters.Foe[i]) then
+       if Fighters.Foe[i] and RPGStat.Points(Fighters.Foe[i].Tag,"HP").Have>0 then
           CharReport("Foe",i,"DEATH!",{255,0,0})
           RPGChar.Points(Fighters.Foe[i].Tag,"HP").Have=0
           end

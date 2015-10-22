@@ -193,7 +193,7 @@ for i=1,subjects do
     si = i + 1
     Var.D("$COMBAT.FOE"..si,"Boss/Flirmouse_Subject")
     Var.D('%COMBAT.LVFOE'..si,lv)
-    x = 300+(math.sin((i/subjects)*360)*100)
+    x = 300+(math.sin((i/subjects)*360)*200)
     y = 400+(math.cos((i/subjects)*360)*100)
     CSay("Subject #"..i.." is set to coordinates ("..x..","..y..")")
     Var.D("$COMBAT.ALTCOORDSFOE"..si,x..","..y)
