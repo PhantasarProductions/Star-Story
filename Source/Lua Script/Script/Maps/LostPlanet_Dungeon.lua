@@ -210,7 +210,10 @@ end
 
 -- And THIS is where you exit the dungeon itself
 function NPC_FreeAtLast()
-Sys.Error("Sorry, this part is not yet scripted!")
+LoadMap("LostPlanet_Junkyard","#001")
+SpawnPlayer("Start")
+if not Done("&DONE.ENTERJUNKYARD") then MapText("ENTRY") end
+--Sys.Error("Sorry, this part is not yet scripted!")
 end
 
 -- Init everything right

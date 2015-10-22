@@ -78,6 +78,7 @@
 1. Script/JINC/IAA/ARM_DART.lua
 1. Script/JINC/IAA/ARM_HEALINGSPRAY.lua
 1. Script/JINC/IAA/ARM_POISONDART.lua
+1. Script/JINC/IAA/ARM_VIRUSBOMB.lua
 1. Script/JINC/IAA/ITM_ADHBANDAGE.lua
 1. Script/JINC/IAA/ITM_ANTIDOTE.lua
 1. Script/JINC/IAA/ITM_BANDAGE.lua
@@ -216,4 +217,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Thu 22 October 2015; 15:52:40 CET
+### Last updated: Thu 22 October 2015; 20:36:32 CET

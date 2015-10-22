@@ -41,5 +41,6 @@ version: 15.10.22
 
 function GALE_OnLoad()
 Music("Dungeon/Vuilnisbelt.ogg")
+SetScrollBoundaries(0,0,0,2560)
 CSay("Welcome to the junkyard")
 end

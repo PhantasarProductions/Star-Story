@@ -1,5 +1,5 @@
 --[[
-  ABL_FOE_LICKYOURWOUNDS.lua
+  ARM_VIRUSBOMB.lua
   Version: 15.10.22
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,29 +35,23 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 0,
-	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 250,
+	["ARM_Hit%"] = 80,
+	["ARM_MaxAmmo"] = 4,
+	["ARM_PRICE_Hit%"] = 750,
+	["ARM_PRICE_MaxAmmo"] = 800,
+	["ARM_PRICE_XPower"] = 1200,
+	["ARM_XPower"] = 0,
 	["ActSpeed"] = 250,
-	["AttackElement"] = "Healing",
-	["AttackPower"] = 200,
+	["AttackElement"] = "Non-Elemental",
+	["AttackPower"] = 100,
 	["AttackStat"] = "Strength",
-	["CureAmnesia"] = true,
-	["CureBagLock"] = true,
-	["CureConfusion"] = true,
-	["CureDisease"] = true,
-	["CureHandicapped"] = true,
-	["CureParalysis"] = true,
-	["CurePoison"] = true,
-	["CureSleep"] = true,
-	["CureTerrified"] = true,
-	["DefenseStat"] = "Resistance",
-	["Description"] = "Heal",
+	["CauseDisease"] = true,
+	["DefenseStat"] = "Defense",
+	["Description"] = "Hurts and diseases the enemy",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Inventory/Patch.png",
+	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Lick your wounds",
-	["SpellAni_Reference"] = "SingleHeal",
+	["Name"] = "Virus Bomb",
 	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true}
