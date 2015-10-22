@@ -20,9 +20,9 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.10.17
+Version: 15.10.22
 End Rem
-MKL_Version "LAURA II - init.bmx","15.10.17"
+MKL_Version "LAURA II - init.bmx","15.10.22"
 MKL_Lic     "LAURA II - init.bmx","GNU General Public License 3"
 
 Function Init()
@@ -152,7 +152,7 @@ If Upper(i.Get("OSMousePointer"))="NO" Or Upper(i.Get("OSMousePointer"))="OFF"
 	HideMouse
 	DebugLog "OS Mouse Pointer has been turned off"
 	EndIf
-Kthura_GrabBoundaries	
+'Kthura_GrabBoundaries	 ' Let's see if this solves some evil
 End Function	
 
 Function InitScript()

@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.10.14
+Version: 15.10.22
 End Rem
 Strict
 
@@ -164,7 +164,7 @@ GaleCon = New GALEMainCon2
 
 ' Version
 MKL_Lic     "LAURA II - LAURA2.bmx","GNU General Public License 3"
-MKL_Version "LAURA II - LAURA2.bmx","15.10.14"
+MKL_Version "LAURA II - LAURA2.bmx","15.10.22"
 
 ' Platform information
 ?MacOS
