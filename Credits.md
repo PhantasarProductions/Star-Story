@@ -31,7 +31,7 @@ Knight Of Fire | 2 | Music;
 Man of Steel | 117 | Art; Misc files; 
 Matt McFarland | 2 | Music; 
 Megan | 2 | Art; 
-Merlin2525 | 1 | Art; 
+Merlin2525 | 3 | Art; 
 Mohammed Ibrahim | 3 | Art; 
 OpenClips | 1 | Art; 
 Pablo Impallari | 6 | Font; Misc files; 

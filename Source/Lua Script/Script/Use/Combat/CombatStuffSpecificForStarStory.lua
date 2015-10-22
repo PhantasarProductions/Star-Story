@@ -191,7 +191,8 @@ function VicCheck.Flirmouse_King()
 local subjects = ({2,4,8})[skill]
 local r
 if not InitFlirmouse_King then
-   r = rand(2,subjects+2)
+   r = rand(2,subjects+1)
+   CSay("The king with subject #"..r)
    RPGStat.LinkPoints(Fighters.Foe[r].Tag,Fighters.Foe[1].Tag,"HP") -- If the chosen subject dies, so will the king.
    end
 if not Fighters.Foe[1] then -- If the chosen subject and the king are gone, the other subjects will die too.
