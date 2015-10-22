@@ -1,0 +1,76 @@
+Add:TexturesGrabFoldersMerge,../LAURA II/Design/Star Story/JCR
+Add:Lines,0:600:800:600
+Add:Lines,800:0:800:600
+Var:Maps=../LAURA II/Design/Star Story/JCR/Tricky Story/Kthura/
+
+Add:CSpots,$EnemyHZ1
+Add:CSpots,$EnemyHZ2
+Add:CSpots,$EnemyHZ3
+Add:CSpots,$EnemyVT1
+Add:CSpots,$EnemyVT2
+Add:CSpots,$EnemyVT3
+Add:CSpots,$EnemySS1
+Add:CSpots,$EnemySS2
+Add:CSpots,$EnemySS3
+Add:CSpots,$EnemyAS1
+Add:CSpots,$EnemyAS2
+Add:CSpots,$EnemyAS3
+Add:CSpots,$EnemyBoss
+
+Add:CSpots,$Item
+Add:CSpots,$SpecialItem
+
+
+Add:CSpots,$TransporterGeneral
+Add:CSpots,$TransporterRecover
+Add:CSpots,$TransporterReturnOnly
+
+Add:CSpots,$CrystalARMS
+
+
+Add:GeneralData,Title
+
+Add:GeneralData,*strike*
+Add:GeneralData,Foes
+Add:GeneralData,Arena
+Add:GeneralData,AltEncounterTune
+
+-- PT means Play-Through
+-- In case your Play-Through number is higher than the highest here, the higest in this list will be used.
+Add:GeneralData,*strike*
+Add:GeneralData,PT  1 Level Range
+Add:GeneralData,PT  2 Level Range
+Add:GeneralData,PT  3 Level Range
+Add:GeneralData,PT  4 Level Range
+Add:GeneralData,PT  5 Level Range
+Add:GeneralData,*strike*
+-- Please note all items from playthough 1 till the playthrough you're in now can be awarded. Sucks, eh?
+--               {123}
+Add:GeneralData,PT  1 Items
+Add:GeneralData,PT  2 Items
+Add:GeneralData,PT  3 Items
+Add:GeneralData,PT  4 Items
+Add:GeneralData,PT  5 Items
+Add:GeneralData,*strike*
+-- These items are well hidden. They can even have a mini-boss guarding them.
+Add:GeneralData,PT  1 Super Items
+Add:GeneralData,PT  2 Super Items
+Add:GeneralData,PT  3 Super Items
+Add:GeneralData,PT  4 Super Items
+Add:GeneralData,PT  5 Super Items
+
+-- The level the dungeon was setup for. (When the playthrough level is higher than the maximum amount of playthrough levels here, this level will be ignored)
+-- When your level is too high some penalties may come in place. (So endless grinding can be punished!)
+Add:GeneralData,*strike*
+--                123.
+--              PT  1 Level
+Add:GeneralData,PT  1 Level
+Add:GeneralData,PT  2 Level
+Add:GeneralData,PT  3 Level
+Add:GeneralData,PT  4 Level
+Add:GeneralData,PT  5 Level
+Add:GeneralData,PT  6 Level
+Add:GeneralData,PT  7 Level
+Add:GeneralData,PT  8 Level
+Add:GeneralData,PT  9 Level
+Add:GeneralData,PT 10 Level
