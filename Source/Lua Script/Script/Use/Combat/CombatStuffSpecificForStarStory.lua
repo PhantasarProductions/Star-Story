@@ -193,6 +193,7 @@ local r
 if not InitFlirmouse_King then
    r = rand(2,subjects+1)
    CSay("The king with subject #"..r)
+   RPGStat.LinkStat(Fighters.Foe[r].Tag,Fighters.Foe[1].Tag,"END_HP")
    RPGStat.LinkPoints(Fighters.Foe[r].Tag,Fighters.Foe[1].Tag,"HP") -- If the chosen subject dies, so will the king.
    InitFlirmouse_King = true
    end
