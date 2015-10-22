@@ -1,6 +1,6 @@
 --[[
   Combat.lua
-  Version: 15.10.19
+  Version: 15.10.22
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -212,7 +212,7 @@ for k,v in spairs(CombatData) do
        LoadFoe(Fighters.Foe[FoeCount],CombatData)           
        end
     end
--- Some data for both
+-- Gauge Init
 local k,f,i,fe
 CSay("Gauge Star positions")
 for k,f in spairs(Fighters) do
@@ -221,6 +221,13 @@ for k,f in spairs(Fighters) do
         fe.Gauge = rand(StartGauge[k][CombatData.BEGIN][1],StartGauge[k][CombatData.BEGIN][2])
         end
     end
+-- Init status changes and reset stat boosts
+CSay("Status and stat resets")
+for k,f in spairs(Fighters) do
+    for i,fe in pairs(f) do
+        RPGChar.CreateList(fe.Tag,"STATUSCHANGE") -- Yeah, status changes from previous fight do not count!         
+        end
+    end    
 CSay("Gauge init pos done")    
 -- General initiations    
 InitGaugeSpeed()
