@@ -196,7 +196,7 @@ for i=1,subjects do
     x = 300+(math.sin((i/subjects)*360)*100)
     y = 400+(math.cos((i/subjects)*360)*100)
     CSay("Subject #"..i.." is set to coordinates ("..x..","..y..")")
-    Var.D("%COMBAT.ALTCOORDSFOE"..si,x..","..y)
+    Var.D("$COMBAT.ALTCOORDSFOE"..si,x..","..y)
     end
 -- Start the battle
 RandomBossTune()
