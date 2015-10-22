@@ -203,7 +203,15 @@ RandomBossTune()
 StartCombat()
 end
 
+-- You reached the end. You are not exiting the dungeon itself ;)
+function TheEnd()
+if not(Done("&DONE.DUNGEON")) then MapEXP(6/skill) end
+end
 
+-- And THIS is where you exit the dungeon itself
+function NPC_FreeAtLast()
+Sys.Error("Sorry, this part is not yet scripted!")
+end
 
 -- Init everything right
 function GALE_OnLoad()
@@ -216,6 +224,7 @@ function GALE_OnLoad()
 	ZA_Enter("ShowPostBoss",ShowPostBoss)
 	ZA_Enter("ExitBoss",ShowPostBoss)
 	ZA_Enter("CloseTheDoorBehindYou",AndCloseTheDoorBehindYou)
+	ZA_Enter("TheEnd",TheEnd)
 	for i=1,12 do AddClickable("ClockPlate"..i) end
 	for i=1,12 do AddClickable("IvoPlate"..i) end
 end
