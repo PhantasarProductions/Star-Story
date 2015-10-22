@@ -152,7 +152,7 @@ If Upper(i.Get("OSMousePointer"))="NO" Or Upper(i.Get("OSMousePointer"))="OFF"
 	HideMouse
 	DebugLog "OS Mouse Pointer has been turned off"
 	EndIf
-'Kthura_GrabBoundaries	 ' Let's see if this solves some evil
+Kthura_GrabBoundaries	 ' Let's see if this solves some evil
 End Function	
 
 Function InitScript()
