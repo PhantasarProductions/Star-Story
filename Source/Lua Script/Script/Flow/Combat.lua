@@ -130,6 +130,11 @@ end
 
 function RunTimedStatusChanges()
 local ch
+for ft,ftl in spairs(Fighters) do
+    for fli,fv in pairs(ftl) do
+        if fv.Gauge==10000 then return end -- Let's hope this will not cause timed effects (like poison) during player input.
+        end
+     end        
 for stn,stt in pairs(StatusTimed) do
    stt.CntCycles = (stt.CntCycles or stt.Cycles) - 1
    if stt.CntCycles<=0 then

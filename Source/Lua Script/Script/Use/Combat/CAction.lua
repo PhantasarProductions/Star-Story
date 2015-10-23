@@ -92,6 +92,18 @@ if     RPGChar.Points(cht,"HP").Have==0 and abl.CureDeathOne  then RPGChar.Point
 elseif RPGChar.Points(cht,"HP").Have==0 and abl.CureDeathFull then RPGChar.Points(cht,"HP").Have=RPGChar.Points(cht,"HP").Maximum; CharReport(tg,ti,"Resurrect",{180,255,0}); effect=true
 elseif RPGChar.Points(cht,"HP").Have==0 then Miss(tg,ti); return end     
 -- Cure status changes (this must always be the first thing to do after raising death spells)
+local cured,stc
+for i,y in spairs(abl) do
+    if prefixed(i,'Cure') and y then
+       stc = right(i,len(i)-len('Cure'))
+       cured = RPGChar.ListHas(cht,"STATUSCHANGE",stc)
+       if cured then 
+          RPGChar.RemList(cht,"STATUSCHANGE",stc)
+          CharReport(tg,ti,"Cure",{180,255,0})
+          effect=true
+          end
+       end
+    end
 -- Heal absolute or by percent
 if abl.Healing and abl.Healing>0 then
    (({ Absolute = function() Heal(tg,ti,abl.Healing); effect=true end,
@@ -119,7 +131,6 @@ if abl.AttackPower and abl.AttackPower>0 then
    end
 -- Scripted stuff
 -- Cause status changes (this must always be the last thing to do)
-local stc
 for i,y in spairs(abl) do
     if prefixed(i,'Cause') and y then
        stc = right(i,len(i)-len('Cause'))

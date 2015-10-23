@@ -52,8 +52,10 @@ local tag = Fighters[g][i].Tag
 local hpp = RPGChar.Points(tag,'HP')
 local hp  = hpp.Have
 local hpm = hpp.Maximum
-local pain=(({ Hero = function() return math.ceil(hpm*({0.05,.10,.25})[skill]) end, Foe = function() return math.ceil(hpm*({0.50,.25,.02})[skill]) end}))[g]
- math.ceil(hpm*({0.05,.10,.25})[skill])
+local pain=({ Hero = function() return math.ceil(hpm*({0.05,.10,.25})[skill]) end, Foe = function() return math.ceil(hpm*({0.50,.25,.02})[skill]) end})[g]()
+CSay(type(pain).." pain = "..sval(pain)) 
+if not pain or pain=="" then Sys.Error("Illegal pain value","g,"..g,";skill,"..skill) end
+-- math.ceil(hpm*({0.05,.10,.25})[skill])
 CharReport(g,i,"Poison!",{255,0,0})
 CharReport(g,i,pain,{255,255,255})
 hpp.Dec(pain)
