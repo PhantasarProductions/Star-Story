@@ -234,7 +234,7 @@ SpriteAnim = {
 function DrawFighters()
 for ft,ftl in spairs(Fighters) do
     for fli,fv in pairs(ftl) do
-        for stc in iStatusChange() do
+        for stc in iStatusChange(fv.Tag) do
             (StatusDrawFighter[stc] or function() end)(ft,fli)
             end
         DrawFighter[ft](fli,fv)

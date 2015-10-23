@@ -35,6 +35,8 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 
+skill = Sys.Val(Var.C('%SKILL')) -- Seems this is needed or the skill value won't reach the status changes.
+
 
 StatusResistance = {}     -- Each status needs the name of the resistance that will be used to block this status change. If none were given, no resistance exists against it.
 StatusTimed = {}          -- Each status needs an array with the next fields { Cycles:int, ActionFunction(g,i) }. CntCycles will be used by the fight routines itself to keep track of the number of cycles,
