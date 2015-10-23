@@ -244,7 +244,7 @@ function iStatusChange(ch) -- A quick iterator for status changes.
 local i=-1
 return function()
        i = i + 1
-       if i<RPGStat.CountList(ch,"STATUSCHANGE") then return RPGStat.ListItem(ch,"STATUSCHANGE",i) end
+       if i<RPGStat.CountList(ch,"STATUSCHANGE") then return RPGStat.ListItem(ch,"STATUSCHANGE",i-1) end
        return nil
        end
 end
