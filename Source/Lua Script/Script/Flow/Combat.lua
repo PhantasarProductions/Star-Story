@@ -136,7 +136,10 @@ for stn,stt in pairs(StatusTimed) do
       for ft,ftt in pairs(Fighters) do
           for chi,chd in pairs(ftt) do
               ch = chd.Tag
-              if RPGChar.ListHas(ch,"STATUSCHANGE",stn) then stt.ActionFunction(ft,chi) end 
+              if RPGChar.ListHas(ch,"STATUSCHANGE",stn)==1 then 
+                 stt.ActionFunction(ft,chi)
+                 stt.CntCycles = nil 
+                 end 
               end
           end
       end
