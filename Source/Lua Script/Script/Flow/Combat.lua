@@ -225,7 +225,8 @@ for k,f in spairs(Fighters) do
 CSay("Status and stat resets")
 for k,f in spairs(Fighters) do
     for i,fe in pairs(f) do
-        RPGChar.CreateList(fe.Tag,"STATUSCHANGE") -- Yeah, status changes from previous fight do not count!         
+        RPGChar.CreateList(fe.Tag,"STATUSCHANGE") -- Yeah, status changes from previous fight do not count!
+        CSay("= "..fe.Tag.." now has the list: "..StatusChange)         
         end
     end    
 CSay("Gauge init pos done")    

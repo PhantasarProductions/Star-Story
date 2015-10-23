@@ -469,20 +469,33 @@ if RPGChar.ListHas(ch,'STATUSCHANGE')==1 then CWrite("? That item is already the
 RPGChar.AddList(ch,'STATUSCHANGE',Status)
 end
 
+
+
+function iStatusChange(ch) -- A quick iterator for status changes. Copied from the combat routine.
+local i=0
+return function()
+       i = i + 1
+       if i<RPGStat.CountList(ch,"STATUSCHANGE") then return RPGStat.ListItem(ch,"STATUSCHANGE",i) end
+       return nil
+       end
+end
+
+
 function GETSTATUS(char)
 if LAURA.GetFlow()~="COMBAT" then CWrite("? This command only works in combat mode!",255,0,0) return end
 local chl
-if not char then
+if (not char) or char=="" then
     chl = {}
     for foeid in ICHARS() do
         chl[#chl+1]=foeid
         end
+else        
+		chl = mysplit(char,";")
     end    
-chl = mysplit(char,";")
 for ch in each(chl) do
     if RPGChar.CharExists(ch)==0 then CWrite("? Character '"..sval(ch).."' does not exist!",255,0,0) return end
-    CSay("- "..ch)
-    for st in iStatusChange() do
+    CSay("- "..ch)    
+    for st in iStatusChange(ch) do
         CSay("  = "..st)
         end
     end
