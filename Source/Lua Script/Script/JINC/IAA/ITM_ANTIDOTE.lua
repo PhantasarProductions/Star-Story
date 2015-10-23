@@ -1,6 +1,6 @@
 --[[
   ITM_ANTIDOTE.lua
-  Version: 15.10.22
+  Version: 15.10.23
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -38,7 +38,7 @@ ret = {
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
-	["CureDisease"] = true,
+	["CurePoison"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Cures \"Poison\"",
 	["HealingType"] = "Absolute",

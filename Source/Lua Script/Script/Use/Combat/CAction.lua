@@ -98,6 +98,7 @@ for i,y in spairs(abl) do
        stc = right(i,len(i)-len('Cure'))
        cured = RPGChar.ListHas(cht,"STATUSCHANGE",stc)
        if cured then 
+          CSay("Curing "..stc.." on "..cht)
           RPGChar.RemList(cht,"STATUSCHANGE",stc)
           CharReport(tg,ti,"Cure",{180,255,0})
           effect=true

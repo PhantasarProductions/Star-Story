@@ -41,6 +41,7 @@
 1. Script/JINC/Foes/Reg/flirmouse.lua
 1. Script/JINC/Foes/Reg/GrassTiger.lua
 1. Script/JINC/Foes/Reg/Gummi.lua
+1. Script/JINC/Foes/Reg/Qual.lua
 1. Script/JINC/Foes/Reg/Rat.lua
 1. Script/JINC/Foes/Reg/Syss.lua
 1. Script/JINC/IAA/ABL_EXHURU_BATTLECRY.lua
@@ -58,6 +59,7 @@
 1. Script/JINC/IAA/ABL_FOE_SCRATCH.lua
 1. Script/JINC/IAA/ABL_FOE_TASER.lua
 1. Script/JINC/IAA/ABL_FOE_VENOMBITE.lua
+1. Script/JINC/IAA/ABL_FOE_WATERBEAM.lua
 1. Script/JINC/IAA/ABL_FOXY_BACKSTAB.lua
 1. Script/JINC/IAA/ABL_FOXY_CHEER.lua
 1. Script/JINC/IAA/ABL_FOXY_DRAGON_BURN.lua
@@ -218,4 +220,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 23 October 2015; 19:45:15 CET
+### Last updated: Sat 24 October 2015; 00:11:14 CET

@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ARM_POISONDART.lua
+  ABL_FOE_WATERBEAM.lua
   (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
@@ -35,26 +35,20 @@
 version: 15.10.23
 ]]
 ret = {
-	["ARM_Hit%"] = 75,
-	["ARM_MaxAmmo"] = 4,
-	["ARM_PRICE_Hit%"] = 750,
-	["ARM_PRICE_MaxAmmo"] = 800,
-	["ARM_PRICE_XPower"] = 1200,
-	["ARM_XPower"] = 0,
+	["ABL_AP"] = 0,
+	["ABL_Pose"] = "Cast",
 	["ActSpeed"] = 250,
-	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 100,
-	["AttackStat"] = "Strength",
-	["CausePoison"] = true,
-	["DefenseStat"] = "Defense",
-	["Description"] = "Hurts and poisons the enemy",
+	["AttackElement"] = "Water",
+	["AttackPower"] = 111,
+	["AttackStat"] = "Will",
+	["DefenseStat"] = "Resistance",
+	["Description"] = "Water Attack - One target",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Gun.png",
+	["Icon"] = "GFX/Elements/Water.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Poison Dart",
+	["Name"] = "Water Beam",
 	["Target"] = "1F",
-	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseCombat"] = true}
 
 return ret
 
