@@ -1,6 +1,6 @@
 --[[
   CLoadFoe.lua
-  Version: 15.10.21
+  Version: 15.10.23
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -61,6 +61,7 @@ if rng==0 then rng=1 end
 if Foe.Level<1 then Foe.Level=1 end
 RPGChar.DefStat(Foe.Tag,"Level",Foe.Level)
 RPGChar.SetName(Foe.Tag,FoeData.Name)
+-- Stats
 for ckey,cvalue in spairs(FoeData.Stat) do
     sint = math.abs(cvalue[2]-cvalue[1])
     sinc = sint / rng
@@ -83,7 +84,11 @@ for ckey,cvalue in spairs(FoeData.Stat) do
     RPGChar.ScriptStat(Foe.Tag,"END_"..ckey,"Script/CharStats/General.lua","CALC_"..ckey)    
     end
 RPGStat.Points(Foe.Tag,"HP",1).MaxCopy = "END_HP"
-RPGStat.Points(Foe.Tag,"HP").Have = RPGStat.Points(Foe.Tag,"HP").Maximum    
+RPGStat.Points(Foe.Tag,"HP").Have = RPGStat.Points(Foe.Tag,"HP").Maximum
+-- Status Change Resistance
+for stat,value in spairs(Foe.StatusResistance) do
+    RPGStat.DefStat(Foe.Tag,"SR_TRUE_"..stat,value) -- The enemy will not be influence by equipment anyway.
+    end    
 -- Boss?
 Foe.Boss = FoeData.Boss
 -- Elemental resistances

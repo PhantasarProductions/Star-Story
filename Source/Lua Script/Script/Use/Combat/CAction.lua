@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 15.10.22
+  Version: 15.10.23
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -119,6 +119,17 @@ if abl.AttackPower and abl.AttackPower>0 then
    end
 -- Scripted stuff
 -- Cause status changes (this must always be the last thing to do)
+local stc
+for i,y in spairs(abl) do
+    if prefixed(i,'Cause') and y then
+       stc = right(i,len(i)-len('Cause'))
+       if RPGChar.StatExists(tch,"SR_TRUE_"..stc)==0 or rand(1,100)>RPGStat.Stat("SR_TRUE_"..stc) then
+          RPGChar.AddList(tch,"STATUSCHANGE",stc)
+          CharReport(tg,ti,stc,{255,255,255})               
+          effect=true
+          end
+       end
+    end
 -- If nothing happened along the way display "Miss"
 if not effect then Miss(tg,ti) end
 end; AbilityEffect = AblEffect
