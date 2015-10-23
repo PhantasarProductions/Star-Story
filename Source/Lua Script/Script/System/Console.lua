@@ -465,14 +465,15 @@ end
 function GIVESTATUS(ch,Status)
 if LAURA.GetFlow()~="COMBAT" then CWrite("? This command only works in combat mode!",255,0,0) return end
 if RPGChar.CharExists(ch)==0 then CWrite("? Character '"..sval(ch).."' does not exist!",255,0,0) return end
-if RPGChar.ListHas(ch,'STATUSCHANGE')==1 then CWrite("? That item is already there",255,0,0) return end
+if RPGChar.ListHas(ch,'STATUSCHANGE',Status)==1 then CWrite("? That item is already there",255,0,0) return end
 RPGChar.AddList(ch,'STATUSCHANGE',Status)
+if RPGChar.ListHas(ch,'STATUSCHANGE',Status)==1 then CSay("Adding status succesful") else CSay("Adding status failed") end
 end
 
 
 
 function iStatusChange(ch) -- A quick iterator for status changes. Copied from the combat routine.
-local i=0
+local i=-1
 return function()
        i = i + 1
        if i<RPGStat.CountList(ch,"STATUSCHANGE") then return RPGStat.ListItem(ch,"STATUSCHANGE",i) end

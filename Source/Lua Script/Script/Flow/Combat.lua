@@ -223,12 +223,10 @@ for k,f in spairs(Fighters) do
     end
 -- Init status changes and reset stat boosts
 CSay("Status and stat resets")
-for k,f in spairs(Fighters) do
-    for i,fe in pairs(f) do
-        RPGChar.CreateList(fe.Tag,"STATUSCHANGE") -- Yeah, status changes from previous fight do not count!
-        CSay("= "..fe.Tag.." now has the list: "..StatusChange)         
-        end
-    end    
+for chid in ICHARS() do
+        RPGChar.CreateList(chid,"STATUSCHANGE") -- Yeah, status changes from previous fight do not count!
+        CSay("= "..chid.." now has the list: STATUSCHANGE")
+        end         
 CSay("Gauge init pos done")    
 -- General initiations    
 InitGaugeSpeed()
@@ -243,7 +241,7 @@ if CombatData.MUSIC and CombatData.MUSIC~="" and CombatData.MUSIC~="*NOCHANGE*" 
 end
 
 function iStatusChange(ch) -- A quick iterator for status changes.
-local i=0
+local i=-1
 return function()
        i = i + 1
        if i<RPGStat.CountList(ch,"STATUSCHANGE") then return RPGStat.ListItem(ch,"STATUSCHANGE",i) end

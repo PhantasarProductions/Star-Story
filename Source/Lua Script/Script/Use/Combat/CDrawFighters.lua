@@ -139,7 +139,7 @@ if Image.Loaded(ptag)==0 then -- Load if needed!
    if JCR6.Exists("GFX/Combat/Fighters/Hero/"..data.Tag..'.'..pick..".hot")==0 then Image.Hot(ptag,Image.Width(ptag)/2,Image.Height(ptag)) end
    CSay("Loaded: "..ptag)
    end
-if Targeted then TargetedColor() else White() end   
+-- if Targeted then TargetedColor() else White() end   
 Image.Show(ptag,x,y)   
 -- DarkText("HP="..RPGChar.Points(data.Tag,"HP").Have.."; Pick="..pick.."; tag=".. data.Tag.."; ptag="..ptag,x,y,1) -- debug line
 end
@@ -154,7 +154,7 @@ pt[ true]="N"
 pt[false]="O"
 Neg = Neg or {}
 local Targeted = isorcontains(TargetedGroup,"Foe") and isorcontains(TargetedFighter,idx)
-if Targeted then TargetedColor() else White() end
+-- if Targeted then TargetedColor() else White() end
 myfoe.DeathScale = myfoe.DeathScale or 100
 Image.ScalePC(100,myfoe.DeathScale)   
 Image.Show(pt[Neg[idx]==true]..Fighters.Foe[idx].Tag,CoordsFighter.Foe(idx)) -- Neg[idx]==true is used, as the initial value is "nil" and that would cause the game to crash. CoordsFigher.Foe(idx) will return both the x and the y, and the Lua parser will pick that up correctly.
@@ -234,6 +234,7 @@ SpriteAnim = {
 function DrawFighters()
 for ft,ftl in spairs(Fighters) do
     for fli,fv in pairs(ftl) do
+        if Targeted then TargetedColor() else White() end
         for stc in iStatusChange(fv.Tag) do
             (StatusDrawFighter[stc] or function() end)(ft,fli)
             end
