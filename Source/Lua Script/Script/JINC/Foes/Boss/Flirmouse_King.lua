@@ -1,6 +1,6 @@
 --[[
   Flirmouse_King.lua
-  Version: 15.10.22
+  Version: 15.10.23
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 15.10.22
+-- Version 15.10.23
 
 
 
@@ -67,6 +67,15 @@ Data = {
 		["HP"] = {1,2000},
 		["AP"] = {1,1},
 		["LevelRange"] = {1,100},
+},
+	StatusResistance = {
+		["Poison"] = 100   --[[ #1 ]],
+		["Paralysis"] = 100   --[[ #2 ]],
+		["Disease"] = 100   --[[ #3 ]],
+		["Will"] = 100   --[[ #4 ]],
+		["Block"] = 100   --[[ #5 ]],
+		["Death"] = 100   --[[ #6 ]],
+		["Damned"] = 100   --[[ #7 ]],
 	},
 	Acts = {}, -- Data itself defined below
 	ActMinLevel = {}, -- Data itself defined below

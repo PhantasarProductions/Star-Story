@@ -43,7 +43,6 @@
 1. Script/JINC/Foes/Reg/Gummi.lua
 1. Script/JINC/Foes/Reg/Rat.lua
 1. Script/JINC/Foes/Reg/Syss.lua
-1. Script/JINC/Foes/Supersyss.lua
 1. Script/JINC/IAA/ABL_EXHURU_BATTLECRY.lua
 1. Script/JINC/IAA/ABL_EXHURU_CONCENTRATE.lua
 1. Script/JINC/IAA/ABL_EXHURU_KAKSI.lua
@@ -219,4 +218,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 23 October 2015; 15:04:24 CET
+### Last updated: Fri 23 October 2015; 16:57:02 CET

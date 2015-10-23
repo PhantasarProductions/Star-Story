@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 15.10.05
+version: 15.10.23
 ]]
 
 
--- Version 15.10.05
+-- Version 15.10.23
 
 
 
@@ -67,6 +67,15 @@ Data = {
 		["HP"] = {25,600},
 		["AP"] = {10,700},
 		["LevelRange"] = {10,1000},
+},
+	StatusResistance = {
+		["Poison"] = 100   --[[ #1 ]],
+		["Paralysis"] = 5   --[[ #2 ]],
+		["Disease"] = 100   --[[ #3 ]],
+		["Will"] = 3   --[[ #4 ]],
+		["Block"] = 1   --[[ #5 ]],
+		["Death"] = 60   --[[ #6 ]],
+		["Damned"] = 40   --[[ #7 ]],
 	},
 	Acts = {}, -- Data itself defined below
 	ActMinLevel = {}, -- Data itself defined below

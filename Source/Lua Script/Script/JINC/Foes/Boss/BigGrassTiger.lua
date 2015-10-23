@@ -1,6 +1,6 @@
 --[[
   BigGrassTiger.lua
-  Version: 15.10.06
+  Version: 15.10.23
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 15.10.06
+-- Version 15.10.23
 
 
 
@@ -67,6 +67,15 @@ Data = {
 		["HP"] = {2500,5000},
 		["AP"] = {0,0},
 		["LevelRange"] = {1,100},
+},
+	StatusResistance = {
+		["Poison"] = 100   --[[ #1 ]],
+		["Paralysis"] = 0   --[[ #2 ]],
+		["Disease"] = 30   --[[ #3 ]],
+		["Will"] = 0   --[[ #4 ]],
+		["Block"] = 0   --[[ #5 ]],
+		["Death"] = 25   --[[ #6 ]],
+		["Damned"] = 100   --[[ #7 ]],
 	},
 	Acts = {}, -- Data itself defined below
 	ActMinLevel = {}, -- Data itself defined below
