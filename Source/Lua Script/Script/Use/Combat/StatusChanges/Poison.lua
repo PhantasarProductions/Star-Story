@@ -35,6 +35,7 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 
+
 -- @IF IGNOREME
 StatusResistance = {}     
 StatusTimed = {}     
@@ -44,7 +45,9 @@ StatusDrawFighter = {}
 
 StatusResistance.Poison = 'Poison'
 
-function StatusTimed.ActionFunction(g,i)
+StatusTimed.Poison = {}
+
+function StatusTimed.Poison.ActionFunction(g,i)
 local tag = Fighters[g][i].Tag
 local hpp = RPGChar.Points(tag,'HP')
 local hp  = hpp.Have
@@ -54,7 +57,7 @@ CharReport(g,i,"Poison!",{255,0,0})
 CharReport(g,i,pain,{255,255,255})
 end
 
-StatusTimed.Cycles = 12000 / skill
+StatusTimed.Poison.Cycles = 12000 / skill
 
 
 function StatusDrawFighter.Poison()

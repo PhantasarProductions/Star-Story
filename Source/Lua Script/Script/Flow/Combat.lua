@@ -128,6 +128,21 @@ if not Fighters[t][i] then CSay("! WARNING! Fighter "..t.."["..sval(i).."] does 
 return Fighters[t][i].Tag
 end
 
+function RunTimedStatusChanges()
+local ch
+for stn,stt in pairs(StatusTimed) do
+   stt.CntCycles = (stt.CntCycles or stt.Cycles) - 1
+   if stt.CntCycles<=0 then
+      for ft,ftt in pairs(Fighters) do
+          for chi,chd in pairs(ftt) do
+              ch = chd.Tag
+              if RPGChar.ListHas(ch,"STATUSCHANGE",stn) then stt.ActionFunction(ft,chi) end 
+              end
+          end
+      end
+   end  
+end
+
 function RunGauge()
 local CInput = { Hero = PlayerInput, Foe = EnemyInput }
 -- Do we need to input or act?
@@ -136,6 +151,8 @@ for ft,ftl in spairs(Fighters) do
     for fli,fv in pairs(ftl) do
         if fv.Gauge==10000 and RPGChar.Points(fv.Tag,"HP").Have>0 then
            return CInput[ft](fli,fv.Tag)
+        else 
+           RunTimedStatusChanges() -- Placed it here to make sure this will NOT run while players are entering their moves.
            end
         if fv.Gauge==20000 and RPGChar.Points(fv.Tag,"HP").Have>0  then return PerformAction(ft,fli,fv) end    
         end
@@ -244,7 +261,7 @@ function iStatusChange(ch) -- A quick iterator for status changes.
 local i=-1
 return function()
        i = i + 1
-       if i<RPGStat.CountList(ch,"STATUSCHANGE") then return RPGStat.ListItem(ch,"STATUSCHANGE",i-1) end
+       if i<RPGStat.CountList(ch,"STATUSCHANGE") then return RPGStat.ListItem(ch,"STATUSCHANGE",i+1) end
        return nil
        end
 end
