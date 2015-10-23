@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.10.03
+Version: 15.10.23
 End Rem
 Function RunFlow() 
 Repeat
@@ -123,7 +123,7 @@ Select cmd
 		VarDef Para[0],Para[1]			
 	Case "HELP"
 		For Local LCMD$=EachIn ConsoleScript.Functions
-			ConsoleWrite LCMD
+			If lcmd=Upper(lcmd) ConsoleWrite LCMD
 			Next
 	Case "BYE","EXIT","QUIT"
 		Bye
