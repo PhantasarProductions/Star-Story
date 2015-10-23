@@ -67,7 +67,7 @@ Data = {
 		["HP"] = {20,600},
 		["AP"] = {0,0},
 		["LevelRange"] = {1,100},
-}
+},
 	StatusResistance = {
 		["Poison"] = 100   --[[ #1 ]],
 		["Paralysis"] = 100   --[[ #2 ]],

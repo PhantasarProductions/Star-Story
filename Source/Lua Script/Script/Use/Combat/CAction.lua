@@ -123,8 +123,8 @@ local stc
 for i,y in spairs(abl) do
     if prefixed(i,'Cause') and y then
        stc = right(i,len(i)-len('Cause'))
-       if RPGChar.StatExists(tch,"SR_TRUE_"..stc)==0 or rand(1,100)>RPGStat.Stat("SR_TRUE_"..stc) then
-          RPGChar.AddList(tch,"STATUSCHANGE",stc)
+       if RPGChar.StatExists(cht,"SR_TRUE_"..stc)==0 or rand(1,100)>RPGStat.Stat(cht,"SR_TRUE_"..stc) then
+          RPGChar.AddList(cht,"STATUSCHANGE",stc)
           CharReport(tg,ti,stc,{255,255,255})               
           effect=true
           end

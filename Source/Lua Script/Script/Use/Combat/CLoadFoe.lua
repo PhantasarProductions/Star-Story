@@ -86,7 +86,7 @@ for ckey,cvalue in spairs(FoeData.Stat) do
 RPGStat.Points(Foe.Tag,"HP",1).MaxCopy = "END_HP"
 RPGStat.Points(Foe.Tag,"HP").Have = RPGStat.Points(Foe.Tag,"HP").Maximum
 -- Status Change Resistance
-for stat,value in spairs(Foe.StatusResistance) do
+for stat,value in spairs(FoeData.StatusResistance) do
     RPGStat.DefStat(Foe.Tag,"SR_TRUE_"..stat,value) -- The enemy will not be influence by equipment anyway.
     end    
 -- Boss?
