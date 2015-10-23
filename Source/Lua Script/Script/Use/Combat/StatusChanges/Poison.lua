@@ -1,5 +1,5 @@
 --[[
-  AAAAAAAAAAAAAAAAAAAAAAAAAAAAA.lua
+  Poison.lua
   Version: 15.10.23
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -34,10 +34,23 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
+-- @IF IGNOREME
+StatusResistance = {}     
+StatusTimed = {}          
+-- @FI
 
 
-StatusResistance = {}     -- Each status needs the name of the resistance that will be used to block this status change. If none were given, no resistance exists against it.
-StatusTimed = {}          -- Each status needs an array with the next fields { Cycles:int, ActionFunction(g,i) }. CntCycles will be used by the fight routines itself to keep track of the number of cycles,
-StatusBlockAction = {}    -- Each status needs an array containing a list of all types of actions to be blocked like ATK or SHT or ABL etc. 
-StatusAltGauge = {}       -- Each status needs a function containing the alternate action
-StatusAltStat = {}        -- Block a stat to a certain value.
+StatusResistance.Poison = 'Poison'
+
+function StatusTimed.ActionFunction(g,i)
+local tag = Fighters[g][i].Tag
+local hpp = RPGChar.Points(tag,'HP')
+local hp  = hpp.Have
+local hpm = hpp.Maximum
+local pain = hpm/({0.05,.10,.25})[skill]
+CharReport(g,i,"Poison!",{255,0,0})
+CharReport(g,i,pain,{255,255,255})
+end
+
+StatusTimed.Cycles = 12000 / skill
+

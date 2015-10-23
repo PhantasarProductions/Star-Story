@@ -176,6 +176,7 @@
 1. Script/Use/Combat/SpellAni/Shoot.lua
 1. Script/Use/Combat/SpellAni/ThunderSpells.lua
 1. Script/Use/Combat/StatusChanges/AAAAAAAAAAAAAAAAAAAAAAAAAAAAA.lua
+1. Script/Use/Combat/StatusChanges/Poison.lua
 1. Script/Use/Combat/XChar.lua
 1. Script/Use/Goto/GoToMenu.lua
 1. Script/Use/Goto/GoToSave.lua
@@ -218,4 +219,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Thu 22 October 2015; 23:49:41 CET
+### Last updated: Fri 23 October 2015; 03:10:27 CET
