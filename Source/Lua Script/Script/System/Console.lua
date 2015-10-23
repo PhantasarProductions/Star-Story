@@ -1,6 +1,6 @@
 --[[
   Console.lua
-  Version: 15.10.20
+  Version: 15.10.23
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -461,3 +461,29 @@ for foeid in ICHARS() do
     CSay("Character: "..foeid.." has "..RPGChar.Points(foeid,"HP").Have.."/"..RPGChar.Points(foeid,"HP").Maximum.." HP") 
     end
 end
+
+function GIVESTATUS(ch,Status)
+if LAURA.GetFlow()~="COMBAT" then CWrite("? This command only works in combat mode!",255,0,0) return end
+if RPGChar.CharExists(ch)==0 then CWrite("? Character '"..sval(ch).."' does not exist!",255,0,0) return end
+if RPGChar.ListHas(ch,'STATUSCHANGE')==1 then CWrite("? That item is already there",255,0,0) return end
+RPGChar.AddList(ch,'STATUSCHANGE',Status)
+end
+
+function GETSTATUS(char)
+if LAURA.GetFlow()~="COMBAT" then CWrite("? This command only works in combat mode!",255,0,0) return end
+local chl
+if not char then
+    chl = {}
+    for foeid in ICHARS() do
+        chl[#chl+1]=foeid
+        end
+    end    
+chl = mysplit(char,";")
+for ch in each(chl) do
+    if RPGChar.CharExists(ch)==0 then CWrite("? Character '"..sval(ch).."' does not exist!",255,0,0) return end
+    CSay("- "..ch)
+    for st in iStatusChange() do
+        CSay("  = "..st)
+        end
+    end
+end    

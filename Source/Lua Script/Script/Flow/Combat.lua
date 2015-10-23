@@ -1,6 +1,6 @@
 --[[
   Combat.lua
-  Version: 15.10.22
+  Version: 15.10.23
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -239,6 +239,15 @@ if CombatData.MUSIC and CombatData.MUSIC~="" and CombatData.MUSIC~="*NOCHANGE*" 
    CSay("Music! "..sval(CombatData.MUSIC))
    Music(CombatData.MUSIC)
    end
+end
+
+function iStatusChange(ch) -- A quick iterator for status changes.
+local i=0
+return function()
+       i = i + 1
+       if i<RPGStat.CountList(ch,"STATUSCHANGE") then return RPGStat.ListItem(ch,"STATUSCHANGE",i) end
+       return nil
+       end
 end
 
 function DefaultVictory()

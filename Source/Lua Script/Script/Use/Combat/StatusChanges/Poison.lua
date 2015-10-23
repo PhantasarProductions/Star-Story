@@ -34,9 +34,11 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
+
 -- @IF IGNOREME
 StatusResistance = {}     
-StatusTimed = {}          
+StatusTimed = {}     
+StatusDrawFighter = {}     
 -- @FI
 
 
@@ -53,4 +55,10 @@ CharReport(g,i,pain,{255,255,255})
 end
 
 StatusTimed.Cycles = 12000 / skill
+
+
+function StatusDrawFighter.Poison()
+Image.Color(0,255,0)
+end
+
 

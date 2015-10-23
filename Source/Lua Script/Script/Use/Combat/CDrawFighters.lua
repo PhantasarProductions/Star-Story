@@ -1,6 +1,6 @@
 --[[
   CDrawFighters.lua
-  Version: 15.10.21
+  Version: 15.10.23
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -234,6 +234,9 @@ SpriteAnim = {
 function DrawFighters()
 for ft,ftl in spairs(Fighters) do
     for fli,fv in pairs(ftl) do
+        for stc in iStatusChange() do
+            (StatusDrawFighter[stc] or function() end)(ft,fli)
+            end
         DrawFighter[ft](fli,fv)
         end
     end
