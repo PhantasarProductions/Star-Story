@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 15.10.18
+  version: 15.10.25
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -291,20 +291,21 @@ for obj in KthuraEach() do
                                 pad = Maps.Obj.Obj("Trans.Pad."..puretag(obj.Tag))
                                 Console.Write("Done!",255,255,255)
                                 dimnonactive(puretag(obj.Tag))
-								 AddClickableScript("return { spot='"..obj.Tag.."', obj = 'Trans.Pad."..puretag(obj.tag).."', arrival='TransporterPad', arrivalarg='"..puretag(obj.Tag).."' }")
+								                AddClickableScript("return { spot='"..obj.Tag.."', obj = 'Trans.Pad."..puretag(obj.tag).."', arrival='TransporterPad', arrivalarg='"..puretag(obj.Tag).."' }")
                                 --ZA_Enter(pad.Tag,loadstring('MS.Run("MAP","TransporterPad","'..puretag(obj.Tag)..'")'))
                                 end,
       ["$TransporterRecover"] = function() 
                                 pad = Maps.Obj.Obj("Trans.Pad."..puretag(obj.Tag))
                                 dimnonactive(puretag(obj.Tag))
-								AddClickableScript("return { spot='"..obj.Tag.."', obj = 'Trans.Pad."..puretag(obj.tag).."', arrival='RecoveryPad', arrivalarg='"..puretag(obj.Tag).."' }")
+								                AddClickableScript("return { spot='"..obj.Tag.."', obj = 'Trans.Pad."..puretag(obj.tag).."', arrival='RecoveryPad', arrivalarg='"..puretag(obj.Tag).."' }")
                                 --ZA_Enter(pad.Tag,loadstring('MS.Run("MAP","RecoveryPad","'..puretag(obj.Tag)..'")'))
                                 end,                          
       ["$TransporterReturnOnly"] 
                               = function()
-                                pad = Maps.Obj.Obj("Transr.Pad."..puretag(obj.Tag)) 
+                                Console.Write("Return only pad: "..obj.Tag,0,180,255)
+                                pad = Maps.Obj.Obj("Trans.Pad."..puretag(obj.Tag)) 
                                 dimnonactive(puretag(obj.Tag))
-								 AddClickableScript("return { spot='"..obj.Tag.."', obj = 'Trans.Pad."..puretag(obj.tag).."', arrival='ReturnOnlyPad', arrivalarg='"..puretag(obj.Tag).."' }")
+								                AddClickableScript("return { spot='"..obj.Tag.."', obj = 'Trans.Pad."..puretag(obj.tag).."', arrival='ReturnOnlyPad', arrivalarg='"..puretag(obj.Tag).."' }")
                                 --ZA_Enter(pad.Tag,loadstring('MS.Run("MAP","ReturnOnlyPad","'..puretag(obj.Tag)..'")'))
                                 end                          
     })[obj.Kind] or function() end)()
