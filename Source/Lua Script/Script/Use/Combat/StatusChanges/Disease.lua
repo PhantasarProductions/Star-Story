@@ -1,5 +1,5 @@
 --[[
-  AAAAAAAAAAAAAAAAAAAAAAAAAAAAA.lua
+  Disease.lua
   Version: 15.10.24
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -34,21 +34,32 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-
-skill = Sys.Val(Var.C('%SKILL')) -- Seems this is needed or the skill value won't reach the status changes.
-
-
-StatusResistance = {}     -- Each status needs the name of the resistance that will be used to block this status change. If none were given, no resistance exists against it.
-StatusTimed = {}          -- Each status needs an array with the next fields { Cycles:int, ActionFunction(g,i) }. CntCycles will be used by the fight routines itself to keep track of the number of cycles,
-StatusBlockAction = {}    -- Each status needs an array containing a list of all types of actions to be blocked like ATK or SHT or ABL etc. 
-StatusAltGauge = {}       -- Each status needs a function containing the alternate action
-StatusAltStat = {}        -- Block a stat to a certain value. Each status needs a table with a function(ch) value per affected stat.
-StatusDrawFighter = {}    -- Each status should contain a function (g,i) telling the DrawFighters routine what to do to indicate to the player something is wrong.
+-- @IF IGNOREME
+-- These lines are only meant to "fool" the outline routine in Eclipse ;)
+-- The @IF IGNOREME and @FI command will make GALE ignore these lines. :)
+StatusResistance = {}
+StatusAltStat = {}
+StatusDrawFighter = {}
+-- @FI
 
 
+StatusResistance.Disease = Disease
 
-function PerformAltStat(ch,stat)
-for s in StatusChanges(ch) do
-    if StatusAltStat[s] and StatusAltStat[s][stat] then StatusAltStat[s][stat](ch) end
-    end
+
+
+function StatusDrawFighter.Disease(g,i)
+local bx,by = FighterCoords(g,i)
+local wy = by - 16
+local wx = bx
+local x,y
+x = wx + (math.sin(Time.MSecs()/1000)*20)
+y = wy + (math.cos(Time.MSecs()/1000)*5)
+Image.LoadNew(RodeKruis,'GFX/Combat/StatusAni/Rode Kruis.png'); Image.HotCenter(RodeKruis)
+Image.Show(RodeKruis,x,y)
+end
+
+
+StatusAltStat.Disease = {}
+function StatusAltStat.Disease.HP(ch)
+RPGChar.DefStat(ch,'HP',RPGChar.Points(ch,"HP").Have) -- This will make the Max HP always match the current HP as long as this status lasts, and due to that healing becomes impossible as long as this status lasts.
 end
