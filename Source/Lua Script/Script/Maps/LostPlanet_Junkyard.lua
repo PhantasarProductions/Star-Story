@@ -37,9 +37,9 @@ version: 15.10.24
 
 
 function Next()
-local x,y = PlayerCoords()
+local x,y = GetCoords()
 Actors.StopMoving('PLAYER')
-Actors.MoveTo('PLAYER',x,-64)
+Actors.MoveTo('PLAYER',x,-64,1)
 WalkWait()
 local c = Sys.Val(right(Maps.LayerCodeName,3))
 c = c + 1
@@ -51,16 +51,16 @@ TurnPlayer("North")
 end
 
 function Prev()
-local x,y = PlayerCoords()
+local x,y = GetCoords()
 Actors.StopMoving('PLAYER')
-Actors.MoveTo('PLAYER',x,3300)
+Actors.MoveTo('PLAYER',x,3300,1)
 WalkWait()
 local c = Sys.Val(right(Maps.LayerCodeName,3))
 c = c - 1
 local lay = "#"..right("00"..c,3)
 Maps.Obj.Kill("PLAYER")
 Maps.GotoLayer(lay)
-SpawnPlayer("Start")
+SpawnPlayer("Einde")
 TurnPlayer("South")
 end
 
