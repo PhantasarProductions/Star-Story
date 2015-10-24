@@ -32,15 +32,50 @@
   
  **********************************************
  
-version: 15.10.22
+version: 15.10.24
 ]]
 
 
+function Next()
+local x,y = PlayerCoords()
+Actors.StopMoving('PLAYER')
+Actors.MoveTo('PLAYER',x,-64)
+WalkWait()
+local c = Sys.Val(right(Maps.LayerCodeName,3))
+c = c + 1
+local lay = "#"..right("00"..c,3)
+Maps.Obj.Kill("PLAYER")
+Maps.GotoLayer(lay)
+SpawnPlayer("Start")
+TurnPlayer("North")
+end
 
+function Prev()
+local x,y = PlayerCoords()
+Actors.StopMoving('PLAYER')
+Actors.MoveTo('PLAYER',x,3300)
+WalkWait()
+local c = Sys.Val(right(Maps.LayerCodeName,3))
+c = c - 1
+local lay = "#"..right("00"..c,3)
+Maps.Obj.Kill("PLAYER")
+Maps.GotoLayer(lay)
+SpawnPlayer("Start")
+TurnPlayer("South")
+end
+
+function BossNotYet()
+Actors.StopMoving('PLAYER')
+MapText("BOSSNOTYET")
+Actors.MoveToSpot("PLAYER","BossNotYetSpot")
+end
 
 
 function GALE_OnLoad()
 Music("Dungeon/Vuilnisbelt.ogg")
 SetScrollBoundaries(0,0,0,2560)
+ZA_Enter("Next",Next)
+ZA_Enter("Prev",Prev)
+if not CVV("&DONE.OBTAINEDHAWK") then ZA_Enter("BossNotYet",BossNotYet) end
 CSay("Welcome to the junkyard")
 end
