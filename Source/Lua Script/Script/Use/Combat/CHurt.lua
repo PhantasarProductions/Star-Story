@@ -89,8 +89,8 @@ if RPGStat.GetData(Fighters[tg][ti].Tag,"IMMUNE")=="YES" then elementalresistanc
                        dodmg = math.abs(dodmg)*(-1)
                        report = math.abs(dodmg)
                        r,g,b = 0,255,0
-                       for status in iStatusChange() do
-                           if StatusAltHealing[status] then dodmg,report,r,g,b = StatusAltHealing[status](ch,dodmg,element) end
+                       for status in iStatusChange(chtarget) do
+                           if StatusAltHealing[status] then dodmg,report,r,g,b = StatusAltHealing[status](chtarget,dodmg,element) end
                            end
                        end,      
                  default = function() end      -- In all other situations (which includes situation 3) do nothing :)
@@ -101,6 +101,7 @@ if jack and tg=="Foe" and elementalresistance<6 then dodmg = RPGStat.Points(chta
 RPGStat.Points(chtarget,"HP").Have = RPGStat.Points(chtarget,"HP").Have - dodmg
 if tg=="Hero" and RPGChar.Points(chtarget,"HP").Have>0 then UpPoint(i) end --RPGChar.Points(chtarget,"AP").Have = RPGChar.Points(chtarget,"AP").Have + 1 end 
 CharReport(tg,ti,report,{r,g,b})               
+if RPGChar.Points(chtarget,"HP").Have==0 then RPGChar.ClearList(chtarget,"STATUSCHANGE") end -- Remove all statuschanges when you die.
 end
 
 function Heal(tg,ti,hp)
