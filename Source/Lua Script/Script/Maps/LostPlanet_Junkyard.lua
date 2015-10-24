@@ -70,12 +70,17 @@ MapText("BOSSNOTYET")
 Actors.MoveToSpot("PLAYER","BossNotYetSpot")
 end
 
+function Award()
+if not (Done('&DONE.COMPLETE.JUNKYARD')) then MapEXP() end
+end
+
 
 function GALE_OnLoad()
 Music("Dungeon/Vuilnisbelt.ogg")
 SetScrollBoundaries(0,0,0,2560)
 ZA_Enter("Next",Next)
 ZA_Enter("Prev",Prev)
+ZA_Enter("Award",Award)
 if not CVV("&DONE.OBTAINEDHAWK") then ZA_Enter("BossNotYet",BossNotYet) end
 CSay("Welcome to the junkyard")
 end

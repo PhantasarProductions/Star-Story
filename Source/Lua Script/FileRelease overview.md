@@ -86,6 +86,7 @@
 1. Script/JINC/IAA/ITM_BIOHAZARD.lua
 1. Script/JINC/IAA/ITM_BLUBAFLOWER.lua
 1. Script/JINC/IAA/ITM_EQP_EMERALD.lua
+1. Script/JINC/IAA/ITM_EQP_RUBY.lua
 1. Script/JINC/IAA/ITM_FIRSTAIDKIT.lua
 1. Script/JINC/IAA/ITM_FISTAIDKIT.lua
 1. Script/JINC/IAA/ITM_GUBAFLOWER.lua
@@ -223,4 +224,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sat 24 October 2015; 20:39:06 CET
+### Last updated: Sat 24 October 2015; 22:53:33 CET
