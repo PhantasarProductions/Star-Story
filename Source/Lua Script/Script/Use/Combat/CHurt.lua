@@ -1,6 +1,6 @@
 --[[
   CHurt.lua
-  Version: 15.10.22
+  Version: 15.10.24
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -89,6 +89,9 @@ if RPGStat.GetData(Fighters[tg][ti].Tag,"IMMUNE")=="YES" then elementalresistanc
                        dodmg = math.abs(dodmg)*(-1)
                        report = math.abs(dodmg)
                        r,g,b = 0,255,0
+                       for status in iStatusChange() do
+                           if StatusAltHealing[status] then dodmg,report,r,g,b = StatusAltHealing[status](ch,dodmg,element) end
+                           end
                        end,      
                  default = function() end      -- In all other situations (which includes situation 3) do nothing :)
                })[elementalresistance] or function() end)()

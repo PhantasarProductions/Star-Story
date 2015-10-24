@@ -40,6 +40,7 @@
 StatusResistance = {}
 StatusAltStat = {}
 StatusDrawFighter = {}
+StatusAltHealing = {}
 -- @FI
 
 
@@ -59,7 +60,16 @@ Image.Show(RodeKruis,x,y)
 end
 
 
+--[[ Dropped! Slowed the game down like crazy!
 StatusAltStat.Disease = {}
 function StatusAltStat.Disease.HP(ch)
 RPGChar.DefStat(ch,'END_HP',RPGChar.Points(ch,"HP").Have) -- This will make the Max HP always match the current HP as long as this status lasts, and due to that healing becomes impossible as long as this status lasts.
+end
+]]
+
+function StatusAltHealing.Disease(ch,hp,element)
+local dodmg = 0
+local report = "NO EFFECT!"      
+local r,g,b = 255,180,0
+return dodmg,report,r,g,b
 end

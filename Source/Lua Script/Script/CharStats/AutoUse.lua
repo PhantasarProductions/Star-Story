@@ -38,7 +38,7 @@ local i,v
 for i,v in ipairs( { "BASE_", "UPGRADE_", "POWERUP_", "BUFF_" }) do r = r + RPGStat.Stat(ch,v..stat) end
 --CSay(ch.."."..stat.." ==> "..r)
 RPGStat.DefStat(ch,"END_"..stat,r)
-if LAURA.GetFlow()=="COMBAT" then MS.Run("COMBAT","PerformAltStat",ch,stat) end -- This line will adept a stat if there's a status change telling the game to do so.
+-- if LAURA.GetFlow()=="COMBAT" then MS.Run("COMBAT","PerformAltStat",ch,stat) end -- This line will adept a stat if there's a status change telling the game to do so.
 end
 
 function CALC_Strength(ch)    ENDSTAT(ch,"Strength") end
