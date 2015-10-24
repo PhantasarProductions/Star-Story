@@ -49,7 +49,7 @@ StatusResistance.Disease = Disease
 
 function StatusDrawFighter.Disease(g,i)
 local bx,by = FighterCoords(g,i)
-local wy = by - 16
+local wy = by - 20
 local wx = bx
 local x,y
 x = wx + (math.sin(Time.MSecs()/1000)*20)
@@ -61,5 +61,5 @@ end
 
 StatusAltStat.Disease = {}
 function StatusAltStat.Disease.HP(ch)
-RPGChar.DefStat(ch,'HP',RPGChar.Points(ch,"HP").Have) -- This will make the Max HP always match the current HP as long as this status lasts, and due to that healing becomes impossible as long as this status lasts.
+RPGChar.DefStat(ch,'END_HP',RPGChar.Points(ch,"HP").Have) -- This will make the Max HP always match the current HP as long as this status lasts, and due to that healing becomes impossible as long as this status lasts.
 end
