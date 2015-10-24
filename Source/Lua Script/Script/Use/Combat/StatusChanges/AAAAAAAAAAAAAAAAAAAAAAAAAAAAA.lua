@@ -48,8 +48,10 @@ StatusDrawFighter = {}    -- Each status should contain a function (g,i) telling
 
 
 function PerformAltStat(ch,stat)
-for s in iStatusChange(ch) do
-	  -- CSay(ch.." has "..s) -- Debug line
-    if StatusAltStat[s] and StatusAltStat[s][stat] then StatusAltStat[s][stat](ch) end
-    end
+if right(Time.MSecs(),2)=='00' then -- Does this speed things up a little?
+   for s in iStatusChange(ch) do
+	     -- CSay(ch.." has "..s) -- Debug line
+       if StatusAltStat[s] and StatusAltStat[s][stat] then StatusAltStat[s][stat](ch) end
+       end
+   end    
 end
