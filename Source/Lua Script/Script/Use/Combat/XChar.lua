@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.21
+version: 15.10.24
 ]]
 
 -- Kills for ExHuRU (and his "representatives")  
@@ -167,7 +167,7 @@ XCharAttacked = {
 						 return false -- If true was returned the attack would be cancelled, but this is not the case for Foxy.
              end,
              
-    Yirl = function(attackergroup,attackterindividual)
+    Yirl = function(attackergroup,attackerindividual)
              if attackergroup=='Hero' then return end
     		     if rand(1,100)>25 then return end  
              MS.LoadNew("BOXTEXT","Script/SubRoutines/BoxText.lua")
