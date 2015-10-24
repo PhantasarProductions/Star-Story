@@ -48,7 +48,7 @@ StatusDrawFighter = {}    -- Each status should contain a function (g,i) telling
 
 
 function PerformAltStat(ch,stat)
-for s in StatusChanges(ch) do
+for s in iStatusChange(ch) do
     if StatusAltStat[s] and StatusAltStat[s][stat] then StatusAltStat[s][stat](ch) end
     end
 end
