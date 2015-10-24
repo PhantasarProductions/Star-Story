@@ -1,6 +1,6 @@
 --[[
   ABL_WENDICKA_ELECTRICCHARGE.lua
-  Version: 15.10.23
+  Version: 15.10.24
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================

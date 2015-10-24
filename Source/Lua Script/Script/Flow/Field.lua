@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.10.21
+  Version: 15.10.24
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -935,8 +935,17 @@ for ev in each(Scheduled) do
 CSay(" "..#Scheduled.." event(s) listed for execution")    
 end
 
+function ManWalk()
+local me = GetActive()
+if (not ManWalkChecked) and (Actors.Actor(cplayer).Walking==1) and (me=="Yirl" or me=="ExHuRU" or me=="Xenobi" or me=="Rolf") then  
+   ManWalkChecked=true
+   Award("ASMALLSTEPFORMAN")
+   end
+end
+   
 function MAIN_FLOW()
 DrawScreen()
+ManWalk()
 ScheduledExecution()
 Click()
 AutoScroll()

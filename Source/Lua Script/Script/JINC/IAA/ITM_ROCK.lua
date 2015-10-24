@@ -1,6 +1,6 @@
 --[[
   ITM_ROCK.lua
-  Version: 15.10.23
+  Version: 15.10.24
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================

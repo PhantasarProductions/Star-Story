@@ -1,5 +1,5 @@
 --[[
-  ABL_FOXY_DRAGON_BURN.lua
+  ITM_MEDICINE.lua
   Version: 15.10.24
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,26 +35,22 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 24,
-	["ABL_APCut"] = 200,
-	["ABL_DblPower"] = 500,
-	["ABL_DblSpeed"] = 100,
-	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 250,
 	["ActSpeed"] = 250,
-	["AttackElement"] = "Fire",
-	["AttackPower"] = 100,
-	["AttackStat"] = "Will",
-	["DefenseStat"] = "Resistance",
-	["Description"] = "Let Reggie roast one enemy",
+	["AttackElement"] = "Non-Elemental",
+	["AttackStat"] = "Strength",
+	["CureDisease"] = true,
+	["DefenseStat"] = "Defense",
+	["Description"] = "Cures \"Disease\"",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Elements/Fire.png",
+	["ITM_BuyPrice"] = 100,
+	["ITM_SellPrice"] = 75,
+	["ITM_Sellable"] = true,
+	["Icon"] = "Gfx/Inventory/Medicine.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Dragon Burn",
-	["SpellAni_Reference"] = "ReggieBurn",
-	["Target"] = "1F",
-	["UseCombat"] = true,
-	["UseField"] = true}
+	["Name"] = "Medicine",
+	["SpellAni_Reference"] = "SingleHeal",
+	["Target"] = "1A",
+	["UseCombat"] = true}
 
 return ret
 

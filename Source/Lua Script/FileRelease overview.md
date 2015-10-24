@@ -83,6 +83,7 @@
 1. Script/JINC/IAA/ITM_ADHBANDAGE.lua
 1. Script/JINC/IAA/ITM_ANTIDOTE.lua
 1. Script/JINC/IAA/ITM_BANDAGE.lua
+1. Script/JINC/IAA/ITM_BIOHAZARD.lua
 1. Script/JINC/IAA/ITM_BLUBAFLOWER.lua
 1. Script/JINC/IAA/ITM_EQP_EMERALD.lua
 1. Script/JINC/IAA/ITM_FIRSTAIDKIT.lua
@@ -90,6 +91,7 @@
 1. Script/JINC/IAA/ITM_GUBAFLOWER.lua
 1. Script/JINC/IAA/ITM_HEALINGCAPSULE.lua
 1. Script/JINC/IAA/ITM_KEY_YAQIRPA.lua
+1. Script/JINC/IAA/ITM_MEDICINE.lua
 1. Script/JINC/IAA/ITM_MOLOTOV.lua
 1. Script/JINC/IAA/ITM_ROCK.lua
 1. Script/JINC/IAA/ITM_SPORES.lua
@@ -221,4 +223,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sat 24 October 2015; 13:46:41 CET
+### Last updated: Sat 24 October 2015; 16:54:55 CET
