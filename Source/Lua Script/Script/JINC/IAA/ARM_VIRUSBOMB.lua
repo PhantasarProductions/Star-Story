@@ -52,7 +52,7 @@ ret = {
 	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Virus Bomb",
-	["Target"] = "1A",
+	["Target"] = "AF",
 	["UseCombat"] = true,
 	["UseField"] = true}
 

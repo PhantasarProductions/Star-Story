@@ -1,6 +1,6 @@
 --[[
   CPlayerInput.lua
-  Version: 15.10.16
+  Version: 15.10.24
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -103,7 +103,8 @@ SelectTarget = {
                  if INP.MouseH(2)==1 then 
                     PIA = SelectTarget.ReturnTo
                     TargetedGroup=nil 
-                    Var.D("%CHOSENITEM.SOCKET",0)                    
+                    Var.D("%CHOSENITEM.SOCKET",0)     
+                    Var.D("$CHOSENABILITY",'')                
                     end                 
                  end,
          Done = function() return false end -- If this is in PIA, the move is never input, so it should always return false, however, nonexistence of this function will lead to a crash.        
