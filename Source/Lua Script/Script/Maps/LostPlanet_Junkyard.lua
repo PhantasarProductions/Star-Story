@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.24
+version: 15.10.25
 ]]
 
 
@@ -70,17 +70,30 @@ MapText("BOSSNOTYET")
 Actors.MoveToSpot("PLAYER","BossNotYetSpot")
 end
 
-function Award()
-if not (Done('&DONE.COMPLETE.JUNKYARD')) then MapEXP() end
+function AwardPoints()
+if not (Done('&DONE.COMPLETE.JUNKYARD')) then 
+   MapEXP()
+   CSay("Let's award the player for besting this place")
+else
+	 CSay("The player already has his/her award!") 
+   end
 end
 
+function UnderTheShip()
+if CVV("&DONE.OBTAINEDHAWK") then return end
+PartyPop("Ship")
+MapText("HAWK")
+LoadMap("Hawk")
+SpawnPlayer("StartBridge")
+end
 
 function GALE_OnLoad()
 Music("Dungeon/Vuilnisbelt.ogg")
 SetScrollBoundaries(0,0,0,2560)
 ZA_Enter("Next",Next)
 ZA_Enter("Prev",Prev)
-ZA_Enter("Award",Award)
+ZA_Enter("Award",AwardPoints)
+ZA_Enter("UnderTheShip",UnderTheShip)
 if not CVV("&DONE.OBTAINEDHAWK") then ZA_Enter("BossNotYet",BossNotYet) end
 CSay("Welcome to the junkyard")
 end
