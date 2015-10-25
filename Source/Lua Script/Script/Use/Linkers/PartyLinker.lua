@@ -1,6 +1,6 @@
 --[[
   PartyLinker.lua
-  Version: 15.10.13
+  Version: 15.10.25
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -67,3 +67,9 @@ function MINI(...)
 MS.Run("PARTY","Mini",join(arg,";"))
 end
 Mini = Mini or MINI -- Now we got it covered in the console, and no conflicts with the "real" routine either.
+
+function InParty(ch)
+for i=0,5 do 
+    if RPGChar.PartyTag(i)==ch then return i end
+    end
+end     

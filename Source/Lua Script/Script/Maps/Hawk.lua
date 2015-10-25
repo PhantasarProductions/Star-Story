@@ -35,6 +35,14 @@
 version: 15.10.25
 ]]
 
+HeroLeadList = {"Wendicka","Crystal","Yirl","Foxy","Xenobi","ExHuRU","Rolf"}
+
+
 function GALE_OnLoad()
 Done("&GOT.HAWK")
+-- Set the leader. In the Hawk, only this person can be used as leader. The HeroHeadList determines the priority order (in case Wendicka is not in the party Crystal will be the leader, and both Wendicka and Crystal aren't there then Yirl and so on).
+for ch in each(HeroLeadList) do
+    if InParty(ch) then HeroLead = HeroLead or ch end
+    end
+CSay("The controllable chracter in the Hawk will be: "..HeroLead)    
 end
