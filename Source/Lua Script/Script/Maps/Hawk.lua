@@ -32,8 +32,11 @@
   
  **********************************************
  
-version: 15.10.25
+version: 15.10.26
 ]]
+
+-- @USEDIR Script/Use/Maps/Hawk
+-- I chose this method in order not to have to change this script (and thus changing stuff in the demo when I don't need to) for any new location you may visit.
 
 HeroLeadList = {"Wendicka","Crystal","Yirl","Foxy","Xenobi","ExHuRU","Rolf"}
 

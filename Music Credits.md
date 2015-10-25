@@ -4,12 +4,12 @@ I'd like to thank the next music artists for their brilliant work, and licensing
 
 
 1. Aaron Krogh
-   1. Desert Battle
-   1. Tense Battle 3
    1. Lilith's Rage
    1. Heated Battle 1
    1. Normal Enemy 1
    1. Insidia 1
+   1. Tense Battle 3
+   1. Desert Battle
    1. Megaboss
 1. Eric Matyas
    1. Urban Sci Fi Heroes
@@ -19,11 +19,11 @@ I'd like to thank the next music artists for their brilliant work, and licensing
    1. Dungeon1
 1. Kevin McLeod
    1. Opening Theme C
-   1. Gm115
+   1. Blip Stream
    1. Disquiet
+   1. Gm115
    1. Phantom from Space
    1. Rising
-   1. Blip Stream
    1. Dream Culture
 1. Knight Of Fire
    1. Ghosts of Disease
@@ -36,9 +36,9 @@ I'd like to thank the next music artists for their brilliant work, and licensing
 1. WeirdoMusic
    1. Fiber visits the Q continuum
 1. Widzy
+   1. Prisoner of War
    1. Calm Indoors
    1. Panic Stations
-   1. Prisoner of War
 
 
 
