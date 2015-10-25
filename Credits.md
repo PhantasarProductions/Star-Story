@@ -26,7 +26,7 @@ Fake Music Generator | 1 | Music;
 FlamingText.com | 13 | Art; 
 GR-Sites | 11 | Art; Audio; 
 J.W.H. Broeders | 1 | Music; 
-Kevin McLeod | 7 | Music; 
+Kevin McLeod | 11 | Music; 
 Knight Of Fire | 2 | Music; 
 Man of Steel | 117 | Art; Misc files; 
 Matt McFarland | 2 | Music; 

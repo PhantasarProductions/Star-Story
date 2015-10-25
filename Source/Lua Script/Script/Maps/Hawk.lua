@@ -32,6 +32,9 @@
   
  **********************************************
  
-version: 15.09.29
+version: 15.10.25
 ]]
+
+function GALE_OnLoad()
 Done("&GOT.HAWK")
+end

@@ -1,6 +1,6 @@
 --[[
   CHurt.lua
-  Version: 15.10.24
+  Version: 15.10.25
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -121,7 +121,7 @@ local defstat = data.def or "Defense"
 local modifier = data.mod or 1
 local critical = ({[true]=1,[false]=0})[data.critical==true] -- I have to do it this way, as 'nil' can be a value and would result into a crash.
 local element = data.element or "Non-Elemental"
-local atk = RPGStat.Stat(chactor,"END_"..atkstat)
+local atk = RPGStat.Stat(chactor,"END_"..atkstat) * modifier
 local def = RPGStat.Stat(chtarget,"END_"..defstat)                              
 local damage = atk + rand(0,round(atk*.75))
 local defense = def + rand(0,round(def*.25))
