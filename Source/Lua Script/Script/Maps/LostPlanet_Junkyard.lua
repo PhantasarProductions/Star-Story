@@ -83,10 +83,11 @@ function UnderTheShip()
 if CVV("&DONE.OBTAINEDHAWK") then return end
 PartyPop("Ship")
 MapText("HAWK")
+Maps.Obj.Kill('Shadow',1)
 LoadMap("Hawk","Bridge")
 SpawnPlayer("Welcome")
 MapText("ARRIVAL.KICKOFF")
-Var.D("$HARK","KICKOFF") -- This var will determine what the characters will say when you speak to them on board the Hawk. 
+Var.D("$HAWK","KICKOFF") -- This var will determine what the characters will say when you speak to them on board the Hawk. 
 end
 
 function GALE_OnLoad()

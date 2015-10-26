@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.10.24
+  Version: 15.10.26
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -258,7 +258,7 @@ if mousehit(1) then -- Left Mouse button
 if mousehit(2) then
    if my>500 then  -- must come prior to checks in the field
       for ak=0,5 do
-          if RightClickedChar(ak) then
+          if RightClickedChar(ak) and upper(Maps.CodeName)~="HAWK" then
              ch = RPGChar.PartyTag(ak)
              if ch~="" and ch~="UniWendicka" and ch~="UniCrystal" and ch~="Briggs" then activeplayer = ch end 
              end

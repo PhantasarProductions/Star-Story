@@ -47,5 +47,12 @@ Done("&GOT.HAWK")
 for ch in each(HeroLeadList) do
     if InParty(ch) then HeroLead = HeroLead or ch end
     end
-CSay("The controllable chracter in the Hawk will be: "..HeroLead)    
+SetActive(HeroLead)    
+CSay("The controllable chracter in the Hawk will be: "..HeroLead)
+-- Let's select the music. Since you get here a lot, I see fit in the possibility to randomize the music, though in the demo I'll keep it to one track only (as the demo ends here).
+local lmusic = {}
+for mpiece in iJCR6Dir(true) do
+    if prefixed(mpiece,"MUSIC/HAWK/") and suffixed(".OGG") then lmusic[#lmusic+1]=right(mpiece,len(mpiece)-6) end
+    end
+Music(lmusic(rand(1,#lmusic)))
 end
