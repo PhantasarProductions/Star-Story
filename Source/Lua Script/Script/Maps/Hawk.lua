@@ -54,5 +54,5 @@ local lmusic = {}
 for mpiece in iJCR6Dir(true) do
     if prefixed(mpiece,"MUSIC/HAWK/") and suffixed(".OGG") then lmusic[#lmusic+1]=right(mpiece,len(mpiece)-6) end
     end
-Music(lmusic(rand(1,#lmusic)))
+Music(lmusic[rand(1,#lmusic)])
 end
