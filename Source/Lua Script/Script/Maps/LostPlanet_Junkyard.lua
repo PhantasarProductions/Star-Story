@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.25
+version: 15.10.26
 ]]
 
 
@@ -83,8 +83,10 @@ function UnderTheShip()
 if CVV("&DONE.OBTAINEDHAWK") then return end
 PartyPop("Ship")
 MapText("HAWK")
-LoadMap("Hawk")
-SpawnPlayer("StartBridge")
+LoadMap("Hawk","Bridge")
+SpawnPlayer("Welcome")
+MapText("ARRIVAL.KICKOFF")
+Var.D("$HARK","KICKOFF") -- This var will determine what the characters will say when you speak to them on board the Hawk. 
 end
 
 function GALE_OnLoad()
