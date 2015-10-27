@@ -78,7 +78,7 @@ MS.LoadNew("TERMINAL","Script/Flow/Terminal.lua") -- Load the terminal program, 
 LAURA.Flow("TERMINAL")
 end
 
-function CLICK_ARRIVAL_Terminal()
+function CLICK_ARRIVAL_Nav()
 if not Done("&TUT.NAV.HAWK") then 
    MapText("NAVTUTORIAL") 
    end

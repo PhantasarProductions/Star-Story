@@ -98,4 +98,5 @@ end
 function MAIN_FLOW()
 DrawScreen()
 CancelCheck()
+Flip()
 end
