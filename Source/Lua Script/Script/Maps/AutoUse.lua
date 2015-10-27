@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 15.10.25
+  version: 15.10.27
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -238,7 +238,11 @@ Actors.MoveToSpot("PLAYER","Trans.Spot."..tag)
      
      function() -- Beam me up, Scotty!
      if not CVV("&GOT.HAWK") then SerialBoxText("SCOTTY","NOSHIP") return end
-     MINI("Beaming up not yet properly set up")
+     Award("SCENARIO_BEAMMEUP")
+     TelEffect(TEL_OUT)
+     LoadRoom("Hawk","Bridge")
+     SpawnPlayer("Scotty","South",true)     
+     -- MINI("Beaming up not yet properly set up")
      end,
      
      function() -- Cancel 
