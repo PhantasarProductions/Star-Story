@@ -83,10 +83,27 @@ Transporters.Nodes[node].mapfunction = mapfunction
 end
 
 function DrawScreen()
+local y = 0
+local mx,my = MouseCoords
 -- Background first
 Image.Show(back)
 -- Now the content
+if CurrentWorld then
+else
+   y = 15
+   SetFont('Terminal')
+   for w,data in spairs(Transporters.Worlds) do
+       if my>y and my<y+15 then 
+          Image.SetColor(0,180,255)
+       else   
+          Image.SetColor(0,100,180)
+          end 
+       Image.DText(w,80,y)
+       y = y + 20
+       end
+   end
 -- Now the party
+ShowParty()
 -- And the mousepointer
 ShowMouse()
 end

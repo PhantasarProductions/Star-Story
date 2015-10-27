@@ -66,6 +66,7 @@ for idx,item in spairs(Menu) do
           Image.Color(0,100,255)
           end
        Image.Show(item.Icon,x,y)
+       SetFont('Terminal')
        Image.DText(idx,x,y+40,2,0)
        x = x + 70
        if x>700 then x=40 y=y+70 end
