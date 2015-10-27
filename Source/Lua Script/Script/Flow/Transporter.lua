@@ -85,6 +85,7 @@ end
 function DrawScreen()
 local y = 0
 local mx,my = MouseCoords()
+local nodedata
 -- Background first
 Image.Show(back)
 -- Now the content
@@ -96,18 +97,28 @@ if CurrentWorld then
    SetFont('Terminal')
    if my>30 and my<45 then 
    	  Image.Color(180,255,0)
-   	  if mousehit(1) then CurrentWorld=nil end
+   	  if mousehit(1) then CurrentWorld=nil; return end
    else
       Image.Color(0,180,0)
       end
    Image.DText("../",80,y) y = 60
-   for location,data in pairs(Transporter.Worlds[CurrentWorld]) do   
+   for i,data in pairs(Transporters.Worlds[CurrentWorld]) do   
+       nodedata = Transporters.Nodes[data.Node]
        if my>y and my<y+15 then 
           Image.Color(0,180,255)
+          if mousehit(1) then
+             if nodedata.mapfunction then
+                LAURA.Flow("FIELD")
+                MS.Run("MAP",mapfunction)
+             else
+                LoadMap(nodedata.Map,nodedata.Layer)
+                SpawnPlayer(nodedata.Transporter,1)
+                end 
+             end
        else   
           Image.Color(0,100,180)
           end 
-       Image.DText(location.Location,80,y)
+       Image.DText(data.Location,80,y)
        y = y + 20
        end
 else
