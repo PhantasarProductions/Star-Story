@@ -217,11 +217,13 @@ if mousehit(1) then
               CSay(" = ARMSpot:      "..ARMSpot)
               ret = true
 		  else
-			if Maps.Obj.Exists("SPOT_"..c)==1 then
-				Actors.WalkToSpot(cplayer,"SPOT_"..c)
-			else
-				Actors.WalkToSpot(cplayer,c)
-			end			
+			  if Maps.Obj.Exists("SPOT_"..c)==1 then
+				   Actors.WalkToSpot(cplayer,"SPOT_"..c)
+				   CSay("Walking to spot: SPOT_"..c)
+			  else
+				   Actors.WalkToSpot(cplayer,c)
+				   CSay("SPOT not there, so walking to the object itself in stead")
+			     end			
             WalkArrival = "CLICK_ARRIVAL_"..c
             ret=true
             end

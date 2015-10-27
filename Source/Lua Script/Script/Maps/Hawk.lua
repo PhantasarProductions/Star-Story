@@ -62,7 +62,7 @@ Schuif.Ga.Rechts = 'Dicht'
 end
 
 function TalkParty(ch)
-MapText(upper(ch).."."..cvv("$HAWK"))
+MapText(upper(ch).."."..CVV("$HAWK"))
 end
 
 function CLICK_ARRIVAL_Hawk_Crystal()	TalkParty("Crystal") end
@@ -118,6 +118,11 @@ ZA_Enter("Schuifdeur_Open",SchuifOpen)
 ZA_Leave("Schuifdeur_Open",SchuifDicht)
 ZA_Enter("OpenVaultDoor",function() Schuif.Ga.Vault = 'Open'  end)
 ZA_Leave("OpenVaultDoor",function() Schuif.Ga.Vault = 'Dicht' end)
+-- Show
+ZA_Enter("ShowBridge1",MapShow,'Bridge')
+ZA_Enter("ShowBridge2",MapShow,'Bridge')
+ZA_Enter("ShowBack"   ,MapShow,'Back')
+
 -- Vault
 ZA_Enter("Vault",Vault)
 -- Recover upon arrival
