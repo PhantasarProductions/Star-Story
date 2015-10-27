@@ -226,4 +226,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 27 October 2015; 15:54:48 CET
+### Last updated: Tue 27 October 2015; 15:56:42 CET
