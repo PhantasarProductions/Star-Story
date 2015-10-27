@@ -131,6 +131,7 @@
 1. Script/Maps/LostPlanet_Junkyard.lua
 1. Script/Maps/LostPlanet_Pub_Outside.lua
 1. Script/Maps/Prologue_Yaqirpa.lua
+1. Script/Maps/Return_Yaqirpa.lua
 1. Script/OSBOOT/Mac.x86.lua
 1. Script/OSBOOT/Win32.x86.lua
 1. Script/SubRoutines/AutoUse.lua
@@ -194,6 +195,7 @@
 1. Script/Use/Linkers/Inventory and Abilities Linker.lua
 1. Script/Use/Linkers/PartyLinker.lua
 1. Script/Use/Linkers/SFXLinker.lua
+1. Script/Use/Linkers/Transporter_Linker.lua
 1. Script/Use/Menu/LearnSpellMessages.lua
 
 ## Full Release
@@ -226,4 +228,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 27 October 2015; 21:38:58 CET
+### Last updated: Wed 28 October 2015; 00:09:18 CET

@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.09
+version: 15.10.28
 ]]
 
 -- @UNDEF TRAPDEBUG
@@ -90,6 +90,10 @@ MapShow(mapshowlabels)
 if whine and (not Done("&YAQIRPA.WENDICKA.WHINE."..whine)) then
    MapText(whine)   
    end
+for o in each({'Trans.Pad.YaqirpaStart','Trans.Pad.YaqirpaTop'}) do
+    Maps.Obj.Kill(o)
+    end
+   
 -- @IF TRAPDEBUG
 MINI("Moved to exit point: "..sval(exitpoint))
 MINI("Mapshow labels:"..sval(mapshowlabels))

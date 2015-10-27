@@ -1,6 +1,6 @@
 --[[
   Transporter.lua
-  Version: 15.10.27
+  Version: 15.10.28
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -102,17 +102,19 @@ if CurrentWorld then
       Image.Color(0,180,0)
       end
    Image.DText("../",80,y) y = 60
-   for i,data in pairs(Transporters.Worlds[CurrentWorld]) do   
+   for data in each(Transporters.Worlds[CurrentWorld]) do   
        nodedata = Transporters.Nodes[data.Node]
        if my>y and my<y+15 then 
           Image.Color(0,180,255)
           if mousehit(1) then
              if nodedata.mapfunction then
                 LAURA.Flow("FIELD")
-                MS.Run("MAP",mapfunction)
+                MS.Run("MAP",nodedata.mapfunction)
+                nodedata.mapfunction = nil
              else
+                Image.Cls()
                 LoadMap(nodedata.Map,nodedata.Layer)
-                SpawnPlayer(nodedata.Transporter,"South",true)
+                SpawnPlayer(nodedata.Transporter,"South") --,true)
                 LAURA.Flow("FIELD")
                 end 
              end

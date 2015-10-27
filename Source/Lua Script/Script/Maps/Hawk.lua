@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.27
+version: 15.10.28
 ]]
 
 -- @USEDIR Script/Use/Maps/Hawk/
@@ -82,6 +82,7 @@ function CLICK_ARRIVAL_Nav()
 if not Done("&TUT.NAV.HAWK") then 
    MapText("NAVTUTORIAL") 
    end
+if not Done("&NAV.YAQIRPA") then ActivateRemotePad('YaqirpaStart','Return_Yaqirpa','Poloqor','Yaqirpa - Entrance') end   
 MS.LoadNew("TRANS","Script/Flow/Transporter.lua")
 LAURA.Flow("TRANS")
 end

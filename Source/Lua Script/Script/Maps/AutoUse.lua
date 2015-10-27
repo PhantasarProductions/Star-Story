@@ -231,7 +231,7 @@ Actors.MoveToSpot("PLAYER","Trans.Spot."..tag)
      Time.Sleep(250)
      MS.Run("FIELD","SetUpFoes")
      MS.Run("FIELD","SetUpTreasure")
-	 RedoMapShow() 
+	   RedoMapShow() 
      TelEffect(TEL_IN)
      GotoSave()
      end,
@@ -240,8 +240,8 @@ Actors.MoveToSpot("PLAYER","Trans.Spot."..tag)
      if not CVV("&GOT.HAWK") then SerialBoxText("SCOTTY","NOSHIP") return end
      Award("SCENARIO_BEAMMEUP")
      TelEffect(TEL_OUT)
-     LoadRoom("Hawk","Bridge")
-     SpawnPlayer("Scotty","South",true)     
+     LoadMap("Hawk","Bridge")
+     SpawnPlayer("Scotty","South")
      -- MINI("Beaming up not yet properly set up")
      end,
      
