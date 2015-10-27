@@ -57,7 +57,7 @@ local x = 40
 local y = 40
 local mx,my = MouseCoords()
 for idx,item in spairs(Menu) do
-    if item.AlwaysAllow or CVV(SysVar) then
+    if item.AllowAlways or CVV(SysVar) then
        if mx>x-32 and mx<x+32 and my>y-32 and my<y+55 then
           Image.Color(0,180,255)
           if mousehit(1) then item.Action() end
