@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.26
+version: 15.10.27
 ]]
 
 -- @USEDIR Script/Use/Maps/Hawk
@@ -40,6 +40,33 @@ version: 15.10.26
 
 HeroLeadList = {"Wendicka","Crystal","Yirl","Foxy","Xenobi","ExHuRU","Rolf"}
 
+Schuif = { Links = { Dicht = { Maps.Obj.Obj("Schuifdeur_Links" ).X ,  Maps.Obj.Obj("Schuifdeur_Links" ).Y }} , 
+          Rechts = { Dicht = { Maps.Obj.Obj("Schuifdeur_Rechts").X ,  Maps.Obj.Obj("Schuifdeur_Rechts").Y }} }
+          
+Schuif.Links .Open = { Schuif.Links .Dicht[1]-40,Schuif.Links .Dicht[2] }          
+Schuif.Rechts.Open = { Schuif.Rechts.Dicht[1]+40,Schuif.Rechts.Dicht[2] }          
+
+Schuif.Ga = { Links = 'Dicht', Rechts = 'Dicht', Vault = 'Dicht' }
+Schuif.Obj = { Links = "Schuifdeur_Links", Rechts = "Schuifdeur_Rechts", Vault = "Vault_Door" }
+
+function SchuifOpen()
+Schuif.Ga.Links  = 'Open'
+Schuif.Ga.Rechts = 'Open'
+end
+
+function SchuifDicht()
+Schuif.Ga.Links  = 'Dicht'
+Schuif.Ga.Rechts = 'Dicht'
+end
+
+function MAP_FLOW()
+local obj
+for deur,toestand in pairs(Schuif.Ga) do
+    obj = Maps.Obj.Obj(Schuif.Obj[deur])
+    if obj.X<Schuif[deur][toestand][1] then obj.X = obj.X - 1 elseif obj.X>Schuif[deur][toestand][1] then obj.X = obj.X + 1 end
+    if obj.Y<Schuif[deur][toestand][2] then obj.Y = obj.Y - 1 elseif obj.X>Schuif[deur][toestand][1] then obj.Y = obj.Y + 1 end
+    end
+end
 
 function GALE_OnLoad()
 Done("&GOT.HAWK")
@@ -55,4 +82,9 @@ for mpiece in iJCR6Dir(true) do
     if prefixed(mpiece,"MUSIC/HAWK/") and suffixed(".OGG") then lmusic[#lmusic+1]=right(mpiece,len(mpiece)-6) end
     end
 Music(lmusic[rand(1,#lmusic)])
+-- Boundaries
+SetScrollBoundaries(0,15,0,658)
+-- Schuifdeuren
+ZA_Enter("Schuifdeur_Open",SchuifOpen)
+ZA_Leave("Schuifdeur_Open",SchuifDicht)
 end
