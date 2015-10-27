@@ -78,6 +78,14 @@ MS.LoadNew("TERMINAL","Script/Flow/Terminal.lua") -- Load the terminal program, 
 LAURA.Flow("TERMINAL")
 end
 
+function CLICK_ARRIVAL_Terminal()
+if not Done("&TUT.NAV.HAWK") then 
+   MapText("NAVTUTORIAL") 
+   end
+MS.LoadNew("TRANS","Script/Flow/Transporter.lua")
+LAURA.Flow("TRANS")
+end
+
 
 function Vault()
 if (not Done("&DONE.HAWK.FIRSTTIMEVAULT")) and GetActive()=="Wendicka" then MapText("VAULT") end 

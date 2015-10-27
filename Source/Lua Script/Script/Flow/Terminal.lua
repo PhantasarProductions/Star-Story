@@ -44,6 +44,7 @@ Menu = {
                             GotoSave()
                             inc("%TERMINAL.SAVE")
                             if CVV("%TERMINAL.SAVE")>=30 then Award("SAVETERMINAL30") end
+                            CSay("You used the save app in the terminal "..CVV("%TERMINAL.SAVE").." times now.")
                             end,   
                    AllowAlways = true                
                 }

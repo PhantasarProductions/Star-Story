@@ -1,6 +1,6 @@
 --[[
   Transporter.lua
-  Version: 15.10.19
+  Version: 15.10.27
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -39,6 +39,8 @@ Transporters = Transporters or { Nodes = {}, Worlds={} }
 DemoMapsFunction = loadstring(JCR6.LoadString("Script/JINC/Demo/Maps.lua"))
 DemoMaps = DemoMapsFunction()
 
+back = "MenuBack"
+
 function ActivatePad(tag)
 local obj = Maps.Obj.Obj("Trans.Spot."..tag)
 local pad = Maps.Obj.Obj("Trans.Pad." ..tag)
@@ -70,4 +72,30 @@ Transporters.Nodes[node] = { Map = mapcode, Transporter = "Trans.Spot."..tag }
 Transporters.Worlds[world] = Transporters.Worlds[world] or {}
 table.insert(Transporters.Worlds[world],{Location = location, Node=node}) 
 CSay('We now have '..#Transporters.Worlds[world].." transporters activated in world "..world)
+end
+
+function FirstWorld(world,mapfunction) -- Perfrom this function on the Hawk if this function is there. (this function will be removed from this record after it's performed)
+Transporters.Worlds[world].mapfunction = mapfunction
+end
+
+function FirstNode(node,mapfunction)
+Transporters.Nodes[node].mapfunction = mapfunction
+end
+
+function DrawScreen()
+-- Background first
+Image.Show(back)
+-- Now the content
+-- Now the party
+-- And the mousepointer
+ShowMouse()
+end
+
+function CancelCheck()
+if mousehit(2) then LAURA.Flow("FIELD") end
+end
+
+function MAIN_FLOW()
+DrawScreen()
+CancelCheck()
 end
