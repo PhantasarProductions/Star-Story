@@ -1,7 +1,7 @@
 --[[
   Fonts.lua
   
-  version: 15.10.15
+  version: 15.10.27
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -73,6 +73,7 @@ fonts = {
     MiniMessage = {"Robotica.ttf",10},  -- The routines are in party in order to operate more smoothly with the party screen at the bottom of the screen.
     CombatPlayerInput = {"Robotica.ttf",40},
     CombatMessage = {"Robotica.ttf",35},
+    Terminal = {"Robotica.ttf",15}
 	LayerInField = {"Robotica.ttf",12}
 	
 }

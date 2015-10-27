@@ -37,9 +37,33 @@
 -- @USEDIR Script/Use/Maps/Hawk_Terminal/
 back = "MenuBack"
 
+Menu = {
+
+         Save = {
+                   Action = GotoSave,   
+                   AllowAlways = true                
+                }
+       }
+
 function DrawScreen()
 -- First the background
 Image.Show(back,0,0)
+-- Draw all the apps
+local x = 40
+local y = 40
+local mx,my = MouseCoords()
+for idx,item in spairs(Menu) do
+    if item.AlwaysAllow or CVV(SysVar) then
+       if mx>x-32 and mx<x+32 and my>y-32 and my<y+55 then
+          Image.Color(0,180,255)
+          if mousehit(1) then item.Action() end
+       else
+          Image.Color(0,100,255)
+          end
+       Image.Show(item.Icon)
+       Image.DText(idx,x,y+40,2,0)
+       end
+    end
 -- Lastly the party and the mouse
 ShowParty()
 ShowMouse()
@@ -56,4 +80,9 @@ Flip()
 end
 
 function GALE_OnLoad()
+for idx,item in spairs(Menu) do
+    CSay("Loading App: ")
+    item.Icon = Image.Load("GFX/Terminal/"..idx..".png")
+    Image.HotCenter(item.Icon)
+    end
 end
