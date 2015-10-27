@@ -61,6 +61,19 @@ Schuif.Ga.Links  = 'Dicht'
 Schuif.Ga.Rechts = 'Dicht'
 end
 
+function TalkParty(ch)
+MapText(upper(ch).."."..cvv("$HAWK"))
+end
+
+function CLICK_ARRIVAL_Hawk_Crystal()	TalkParty("Crystal") end
+function CLICK_ARRIVAL_Hawk_ExHuRU()	TalkParty("ExHuRU") end
+function CLICK_ARRIVAL_Hawk_Yirl()		TalkParty("Yirl") end
+function CLICK_ARRIVAL_Hawk_Foxy()		TalkParty("Foxy") end
+function CLICK_ARRIVAL_Hawk_Reggie()	TalkParty("Reggie") end
+function CLICK_ARRIVAL_Hawk_Rolf()		TalkParty("Rolf") end
+
+
+
 
 function Vault()
 if (not Done("&DONE.HAWK.FIRSTTIMEVAULT")) and GetActive()=="Wendicka" then MapText("VAULT") end 
@@ -84,9 +97,14 @@ Done("&GOT.HAWK")
 -- Set the leader. In the Hawk, only this person can be used as leader. The HeroHeadList determines the priority order (in case Wendicka is not in the party Crystal will be the leader, and both Wendicka and Crystal aren't there then Yirl and so on).
 for ch in each(HeroLeadList) do
     if InParty(ch) then HeroLead = HeroLead or ch end
+    if InParty(ch) and ch~=HeroLead then
+       AddClickable("Hawk_"..ch)
+    else
+       Maps.Obj.Kill("Hawk_"..ch)
+       end   
     end
 SetActive(HeroLead)    
-CSay("The controllable chracter in the Hawk will be: "..HeroLead)
+CSay("The controllable character in the Hawk will be: "..HeroLead)
 -- Let's select the music. Since you get here a lot, I see fit in the possibility to randomize the music, though in the demo I'll keep it to one track only (as the demo ends here).
 local lmusic = {}
 for mpiece in iJCR6Dir(true) do
