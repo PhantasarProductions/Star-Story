@@ -67,8 +67,8 @@ for deur,toestand in pairs(Schuif.Ga) do
     obj = Maps.Obj.Obj(Schuif.Obj[deur])
     -- CSay("Deur = "..sval(deur).."; Toestand = "..sval(toestand))
     -- CSay("Schuif = "..sval(Schuif))
-    if obj.X<Schuif[deur][toestand][1] then obj.X = obj.X - 1 elseif obj.X>Schuif[deur][toestand][1] then obj.X = obj.X + 1 end
-    if obj.Y<Schuif[deur][toestand][2] then obj.Y = obj.Y - 1 elseif obj.X>Schuif[deur][toestand][1] then obj.Y = obj.Y + 1 end
+    if obj.X>Schuif[deur][toestand][1] then obj.X = obj.X - 1 elseif obj.X<Schuif[deur][toestand][1] then obj.X = obj.X + 1 end
+    if obj.Y>Schuif[deur][toestand][2] then obj.Y = obj.Y - 1 elseif obj.Y<Schuif[deur][toestand][2] then obj.Y = obj.Y + 1 end
     end
 end
 
