@@ -41,10 +41,12 @@ version: 15.10.27
 HeroLeadList = {"Wendicka","Crystal","Yirl","Foxy","Xenobi","ExHuRU","Rolf"}
 
 Schuif = { Links = { Dicht = { Maps.Obj.Obj("Schuifdeur_Links" ).X ,  Maps.Obj.Obj("Schuifdeur_Links" ).Y }} , 
-          Rechts = { Dicht = { Maps.Obj.Obj("Schuifdeur_Rechts").X ,  Maps.Obj.Obj("Schuifdeur_Rechts").Y }} }
+          Rechts = { Dicht = { Maps.Obj.Obj("Schuifdeur_Rechts").X ,  Maps.Obj.Obj("Schuifdeur_Rechts").Y }} ,
+           Vault = { Dicht = { Maps.Obj.Obj("Vault_Door")       .X ,  Maps.Obj.Obj("Vault_Door")       .Y }}}
           
 Schuif.Links .Open = { Schuif.Links .Dicht[1]-40,Schuif.Links .Dicht[2] }          
-Schuif.Rechts.Open = { Schuif.Rechts.Dicht[1]+40,Schuif.Rechts.Dicht[2] }          
+Schuif.Rechts.Open = { Schuif.Rechts.Dicht[1]+40,Schuif.Rechts.Dicht[2] }
+Schuif.Vault .Open = { Schuif.Vault .Dicht[1]   ,Schuif.Vault .Dicht[2]+64 }          
 
 Schuif.Ga = { Links = 'Dicht', Rechts = 'Dicht', Vault = 'Dicht' }
 Schuif.Obj = { Links = "Schuifdeur_Links", Rechts = "Schuifdeur_Rechts", Vault = "Vault_Door" }
@@ -63,6 +65,8 @@ function MAP_FLOW()
 local obj
 for deur,toestand in pairs(Schuif.Ga) do
     obj = Maps.Obj.Obj(Schuif.Obj[deur])
+    -- CSay("Deur = "..sval(deur).."; Toestand = "..sval(toestand))
+    -- CSay("Schuif = "..sval(Schuif))
     if obj.X<Schuif[deur][toestand][1] then obj.X = obj.X - 1 elseif obj.X>Schuif[deur][toestand][1] then obj.X = obj.X + 1 end
     if obj.Y<Schuif[deur][toestand][2] then obj.Y = obj.Y - 1 elseif obj.X>Schuif[deur][toestand][1] then obj.Y = obj.Y + 1 end
     end
