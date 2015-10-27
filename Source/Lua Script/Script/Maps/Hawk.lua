@@ -35,7 +35,7 @@
 version: 15.10.27
 ]]
 
--- @USEDIR Script/Use/Maps/Hawk
+-- @USEDIR Script/Use/Maps/Hawk/
 -- I chose this method in order not to have to change this script (and thus changing stuff in the demo when I don't need to) for any new location you may visit.
 
 HeroLeadList = {"Wendicka","Crystal","Yirl","Foxy","Xenobi","ExHuRU","Rolf"}
@@ -72,7 +72,11 @@ function CLICK_ARRIVAL_Hawk_Foxy()		TalkParty("Foxy") end
 function CLICK_ARRIVAL_Hawk_Reggie()	TalkParty("Reggie") end
 function CLICK_ARRIVAL_Hawk_Rolf()		TalkParty("Rolf") end
 
-
+function CLICK_ARRIVAL_Terminal()
+if not Done("&TUT.TERMINAL") then MapText("TERMINALTUTORIAL") end
+MS.LoadNew("TERMINAL","Script/Flow/Terminal.lua") -- Load the terminal program, but only if it wasn't already loaded.
+LAURA.Flow("TERMINAL")
+end
 
 
 function Vault()
@@ -122,7 +126,6 @@ ZA_Leave("OpenVaultDoor",function() Schuif.Ga.Vault = 'Dicht' end)
 ZA_Enter("ShowBridge1",MapShow,'Bridge')
 ZA_Enter("ShowBridge2",MapShow,'Bridge')
 ZA_Enter("ShowBack"   ,MapShow,'Back')
-
 -- Vault
 ZA_Enter("Vault",Vault)
 -- Recover upon arrival

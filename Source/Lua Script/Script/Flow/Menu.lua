@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 15.10.16
+  Version: 15.10.27
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -95,7 +95,7 @@ returnto = r
 end
 
 function GALE_OnLoad()
-back = Image.Load("GFX/StatusBar/StatusFull.png")
+back = "MenuBack"
 chpointer = Image.Load("GFX/StatusBar/CharPointer.png"); Image.HotCenter(chpointer)
 invsocket = Image.Load("GFX/StatusBar/ItemSocket.png");  Image.HotCenter(invsocket)
 FeaturePics = {}
@@ -104,6 +104,8 @@ for k,a in spairs(FeatureArray) do
     for i,v in ipairs(a) do FeaturePics[v] = FeaturePics[v] or Image.Load("GFX/StatusBar/Icons/"..v..".png"); Image.HotCenter(FeaturePics[v]); CSay(k.." asked for an icon "..v) end
     end
 end
+
+
 
 function ReturnItem()
 if not ChosenItem.Taken then return end

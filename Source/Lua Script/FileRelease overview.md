@@ -19,6 +19,7 @@
 1. Script/Flow/Quit.lua
 1. Script/Flow/SaveGame.lsv
 1. Script/Flow/SaveGame.lua
+1. Script/Flow/Terminal.lua
 1. Script/Flow/Transporter.lsv
 1. Script/Flow/Transporter.lua
 1. Script/Flow/Vault.lua
@@ -225,4 +226,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 27 October 2015; 12:31:59 CET
+### Last updated: Tue 27 October 2015; 14:49:07 CET
