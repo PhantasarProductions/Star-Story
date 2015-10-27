@@ -73,8 +73,8 @@ fonts = {
     MiniMessage = {"Robotica.ttf",10},  -- The routines are in party in order to operate more smoothly with the party screen at the bottom of the screen.
     CombatPlayerInput = {"Robotica.ttf",40},
     CombatMessage = {"Robotica.ttf",35},
-    Terminal = {"Robotica.ttf",15}
-	LayerInField = {"Robotica.ttf",12}
+    Terminal = {"Robotica.ttf",15,}
+	  LayerInField = {"Robotica.ttf",12}
 	
 }
 

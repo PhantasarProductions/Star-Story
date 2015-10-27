@@ -40,7 +40,11 @@ back = "MenuBack"
 Menu = {
 
          Save = {
-                   Action = GotoSave,   
+                   Action = function() 
+                            GotoSave()
+                            inc("%TERMINAL.SAVE")
+                            if CVV("%TERMINAL.SAVE")>=30 then Award("SAVETERMINAL30") end
+                            end,   
                    AllowAlways = true                
                 }
        }
@@ -62,6 +66,8 @@ for idx,item in spairs(Menu) do
           end
        Image.Show(item.Icon)
        Image.DText(idx,x,y+40,2,0)
+       x = x + 70
+       if x>700 then x=40 y=y+70 end
        end
     end
 -- Lastly the party and the mouse
