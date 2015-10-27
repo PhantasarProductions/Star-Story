@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.10.26
+  Version: 15.10.27
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -641,6 +641,7 @@ end
 function PlaceTreasures()
 	local layers = {"*"} -- In non multi-map we need at least one "layer"
 	local originallayer
+	if upper(Maps.CodeName)=="HAWK" then return end -- Force a fix, on an old bug, making broken savegames right.
 	-- if Maps.Multi()==1 then originallayer = Maps.LayerCodeName end
 	if Maps.Multi()==1 then 
 		layers = mysplit(Maps.Layers(),";") 
@@ -680,6 +681,7 @@ function SetUpTreasure(layerswitch) -- if layerswitch is set to 1 only reset thi
 	local pt = ngpcount or 1
 	local i,t,tra
 	local crate,ctag,addit,vtag,iratesk1,irate -- all needed for the Special Items
+	FieldTreasure = {} -- Make sure the fieldtreasure variable is empty.
 	-- Get treasures from map itself
 	CSay("Find treasure from map itself")
 	CSay("Playthrough #"..pt)
