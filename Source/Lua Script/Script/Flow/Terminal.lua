@@ -53,8 +53,8 @@ function DrawScreen()
 -- First the background
 Image.Show(back,0,0)
 -- Draw all the apps
-local x = 40
-local y = 40
+local x = 70
+local y = 70
 local mx,my = MouseCoords()
 for idx,item in spairs(Menu) do
     if item.AllowAlways or CVV(SysVar) then
@@ -64,7 +64,7 @@ for idx,item in spairs(Menu) do
        else
           Image.Color(0,100,255)
           end
-       Image.Show(item.Icon)
+       Image.Show(item.Icon,x,y)
        Image.DText(idx,x,y+40,2,0)
        x = x + 70
        if x>700 then x=40 y=y+70 end
