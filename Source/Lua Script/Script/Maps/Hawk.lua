@@ -62,6 +62,10 @@ Schuif.Ga.Rechts = 'Dicht'
 end
 
 
+function Vault()
+if (not Done("&DONE.HAWK.FIRSTTIMEVAULT")) and GetActive()=="Wendicka" then MapText("VAULT") end 
+GoToVault()
+end
 
 
 function MAP_FLOW()
@@ -96,4 +100,8 @@ ZA_Enter("Schuifdeur_Open",SchuifOpen)
 ZA_Leave("Schuifdeur_Open",SchuifDicht)
 ZA_Enter("OpenVaultDoor",function() Schuif.Ga.Vault = 'Open'  end)
 ZA_Leave("OpenVaultDoor",function() Schuif.Ga.Vault = 'Dicht' end)
+-- Vault
+ZA_Enter("Vault",Vault)
+-- Recover upon arrival
+RecoverParty()
 end
