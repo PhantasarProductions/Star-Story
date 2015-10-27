@@ -128,6 +128,9 @@ ZA_Enter("ShowBridge2",MapShow,'Bridge')
 ZA_Enter("ShowBack"   ,MapShow,'Back')
 -- Vault
 ZA_Enter("Vault",Vault)
+-- Terminals
+AddClickable("Nav")
+AddClickable("Terminal")
 -- Recover upon arrival
 RecoverParty()
 end

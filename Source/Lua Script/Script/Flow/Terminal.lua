@@ -40,8 +40,9 @@ back = "MenuBack"
 function DrawScreen()
 -- First the background
 Image.Show(back,0,0)
--- Lastly the party
+-- Lastly the party and the mouse
 ShowParty()
+ShowMouse()
 end
 
 function CheckExit()
@@ -51,6 +52,7 @@ end
 function MAIN_FLOW()
 DrawScreen()
 CheckExit()
+Flip()
 end
 
 function GALE_OnLoad()
