@@ -112,7 +112,8 @@ if CurrentWorld then
                 MS.Run("MAP",mapfunction)
              else
                 LoadMap(nodedata.Map,nodedata.Layer)
-                SpawnPlayer(nodedata.Transporter,1)
+                SpawnPlayer(nodedata.Transporter,"South",true)
+                LAURA.Flow("FIELD")
                 end 
              end
        else   
