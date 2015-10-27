@@ -61,6 +61,9 @@ Schuif.Ga.Links  = 'Dicht'
 Schuif.Ga.Rechts = 'Dicht'
 end
 
+
+
+
 function MAP_FLOW()
 local obj
 for deur,toestand in pairs(Schuif.Ga) do
@@ -91,4 +94,6 @@ SetScrollBoundaries(0,15,0,658)
 -- Schuifdeuren
 ZA_Enter("Schuifdeur_Open",SchuifOpen)
 ZA_Leave("Schuifdeur_Open",SchuifDicht)
+ZA_Enter("OpenVaultDoor",function() Schuif.Ga.Vault = 'Open'  end)
+ZA_Leave("OpenVaultDoor",function() Schuif.Ga.Vault = 'Dicht' end)
 end
