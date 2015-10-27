@@ -74,6 +74,7 @@ fonts = {
     CombatPlayerInput = {"Robotica.ttf",40},
     CombatMessage = {"Robotica.ttf",35},
     Terminal = {"Robotica.ttf",15},
+    TerminalHead = {"Robotica.ttf",20},
 	  LayerInField = {"Robotica.ttf",12}
 	
 }

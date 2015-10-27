@@ -89,12 +89,34 @@ local mx,my = MouseCoords()
 Image.Show(back)
 -- Now the content
 if CurrentWorld then
+   Image.Color(255,0,0)
+   SetFont('TerminalHeader')
+   Image.DText(CurrentWorld,300,15)
+   y = 30
+   SetFont('Terminal')
+   if my>30 and my<45 then 
+   	  Image.Color(180,255,0)
+   	  if mousehit(1) then CurrentWorld=nil end
+   else
+      Image.Color(0,180,0)
+      end
+   Image.DText("../",80,y) y = 60
+   for location,data in pairs(Transporter.Worlds[CurrentWorld]) do   
+       if my>y and my<y+15 then 
+          Image.Color(0,180,255)
+       else   
+          Image.Color(0,100,180)
+          end 
+       Image.DText(location,80,y)
+       y = y + 20
+       end
 else
    y = 15
    SetFont('Terminal')
    for w,data in spairs(Transporters.Worlds) do
        if my>y and my<y+15 then 
           Image.Color(0,180,255)
+          if mousehit(1) then CurrentWorld = w end
        else   
           Image.Color(0,100,180)
           end 
