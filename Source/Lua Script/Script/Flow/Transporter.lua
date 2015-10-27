@@ -84,7 +84,7 @@ end
 
 function DrawScreen()
 local y = 0
-local mx,my = MouseCoords
+local mx,my = MouseCoords()
 -- Background first
 Image.Show(back)
 -- Now the content
@@ -94,9 +94,9 @@ else
    SetFont('Terminal')
    for w,data in spairs(Transporters.Worlds) do
        if my>y and my<y+15 then 
-          Image.SetColor(0,180,255)
+          Image.Color(0,180,255)
        else   
-          Image.SetColor(0,100,180)
+          Image.Color(0,100,180)
           end 
        Image.DText(w,80,y)
        y = y + 20
