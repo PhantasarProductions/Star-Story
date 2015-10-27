@@ -107,7 +107,7 @@ if CurrentWorld then
        else   
           Image.Color(0,100,180)
           end 
-       Image.DText(location,80,y)
+       Image.DText(location.Location,80,y)
        y = y + 20
        end
 else
