@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 15.10.27
+  version: 15.10.28
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -57,7 +57,7 @@ function ZA_Enter(Z,F,P)
 ZA_SetAction(Z,"Enter",F,P)
 end
 
-function ZA_Leave(Z,F)
+function ZA_Leave(Z,F,P)
 ZA_SetAction(Z,"Leave",F,P)
 end
 

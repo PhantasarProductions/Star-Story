@@ -56,6 +56,7 @@ Schuif[obj] = { Dicht = { Maps.Obj.Obj(obj).X ,  Maps.Obj.Obj(obj).Y }}
 Schuif[obj].Open = { Schuif[obj].Dicht[1]+modx,Schuif[obj].Dicht[2]+mody }
 Schuif.Ga[obj] = mode or 'Dicht' -- 'Dicht' is the Dutch word for 'closed'.
 Schuif.Obj[obj] = obj -- Leftover from doing things too fast when scripting the Hawk.
+CSay("Schuif object '"..obj.."' set!")
 end
 
 function SetSchuif(objlist,mode)
@@ -64,6 +65,7 @@ if type(ol)=='string' then ol = {objlist} end
 for obj in each(ol) do
     if not Schuif[obj] then return CSay("WARNING! I don't have an object "..sval(obj)) end
     Schuif.Ga[obj] = mode
+    CSay("Object "..obj.." should now be "..mode)
     end
 end
 
@@ -71,7 +73,10 @@ function SetSchuif2(array)
 SetSchuif(array[1],array[2])
 end
 
-function OpenSchuif(obj,zone)
+function OpenSchuif(zone,obj)
+CSay("OpenSchuif("..zone..",",sval(obj))
 ZA_Enter(zone,SetSchuif2,{obj,'Open'})
 ZA_Leave(zone,SetSchuif2,{obj,'Dicht'})
 end
+
+Console.Write("The 'Schuif' module has been properly imported!")

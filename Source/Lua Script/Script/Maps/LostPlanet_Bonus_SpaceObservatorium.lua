@@ -34,6 +34,9 @@
  
 version: 15.10.28
 ]]
+
+-- @USE /Script/Use/Maps/Gen/Schuif.lua
+
 function CLICK_ARRIVAL_Transporter()
 TransporterPad('Observatorium')
 end
