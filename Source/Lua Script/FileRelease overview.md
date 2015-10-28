@@ -199,6 +199,7 @@
 1. Script/Use/Linkers/PartyLinker.lua
 1. Script/Use/Linkers/SFXLinker.lua
 1. Script/Use/Linkers/Transporter_Linker.lua
+1. Script/Use/Maps/Gen/Schuif.lua
 1. Script/Use/Menu/LearnSpellMessages.lua
 
 ## Full Release
@@ -231,4 +232,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Wed 28 October 2015; 17:50:44 CET
+### Last updated: Wed 28 October 2015; 21:29:58 CET

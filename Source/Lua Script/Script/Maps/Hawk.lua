@@ -36,6 +36,7 @@ version: 15.10.28
 ]]
 
 -- @USEDIR Script/Use/Maps/Hawk/
+-- @USE /Script/Use/Maps/Gen/Schuif.lua
 -- I chose this method in order not to have to change this script (and thus changing stuff in the demo when I don't need to) for any new location you may visit.
 
 HeroLeadList = {"Wendicka","Crystal","Yirl","Foxy","Xenobi","ExHuRU","Rolf"}
@@ -95,14 +96,7 @@ end
 
 
 function MAP_FLOW()
-local obj
-for deur,toestand in pairs(Schuif.Ga) do
-    obj = Maps.Obj.Obj(Schuif.Obj[deur])
-    -- CSay("Deur = "..sval(deur).."; Toestand = "..sval(toestand))
-    -- CSay("Schuif = "..sval(Schuif))
-    if obj.X>Schuif[deur][toestand][1] then obj.X = obj.X - 1 elseif obj.X<Schuif[deur][toestand][1] then obj.X = obj.X + 1 end
-    if obj.Y>Schuif[deur][toestand][2] then obj.Y = obj.Y - 1 elseif obj.Y<Schuif[deur][toestand][2] then obj.Y = obj.Y + 1 end
-    end
+DoSchuif()
 end
 
 function GALE_OnLoad()

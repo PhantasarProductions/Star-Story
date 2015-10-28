@@ -103,8 +103,8 @@ end
 
 function CLICK_ARRIVAL_ToObservatorium()
 TelEffect(TEL_OUT)
-LoadMap("LostPlanet_Bonus_Observatorium")
- 
+LoadMap("LostPlanet_Bonus_SpaceObservatorium")
+SpawnPlayer('SPOT_Transporter','South')
 end
 
 function GALE_OnLoad()
