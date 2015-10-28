@@ -54,6 +54,6 @@ InitSchuif('DtC1LL',-40,0)
 InitSchuif('DtC1LR', 40,0)
 InitSchuif('DtC1RL',-40,0)
 InitSchuif('DtC1RR', 40,0)
-OpenSchuif('OpenCorr1L',{'DtC1LL','CtC1LR'})
-OpenSchuif('OpenCorr1R',{'DtC1RL','CtC1RR'})
+OpenSchuif('OpenCorr1L',{'DtC1LL','DtC1LR'})
+OpenSchuif('OpenCorr1R',{'DtC1RL','DtC1RR'})
 end

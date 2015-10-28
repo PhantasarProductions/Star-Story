@@ -34,6 +34,9 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
+
+-- @DEFINE DEBUGSCHUIF
+
 Schuif = Schuif or { Ga={}, Obj={} }
 -- In case you were wondering "Schuif" is the tribe of the Dutch verb 'Schuiven'.
 -- A word hard to translate to English as there are multiple translations possible, but in this particular case you can translate it as "slide".
@@ -41,12 +44,19 @@ Schuif = Schuif or { Ga={}, Obj={} }
 
 function DoSchuif() -- Should be present in all maps MAP_FLOW() function when they use this routine.
 local obj
+-- @IF DEBUGSCHUIF
+local y = y
+Image.NoFont()
+-- @FI
 for deur,toestand in pairs(Schuif.Ga) do
     obj = Maps.Obj.Obj(Schuif.Obj[deur])
     -- CSay("Deur = "..sval(deur).."; Toestand = "..sval(toestand))
     -- CSay("Schuif = "..sval(Schuif))
     if obj.X>Schuif[deur][toestand][1] then obj.X = obj.X - 1 elseif obj.X<Schuif[deur][toestand][1] then obj.X = obj.X + 1 end
     if obj.Y>Schuif[deur][toestand][2] then obj.Y = obj.Y - 1 elseif obj.Y<Schuif[deur][toestand][2] then obj.Y = obj.Y + 1 end
+    -- @IF DEBUGSCHUIF
+    DarkText('Deur '..deur..' = '..toestand.."; ObjXY("..obj.X..","..obj.Y.."); MoetZijnXY("..Schuif[deur][toestand][1]..","..Schuif[deur][toestand][2],5,y,0,0,255,180,0)
+    -- @FI
     end
 end
 
@@ -65,7 +75,7 @@ if type(ol)=='string' then ol = {objlist} end
 for obj in each(ol) do
     if not Schuif[obj] then return CSay("WARNING! I don't have an object "..sval(obj)) end
     Schuif.Ga[obj] = mode
-    CSay("Object "..obj.." should now be "..mode)
+    CSay("Object "..obj.." should now be "..mode.." and is "..sval(Schuif.Ga[obj]))
     end
 end
 
