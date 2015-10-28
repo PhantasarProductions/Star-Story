@@ -87,6 +87,8 @@ Music("Dungeon/Opening Theme C")
 ZA_Enter("ToHallS",EnterGreatHall)
 ZA_Enter("Entrance_Zone",EnterEntrance)
 ZA_Enter("Verdieping1",function() MapShow("GreatHall-FirstFloor") end)
+ZA_Enter("Kantoor",function() MapShow("Kantoor","GreatHall-FirstFloor") end)
+ZA_Enter("EnterBoss",function() MapShow("Boss") end)
 ZA_Enter("LeaveBoss",function() MapShow("TowerTop") end)
 -- Trappen
 ZA_Enter("UPto1",function() Trap("U_Verdieping1","GreatHall-FirstFloor") end)
@@ -107,7 +109,7 @@ ZA_Enter("DownToTower5", function() BreakThe4thWall(); Trap("D_Tower5","Tower5")
 ZA_Enter("SAVEZONE1",EnterSave)
 ZA_Enter("EnterSave",EnterSave)
 -- ZA_Enter("EnterSave",EnterEntrance)
-for o in each({'Brain','SAVESPOTTOP','SAVE1'}) do
+for o in each({'Brain','SAVESPOTTOP','SAVE1',"DEUR"}) do
     Maps.Obj.Kill(o)
     end
 end

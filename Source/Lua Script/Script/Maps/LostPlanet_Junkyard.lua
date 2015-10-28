@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.26
+version: 15.10.28
 ]]
 
 
@@ -97,6 +97,6 @@ ZA_Enter("Next",Next)
 ZA_Enter("Prev",Prev)
 ZA_Enter("Award",AwardPoints)
 ZA_Enter("UnderTheShip",UnderTheShip)
-if not CVV("&DONE.OBTAINEDHAWK") then ZA_Enter("BossNotYet",BossNotYet) end
+if not CVV("&GOT.HAWK") then ZA_Enter("BossNotYet",BossNotYet) end
 CSay("Welcome to the junkyard")
 end
