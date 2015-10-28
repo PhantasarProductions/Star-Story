@@ -91,12 +91,20 @@ Var.D("$HAWK","KICKOFF") -- This var will determine what the characters will say
 end
 
 function Boss()
+CleanCombat()
 Var.D("$COMBAT.BACKGROUND","JunkYard.png")
 Var.D("$COMBAT.BEGIN","Default")
 Var.D("$COMBAT.FOE2","Boss/SupaQual")
-Var.D("%COMBAT.LVFOE2",MapLevel()*10)
+Var.D("$COMBAT.ALTCOORDSFOE2","400,500")
+if not Done("&SUPAQUAL") then Var.D("%COMBAT.LVFOE2",MapLevel()*10) else Var.D("%COMBAT.LVFOE2",round(MapLevel()/10)) end
 RandomBossTune()
 StartCombat()
+end
+
+function CLICK_ARRIVAL_ToObservatorium()
+TelEffect(TEL_OUT)
+LoadMap("LostPlanet_Bonus_Observatorium")
+ 
 end
 
 function GALE_OnLoad()
@@ -107,5 +115,6 @@ ZA_Enter("Prev",Prev)
 ZA_Enter("Award",AwardPoints)
 ZA_Enter("UnderTheShip",UnderTheShip)
 if not CVV("&GOT.HAWK") then ZA_Enter("BossNotYet",BossNotYet) end
+AddClickable('ToObservatorium')
 CSay("Welcome to the junkyard")
 end

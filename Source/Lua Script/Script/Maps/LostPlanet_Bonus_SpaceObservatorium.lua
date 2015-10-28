@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  Maps.lua
+  LostPlanet_Bonus_SpaceObservatorium.lua
   (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
@@ -34,32 +34,14 @@
  
 version: 15.10.28
 ]]
-ret = {
-	"EXCALIBUR_HOME",
-	"INTRO_SHIP_TRANSPORTER",
-	"PROLOGUE_YAQIRPA",
-	"TEST MAP",
-	"EXCALIBUR_SICKBAY",
-	"EXCALIBUR_ALLQUIET",
-	"EXCALIBUR_KITCHEN",
-	"TEST INSERTION AND ROTATION",
-	"EXCALIBUR_UNDERATTACK",
-	"EXCALIBUR_SECRETPASSAGE",
-	"TEST COLOR AND ANIMATION",
-	"EXCALIBUR_HANGAR",
-	"HAWK",
-	"LOSTPLANET_GRASSJUNGLE",
-	"LOSTPLANET_GRASSJUNGLE_2",
-	"TEST TRANSPORTERS",
-	"LOSTPLANET_BONUS_DARK_CAVES_OF_SHILINGTON",
-	"LOSTPLANET_GRASSJUNGLE_3",
-	"LOSTPLANET_PUB_OUTSIDE",
-	"LOSTPLANET_BARINSIDE",
-	"TEST CHANGED NOT FOR KTHURA",
-	"LOSTPLANET_DUNGEON_CELL",
-	"TEST MULTIMAP",
-	"LOSTPLANET_DUNGEON",
-	"LOSTPLANET_JUNKYARD",
-	"LOSTPLANET_BONUS_SPACEOBSERVATORIUM"}
+function CLICK_ARRIVAL_Transporter()
+TransporterPad('Observatorium')
+end
 
-return ret
+
+function GALE_OnLoad()
+Music("Dungeon/Observatorium.ogg")
+AddClickable("Transporter")
+ZA_Enter("Transporter",MapShow,'Entrance')
+ZA_Enter('Entrance'   ,MapShow,'Entrance')
+end
