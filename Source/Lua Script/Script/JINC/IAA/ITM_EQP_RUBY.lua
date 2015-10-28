@@ -1,6 +1,6 @@
 --[[
   ITM_EQP_RUBY.lua
-  Version: 15.10.24
+  Version: 15.10.28
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================

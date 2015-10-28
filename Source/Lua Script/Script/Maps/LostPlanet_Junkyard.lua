@@ -90,6 +90,15 @@ MapText("ARRIVAL.KICKOFF")
 Var.D("$HAWK","KICKOFF") -- This var will determine what the characters will say when you speak to them on board the Hawk. 
 end
 
+function Boss()
+Var.D("$COMBAT.BACKGROUND","JunkYard.png")
+Var.D("$COMBAT.BEGIN","Default")
+Var.D("$COMBAT.FOE2","Boss/SupaQual")
+Var.D("%COMBAT.LVFOE2",MapLevel()*10)
+RandomBossTune()
+StartCombat()
+end
+
 function GALE_OnLoad()
 Music("Dungeon/Vuilnisbelt.ogg")
 SetScrollBoundaries(0,0,0,2560)

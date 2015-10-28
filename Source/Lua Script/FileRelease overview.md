@@ -34,6 +34,7 @@
 1. Script/JINC/Foes/Boss/BrainDroid.lua
 1. Script/JINC/Foes/Boss/Flirmouse_King.lua
 1. Script/JINC/Foes/Boss/Flirmouse_Subject.lua
+1. Script/JINC/Foes/Boss/SupaQual.lua
 1. Script/JINC/Foes/Boss/Supersyss.lua
 1. Script/JINC/Foes/Reg/astrilopup.lua
 1. Script/JINC/Foes/Reg/BattleDroid.lua
@@ -54,6 +55,7 @@
 1. Script/JINC/IAA/ABL_EXHURU_NELJA.lua
 1. Script/JINC/IAA/ABL_EXHURU_STOMP.lua
 1. Script/JINC/IAA/ABL_EXHURU_YKSI.lua
+1. Script/JINC/IAA/ABL_FOE_FULLHEALTH.lua
 1. Script/JINC/IAA/ABL_FOE_LICKYOURWOUNDS.lua
 1. Script/JINC/IAA/ABL_FOE_PHOTON.lua
 1. Script/JINC/IAA/ABL_FOE_POISONCLOUD.lua
@@ -228,4 +230,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Wed 28 October 2015; 11:22:05 CET
+### Last updated: Wed 28 October 2015; 12:25:49 CET

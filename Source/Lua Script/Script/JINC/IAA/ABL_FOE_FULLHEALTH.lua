@@ -1,5 +1,5 @@
 --[[
-  ABL_WENDICKA_ELECTRICCHARGE.lua
+  ABL_FOE_FULLHEALTH.lua
   Version: 15.10.28
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,20 +35,23 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 200,
+	["ABL_AP"] = 0,
 	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 50,
-	["ActSpeed"] = 250,
+	["ABL_Speed"] = 800,
+	["ActSpeed"] = 800,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Charge up energy for Voltsunami",
-	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Gun.png",
+	["Description"] = "Heals all HP",
+	["Healing"] = 100,
+	["HealingType"] = "Percent",
+	["Icon"] = "GFX/Inventory/FirstAidKit.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Electric Charge",
-	["Target"] = "AF",
-	["UseCombat"] = true}
+	["Name"] = "Full Health",
+	["SpellAni_Reference"] = "SingleHeal",
+	["Target"] = "1A",
+	["UseCombat"] = true,
+	["UseField"] = true}
 
 return ret
 
