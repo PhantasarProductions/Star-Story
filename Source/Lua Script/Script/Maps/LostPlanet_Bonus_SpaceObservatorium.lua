@@ -41,6 +41,8 @@ function CLICK_ARRIVAL_Transporter()
 TransporterPad('Observatorium')
 end
 
+MAIN_FLOW = DoSchuif
+
 
 function GALE_OnLoad()
 Music("Dungeon/Observatorium.ogg")

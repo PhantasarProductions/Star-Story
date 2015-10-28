@@ -42,7 +42,7 @@ Schuif = Schuif or { Ga={}, Obj={} }
 -- A word hard to translate to English as there are multiple translations possible, but in this particular case you can translate it as "slide".
 -- "Schuifdeur" is the Dutch term for "Sliding door".
 
-function DoSchuif() -- Should be present in all maps MAP_FLOW() function when they use this routine.
+function DoSchuif() -- Should be present in all maps MAP_FLOW() function when they use this routine. If no MAP_FLOW() is present this file can do it.
 local obj
 -- @IF DEBUGSCHUIF
 local y = y
@@ -59,6 +59,8 @@ for deur,toestand in pairs(Schuif.Ga) do
     -- @FI
     end
 end
+
+MAP_FLOW = MAP_FLOW or DoSchuif
 
 
 function InitSchuif(obj,modx,mody,mode)
