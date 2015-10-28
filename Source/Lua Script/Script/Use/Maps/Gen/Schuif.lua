@@ -45,7 +45,7 @@ Schuif = Schuif or { Ga={}, Obj={} }
 function DoSchuif() -- Should be present in all maps MAP_FLOW() function when they use this routine. If no MAP_FLOW() is present this file can do it.
 local obj
 -- @IF DEBUGSCHUIF
-local y = y
+local y = 5
 Image.NoFont()
 -- @FI
 for deur,toestand in pairs(Schuif.Ga) do
@@ -55,7 +55,8 @@ for deur,toestand in pairs(Schuif.Ga) do
     if obj.X>Schuif[deur][toestand][1] then obj.X = obj.X - 1 elseif obj.X<Schuif[deur][toestand][1] then obj.X = obj.X + 1 end
     if obj.Y>Schuif[deur][toestand][2] then obj.Y = obj.Y - 1 elseif obj.Y<Schuif[deur][toestand][2] then obj.Y = obj.Y + 1 end
     -- @IF DEBUGSCHUIF
-    DarkText('Deur '..deur..' = '..toestand.."; ObjXY("..obj.X..","..obj.Y.."); MoetZijnXY("..Schuif[deur][toestand][1]..","..Schuif[deur][toestand][2],5,y,0,0,255,180,0)
+    DarkText('Deur '..deur..' = '..toestand.."; ObjXY("..obj.X..","..obj.Y.."); MoetZijnXY("..Schuif[deur][toestand][1]..","..Schuif[deur][toestand][2]..")",5,y,0,0,255,180,0)
+    y = y + 15
     -- @FI
     end
 end
