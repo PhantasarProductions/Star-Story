@@ -1,6 +1,6 @@
 --[[
   Schuif.lua
-  Version: 15.10.28
+  Version: 15.10.29
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -35,7 +35,7 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 
--- @DEFINE DEBUGSCHUIF
+-- @UNDEF DEBUGSCHUIF
 
 Schuif = Schuif or { Ga={}, Obj={} }
 -- In case you were wondering "Schuif" is the tribe of the Dutch verb 'Schuiven'.

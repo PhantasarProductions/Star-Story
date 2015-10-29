@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.28
+version: 15.10.29
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Schuif.lua
@@ -41,7 +41,30 @@ function CLICK_ARRIVAL_Transporter()
 TransporterPad('Observatorium')
 end
 
-MAIN_FLOW = DoSchuif
+function MAP_FLOW()
+-- Control the sliding doors
+DoSchuif()
+-- Control the space areas
+end
+
+function CLICK_ARRIVAL_EntranceConsole()
+local d = Done('&DONE.ENTRANCE.OBSERVATORIUM')
+if GetActive()~="Wendicka" then return MapText("UNIX.NOTWENDICKA") end
+if not d then MapText('UNIX1') end
+SetSchuif("UnixD1L","Open")
+SetSchuif("UnixD1R","Open")
+Maps.Obj.Obj("UnixD1L").Impassible = 0
+Maps.Obj.Obj("UnixD1R").Impassible = 0
+Maps.Remap()
+if not d then
+   for i=1,40 do
+       DoSchuif()
+       DrawScreen()
+       Flip()
+       end 
+   MapText('UNIX1OPEN') 
+   end
+end
 
 
 function GALE_OnLoad()
@@ -51,11 +74,15 @@ ZA_Enter("Transporter",MapShow,'Entrance')
 ZA_Enter('Entrance'   ,MapShow,'Entrance')
 ZA_Enter("ToCorr1L",   MapShow,'Corridor1')
 ZA_Enter("ToCorr1R",   MapShow,'Corridor1')
--- The sliding doors
+-- The sliding doors Entrance part
 InitSchuif('DtC1LL',-40,0)
 InitSchuif('DtC1LR', 40,0)
 InitSchuif('DtC1RL',-40,0)
 InitSchuif('DtC1RR', 40,0)
 OpenSchuif('OpenCorr1L',{'DtC1LL','DtC1LR'})
 OpenSchuif('OpenCorr1R',{'DtC1RL','DtC1RR'})
+-- Unix Door 1
+AddClickable('EntranceConsole')
+InitSchuif("UnixD1L",-40,0)
+InitSchuif("UnixD1R", 40,0)
 end

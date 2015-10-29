@@ -1,6 +1,6 @@
 --[[
   BoxText.lua
-  Version: 15.10.17
+  Version: 15.10.29
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -258,6 +258,8 @@ function SerialBoxText(file,ptag,boxback)
 -- @IF BOXTEXTDEBUG
 CSay('SerialBoxText("'..file..'","'..ptag..'","'..sval(boxback)..'");')
 -- @FI
+local a = GetActive()
+if a~="" and RPGChar.CharExists(a)~=0 then Var.D("$CURRENTCHARNAME",RPGChar.GetName(a)) end
 local tag = upper(ptag or '*TAGLESS*')
 local f = btdata[file]
 if not f then Sys.Error("Boxtext file "..file.." has not yet been loaded!") end
