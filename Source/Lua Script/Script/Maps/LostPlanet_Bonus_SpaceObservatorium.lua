@@ -104,4 +104,8 @@ InitSchuif("UnixD1L",-40,0)
 InitSchuif("UnixD1R", 40,0)
 -- Enter the great hall
 ZA_Enter("Enter",Enter)
+-- Enter/leave the second corridor
+ZA_Enter("EndObs1",Enter)
+ZA_Enter("Obs1Corr2",MapShow,"Observe1,Corridor2")
+ZA_Enter("Corridor2_S",MapShow,"Corridor2")
 end
