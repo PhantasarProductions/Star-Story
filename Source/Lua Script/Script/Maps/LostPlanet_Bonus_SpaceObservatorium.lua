@@ -45,6 +45,11 @@ function MAP_FLOW()
 -- Control the sliding doors
 DoSchuif()
 -- Control the space areas
+local space = Maps.Obj.Obj('SPACE')
+space.X = Maps.CamX
+space.Y = Maps.CamY
+space.W=800
+space.H=700
 end
 
 function CLICK_ARRIVAL_EntranceConsole()
@@ -66,6 +71,16 @@ if not d then
    end
 end
 
+function Enter()
+if not Done("&DONE.ENTRANCE.ENTER.OBSERVATORIUM") then MapText("ENTER") end
+-- Safety measure. If the doors are somehow closed open them to rule out every possibility the player might get locked up.
+SetSchuif("UnixD1L","Open")
+SetSchuif("UnixD1R","Open")
+Maps.Obj.Obj("UnixD1L").Impassible = 0
+Maps.Obj.Obj("UnixD1R").Impassible = 0
+Maps.Remap()
+end
+
 
 function GALE_OnLoad()
 Music("Dungeon/Observatorium.ogg")
@@ -85,4 +100,6 @@ OpenSchuif('OpenCorr1R',{'DtC1RL','DtC1RR'})
 AddClickable('EntranceConsole')
 InitSchuif("UnixD1L",-40,0)
 InitSchuif("UnixD1R", 40,0)
+-- Enter the great hall
+ZA_Enter("Enter",Enter)
 end
