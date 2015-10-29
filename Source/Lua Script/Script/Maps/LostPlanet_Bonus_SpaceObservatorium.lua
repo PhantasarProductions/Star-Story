@@ -106,6 +106,17 @@ InitSchuif("UnixD1R", 40,0)
 ZA_Enter("Enter",Enter)
 -- Enter/leave the second corridor
 ZA_Enter("EndObs1",Enter)
-ZA_Enter("Obs1Corr2",MapShow,"Observe1,Corridor2")
+ZA_Enter("Obs1Cor2",MapShow,"Observe1,Corridor2")
 ZA_Enter("Corridor2_S",MapShow,"Corridor2")
+-- Sliding doors between coordoor 2 and restrooms
+InitSchuif('DfC2LL',-40,0)
+InitSchuif('DfC2LR', 40,0)
+InitSchuif('DfC2RL',-40,0)
+InitSchuif('DfC2RR', 40,0)
+OpenSchuif('OpenCorr2L',{'DfC2LL','DfC2LR'})
+OpenSchuif('OpenCorr2R',{'DfC2RL','DfC2RR'})
+ZA_Enter('ShowCorridor2',MapShow,"Corridor2")
+for i=1,3 do
+    ZA_Enter('toplay'..i,MapShow,"Plee")
+    end
 end
