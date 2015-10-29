@@ -1,5 +1,5 @@
 --[[
-  Terminal.lua
+  Jukebox.lua
   Version: 15.10.29
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -34,63 +34,15 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
--- @USEDIR Script/Use/Maps/Hawk_Terminal/
-back = "MenuBack"
 
-Menu = {
 
-         Save = {
-                   Action = function() 
-                            GotoSave()
-                            inc("%TERMINAL.SAVE")
-                            if CVV("%TERMINAL.SAVE")>=30 then Award("SAVETERMINAL30") end
-                            CSay("You used the save app in the terminal "..CVV("%TERMINAL.SAVE").." times now.")
+-- @IF IGNOREME
+Menu = {}
+-- @FI
+
+Menu.Jukebox = {
+                   Action = function()
+                            Sys.Error("The Jukebox is not yet scripted. Please come back later") 
                             end,   
-                   AllowAlways = true                
                 }
-       }
-
-function DrawScreen()
--- First the background
-Image.Show(back,0,0)
--- Draw all the apps
-local x = 70
-local y = 70
-local mx,my = MouseCoords()
-for idx,item in spairs(Menu) do
-    if item.AllowAlways or CVV('&APP.'..idx) or CVV(item.SysVar) then
-       if mx>x-32 and mx<x+32 and my>y-32 and my<y+55 then
-          Image.Color(0,180,255)
-          if mousehit(1) then item.Action() end
-       else
-          Image.Color(0,100,255)
-          end
-       Image.Show(item.Icon,x,y)
-       SetFont('Terminal')
-       Image.DText(idx,x,y+40,2,0)
-       x = x + 70
-       if x>700 then x=40 y=y+70 end
-       end
-    end
--- Lastly the party and the mouse
-ShowParty()
-ShowMouse()
-end
-
-function CheckExit()
-if mousehit(2) then LAURA.Flow("FIELD") end
-end
-
-function MAIN_FLOW()
-DrawScreen()
-CheckExit()
-Flip()
-end
-
-function GALE_OnLoad()
-for idx,item in spairs(Menu) do
-    CSay("Loading App: ")
-    item.Icon = Image.Load("GFX/Terminal/"..idx..".png")
-    Image.HotCenter(item.Icon)
-    end
-end
+      
