@@ -205,10 +205,7 @@
 1. Script/Use/Maps/Hawk_Terminal/Jukebox.lua
 1. Script/Use/Menu/LearnSpellMessages.lua
 
-## Full Release
 
-1. Script/JINC/NewGame+/PreserveVar.lua
-1. Script/Use/Anyway/Full.lua
 
 
 
@@ -235,4 +232,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 30 October 2015; 00:43:22 CET
+### Last updated: Fri 30 October 2015; 00:52:12 CET

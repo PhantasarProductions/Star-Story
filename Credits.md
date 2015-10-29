@@ -13,7 +13,7 @@ If you see your name below and you think I'm using your stuff against your licen
 
 Author | Contributions | Kind of contributions
 ---|---|---
-Aaron Krogh | 14 | Music; 
+Aaron Krogh | 8 | Music; 
 Alexander | 4 | Audio; Misc files; Music; 
 Angela Nagtzaam | 11 | Art; 
 Ann | 1 | Art; 
@@ -28,7 +28,6 @@ GDJ | 1 | Art;
 GR-Sites | 15 | Art; Audio; 
 J.W.H. Broeders | 1 | Music; 
 Kevin McLeod | 11 | Music; 
-Knight Of Fire | 2 | Music; 
 Man of Steel | 117 | Art; Misc files; 
 Matt McFarland | 2 | Music; 
 Megan | 2 | Art; 
@@ -44,7 +43,7 @@ Skurian25 | 1 | Art;
 Spiedkiks | 1 | Music; 
 TheSkull | 1 | Art; 
 Thobias Benjamin Koehler | 2 | Font; Misc files; 
-Tricky (this is me) :sunglasses: | 1903 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
+Tricky (this is me) :sunglasses: | 1901 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
 Unknown Artist | 27 | Art; 
 Utopia | 2 | Font; Misc files; 
 Varazuvi(TM) | 4 | Audio; 

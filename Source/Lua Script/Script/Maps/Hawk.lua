@@ -87,7 +87,9 @@ if not Done("&NAV.YAQIRPA") then ActivateRemotePad('YaqirpaStart','Return_Yaqirp
 if not FullVersion then
    MapText("ENDDEMO")
 elseif not Done("&NAV.PHYSILIUM.OLDRUINS") then
-   ActivateRemovePad('Physillium_OldRuins','Start','Physillium','Old Ruins')
+   ActivateRemotePad('Start','Physillium_OldRuins','Physillium','Old Ruins')
+   Sys.Error("Protection blockout! We cannot continue yet.")
+   -- We do need to script the arrival at Physilium part first!
    end   
 MS.LoadNew("TRANS","Script/Flow/Transporter.lua")
 LAURA.Flow("TRANS")
