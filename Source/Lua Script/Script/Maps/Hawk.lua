@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.28
+version: 15.10.29
 ]]
 
 -- @USEDIR Script/Use/Maps/Hawk/
@@ -99,6 +99,18 @@ function MAP_FLOW()
 DoSchuif()
 end
 
+function HawkMusic()
+local lmusic = {}
+if CVVN('$HAWKMUSIC') then 
+   Music(CVV('$HAWKMUSIC'))
+else
+   for mpiece in iJCR6Dir(true) do
+       if prefixed(mpiece,"MUSIC/HAWK/") and suffixed(".OGG") then lmusic[#lmusic+1]=right(mpiece,len(mpiece)-6) end
+       end
+   end
+Music(lmusic[rand(1,#lmusic)])
+end
+
 function GALE_OnLoad()
 Done("&GOT.HAWK")
 -- Set the leader. In the Hawk, only this person can be used as leader. The HeroHeadList determines the priority order (in case Wendicka is not in the party Crystal will be the leader, and both Wendicka and Crystal aren't there then Yirl and so on).
@@ -113,11 +125,7 @@ for ch in each(HeroLeadList) do
 SetActive(HeroLead)    
 CSay("The controllable character in the Hawk will be: "..HeroLead)
 -- Let's select the music. Since you get here a lot, I see fit in the possibility to randomize the music, though in the demo I'll keep it to one track only (as the demo ends here).
-local lmusic = {}
-for mpiece in iJCR6Dir(true) do
-    if prefixed(mpiece,"MUSIC/HAWK/") and suffixed(".OGG") then lmusic[#lmusic+1]=right(mpiece,len(mpiece)-6) end
-    end
-Music(lmusic[rand(1,#lmusic)])
+HawkMusic()
 -- Boundaries
 SetScrollBoundaries(0,15,0,658)
 -- Schuifdeuren

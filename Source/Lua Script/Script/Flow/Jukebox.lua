@@ -35,16 +35,44 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 
+function DrawScreen()
+-- Base
+White()
+Image.Cls()
+-- Content
+Image.ViewPort(70,20,400,400); Image.Color(0,18,25)
+Image.Rect    (70,20,400,400)
+Image.Origin  (70,20)
+local y = 4
+local PM = 0
+local tmx,tmy = MouseCoords()
+local mx,my=tmx+70,tmy+20
+Songs = Songs or JINC('Script/JINC/Big/JukeBoxData.lua')
+for title,data in spairs(Songs) do
+    SetFont('Terminal')
+    if mx>0 and mx<400 and my>y-PM and my<(y-PM)+20 then
+       Image.Color(0,180,255)
+    else
+       Image.Color(0,100,180)
+       end
+    Image.DText(title,4,y-PM)
+    y = y + 20      
+    end
+Image.ViewPort(0,0,800,600)
+Image.Origin  (0,0)
+-- Party
+ShowParty()
+-- Mouse
+ShowMouse()
+end
 
--- @IF IGNOREME
-Menu = {}
--- @FI
 
-Menu.Jukebox = {
-                   Action = function()
-                            -- Sys.Error("The Jukebox is not yet scripted. Please come back later")
-                            MS.LoadNew("JUKEBOX","Script/Flow/Jukebox.lua")
-                            LAURA.Flow('JUKEBOX') 
-                            end,   
-                }
-      
+function Cancel()
+if mousehit(2) then LAURA.Flow("TERMINAL") end
+end
+
+function MAIN_FLOW()
+DrawScreen()
+Cancel()
+Flip()
+end
