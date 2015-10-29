@@ -1,6 +1,6 @@
 --[[
   Jukebox.lua
-  Version: 15.10.29
+  Version: 15.10.30
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -89,7 +89,7 @@ if playing then
    Image.Color(255,180,0)
    Image.DText(playing.Title,780,40,1,0)
    Image.DText(playing.Artist,780,90,1,0)
-   if mx>780-Image.TextWidth(hawk) and my>450 and my<500 then
+   if tmx>780-Image.TextWidth(hawk) and tmy>450 and tmy<500 then
       Image.Color(180,255,0)
       if mousehit(1) then Var.D("$HAWKMUSIC",playing.File) end
       else

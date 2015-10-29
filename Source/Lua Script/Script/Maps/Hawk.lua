@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.29
+version: 15.10.30
 ]]
 
 -- @USEDIR Script/Use/Maps/Hawk/
@@ -84,6 +84,11 @@ if not Done("&TUT.NAV.HAWK") then
    MapText("NAVTUTORIAL") 
    end
 if not Done("&NAV.YAQIRPA") then ActivateRemotePad('YaqirpaStart','Return_Yaqirpa','Poloqor','Yaqirpa - Entrance') end   
+if not FullVersion then
+   MapText("ENDDEMO")
+elseif not Done("&NAV.PHYSILIUM.OLDRUINS") then
+   ActivateRemovePad('Physillium_OldRuins','Start','Physillium','Old Ruins')
+   end   
 MS.LoadNew("TRANS","Script/Flow/Transporter.lua")
 LAURA.Flow("TRANS")
 end
