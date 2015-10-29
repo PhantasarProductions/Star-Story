@@ -82,6 +82,12 @@ Maps.Obj.Obj("UnixD1R").Impassible = 0
 Maps.Remap()
 end
 
+function CLICK_ARRIVAL_Jukebox()
+Done("&APP.JUKEBOX")
+MapText("JUKEBOX")
+Maps.Obj.Kill("Jukebox",1)
+end
+
 
 function GALE_OnLoad()
 Music("Dungeon/Observatorium.ogg")
@@ -110,13 +116,21 @@ ZA_Enter("Obs1Cor2",MapShow,"Observe1,Corridor2")
 ZA_Enter("Corridor2_S",MapShow,"Corridor2")
 -- Sliding doors between coordoor 2 and restrooms
 InitSchuif('DfC2LL',-40,0)
-InitSchuif('DfC2LR', 40,0)
-InitSchuif('DfC2RL',-40,0)
+InitSchuif('DfC2LR',-40,0)
+InitSchuif('DfC2RL', 40,0)
 InitSchuif('DfC2RR', 40,0)
-OpenSchuif('OpenCorr2L',{'DfC2LL','DfC2LR'})
-OpenSchuif('OpenCorr2R',{'DfC2RL','DfC2RR'})
+OpenSchuif('OpenCorr2L',{'DfC2LL','DfC2RL'})
+OpenSchuif('OpenCorr2R',{'DfC2LR','DfC2RR'})
 ZA_Enter('ShowCorridor2',MapShow,"Corridor2")
 for i=1,3 do
     ZA_Enter('toplay'..i,MapShow,"Plee")
     end
+-- Final room
+ZA_Enter("TheEnd",MapShow,"TheEnd")
+ZA_Enter("EndTrans",MapShow,"TheEnd")
+-- Observation room #2
+ZA_Enter("UObs2",MapShow,"Observe2")    
+ZA_Enter("DObs2",MapShow,"Observe2")
+-- Jukebox stick    
+AddClickable('Jukebox')
 end

@@ -1,5 +1,5 @@
 --[[
-  ITM_MEDICINE.lua
+  ARM_MUNCHHAUSEN.lua
   Version: 15.10.29
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,21 +35,21 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ActSpeed"] = 250,
+	["ARM_Hit%"] = 95,
+	["ARM_MaxAmmo"] = 8,
+	["ARM_PRICE_Hit%"] = 1000,
+	["ARM_PRICE_MaxAmmo"] = 500,
+	["ARM_XPower"] = 0,
+	["ActSpeed"] = 600,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
-	["CureDisease"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Cures \"Disease\"",
+	["Description"] = "Remove an enemy from the battle",
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 100,
-	["ITM_SellPrice"] = 75,
-	["ITM_Sellable"] = true,
-	["Icon"] = "Gfx/Inventory/Medicine.png",
+	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Medicine",
-	["SpellAni_Reference"] = "SingleHeal",
-	["Target"] = "1A",
+	["Name"] = "M<uuml>nchhausen",
+	["Target"] = "1F",
 	["UseCombat"] = true}
 
 return ret
