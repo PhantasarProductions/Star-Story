@@ -72,6 +72,7 @@ if not d then
 end
 
 function Enter()
+MapShow('Observe1')
 if not Done("&DONE.ENTRANCE.ENTER.OBSERVATORIUM") then MapText("ENTER") end
 -- Safety measure. If the doors are somehow closed open them to rule out every possibility the player might get locked up.
 SetSchuif("UnixD1L","Open")
@@ -89,6 +90,7 @@ ZA_Enter("Transporter",MapShow,'Entrance')
 ZA_Enter('Entrance'   ,MapShow,'Entrance')
 ZA_Enter("ToCorr1L",   MapShow,'Corridor1')
 ZA_Enter("ToCorr1R",   MapShow,'Corridor1')
+ZA_Enter("ToCorr1U",   MapShow,'Corridor1')
 -- The sliding doors Entrance part
 InitSchuif('DtC1LL',-40,0)
 InitSchuif('DtC1LR', 40,0)
