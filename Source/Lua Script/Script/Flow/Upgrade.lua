@@ -51,6 +51,13 @@ SpecificDraw = {
     Weapons = function()
               WeaponImg[pchar] = WeaponImg[pchar] or Image.Load("GFX/Upgrade/"..WeaponFiles[pchar]..".png")
               Image.Show(WeaponImg[pchar])
+              SetFont('StatusName')
+              DarkText(RPGChar.GetName(pchar),300,15,0,0,255,0,0)
+              for i,v in ipairs ( {"Strength", "Defense", "Will", "Resistance","Agility","Accuracy","Evasion"} ) do
+                      --Image.Color(0,180,255)
+                      y = (i*fonts["StatusStat"][2])+200
+                      DarkText(v,300,y,0,0,0,180,255)
+                      end
               end,
     ARMS    = function()
               if pchar~="Crystal" then caction=Weapons return end
