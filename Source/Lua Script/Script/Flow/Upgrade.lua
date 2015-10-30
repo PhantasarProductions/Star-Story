@@ -91,7 +91,7 @@ SpecificDraw = {
               SetFont('StatusStat')
               for i=1,abilities do
                   y = (i*fonts["StatusStat"][2])+200
-                  ARMName = RPGStat.ListItem(pchar,"ARMS",ak)
+                  ARMName = RPGStat.ListItem(pchar,"ARMS",i)
                   ARM = ItemGet("ARM_"..ARMName)
                   DarkText(ARM.Name,70,y,0,0,({[true]=function() return 0,180,255 end, [false]=function() return 0,80,100 end})[ARMName==cARM]())
                   if cARM==ARMName then
