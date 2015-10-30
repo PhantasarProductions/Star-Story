@@ -108,10 +108,9 @@ SpecificDraw = {
                           WEIGHT = function() DarkText("-"..RPGChar.Stat(pchar,"ARM.WEIGHT."..cARM),500,y,1,0,180,255,0) end,
                           HIT = function() DarkText(RPGChar.Stat(pchar,"ARM.HIT."..cARM).."%",500,y,1,0,180,255,0) end
                            })[id] or function() DarkText(RPGChar.Stat(pchar,"ARM."..id.."."..cARM),500,y,1,0,180,255,0) end)()
-                      y = y + fonts["StatusStat"][2]    
                       allow = true
-                      statname = "ARM."..cARM..".PRICE."..id,ARM['ARM_PRICE_'..ARMBase[id]]
-                      RPGChar.DefStat(pchar,statname,1) -- This will put in the price inside Crystal's record, but only if that record is still empty.
+                      statname = "ARM."..cARM..".PRICE."..id,
+                      RPGChar.DefStat(pchar,statname,ARM['ARM_PRICE_'..ARMBase[id]],1) -- This will put in the price inside Crystal's record, but only if that record is still empty.
                       statval = RPGChar.Stat(pchar,statname)
                       allow = allow and statval>0
                       allow = allow and ((not ARMMax[id]) or statval<ARMMax[id])
@@ -119,7 +118,7 @@ SpecificDraw = {
                       allow = allow and CVV("%CASH")>=statval
                       r,g,b=80,80,80
                       if allow then
-                         if my>y and my<y+fonts["StatusStat"][2] then
+                         if mx>400 and my>y and my<y+fonts["StatusStat"][2] then
                             r,g,b=255,255,255
                             if mousehit(1) then
                                SpendMoney(statval)
@@ -134,6 +133,7 @@ SpecificDraw = {
                                end                               
                             end                 
                          DarkText("Upgrade",520,y,0,0,r,g,b)              
+                         y = y + fonts["StatusStat"][2]    
                          end -- allow
                       end -- for
                  end -- cARM
