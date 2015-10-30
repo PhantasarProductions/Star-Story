@@ -62,9 +62,12 @@ SpecificDraw = {
 function ShowPartyPoint()
 for i=0,5 do
     if ClickedChar(i) and RPGChar.PartyTag(i)~="" then
-       poschar = i
-       pchar = RPGChar.PartyTag(i)
-       switched = true
+       if i==poschar then
+          LAURA.Flow("FIELD")
+       else
+          poschar = i
+          pchar = RPGChar.PartyTag(i)
+          end       
        end
     end
 if poschar<3 then
@@ -87,11 +90,10 @@ caction = cation or "Weapons"
 SpecificDraw[caction]()
 ShowPartyPoint()
 ShowMouse()
-switched = false
 end
 
 function CheckCancel()
-if mousehit(2) or (ClickedChar(poschar) and (not switched)) then LAURA.Flow('FIELD') end
+if mousehit(2) then LAURA.Flow('FIELD') end
 end
 
 function MAIN_FLOW()
