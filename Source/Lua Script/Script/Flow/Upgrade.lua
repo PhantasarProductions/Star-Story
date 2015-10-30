@@ -43,7 +43,9 @@ WeaponFiles = {
               }
 WeaponImg = {} 
 
-ARMStat = { HIT = "Accuracy", WEIGHT = "Weight", XPOWER = "Extra Power", AMMO = "Max Ammo"}             
+ARMStat = { HIT = "Accuracy", WEIGHT = "Weight", XPOWER = "Extra Power", AMMO = "Max Ammo"}  
+ARMBase = { HIT = "Hit%" , WEIGHT="Weight", AMMO="MaxAmmo", XPOWER="XPower"}        
+ARMMax = {HIT=100}   
               
 pchar = RPGChar.PartyTag(0)
 poschar = 0              
@@ -86,27 +88,56 @@ SpecificDraw = {
               if pchar~="Crystal" then caction=Weapons return end
               local abilities = RPGStat.CountList(pchar,"ARMS")
               local ARM,ARMName              
-              local y
+              local y,r,g,b
               local mx,my = MouseCoords()
+              local allow,statname,statval
               SetFont('StatusStat')
               for i=1,abilities do
                   y = (i*fonts["StatusStat"][2])+200
                   ARMName = RPGStat.ListItem(pchar,"ARMS",i)
                   ARM = ItemGet("ARM_"..ARMName)
-                  DarkText(ARM.Name,70,y,0,0,({[true]=function() return 0,180,255 end, [false]=function() return 0,80,100 end})[ARMName==cARM]())
+                  DarkText(Var.S(ARM.Name),70,y,0,0,({[true]=function() return 0,180,255 end, [false]=function() return 0,80,100 end})[ARMName==cARM]())
                   if mx<300 and my>y and my<y+fonts["StatusStat"][2] and mousehit(1) then cARM=ARMName end
                   end
               if cARM then
                  y = 200
+                 ARM = ItemGet("ARM_"..cARM)
                  for id,stat in spairs(ARMStat) do
-                      DarkText(stat,300,y,0,0,0,180,255) y = y + fonts["StatusStat"][2];
+                      DarkText(stat,300,y,0,0,0,180,255) ;
                       (({ AMMO = function() DarkText(RPGChar.Points(pchar,"ARM.AMMO."..cARM).Maximum,500,y,1,0,180,255,0) end,
-                          WEIGHT = function() DarkText("-"..RPGChar.Stat(pchar,"ARM."..cARM),500,y,1,0,180,255,0) end,
-                          HIT = function() DarkText(RPGChar.Stat(pchar,"ARM."..cARM).."%",500,y,1,0,180,255,0) end
-                           })[id] or function() DarkText(RPGChar.Stat(pchar,"ARM."..cARM),500,y,1,0,180,255,0) end)()
-                      end
-                 end
-              end
+                          WEIGHT = function() DarkText("-"..RPGChar.Stat(pchar,"ARM.WEIGHT."..cARM),500,y,1,0,180,255,0) end,
+                          HIT = function() DarkText(RPGChar.Stat(pchar,"ARM.HIT."..cARM).."%",500,y,1,0,180,255,0) end
+                           })[id] or function() DarkText(RPGChar.Stat(pchar,"ARM."..id.."."..cARM),500,y,1,0,180,255,0) end)()
+                      y = y + fonts["StatusStat"][2]    
+                      allow = true
+                      statname = "ARM."..cARM..".PRICE."..ARM,ARM['ARM_PRICE_'..ARMBase[id]]
+                      RPGChar.DefStat(pchar,statname,1) -- This will put in the price inside Crystal's record, but only if that record is still empty.
+                      statval = RPGChar.Stat(statname)
+                      allow = allow and statval>0
+                      allow = allow and ((not ARMMax[id]) or statval<ARMMax[id])
+                      if allow then DarkText(statval.." CR",780,y,1,0,180,0,255) end
+                      allow = allow and CVV("%CASH")>=statval
+                      r,g,b=80,80,80
+                      if allow then
+                         if my>y and my<y+fonts["StatusStat"][2] then
+                            r,g,b=255,255,255
+                            if mousehit(1) then
+                               SpendMoney(statval)
+                               SFX("Audio/SFX/Shopping/ChaChing.ogg")
+                               if id=="AMMO" then
+                                 RPGChar.Points(pchar,"ARM.AMMO."..cARM).Maximum = RPGChar.Points(pchar,"ARM.AMMO."..cARM).Maximum + 1 
+                               else
+                                 RPGStat.IncStat(pchar,"ARM."..id.."."..cARM,4-skill)
+                                 if ARMMax[id] and RPGStat.Stat(pchar,"ARM."..id.."."..cARM)>ARMMax[id] then RPGStat.DefStat(pchar,"ARM."..id.."."..cARM,ARMMax[id]) end
+                                 end
+                               RPGStat.IncStat(pchar,statname,statval)  
+                               end                               
+                            end                 
+                         DarkText("Upgrade",520,y,0,0,r,g,b)              
+                         end -- allow
+                      end -- for
+                 end -- cARM
+              end -- function
 
 }
 
