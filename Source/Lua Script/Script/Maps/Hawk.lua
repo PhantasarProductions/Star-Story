@@ -104,7 +104,7 @@ end
 
 function NPC_Upgrade()
 if not Done('&INTRODUCED.SEPPAE') then MapText('UPGRADEA') end
-MapText('UPGRADEB')
+MapText('UPGRADE')
 end
 
 function MAP_FLOW()
