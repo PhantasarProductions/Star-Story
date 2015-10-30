@@ -100,10 +100,10 @@ SpecificDraw = {
                  y = 200
                  for id,stat in spairs(ARMStat) do
                       DarkText(stat,300,y,0,0,0,180,255) y = y + fonts["StatusStat"][2];
-                      (({ AMMO = function() DarkText(RPGChar.Points(pchar,"ARM.AMMO."..id).Maximum,500,y,1,0,180,255,0) end,
-                          WEIGHT = function() DarkText("-"..RPGChar.Stat(pchar,"ARM."..id),500,y,1,0,180,255,0) end,
-                          HIT = function() DarkText(RPGChar.Stat(pchar,"ARM."..id).."%",500,y,1,0,180,255,0) end
-                           })[id] or function() DarkText(RPGChar.Stat(pchar,"ARM."..id),500,y,1,0,180,255,0) end)()
+                      (({ AMMO = function() DarkText(RPGChar.Points(pchar,"ARM.AMMO."..cARM).Maximum,500,y,1,0,180,255,0) end,
+                          WEIGHT = function() DarkText("-"..RPGChar.Stat(pchar,"ARM."..cARM),500,y,1,0,180,255,0) end,
+                          HIT = function() DarkText(RPGChar.Stat(pchar,"ARM."..cARM).."%",500,y,1,0,180,255,0) end
+                           })[id] or function() DarkText(RPGChar.Stat(pchar,"ARM."..cARM),500,y,1,0,180,255,0) end)()
                       end
                  end
               end
