@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 15.10.27
+  Version: 15.10.30
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -294,7 +294,7 @@ ABLKIND = {
                  if mousehit(1) then choice=abl end
                  Image.Color(180,180,255)
                  end
-              Image.DText(abldata.Name,x,y,0,2)
+              Image.DText(Var.S(abldata.Name),x,y,0,2)
               Image.Color(255,180,0)
               -- The ammo
               ammo = RPGChar.Points(pchar,"ARM.AMMO."..ablshort,1)
