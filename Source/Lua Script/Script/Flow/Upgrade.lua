@@ -49,6 +49,10 @@ poschar = 0
 SpecificDraw = {
     
     Weapons = function()
+              local y
+              local mx,my = MouseCoords()
+              local upgrades = CVV("%UPGRADES."..upper(pchar))
+              local price
               WeaponImg[pchar] = WeaponImg[pchar] or Image.Load("GFX/Upgrade/"..WeaponFiles[pchar]..".png")
               Image.Show(WeaponImg[pchar])
               SetFont('StatusName')
@@ -57,8 +61,19 @@ SpecificDraw = {
               for i,v in ipairs ( {"Strength", "Defense", "Will", "Resistance","Agility","Accuracy","Evasion"} ) do
                       --Image.Color(0,180,255)
                       y = (i*fonts["StatusStat"][2])+200
+                      local r,g,b = 80,80,80
                       DarkText(v,200,y,0,0,0,180,255)
-                      DarkText(RPGStat.Stat(pchar,"BASE_"..v),1,0,255,180,0)
+                      DarkText(     RPGStat.Stat(pchar,"BASE_"..v),   400,y,1,0,255,180,0)
+                      DarkText("+"..RPGStat.Stat(pchar,"UPGRADE_"..v),500,y,1,0,180,255,0)
+                      if upgrades<maxupgrade then
+                         price = RPGStat.Stat(pchar,"UPGRADE_"..v) * 125
+                         if price==0 then price=250 end
+                         if my>y and y<my+fonts["StatusStat"][2] then
+                            r,g,b=255,255,255
+                            end
+                         DarkText('Upgrade',600,y,0,0,r,g,b)
+                         DarkText(price.." CR",780,y,1,0,180,0,255)
+                         end
                       end
               end,
     ARMS    = function()
