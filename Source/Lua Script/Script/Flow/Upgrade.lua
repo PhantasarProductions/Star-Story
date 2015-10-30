@@ -53,10 +53,12 @@ SpecificDraw = {
               Image.Show(WeaponImg[pchar])
               SetFont('StatusName')
               DarkText(RPGChar.GetName(pchar),300,15,0,0,255,0,0)
+              SetFont('StatusStat')
               for i,v in ipairs ( {"Strength", "Defense", "Will", "Resistance","Agility","Accuracy","Evasion"} ) do
                       --Image.Color(0,180,255)
                       y = (i*fonts["StatusStat"][2])+200
-                      DarkText(v,300,y,0,0,0,180,255)
+                      DarkText(v,200,y,0,0,0,180,255)
+                      DarkText(RPGStat.Stat(pchar,"BASE_"..v),1,0,255,180,0)
                       end
               end,
     ARMS    = function()
