@@ -111,6 +111,7 @@ if poschar>2 then
 end	
 
 function DrawScreen()
+local mx,my = MouseCoords()
 if not InParty(pchar) then pchar=RPGChar.PartyTag(0) poschar=0 end
 Image.Cls(); White()
 Image.Show("MenuBack",0,0)
