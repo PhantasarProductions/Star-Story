@@ -54,10 +54,6 @@ SpecificDraw = {
               local upgrades = CVV("%UPGRADES."..upper(pchar))
               local price
               local r,g,b
-              WeaponImg[pchar] = WeaponImg[pchar] or Image.Load("GFX/Upgrade/"..WeaponFiles[pchar]..".png")
-              Image.Show(WeaponImg[pchar])
-              SetFont('StatusName')
-              DarkText(RPGChar.GetName(pchar),300,15,0,0,255,0,0)
               SetFont('StatusStat')
               DarkText("Upgrades done: "..upgrades.." / "..maxupgrade,400,180,2,1,255,0,180)
               for i,v in ipairs ( {"Strength", "Defense", "Will", "Resistance","Agility","Accuracy","Evasion"} ) do
@@ -118,6 +114,16 @@ function DrawScreen()
 if not InParty(pchar) then pchar=RPGChar.PartyTag(0) poschar=0 end
 Image.Cls(); White()
 Image.Show("MenuBack",0,0)
+WeaponImg[pchar] = WeaponImg[pchar] or Image.Load("GFX/Upgrade/"..WeaponFiles[pchar]..".png")
+Image.Show(WeaponImg[pchar])
+SetFont('StatusName')
+DarkText(RPGChar.GetName(pchar),300,15,0,0,255,0,0)
+if pchar=="Crystal" then
+   for i,gofor in ipairs({"Weapon","ARMS"}) do
+       DarkText(gofor,i*200,125,2,2,({[true]=function() return 0,180,255 end, [false]=function() return 0,100,180 end})[gofor==caction]) -- What? Ugly code? I did prevent an "if" didn't I?
+       if my>100 and my<150 and mx>(i*200)-100 and mx<(i*200)+100 and mousehit(1) then caction=gofor end -- Okay, this time I didn't, makes you able to compare what looks better! :-P       
+       end
+   end
 caction = cation or "Weapons"
 SpecificDraw[caction]()
 ShowPartyPoint()
