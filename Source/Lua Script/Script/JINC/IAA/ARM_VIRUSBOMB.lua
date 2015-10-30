@@ -1,6 +1,6 @@
 --[[
   ARM_VIRUSBOMB.lua
-  Version: 15.10.29
+  Version: 15.10.30
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -35,11 +35,12 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ARM_Hit%"] = 80,
-	["ARM_MaxAmmo"] = 4,
-	["ARM_PRICE_Hit%"] = 750,
-	["ARM_PRICE_MaxAmmo"] = 800,
-	["ARM_PRICE_XPower"] = 1200,
+	["ARM_Hit%"] = 65,
+	["ARM_MaxAmmo"] = 2,
+	["ARM_PRICE_Hit%"] = 7500,
+	["ARM_PRICE_MaxAmmo"] = 2800,
+	["ARM_PRICE_Weight"] = 5000,
+	["ARM_PRICE_XPower"] = 4200,
 	["ARM_XPower"] = 0,
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",

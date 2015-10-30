@@ -1,6 +1,6 @@
 --[[
   ARM_MUNCHHAUSEN.lua
-  Version: 15.10.29
+  Version: 15.10.30
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -39,6 +39,7 @@ ret = {
 	["ARM_MaxAmmo"] = 8,
 	["ARM_PRICE_Hit%"] = 1000,
 	["ARM_PRICE_MaxAmmo"] = 500,
+	["ARM_PRICE_Weight"] = 10,
 	["ARM_XPower"] = 0,
 	["ActSpeed"] = 600,
 	["AttackElement"] = "Non-Elemental",

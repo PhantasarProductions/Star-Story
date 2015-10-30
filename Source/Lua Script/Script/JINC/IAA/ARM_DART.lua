@@ -32,13 +32,14 @@
   
  **********************************************
  
-version: 15.10.29
+version: 15.10.30
 ]]
 ret = {
 	["ARM_Hit%"] = 80,
 	["ARM_MaxAmmo"] = 5,
 	["ARM_PRICE_Hit%"] = 500,
 	["ARM_PRICE_MaxAmmo"] = 700,
+	["ARM_PRICE_Weight"] = 100,
 	["ARM_PRICE_XPower"] = 800,
 	["ARM_XPower"] = 0,
 	["ActSpeed"] = 400,
