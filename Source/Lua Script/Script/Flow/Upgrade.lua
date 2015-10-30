@@ -110,9 +110,9 @@ SpecificDraw = {
                            })[id] or function() DarkText(RPGChar.Stat(pchar,"ARM."..id.."."..cARM),500,y,1,0,180,255,0) end)()
                       y = y + fonts["StatusStat"][2]    
                       allow = true
-                      statname = "ARM."..cARM..".PRICE."..ARM,ARM['ARM_PRICE_'..ARMBase[id]]
+                      statname = "ARM."..cARM..".PRICE."..id,ARM['ARM_PRICE_'..ARMBase[id]]
                       RPGChar.DefStat(pchar,statname,1) -- This will put in the price inside Crystal's record, but only if that record is still empty.
-                      statval = RPGChar.Stat(statname)
+                      statval = RPGChar.Stat(pchar,statname)
                       allow = allow and statval>0
                       allow = allow and ((not ARMMax[id]) or statval<ARMMax[id])
                       if allow then DarkText(statval.." CR",780,y,1,0,180,0,255) end
