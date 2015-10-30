@@ -158,7 +158,8 @@ function SellTaken()
 		item = ItemGet("ITM_"..ChosenItem.Item)
 		SFX("Audio/SFX/Shopping/ChaChing.ogg")
 		ChosenItem = {}
-		inc("%CASH",item.ITM_SellPrice)		
+		inc("%CASH",item.ITM_SellPrice)
+		if InParty("Yirl") then inc('&YIRL.DONE',item.ITM_SellPrice) end		
 	end	
 end
 
@@ -172,7 +173,8 @@ function BuyHover(item,icode,char)
 	end	
 ok = ok and CVV("%CASH")>item.ITM_BuyPrice
 if ok then
-	dec("%CASH",item.ITM_BuyPrice)
+	-- dec("%CASH",item.ITM_BuyPrice)
+	SpendMoney(item.ITM_BuyPrice)
 	SFX("Audio/SFX/Shopping/ChaChing.ogg")
 	end
 end
