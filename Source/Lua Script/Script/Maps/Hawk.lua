@@ -102,6 +102,11 @@ GoToVault()
 end
 
 
+function NPC_Upgrade()
+if not Done('&INTRODUCED.SEPPAE') then MapText('UPGRADEA') end
+MapText('UPGRADEB')
+end
+
 function MAP_FLOW()
 DoSchuif()
 end
