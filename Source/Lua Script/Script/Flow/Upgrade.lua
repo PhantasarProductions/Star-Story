@@ -58,18 +58,40 @@ SpecificDraw = {
 
 }
 
+
+function ShowPartyPoint()
+for i=0,5 do
+    if ClickedChar(i) and RPGChar.PartyTag(i)~="" then
+       poschar = i
+       pchar = RPGChar.PartyTag(i)
+       switched = true
+       end
+    end
+if poschar<3 then
+   Image.Color(0,180,255)
+	 Image.Draw('MenuCharPointer',(poschar*200)+100,450)
+	 end
+ShowParty()
+if poschar>2 then		
+		tpos = poschar - 3
+		Image.Color(0,180,255)
+		Image.Rect(tpos*40+640,550,30,30,1)
+		end		
+end	
+
 function DrawScreen()
 if not InParty(pchar) then pchar=RPGChar.PartyTag(0) poschar=0 end
 Image.Cls(); White()
 Image.Show("MenuBack",0,0)
 caction = cation or "Weapons"
 SpecificDraw[caction]()
-ShowParty()
+ShowPartyPoint()
 ShowMouse()
+switched = false
 end
 
 function CheckCancel()
-if mousehit(2) then LAURA.Flow('FIELD') end
+if mousehit(2) or (ClickedChar(poschar) and (not switched)) then LAURA.Flow('FIELD') end
 end
 
 function MAIN_FLOW()
