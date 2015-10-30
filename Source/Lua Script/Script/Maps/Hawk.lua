@@ -105,6 +105,8 @@ end
 function NPC_Upgrade()
 if not Done('&INTRODUCED.SEPPAE') then MapText('UPGRADEA') end
 MapText('UPGRADE')
+MS.LoadNew("UPGRADE","Script/Flow/Upgrade.lua")
+LAURA.Flow("UPGRADE")
 end
 
 function MAP_FLOW()

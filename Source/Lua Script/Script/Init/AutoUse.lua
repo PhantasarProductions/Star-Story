@@ -1,6 +1,6 @@
 --[[
   AutoUse.lua
-  Version: 15.10.27
+  Version: 15.10.30
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -78,6 +78,7 @@ for s in iJCR6Dir(true) do -- The "true" will return all filenames in CAPS
     end    
 -- General menu
 Image.AssignLoad("MenuBack","GFX/StatusBar/StatusFull.png")    
+Image.AssignLoad("MenuCharPointer","GFX/StatusBar/CharPointer.png");
 -- Combat menu
 for _,s in ipairs({"Bottom","Top","Sides","Item"}) do
     Image.AssignLoad("CMBTM_"..s,"GFX/Combat/PlayerInput/"..s..".png"); CSay("Loaded combat menu asset: "..s)

@@ -370,7 +370,7 @@ end</pre>
 <tr valign=top class=info><td width=200>Name</td><td>Image.AssignLoad</td></tr>
 <tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
 <tr valign=top class=info><td width=200>Syntax</td><td>Image.AssignLoad(Image,File)</td></tr>
-</table><p> Loads an image and assings it automatically to the correct name.
+</table><p> Loads an image and assings it automatically to the correct name. <p><div span='color:#ffff00; background-color: #ff0000'><H1>IMPORTANT NOTE!</H1>As of version 15.10.30 this function has been deprecated. Due some of my projects still using this very much, this function will be kept in for those project's sake, but its usage is strongly discouraged.<p>You can now define tags in the regular Image.Load() and Image.AnimLoad() functions in stead</div>
 </p><hr><a id='Image.Blend' name='Image.Blend'></a><h1>Image.Blend</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
 <tr valign=top class=info><td width=200>Name</td><td>Image.Blend</td></tr>
 <tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
@@ -466,12 +466,12 @@ Image.NoFont() can be used to go back to the default font!
 </p><hr><a id='Image.Load' name='Image.Load'></a><h1>Image.Load</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
 <tr valign=top class=info><td width=200>Name</td><td>Image.Load</td></tr>
 <tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
-<tr valign=top class=info><td width=200>Syntax</td><td>Image.Load(File)</td></tr>
-</table><p> Loads an image (from the JCR file if the project uses that. And it reacts automatically on patches) and stores it into the image buffer and storage and leaves returns an ID to find it back there.<p>When you load mypic.png and mypic.png.hot is loaded the picture will automatically be hotspotted according to the settings inside the .hot file. When a mypic.png.frame file exists, it'll be automatically loaded as an animated picture with the settings inside the file. When the files don't exist they will be ignored. When you want to prevent Image.Load() to check this then set the Image.DontUseSpecial variable to 1.
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.Load(File,Tag="")</td></tr>
+</table><p> Loads an image (from the JCR file if the project uses that. And it reacts automatically on patches) and stores it into the image buffer and storage and leaves returns an ID to find it back there.<p>When you load mypic.png and mypic.png.hot is loaded the picture will automatically be hotspotted according to the settings inside the .hot file. When a mypic.png.frame file exists, it'll be automatically loaded as an animated picture with the settings inside the file. When the files don't exist they will be ignored. When you want to prevent Image.Load() to check this then set the Image.DontUseSpecial variable to 1. <p>If you set a tag, the image will be assigned to the tag you specified. If that tag is already been taken by a different picture, that picture will automatically be released. (The Image.Free() command is then not needed)
 </p><hr><a id='Image.LoadAnim' name='Image.LoadAnim'></a><h1>Image.LoadAnim</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>
 <tr valign=top class=info><td width=200>Name</td><td>Image.LoadAnim</td></tr>
 <tr valign=top class=info><td width=200>Type</td><td>Method</td></tr>
-<tr valign=top class=info><td width=200>Syntax</td><td>Image.LoadAnim(File,W,H,S,A)</td></tr>
+<tr valign=top class=info><td width=200>Syntax</td><td>Image.LoadAnim(File,W,H,S,A,tag="")</td></tr>
 </table><p> Loads an animated image (same way as Image.Load).
 <p>W = Image width<br>H = Image height<br>S = Start frame (leave at 0 unless you know what you are doing)<br>A = Number of animation Frames
 </p><hr><a id='Image.LoadNew' name='Image.LoadNew'></a><h1>Image.LoadNew</h1><table width=80%><tr><td class=head colspan=2 align=center>Overview</td></tr>

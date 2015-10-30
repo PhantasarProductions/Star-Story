@@ -96,7 +96,7 @@ end
 
 function GALE_OnLoad()
 back = "MenuBack"
-chpointer = Image.Load("GFX/StatusBar/CharPointer.png"); Image.HotCenter(chpointer)
+chpointer = 'MenuCharPointer' Image.HotCenter(chpointer)
 invsocket = Image.Load("GFX/StatusBar/ItemSocket.png");  Image.HotCenter(invsocket)
 FeaturePics = {}
 local i,v,k,a

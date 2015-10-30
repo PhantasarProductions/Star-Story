@@ -43,13 +43,13 @@ WeaponFiles = {
               }
 WeaponImg = {}              
               
-pchar = RPGChar.PartyTag(0)              
-maxuprade = ngpcount * 10
+pchar = RPGChar.PartyTag(0)
+poschar = 0              
 
 SpecificDraw = {
     
     Weapons = function()
-              WeaponImg[pchar] = WeaponImg[pchar] or Img.Load("GFX/Upgrade/"..WeaponFiles[pchar]..".png")
+              WeaponImg[pchar] = WeaponImg[pchar] or Image.Load("GFX/Upgrade/"..WeaponFiles[pchar]..".png")
               Image.Show(WeaponImg[pchar])
               end,
     ARMS    = function()
@@ -59,11 +59,13 @@ SpecificDraw = {
 }
 
 function DrawScreen()
-if not inparty(pchar) then pchar=RPGChar.PartyTag(0) end
+if not InParty(pchar) then pchar=RPGChar.PartyTag(0) poschar=0 end
 Image.Cls(); White()
 Image.Show("MenuBack",0,0)
 caction = cation or "Weapons"
 SpecificDraw[caction]()
+ShowParty()
+ShowMouse()
 end
 
 function CheckCancel()
@@ -74,4 +76,8 @@ function MAIN_FLOW()
 DrawScreen()
 Flip()
 CheckCancel()
+end
+
+function GALE_OnLoad()
+maxuprade = ngpcount * 10 -- This must live inside this function or the game will crash.
 end
