@@ -41,7 +41,9 @@ WeaponFiles = {
                     Yirl     = "Ray Gun",
                     Foxy     = "Dagger"
               }
-WeaponImg = {}              
+WeaponImg = {} 
+
+ARMStat = { HIT = "Accuracy", WEIGHT = "Weight", XPOWER = "Extra Power", AMMO = "Max Ammo"}             
               
 pchar = RPGChar.PartyTag(0)
 poschar = 0              
@@ -82,6 +84,23 @@ SpecificDraw = {
               end,
     ARMS    = function()
               if pchar~="Crystal" then caction=Weapons return end
+              local abilities = RPGStat.CountList(pchar,"ARMS")
+              local ARM,ARMName
+              local cARM
+              local y,sy
+              SetFont('StatusStat')
+              for i=1,abilities do
+                  y = (i*fonts["StatusStat"][2])+200
+                  ARMName = RPGStat.ListItem(pchar,"ARMS",ak)
+                  ARM = ItemGet("ARM_"..ARMName)
+                  DarkText(ARM.Name,70,y,0,0,({[true]=function() return 0,180,255 end, [false]=function() return 0,80,100 end})[ARMName==cARM]())
+                  if cARM==ARMName then
+                     sy = 200
+                     for id,stat in spairs(ARMStat) do
+                         DarkText(stat,300,sy,0,0,0,180,255) sy = sy + fonts["StatusStat"][2]
+                         end
+                     end
+                  end
               end
 
 }
@@ -120,12 +139,12 @@ Image.Show(WeaponImg[pchar])
 SetFont('StatusName')
 DarkText(RPGChar.GetName(pchar),300,15,0,0,255,0,0)
 if pchar=="Crystal" then
-   for i,gofor in ipairs({"Weapon","ARMS"}) do
-       DarkText(gofor,i*200,125,2,2,({[true]=function() return 0,180,255 end, [false]=function() return 0,100,180 end})[gofor==caction]) -- What? Ugly code? I did prevent an "if" didn't I?
+   for i,gofor in ipairs({"Weapons","ARMS"}) do
+       DarkText(gofor,i*200,125,2,2,({[true]=function() return 0,180,255 end, [false]=function() return 0,80,100 end})[gofor==caction]()) -- What? Ugly code? I did prevent an "if" didn't I?
        if my>100 and my<150 and mx>(i*200)-100 and mx<(i*200)+100 and mousehit(1) then caction=gofor end -- Okay, this time I didn't, makes you able to compare what looks better! :-P       
        end
    end
-caction = cation or "Weapons"
+caction = caction or "Weapons"
 SpecificDraw[caction]()
 ShowPartyPoint()
 ShowMouse()
