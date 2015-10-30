@@ -59,7 +59,7 @@ SpecificDraw = {
               SetFont('StatusName')
               DarkText(RPGChar.GetName(pchar),300,15,0,0,255,0,0)
               SetFont('StatusStat')
-              DarkText("Upgrades done: "..upgrades.." / "..maxupgrades,400,180,2,1,255,0,180)
+              DarkText("Upgrades done: "..upgrades.." / "..maxupgrade,400,180,2,1,255,0,180)
               for i,v in ipairs ( {"Strength", "Defense", "Will", "Resistance","Agility","Accuracy","Evasion"} ) do
                       --Image.Color(0,180,255)
                       y = (i*fonts["StatusStat"][2])+200
@@ -72,7 +72,7 @@ SpecificDraw = {
                          if price==0 then price=250 end
                          if my>y and my<y+fonts["StatusStat"][2] then
                             r,g,b=255,255,255
-                            if price<=CVV('%CASH') and mousehit(1) then
+                            if upgrades<maxupgrade and price<=CVV('%CASH') and mousehit(1) then
                                SpendMoney(price)
                                SFX("Audio/SFX/Shopping/ChaChing.ogg")
                                RPGStat.IncStat(pchar,"UPGRADE_"..v)
