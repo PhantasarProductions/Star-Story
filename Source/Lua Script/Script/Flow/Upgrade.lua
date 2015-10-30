@@ -109,8 +109,8 @@ SpecificDraw = {
                           HIT = function() DarkText(RPGChar.Stat(pchar,"ARM.HIT."..cARM).."%",500,y,1,0,180,255,0) end
                            })[id] or function() DarkText(RPGChar.Stat(pchar,"ARM."..id.."."..cARM),500,y,1,0,180,255,0) end)()
                       allow = true
-                      statname = "ARM."..cARM..".PRICE."..id,
-                      RPGChar.DefStat(pchar,statname,ARM['ARM_PRICE_'..ARMBase[id]],1) -- This will put in the price inside Crystal's record, but only if that record is still empty.
+                      statname = "ARM."..cARM..".PRICE."..id
+                      if RPGChar.StatExists(pchar,statname)==0 then RPGChar.DefStat(pchar,statname,ARM['ARM_PRICE_'..ARMBase[id]]) end -- This will put in the price inside Crystal's record, but only if that record is still empty.
                       statval = RPGChar.Stat(pchar,statname)
                       allow = allow and statval>0
                       allow = allow and ((not ARMMax[id]) or statval<ARMMax[id])
@@ -133,8 +133,8 @@ SpecificDraw = {
                                end                               
                             end                 
                          DarkText("Upgrade",520,y,0,0,r,g,b)              
-                         y = y + fonts["StatusStat"][2]    
                          end -- allow
+                      y = y + fonts["StatusStat"][2]    
                       end -- for
                  end -- cARM
               end -- function
