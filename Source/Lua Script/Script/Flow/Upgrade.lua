@@ -85,9 +85,8 @@ SpecificDraw = {
     ARMS    = function()
               if pchar~="Crystal" then caction=Weapons return end
               local abilities = RPGStat.CountList(pchar,"ARMS")
-              local ARM,ARMName
-              local cARM
-              local y,sy
+              local ARM,ARMName              
+              local y
               local mx,my = MouseCoords()
               SetFont('StatusStat')
               for i=1,abilities do
@@ -95,12 +94,16 @@ SpecificDraw = {
                   ARMName = RPGStat.ListItem(pchar,"ARMS",i)
                   ARM = ItemGet("ARM_"..ARMName)
                   DarkText(ARM.Name,70,y,0,0,({[true]=function() return 0,180,255 end, [false]=function() return 0,80,100 end})[ARMName==cARM]())
-                  if mx<300 and my>y and my<y+fonts["StatusStat"][2]) then cARM=ARMName end
+                  if mx<300 and my>y and my<y+fonts["StatusStat"][2] and mousehit(1) then cARM=ARMName end
                   end
               if cARM then
-                 sy = 200
+                 y = 200
                  for id,stat in spairs(ARMStat) do
-                      DarkText(stat,300,sy,0,0,0,180,255) sy = sy + fonts["StatusStat"][2]
+                      DarkText(stat,300,y,0,0,0,180,255) y = y + fonts["StatusStat"][2];
+                      (({ AMMO = function() DarkText(RPGChar.Points(pchar,"ARM.AMMO."..id).Maximum,500,y,1,0,180,255,0) end,
+                          WEIGHT = function() DarkText("-"..RPGChar.Stat(pchar,"ARM."..id),500,y,1,0,180,255,0) end,
+                          HIT = function() DarkText(RPGChar.Stat(pchar,"ARM."..id).."%",500,y,1,0,180,255,0) end
+                           })[id] or function() DarkText(RPGChar.Stat(pchar,"ARM."..id),500,y,1,0,180,255,0) end)()
                       end
                  end
               end
