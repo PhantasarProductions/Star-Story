@@ -273,6 +273,18 @@ end
 
 
 function InitPads()
+local
+  function mysplit(inputstr, sep) -- needed because this is called outside the regular load sequence. :(
+        if sep == nil then
+                sep = "%s"
+        end
+        local t={} ; i=1
+        for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
+                t[i] = str
+                i = i + 1
+        end
+        return t
+  end
 local pad
 Maps.Remap()
 -- ActivatedPads = ActivatedPads or {}
@@ -318,7 +330,7 @@ for layer in each(layers) do
     })[obj.Kind] or function() end)()
     end
    end
-if Maps.Multi()==1 then Maps.GotoLayer(layer)   end
+if Maps.Multi()==1 then Maps.GotoLayer(orilayer)   end
 end; InitPads()
 
 
