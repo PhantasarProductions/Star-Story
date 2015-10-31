@@ -64,7 +64,7 @@ for alpha=0,100 do
     Image.SetAlphaPC(alpha)
     Image.Color(0,200,255)
     Image.Rect(0,0,800,600)
-    Image.SetAlphaPC()
+    Image.SetAlphaPC(100)
     ShowParty()
     ShowMessages()
     Flip()
@@ -76,10 +76,10 @@ local sx,sy=0,0
 local alpha = 100
 repeat
     Image.Tile(starfield,sx,sy)
-    Image.SetAlphaPC(alpha)
+    Image.SetAlphaPC(round(alpha))
     Image.Color(0,200,255)
     Image.Rect(0,0,800,600)
-    Image.SetAlphaPC()
+    Image.SetAlphaPC(100)
     Image.Show(cannonball,cx,cy)
     Image.Show(foeimg,cx+(Image.Width(cannonball)/2),cy+5)
     ShowParty()
@@ -94,10 +94,10 @@ until cy<-200 or cx<-100
 SetFont("CombatMessage")
 for i=0,1000 do
     Image.Tile(starfield,sx,sy)
-    Image.SetAlphaPC(alpha)
+    Image.SetAlphaPC(round(alpha))
     Image.Color(0,200,255)
     Image.Rect(0,0,800,600)
-    Image.SetAlphaPC()
+    Image.SetAlphaPC(100)
     ShowParty()
     ShowMessages()
     sx = sx - 2
