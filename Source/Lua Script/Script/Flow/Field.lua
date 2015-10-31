@@ -820,16 +820,16 @@ function SetUpAutoClickables()
 local prefixes = {"NPC_","ARMCHST"}
 local p 
 local layers,orilayer = ({ [0]=function() return {'SL:MAP'},nil end, [1]=function () return mysplit(Maps.Layers(),";"),Maps.LayerCodeName end})[Maps.Multi()]()
-CSay(type(layers).."/"..type(each))
+-- CSay(type(layers).."/"..type(each))
 for layer in each(layers) do
-    if Maps.Multi()==1 then Maps.SetLayer(layer) end
+    if Maps.Multi()==1 then Maps.GotoLayer(layer) end
     for obj in KthuraEach() do
         for p in each(prefixes) do 
             if prefixed(obj.Tag,p) then AddClickable(obj.Tag) CSay(layer..": Autoclickable "..obj.Tag.." added") end
             end
         end
     end
-if Maps.Multi()==1 then Maps.SetLayer(orilayer) end    
+if Maps.Multi()==1 then Maps.GotoLayer(orilayer) end    
 end
 
 

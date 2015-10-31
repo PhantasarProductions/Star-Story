@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.10.22
+Version: 15.10.31
 End Rem
 Strict
 
@@ -150,21 +150,21 @@ Import	tricky_units.advdatetime
 ' Lastly some brl modules I really need
 Import	brl.pngloader
 Import	brl.oggloader
-'Import	brl.freeaudioaudio
-Import	BRL.OpenALAudio
+Import	brl.freeaudioaudio
+'Import	BRL.OpenALAudio  ' OpenAL support temporary removed. Due to a bug in El Capitan this kept on producing bugs. Now we are relying on a deprecated unit, but at least it works for as long as the game's in production.
 Import	brl.glmax2d
 Import	brl.freetypefont
 
 
 ' This line has been put in by recommendation from skidracer to prevent calls to an outdated audio unit.
-SetAudioDriver "OpenAL"
+'SetAudioDriver "OpenAL"
 
 
 GaleCon = New GALEMainCon2
 
 ' Version
 MKL_Lic     "LAURA II - LAURA2.bmx","GNU General Public License 3"
-MKL_Version "LAURA II - LAURA2.bmx","15.10.22"
+MKL_Version "LAURA II - LAURA2.bmx","15.10.31"
 
 ' Platform information
 ?MacOS
