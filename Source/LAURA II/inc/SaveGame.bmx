@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.10.17
+Version: 15.10.31
 End Rem
 
 Function GetActorSaveDump$(SMap:TKthura)
@@ -132,6 +132,24 @@ ClearMap GALE_MapMSSavedVars()
 For Local entry$=EachIn EntryList(BD)
 	If Left(Entry,8)="MS_SAVE/" MapInsert GALE_MapMSSavedVars(),Right(entry,Len(entry)-8),JCR_LoadString(bd,entry)
 	Next
+' Swap files (we must have them before the map is loaded)
+If FileType(Swapdir)
+	?Win32
+	swapdir = Replace(swapdir,"/","\") ' I really need to make sure this is not the evil here.
+	?
+	'If Not DeleteDir(Swapdir,1) GALE_Error "Could not delete original swap dir!"
+	EndIf
+Local Ent:TJCREntry
+Local OSFile$ ' Output Swap file... Not Operating system :-P
+For Local E$ = EachIn EntryList(BD)
+	If Prefixed(E,"SWAP/")
+		Ent = JCR_Entry(BD,E$)
+		OSFile = Swapdir + "/"+Right(Ent.FileName,Len(Ent.FileName)-5)
+		ConsoleWrite "Extracting: "+Ent.FileName,255,95,10
+		If Not CreateDir(ExtractDir(OSFile),1) GALE_Error "Could not create output folder to create swapfile: "+OsFile
+		JCR_Extract BD,E,OSFile,1
+		EndIf
+	Next	
 ' System
 For Local line$=EachIn JCR_ListFile(BD,"LAURA/System")
 	If line
@@ -202,24 +220,6 @@ For Local Line$=EachIn JCR_ListFile(BD,"MAP/Actors")
 	Next	
 'layer = map.getmultilayer(ls[1])	
 If map.multi map.multiremap; Else map.totalremap
-' Swap files
-If FileType(Swapdir)
-	?Win32
-	swapdir = Replace(swapdir,"/","\") ' I really need to make sure this is not the evil here.
-	?
-	'If Not DeleteDir(Swapdir,1) GALE_Error "Could not delete original swap dir!"
-	EndIf
-Local Ent:TJCREntry
-Local OSFile$ ' Output Swap file... Not Operating system :-P
-For Local E$ = EachIn EntryList(BD)
-	If Prefixed(E,"SWAP/")
-		Ent = JCR_Entry(BD,E$)
-		OSFile = Swapdir + "/"+Right(Ent.FileName,Len(Ent.FileName)-5)
-		ConsoleWrite "Extracting: "+Ent.FileName,255,95,10
-		If Not CreateDir(ExtractDir(OSFile),1) GALE_Error "Could not create output folder to create swapfile: "+OsFile
-		JCR_Extract BD,E,OSFile,1
-		EndIf
-	Next
 ' Make sure we are in the correct layer
 DebugLog "Forcing to layer: "+LayerTag
 If Map.Multi laura2maps.GotoLayer LayerTag
