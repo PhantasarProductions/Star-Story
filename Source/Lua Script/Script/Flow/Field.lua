@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.10.27
+  Version: 15.10.31
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -818,12 +818,18 @@ end -- function
 
 function SetUpAutoClickables()
 local prefixes = {"NPC_","ARMCHST"}
-local p
-for obj in KthuraEach() do
-    for p in each(prefixes) do 
-        if prefixed(obj.Tag,p) then AddClickable(obj.Tag) CSay("Autoclickable "..obj.Tag.." added") end
+local p 
+local layers,orilayer = ({ [0]=function() return {'SL:MAP'},nil end, [1]=function () return mysplit(Maps.Layers(),";"),Maps.LayerCodeName end})[Maps.Multi()]()
+CSay(type(layers).."/"..type(each))
+for layer in each(layers) do
+    if Maps.Multi()==1 then Maps.SetLayer(layer) end
+    for obj in KthuraEach() do
+        for p in each(prefixes) do 
+            if prefixed(obj.Tag,p) then AddClickable(obj.Tag) CSay(layer..": Autoclickable "..obj.Tag.." added") end
+            end
         end
     end
+if Maps.Multi()==1 then Maps.SetLayer(orilayer) end    
 end
 
 
