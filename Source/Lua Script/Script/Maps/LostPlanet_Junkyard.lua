@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.28
+version: 15.10.31
 ]]
 
 
@@ -80,7 +80,8 @@ else
 end
 
 function UnderTheShip()
-if CVV("&DONE.OBTAINEDHAWK") then return end
+if Done("&DONE.OBTAINEDHAWK") then return end
+if CVV("&GOT.HAWK") then return end
 PartyPop("Ship")
 MapText("HAWK")
 Maps.Obj.Kill('Shadow',1)
