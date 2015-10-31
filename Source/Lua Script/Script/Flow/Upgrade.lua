@@ -1,6 +1,6 @@
 --[[
   Upgrade.lua
-  Version: 15.10.30
+  Version: 15.10.31
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -125,6 +125,7 @@ SpecificDraw = {
                                SFX("Audio/SFX/Shopping/ChaChing.ogg")
                                if id=="AMMO" then
                                  RPGChar.Points(pchar,"ARM.AMMO."..cARM).Maximum = RPGChar.Points(pchar,"ARM.AMMO."..cARM).Maximum + 1 
+                                 RPGChar.Points(pchar,"ARM.AMMO."..cARM).Have = RPGChar.Points(pchar,"ARM.AMMO."..cARM).Maximum
                                else
                                  RPGStat.IncStat(pchar,"ARM."..id.."."..cARM,4-skill)
                                  if ARMMax[id] and RPGStat.Stat(pchar,"ARM."..id.."."..cARM)>ARMMax[id] then RPGStat.DefStat(pchar,"ARM."..id.."."..cARM,ARMMax[id]) end

@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 15.10.23
+  Version: 15.10.31
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -82,6 +82,7 @@ return ddg>hit
 end
 
 function AblEffect(ag,ai,act,tg,ti)
+if act.HitPercentage and rand(1,100)>act.HitPercentage then Miss(tg,ti) end
 local effect
 local abl=act.Item
 local atkdata
@@ -122,7 +123,7 @@ if abl.AttackPower and abl.AttackPower>0 then
    atkdata = {
        atk = abl.AttackStat,
        def = abl.DefenseStat,
-       mod = abl.AttackPower/100,
+       mod = abl.AttackPower + (act.XPower or 0) / 100,
        element
            = abl.AttackElement
       }
