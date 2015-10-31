@@ -124,18 +124,37 @@ end
 
 
 function ItemEffect(ch,item,socket)
-	
+local abl = item 
+local effect
+if abl.Healing and abl.Healing>0 then
+   (({ Absolute = function()                 
+                 if RPGChar.Points(ch,'HP').Have==RPGChar.Points(ch,'HP').Maximum then CSay("No heal. Already at maximum") return false end
+                 RPGChar.Points(ch,'HP').inc(abl.Healing);
+                 CSay(ch.." has healed "..abl.Healing) 
+                 effect=true 
+                 end,
+      Percent  = function()
+                 if RPGChar.Points(ch,'HP').Have==RPGChar.Points(ch,'HP').Maximum then CSay("No heal. Already at maximum") return false end
+                 local hpt = RPGChar.Points(ch,"HP")
+                 local hpm = hpt.Maximum
+                 local points = (hpm/100)*abl.Healing
+                 RPGChar.Points(ch,'HP').inc(abl.Healing)
+                 effect=true
+                 end
+   })[abl.HealingType] or function() Sys.Error("Unknown healing type: "..sval(abl.HealingType)) end )()               
+   end
+return effect	
 end
 
 function UseItem(pch,item,socket)
 local ch = pch or pchar
 ;(({
      Consumable = function()
-                  if ItemEffect(ch,item) then RPGChar.DecStat("INVAMNT"..socket,1) else MINI("It's senseless to do that now!",255,0,0) end
+                  if ItemEffect(ch,item,socket) then RPGChar.DecStat(ch,"INVAMNT"..socket,1) else MINI("It's senseless to do that now!",255,0,0) end
                   end,
      EndlesslyUsable =
                   function()
-                  if not ItemEffect(ch,item) then MINI("It's senseless to do that now!",255,0,0) end 
+                  if not ItemEffect(ch,item,socket) then MINI("It's senseless to do that now!",255,0,0) end 
                   end,
      KeyItem =    function()
                   MINI("This item is automatically used when it's needed",255,0,0)
