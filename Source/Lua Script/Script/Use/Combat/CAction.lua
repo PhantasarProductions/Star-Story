@@ -135,10 +135,10 @@ if abl.AttackPower and abl.AttackPower>0 then
 if abl.ScriptEffect_Reference and abl.ScriptEffect_Reference~="" then
    if abl.ScriptEffect_External then
       MS.Load("COMBAT_ABLEFFECT","Script/Combat/Effect/"..abl.ScriptEffect_Reference)
-      MS.Run("COMBAT_ABLEFFECT","SCRIPTEFFECT")
+      MS.Run("COMBAT_ABLEFFECT","SCRIPTEFFECT",ag..";"..ai..";"..tg..";"..ti)
       effect = effect or CVV("&RET")
       else
-      effect = effect or AblSpecialEffect[abl.ScriptEffect_Reference]()
+      effect = effect or AblSpecialEffect[abl.ScriptEffect_Reference](ag,ai,tg,ti,act)
       end 
    end
 -- Cause status changes (this must always be the last thing to do)
