@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 15.10.23
+version: 15.10.31
 ]]
 
 
--- Version 15.10.23
+-- Version 15.10.31
 
 
 
@@ -45,7 +45,7 @@ Data = {
 	Desc = "All she will do is to heal her comrades, whether or not any healing is required.",
 	ImageFile = "Reg/Cyborg Medic.png",
 	AI = "Default",
-	Boss = true,
+	Boss = false,
 	EleRes_Fire = 5,
 	EleRes_Wind = 5,
 	EleRes_Water = 5,

@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 15.10.23
+version: 15.10.31
 ]]
 
 
--- Version 15.10.23
+-- Version 15.10.31
 
 
 
@@ -45,7 +45,7 @@ Data = {
 	Desc = "It looks just like a snake, and it's as damn poisonous.",
 	ImageFile = "Reg/Syss.png",
 	AI = "Default",
-	Boss = true,
+	Boss = false,
 	EleRes_Fire = 2,
 	EleRes_Wind = 3,
 	EleRes_Water = 3,

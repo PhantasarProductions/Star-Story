@@ -54,7 +54,10 @@ function AblSpecialEffect.Muenchausen(ag,ai,tg,ti,act)
 local myfoe = Fighters.Foe[ti]
 local cannonball = Image.Load("GFX/Combat/SpellAni/Muenchhaussen/CANNONBALL.PNG")
 local starfield = Image.Load('GFX/Intro/Starfield.png')
-if myfoe.Boss then return end -- does not work on bosses, ha! ha!
+if myfoe.Boss then
+   CSay("Removal rejected. Target is marked as boss enemy!") 
+   return 
+   end -- does not work on bosses, ha! ha!
 -- Fade to the sky
 for alpha=0,100 do
     DrawScreen()

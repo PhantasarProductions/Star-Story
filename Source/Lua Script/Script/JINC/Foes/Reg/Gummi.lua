@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 15.10.23
+version: 15.10.31
 ]]
 
 
--- Version 15.10.23
+-- Version 15.10.31
 
 
 
@@ -45,7 +45,7 @@ Data = {
 	Desc = "A slime like creature living in the Grass Jungle.\nIt's said to be poisonous",
 	ImageFile = "Reg/Gummi.png",
 	AI = "Default",
-	Boss = true,
+	Boss = false,
 	EleRes_Fire = 0,
 	EleRes_Wind = 4,
 	EleRes_Water = 6,

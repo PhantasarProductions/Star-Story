@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 15.10.23
+version: 15.10.31
 ]]
 
 
--- Version 15.10.23
+-- Version 15.10.31
 
 
 
@@ -45,7 +45,7 @@ Data = {
 	Desc = "An Astrilopup with a photon gun.\nBut how did it ever get such a gun?",
 	ImageFile = "Reg/astrilopup.png",
 	AI = "Default",
-	Boss = true,
+	Boss = false,
 	EleRes_Fire = 3,
 	EleRes_Wind = 3,
 	EleRes_Water = 3,

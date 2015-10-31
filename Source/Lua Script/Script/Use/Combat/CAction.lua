@@ -82,7 +82,11 @@ return ddg>hit
 end
 
 function AblEffect(ag,ai,act,tg,ti)
-if act.HitPercentage and rand(1,100)>act.HitPercentage then Miss(tg,ti) end
+local armd100 = rand(1,100)
+if act.HitPercentage and armd100>act.HitPercentage then
+   CSay("ARM Missed due to high roll") 
+   Miss(tg,ti) 
+   end
 local effect
 local abl=act.Item
 local atkdata

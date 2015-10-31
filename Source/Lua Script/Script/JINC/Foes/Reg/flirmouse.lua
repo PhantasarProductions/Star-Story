@@ -1,6 +1,6 @@
 --[[
   flirmouse.lua
-  Version: 15.10.23
+  Version: 15.10.31
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 15.10.23
+-- Version 15.10.31
 
 
 
@@ -45,7 +45,7 @@ Data = {
 	Desc = "A very odd kind of bat who likes to lurk on dark places.\nDue to illegal transportations of these critters they can be found on multiple planets and nobody knows where they originally came from",
 	ImageFile = "Reg/flirmouse.png",
 	AI = "Default",
-	Boss = true,
+	Boss = false,
 	EleRes_Fire = 2,
 	EleRes_Wind = 3,
 	EleRes_Water = 2,

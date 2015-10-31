@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 15.10.23
+version: 15.10.31
 ]]
 
 
--- Version 15.10.23
+-- Version 15.10.31
 
 
 
@@ -45,7 +45,7 @@ Data = {
 	Desc = "An expert with a photon gun.",
 	ImageFile = "Reg/Cyborg Gunner.png",
 	AI = "Default",
-	Boss = true,
+	Boss = false,
 	EleRes_Fire = 5,
 	EleRes_Wind = 5,
 	EleRes_Water = 1,

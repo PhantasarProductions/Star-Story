@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 15.10.23
+version: 15.10.31
 ]]
 
 
--- Version 15.10.23
+-- Version 15.10.31
 
 
 
@@ -45,7 +45,7 @@ Data = {
 	Desc = "A rodent that always appears in places where they are not welcome.",
 	ImageFile = "Reg/Rat.png",
 	AI = "Default",
-	Boss = true,
+	Boss = false,
 	EleRes_Fire = 0,
 	EleRes_Wind = 3,
 	EleRes_Water = 3,

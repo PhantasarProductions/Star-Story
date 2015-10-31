@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 15.10.23
+version: 15.10.31
 ]]
 
 
--- Version 15.10.23
+-- Version 15.10.31
 
 
 
@@ -45,7 +45,7 @@ Data = {
 	Desc = "She used to be captain in rank, but what can she do now, now that her mind is erased?",
 	ImageFile = "Reg/Cyborg Captain.png",
 	AI = "Default",
-	Boss = true,
+	Boss = false,
 	EleRes_Fire = 6,
 	EleRes_Wind = 6,
 	EleRes_Water = 6,
