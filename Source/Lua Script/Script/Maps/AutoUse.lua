@@ -257,7 +257,21 @@ ActivatePad(tag,"ReturnOnly")
 Actors.StopWalking("PLAYER")
 Actors.StopMoving("PLAYER")
 Actors.MoveToSpot("PLAYER","Trans.Spot."..tag)
-MINI("Return only transporter routine not yet present")
+;({
+     
+     function() -- Beam me up, Scotty!
+     if not CVV("&GOT.HAWK") then SerialBoxText("SCOTTY","NOSHIP") return end
+     Award("SCENARIO_BEAMMEUP")
+     TelEffect(TEL_OUT)
+     LoadMap("Hawk","Bridge")
+     SpawnPlayer("Scotty","South")
+     -- MINI("Beaming up not yet properly set up")
+     end,
+     
+     function() -- Cancel 
+     end,
+     })[RunQuestion("SCOTTY","RETURNONLY")]()
+
 end
 
 function RecoveryPad(tag)
