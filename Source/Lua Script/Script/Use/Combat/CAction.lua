@@ -127,7 +127,7 @@ if abl.AttackPower and abl.AttackPower>0 then
    atkdata = {
        atk = abl.AttackStat,
        def = abl.DefenseStat,
-       mod = abl.AttackPower + (act.XPower or 0) / 100,
+       mod = (abl.AttackPower + (act.XPower or 0)) / 100,
        element
            = abl.AttackElement
       }
