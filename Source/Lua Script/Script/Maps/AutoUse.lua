@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 15.10.28
+  version: 15.10.31
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -288,7 +288,10 @@ local function dimnonactive(tag)
          Maps.Obj.Obj("Trans.Pad."..tag).TextureFile = "GFX/Textures/Teleporter Pad/Deactivated.png" 
          end
       end
-for obj in KthuraEach() do    
+local layers,orilayer = ({ [0]=function() return {'SL:MAP'},nil end, [1]=function () return mysplit(Maps.Layers(),";"),Maps.LayerCodeName end})[Maps.Multi()]()
+for layer in each(layers) do      
+  if Maps.Multi()==1 then Maps.GotoLayer(layer) end
+  for obj in KthuraEach() do    
     (({
       ["$TransporterGeneral"] = function() 
                                 Console.Write("Get pad : "..puretag(obj.Tag),255,255,255)
@@ -314,6 +317,8 @@ for obj in KthuraEach() do
                                 end                          
     })[obj.Kind] or function() end)()
     end
+   end
+if Maps.Multi()==1 then Maps.GotoLayer(layer)   end
 end; InitPads()
 
 
