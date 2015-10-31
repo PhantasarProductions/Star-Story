@@ -330,7 +330,7 @@ for layer in each(layers) do
     })[obj.Kind] or function() end)()
     end
    end
-if Maps.Multi()==1 then Maps.GotoLayer(orilayer)   end
+-- if Maps.Multi()==1 and orilayer~="" then Console.Write("Going back to original: "..orilayer,180,255,0)  Maps.GotoLayer(orilayer)   end
 end; InitPads()
 
 
