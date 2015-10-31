@@ -86,6 +86,7 @@ local armd100 = rand(1,100)
 if act.HitPercentage and armd100>act.HitPercentage then
    CSay("ARM Missed due to high roll") 
    Miss(tg,ti) 
+   return
    end
 local effect
 local abl=act.Item
