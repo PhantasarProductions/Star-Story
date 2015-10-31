@@ -40,9 +40,9 @@ AblSpecialEffect = {}
 -- @FI
 
 function AblSpecialEffect.RemoveEnemy(ag,ai,tg,ti,act)
-if myfoe.Boss then return end -- does not work on bosses, ha! ha!
 -- Remove the enemy from memory
 local myfoe = Fighters.Foe[ti]           
+if myfoe.Boss then return end -- does not work on bosses, ha! ha!
 Fighters.Foe[ti] = nil
 if RPGChar.CharExists(myfoe.Tag)==1 then RPGStat.DelChar(myfoe.Tag) else CSay("!! WARNING !! Tried to destroy non-existent foe: "..myfoe.Tag) end
 -- Optimize time gauge
@@ -75,24 +75,26 @@ local foeimg = "O"..myfoe.Tag
 local sx,sy=0,0
 local alpha = 100
 repeat
+    White()
     Image.Tile(starfield,sx,sy)
     Image.SetAlphaPC(round(alpha))
     Image.Color(0,200,255)
     Image.Rect(0,0,800,600)
     Image.SetAlphaPC(100)
+    White()
     Image.Show(cannonball,cx,cy)
     Image.Show(foeimg,cx+(Image.Width(cannonball)/2),cy+5)
     ShowParty()
     ShowMessages()
     Flip()
-    cy = cy - 1
-    cx = cx - .4
-    sx = sx - 2
-    sy = sy - 4
-    alpha = alpha - .2
+    cy = cy - 1.5
+    cx = cx - .6
+    sx = sx + 2
+    sy = sy + 4
+    alpha = alpha - .1
 until cy<-200 or cx<-100
-SetFont("CombatMessage")
-for i=0,1000 do
+for i=0,500 do
+    White()
     Image.Tile(starfield,sx,sy)
     Image.SetAlphaPC(round(alpha))
     Image.Color(0,200,255)
@@ -100,12 +102,13 @@ for i=0,1000 do
     Image.SetAlphaPC(100)
     ShowParty()
     ShowMessages()
-    sx = sx - 2
-    sy = sy - 4
-    alpha = alpha - .2
+    sx = sx + 2
+    sy = sy + 4
+    alpha = alpha - .1
     Image.Color(255,180,0)
-    if i>400 then Image.DText("Bye!",200,200) end
-    if i>750 then Image.DText("Bye!",300,300) end
+    SetFont("CombatMessage")    
+    if i>200 then Image.DText("Bye!",200,200) end
+    if i>300 then Image.DText("Bye!",300,300) end
     Flip()
     end
 AblSpecialEffect.RemoveEnemy(ag,ai,tg,ti,act)                    
