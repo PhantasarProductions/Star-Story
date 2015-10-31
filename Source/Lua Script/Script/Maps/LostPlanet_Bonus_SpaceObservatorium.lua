@@ -53,8 +53,8 @@ space.H=700
 end
 
 function CLICK_ARRIVAL_EntranceConsole()
-local d = Done('&DONE.ENTRANCE.OBSERVATORIUM')
 if GetActive()~="Wendicka" then return MapText("UNIX.NOTWENDICKA") end
+local d = Done('&DONE.ENTRANCE.OBSERVATORIUM')
 if not d then MapText('UNIX1') end
 SetSchuif("UnixD1L","Open")
 SetSchuif("UnixD1R","Open")
