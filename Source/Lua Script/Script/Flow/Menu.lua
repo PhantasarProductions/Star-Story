@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 15.10.30
+  Version: 15.10.31
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -714,7 +714,9 @@ ClickArray = {
             local ak
             for ak=0,5 do
                 if ClickedChar(ak) then
-                   if ak==pcharn then ReturnItem() LAURA.FLOW("FIELD") else pcharn=ak; pchar=RPGChar.PartyTag(pcharn) end
+                   if ak==pcharn then
+                      if ChosenItem.Taken then MINI("Better put that item somewhere first!") else LAURA.FLOW("FIELD") end else pcharn=ak; pchar=RPGChar.PartyTag(pcharn) 
+                      end
                    end
                 end
             end,
@@ -722,7 +724,9 @@ ClickArray = {
             local ak
             for ak=0,5 do
                 if ClickedChar(ak) then
-                   if ak==pcharn then ReturnItem() LAURA.FLOW("FIELD") else pcharn=ak; pchar=RPGChar.PartyTag(pcharn) end
+                   if ak==pcharn then
+                      if ChosenItem.Taken then MINI("Better put that item somewhere first!") else LAURA.FLOW("FIELD") end else pcharn=ak; pchar=RPGChar.PartyTag(pcharn) 
+                      end
                    end
                 end
             end,
@@ -730,7 +734,9 @@ ClickArray = {
             local ak
             for ak=0,5 do
                 if ClickedChar(ak) then
-                   if ak==pcharn then ReturnItem() LAURA.FLOW("FIELD") else pcharn=ak; pchar=RPGChar.PartyTag(pcharn) end
+                   if ak==pcharn then
+                      if ChosenItem.Taken then MINI("Better put that item somewhere first!") else LAURA.FLOW("FIELD") end else pcharn=ak; pchar=RPGChar.PartyTag(pcharn) 
+                      end
                    end
                 end
             end,
