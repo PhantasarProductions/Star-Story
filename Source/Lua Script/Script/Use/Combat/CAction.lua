@@ -40,6 +40,7 @@ local ch = FighterTag(ag,ai) --RPGChar.PartyTag(ag,ai)
 local tg,ti = TargetFromAct(act)
 local item = act.Item
 if not item.SpellAni_Reference then return end
+White();
 ({[true] = function()
            local ref = item.SpellAni_Reference
            if not suffixed(upper(ref),".LUA") then ref = ref .. ".lua" end
@@ -176,6 +177,7 @@ CSay(sval(ag).."["..sval(ai).."]: "..sval(ch).." shoots")
 -- Animate character 
 SpriteAnim[ag](ai,act)
 -- SpellAni for the projectile
+White()
 RPGChar.NewData(ch,"ShootSpellAni","PhotonGun") -- If not properly set, we'll assume the photon gun animation is required. 
 SpellAni[RPGChar.GetData(ch,"ShootSpellAni")](ag,ai,tg,ti)
 -- Perform Attack
