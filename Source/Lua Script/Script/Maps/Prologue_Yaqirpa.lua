@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.28
+version: 15.10.31
 ]]
 
 -- @UNDEF TRAPDEBUG
@@ -302,6 +302,8 @@ function GALE_OnLoad()
 SetActive("UniWendicka")
 CSay("Welcome to the Yaqirpa")
 Music("Dungeon/Opening Theme C")
+Maps.Obj.Kill("Trans.Pad.YaqirpaStart")
+Maps.Obj.Kill("Trans.Pad.YaqirpaTop")
 if not CVV("&DUNG.YAQIRPA") then
   MS.LoadNew("FIELD","Script/Flow/Field.lua") 
   MS.Run("FIELD","SetPlayer","ActWendicka") 
