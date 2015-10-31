@@ -1,6 +1,6 @@
 --[[
   CPlayerInput.lua
-  Version: 15.10.24
+  Version: 15.10.31
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -63,6 +63,7 @@ SelectTarget = {
                  local group,i,f
                  local fx,fy
                  local mx,my = MouseCoords()
+                 local marx,mary -- margins for targeting.
                  -- @IF TARGETDEBUGGING
                  local debugy = 15
                  -- @FI
@@ -82,7 +83,13 @@ SelectTarget = {
                          DarkText("Target>  "..group.."["..i.."] on coordinates ("..fx..","..fy..")",5,debugy) debugy=debugy+15
                          Marker(fx,fy)
                          -- @FI
-                         if mx>fx-16 and mx<fx+16 and my>fy-32 and my<fy then
+                         marx,mary = ({
+                             Hero = function() return 16,32 end,
+                             Foe = function()
+                                   local myfoe = Fighters[group][i]
+                                   return Image.Width('O'..myfoe.Tag)/2,Image.Height('O'..myfoe.Tag) 
+                                   end })[group]()
+                         if mx>fx-marx and mx<fx+marx and my>fy-mary and my<fy then
                             TargetedGroup = group
                             TargetedFighter = i
                             -- @IF TARGETDEBUGGING
