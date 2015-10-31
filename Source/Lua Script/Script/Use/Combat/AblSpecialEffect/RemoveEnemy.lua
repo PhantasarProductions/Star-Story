@@ -65,14 +65,15 @@ for alpha=0,100 do
     Image.Color(0,200,255)
     Image.Rect(0,0,800,600)
     Image.SetAlphaPC()
-    DrawParty()
+    ShowParty()
     ShowMessages()
+    Flip()
     end
 local cx,cy=700,800
 local skyalpha=100
 local foeimg = "O"..myfoe.Tag
 local sx,sy=0,0
-local alpha
+local alpha = 100
 repeat
     Image.Tile(starfield,sx,sy)
     Image.SetAlphaPC(alpha)
@@ -81,8 +82,9 @@ repeat
     Image.SetAlphaPC()
     Image.Show(cannonball,cx,cy)
     Image.Show(foeimg,cx+(Image.Width(cannonball)/2),cy+5)
-    DrawParty()
+    ShowParty()
     ShowMessages()
+    Flip()
     cy = cy - 1
     cx = cx - .4
     sx = sx - 2
@@ -96,7 +98,7 @@ for i=0,1000 do
     Image.Color(0,200,255)
     Image.Rect(0,0,800,600)
     Image.SetAlphaPC()
-    DrawParty()
+    ShowParty()
     ShowMessages()
     sx = sx - 2
     sy = sy - 4
@@ -104,6 +106,7 @@ for i=0,1000 do
     Image.Color(255,180,0)
     if i>400 then Image.DText("Bye!",200,200) end
     if i>750 then Image.DText("Bye!",300,300) end
+    Flip()
     end
 AblSpecialEffect.RemoveEnemy(ag,ai,tg,ti,act)                    
 return true   
