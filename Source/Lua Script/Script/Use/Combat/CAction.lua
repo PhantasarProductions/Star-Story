@@ -132,6 +132,15 @@ if abl.AttackPower and abl.AttackPower>0 then
    effect=true
    end
 -- Scripted stuff
+if abl.ScriptEffect_Reference and abl.ScriptEffect_Reference~="" then
+   if abl.ScriptEffect_External then
+      MS.Load("COMBAT_ABLEFFECT","Script/Combat/Effect/"..abl.ScriptEffect_Reference)
+      MS.Run("COMBAT_ABLEFFECT","SCRIPTEFFECT")
+      effect = effect or CVV("&RET")
+      else
+      effect = effect or AblSpecialEffect[abl.ScriptEffect_Reference]()
+      end 
+   end
 -- Cause status changes (this must always be the last thing to do)
 for i,y in spairs(abl) do
     if prefixed(i,'Cause') and y then

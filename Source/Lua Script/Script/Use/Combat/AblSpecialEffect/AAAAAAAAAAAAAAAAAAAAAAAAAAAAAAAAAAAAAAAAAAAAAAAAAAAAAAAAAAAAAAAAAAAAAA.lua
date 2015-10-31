@@ -1,5 +1,5 @@
 --[[
-  ABL_FOXY_MULTISTAB.lua
+  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.lua
   Version: 15.10.31
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -34,28 +34,4 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-ret = {
-	["ABL_AP"] = 25,
-	["ABL_APCut"] = 15000,
-	["ABL_Cancel"] = 100,
-	["ABL_DblPower"] = 50000,
-	["ABL_Instant"] = 1500,
-	["ABL_Pose"] = "Attack",
-	["ABL_Speed"] = 500,
-	["ActSpeed"] = 250,
-	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 100,
-	["AttackStat"] = "Strength",
-	["DefenseStat"] = "Defense",
-	["Description"] = "Quick attack on multiple targets",
-	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Inventory/Dagger.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Multi-stab",
-	["Target"] = "1F",
-	["UseCombat"] = true}
-
-return ret
-
--- This file is an automatically generated file!
-
+AblSpecialEffect = {}

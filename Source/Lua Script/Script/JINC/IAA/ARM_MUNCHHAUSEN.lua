@@ -1,6 +1,6 @@
 --[[
   ARM_MUNCHHAUSEN.lua
-  Version: 15.10.30
+  Version: 15.10.31
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -50,6 +50,7 @@ ret = {
 	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "M<uuml>nchhausen",
+	["ScriptEffect_Reference"] = "Muenchausen",
 	["Target"] = "1F",
 	["UseCombat"] = true}
 
