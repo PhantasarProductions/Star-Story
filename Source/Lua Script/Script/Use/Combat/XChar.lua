@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.24
+version: 15.11.01
 ]]
 
 -- Kills for ExHuRU (and his "representatives")  
@@ -170,6 +170,7 @@ XCharAttacked = {
     Yirl = function(attackergroup,attackerindividual)
              if attackergroup=='Hero' then return end
     		     if rand(1,100)>25 then return end  
+    		     if RPGChar.Points('Yirl',"AMMO").Have==0 then return end -- Yirl needs at least one bullet to do this.
              MS.LoadNew("BOXTEXT","Script/SubRoutines/BoxText.lua")
              MS.Run("BOXTEXT","RemoveData","NEWABILITY")
              MS.Run("BOXTEXT","LoadData","GENERAL/COMBAT;NEWABILITY")
@@ -178,7 +179,7 @@ XCharAttacked = {
              for i=0,5 do 
              	   if RPGStat.PartyTag(i)=="Yirl" then pos = i end
              	   end
-             ActionFuncs.ATK('Hero',pos+1,{TargetGroup='Foe',TargetIndividual=attackerindividual})
+             ActionFuncs.SHT('Hero',pos+1,{TargetGroup='Foe',TargetIndividual=attackerindividual, Action='SHT'})
              return true
              end,
 

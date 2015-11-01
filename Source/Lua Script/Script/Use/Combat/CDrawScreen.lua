@@ -1,6 +1,6 @@
 --[[
   CDrawScreen.lua
-  Version: 15.09.16
+  Version: 15.11.01
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -136,6 +136,7 @@ DrawFighters()
 ShowCharReports()
 ShowMessages()
 if not noparty then ShowParty() end
+White()
 end
 
 function BoxTextBackGround()
