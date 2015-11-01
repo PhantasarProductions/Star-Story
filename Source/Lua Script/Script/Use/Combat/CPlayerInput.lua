@@ -1,6 +1,6 @@
 --[[
   CPlayerInput.lua
-  Version: 15.10.31
+  Version: 15.11.01
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -89,7 +89,8 @@ SelectTarget = {
                                    local myfoe = Fighters[group][i]
                                    return Image.Width('O'..myfoe.Tag)/2,Image.Height('O'..myfoe.Tag) 
                                    end })[group]()
-                         if mx>fx-marx and mx<fx+marx and my>fy-mary and my<fy then
+                         TargetedGroup = nil          
+                         if (not TargetedGroup) and mx>fx-marx and mx<fx+marx and my>fy-mary and my<fy and (group=='Hero' or Image.Collision("COLPT",mx,my,'O'..myfoe.Tag,fx,fy)==1) then -- The collision check as been set last on purpose, making Lua only check it if all other conditions are true. That should win some performance.
                             TargetedGroup = group
                             TargetedFighter = i
                             -- @IF TARGETDEBUGGING
