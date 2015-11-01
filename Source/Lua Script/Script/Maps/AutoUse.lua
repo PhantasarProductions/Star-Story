@@ -398,6 +398,7 @@ function KickReggie(direction,foxy,reggie)
 	else
 	  foxyoriginalimg = foxyobj.TextureFile 
 	  foxyobj.TextureFile = "GFX/ACTORS/PLAYER/Foxy."..direction..".png"
+	  foxyobj.Frame=1
 	end
 	-- Make Reggie fly
 	reggiexy = {reggieobj.X,reggieobj.Y}
@@ -407,16 +408,17 @@ function KickReggie(direction,foxy,reggie)
 	reggieobj.Y = reggieobj.Y + reggiego.Y
 	DrawScreen()
 	Flip()
-	until Maps.Block(reggieobj.X+reggiego.X,reggieobj.Y+reggiego.Y)
+	until Maps.Block(reggieobj.X+reggiego.X,reggieobj.Y+reggiego.Y)~=0
 	-- Cuckoo
 	SFX("Audio/SFX/Cuckoo-Clock-Sound.ogg")
-	Time.Sleep(1500)
+	Time.Sleep(2000)
 	-- Restore Foxy
 	if Maps.Obj.Kind(foxy) == 'Actor' then					
 		Actors.ChoosePic(foxy,foxyoriginalimg)
 		Actors.Actor("foxy").Frame=0
 	else	    
 	  foxyobj.TextureFile = foxyoriginalimg
+	  foxyobj.Frame=0
 	end
 	-- Make Reggie go back
 	repeat

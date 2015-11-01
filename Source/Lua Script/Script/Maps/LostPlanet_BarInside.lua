@@ -90,6 +90,7 @@ function NPC_Yirl()
 	Actors.ChoosePic("PLAYER","WENDICKA.SOUTH")
 	MapText("CAPTURED")
 	for i=0,100 do
+	  Image.Cls()
 		Maps.Obj.Obj("KijkGat").Alpha = Maps.Obj.Obj("KijkGat").Alpha - 0.01
 		Maps.Draw()
 		Flip()
@@ -101,7 +102,7 @@ function NPC_Yirl()
 		if ak~=6 then KickReggie(({"West","East"})[rand(1,2)],'Foxy','Reggie') end
 	end
 	Done("&DONE.YIRLJOIN")
-	for c in each({"Crystal","ExHuRU","Yirl","Foxy"}) do Maps.Obj.Kill(c,1) end
+	for c in each({"Crystal","ExHuRU","Yirl","Foxy","Reggie"}) do Maps.Obj.Kill(c,1) end
 	Actors.Actor("PLAYER").y = Actors.Actor("PLAYER").y - 32
 	Maps.Remap()
 end
