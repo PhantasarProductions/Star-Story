@@ -32,12 +32,14 @@
   
  **********************************************
  
-version: 15.10.30
+version: 15.11.01
 ]]
 
 -- @USEDIR Script/Use/Maps/Hawk/
 -- @USE /Script/Use/Maps/Gen/Schuif.lua
 -- I chose this method in order not to have to change this script (and thus changing stuff in the demo when I don't need to) for any new location you may visit.
+
+ReggieKick = {} -- Should contain all events that leads to Foxy kicking Reggie.
 
 HeroLeadList = {"Wendicka","Crystal","Yirl","Foxy","Xenobi","ExHuRU","Rolf"}
 
@@ -72,6 +74,11 @@ function CLICK_ARRIVAL_Hawk_Yirl()		TalkParty("Yirl") end
 function CLICK_ARRIVAL_Hawk_Foxy()		TalkParty("Foxy") end
 function CLICK_ARRIVAL_Hawk_Reggie()	TalkParty("Reggie") end
 function CLICK_ARRIVAL_Hawk_Rolf()		TalkParty("Rolf") end
+function CLICK_ARRIVAL_Hawk_Reggie()
+TalkParty("Reggie")
+if ReggieKick[CVV('$HAWK')] then KickReggie("South","Hawk_Foxy","Hawk_Reggie") end 
+end
+
 
 function CLICK_ARRIVAL_Terminal()
 if not Done("&TUT.TERMINAL") then MapText("TERMINALTUTORIAL") end
@@ -136,6 +143,7 @@ for ch in each(HeroLeadList) do
        Maps.Obj.Kill("Hawk_"..ch)
        end   
     end
+if not InParty('Foxy') then Maps.Obj.Kill("Hawk_Reggie_"..ch) else AddClickable('Hawk_Reggie') end    
 SetActive(HeroLead)    
 CSay("The controllable character in the Hawk will be: "..HeroLead)
 -- Let's select the music. Since you get here a lot, I see fit in the possibility to randomize the music, though in the demo I'll keep it to one track only (as the demo ends here).
