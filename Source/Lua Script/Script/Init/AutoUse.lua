@@ -57,7 +57,7 @@ function LoadBaseGraphics()
 local e,s
 CSay("Loading Graphics")
 Image.AssignLoad("MOUSE","GFX/CURSOR/Default.PNG")
-Image.AssignLoad("COLPT","GFX/CURSOR/Collision.PNG") -- This picture will NEVER be shown, only be used for collision checks.
+Image.AssignLoad("COLPT","GFX/CURSOR/Colission.PNG") -- This picture will NEVER be shown, only be used for collision checks.
 Image.AssignLoad("COMBATGAUGE","GFX/Combat/TimeGauge.png")
 Image.AssignLoad("COMBATGAUGEPOINTHERO","GFX/Combat/HeroTimePointer.png");  Image.Hot("COMBATGAUGEPOINTHERO",10,45)
 Image.AssignLoad("COMBATGAUGEPOINTFOE" ,"GFX/Combat/FoeTimePointer.png");   Image.Hot("COMBATGAUGEPOINTFOE", 10, 0)

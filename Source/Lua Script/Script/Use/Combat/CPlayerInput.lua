@@ -90,7 +90,7 @@ SelectTarget = {
                                    return Image.Width('O'..myfoe.Tag)/2,Image.Height('O'..myfoe.Tag) 
                                    end })[group]()
                          TargetedGroup = nil          
-                         if (not TargetedGroup) and mx>fx-marx and mx<fx+marx and my>fy-mary and my<fy and (group=='Hero' or Image.Collision("COLPT",mx,my,'O'..myfoe.Tag,fx,fy)==1) then -- The collision check as been set last on purpose, making Lua only check it if all other conditions are true. That should win some performance.
+                         if (not TargetedGroup) and mx>fx-marx and mx<fx+marx and my>fy-mary and my<fy and (group=='Hero' or Image.Collision("COLPT",mx,my,'O'..Fighters[group][i].Tag,fx,fy)==1) then -- The collision check as been set last on purpose, making Lua only check it if all other conditions are true. That should win some performance.
                             TargetedGroup = group
                             TargetedFighter = i
                             -- @IF TARGETDEBUGGING
