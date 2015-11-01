@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.14
+version: 15.11.01
 ]]
 
 
@@ -98,7 +98,7 @@ function NPC_Yirl()
 	Maps.PermaWrite('Maps.Obj.Obj("KijkGat").Visible=0')
 	for ak=2,6 do
 		MapText("CAPTURED_"..ak)
-		if ak~=6 then KickReggie(({"West","East"})[rand(1,2)],false) end
+		if ak~=6 then KickReggie(({"West","East"})[rand(1,2)],'Foxy','Reggie') end
 	end
 	Done("&DONE.YIRLJOIN")
 	for c in each({"Crystal","ExHuRU","Yirl","Foxy"}) do Maps.Obj.Kill(c,1) end

@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 15.10.31
+  version: 15.11.01
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -383,16 +383,50 @@ if Done("&ANNOUNCEDSECRET."..upper(Maps.CodeName)) then return end
 SerialBoxText("SECRETDUNGEON","SECRETDUNGEON","BOXTEXT.KTHURA")
 end
 
-function KickReggie(direction,foxy)
-	-- Turn Foxy if possible
-	if foxy~=false then
-		Actors.ChoosePic(foxy or "PLAYER","FOXY."..direction)
+function KickReggie(direction,foxy,reggie)
+  local dw = Actors.DontWarn
+  Actors.DontWarn = 1
+  local foxyobj = Maps.Obj.Obj(foxy)
+  local reggieobj = Maps.Obj.Obj(reggie)
+  local foxyoriginalimg
+  local reggiexy,reggiego
+	-- Move Foxy
+	if Maps.Obj.Kind(foxy) == 'Actor' then	
+		foxyoriginalimg = Actors.Actor("foxy").ChosenPic		
+		Actors.ChoosePic(foxy,"FOXY."..upper(direction))
+		Actors.Actor("foxy").Frame=1
+	else
+	  foxyoriginalimg = foxyobj.TextureFile 
+	  foxyobj.TextureFile = "GFX/ACTORS/PLAYER/Foxy."..direction..".png"
 	end
 	-- Make Reggie fly
+	reggiexy = {reggieobj.X,reggieobj.Y}
+	reggiego = ( { NORTH = {X=0,Y=-2}, SOUTH={X=0,Y=2}, WEST={X=-2,Y=0}, EAST={X=2,Y=0}} )[upper(direction)]
+	repeat
+	reggieobj.X = reggieobj.X + reggiego.X
+	reggieobj.Y = reggieobj.Y + reggiego.Y
+	DrawScreen()
+	Flip()
+	until Maps.Block(reggieobj.X+reggiego.X,reggieobj.Y+reggiego.Y)
 	-- Cuckoo
 	SFX("Audio/SFX/Cuckoo-Clock-Sound.ogg")
-	Time.Sleep(500)
+	Time.Sleep(1500)
+	-- Restore Foxy
+	if Maps.Obj.Kind(foxy) == 'Actor' then					
+		Actors.ChoosePic(foxy,foxyoriginalimg)
+		Actors.Actor("foxy").Frame=0
+	else	    
+	  foxyobj.TextureFile = foxyoriginalimg
+	end
 	-- Make Reggie go back
+	repeat
+	reggieobj.X = reggieobj.X - reggiego.X
+	reggieobj.Y = reggieobj.Y - reggiego.Y
+	DrawScreen()
+	Flip()
+	until reggieobj.X == reggiexy[1] and reggieobj.Y==reggiexy[2]	
+	-- Restore DontWarn
+	Actors.DontWarn = dw
 end
 
 	

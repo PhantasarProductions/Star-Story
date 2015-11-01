@@ -59,7 +59,7 @@ glitch | 2 | Art;
 hatalar205 | 1 | Art; 
 http://www.freesfx.co.uk | 1 | Audio; 
 jonata | 2 | Art; 
-jpd2010 | 1 | Art; 
+jpd2010 | 3 | Art; 
 jphandrigan | 1 | Art; 
 kg | 1 | Art; 
 pitr | 1 | Art; 
