@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.16
+version: 15.11.01
 ]]
 
 function CLICK_ARRIVAL_Vlag_Brabant()
@@ -205,9 +205,9 @@ Flip()
 until ok  
 TurnPlayer("South")
 MapText("EXHURU_BREAK")
-Actors.MoveToSpot("ExHuRU","Crystal")
+Actors.MoveToSpot("ExHuRU","Crystal",1)
 MapText("EXHURU_CRYSTAL")
-Actors.MoveToSpot("ExHuRU","ExHuRU_Spot")
+Actors.MoveToSpot("ExHuRU","ExHuRU_Spot",1)
 Actors.ChoosePic("ExHuRU","EXHURU.EAST")
 TurnPlayer("West")
 MapText("EXHURU_COMEWITHME")
