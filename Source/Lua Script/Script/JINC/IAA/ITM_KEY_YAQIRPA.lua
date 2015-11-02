@@ -40,7 +40,8 @@ ret = {
 	["Name"] = "Gold Yaqirpa Key",
 	["Target"] = "1F",
 	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseField"] = true,
+	["untauntable"] = true}
 
 return ret
 

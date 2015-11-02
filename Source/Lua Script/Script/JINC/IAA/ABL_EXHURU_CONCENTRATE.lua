@@ -49,7 +49,8 @@ ret = {
 	["Name"] = "Electric Charge",
 	["SpellAni_Reference"] = "SingleHealing",
 	["Target"] = "AF",
-	["UseCombat"] = true}
+	["UseCombat"] = true,
+	["untauntable"] = true}
 
 return ret
 

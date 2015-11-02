@@ -1,5 +1,5 @@
 --[[
-  ABL_WENDICKA_ELECTRICCHARGE.lua
+  ABL_YIRL_TAUNT.lua
   Version: 15.11.02
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,21 +35,24 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 200,
+	["ABL_AP"] = 20,
+	["ABL_APCut"] = 500,
+	["ABL_DblSpeed"] = 250,
 	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 50,
+	["ABL_Speed"] = 250,
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Charge up energy for Voltsunami",
+	["Description"] = "Any enemy able to target Yirl will do so.",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Gun.png",
+	["Icon"] = "GFX/Abilities/Fist.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Electric Charge",
+	["Name"] = "Taunt",
+	["ScriptEffect_Reference"] = "Taunt",
 	["Target"] = "AF",
 	["UseCombat"] = true,
-	["untauntable"] = true}
+	["UseField"] = true}
 
 return ret
 

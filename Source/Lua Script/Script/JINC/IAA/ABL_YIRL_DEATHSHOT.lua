@@ -1,5 +1,5 @@
 --[[
-  ABL_WENDICKA_ELECTRICCHARGE.lua
+  ABL_YIRL_DEATHSHOT.lua
   Version: 15.11.02
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,21 +35,26 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 200,
+	["ABL_AP"] = 75,
+	["ABL_APCut"] = 1000,
+	["ABL_Cancel"] = 30000,
+	["ABL_DblPower"] = 5000,
+	["ABL_DblSpeed"] = 2500,
 	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 50,
+	["ABL_Speed"] = 250,
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
+	["AttackPower"] = 175,
 	["AttackStat"] = "Strength",
+	["CauseDeath"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Charge up energy for Voltsunami",
+	["Description"] = "Strong attack vs one enemy. Can cause instant death",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Electric Charge",
-	["Target"] = "AF",
-	["UseCombat"] = true,
-	["untauntable"] = true}
+	["Name"] = "Death Shot",
+	["Target"] = "1F",
+	["UseCombat"] = true}
 
 return ret
 

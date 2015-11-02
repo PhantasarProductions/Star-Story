@@ -1,5 +1,5 @@
 --[[
-  ABL_WENDICKA_ELECTRICCHARGE.lua
+  ABL_YIRL_CONFUSION.lua
   Version: 15.11.02
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,21 +35,23 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 200,
+	["ABL_AP"] = 25,
+	["ABL_APCut"] = 8000,
+	["ABL_DblSpeed"] = 7500,
 	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 50,
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
+	["CauseConfusion"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Charge up energy for Voltsunami",
+	["Description"] = "Confuse the enemy",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Gun.png",
+	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Electric Charge",
-	["Target"] = "AF",
+	["Name"] = "Confusion",
+	["Target"] = "1F",
 	["UseCombat"] = true,
-	["untauntable"] = true}
+	["UseField"] = true}
 
 return ret
 

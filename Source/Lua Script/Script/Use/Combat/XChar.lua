@@ -138,9 +138,16 @@ XCharAfterAction = {
 					end
 				end
 				if hasall then Award("ALLABL_FOXY") end				
-	        end
+	        end,
+	Yirl = function() 
+	       BusinessPoints() -- This should make sure Yirl needs a new move if applicable.
+	       end,         
+	       
+  Wendicka = function()
+             if RPGChar.ListHas("UniWendicka","ABL","WENDICKA_"..spells[200])==1 then Award("ALLABL_WENDICKA") end
+             end	       
 	}
-	
+XCharAfterAction.UniWendicka = XCharAfterAction.Wendicka	
 	
 XCharAttacked = {
  

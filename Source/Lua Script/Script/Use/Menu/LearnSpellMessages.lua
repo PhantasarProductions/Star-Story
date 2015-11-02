@@ -64,6 +64,10 @@ learnspellmessages = {
                     if need<=0 then return "Attack any enemy" end
                     return "Earn "..need.." credits to unlock a new skill"
                     ]]
+                    local score,need,table = BusinessPoints()
+                    if RPGChar.CountList("Yirl","LEARN")>0 then return "Attack any enemy to learn a new skil" end
+                    if need==0 then return "" end
+                    return "You have "..score.." business points. "..need.." are required for a new skill."
                     end,
       Foxy        = function() return "???" end,
       Xenobi      = function()              

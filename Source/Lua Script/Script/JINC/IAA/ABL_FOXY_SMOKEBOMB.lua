@@ -51,7 +51,8 @@ ret = {
 	["Name"] = "Smoke Bomb",
 	["Target"] = "AF",
 	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseField"] = true,
+	["untauntable"] = true}
 
 return ret
 

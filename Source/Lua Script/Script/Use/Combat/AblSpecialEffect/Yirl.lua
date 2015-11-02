@@ -1,5 +1,5 @@
 --[[
-  ABL_WENDICKA_ELECTRICCHARGE.lua
+  Yirl.lua
   Version: 15.11.02
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -34,24 +34,52 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-ret = {
-	["ABL_AP"] = 200,
-	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 50,
-	["ActSpeed"] = 250,
-	["AttackElement"] = "Non-Elemental",
-	["AttackStat"] = "Strength",
-	["DefenseStat"] = "Defense",
-	["Description"] = "Charge up energy for Voltsunami",
-	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Gun.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Electric Charge",
-	["Target"] = "AF",
-	["UseCombat"] = true,
-	["untauntable"] = true}
+-- @IF IGNORE
+AblSpecialEffect = {}
+-- @FI
 
-return ret
+function AblSpecialEffect.TriggerHappy(ag,ai,tg,ti,act)
+local me = Fighters[ag][ai].Tag
+local tgt = Fighters[tg][ti].Tag
+local ammo = RPGChar.Points(me,"AMMO")
+local ret
+if ammo.Have==0 then MINI("Can't trigger happy without ammo") return true end
+for i=1,ammo.Have do
+      if not Fighters[tg][ti] then return end -- Stop shooting if the enemy is dead already
+      if RPGChar.Points(tgt,"HP").Have==0 then return end
+      -- ActionFuncs.SHT(ag,ai,act)
+      SpriteAnim[ag](ai,act)
+      White()
+      SpellAni[RPGChar.GetData(me,"ShootSpellAni")](ag,ai,tg,ti)
+      -- Perform Attack
+      Attack(ag,ai,act)
+      ammo.Have=ammo.Have-1
+      ret=true      
+      end
+            
+return true
+end
 
--- This file is an automatically generated file!
+      
 
+function AblSpecialEffect.FollowMe(ag,ai)
+for i,data in pairs(Fighters.Hero) do
+    if i~=ai and data.Gauge<9998 then data.Gauge=9998 end
+    end
+end
+
+function AblSpecialEffect.Taunt(ag,ai,tg,ti,act)
+local me = Fighters[ag][ai]
+local tg = Fighters[tg][ti]
+local ta = tg.Act
+local it
+if tg.Gauge<=10000 then return end -- Only those preparing a move can do
+if ta=='FAI' then
+   it = ItemGet(ta.Item)
+   if it.Untauntable then return end -- Sorry, ya can't taunt this move!
+elseif ta~='ATK' then return end
+ta.TargetGroup=ag
+ta.TargetIndividual=ai
+CharReport(tg,ti,"Taunted!",{0,100,170})
+return true       
+end    

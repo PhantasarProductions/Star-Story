@@ -307,6 +307,7 @@ ActionFuncs.EAI(ag,ai,act)
 RPGChar.RemList(ch,"LEARN",lrncode)
 RPGChar.AddList(ch,"ABL",lrncode)
 MINI(RPGChar.GetName(ch).." learned '"..Var.S(act.Item.Name).."'",180,0,255)
+RPGChar.Points(ch,"EXP").inc(round(2000/skill))
 end   
 
 

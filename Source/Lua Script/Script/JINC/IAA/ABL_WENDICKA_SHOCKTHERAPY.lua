@@ -16,7 +16,8 @@ ret = {
 	["Name"] = "Shock Therapy",
 	["SpellAni_Reference"] = "Spark",
 	["Target"] = "1A",
-	["UseCombat"] = true}
+	["UseCombat"] = true,
+	["untauntable"] = true}
 
 return ret
 

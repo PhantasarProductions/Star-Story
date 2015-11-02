@@ -50,8 +50,8 @@
       Current scoring table.
       - 10 points for every aurina you pocess
       - 5 points for every aurina you've exchanged for money
-      - 1 point per 500 credits
-      - 1 points per 750 credits spent 
+      - 1 point per 200 credits
+      - 1 points per 300 credits spent 
       - 5 points per item you pocess on any character (he or she MUST be in the active party on the moment of checking).
       - 2.5 points per item stored in the vault
       
@@ -67,13 +67,14 @@
 
 function BusinessPoints()
 local totalscore = 0
+local need = 0
 -- general scores
 local calcscore = {                     
                       bonus = CVV('%BUSINESSBONUS'),
-                      aurinahave = CVV("%AURINA")*10,
+                      aurinahave = CVV("%AURINAS")*10,
                       aurinaexchanged = CVV('%AURINAEXCHANGED')*5,
-                      cash = CVV("%CASH")/500,
-                      cashspent = CVV("%CASHTOTALSPENT")/750
+                      cash = CVV("%CASH")/200,
+                      cashspent = CVV("%CASHTOTALSPENT")/300
                   }
 
 local ch
@@ -82,7 +83,7 @@ for i=0,5 do
    ch = RPGChar.PartyTag(i)
    if ch~="" then
       for socket=1,InventorySockets do
-          calcscore.inventory = (calcscore.inventory or 0) + (RPG.Stat('INVAMNT'..socket)*5)
+          calcscore.inventory = (calcscore.inventory or 0) + (RPGChar.Stat(ch,'INVAMNT'..socket)*5)
           end
       end
    end
@@ -90,19 +91,36 @@ for i=0,5 do
 for itcode in IVARS() do
     if prefixed(itcode,"%VAULT.") then calcscore.vault = (calcscore.valut or 0)+(CVV(itcode)*2.5) end
     end
-
 -- calculate
 for f,v in spairs(calcscore) do
     totalscore = totalscore + v
     end
-return round(totalscore),calcscore    
+-- Teach Yirl a new move
+local YirlMoves = { TRIGGERHAPPY = 1400, 
+                    TAUNT = 1800,
+                    FOLLOWME = 2500,
+                    CONFUSION = 3000,
+                    DEATHSHOT = 6000
+                  }
+local abl                  
+for ab,abneed in pairs(YirlMoves) do
+    abl = "YIRL_"..ab
+    if RPGChar.ListHas('Yirl',"ABL",abl)==0 and RPGChar.ListHas('Yirl',"LEARN",abl)==0 then
+       if need==0 then need=abneed end
+       if totalscore>=abneed then RPGChar.AddList('Yirl','LEARN',abl) end
+       end
+    end
+if need==0 and RPGChar.CountList('Yirl',"LEARN")==0 and (not YirlAchievement) then Award('ALLABL_YIRL') end
+-- return
+return round(totalscore),need,calcscore    
 end
 
 function BUSINESSPOINTS() -- This function is only inteded for the debug console.
-local score,table = BusinessPoints()
+local score,need,table = BusinessPoints()
 for f,v in spairs(table) do
     CSay(f.." = "..v)
     end
 CSay()
 CSay("Total: "..score)
+CSay("Need: "..need)
 end    

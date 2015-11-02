@@ -52,7 +52,8 @@ ret = {
 	["Name"] = "M<uuml>nchhausen",
 	["ScriptEffect_Reference"] = "Muenchausen",
 	["Target"] = "1F",
-	["UseCombat"] = true}
+	["UseCombat"] = true,
+	["untauntable"] = true}
 
 return ret
 

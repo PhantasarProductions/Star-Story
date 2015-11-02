@@ -81,7 +81,12 @@
 1. Script/JINC/IAA/ABL_WENDICKA_PROLOGUE_SHOCK.lua
 1. Script/JINC/IAA/ABL_WENDICKA_SHOCK.lua
 1. Script/JINC/IAA/ABL_WENDICKA_SHOCKTHERAPY.lua
+1. Script/JINC/IAA/ABL_YIRL_CONFUSION.lua
+1. Script/JINC/IAA/ABL_YIRL_DEATHSHOT.lua
+1. Script/JINC/IAA/ABL_YIRL_FOLLOWME.lua
 1. Script/JINC/IAA/ABL_YIRL_INTIMIDATE.lua
+1. Script/JINC/IAA/ABL_YIRL_TAUNT.lua
+1. Script/JINC/IAA/ABL_YIRL_TRIGGERHAPPY.lua
 1. Script/JINC/IAA/ABS_FOE_VENOMBITE.lua
 1. Script/JINC/IAA/ARM_DART.lua
 1. Script/JINC/IAA/ARM_HEALINGSPRAY.lua
@@ -177,6 +182,7 @@
 1. Script/Use/Combat/AblSpecialEffect/Cancel.lua
 1. Script/Use/Combat/AblSpecialEffect/Pickpocket.lua
 1. Script/Use/Combat/AblSpecialEffect/RemoveEnemy.lua
+1. Script/Use/Combat/AblSpecialEffect/Yirl.lua
 1. Script/Use/Combat/CAction.lua
 1. Script/Use/Combat/CDrawFighters.lua
 1. Script/Use/Combat/CDrawScreen.lua
@@ -240,4 +246,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 02 November 2015; 19:36:42 CET
+### Last updated: Mon 02 November 2015; 22:16:24 CET

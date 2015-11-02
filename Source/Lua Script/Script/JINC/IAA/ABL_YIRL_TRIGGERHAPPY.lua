@@ -1,5 +1,5 @@
 --[[
-  ABL_WENDICKA_ELECTRICCHARGE.lua
+  ABL_YIRL_TRIGGERHAPPY.lua
   Version: 15.11.02
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,21 +35,23 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 200,
-	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 50,
-	["ActSpeed"] = 250,
+	["ABL_AP"] = 65,
+	["ABL_APCut"] = 10000,
+	["ABL_DblSpeed"] = 8000,
+	["ABL_Pose"] = "Attack",
+	["ABL_Speed"] = 95,
+	["ActSpeed"] = 95,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Charge up energy for Voltsunami",
+	["Description"] = "Keep shooting until your gun is empty",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Electric Charge",
-	["Target"] = "AF",
-	["UseCombat"] = true,
-	["untauntable"] = true}
+	["Name"] = "Trigger Happy",
+	["ScriptEffect_Reference"] = "TriggerHappy",
+	["Target"] = "1F",
+	["UseCombat"] = true}
 
 return ret
 

@@ -51,7 +51,8 @@ ret = {
 	["Name"] = "Pickpocket",
 	["ScriptEffect_Reference"] = "PlayerPickpocket",
 	["Target"] = "1F",
-	["UseCombat"] = true}
+	["UseCombat"] = true,
+	["untauntable"] = true}
 
 return ret
 

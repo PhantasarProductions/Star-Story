@@ -50,7 +50,8 @@ ret = {
 	["ItemType"] = "Consumable",
 	["Name"] = "Stomp",
 	["Target"] = "1F",
-	["UseCombat"] = true}
+	["UseCombat"] = true,
+	["untauntable"] = true}
 
 return ret
 
