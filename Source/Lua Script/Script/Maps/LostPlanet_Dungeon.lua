@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.22
+version: 15.11.02
 ]]
 
 -- Switch routine (in case we need it)
@@ -188,13 +188,27 @@ Var.D("$COMBAT.BEGIN","Default")
 Var.D("$COMBAT.FOE1","Boss/Flirmouse_King")
 Var.D("%COMBAT.LVFOE1",lv)
 Var.D("$COMBAT.ALTCOORDSFOE1","300,400")
--- The subjects
+local base = {300,400}
+local subjectxy = {
+                     {0,-100},
+                     {0, 100},
+                     { 200,0},
+                     {-200,0},
+                     
+                     { 100, 50},
+                     {-100, 50},
+                     { 100,-50},
+                     {-100,-50} 
+                  }
+
 for i=1,subjects do 
     si = i + 1
     Var.D("$COMBAT.FOE"..si,"Boss/Flirmouse_Subject")
     Var.D('%COMBAT.LVFOE'..si,lv)
-    x = 300+(math.sin(((i-1)/(subjects))*360)*200)
-    y = 400+(math.cos(((i-1)/(subjects))*360)*100)
+    -- x = 300+(math.sin(((i-1)/(subjects))*360)*200)
+    -- y = 400+(math.cos(((i-1)/(subjects))*360)*100)
+    x = base[1]+subjectxy[i][1]
+    y = base[2]+subjectxy[i][2]
     CSay("Subject #"..i.." is set to coordinates ("..x..","..y..")")
     Var.D("$COMBAT.ALTCOORDSFOE"..si,x..","..y)
     end
