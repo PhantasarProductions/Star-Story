@@ -1,6 +1,6 @@
 --[[
   Console.lua
-  Version: 15.10.23
+  Version: 15.11.02
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -500,4 +500,9 @@ for ch in each(chl) do
         CSay("  = "..st)
         end
     end
-end    
+end
+
+function MANGAUGE(ch,value)
+if LAURA.GetFlow()~="COMBAT" then CWrite("? This command only works in combat mode!",255,0,0) return end
+MS.Run("COMBAT","ManGauge",ch..";"..value)
+end

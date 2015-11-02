@@ -36,12 +36,18 @@
 ]]
 function ManGauge(ch,value)
 local g,i,d
+CSay("Searching for: "..ch)
 for sg,sa in pairs(Fighters) do
-    for si,sd in pairs(sa) do
-        if sa.Tag==ch then g,i,d=sg,si,sd end
+    for si,sd in pairs(sa) do    
+        if sd.Tag==ch then
+           CSay(sd.Tag.." MATCH!") 
+           g,i,d=sg,si,sd 
+           else
+           CSay(sd.Tag)
+           end
         end
     end
-if not (g and i and sd) then CWrite("? That character has not been found!",255,0,0) return end
+if not (g and i and d) then CWrite("? That character has not been found!",255,0,0) return end
 d.Gauge = Sys.Val(value or 0)    
 CSay('Gauge for '..d.Tag.."("..g..","..i..") set to "..d.Gauge)
 end
