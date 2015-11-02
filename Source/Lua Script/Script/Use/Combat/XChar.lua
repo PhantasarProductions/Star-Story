@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.01
+version: 15.11.02
 ]]
 
 -- Kills for ExHuRU (and his "representatives")  
@@ -179,7 +179,7 @@ XCharAttacked = {
              for i=0,5 do 
              	   if RPGStat.PartyTag(i)=="Yirl" then pos = i end
              	   end
-             ActionFuncs.SHT('Hero',pos+1,{TargetGroup='Foe',TargetIndividual=attackerindividual, Action='SHT'})
+             ActionFuncs.SHT('Hero',pos+1,{TargetGroup='Foe',TargetIndividual=attackerindividual, Act='SHT', Action='SHT'})
              return true
              end,
 

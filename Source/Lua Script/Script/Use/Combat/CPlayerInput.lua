@@ -278,7 +278,12 @@ InputItems = {
     { Name = "Guard",
       Item = "GRD",
       Allow = function() return true end,
-      Input = function(ch)
+      Input = function(ch,pos)
+              local iact
+              iact=Act.Hero[pos]
+              iact.Act='GRD'
+              iact.ActSpeed = 10
+              InputDone=true
               end,        
       Done = function()
              end       

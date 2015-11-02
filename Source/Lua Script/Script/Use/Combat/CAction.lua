@@ -229,6 +229,10 @@ if AccuracyEvasion(ag,ai,tg,ti) then
 Fighters[ag][ai].Pick="Default"      
 end
 
+function ActionFuncs.GRD(ag,ai,act)
+Fighters[ag][ai].Gauge = ({Hero = 9999 - (1234*skill), Foe = 9999 - (1234*(4-skill) )})[ag]
+end
+
 function ActionFuncs.EAI(ag,ai,act)
 if not act.EAI then Sys.Error("Illegally set up act for EAI") end
 NewMessage(act.Item.Name,ItemIconCode(act.ItemCode))

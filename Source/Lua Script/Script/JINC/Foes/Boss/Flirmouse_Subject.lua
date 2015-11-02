@@ -1,6 +1,6 @@
 --[[
   Flirmouse_Subject.lua
-  Version: 15.10.31
+  Version: 15.11.02
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 15.10.31
+-- Version 15.11.02
 
 
 

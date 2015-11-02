@@ -1,6 +1,6 @@
 --[[
   Flirmouse_King.lua
-  Version: 15.10.31
+  Version: 15.11.02
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 15.10.31
+-- Version 15.11.02
 
 
 
@@ -64,7 +64,7 @@ Data = {
 		["Agility"] = {1,1},
 		["Accuracy"] = {1,1},
 		["Evasion"] = {1,1},
-		["HP"] = {1,2000},
+		["HP"] = {0,3000},
 		["AP"] = {1,1},
 		["LevelRange"] = {1,100},
 },

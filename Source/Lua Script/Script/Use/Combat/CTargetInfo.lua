@@ -1,6 +1,6 @@
 --[[
   CTargetInfo.lua
-  Version: 15.10.10
+  Version: 15.11.02
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -142,7 +142,7 @@ elseif data.Gauge>10000 then
 				LRN = function()
 					  DarkText("Learning...",0,0,255,80,0)
 					end,  
-				GRD = function() DarkText("Guard",cx,cy,0,0,180,180,180) end
+				GRD = function() DarkText("Guarding",cx,cy,0,0,180,180,180) end
 				})[data.Act.Act])()
 	if data.Act.TargetGroup and data.Act.TargetIndividual then
 		TarData = Fighters[ data.Act.TargetGroup ][ data.Act.TargetIndividual ];

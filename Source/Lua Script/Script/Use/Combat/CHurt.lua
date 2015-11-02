@@ -128,5 +128,6 @@ local defense = def + rand(0,round(def*.25))
 if data.ignoredefense then defense=0 end
 local totaldamage = damage - defense
 if totaldamage<1 then totaldamage=1 end
+if Fighters[tg][ti].Act=='GRD' and Fighters[tg][ti].Gauge>10000 then totaldamage = round( totaldamage * .75 ) end
 Hurt(tg,ti,totaldamage,element)                               
 end
