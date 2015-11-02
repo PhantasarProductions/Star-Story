@@ -147,6 +147,8 @@ if abl.ScriptEffect_Reference and abl.ScriptEffect_Reference~="" then
       effect = AblSpecialEffect[abl.ScriptEffect_Reference](ag,ai,tg,ti,act) or effect
       end 
    end
+-- Cancel powerup
+if act.Cancel then CanceMovel(ag,ai,tg,ti,act) end   
 -- Cause status changes (this must always be the last thing to do)
 for i,y in spairs(abl) do
     if prefixed(i,'Cause') and y then

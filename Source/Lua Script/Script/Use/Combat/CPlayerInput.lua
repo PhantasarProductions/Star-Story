@@ -1,6 +1,6 @@
 --[[
   CPlayerInput.lua
-  Version: 15.11.01
+  Version: 15.11.02
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -205,8 +205,9 @@ InputItems = {
                  iact.Item = item
                  ablshort = right(CVV("$CHOSENABILITY"),len(CVV("$CHOSENABILITY"))-4)                 
                  SelectTarget.AblSelectTarget(item.Target,ch,pos)
-                 if RPGChar.ListHas(ch,"ABL_POWERUP",ablshort..".DBLSPEED")~=0 then item.ActSpeed = item.ActSpeed * 2 end
-                 if RPGChar.ListHas(ch,"ABL_POWERUP",ablshort..".INSTANT" )~=0 then item.ActSpeed = 10000 end
+                 if RPGChar.ListHas(ch,"ABL_POWERUP",ablshort..".DBLSPEED")~=0 then iact.ActSpeed = item.ActSpeed * 2 end
+                 if RPGChar.ListHas(ch,"ABL_POWERUP",ablshort..".INSTANT" )~=0 then iact.ActSpeed = 10000 end
+                 if RPGChar.ListHas(ch,"ABL_POWERUP",ablshort..".CANCEL"  )~=0 then iact.Cancel   = true end
                  iact.DoublePower = RPGChar.ListHas(ch,"ABL_POWERUP",ablshort..".DBLPOWER" )~=0 
                  end
               end,        
