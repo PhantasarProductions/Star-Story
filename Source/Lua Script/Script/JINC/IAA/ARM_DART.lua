@@ -52,6 +52,7 @@ ret = {
 	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Dart",
+	["ScriptEffect_Reference"] = "Cancel",
 	["Target"] = "1F",
 	["UseCombat"] = true}
 
