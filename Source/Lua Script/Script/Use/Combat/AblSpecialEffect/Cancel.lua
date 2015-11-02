@@ -45,11 +45,15 @@ local setback = {    -- How much the effect of the cancel will be depends on the
                      {Foe={1000, 1500, 9500}, Hero={9000,30000,6000} } 
                 }
 local tgt = Fighters[tg][ti]
-if tgt.Gauge<=10000 then return end -- Cancelling only possible if the target is moving from COM to ACT
-local roll = rand(setback[ti][skill][1],setback[ti][skill][1])       
+CSay("- Cancel")
+if tgt.Gauge<=10000 then CSay(" = Request rejected. Enemy not yet on a cancellable spot!") return end -- Cancelling only possible if the target is moving from COM to ACT
+CSay("  = Group: "..tg)
+CSay("  = Skill: "..skill)
+local roll = rand(setback[skill][tg][1],setback[skill][tg][2])       
 tgt.Gauge = tgt.Gauge - roll
-if tgt.Gauge>setback[ti][skill][3] then tgt = setback[ti][skill][3] end
+if tgt.Gauge>setback[skill][tg][3] then tgt = setback[skill][tg][3] end
 RepCancel(tg,ti)
+CSay("  = Enemy succesfully cancelled")
 return true
 end
 

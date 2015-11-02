@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 15.10.31
+  Version: 15.11.02
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -144,7 +144,7 @@ if abl.ScriptEffect_Reference and abl.ScriptEffect_Reference~="" then
       MS.Run("COMBAT_ABLEFFECT","SCRIPTEFFECT",ag..";"..ai..";"..tg..";"..ti)
       effect = effect or CVV("&RET")
       else
-      effect = effect or AblSpecialEffect[abl.ScriptEffect_Reference](ag,ai,tg,ti,act)
+      effect = AblSpecialEffect[abl.ScriptEffect_Reference](ag,ai,tg,ti,act) or effect
       end 
    end
 -- Cause status changes (this must always be the last thing to do)
