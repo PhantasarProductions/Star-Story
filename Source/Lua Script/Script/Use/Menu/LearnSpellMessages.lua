@@ -1,6 +1,6 @@
 --[[
   LearnSpellMessages.lua
-  Version: 15.10.10
+  Version: 15.11.02
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -58,10 +58,12 @@ learnspellmessages = {
                     end,
       Crystal     = function() return "" end,              
       Yirl        = function()
+                    --[[ no longer needed. Yirl as a new system for this.
                     local need = CVV("%MONEY.NEED") - CVV("%MONEY.DONE")
                     if CVV("%MONEY.NEED")==0 then return end
                     if need<=0 then return "Attack any enemy" end
                     return "Earn "..need.." credits to unlock a new skill"
+                    ]]
                     end,
       Foxy        = function() return "???" end,
       Xenobi      = function()              

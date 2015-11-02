@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.10
+version: 15.11.02
 ]]
 
 
@@ -83,6 +83,7 @@ local total = aurina * rate
 Var.D("%AURINACREDITS",total)
 MapText("POEPAURINA")
 inc("%CASH",total)
+inc('%AURINAEXCHANGED',aurina)
 Var.Clear("%AURINAS")
 end
 
