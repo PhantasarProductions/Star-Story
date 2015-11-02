@@ -1,6 +1,6 @@
 --[[
   Party.lua
-  Version: 15.10.17
+  Version: 15.11.02
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -39,7 +39,7 @@ statusbar = Image.Load("GFX/Statusbar/StatusBar.png")
 portret = {}
 levelupanim = {}
 
-needexp = {2500,5000,10000}
+needexp = {1750,5000,10000}
 
 function GrabLevel(ch,lv)
 local linenumber,line,l

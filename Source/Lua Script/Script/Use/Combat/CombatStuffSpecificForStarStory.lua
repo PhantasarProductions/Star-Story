@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.01
+version: 15.11.02
 ]]
 -- @IF IGNORE
 VicCheck = {}
@@ -98,7 +98,7 @@ else
    end       
 -- Right oh, if the script is still being processed it means the item was accepted one way or another. Let's report that to the player.
 CSay(ch.." receives "..item)
-MINI(RPGChar.GetName(ch).." received "..ItemName(item),0,180,255)
+MINI(RPGChar.GetName(ch).." received: "..ItemName(item),0,180,255)
 if not spot then 
    MINI("however "..heshe[ch].." could not carry that any more since "..hisher[ch].." inventory is full",255,180,180)
    if putinvault then MINI("so the item has been put in the vault in stead") end
@@ -146,7 +146,7 @@ if rand(0,enemylevel)>rand(0,herolevel*skill) then
 local gip = rand(1,3) -- Who will get the item
 local gpc = {25,12,4}
 local gii
-if Fighters.Hero[gip] and Fighters.Hero[gip].Tag~="" and Fighters.Hero[gip].Tag~="Briggs" and RPGStat.Points(Fighters.Hero[gip].Tag,"HP").Have>0 and rand(1,100)<gpc[skill] and #myfoe.ItemDrop>0 then
+if (not myfoe.StolenFrom) and Fighters.Hero[gip] and Fighters.Hero[gip].Tag~="" and Fighters.Hero[gip].Tag~="Briggs" and RPGStat.Points(Fighters.Hero[gip].Tag,"HP").Have>0 and rand(1,100)<gpc[skill] and #myfoe.ItemDrop>0 then
    gii = rand(1,#myfoe.ItemDrop)
    -- DBGSerialize(myfoe)
    GiveItem(Fighters.Hero[gip].Tag,myfoe.ItemDrop[gii].ITM,myfoe.ItemDrop[gii].VLT)

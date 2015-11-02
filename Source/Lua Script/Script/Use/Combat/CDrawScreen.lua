@@ -1,6 +1,6 @@
 --[[
   CDrawScreen.lua
-  Version: 15.11.01
+  Version: 15.11.02
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -62,7 +62,7 @@ CombatMessages = {}
 
 function NewMessage(msg,Icon)
 SetFont("CombatMessage")
-table.insert(CombatMessages,{Msg = msg, Icon=Icon, y=600+(#CombatMessages*Image.TextHeight(msg)), SPD=30, Alpha=100, W = Image.TextWidth(msg), H = Image.TextHeight(msg), IconX = 380 - (Image.TextWidth(msg)/2), PX = 375 - (Image.TextWidth(msg)/2), PY = 300 - (Image.TextHeight(msg)/2),Timer=250})
+table.insert(CombatMessages,{Msg = msg, Icon=Icon, y=600+(#CombatMessages*Image.TextHeight(msg)), SPD=30, Alpha=100, W = Image.TextWidth(msg), H = Image.TextHeight(msg), IconX = 380 - (Image.TextWidth(msg)/2), PX = 375 - (Image.TextWidth(msg)/2), PY = 300 - (Image.TextHeight(msg)/2),Timer=125})
 end
 
 function DrawGauge()

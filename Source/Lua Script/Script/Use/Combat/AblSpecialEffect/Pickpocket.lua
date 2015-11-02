@@ -1,5 +1,5 @@
 --[[
-  ITM_BIOHAZARD.lua
+  Pickpocket.lua
   Version: 15.11.02
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -34,25 +34,21 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-ret = {
-	["ActSpeed"] = 250,
-	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 80,
-	["AttackStat"] = "Strength",
-	["CauseDisease"] = true,
-	["CausePoison"] = true,
-	["DefenseStat"] = "Defense",
-	["Description"] = "Poisons and diseases one target",
-	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 100,
-	["ITM_SellPrice"] = 75,
-	["Icon"] = "GFX/Inventory/Biohazard Box.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Biohazard waste",
-	["Target"] = "1F",
-	["UseCombat"] = true}
+-- @IF IGNORE
+AblSpecialEffect = {}
+-- @FI
 
-return ret
-
--- This file is an automatically generated file!
-
+function AblSpecialEffect.PlayerPickpocket(ag,ai,tg,ti,act)
+if ag~="Hero" and tg~="Foe" then Sys.Error("PlayerPickpocket requires the actor to be the hero and the victim to be the enemy!") end
+local myfoe  = Fighters[tg][ti]
+local myhero = Fighters[ag][ai]
+if myfoe.StolenFrom or #myfoe.ItemSteal==0 then MINI(RPGChar.GetName(myfoe.Tag).." doesn't have anything",255,180,0) return end
+local stealroll = rand(0,RPGChar.Stat(myhero.Tag,"Level"))
+local defendroll = rand(0,RPGChar.Stat(myfoe.Tag,"Level"))
+if stealroll<defendroll then MINI("Your stealing attempt failed",255,180,0) return end
+local gii = rand(1,#myfoe.ItemSteal)
+if not ItemGive(myfoe.ItemSteal[gii].ITM,myhero.Tag,myfoe.ItemDrop[gii].VLT) then MINI(RPGChar.GetName(myhero.Tag).."'s bags are full") return end
+SFX("Audio/SFX/Foxy/Yes.ogg")
+myfoe.StolenFrom = true
+return true
+end

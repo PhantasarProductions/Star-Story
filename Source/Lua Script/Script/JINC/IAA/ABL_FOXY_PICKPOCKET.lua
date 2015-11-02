@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.31
+version: 15.11.02
 ]]
 ret = {
 	["ABL_AP"] = 14,
@@ -49,7 +49,7 @@ ret = {
 	["Icon"] = "GFX/Inventory/Dagger.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Pickpocket",
-	["ScriptEffect_Reference"] = "PlayerSteal",
+	["ScriptEffect_Reference"] = "PlayerPickpocket",
 	["Target"] = "1F",
 	["UseCombat"] = true}
 

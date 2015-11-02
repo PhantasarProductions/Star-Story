@@ -173,6 +173,7 @@
 1. Script/Use/Anyway/TutorialInit.lua
 1. Script/Use/Anyway/WalkWait.lua
 1. Script/Use/Combat/AblSpecialEffect/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.lua
+1. Script/Use/Combat/AblSpecialEffect/Pickpocket.lua
 1. Script/Use/Combat/AblSpecialEffect/RemoveEnemy.lua
 1. Script/Use/Combat/CAction.lua
 1. Script/Use/Combat/CDrawFighters.lua
@@ -236,4 +237,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sun 01 November 2015; 22:52:49 CET
+### Last updated: Mon 02 November 2015; 10:04:11 CET
