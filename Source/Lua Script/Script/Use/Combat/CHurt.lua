@@ -1,6 +1,6 @@
 --[[
   CHurt.lua
-  Version: 15.10.28
+  Version: 15.11.02
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -39,7 +39,7 @@
 
 function Hurt(tg,ti,hp,element)
 local r,g,b = 255,255,255
-local report = hp
+local report = round(hp)
 local dodmg = round(hp)
 local chtarget = FighterTag(tg,ti)
 local jack = CVV("&CHEAT.JACK")
