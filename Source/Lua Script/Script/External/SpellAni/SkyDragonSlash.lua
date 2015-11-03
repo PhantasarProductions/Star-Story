@@ -51,7 +51,7 @@ White()
 Image.Cls()
 Image.Show(screen,0,qr*qm)
 if al>85 then tm=tm+1 end
-if right(tm,1)=='5' or right(tm,1)=='0' then 
+if right(tm,1)=='0' then 
    Image.SetAlphaPC(50)
    Red()
    Image.Rect(0,0,800,600)
@@ -61,7 +61,7 @@ Image.Color(255,255,0)
 Image.Show(crystal,400,300)
 Image.SetAlphaPC(100)
 Flip()
-until tm>=10000
+until tm>=250
 Image.Free(crystal)
 Image.Free(screen)
 end
