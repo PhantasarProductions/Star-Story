@@ -66,7 +66,7 @@ SFX('Audio/SFX/SpellAni/Thunder/Spark.ogg')
 for ak=1,50 do
     DrawScreen()    
     White()
-    for i,v in Fighters[TarG] do
+    for i,v in pairs(Fighters[TarG]) do -- Certainly NOT ipairs() even though i will only contain numbers. This array does not always have all numbers present which is a requirement for ipairs().
         sx,sy = FighterCoords(TarG,i)
         for al=1,25 do
             x = rand(sx-16,sx+16)

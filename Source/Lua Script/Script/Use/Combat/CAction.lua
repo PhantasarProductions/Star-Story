@@ -52,7 +52,7 @@ White();
            end,
  [false] = function()
            if item.SpellAni_Reference=="" then CSay("No SpellAni for this ability or so it seems."); return end
-           SpellAni[item.SpellAni_Reference](ag,ai,tg,ti,item.SpellAni_Parameters)  
+           (SpellAni[item.SpellAni_Reference] or function() MINI("WARNING! Spellani "..item.SpellAni_Reference.." does not exist") MINI("This is the result of a bug, please report it!") end)(ag,ai,tg,ti,item.SpellAni_Parameters)  
            end})[item.SpellAni_External==true]() 
 end
 
