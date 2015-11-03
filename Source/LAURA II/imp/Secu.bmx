@@ -20,36 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.09.02
-End Rem
-Rem
-/*
-	
-	
-	
-	
-	
-	(c) Jeroen P. Broks, 2015, All rights reserved
-	
-		This program is free software: you can redistribute it and/or modify
-		it under the terms of the GNU General Public License as published by
-		the Free Software Foundation, either version 3 of the License, or
-		(at your option) any later version.
-		
-		This program is distributed in the hope that it will be useful,
-		but WITHOUT ANY WARRANTY; without even the implied warranty of
-		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-		GNU General Public License for more details.
-		You should have received a copy of the GNU General Public License
-		along with this program.  If not, see <http://www.gnu.org/licenses/>.
-		
-	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
-	to the project the exceptions are needed for.
-*/
-
-
-Version: 15.05.22
-
+Version: 15.11.03
 End Rem
 Strict
 Import tricky_units.initfile
@@ -65,7 +36,7 @@ Type TSecu
 	Method SSecuInit() Abstract
 	Method SSecu(e$,d$) Abstract
 	Method SSecuDone(J:TJCRCreate) Abstract
-	Method LSecu(J:TJCRDir) Abstract	
+	Method LSecu(J:TJCRDir,MainJ:TJCRDir) Abstract	
 	End Type
 
 Type TNetwork
@@ -139,10 +110,10 @@ DeleteFile file
 RenameFile file+"_$$$$_SECU_$$$$_",file
 End Function	
 
-Function LSecu(J:TJCRDir)
+Function LSecu(J:TJCRDir,MainJ:TJCRDir)
 Local Original = True
 For Local S:TSecu = EachIn seculist
-	Original = Original And S.LSecu(J)
+	Original = Original And S.LSecu(J,MainJ)
 	Next
 Return Original
 End Function

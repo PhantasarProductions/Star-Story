@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.10.31
+Version: 15.11.03
 End Rem
 
 Function GetActorSaveDump$(SMap:TKthura)
@@ -80,6 +80,7 @@ Save :+ "Maps.Cam.X = "+LAURA2Maps.CamX+"~n"
 Save :+ "Maps.Cam.Y = "+LAURA2Maps.CamY+"~n"
 Save :+ "User = "+startup.C("User")+"~n"
 If DeleteMe Then Save :+ "DeleteMe = true~n"
+Save :+ "DevVersion = "+ID.Get("Dev")
 'ssecu "LAURA/System",save
 bt.addstring save,"LAURA/System","zlib"
 ' Actors
@@ -233,7 +234,7 @@ If FileType(permafile)
 ' Network data
 LoadNet BD,startup						
 ' Security check
-Original = LSecu(BD)
+Original = LSecu(BD,JCR)
 Print "Original = "+Original
 'ConsoleShow;Flip;WaitKey;Bye ' Debug line. Put on rem when done.
 ' If this is a "DeleteMe" savegame, remove it now	
