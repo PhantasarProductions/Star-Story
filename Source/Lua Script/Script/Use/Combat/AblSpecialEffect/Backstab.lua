@@ -38,7 +38,7 @@
 AblSpecialEffect = {}
 -- @FI
 
-function AblSpecialEffect.BackStab(ag,ai,tg,ti,act)
-local tgt = Fighter[tg][ti]
+function AblSpecialEffect.Backstab(ag,ai,tg,ti,act)
+local tgt = Fighters[tg][ti]
 if tgt.Gauge>0 then tgt.Gauge= tgt.Gauge*-1 end
 end
