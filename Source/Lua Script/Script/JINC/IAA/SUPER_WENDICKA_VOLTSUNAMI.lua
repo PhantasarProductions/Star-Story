@@ -37,7 +37,7 @@
 ret = {
 	["ActSpeed"] = 50,
 	["AttackElement"] = "Thunder",
-	["AttackPower"] = 500,
+	["AttackPower"] = 600,
 	["AttackStat"] = "Will",
 	["CauseParalysis"] = true,
 	["DefenseStat"] = "Resistance",

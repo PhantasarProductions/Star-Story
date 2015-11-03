@@ -34,8 +34,10 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
+
 function SPELLANI(ag,ai,tg,ti)
 local crystal = Image.Load("GFX/Combat/SpellAni/SuperMoves/Voltsunami.png")
+SFX("Audio/SFX/SpellAni/Thunder/ThunderStrike.ogg")
 for ak=1,40 do
     Image.Cls()
     for al=1,35 do

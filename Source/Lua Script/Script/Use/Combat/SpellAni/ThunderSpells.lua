@@ -1,6 +1,6 @@
 --[[
   ThunderSpells.lua
-  Version: 15.10.03
+  Version: 15.11.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -56,3 +56,27 @@ for ak=1,50 do
     Flip()
     end
 end
+
+
+function SpellAni.Jolt(ActG,ActT,TarG,TarT)
+local ak,x,y
+local sx,sy
+Image.LoadNew("SA_SPARK","GFX/COMBAT/SPELLANI/THUNDER/SPARK.PNG")
+SFX('Audio/SFX/SpellAni/Thunder/Spark.ogg')
+for ak=1,50 do
+    DrawScreen()    
+    White()
+    for i,v in Fighters[TarG] do
+        sx,sy = FighterCoords(TarG,i)
+        for al=1,25 do
+            x = rand(sx-16,sx+16)
+            y = rand(sy-64,sy)
+            Image.Rotate(rand(0,360))
+            Image.Draw('SA_SPARK',x,y)
+            Image.Rotate(0)
+            end
+        end
+    Flip()
+    end
+end
+        

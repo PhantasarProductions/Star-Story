@@ -51,6 +51,7 @@ ret = {
 	["Icon"] = "GFX/Abilities/Lightning.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Jolt",
+	["ScriptEffect_Reference"] = "Jolt",
 	["Target"] = "AF",
 	["UseCombat"] = true}
 
