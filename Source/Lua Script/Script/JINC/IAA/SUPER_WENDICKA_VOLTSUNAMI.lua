@@ -1,5 +1,5 @@
 --[[
-  ITM_MEDICINE.lua
+  SUPER_WENDICKA_VOLTSUNAMI.lua
   Version: 15.11.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,22 +35,20 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ActSpeed"] = 250,
-	["AttackElement"] = "Non-Elemental",
-	["AttackStat"] = "Strength",
-	["CureDisease"] = true,
-	["DefenseStat"] = "Defense",
-	["Description"] = "Cures \"Disease\"",
+	["ActSpeed"] = 50,
+	["AttackElement"] = "Thunder",
+	["AttackPower"] = 500,
+	["AttackStat"] = "Will",
+	["CauseParalysis"] = true,
+	["DefenseStat"] = "Resistance",
+	["Description"] = "Iedereen onder stroom!!!",
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 100,
-	["ITM_SellPrice"] = 75,
-	["ITM_Sellable"] = true,
-	["Icon"] = "Gfx/Inventory/Medicine.png",
+	["Icon"] = "GFX/Abilities/Lightning.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Medicine",
-	["SpellAni_Reference"] = "SingleHeal",
-	["Target"] = "1A",
-	["UseCombat"] = true}
+	["Name"] = "Voltsunami",
+	["Target"] = "AF",
+	["UseCombat"] = true,
+	["UseField"] = true}
 
 return ret
 

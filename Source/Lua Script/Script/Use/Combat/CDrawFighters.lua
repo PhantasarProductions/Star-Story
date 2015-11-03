@@ -1,6 +1,6 @@
 --[[
   CDrawFighters.lua
-  Version: 15.10.23
+  Version: 15.11.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -222,6 +222,7 @@ local poses = {
      ITM = poses.Cast,
      ABL = poses[(act.Item or { ABL_Pose="Cast"}).ABL_Pose or 'Cast'], -- Crash prevention when we don't have an ability but another kind of move.
      LRN = poses[(act.Item or { ABL_Pose="Cast"}).ABL_Pose or 'Cast'],
+     CAI = poses[(act.Item or { ABL_Pose="Cast"}).ABL_Pose or 'Cast'],
      ARM = poses.ARM
     })[act.Act] or function() MINI("WARNING! Unknown act! I don't know how to animate the hero (Action "..idx..":"..sval(act.Act)..")",255,180,0) MINI("Please report this in the bug tracker if somebody didn't do this before!",255,0,180) MINI("And don't forget to mention the action code above!",255,0,180) end)()   
 end

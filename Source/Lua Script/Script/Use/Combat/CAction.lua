@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 15.11.02
+  Version: 15.11.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -82,6 +82,17 @@ local ddg = rand(1,eva) -- eva - rand(1,math.ceil(eva*.25))
 return ddg>hit
 end
 
+function ChargeAbility(ag,ai,act)
+local now  = act.Item
+local next = ItemGet(act.Item.UserNextMove)
+if now.Target ~= next.Target then Sys.Error("Charge up move target mismatch!") end -- The Target setting for both moves MUST be the same 
+local nextmove = { Item = next, TargetGroup = act.TargetGroup, TargetIndividual = act.TargetIndividual, Act = 'CAI', ItemCode = act.Item.UserNextMove, ActSpeed = next.ActSpeed  }
+Fighters[ag][ai].Next = nextmove
+CharReport(ag,ai,"Charged",{90,122,118})
+CSay(Fighters[ag][ai].Tag.." will perform "..nextmove.ItemCode.." in the next turn")
+Fighters[ag][ai].Pick="Default"      
+end
+
 function AblEffect(ag,ai,act,tg,ti)
 local armd100 = rand(1,100)
 if act.HitPercentage and armd100>act.HitPercentage then
@@ -103,7 +114,7 @@ local cured,stc
 for i,y in spairs(abl) do
     if prefixed(i,'Cure') and y then
        stc = right(i,len(i)-len('Cure'))
-       cured = RPGChar.ListHas(cht,"STATUSCHANGE",stc)
+       cured = RPGChar.ListHas(cht,"STATUSCHANGE",stc)~=0
        if cured then 
           CSay("Curing "..stc.." on "..cht)
           RPGChar.RemList(cht,"STATUSCHANGE",stc)
@@ -238,6 +249,10 @@ if not act.EAI then Sys.Error("Illegally set up act for EAI") end
 NewMessage(act.Item.Name,ItemIconCode(act.ItemCode))
 SpriteAnim[ag](ai,act)
 PerformSpellAni(ag,ai,act)
+if act.Item.UserNextMove and act.Item.UserNextMove~="" then 
+   ChargeAbility(ag,ai,act)
+   return 
+   end
 local ch = FighterTag(ag,ai)
 local tg,ti
 local function SingleEffect(ag,ai,act) AbilityEffect(ag,ai,act,act.TargetGroup,act.TargetIndividual) end
@@ -258,6 +273,11 @@ local function GroupEffect(ag,ai,act)
                end
       })[act.Item.Target] or function() Sys.Error("EAI: Unknown target type"..act.Item.Target) end)(ag,ai,act)
 Fighters[ag][ai].Pick="Default"      
+end
+
+function ActionFuncs.CAI(ag,ai,act)
+act.EAI = true
+ActionFuncs.EAI(ag,ai,act)
 end
 
 function ActionFuncs.ITM(ag,ai,act)

@@ -1,6 +1,6 @@
 --[[
   CTargetInfo.lua
-  Version: 15.11.02
+  Version: 15.11.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -130,6 +130,10 @@ elseif data.Gauge>10000 then
 				ABL = function() 
 					  local i = data.Act.Item
 					  DarkText(i.Name,cx,cy,0,0,0,0,255)
+					end,  
+				CAI = function() 
+					  local i = data.Act.Item
+					  DarkText(i.Name,cx,cy,0,0,70,180,255)
 					end,  
 				ARM = function() 
 					  local i = data.Act.Item

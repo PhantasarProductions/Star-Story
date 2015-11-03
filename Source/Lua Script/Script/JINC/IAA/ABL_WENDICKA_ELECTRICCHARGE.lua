@@ -1,6 +1,6 @@
 --[[
   ABL_WENDICKA_ELECTRICCHARGE.lua
-  Version: 15.11.02
+  Version: 15.11.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -38,7 +38,7 @@ ret = {
 	["ABL_AP"] = 200,
 	["ABL_Pose"] = "Cast",
 	["ABL_Speed"] = 50,
-	["ActSpeed"] = 250,
+	["ActSpeed"] = 50,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
@@ -49,6 +49,7 @@ ret = {
 	["Name"] = "Electric Charge",
 	["Target"] = "AF",
 	["UseCombat"] = true,
+	["UserNextMove"] = "SUPER_WENDICKA_VOLTSUNAMI",
 	["untauntable"] = true}
 
 return ret

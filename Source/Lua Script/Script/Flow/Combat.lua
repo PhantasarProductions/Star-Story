@@ -1,6 +1,6 @@
 --[[
   Combat.lua
-  Version: 15.10.23
+  Version: 15.11.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -158,7 +158,14 @@ local ft,ftl,fli,fv
 for ft,ftl in spairs(Fighters) do
     for fli,fv in pairs(ftl) do
         if fv.Gauge==10000 and RPGChar.Points(fv.Tag,"HP").Have>0 then
-           return CInput[ft](fli,fv.Tag)
+           if fv.Next then
+             fv.Act=fv.Next
+             Act[ft][fli] = fv.Next
+             fv.Next=nil
+             fv.Gauge=10001
+           else
+             return CInput[ft](fli,fv.Tag)
+             end
         else 
            RunTimedStatusChanges() -- Placed it here to make sure this will NOT run while players are entering their moves.
            end
