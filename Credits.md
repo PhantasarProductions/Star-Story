@@ -24,7 +24,7 @@ Emily Esposito | 1 | Art;
 Eric Matyas | 2 | Music; 
 Fake Music Generator | 1 | Music; 
 FlamingText.com | 13 | Art; 
-GDJ | 2 | Art; 
+GDJ | 3 | Art; 
 GR-Sites | 15 | Art; Audio; 
 J.W.H. Broeders | 1 | Music; 
 Kevin McLeod | 11 | Music; 
