@@ -57,7 +57,6 @@ for ak=1,50 do
     end
 end
 
-
 function SpellAni.Jolt(ActG,ActT,TarG,TarT)
 local ak,x,y
 local sx,sy
@@ -79,4 +78,18 @@ for ak=1,50 do
     Flip()
     end
 end
-        
+
+function SpellAni.Mjolnir(ActG,ActT,TarG,TarT)
+local sx,sy = FighterCoords(TarG,TarT)
+local scl = 1
+Image.LoadNew("SA_LIGHTNING","GFX/COMBAT/SPELLANI/THUNDER/LIGHTNING.PNG")
+SFX("Audio/SFX/SpellAni/Thunder/ThunderStrike.ogg")        
+for ak=1,20 do
+    DrawScreen()
+    White()
+    Image.Scale(scl); scl=scl*-1
+    Image.Show("SA_LIGHTNING",sx,sy)
+    Image.Scale(0)
+    Flip()
+    end
+end    

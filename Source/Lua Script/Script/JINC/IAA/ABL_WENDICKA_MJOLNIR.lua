@@ -51,6 +51,7 @@ ret = {
 	["Icon"] = "GFX/Abilities/Lightning.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Mj<ouml>lnir",
+	["SpellAni_Reference"] = "Mjolnir",
 	["Target"] = "1F",
 	["UseCombat"] = true}
 
