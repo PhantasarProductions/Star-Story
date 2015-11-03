@@ -257,7 +257,7 @@ ABLKIND = {
           local i,pu,puu
           local APCost
           local descf = fonts['AbilityList'][1]
-          local descs = fonts['AbilityList'][2] / 2
+          local descs = fonts['AbilityList'][2] *.75
           for ak=1,abilities do
               ablshort = RPGStat.ListItem(pchar,"ABL",ak)
               abl = "ABL_"..ablshort
@@ -308,6 +308,8 @@ ABLKIND = {
           local x
           local ammo,choice
           local mx,my = MouseCoords()   my=my-100
+          local descf = fonts['AbilityList'][1]
+          local descs = fonts['AbilityList'][2] *.75
           for ak=1,abilities do
               ablshort = RPGStat.ListItem(pchar,"ARMS",ak)
               abl = "ARM_"..ablshort
