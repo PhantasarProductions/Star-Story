@@ -6,6 +6,8 @@
 1. Script/CharStats/Briggs.lua
 1. Script/CharStats/General.lua
 1. Script/CharStats/Wendicka.lua
+1. Script/External/SpellAni/AutoUse.lua
+1. Script/External/SpellAni/Voltsunami.lua
 1. Script/Flow/Achievements.lsv
 1. Script/Flow/Achievements.lua
 1. Script/Flow/AutoUse.lua
@@ -247,4 +249,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 03 November 2015; 10:28:59 CET
+### Last updated: Tue 03 November 2015; 14:38:29 CET

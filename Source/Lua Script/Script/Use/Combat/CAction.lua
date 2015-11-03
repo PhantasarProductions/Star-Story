@@ -44,10 +44,11 @@ White();
 ({[true] = function()
            local ref = item.SpellAni_Reference
            if not suffixed(upper(ref),".LUA") then ref = ref .. ".lua" end
-           MS.Load("SPELLANI","Scripts/External/SpellAni/"..ref)
-           local parameters = ag..";"..ai..";"..tg..";"..ti
+           MS.Load("SPELLANI","Script/External/SpellAni/"..ref)
+           local parameters = ag..";"..ai..";"..tg..";"..sval(ti)
            if item.SpellAni_Parameters then parameters = parameters .. ";"..item.SpellAniParameters end
-           MS.Run("SPELLANI",parameters)
+           MS.Run("SPELLANI","SPELLANI",parameters)
+           MS.Destroy("SPELLANI")
            end,
  [false] = function()
            if item.SpellAni_Reference=="" then CSay("No SpellAni for this ability or so it seems."); return end

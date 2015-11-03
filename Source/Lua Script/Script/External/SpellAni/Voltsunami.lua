@@ -1,5 +1,5 @@
 --[[
-  SUPER_WENDICKA_VOLTSUNAMI.lua
+  Voltsunami.lua
   Version: 15.11.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -34,25 +34,16 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-ret = {
-	["ActSpeed"] = 50,
-	["AttackElement"] = "Thunder",
-	["AttackPower"] = 500,
-	["AttackStat"] = "Will",
-	["CauseParalysis"] = true,
-	["DefenseStat"] = "Resistance",
-	["Description"] = "Iedereen onder stroom!!!",
-	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Lightning.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Voltsunami",
-	["SpellAni_External"] = true,
-	["SpellAni_Reference"] = "Voltsunami",
-	["Target"] = "AF",
-	["UseCombat"] = true,
-	["UseField"] = true}
-
-return ret
-
--- This file is an automatically generated file!
-
+function SPELLANI(ag,ai,tg,ti)
+local crystal = Image.Load("GFX/Combat/SpellAni/SuperMoves/Voltsunami.png")
+for ak=1,40 do
+    Image.Cls()
+    for al=1,35 do
+        Image.Rotate(rand(0,360))
+        Image.Show(crystal,rand(100,700),rand(100,500))
+        end
+    Flip()    
+    end
+Image.Rotate(0)    
+Image.Free(crystal)    
+end
