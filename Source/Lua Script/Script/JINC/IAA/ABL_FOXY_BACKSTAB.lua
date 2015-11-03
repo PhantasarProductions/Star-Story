@@ -35,10 +35,10 @@
 version: 15.11.03
 ]]
 ret = {
-	["ABL_AP"] = 150,
+	["ABL_AP"] = 120,
 	["ABL_APCut"] = 2000,
 	["ABL_DblSpeed"] = 3000,
-	["ABL_Pose"] = "Cast",
+	["ABL_Pose"] = "Attack",
 	["ABL_Speed"] = 50,
 	["ActSpeed"] = 150,
 	["AttackElement"] = "Non-Elemental",
@@ -50,6 +50,7 @@ ret = {
 	["Icon"] = "GFX/Inventory/Dagger.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Backstab",
+	["ScriptEffect_Reference"] = "Backstab",
 	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}

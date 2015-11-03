@@ -70,7 +70,7 @@ learnspellmessages = {
                     return "You have "..score.." business points. "..need.." are required for a new skill."
                     end,
       Foxy        = function()
-                    if RPGChar.CountList("Foxy","ABL") == 7 then return "" end -- Don't put on the "???" if Foxy got all spells. 
+                    if RPGChar.CountList("Foxy","ABL") == 8 then return "" end -- Don't put on the "???" if Foxy got all spells. 
                     return "???" 
                     end,
       Xenobi      = function()              
