@@ -39,7 +39,7 @@ ret = {
 	["ABL_APCut"] = 10000,
 	["ABL_Pose"] = "Cast",
 	["ABL_Speed"] = 100,
-	["ActSpeed"] = 250,
+	["ActSpeed"] = 150,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
@@ -50,7 +50,8 @@ ret = {
 	["Name"] = "Dragon Charge",
 	["SpellAni_Reference"] = "DragonCharge",
 	["Target"] = "AF",
-	["UseCombat"] = true}
+	["UseCombat"] = true,
+	["UserNextMove"] = "SUPER_FOXY_SKYDRAGONSLASH"}
 
 return ret
 

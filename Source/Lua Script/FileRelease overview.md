@@ -7,6 +7,7 @@
 1. Script/CharStats/General.lua
 1. Script/CharStats/Wendicka.lua
 1. Script/External/SpellAni/AutoUse.lua
+1. Script/External/SpellAni/SkyDragonSlash.lua
 1. Script/External/SpellAni/Voltsunami.lua
 1. Script/Flow/Achievements.lsv
 1. Script/Flow/Achievements.lua
@@ -113,6 +114,7 @@
 1. Script/JINC/IAA/ITM_SPORES.lua
 1. Script/JINC/IAA/ITM_THUNDER_DIAMOND.lua
 1. Script/JINC/IAA/ITM_VLUGZOUT.lua
+1. Script/JINC/IAA/SUPER_FOXY_SKYDRAGONSLASH.lua
 1. Script/JINC/IAA/SUPER_WENDICKA_VOLTSUNAMI.lua
 1. Script/JINC/InitChar/Briggs.lua
 1. Script/JINC/InitChar/Crystal.lua
@@ -250,4 +252,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 03 November 2015; 20:55:45 CET
+### Last updated: Tue 03 November 2015; 21:18:51 CET
