@@ -87,7 +87,7 @@ SFX("Audio/SFX/SpellAni/Thunder/ThunderStrike.ogg")
 for ak=1,20 do
     DrawScreen()
     White()
-    Image.Scale(scl,scl); scl=scl*-1
+    Image.Scale(scl,1); scl=scl*-1
     Image.Show("SA_LIGHTNING",sx,sy)
     Image.Scale(1,1)
     Flip()

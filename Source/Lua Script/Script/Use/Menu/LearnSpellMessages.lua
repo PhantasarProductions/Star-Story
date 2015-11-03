@@ -1,6 +1,6 @@
 --[[
   LearnSpellMessages.lua
-  Version: 15.11.02
+  Version: 15.11.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -69,7 +69,10 @@ learnspellmessages = {
                     if need==0 then return "" end
                     return "You have "..score.." business points. "..need.." are required for a new skill."
                     end,
-      Foxy        = function() return "???" end,
+      Foxy        = function()
+                    if RPGChar.CountList("Foxy","ABL") == 7 then return "" end -- Don't put on the "???" if Foxy got all spells. 
+                    return "???" 
+                    end,
       Xenobi      = function()              
                     local need = CVV("%XENOBI.NEED") - CVV("%MONEY.DONE")
                     if CVV("%XENOBI.NEED")==0 then return "" end

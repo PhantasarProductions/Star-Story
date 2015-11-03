@@ -1,6 +1,6 @@
 --[[
   Console.lua
-  Version: 15.11.02
+  Version: 15.11.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -505,4 +505,11 @@ end
 function MANGAUGE(ch,value)
 if LAURA.GetFlow()~="COMBAT" then CWrite("? This command only works in combat mode!",255,0,0) return end
 MS.Run("COMBAT","ManGauge",ch..";"..value)
+end
+
+
+function FOXYALL()
+Toggle("&CHEAT.FOXYALL")
+CSay("FOXYALL is now "..Var.C('&CHEAT.FOXYALL'))
+if CVV('&CHEAT.FOXYALL') then CSay("Perform one move with Foxy in battle and very likely all her moves will end up in her learning list") end
 end

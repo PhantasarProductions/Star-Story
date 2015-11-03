@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.02
+version: 15.11.03
 ]]
 
 -- Kills for ExHuRU (and his "representatives")  
@@ -131,6 +131,7 @@ XCharAfterAction = {
 					learnit = RPGChar.ListHas("Foxy","LEARN","FOXY_"..abl)==1
 					allowlearn = not(hasit or learnit)
 					r = rand(1,rate)
+					if CVV("&CHEAT.FOXYALL") then r=1 end -- Cheat to enable me to test out all of Foxy's skills and spells. I mean, depending on the random fact will take forever. ;)
 					CSay("Ability: "..abl.."; hasit: "..sval(hasit).."; hasall: "..sval(hasall).."; learnit: "..sval(learnit).."; allowlearn: "..sval(allowlearn).."; rate: "..rate.."; random: "..r)
 					if allowlearn and r<lv then 
 						RPGChar.AddList("Foxy","LEARN","FOXY_"..abl)
