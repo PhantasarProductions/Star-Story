@@ -36,7 +36,7 @@ Type TSecu
 	Method SSecuInit() Abstract
 	Method SSecu(e$,d$) Abstract
 	Method SSecuDone(J:TJCRCreate) Abstract
-	Method LSecu(J:TJCRDir,MainJ:TJCRDir) Abstract	
+	Method LSecu(J:TJCRDir,MainJ:TJCRDir,Dev$) Abstract	
 	End Type
 
 Type TNetwork
@@ -110,10 +110,10 @@ DeleteFile file
 RenameFile file+"_$$$$_SECU_$$$$_",file
 End Function	
 
-Function LSecu(J:TJCRDir,MainJ:TJCRDir)
+Function LSecu(J:TJCRDir,MainJ:TJCRDir,Dev$)
 Local Original = True
 For Local S:TSecu = EachIn seculist
-	Original = Original And S.LSecu(J,MainJ)
+	Original = Original And S.LSecu(J,MainJ,Dev)
 	Next
 Return Original
 End Function

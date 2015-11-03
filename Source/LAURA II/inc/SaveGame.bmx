@@ -141,6 +141,7 @@ If FileType(Swapdir)
 	'If Not DeleteDir(Swapdir,1) GALE_Error "Could not delete original swap dir!"
 	EndIf
 Local Ent:TJCREntry
+Local dev$
 Local OSFile$ ' Output Swap file... Not Operating system :-P
 For Local E$ = EachIn EntryList(BD)
 	If Prefixed(E,"SWAP/")
@@ -168,6 +169,7 @@ For Local line$=EachIn JCR_ListFile(BD,"LAURA/System")
 			Case "User","UserName"
 						If Not ls[1] ls[1]=StripAll(GetUserHomeDir())		
 						startup.D("User",ls[1])
+			Case "Dev"		Dev = ls[1]				
 			Default		GALE_Error "LoadGame: Unknown variable",["File,"+file,"Variable,"+ls[0]]
 			End Select
 		EndIf
@@ -234,7 +236,7 @@ If FileType(permafile)
 ' Network data
 LoadNet BD,startup						
 ' Security check
-Original = LSecu(BD,JCR)
+Original = LSecu(BD,JCR,Dev)
 Print "Original = "+Original
 'ConsoleShow;Flip;WaitKey;Bye ' Debug line. Put on rem when done.
 ' If this is a "DeleteMe" savegame, remove it now	
