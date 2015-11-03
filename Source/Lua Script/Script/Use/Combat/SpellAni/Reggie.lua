@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.20
+version: 15.11.03
 ]]
 -- @IF IGNOREME
 SpellAni = {}
@@ -83,3 +83,13 @@ function SpellAni.ReggieInferno(ActG,ActT,TarG,TarT)
 	ShowReggie()
 	SpellAni.Inferno()
 end
+
+function SpellAni.DragonCharge(ActG,ActT,TarG,TarT)
+if not Done("&DONE.DRAGONCHARGESPEECH") then -- In order not to annoy the player, this message only pops up the first time this move is used!
+   MS.LoadNew("BOXTEXT","Script/SubRoutines/BoxText.lua")
+   MS.Run("BOXTEXT","RemoveData","NEWABILITY")
+   MS.Run("BOXTEXT","LoadData","GENERAL/COMBAT;NEWABILITY")
+   SerialBoxText("NEWABILITY","SKYDRAGONSLASH","Combat")
+   end
+end   
+   

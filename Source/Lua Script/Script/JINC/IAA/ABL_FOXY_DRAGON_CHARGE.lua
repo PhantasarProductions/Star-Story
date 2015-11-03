@@ -48,6 +48,7 @@ ret = {
 	["Icon"] = "GFX/Elements/Fire.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Dragon Charge",
+	["ScriptEffect_Reference"] = "DragonCharge",
 	["Target"] = "AF",
 	["UseCombat"] = true}
 
