@@ -169,7 +169,7 @@ For Local line$=EachIn JCR_ListFile(BD,"LAURA/System")
 			Case "User","UserName"
 						If Not ls[1] ls[1]=StripAll(GetUserHomeDir())		
 						startup.D("User",ls[1])
-			Case "Dev"		Dev = ls[1]				
+			Case "DevVersion"	Dev = ls[1]				
 			Default		GALE_Error "LoadGame: Unknown variable",["File,"+file,"Variable,"+ls[0]]
 			End Select
 		EndIf
