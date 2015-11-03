@@ -144,7 +144,7 @@ XCharAfterAction = {
 	       end,         
 	       
   Wendicka = function()
-             if RPGChar.ListHas("UniWendicka","ABL","WENDICKA_"..spells[200])==1 then Award("ALLABL_WENDICKA") end
+             if RPGChar.ListHas("UniWendicka","ABL","WENDICKA_ELECTRICCHARGE")==1 then Award("ALLABL_WENDICKA") end
              end	       
 	}
 XCharAfterAction.UniWendicka = XCharAfterAction.Wendicka	

@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 15.10.31
+  Version: 15.11.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -256,6 +256,8 @@ ABLKIND = {
           local choice = nil
           local i,pu,puu
           local APCost
+          local descf = fonts['AbilityList'][1]
+          local descs = fonts['AbilityList'][2] / 2
           for ak=1,abilities do
               ablshort = RPGStat.ListItem(pchar,"ABL",ak)
               abl = "ABL_"..ablshort
@@ -267,7 +269,11 @@ ABLKIND = {
               --Image.DText("Mouse: "..mx..","..my,mx,my)              
               if my>y-(size/2) and my<y+(size/2) then
                  if mousehit(1) then choice=abl; CSay("Chosen: "..abl) end
-                 Image.Color(180,180,255)
+                 Image.Color(255,180,0)
+                 Image.Font("Fonts/"..descf,descs)
+                 Image.DText(abldata.Description,350,-25,2,0)
+                 SetFont('AbilityList')
+                 Image.Color(180,180,255)                 
                  end
               Image.DText(Var.S(abldata.Name),x,y,0,2)
               Image.ScalePC(50,50)
@@ -289,7 +295,7 @@ ABLKIND = {
               if APCost > RPGChar.Points(pchar,"AP").Have then Red() end
               Image.DText(APCost,680,y,1,2)
               if mousehit(2) then choice="cancel" end
-              y = y + size,choice
+              y = y + size --,choice
               end
           return y + size,choice
           end,
@@ -313,6 +319,10 @@ ABLKIND = {
               Image.Color(0,180,255)              
               if my>y-(size/2) and my<y+(size/2) then
                  if mousehit(1) then choice=abl end
+                 Image.Font("Fonts/"..descf,descs)
+                 Image.Color(255,180,0)
+                 Image.DText(abldata.Description,350,-25,2,0)
+                 SetFont('AbilityList')
                  Image.Color(180,180,255)
                  end
               Image.DText(Var.S(abldata.Name),x,y,0,2)
@@ -630,7 +640,7 @@ FeatureHandleArray = {
                   Image.Origin(0,0)
                   end,            
       Abilities = function()
-                  Image.ViewPort(50,100,700,400)
+                  -- Image.ViewPort(50,100,700,400) -- Not very likely I need this as nobody has that much abilities.
                   Image.Origin(50,100)
                   local a = RPGChar.Data(pchar,"ABLTYPE")
                   local f = ABLKIND[a] or ABLKIND.ABL
@@ -643,7 +653,7 @@ FeatureHandleArray = {
                   White()
                   Image.DText(learnspellmessages[pchar](),350,y,2)
                   --Image.DText('returnto = '..returnto,350,y+30,2) -- debug line
-                  Image.ViewPort(0,0,800,600)
+                  --Image.ViewPort(0,0,800,600)
                   Image.Origin(0,0)
                   end,
       Order     = function()
