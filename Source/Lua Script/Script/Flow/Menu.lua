@@ -499,7 +499,7 @@ FeatureHandleArray = {
                            if mousehit(1) or mousehit(2) then
                                if RPGChar.Stat(pchar,"INVAMNT"..ak)>0 then
                                   cmbitem = ItemGet("ITM_"..RPGChar.GetData(pchar,"INVITEM"..ak))
-                                  if cmbitem.ItemType=="Consumable" or cmb.ItemType=="EndlesslyUsable" then
+                                  if cmbitem.ItemType=="Consumable" or cmbitem.ItemType=="EndlesslyUsable" then
                                      Var.D("%CHOSENITEM.SOCKET",ak)
                                      Var.D("$CHOSENITEM.ITEM",RPGChar.GetData(pchar,"INVITEM"..ak))
                                      LAURA.Flow("COMBAT")

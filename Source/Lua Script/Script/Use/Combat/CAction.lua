@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 15.11.03
+  Version: 15.11.04
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -296,7 +296,17 @@ if RPGChar.Stat(ch,"INVAMNT"..act.ItemSocket)<=0 then
    MINI("Item socket empty",255,180,0)
    return
    end
-RPGChar.DecStat(ch,"INVAMNT"..act.ItemSocket)
+if act.Item.ItemType == "Consumable" then RPGChar.DecStat(ch,"INVAMNT"..act.ItemSocket) end
+if act.Item.ItemType ~= "Consumable" and act.Item.ItemType ~= "EndlesslyUsable" then 
+   MINI("Action Cancelled!",255,0,0)
+   MINI("Item cannot be used this way!",255,180,0)
+   return
+   end
+if not act.Item.UseCombat then 
+   MINI("Action Cancelled!",255,0,0)
+   MINI("That item cannot be used in combat!",255,180,0)
+   return
+   end
 EquipEffect(ch)   
 act.EAI = true
 ActionFuncs.EAI(ag,ai,act)
