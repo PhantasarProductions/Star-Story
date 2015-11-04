@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.03
+version: 15.11.04
 ]]
 ret = {
 	["ABL_AP"] = 8,
@@ -49,6 +49,8 @@ ret = {
 	["Icon"] = "GFX/Inventory/Dagger.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Smoke Bomb",
+	["ScriptEffect_Reference"] = "RemoveEnemy",
+	["SpellAni_Reference"] = "SmokeBomb",
 	["Target"] = "AF",
 	["UseCombat"] = true,
 	["UseField"] = true,

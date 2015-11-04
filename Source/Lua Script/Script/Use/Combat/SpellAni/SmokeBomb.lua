@@ -1,5 +1,5 @@
 --[[
-  ABL_FOE_FULLHEALTH.lua
+  SmokeBomb.lua
   Version: 15.11.04
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -34,26 +34,44 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-ret = {
-	["ABL_AP"] = 0,
-	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 800,
-	["ActSpeed"] = 800,
-	["AttackElement"] = "Non-Elemental",
-	["AttackStat"] = "Strength",
-	["DefenseStat"] = "Defense",
-	["Description"] = "Heals all HP",
-	["Healing"] = 100,
-	["HealingType"] = "Percent",
-	["Icon"] = "GFX/Inventory/FirstAidKit.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Full Health",
-	["SpellAni_Reference"] = "SingleHeal",
-	["Target"] = "1A",
-	["UseCombat"] = true,
-	["UseField"] = true}
 
-return ret
-
--- This file is an automatically generated file!
-
+--[[
+    
+    I basically recycled this code from "The Secret Of Dyrt" where Merya had the same move.
+    I did need to make a few adeptions to it in order to make it work fully here in LAURA II.
+    
+]]
+    
+function SpellAni.SmokeBomb()
+local smoke = {} 
+local d = { { X=-1, Y=0 }, {X=1,Y=0}, {X=0,Y=-1}, {X=0,Y=1} }
+local ak,al,ad,tx,ty,s
+local imgsmoke = Image.Load("GFX/Combat/SpellAni/SmokeBomb/Smoke Bomb.png")
+Image.HotCenter(imgsmoke)
+-- Let's first see which enemies we all got and tie all the smoke sprites to that
+for ak,fdata in pairs(Fighters.Foe) do
+    if fdata and RPGChar.Points(fdata.Tag,'HP').Have>0 then
+       tx,ty = CoordsFighter.Foe(ak)
+       for al,ad in ipairs(d) do table.insert(smoke,{gx=ad.X,gy=ad.Y,x=tx,y=ty,alpha=1}) end 
+       end
+    end
+-- Place the enemies out of the screen
+for ak,fdata in pairs(Fighters.Foe) do
+    if (not fdata.Boss)  then fdata.x = -1000 end
+    end     
+-- And now, let's roll it, boys
+for ak=1,100 do
+    DrawScreen()
+    for al,s in ipairs(smoke) do
+        s.alpha = s.alpha - 0.01
+        s.x = s.x + s.gx
+        s.y = s.y + s.gy
+        Image.SetAlpha(s.alpha)
+        Image.Draw(imgsmoke,s.x,s.y)
+        end  
+    Image.SetAlpha(1)    
+    Flip()
+    end
+-- Remove the smoke image from the memory
+Image.Free(imgsmoke)    
+end    

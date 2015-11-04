@@ -1,6 +1,6 @@
 --[[
   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.lua
-  Version: 15.10.31
+  Version: 15.11.04
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -37,3 +37,8 @@
 
 
 AblSpecialEffect = {}
+
+
+function AblSpecialEffect.Nothing()
+return true
+end
