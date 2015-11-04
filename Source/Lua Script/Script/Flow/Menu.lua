@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 15.11.03
+  Version: 15.11.04
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -71,6 +71,8 @@ tuts = {
    }
    
 ChosenItem = {}   
+
+Trashcan = Image.Load("GFX/StatusScreen/Trash.png"); TrashCan=Trashcan -- Just to make sure no silly case sensitive errors can pop up, sigh!
 
 function PointChar(chp)
 pcharn = Sys.Val(chp)
@@ -427,6 +429,11 @@ FeatureHandleArray = {
                   local item,cmbitem
                   local mousetxt = { FIELD = {"Left = Pick up","Right = Use on "..RPGChar.GetName(pchar)},COMBAT={"Click to use"},VAULT={"Left = pickup"},STORE={"Left = Pickup","Right = Sell"}}
                   White()
+                  -- Trashcan
+                  if returnto~="COMBAT" then
+                     Image.Show(Trashcan,680,80)
+                     if ChosenItem.Taken and mousehit(1) and mx>680 and my>80 and my<Image.Height(Trashcan)+80 and mx<680+Image.Width(Trashcan) then ChosenItem = {} end
+                     end
                   for ak=1,InventorySockets do
                       -- Get some needed values
                       row = math.floor((ak-1)/InventorySocketRow)

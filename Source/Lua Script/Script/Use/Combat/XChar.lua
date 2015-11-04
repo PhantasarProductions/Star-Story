@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.03
+version: 15.11.04
 ]]
 
 -- Kills for ExHuRU (and his "representatives")  
@@ -120,10 +120,12 @@ XCharAfterAction = {
 	
 	Foxy = function()
 				local lv = RPGChar.Stat("Foxy","Level")
+				local foxyused = CVV('%FOXY.USED') * (4-skill)       
 				local abilities = { DRAGON_BURN = 200, DRAGON_INFERNO = 400, BACKSTAB = 1600, CHEER = 25600, SMOKEBOMB = 4600, DRAGON_CHARGE = 6553600 }
 				local hasall = true
 				local hasit,learnit,allowlearn
 				local r
+				if foxyused<65535 and rand(0,skill)==0 then inc('%FOXY.USED') end
 				CSay("Let's see if Foxy learns something new!")
 				for abl,rate in pairs(abilities) do
 					hasit = RPGChar.ListHas("Foxy","ABL","FOXY_"..abl)==1
@@ -133,7 +135,7 @@ XCharAfterAction = {
 					r = rand(1,rate)
 					if CVV("&CHEAT.FOXYALL") then r=1 end -- Cheat to enable me to test out all of Foxy's skills and spells. I mean, depending on the random fact will take forever. ;)
 					CSay("Ability: "..abl.."; hasit: "..sval(hasit).."; hasall: "..sval(hasall).."; learnit: "..sval(learnit).."; allowlearn: "..sval(allowlearn).."; rate: "..rate.."; random: "..r)
-					if allowlearn and r<lv then 
+					if allowlearn and r<lv+foxyused then 
 						RPGChar.AddList("Foxy","LEARN","FOXY_"..abl)
 						CSay("Learn: "..abl)
 					end
