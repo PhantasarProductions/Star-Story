@@ -152,8 +152,8 @@ for ak=0,40 do
 NoDoorAction = true
 LoadMap("Excalibur_Home")
 if RPGChar.PartyTag(0)~="UniWendicka" then
-   Maps.CamX=480 
    Actors.Spawn("Voordeur","GFX/Actors/Player","PLAYER")
+   Maps.CamX=480 
    MapShow("Woonkamer")
    TurnPlayer("North")
 else

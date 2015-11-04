@@ -1,6 +1,6 @@
 --[[
   CDrawFighters.lua
-  Version: 15.11.04
+  Version: 15.11.05
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -131,7 +131,10 @@ local x,y = CoordsFighter.Hero(idx)
 -- Marker(x,y)
 data.Pick = data.Pick or "Default"
 local pick = data.Pick
-if RPGChar.Points(data.Tag,"HP").Have<=0 then pick="Dead" end
+if RPGChar.Points(data.Tag,"HP").Have<=0 then 
+   pick="Dead"
+   RPGChar.ClearList(data.Tag,"STATUSCHANGE")
+   end
 local ptag = "COMBAT.HERO."..data.Tag.."."..(pick or "Default")
 local Targeted = isorcontains(TargetedGroup,"Hero") and isorcontains(TargetedFighter,idx)
 if Image.Loaded(ptag)==0 then -- Load if needed!
