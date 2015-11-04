@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.25
+version: 15.11.04
 ]]
 
 function Internal_Transporter(spot,text,labels)
@@ -151,7 +151,8 @@ for ak=0,40 do
     end
 NoDoorAction = true
 LoadMap("Excalibur_Home")
-if RPGChar.PartyTag(0)~="UniWendicka" then 
+if RPGChar.PartyTag(0)~="UniWendicka" then
+   Maps.CamX=480 
    Actors.Spawn("Voordeur","GFX/Actors/Player","PLAYER")
    MapShow("Woonkamer")
    TurnPlayer("North")

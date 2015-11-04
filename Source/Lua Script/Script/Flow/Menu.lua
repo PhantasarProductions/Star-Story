@@ -432,7 +432,12 @@ FeatureHandleArray = {
                   -- Trashcan
                   if returnto~="COMBAT" then
                      Image.Show(Trashcan,680,80)
-                     if ChosenItem.Taken and mousehit(1) and mx>680 and my>80 and my<Image.Height(Trashcan)+80 and mx<680+Image.Width(Trashcan) then ChosenItem = {} end
+                     if ChosenItem.Taken and mousehit(1) and mx>680 and my>80 and my<Image.Height(Trashcan)+80 and mx<680+Image.Width(Trashcan) then 
+                        if ItemGet("ITM_"..ChosenItem.Item).ItemType=="KeyItem" then
+                           MINI("You cannot trash that item!",255,0,0)
+                        else 
+                           ChosenItem = {} end
+                        end   
                      end
                   for ak=1,InventorySockets do
                       -- Get some needed values
