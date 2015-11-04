@@ -1,6 +1,6 @@
 --[[
   CDrawFighters.lua
-  Version: 15.11.03
+  Version: 15.11.04
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -199,6 +199,7 @@ local poses = {
                      end
                  end,
         Cast   = function()
+                 if Fighters.Hero[idx]=="Briggs" then return end
                  Fighters.Hero[idx].Pick="Cast"
                  for ak=1,50 do
                      DrawScreen()
