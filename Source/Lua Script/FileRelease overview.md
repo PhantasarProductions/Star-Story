@@ -206,6 +206,7 @@
 1. Script/Use/Combat/SpellAni/Reggie.lua
 1. Script/Use/Combat/SpellAni/Shoot.lua
 1. Script/Use/Combat/SpellAni/SmokeBomb.lua
+1. Script/Use/Combat/SpellAni/Throw.lua
 1. Script/Use/Combat/SpellAni/ThunderSpells.lua
 1. Script/Use/Combat/StatusChanges/AAAAAAAAAAAAAAAAAAAAAAAAAAAAA.lua
 1. Script/Use/Combat/StatusChanges/Debug.lua
@@ -253,4 +254,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Thu 05 November 2015; 00:34:51 CET
+### Last updated: Thu 05 November 2015; 21:37:46 CET

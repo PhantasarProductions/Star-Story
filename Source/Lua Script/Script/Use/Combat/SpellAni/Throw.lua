@@ -1,5 +1,5 @@
 --[[
-  ABL_FOE_TASER.lua
+  Throw.lua
   Version: 15.11.05
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -34,22 +34,36 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-ret = {
-	["ABL_AP"] = 0,
-	["ABL_Pose"] = "Attack",
-	["ActSpeed"] = 250,
-	["AttackElement"] = "Thunder",
-	["AttackPower"] = 100,
-	["AttackStat"] = "Strength",
-	["DefenseStat"] = "Defense",
-	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Gun.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Taser",
-	["Target"] = "1F",
-	["UseCombat"] = true}
 
-return ret
+-- @IF IGNOREME
+SpellAni = {}
+-- @FI
 
--- This file is an automatically generated file!
 
+
+-- Rock
+function SpellAni.ThrowRock(ActG,ActT,TarG,TarT)
+local ax,ay = FighterCoords(ActG,ActT)
+local tx,ty = FighterCoords(TarG,TarT)
+local gx = (tx-ax)/30
+local gy = (ty-ay)/30
+local x,y=ax,ay
+local rot = 0
+local rotspd=rand(30,40)
+Image.LoadNew("PROJECTILE_Rock","GFX/Inventory/Rock.png")
+Image.HotCenter("PROJECTILE_Rock")
+--SFX("Audio/SFX/Photon.ogg")
+for ak=1,30 do
+   --repeat
+   x = x + gx
+   y = y + gy
+   rot = rot + rotspd
+   DrawScreen()
+   White()
+   Image.Rotate(rot)
+   Image.Show("PROJECTILE_Rock",x,y)
+   Image.Rotate(0)
+   Flip()
+   --until x<-50 or x>850 or y<-50 or y>650
+   end
+end

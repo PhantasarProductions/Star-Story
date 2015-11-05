@@ -1,6 +1,6 @@
 --[[
   ITM_ROCK.lua
-  Version: 15.11.04
+  Version: 15.11.05
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -48,6 +48,7 @@ ret = {
 	["Icon"] = "GFX/Inventory/Rock.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Rock",
+	["SpellAni_Reference"] = "ThrowRock",
 	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}

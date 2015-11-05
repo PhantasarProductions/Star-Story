@@ -1,6 +1,6 @@
 --[[
   SUPER_WENDICKA_VOLTSUNAMI.lua
-  Version: 15.11.04
+  Version: 15.11.05
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
