@@ -1,6 +1,6 @@
 --[[
   JukeboxData.lua
-  Version: 15.11.05
+  Version: 15.11.06
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================

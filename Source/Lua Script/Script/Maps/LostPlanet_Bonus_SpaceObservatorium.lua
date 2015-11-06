@@ -32,16 +32,36 @@
   
  **********************************************
  
-version: 15.10.31
+version: 15.11.06
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Schuif.lua
+
+
+
 
 function CLICK_ARRIVAL_Transporter()
 TransporterPad('Observatorium')
 end
 
 function MAP_FLOW()
+-- And old bug could get you in this dungeon with no way to get out. This routine will fix that!
+if Var.C("&GOT.HAWK")~="TRUE" then
+   --local rand = Math.Rand
+   Image.Cls()
+   Image.NoFont()
+   Image.Color(rand(0,255),rand(0,255),rand(0,255))
+   Image.DText("The fact that you are here at this very moment proves you were victim of a bug.",0,0)
+   Image.DText("The bug itself is fixed, but the fact remains you still can't get out of here and that",0,15)
+   Image.DText("Is a bit of a heritage of that bug. I will help you now by sending you back to a spot",0,30)
+   Image.DText("from where you can continue, and apologies for the inconvience",0,45)
+   Image.DText("The game will continue in a few seconds",0,100)
+   Image.Flip()
+   Time.Sleep(10000)
+   MS.Run("FIELD","LoadMap","LostPlanet_Junkyard;#002")
+   MS.Run("FIELD","SpawnPlayer","Start")
+   return      
+   end
 -- Control the sliding doors
 DoSchuif()
 -- Control the space areas

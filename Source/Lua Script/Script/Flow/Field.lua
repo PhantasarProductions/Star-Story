@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.10.31
+  Version: 15.11.06
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -171,7 +171,7 @@ end
 function CheckClickables()
 local i,c
 local mx,my = TrueMouseCoords()
-local ret,ARMSpot,obj
+local ret,ARMSpot,obj,succ
 if not Clickables then return end
 if mousehit(1) then
    for i,c in ipairs(Clickables) do
@@ -189,43 +189,51 @@ if mousehit(1) then
        if Maps.Obj.Exists(obj) and Maps.CoordsInObject(obj,mx,my)==1 then
           if type(c)=='table' then
 			CSay("Request from table")  
-            if c.spot then Actors.WalkToSpot(cplayer,c.spot) CSay("Walking To Spot: "..c.spot) end
-            if c.coords then Acotrs.WalkTo(cplayer,c.coods.x,c.coords.y) end
-            WalkArrival = c.arrival   ; CSay("Execute: "..WalkArrival)   
-			WalkArrivalArg = c.arrivalarg		
-			ret = true
+			      
+            if c.spot then succ = Actors.WalkToSpot(cplayer,c.spot)==1 CSay("Walking To Spot: "..c.spot) end
+            if c.coords then succ = Acotrs.WalkTo(cplayer,c.coods.x,c.coords.y)==1 end
+            if succ then
+               WalkArrival = c.arrival   ; CSay("Execute: "..WalkArrival)   
+			         WalkArrivalArg = c.arrivalarg
+			         ret = true
+			         end					     
           elseif prefixed(c,"NPC_MT_") then
-            Actors.WalkTo(cplayer,Maps.Obj.Obj(c).X,Maps.Obj.Obj(c).Y+32)
-            WalkArrival = "NPC_MapText"
-			WalkArrivalArg = nil
-            Var.D("$NPC_MAPTEXT",c)
-            ret=true
+            if Actors.WalkTo(cplayer,Maps.Obj.Obj(c).X,Maps.Obj.Obj(c).Y+32) == 1 then
+               WalkArrival = "NPC_MapText"
+			         WalkArrivalArg = nil
+               Var.D("$NPC_MAPTEXT",c)
+               ret=true
+               end
           elseif prefixed(c,"NPC_") then
             if c=="NPC_MapText" then Sys.Error("Illegal NPC tag!") end
-            Actors.WalkTo(cplayer,Maps.Obj.Obj(c).X,Maps.Obj.Obj(c).Y+32)
-            WalkArrival = c
-			WalkArrivalArg = nil
-            ret=true            
+            if Actors.WalkTo(cplayer,Maps.Obj.Obj(c).X,Maps.Obj.Obj(c).Y+32)==1 then 
+               WalkArrival = c
+			         WalkArrivalArg = nil
+               ret=true
+               end            
           elseif prefixed(c,"ARMCHST") then -- This block until the next "else" statement is specifically for Star Story.
               ARMSpot = replace(c,"ARMCHST","ARMSPOT")
-              Actors.WalkToSpot(cplayer,ARMSpot)
-              WalkArrival = "GRANT_ARM"
-			  WalkArrivalArg = nil  
-              Var.D("$ARMSPOT",ARMSpot)
-              CSay("Gimme that ARM at "..Maps.Obj.Obj(ARMSpot).x..","..Maps.Obj.Obj(ARMSpot).y)
-              CSay(" = Arrival call: "..WalkArrival)
-              CSay(" = ARMSpot:      "..ARMSpot)
-              ret = true
+              if Actors.WalkToSpot(cplayer,ARMSpot)==1 then 
+                 WalkArrival = "GRANT_ARM"
+			           WalkArrivalArg = nil  
+                 Var.D("$ARMSPOT",ARMSpot)
+                 CSay("Gimme that ARM at "..Maps.Obj.Obj(ARMSpot).x..","..Maps.Obj.Obj(ARMSpot).y)
+                 CSay(" = Arrival call: "..WalkArrival)
+                 CSay(" = ARMSpot:      "..ARMSpot)
+                 ret = true
+                 end
 		  else
 			  if Maps.Obj.Exists("SPOT_"..c)==1 then
-				   Actors.WalkToSpot(cplayer,"SPOT_"..c)
+				   succ = Actors.WalkToSpot(cplayer,"SPOT_"..c) == 1
 				   CSay("Walking to spot: SPOT_"..c)
 			  else
-				   Actors.WalkToSpot(cplayer,c)
+				   succ = Actors.WalkToSpot(cplayer,c) == 1
 				   CSay("SPOT not there, so walking to the object itself in stead")
 			     end			
-            WalkArrival = "CLICK_ARRIVAL_"..c
-            ret=true
+			     if succ then
+              WalkArrival = "CLICK_ARRIVAL_"..c
+              ret=true
+              end
             end
           end
        end
