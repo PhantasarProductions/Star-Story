@@ -1,6 +1,6 @@
 --[[
   Business Points.lua
-  Version: 15.11.02
+  Version: 15.11.07
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -51,7 +51,7 @@
       - 10 points for every aurina you pocess
       - 5 points for every aurina you've exchanged for money
       - 1 point per 200 credits
-      - 1 points per 300 credits spent 
+      - 1 point per 300 credits spent 
       - 5 points per item you pocess on any character (he or she MUST be in the active party on the moment of checking).
       - 2.5 points per item stored in the vault
       
