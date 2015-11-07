@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_VENOMBITE.lua
-  Version: 15.11.05
+  Version: 15.11.07
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================

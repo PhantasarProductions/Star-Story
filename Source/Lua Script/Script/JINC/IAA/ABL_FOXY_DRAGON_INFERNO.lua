@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.05
+version: 15.11.07
 ]]
 ret = {
 	["ABL_AP"] = 100,
@@ -40,7 +40,7 @@ ret = {
 	["ABL_DblPower"] = 3000,
 	["ABL_DblSpeed"] = 10000,
 	["ABL_Pose"] = "Cast",
-	["ActSpeed"] = 100,
+	["ActSpeed"] = 80,
 	["AttackElement"] = "Fire",
 	["AttackPower"] = 175,
 	["AttackStat"] = "Will",
