@@ -1,6 +1,6 @@
 --[[
   Terminal.lua
-  Version: 15.10.29
+  Version: 15.11.07
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -47,7 +47,16 @@ Menu = {
                             CSay("You used the save app in the terminal "..CVV("%TERMINAL.SAVE").." times now.")
                             end,   
                    AllowAlways = true                
-                }
+                },
+                
+         Tutor = {
+                    Action = function()
+                             MS.LoadNew("TUTOR","Script/Flow/Tutor.lua")
+                             LAURA.Flow("TUTOR")
+                             end,
+                    AllowAlways = true         
+                             
+                 }       
        }
 
 function DrawScreen()

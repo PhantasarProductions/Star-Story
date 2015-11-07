@@ -26,6 +26,7 @@
 1. Script/Flow/Terminal.lua
 1. Script/Flow/Transporter.lsv
 1. Script/Flow/Transporter.lua
+1. Script/Flow/Tutor.lua
 1. Script/Flow/Upgrade.lsv
 1. Script/Flow/Upgrade.lua
 1. Script/Flow/Vault.lua
@@ -254,4 +255,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sat 07 November 2015; 16:22:13 CET
+### Last updated: Sat 07 November 2015; 17:35:00 CET

@@ -1,6 +1,6 @@
 --[[
   Cancel.lua
-  Version: 15.11.02
+  Version: 15.11.07
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -50,7 +50,7 @@ if tgt.Gauge<=10000 then CSay(" = Request rejected. Enemy not yet on a cancellab
 CSay("  = Group: "..tg)
 CSay("  = Skill: "..skill)
 local roll = rand(setback[skill][tg][1],setback[skill][tg][2])       
-tgt.Gauge = tgt.Gauge - roll
+tgt.Gauge = 9999 - roll
 if tgt.Gauge>setback[skill][tg][3] then tgt = setback[skill][tg][3] end
 RepCancel(tg,ti)
 CSay("  = Enemy succesfully cancelled")
