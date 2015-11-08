@@ -20,36 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.09.02
-End Rem
-Rem
-/*
-	Run the game
-	
-	
-	
-	
-	(c) Jeroen P. Broks, 2015, All rights reserved
-	
-		This program is free software: you can redistribute it and/or modify
-		it under the terms of the GNU General Public License as published by
-		the Free Software Foundation, either version 3 of the License, or
-		(at your option) any later version.
-		
-		This program is distributed in the hope that it will be useful,
-		but WITHOUT ANY WARRANTY; without even the implied warranty of
-		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-		GNU General Public License for more details.
-		You should have received a copy of the GNU General Public License
-		along with this program.  If not, see <http://www.gnu.org/licenses/>.
-		
-	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
-	to the project the exceptions are needed for.
-*/
-
-
-Version: 15.08.26
-
+Version: 15.11.08
 End Rem
 Strict
 'Import "framework.bmx"
@@ -79,6 +50,7 @@ ListAddLast Lsystemfile,sf
 End Function
 
 ?MacOS
+Rem due to the new setup, this part is no longer required
 Function MacSessionKill()
 'Notify "MacSessionKill set up" ' Debug line
 Local file$ = Dirry("$AppSupport$/$LinuxDot$Phantasar Productions/LAURA2/StarStory/Session.txt")
@@ -93,6 +65,7 @@ ListAddLast Lsystemfile,sf
 End Function
 
 MacSessionKill
+End Rem
 ?
 
 CreateSystemFile "Emergency","Emergency Save","Perhaps you did not properly quit the game last time you played. Maybe there was an error in the game? Or a total OS crash? Or did you have a power malfunction? Or did you just forget to shutdown the game? Anyway here we got an emergency save so maybe you can load it to recover some unsaved data."

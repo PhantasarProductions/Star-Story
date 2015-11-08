@@ -53,13 +53,43 @@ Les = {
                                {c='color',r=255,g=180,b=0},"5. Half",{c='color',r=0,g=180,b=255},"Damage will be halved (and rounded accordingly)",
                                {c='color',r=255,g=180,b=0},"6. Immune",{c='color',r=0,g=180,b=255},"Won't do damage at all",
                                {c='color',r=0,g=255,b=0},"7. Absorb",{c='color',r=0,g=180,b=255},"Will heal in stead of damage","","",
-                               "Trying to figure this out well, can really work in your advantage!"}
-                                        
+                               "Trying to figure this out well, can really work in your advantage!"},
+    ["Ability Powerup #1 - The system itself"] = {"Except for Crystal (who has her ARMS) all characters have","special abilities, of which most can be","powerupped after they are acquired.","","These powerups are awarded randomly and the rate","in which they are awarded is different for each","powerup and each ability","As you may also have noticed, not every powerup is available for every ability.","","There are two things that increase the chance a powerup is awarded","Your level, and the amount of times you used a certain ability.","",{c='color',r=255,g=0,b=255},"The game announces with a message on the bottom right","when a powerup is given."},
+    ["Ability Powerup #2 - Which powerups do we have?"] = {"The next powerups exist for abilities:",""}
+                                            
                                                                             
 }
 
 LPM=0
 
+-- The powerup tutor was easier to set up this way :)
+ABL_PowerUpColors = {
+                          INSTANT  = {255,255,  0},
+                          CANCEL   = {255,180,  0},
+                          DBLSPEED = {  0,180,255},
+                          DBLPOWER = {255,  0,  0},
+                          APCUT    = {180,255,  0} 
+                    }
+
+ABL_PowerUpName = { INSTANT = "Instant Execution", CANCEL = "Cancel", DBLSPEED = "Double Speed", DBLPOWER = "Double Power", APCUT = "Half AP"}
+ABL_PowerUpDesc = { INSTANT = {"The ability will be executed instantly"}, CANCEL = {"Will cancel the enemy if it","was moving from COM to ACT"}, DBLSPEED = {"You need half the time to move","from COM to ACT with this ability"}, DBLPOWER={"Attack or healing powers are doubled"}, APCUT={"Ability cost is lowered by 50%"}}                    
+ABL_PowerUp = Les["Ability Powerup #2 - Which powerups do we have?"]
+Socket = {c = 'image', icode = "ABL_Socket", x=84}
+Back2Blue = {c='color',r=0,g=180,b=255}
+for pwup,pwcl in pairs(ABL_PowerUpColors) do
+    Console.Write("Setting up tutor for powerup: "..pwup,100,100,180)
+    ABL_PowerUp[#ABL_PowerUp+1] = { c = 'color', r=pwcl[1],g=pwcl[2],b=pwcl[3]}
+    ABL_PowerUp[#ABL_PowerUp+1] = Socket
+    ABL_PowerUp[#ABL_PowerUp+1] = { c = 'image', icode='ABL_'..pwup, x=84}
+    ABL_PowerUp[#ABL_PowerUp+1] = "         "..ABL_PowerUpName[pwup]
+    ABL_PowerUp[#ABL_PowerUp+1] = Back2Blue
+    for _,d in ipairs(ABL_PowerUpDesc[pwup]) do
+        ABL_PowerUp[#ABL_PowerUp+1] = "         "..d
+        end
+    ABL_PowerUp[#ABL_PowerUp+1] = ""    
+    end
+    
+-- And now the routines themselves.    
 function ShowLesson()
 local y = 15
 local dy = y - LPM
@@ -75,7 +105,13 @@ for line in each(Les[Lesson]) do
                    Image.DText(line,50,dy)
                    y = y + Image.TextHeight(line)
                    end, 
-      ['table'] = ({ color = function() Image.Color(line.r,line.g,line.b) end})[line.c]             
+      ['table'] = ({ color = function() Image.Color(line.r,line.g,line.b) end,
+                     image = function()
+                             line.icode = line.icode or Image.Load(line.image)
+                             dy = (line.y or y) - LPM
+                             Image.Show(line.icode,(line.x or 50),dy)
+                             if line.movey then y = y + Image.Height(line.image) end 
+                             end})[line.c]             
       })[type(line)]() 
     end
 Image.ViewPort(0,0,800,600)

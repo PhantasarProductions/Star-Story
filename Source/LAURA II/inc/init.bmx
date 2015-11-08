@@ -20,9 +20,9 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.10.22
+Version: 15.11.08
 End Rem
-MKL_Version "LAURA II - init.bmx","15.10.22"
+MKL_Version "LAURA II - init.bmx","15.11.08"
 MKL_Lic     "LAURA II - init.bmx","GNU General Public License 3"
 
 Function Init()
@@ -169,11 +169,22 @@ ConsoleCloseLogFile()
 GALE_Sys.ByeExecute
 End Function
 
+Function MacReturn()
+?MacOS
+If startup.C("MacReturn") Then
+	EndGraphics
+	Print "Returning to: "+startup.C("MacReturn")
+	system_ startup.C("MacReturn")
+	EndIf
+?
+End Function	
+
 Function InitClosure()
 ConsoleWrite "Setting up closure statements..."
 If JCR_Exists(JCR,"Script/System/Bye.lua") GALE_Sys.AddByeScript("Script/System/Bye.lua")
 'Notify "closure setting!" ' debug line
 AddByeFunction LAURABYE
+AddByeFunction MacReturn ' Only has effect on Mac. Other platforms will ignore this.
 End Function
 
 Function InitPlatformScript()

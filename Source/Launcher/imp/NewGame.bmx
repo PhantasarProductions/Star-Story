@@ -20,40 +20,16 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.09.02
-End Rem
-Rem
-/*
-	
-	
-	
-	
-	
-	(c) Jeroen P. Broks, 2015, All rights reserved
-	
-		This program is free software: you can redistribute it and/or modify
-		it under the terms of the GNU General Public License as published by
-		the Free Software Foundation, either version 3 of the License, or
-		(at your option) any later version.
-		
-		This program is distributed in the hope that it will be useful,
-		but WITHOUT ANY WARRANTY; without even the implied warranty of
-		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-		GNU General Public License for more details.
-		You should have received a copy of the GNU General Public License
-		along with this program.  If not, see <http://www.gnu.org/licenses/>.
-		
-	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
-	to the project the exceptions are needed for.
-*/
-
-
-Version: 15.07.12
-
+Version: 15.11.08
 End Rem
 Strict
 Import "framework.bmx"
 Import tricky_units.Dirry
+Import tricky_units.Bye
+
+
+MKL_Version "LAURA II - NewGame.bmx","15.11.08"
+MKL_Lic     "LAURA II - NewGame.bmx","GNU General Public License 3"
 
 JCR6CrashError = True
 Global NGPanel:TGadget = AddPanel("New Game",New TNewGamePanel)
@@ -168,6 +144,12 @@ Type TNewGamePanel Extends tfpanelbase
 		WriteLine bt,"Var:GameJoltUser="+TextFieldText(GameJoltUserName)
 		WriteLine bt,"Var:GameJoltToken="+TextFieldText(GameJoltToken)
 		EndIf
+	?MacOS
+	Local A$ = AppFile
+	While ExtractExt(ExtractDir(A)).toupper()<>".APP" a = ExtractDir(A) Wend
+	Print "LAURA II will return to "+A+" when finished!"
+	WriteLine bt,"Var:MacReturn="+A
+	?	
 	CloseStream BT
 	?Not MacOS
 	HideGadget window
@@ -175,6 +157,9 @@ Type TNewGamePanel Extends tfpanelbase
 	'Print "Executing: "+syscommand
 	'Notify "Executing: "+syscommand	
 	system_ syscommand
+	?MacOS
+	Bye
+	?
 	?Not MacOS
 	ShowGadget Window
 	?

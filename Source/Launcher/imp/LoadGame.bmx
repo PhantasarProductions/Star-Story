@@ -20,14 +20,19 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.10.16
+Version: 15.11.08
 End Rem
 Strict
 
 Import tricky_units.ListDir
 Import tricky_units.Dirry
 Import tricky_units.advdatetime
+Import tricky_units.bye
 Import "Framework.bmx"
+
+MKL_Version "LAURA II - LoadGame.bmx","15.11.08"
+MKL_Lic     "LAURA II - LoadGame.bmx","GNU General Public License 3"
+
 
 JCR6CrashError = True
 
@@ -153,6 +158,12 @@ Type TLoadGamePanel Extends tfpanelbase
 	WriteLine bt,"Var:Title=Star Story"
 	WriteLine bt,"Var:StartUpFunction="+fun[sync]
 	WriteLine Bt,"Var:CodeName=StarStory"
+	?MacOS
+	Local A$ = AppFile
+	While ExtractExt(ExtractDir(A)).toupper()<>".APP" a = ExtractDir(A) Wend
+	Print "LAURA II will return to "+A+" when finished!"
+	WriteLine bt,"Var:MacReturn="+A
+	?	
 	If IgnoreGameJolt And (Not Sync) WriteLine bt,"Var:IgnoreGameJolt="+YesNo[ButtonState(IgnoreGameJolt) And (Not Sync)]
 	If Sync WriteLine BT,"Var:Windowed=Yes"
 	CloseStream BT
@@ -165,6 +176,9 @@ Type TLoadGamePanel Extends tfpanelbase
 	Refresh User,cfile
 	ShowGadget Window
 	?	
+	?MacOS
+	Bye
+	?
 	End Method
 	
 	Method flow()
