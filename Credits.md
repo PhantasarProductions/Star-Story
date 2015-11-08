@@ -13,6 +13,7 @@ If you see your name below and you think I'm using your stuff against your licen
 
 Author | Contributions | Kind of contributions
 ---|---|---
+ deusinvictus | 1 | Art; 
 Aaron Krogh | 8 | Music; 
 Alexander | 4 | Audio; Misc files; Music; 
 Angela Nagtzaam | 13 | Art; 
@@ -26,10 +27,12 @@ Fake Music Generator | 1 | Music;
 FlamingText.com | 13 | Art; 
 GDJ | 3 | Art; 
 GR-Sites | 15 | Art; Audio; 
+GameJolt | 1 | Art; 
 J.W.H. Broeders | 1 | Music; 
 Kevin McLeod | 11 | Music; 
 Kristel Kerstens | 1 | Audio; 
 Lazur URH | 2 | Art; Misc files; 
+Lindsey | 1 | Art; 
 Majkel | 1 | Art; 
 Man of Steel | 117 | Art; Misc files; 
 Matt McFarland | 2 | Music; 
@@ -44,17 +47,20 @@ Rockit Maxx | 1 | Music;
 Shockwave-sound.com | 1 | Audio; 
 Skurian25 | 1 | Art; 
 Spiedkiks | 1 | Music; 
-TheSkull | 1 | Art; 
+TheSkull | 2 | Art; 
 Thobias Benjamin Koehler | 2 | Font; Misc files; 
-Tricky (this is me) :sunglasses: | 1849 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
+Tibetan_Fox | 1 | Art; 
+Tricky (this is me) :sunglasses: | 1850 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
 Unknown Artist | 29 | Art; 
 Utopia | 2 | Font; Misc files; 
 Varazuvi(TM) | 4 | Audio; 
+Vicious_Speed | 1 | Art; 
 Vickie | 1 | Art; 
 WeirdoMusic | 1 | Music; 
 Widzy | 4 | Audio; Music; 
 YADOT | 1 | Art; 
 barnheartowl | 1 | Art; 
+cgbug | 1 | Art; 
 eady | 2 | Art; Misc files; 
 finao123 | 1 | Art; 
 glitch | 2 | Art; 
