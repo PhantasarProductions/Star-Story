@@ -174,7 +174,7 @@ Function MacReturn()
 If startup.C("MacReturn") Then
 	EndGraphics
 	Print "Returning to: "+startup.C("MacReturn")
-	system_ startup.C("MacReturn")
+	system_ "open "+startup.C("MacReturn")
 	EndIf
 ?
 End Function	

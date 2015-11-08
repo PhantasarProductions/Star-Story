@@ -162,7 +162,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	Local A$ = AppFile
 	While ExtractExt(A).toupper()<>"APP" a = ExtractDir(A) Wend
 	Print "LAURA II will return to "+A+" when finished!"
-	WriteLine bt,"Var:MacReturn="+A
+	WriteLine bt,"Var:MacReturn="+Replace(A," ","\ ")
 	?	
 	If IgnoreGameJolt And (Not Sync) WriteLine bt,"Var:IgnoreGameJolt="+YesNo[ButtonState(IgnoreGameJolt) And (Not Sync)]
 	If Sync WriteLine BT,"Var:Windowed=Yes"

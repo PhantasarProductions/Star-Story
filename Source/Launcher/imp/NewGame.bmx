@@ -148,7 +148,7 @@ Type TNewGamePanel Extends tfpanelbase
 	Local A$ = AppFile
 	While ExtractExt(ExtractDir(A)).toupper()<>"APP" a = ExtractDir(A) Wend
 	Print "LAURA II will return to "+A+" when finished!"
-	WriteLine bt,"Var:MacReturn="+A
+	WriteLine bt,"Var:MacReturn="+Replace(A," ","\ ")
 	?	
 	CloseStream BT
 	?Not MacOS
