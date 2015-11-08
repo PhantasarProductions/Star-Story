@@ -25,6 +25,7 @@ End Rem
 Strict
 
 Framework tricky_units.MKL_Version
+Import    brl.pngloader
 
 Import "imp/JCR6Crash.bmx"
 Import "imp/DeleteCrash.bmx"
