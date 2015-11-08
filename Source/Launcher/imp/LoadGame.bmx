@@ -27,7 +27,7 @@ Strict
 Import tricky_units.ListDir
 Import tricky_units.Dirry
 Import tricky_units.advdatetime
-Import tricky_units.bye
+Import tricky_units.Bye
 Import "Framework.bmx"
 
 MKL_Version "LAURA II - LoadGame.bmx","15.11.08"
@@ -160,7 +160,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	WriteLine Bt,"Var:CodeName=StarStory"
 	?MacOS
 	Local A$ = AppFile
-	While ExtractExt(ExtractDir(A)).toupper()<>".APP" a = ExtractDir(A) Wend
+	While ExtractExt(A).toupper()<>"APP" a = ExtractDir(A) Wend
 	Print "LAURA II will return to "+A+" when finished!"
 	WriteLine bt,"Var:MacReturn="+A
 	?	
