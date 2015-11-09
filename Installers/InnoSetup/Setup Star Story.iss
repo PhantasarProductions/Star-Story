@@ -35,7 +35,7 @@ DisableDirPage=yes
 DefaultGroupName={#MyAppName}
 LicenseFile=Z:\volumes\irravonia\Projects\BlitzMax\JCR6+\LAURA II\Design\Star Story\GitHub\clone\Star-Story\License\License.rtf
 OutputDir=Z:\Volumes\Irravonia\Releases\Star Story\Windows\Installer
-OutputBaseFilename=Setup_StarStory
+OutputBaseFilename=Setup_StarStory_Demo_Without_Music
 SetupIconFile=Z:\volumes\irravonia\Projects\BlitzMax\JCR6+\LAURA II\Design\Star Story\GitHub\clone\Star-Story\Installers\InnoSetup\Wendicka.ico
 Compression=lzma
 SolidCompression=yes
@@ -55,7 +55,7 @@ Source: "Z:\volumes\irravonia\Releases\Star Story\Windows\LAURA2.exe"; DestDir: 
 ; Initial data the engine and the launcher need.
 Source: "Z:\volumes\irravonia\Releases\Star Story\Windows\Init.ini"; DestDir: "{app}"; Flags: ignoreversion
 ; The JCR files containing all the scripts and assets of the game.
-Source: "Z:\volumes\irravonia\Releases\Star Story\OSX\Star Story.app\Contents\Resources\StarStory_Music.JCR"; DestDir: "{app}"; Flags: ignoreversion
+;Source: "Z:\volumes\irravonia\Releases\Star Story\OSX\Star Story.app\Contents\Resources\StarStory_Music.JCR"; DestDir: "{app}"; Flags: ignoreversion                                                           
 Source: "Z:\volumes\irravonia\Releases\Star Story\OSX\Star Story.app\Contents\Resources\StarStory.JCR"; DestDir: "{app}"; Flags: ignoreversion
 ; This file is needed to contact GameJolt, however it will only be provided with stable releases and not on the repository. 
 Source: "Z:\volumes\irravonia\Releases\Star Story\OSX\Star Story.app\Contents\Resources\GameJolt.net"; DestDir: "{app}"; Flags: ignoreversion
