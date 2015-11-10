@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.07
+version: 15.11.10
 ]]
 ret = {
 	["ABL_AP"] = 25,
@@ -43,6 +43,7 @@ ret = {
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
+	["Buff_Strength"] = 100,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Increases power on all allies",
 	["HealingType"] = "Absolute",
