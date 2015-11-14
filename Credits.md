@@ -14,7 +14,7 @@ If you see your name below and you think I'm using your stuff against your licen
 Author | Contributions | Kind of contributions
 ---|---|---
  deusinvictus | 1 | Art; 
-Aaron Krogh | 8 | Music; 
+Aaron Krogh | 14 | Music; 
 Alexander | 4 | Audio; Misc files; Music; 
 Angela Nagtzaam | 13 | Art; 
 Ann | 1 | Art; 
@@ -30,7 +30,8 @@ GR-Sites | 15 | Art; Audio;
 GameJolt | 1 | Art; 
 J.W.H. Broeders | 1 | Music; 
 J4p4n | 1 | Art; 
-Kevin McLeod | 11 | Music; 
+Kevin McLeod | 12 | Music; 
+Knight Of Fire | 2 | Music; 
 Kristel Kerstens | 1 | Audio; 
 Lazur URH | 2 | Art; Misc files; 
 Lindsey | 1 | Art; 
@@ -51,7 +52,7 @@ Spiedkiks | 1 | Music;
 TheSkull | 2 | Art; 
 Thobias Benjamin Koehler | 2 | Font; Misc files; 
 Tibetan_Fox | 1 | Art; 
-Tricky (this is me) :sunglasses: | 1854 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
+Tricky (this is me) :sunglasses: | 1855 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
 Unknown Artist | 29 | Art; 
 Utopia | 2 | Font; Misc files; 
 Varazuvi(TM) | 4 | Audio; 
