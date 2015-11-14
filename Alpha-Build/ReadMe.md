@@ -37,13 +37,8 @@ Well, that should do it. Any questions?
 
 
 ### Alternate method
-If working with the command line tools is beyond you, and you want to download the game in a basic archive form in stead, you can also download the archives from my DropBox account
-
-- [JCR.7z](https://www.dropbox.com/s/6jhb596eqc3tb0r/JCR.7z?dl=0) (required for both platforms)
-- [MacApp.7z](https://www.dropbox.com/s/c4mr8zl2ziv5iey/MacApp.7z?dl=0) (required for Mac)
-- [WinExe.7z](https://www.dropbox.com/s/sk2axpx5jqct3ei/WindowsExe.7z?dl=0) (required for Windows)
-
-(if any of the links above do not work, please write an issue ticket about it, and I'll sort it out)
+Unfortunately I had to remove the alpha builds on my DropBox account. My Dropbox max size was close to its limits and I couldn't afford to pay for more space.
+If you really think I should make an alternate download for the alpha version available, write a ticket on the issue tracker and I shall see what I can do, however I cannot promise anything!!!
 
 
 
