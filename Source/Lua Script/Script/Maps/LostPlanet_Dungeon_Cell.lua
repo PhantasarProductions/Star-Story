@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.14
+version: 15.11.16
 ]]
 
 
@@ -50,6 +50,10 @@ function CLICK_ARRIVAL_Tralies()
 end
 
 function NextFloor()
+  if not(ActivatedPads[upper(Maps.CodeName..".CellBlockLoveWithYou")]) then
+     MINI("Perhaps you can better activate the transporter pad here first!!!",255,0,0)
+     return 
+     end
 	LoadMap("LostPlanet_Dungeon","#001")
 	CSay("We are on layer: "..Maps.CheckLayer())
 	CSay("We got the next tags!")

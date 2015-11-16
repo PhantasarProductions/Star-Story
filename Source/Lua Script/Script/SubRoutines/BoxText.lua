@@ -1,6 +1,6 @@
 --[[
   BoxText.lua
-  Version: 15.11.15
+  Version: 15.11.16
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -70,7 +70,7 @@ local ret = {}
 local section = "[rem]"
 local L
 local Prefix,DLine,WorkRec
-if merge then ret = btdata[loadas or file] end
+if merge then ret = btdata[loadas or file] or {} end
 CSay("Loading BoxText Data: "..file)
 for LineNumber,Line in ipairs(crap) do
     L = Str.Trim(Line)

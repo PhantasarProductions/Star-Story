@@ -168,4 +168,6 @@ AddClickable("Nav")
 AddClickable("Terminal")
 -- Recover upon arrival
 RecoverParty()
+-- Merge with fullgame text
+MS.Run("BOXTEXT","LoadData","MAPS/HAWK_FULL;MAP;true")
 end
