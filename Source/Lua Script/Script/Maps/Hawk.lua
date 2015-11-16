@@ -94,7 +94,7 @@ if not Done("&NAV.YAQIRPA") then ActivateRemotePad('YaqirpaStart','Return_Yaqirp
 if not FullVersion then
    MapText("ENDDEMO")
 elseif not Done("&NAV.PHYSILIUM.OLDRUINS") then
-   ActivateRemotePad('TransWendicka','Physillium - The Ruins of the Y Anhysbys','Physillium','The Ruins of the Y Anhysbys - Wendicka\'s spot')
+   ActivateRemotePad('TransWendicka','Physillium - The Ruins of the Y Anhysbys','Physillium','The Ruins of the Y Anhysbys - Wendicka\'s spot',"#002")
    -- Sys.Error("Protection blockout! We cannot continue yet.")
    FirstWorld("Physillium","ArrivalPhysillium")
    -- We do need to script the arrival at Physilium part first!
@@ -169,5 +169,5 @@ AddClickable("Terminal")
 -- Recover upon arrival
 RecoverParty()
 -- Merge with fullgame text
-MS.Run("BOXTEXT","LoadData","MAPS/HAWK_FULL;MAP;true")
+if FullVersion then MS.Run("BOXTEXT","LoadData","MAPS/HAWK_FULL;MAP;true") end
 end

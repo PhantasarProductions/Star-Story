@@ -1,6 +1,6 @@
 --[[
   Transporter.lua
-  Version: 15.10.28
+  Version: 15.11.16
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -130,7 +130,14 @@ else
    for w,data in spairs(Transporters.Worlds) do
        if my>y and my<y+15 then 
           Image.Color(0,180,255)
-          if mousehit(1) then CurrentWorld = w end
+          if mousehit(1) then 
+             CurrentWorld = w
+             if Transporters.Worlds[w].mapfunction then
+                LAURA.Flow("FIELD")
+                MS.Run("FIELD","Schedule","MAP;"..Transporters.Worlds[w].mapfunction)
+                if not Transporters.Worlds[w].mapfunctionpermanent then Transporters.Worlds[w].mapfunction = nil end
+                end 
+             end
        else   
           Image.Color(0,100,180)
           end 
