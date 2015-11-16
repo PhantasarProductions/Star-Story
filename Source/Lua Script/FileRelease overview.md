@@ -233,6 +233,8 @@
 1. Script/JINC/NewGame+/PreserveVar.lua
 1. Script/Maps/Physillium - The Ruins of the Y Anhysbys.lua
 1. Script/Use/Anyway/Full.lua
+1. Script/Use/Maps/Hawk/ArrivalPhysillium.lua
+1. Script/Use/Maps/Hawk/AutoNewNav.lua
 
 
 
@@ -259,4 +261,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 16 November 2015; 10:57:51 CET
+### Last updated: Mon 16 November 2015; 11:02:25 CET
