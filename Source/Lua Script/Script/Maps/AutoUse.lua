@@ -53,7 +53,9 @@ function ZA_SetAction(Z,A,F,P)
 table.insert(ZA[A],{Z = Z, F = F, P = P})
 end
 
-function ZA_Enter(Z,F,P)
+function ZA_Enter(Z,PF,P)
+local F = PF
+if F=="ALB_EXE" then F = ALB_EXE end
 ZA_SetAction(Z,"Enter",F,P)
 end
 
@@ -429,6 +431,11 @@ function KickReggie(direction,foxy,reggie)
 	until reggieobj.X == reggiexy[1] and reggieobj.Y==reggiexy[2]	
 	-- Restore DontWarn
 	Actors.DontWarn = dw
+end
+
+function ALB_EXE(tag) -- AutoLabel Execute
+local myobj = Maps.Obj.Obj(tag)
+MapShow(myobj.Labels)
 end
 
 	

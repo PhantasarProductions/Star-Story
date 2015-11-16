@@ -854,6 +854,19 @@ function SwitchLayer(layer,forcenewsetup) -- forcenewsetup may ONLY be done by L
 	]]
 end
 
+function SetUpALB()
+local layers,orilayer = ({ [0]=function() return {'SL:MAP'},nil end, [1]=function () return mysplit(Maps.Layers(),";"),Maps.LayerCodeName end})[Maps.Multi()]()
+-- CSay(type(layers).."/"..type(each))
+for layer in each(layers) do
+    for obj in KthuraEach() do
+        if prefixed(obj.Tag,"ALB") then
+           MS.Run("MAP","ZA_Enter",obj.Tag..";ALB_EXE;"..obj.Tag)
+           CSay("Registered ALB object: "..obj.Tag)
+           end
+        end
+    end
+end
+
 
 
 function LoadMap(map,layer)
@@ -868,6 +881,7 @@ Maps.Load(map)
 SetUpFoes()
 SetUpTreasure()
 SetUpAutoClickables()
+SetUpALB()
 Var.Clear("$MAP.MAPSHOW.LASTREQUEST")
 Var.Clear("$MAP.MAPSHOW.LASTALWAYSSHOW")
 end

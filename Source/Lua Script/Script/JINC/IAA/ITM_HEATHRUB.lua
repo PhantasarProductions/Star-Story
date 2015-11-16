@@ -1,5 +1,5 @@
 --[[
-  SUPER_FOXY_SKYDRAGONSLASH.lua
+  ITM_HEATHRUB.lua
   Version: 15.11.16
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,21 +35,21 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ActSpeed"] = 50,
-	["AttackElement"] = "Fire",
-	["AttackPower"] = 600,
-	["AttackStat"] = "Will",
-	["DefenseStat"] = "Resistance",
-	["Description"] = "Iedereen in de fik",
+	["ActSpeed"] = 250,
+	["AttackElement"] = "Non-Elemental",
+	["AttackStat"] = "Strength",
+	["CureParalysis"] = true,
+	["DefenseStat"] = "Defense",
+	["Description"] = "Cures \"Paralysis\"",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Elements/Fire.png",
+	["ITM_BuyPrice"] = 100,
+	["ITM_SellPrice"] = 75,
+	["ITM_Sellable"] = true,
+	["Icon"] = "GFX/Inventory/HeathRub.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Sky Dragon Slash",
-	["SpellAni_External"] = true,
-	["SpellAni_Reference"] = "SkyDragonSlash",
-	["Target"] = "AF",
-	["UseCombat"] = true,
-	["UseField"] = true}
+	["Name"] = "Heath Rub",
+	["Target"] = "1A",
+	["UseCombat"] = true}
 
 return ret
 

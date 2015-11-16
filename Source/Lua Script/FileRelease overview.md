@@ -108,6 +108,7 @@
 1. Script/JINC/IAA/ITM_FISTAIDKIT.lua
 1. Script/JINC/IAA/ITM_GUBAFLOWER.lua
 1. Script/JINC/IAA/ITM_HEALINGCAPSULE.lua
+1. Script/JINC/IAA/ITM_HEATHRUB.lua
 1. Script/JINC/IAA/ITM_KEY_YAQIRPA.lua
 1. Script/JINC/IAA/ITM_MEDICINE.lua
 1. Script/JINC/IAA/ITM_MOLOTOV.lua
@@ -233,6 +234,7 @@
 1. Script/JINC/NewGame+/PreserveVar.lua
 1. Script/Maps/Physillium - The Ruins of the Y Anhysbys.lua
 1. Script/Use/Anyway/Full.lua
+1. Script/Use/Maps/Gen/Next.lua
 1. Script/Use/Maps/Hawk/ArrivalPhysillium.lua
 1. Script/Use/Maps/Hawk/AutoNewNav.lua
 
@@ -261,4 +263,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 16 November 2015; 12:27:47 CET
+### Last updated: Mon 16 November 2015; 13:32:59 CET

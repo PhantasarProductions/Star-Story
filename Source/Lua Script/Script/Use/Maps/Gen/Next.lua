@@ -1,5 +1,5 @@
 --[[
-  SUPER_FOXY_SKYDRAGONSLASH.lua
+  Next.lua
   Version: 15.11.16
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -34,24 +34,37 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-ret = {
-	["ActSpeed"] = 50,
-	["AttackElement"] = "Fire",
-	["AttackPower"] = 600,
-	["AttackStat"] = "Will",
-	["DefenseStat"] = "Resistance",
-	["Description"] = "Iedereen in de fik",
-	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Elements/Fire.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Sky Dragon Slash",
-	["SpellAni_External"] = true,
-	["SpellAni_Reference"] = "SkyDragonSlash",
-	["Target"] = "AF",
-	["UseCombat"] = true,
-	["UseField"] = true}
+if not (Next and Prev) then
 
-return ret
+function Next()
+local x,y = GetCoords()
+Actors.StopMoving('PLAYER')
+--Actors.MoveTo('PLAYER',x,-64,1)
+--WalkWait()
+local c = Sys.Val(right(Maps.LayerCodeName,3))
+c = c + 1
+local lay = "#"..right("00"..c,3)
+Maps.Obj.Kill("PLAYER")
+Maps.GotoLayer(lay)
+SpawnPlayer("Start")
+TurnPlayer("North")
+end
 
--- This file is an automatically generated file!
+function Prev()
+local x,y = GetCoords()
+Actors.StopMoving('PLAYER')
+--Actors.MoveTo('PLAYER',x,3300,1)
+--WalkWait()
+local c = Sys.Val(right(Maps.LayerCodeName,3))
+c = c - 1
+local lay = "#"..right("00"..c,3)
+Maps.Obj.Kill("PLAYER")
+Maps.GotoLayer(lay)
+SpawnPlayer("Einde")
+TurnPlayer("South")
+end
 
+ZA_Enter("Next",Next)
+ZA_Enter("Prev",Prev)
+
+end
