@@ -36,6 +36,15 @@ version: 15.11.16
 ]]
 -- @USE /Script/Use/Maps/Gen/Schuif.lua
 -- @USE /Script/Use/Maps/Gen/Next.lua
+
+function WendickaSecret()
+if InParty("Wendicka") and (not Done("&DONE.WENDICKA.YANHYSBYS.SECRETPASSAGE.CRYSTAL.MULTIBLAST.ANNOUNCED")) then
+   MapText("WENDICKA_SECRET")
+   end
+end
+
+
 function GALE_OnLoad()
 Music("Dungeon/The Complex.ogg")
+ZA_Enter("WendickaSecret",WendickaSecret)
 end
