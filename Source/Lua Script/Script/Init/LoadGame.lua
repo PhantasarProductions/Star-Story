@@ -1,6 +1,6 @@
 --[[
   LoadGame.lua
-  Version: 15.09.22
+  Version: 15.11.16
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -52,6 +52,7 @@ LoadFlowsScripts()
 LoadBaseGraphics()
 MS.LN_Run("FIELD","Script/Flow/Field.lua","PlaceTreasures")
 MS.Run("FIELD","SetUpAutoClickables")
+MS.Run("FIELD","SetUpALB")
 RedoMapShow()
 FixAblPowerup()
 end
