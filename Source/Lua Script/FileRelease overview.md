@@ -94,6 +94,7 @@
 1. Script/JINC/IAA/ABS_FOE_VENOMBITE.lua
 1. Script/JINC/IAA/ARM_DART.lua
 1. Script/JINC/IAA/ARM_HEALINGSPRAY.lua
+1. Script/JINC/IAA/ARM_MULTIBLAST.lua
 1. Script/JINC/IAA/ARM_MUNCHHAUSEN.lua
 1. Script/JINC/IAA/ARM_POISONDART.lua
 1. Script/JINC/IAA/ARM_VIRUSBOMB.lua
@@ -263,4 +264,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 16 November 2015; 15:39:57 CET
+### Last updated: Mon 16 November 2015; 16:30:03 CET
