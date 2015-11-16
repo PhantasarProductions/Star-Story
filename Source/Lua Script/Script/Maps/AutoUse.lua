@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 15.11.01
+  version: 15.11.16
   Copyright (C) 2015 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -392,9 +392,9 @@ function KickReggie(direction,foxy,reggie)
   local reggiexy,reggiego
 	-- Move Foxy
 	if Maps.Obj.Kind(foxy) == 'Actor' then	
-		foxyoriginalimg = Actors.Actor("foxy").ChosenPic		
+		foxyoriginalimg = Actors.Actor(foxy).ChosenPic		
 		Actors.ChoosePic(foxy,"FOXY."..upper(direction))
-		Actors.Actor("foxy").Frame=1
+		Actors.Actor(foxy).Frame=1
 	else
 	  foxyoriginalimg = foxyobj.TextureFile 
 	  foxyobj.TextureFile = "GFX/ACTORS/PLAYER/Foxy."..direction..".png"
@@ -415,7 +415,7 @@ function KickReggie(direction,foxy,reggie)
 	-- Restore Foxy
 	if Maps.Obj.Kind(foxy) == 'Actor' then					
 		Actors.ChoosePic(foxy,foxyoriginalimg)
-		Actors.Actor("foxy").Frame=0
+		Actors.Actor(foxy).Frame=0
 	else	    
 	  foxyobj.TextureFile = foxyoriginalimg
 	  foxyobj.Frame=0
