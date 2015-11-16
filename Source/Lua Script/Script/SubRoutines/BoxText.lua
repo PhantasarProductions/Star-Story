@@ -1,6 +1,6 @@
 --[[
   BoxText.lua
-  Version: 15.10.29
+  Version: 15.11.15
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -62,7 +62,7 @@ if not P then Sys.Error("Unknown scenario prefix - "..Prefix) end
 P(Rec,DLine)    
 end
 
-function LoadData(file,loadas)
+function LoadData(file,loadas,merge)
 local lang = Var.C("$LANG")
 local LineNumber,Line
 local crap = JCR6ListFile("Languages/"..lang.."/Scenario/"..file)
@@ -70,6 +70,7 @@ local ret = {}
 local section = "[rem]"
 local L
 local Prefix,DLine,WorkRec
+if merge then ret = btdata[loadas or file] end
 CSay("Loading BoxText Data: "..file)
 for LineNumber,Line in ipairs(crap) do
     L = Str.Trim(Line)
