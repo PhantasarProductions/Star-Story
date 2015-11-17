@@ -1,0 +1,10 @@
+[sys]
+include Star Story Full
+
+[old]
+Add:TexturesGrabFoldersMerge,../LAURA II/Design/Star Story/JCR_Full
+
+[vars]
+Maps=../LAURA II/Design/Star Story/Pre-Assets/ArenaKthuraFull/
+ShotDir=../LAURA II/Design/Star Story/JCR_Full/Tricky Story/GFX/Combat/Arena/
+

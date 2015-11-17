@@ -1,5 +1,5 @@
 --[[
-  ABL_YIRL_FOLLOWME.lua
+  ABL_FOXY_STUNSTAB.lua
   Version: 15.11.17
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,25 +35,24 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 125,
-	["ABL_APCut"] = 10000,
-	["ABL_Instant"] = 2500,
+	["ABL_AP"] = 60,
+	["ABL_APCut"] = 2500,
+	["ABL_Instant"] = 4000,
 	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 60,
-	["ActSpeed"] = 250,
+	["ABL_Speed"] = 80,
+	["ActSpeed"] = 80,
 	["AttackElement"] = "Non-Elemental",
+	["AttackPower"] = 50,
 	["AttackStat"] = "Strength",
+	["CauseParalysis"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Move all allies to COM",
+	["Description"] = "Weak attack, but may paralyze the enemy",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Elements/Light.png",
+	["Icon"] = "GFX/Inventory/Dagger.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Follow me",
-	["ScriptEffect_Reference"] = "FollowMe",
-	["Target"] = "OS",
-	["UseCombat"] = true,
-	["UseField"] = true,
-	["untauntable"] = true}
+	["Name"] = "Stun Stab",
+	["Target"] = "1F",
+	["UseCombat"] = true}
 
 return ret
 

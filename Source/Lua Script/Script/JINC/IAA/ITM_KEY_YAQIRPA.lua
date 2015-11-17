@@ -26,7 +26,7 @@
  **********************************************
 ITM_KEY_YAQIRPA.lua
 (c) 2015 Jeroen Petrus Broks
-Version: 15.11.16
+Version: 15.11.17
 ]]
 ret = {
 	["ActSpeed"] = 250,

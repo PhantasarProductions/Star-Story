@@ -1,0 +1,8 @@
+[sys]
+include Star Story
+
+[old]
+Add:TexturesGrabFoldersMerge,../LAURA II/Design/Star Story/JCR_Full
+
+[vars]
+MAPS=../LAURA II/Design/Star Story/JCR_Full/Tricky Story/Kthura/

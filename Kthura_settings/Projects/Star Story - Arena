@@ -1,0 +1,7 @@
+Add:TexturesGrabFoldersMerge,../LAURA II/Design/Star Story/JCR
+Add:Lines,0:600:800:600
+Add:Lines,800:0:800:600
+Var:Maps=../LAURA II/Design/Star Story/Pre-Assets/ArenaKthura/
+Var:ShotDir=../LAURA II/Design/Star Story/JCR/Tricky Story/GFX/Combat/Arena/
+Var:ShotWidth=800
+Var:ShotHeight=600

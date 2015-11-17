@@ -79,6 +79,7 @@
 1. Script/JINC/IAA/ABL_FOXY_MULTISTAB.lua
 1. Script/JINC/IAA/ABL_FOXY_PICKPOCKET.lua
 1. Script/JINC/IAA/ABL_FOXY_SMOKEBOMB.lua
+1. Script/JINC/IAA/ABL_FOXY_STUNSTAB.lua
 1. Script/JINC/IAA/ABL_WENDICKA_ELECTRICCHARGE.lua
 1. Script/JINC/IAA/ABL_WENDICKA_JOLT.lua
 1. Script/JINC/IAA/ABL_WENDICKA_MJOLNIR.lua
@@ -264,4 +265,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 16 November 2015; 20:04:43 CET
+### Last updated: Tue 17 November 2015; 12:43:30 CET

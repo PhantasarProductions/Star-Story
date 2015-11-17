@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.09
+version: 15.11.17
 ]]
 
 -- Kills for ExHuRU (and his "representatives")  
@@ -50,7 +50,7 @@ local spells = {
                         [ 480] = "STOMP",
                         [ 960] = "NELJA",
                         [1920] = "KUUSI",
-                        [3840] = "COCENTRATE"
+                        [3840] = "CONCENTRATE"
                         }
 if RPGChar.ListHas("ExHuRU","EXHURU_"..spells[3840])==1 then Award("ALLABL_EXHURU") end
 local i,a  
@@ -121,7 +121,7 @@ XCharAfterAction = {
 	Foxy = function()
 				local lv = RPGChar.Stat("Foxy","Level")
 				local foxyused = CVV('%FOXY.USED') * (4-skill)       
-				local abilities = { DRAGON_BURN = 200, DRAGON_INFERNO = 8400, BACKSTAB = 1600, CHEER = 25600, SMOKEBOMB = 4600, DRAGON_CHARGE = 6553600 }
+				local abilities = { DRAGON_BURN = 200, DRAGON_INFERNO = 8400, STUNSTAB = 6400, BACKSTAB = 1600, CHEER = 25600, SMOKEBOMB = 4600, DRAGON_CHARGE = 6553600 }
 				local hasall = true
 				local hasit,learnit,allowlearn
 				local r
