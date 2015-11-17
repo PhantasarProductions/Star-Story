@@ -99,6 +99,10 @@
 1. Script/JINC/IAA/ARM_MUNCHHAUSEN.lua
 1. Script/JINC/IAA/ARM_POISONDART.lua
 1. Script/JINC/IAA/ARM_VIRUSBOMB.lua
+1. Script/JINC/IAA/BLADEH_MOLOTOV.lua
+1. Script/JINC/IAA/BLADEH_MULTI_STAB.lua
+1. Script/JINC/IAA/BLADEH_STUNSTAB.lua
+1. Script/JINC/IAA/BLADEH_VENOM.lua
 1. Script/JINC/IAA/ITM_ADHBANDAGE.lua
 1. Script/JINC/IAA/ITM_ANTIDOTE.lua
 1. Script/JINC/IAA/ITM_BANDAGE.lua
@@ -265,4 +269,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 17 November 2015; 12:43:30 CET
+### Last updated: Tue 17 November 2015; 16:36:08 CET
