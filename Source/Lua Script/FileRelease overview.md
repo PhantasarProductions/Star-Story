@@ -70,6 +70,7 @@
 1. Script/JINC/IAA/ABL_FOE_SCRATCH.lua
 1. Script/JINC/IAA/ABL_FOE_TASER.lua
 1. Script/JINC/IAA/ABL_FOE_VENOMBITE.lua
+1. Script/JINC/IAA/ABL_FOE_VIRUSBITE.lua
 1. Script/JINC/IAA/ABL_FOE_WATERBEAM.lua
 1. Script/JINC/IAA/ABL_FOXY_BACKSTAB.lua
 1. Script/JINC/IAA/ABL_FOXY_CHEER.lua
@@ -237,6 +238,9 @@
 
 ## Full Release
 
+1. Script/JINC/Foes/Reg/BlackLizard.lua
+1. Script/JINC/Foes/Reg/Bladeh.lua
+1. Script/JINC/Foes/Reg/Lion.lua
 1. Script/JINC/NewGame+/PreserveVar.lua
 1. Script/Maps/Physillium - The Ruins of the Y Anhysbys.lua
 1. Script/Use/Anyway/Full.lua
@@ -269,4 +273,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 17 November 2015; 16:36:08 CET
+### Last updated: Tue 17 November 2015; 17:01:11 CET

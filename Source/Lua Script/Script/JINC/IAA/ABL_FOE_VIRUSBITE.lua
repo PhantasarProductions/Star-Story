@@ -1,5 +1,5 @@
 --[[
-  Qual.lua
+  ABL_FOE_VIRUSBITE.lua
   Version: 15.11.17
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -34,67 +34,25 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
+ret = {
+	["ABL_AP"] = 0,
+	["ABL_Pose"] = "Cast",
+	["ActSpeed"] = 250,
+	["AttackElement"] = "Non-Elemental",
+	["AttackPower"] = 60,
+	["AttackStat"] = "Strength",
+	["CauseDisease"] = true,
+	["DefenseStat"] = "Defense",
+	["Description"] = "Diseases you",
+	["HealingType"] = "Absolute",
+	["Icon"] = "GFX/Inventory/Poison Cloud.png",
+	["ItemType"] = "Consumable",
+	["Name"] = "Virus Bite",
+	["Target"] = "1F",
+	["UseCombat"] = true,
+	["UseField"] = true}
 
+return ret
 
--- Version 15.11.17
+-- This file is an automatically generated file!
 
-
-
-Data = {
-	Name = "Qual",
-	Desc = "A kind of jellyfish that can live on land. It loves trash and due to illegal dumping you can now find it on any planet that has been target at least once of illegal dumping.",
-	ImageFile = "Reg/Qual.png",
-	AI = "Default",
-	EleRes_Fire = 1,
-	EleRes_Wind = 3,
-	EleRes_Water = 6,
-	EleRes_Earth = 3,
-	EleRes_Cold = 2,
-	EleRes_Thunder = 0,
-	EleRes_Light = 3,
-	EleRes_Darkness = 3,
-	EleRes_Healing = 6,
-	EleRes_DarkHealing = 0,
-	Stat = {
-		["Strength"] = {30,310},
-		["Defense"] = {5,112},
-		["Will"] = {20,300},
-		["Resistance"] = {25,200},
-		["Agility"] = {9,100},
-		["Accuracy"] = {90,500},
-		["Evasion"] = {5,40},
-		["HP"] = {40,2500},
-		["AP"] = {0,0},
-		["LevelRange"] = {1,90},
-},
-	StatusResistance = {
-		["Poison"] = 10   --[[ #1 ]],
-		["Paralysis"] = 0   --[[ #2 ]],
-		["Disease"] = 30   --[[ #3 ]],
-		["Will"] = 100   --[[ #4 ]],
-		["Block"] = 100   --[[ #5 ]],
-		["Death"] = 100   --[[ #6 ]],
-		["Damned"] = 100   --[[ #7 ]],
-	},
-	Acts = {}, -- Data itself defined below
-	ActMinLevel = {}, -- Data itself defined below
-	ItemDrop = {}, -- Data itself defined below
-	ItemSteal = {} -- Data itself definded below
-}
-
-
-local temp
-
-
-Data.ActMinLevel["Abl.ABL_FOE_WATERBEAM"] = 0		for ak=1,100 do table.insert(Data.Acts,"Abl.ABL_FOE_WATERBEAM") end
-temp = { ITM='ITM_EQP_EMERALD', LVL=9000, VLT=false }
-for ak=1,1 do table.insert(Data.ItemSteal,temp) end
-temp = { ITM='ITM_THUNDER_DIAMOND', LVL=50, VLT=false }
-for ak=1,2 do table.insert(Data.ItemDrop ,temp) end
-for ak=1,10 do table.insert(Data.ItemSteal,temp) end
-temp = { ITM='ITM_VLUGZOUT', LVL=30, VLT=false }
-for ak=1,4 do table.insert(Data.ItemDrop ,temp) end
-for ak=1,10 do table.insert(Data.ItemSteal,temp) end
-
-
-return Data
