@@ -242,7 +242,10 @@
 1. Script/JINC/Foes/Reg/Bladeh.lua
 1. Script/JINC/Foes/Reg/Lion.lua
 1. Script/JINC/NewGame+/PreserveVar.lua
+1. Script/Maps/Physillium - The Ruins of the Y Anhysbys.lsv
 1. Script/Maps/Physillium - The Ruins of the Y Anhysbys.lua
+1. Script/MiniGame/AutoUse.lua
+1. Script/MiniGame/MemoryAnhysbys.lua
 1. Script/Use/Anyway/Full.lua
 1. Script/Use/Maps/Gen/Next.lua
 1. Script/Use/Maps/Hawk/ArrivalPhysillium.lua
@@ -273,4 +276,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 17 November 2015; 19:12:01 CET
+### Last updated: Wed 18 November 2015; 13:51:56 CET
