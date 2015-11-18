@@ -1,6 +1,6 @@
 --[[
   Schuif.lua
-  Version: 15.10.29
+  Version: 15.11.18
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -49,15 +49,17 @@ local y = 5
 Image.NoFont()
 -- @FI
 for deur,toestand in pairs(Schuif.Ga) do
-    obj = Maps.Obj.Obj(Schuif.Obj[deur])
-    -- CSay("Deur = "..sval(deur).."; Toestand = "..sval(toestand))
-    -- CSay("Schuif = "..sval(Schuif))
-    if obj.X>Schuif[deur][toestand][1] then obj.X = obj.X - 1 elseif obj.X<Schuif[deur][toestand][1] then obj.X = obj.X + 1 end
-    if obj.Y>Schuif[deur][toestand][2] then obj.Y = obj.Y - 1 elseif obj.Y<Schuif[deur][toestand][2] then obj.Y = obj.Y + 1 end
-    -- @IF DEBUGSCHUIF
-    DarkText('Deur '..deur..' = '..toestand.."; ObjXY("..obj.X..","..obj.Y.."); MoetZijnXY("..Schuif[deur][toestand][1]..","..Schuif[deur][toestand][2]..")",5,y,0,0,255,180,0)
-    y = y + 15
-    -- @FI
+    if Maps.Obj.Exists(Schuif.Obj[deur])==1 then
+       obj = Maps.Obj.Obj(Schuif.Obj[deur])
+       -- CSay("Deur = "..sval(deur).."; Toestand = "..sval(toestand))
+       -- CSay("Schuif = "..sval(Schuif))
+       if obj.X>Schuif[deur][toestand][1] then obj.X = obj.X - 1 elseif obj.X<Schuif[deur][toestand][1] then obj.X = obj.X + 1 end
+       if obj.Y>Schuif[deur][toestand][2] then obj.Y = obj.Y - 1 elseif obj.Y<Schuif[deur][toestand][2] then obj.Y = obj.Y + 1 end
+       -- @IF DEBUGSCHUIF
+       DarkText('Deur '..deur..' = '..toestand.."; ObjXY("..obj.X..","..obj.Y.."); MoetZijnXY("..Schuif[deur][toestand][1]..","..Schuif[deur][toestand][2]..")",5,y,0,0,255,180,0)
+       y = y + 15
+       -- @FI
+       end
     end
 end
 

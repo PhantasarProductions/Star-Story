@@ -1,6 +1,6 @@
 --[[
   Party.lua
-  Version: 15.11.02
+  Version: 15.11.18
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -64,6 +64,10 @@ for linenumber,line in ipairs(jcr6listfile("Data/LvStats/"..ch.."/"..lext)) do
        end
     end
 RPGChar.DefStat(ch,"Level",lv)    
+end
+
+function SyncLevel(ch)
+GrabLevel(ch,RPGChar.Stat(ch,"Level"))
 end
 
 function InitCharacter(ch)

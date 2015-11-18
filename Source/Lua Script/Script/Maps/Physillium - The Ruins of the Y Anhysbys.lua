@@ -64,10 +64,32 @@ Maps.PermaWrite('Maps.Obj.Obj("PDR'..l..'").X='..Sys.Val(Maps.Obj.Obj("PDL"..l).
 Maps.Remap()
 end
 
+function WendickaStop()
+if CVV("&DONE.ANHYSBYS.WENDICKAREJOIN") then return end
+Actors.StopWalking('PLAYER')
+MapText("WENDICKA_STOP")
+Actors.WalkToSpot('PLAYER',"Start")
+end
+
+function WendickaRejoin()
+if Done("&DONE.ANHYSBYS.WENDICKAREJOIN") then return end
+PartyPop("Wen")
+MapText("WENDICKA_REJOIN")
+PartyUnPop()
+RPGChar.SetParty(4,"Wendicka")
+ReLevel("Wendicka","Crystal")
+MS.Run("TRANS","FixPadLayer","TRANSWENDICKA")
+Maps.Obj.Kill("Wendicka",1)
+end
+
+
+
 function GALE_OnLoad()
 local l = Maps.LayerCodeName
 Music("Dungeon/The Complex.ogg")
 ZA_Enter("WendickaSecret",WendickaSecret)
+ZA_Enter("WendickaStop",WendickaStop)
+ZA_Enter("Wendicka_Rejoin",WendickaRejoin)
 AddClickable("Puzzle1")
 Maps.GotoLayer("#001")
 Schuif = { Ga={}, Obj={} } -- Force data removal from a failed fix earlier

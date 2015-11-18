@@ -247,6 +247,7 @@
 1. Script/MiniGame/AutoUse.lua
 1. Script/MiniGame/MemoryAnhysbys.lua
 1. Script/Use/Anyway/Full.lua
+1. Script/Use/Anyway/ReLevel.lua
 1. Script/Use/Maps/Gen/Next.lua
 1. Script/Use/Maps/Hawk/ArrivalPhysillium.lua
 1. Script/Use/Maps/Hawk/AutoNewNav.lua
@@ -276,4 +277,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Wed 18 November 2015; 13:51:56 CET
+### Last updated: Wed 18 November 2015; 17:44:00 CET
