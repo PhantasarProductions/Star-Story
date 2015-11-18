@@ -32,14 +32,16 @@
   
  **********************************************
  
-version: 15.11.16
+version: 15.11.18
 ]]
 
 -- @USEDIR Script/Use/Maps/Hawk/
 -- @USE /Script/Use/Maps/Gen/Schuif.lua
 -- I chose this method in order not to have to change this script (and thus changing stuff in the demo when I don't need to) for any new location you may visit.
 
-ReggieKick = {} -- Should contain all events that leads to Foxy kicking Reggie.
+ReggieKick = {
+                ["ANHYSBYS.REJOIN"] = true 
+             } -- Should contain all events that leads to Foxy kicking Reggie.
 
 HeroLeadList = {"Wendicka","Crystal","Yirl","Foxy","Xenobi","ExHuRU","Rolf"}
 

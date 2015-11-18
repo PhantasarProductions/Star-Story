@@ -80,6 +80,7 @@ RPGChar.SetParty(4,"Wendicka")
 ReLevel("Wendicka","Crystal")
 MS.Run("TRANS","FixPadLayer","TRANSWENDICKA")
 Maps.Obj.Kill("Wendicka",1)
+Var.D("$HAWK","ANHYSBYS.REJOIN")
 end
 
 
