@@ -20,12 +20,13 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.11.08
+Version: 15.11.19
 End Rem
 Strict
 
 Framework tricky_units.MKL_Version
 Import    brl.pngloader
+Import    BRL.GLMax2D
 
 Import "imp/JCR6Crash.bmx"
 Import "imp/DeleteCrash.bmx"
@@ -47,5 +48,5 @@ Import "imp/versions.bmx"
 'Flow
 Import "Imp/Run.bmx"
 
-MKL_Version "LAURA II - Star Story.bmx","15.11.08"
+MKL_Version "LAURA II - Star Story.bmx","15.11.19"
 MKL_Lic     "LAURA II - Star Story.bmx","GNU General Public License 3"

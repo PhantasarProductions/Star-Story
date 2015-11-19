@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.11.08
+Version: 15.11.19
 End Rem
 Strict
 Import maxgui.drivers
@@ -28,11 +28,13 @@ Import brl.linkedlist
 Import brl.eventqueue
 Import bah.volumes
 Import tricky_units.MKL_Version
+Import tricky_units.MaxGui_InitFile
+Import tricky_units.Dirry
 Import "JCRFile.bmx"
 
 JCR6CrashError = True
 
-MKL_Version "LAURA II - Framework.bmx","15.11.08"
+MKL_Version "LAURA II - Framework.bmx","15.11.19"
 MKL_Lic     "LAURA II - Framework.bmx","GNU General Public License 3"
 
 ?MacOS
@@ -54,6 +56,8 @@ Global EID
 Global ESource:TGadget
 Global CPanel
 Global allowcanvas,NoCanvas
+
+MGIF_RegisterGadget "Tabber",Tabber
 
 Type TFPanelBase
 
@@ -108,3 +112,22 @@ For Local ak=0 Until CountList(panels)
 	Next
 ShowGadget G
 End Function
+
+Function SaveConfig()
+Local file$ = Dirry("$AppSupport$/$LinuxDot$Phantasar Productions/LAURA2/StarStory/Launcher/Launcher.ini")
+Local dir$ = ExtractDir(file)
+CreateDir dir,1
+MGIF_Save File$
+End Function
+
+Global config:TIni
+Function LoadConfig()
+Local file$ = Dirry("$AppSupport$/$LinuxDot$Phantasar Productions/LAURA2/StarStory/Launcher/Launcher.ini")
+If Not FileType(file) 
+	Print "NoConfig"
+	config = New TIni
+	Return 
+	EndIf
+LoadIni file,config
+End Function
+

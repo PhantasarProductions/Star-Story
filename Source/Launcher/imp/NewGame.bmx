@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.11.08
+Version: 15.11.19
 End Rem
 Strict
 Import "framework.bmx"
@@ -28,7 +28,7 @@ Import tricky_units.Dirry
 Import tricky_units.Bye
 
 
-MKL_Version "LAURA II - NewGame.bmx","15.11.08"
+MKL_Version "LAURA II - NewGame.bmx","15.11.19"
 MKL_Lic     "LAURA II - NewGame.bmx","GNU General Public License 3"
 
 JCR6CrashError = True
@@ -69,6 +69,7 @@ Type TNewGamePanel Extends tfpanelbase
 	SetGadgetText yourname,StripAll(GetUserHomeDir())
 	CreateLabel "Scenario Language:",0,75,300,25,Panel
 	languages = CreateListBox(300,75,300,100,panel)
+	MGIF_RegisterGadget "Language",Languages
 	Local E:TJCREntry,Lang$
 	For Local F$=EachIn MapKeys(JCR.Entries)
 		If StripDir(F)="SETTINGS" And ExtractDir((ExtractDir(F))) = "LANGUAGES"
@@ -91,6 +92,9 @@ Type TNewGamePanel Extends tfpanelbase
 	Gamejoltusername.setenabled JCR_Exists(JCR,"Authenticate/GameJolt")
 	gamejolttoken.setenabled JCR_Exists(JCR,"Authenticate/GameJolt")
 	made = True
+	MGIF_RegisterGadget "GameJolt.UserName",GameJoltUserName
+	MGIF_RegisterGadget "GameJolt.Token",GameJoltToken	
+	MGIF_GetConfig Config
 	Rem
 	?Win32
 	panwendicka = CreatePanel(tw-PixmapWidth(pixwendicka),th-PixmapHeight(pixwendicka),PixmapWidth(pixwendicka),PixmapHeight(pixwendicka),panel)

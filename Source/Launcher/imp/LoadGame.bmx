@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.11.08
+Version: 15.11.19
 End Rem
 Strict
 
@@ -30,7 +30,7 @@ Import tricky_units.advdatetime
 Import tricky_units.Bye
 Import "Framework.bmx"
 
-MKL_Version "LAURA II - LoadGame.bmx","15.11.08"
+MKL_Version "LAURA II - LoadGame.bmx","15.11.19"
 MKL_Lic     "LAURA II - LoadGame.bmx","GNU General Public License 3"
 
 
@@ -63,6 +63,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	Field User$,CFile$
 	Field YesNo$[] = ["No","Yes"]
 	Field RefreshButton:TGadget ' Only used on Mac
+	Field WINDOWED:TGADGET
 		
 	Method Make()
 	Crystal = CreatePanel(TW-CW,TH-CH,CW,CH,panel)
@@ -90,6 +91,17 @@ Type TLoadGamePanel Extends tfpanelbase
 	oldminute = Minute()
 	made = True
 	IgnoreGameJolt:TGadget = CreateButton("Ignore GameJolt",0,CH-25,250,25,panel,Button_checkbox)
+	Windowed:TGadget = CreateButton("Windowed",250,CH-25,250,25,panel,Button_checkbox)
+	MGIF_RegisterGadget "GameJolt.Ignore",IgnoreGAMEJOLT
+	MGIF_RegisterGadget "Load.Windowed",Windowed
+	MGIF_RegisterGadget "Load.User",Users
+	MGIF_RegisterGadget "Load.File",Files
+	MGIF_GetConfig Config
+	If Config.C("Load.File")
+		getusers Config.C("Load.User"),Config.C("Load.File")
+	ElseIf Config.C("Load.User")
+		getusers Config.C("Load.User")
+		EndIf
 	End Method
 	
 	Method GetUsers(SUSER$="",SFILE$="")
@@ -167,6 +179,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	If IgnoreGameJolt And (Not Sync) WriteLine bt,"Var:IgnoreGameJolt="+YesNo[ButtonState(IgnoreGameJolt) And (Not Sync)]
 	If Sync WriteLine BT,"Var:Windowed=Yes"
 	CloseStream BT
+	SaveConfig
 	?Not MacOS
 	HideGadget window
 	?
@@ -177,7 +190,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	ShowGadget Window
 	?	
 	?MacOS
-	Bye
+	If Not Sync Bye
 	?
 	End Method
 	

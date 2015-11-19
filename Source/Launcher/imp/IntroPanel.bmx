@@ -20,36 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.09.02
-End Rem
-Rem
-/*
-	Launcher Star Story
-	Introduction Panel
-	
-	
-	
-	(c) Jeroen P. Broks, 2015, All rights reserved
-	
-		This program is free software: you can redistribute it and/or modify
-		it under the terms of the GNU General Public License as published by
-		the Free Software Foundation, either version 3 of the License, or
-		(at your option) any later version.
-		
-		This program is distributed in the hope that it will be useful,
-		but WITHOUT ANY WARRANTY; without even the implied warranty of
-		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-		GNU General Public License for more details.
-		You should have received a copy of the GNU General Public License
-		along with this program.  If not, see <http://www.gnu.org/licenses/>.
-		
-	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
-	to the project the exceptions are needed for.
-*/
-
-
-Version: 15.08.26
-
+Version: 15.11.19
 End Rem
 Strict
 Import tricky_units.HotSpot
@@ -74,6 +45,8 @@ Type introaction Extends TFPanelBase
 	
 	Field sqimg:TImage[]
 	Field alpha:Double=3
+	
+	Field tabset
 	
 	Field process = 1
 	Field ITL:TList = MakeFade()
@@ -109,9 +82,13 @@ Type introaction Extends TFPanelBase
 	
 	Method flow()
 	Local done3
+	'Print "allow = "+allowcanvas+"; no = "+nocanvas
 	If Not allowcanvas Return
 	If nocanvas Return
-	SetGraphics CanvasGraphics(Self.panel)
+	'Self.panel = introcanvas
+	SetGraphics CanvasGraphics(introcanvas)
+	'If CanvasGraphics(Self.panel) Print "Canvas" Else Print "NoCanvas"
+	If Not CanvasGraphics(introcanvas) Return
 	SetBlend alphablend
 	Cls
 	SetColor 255,255,255
@@ -140,14 +117,23 @@ Type introaction Extends TFPanelBase
 					EndIf
 				done3 = done3 And f.scale<=0	
 				Next
-			If done3 process=4
+			If done3 process=1
 		Case 4
 			DrawImage starstory,tw/2,th/2		
 		End Select
 	Flip
+	Rem
+	If Not tabset ' Should put the launcher to the last used tab, but only on the first cycle.
+		PollEvent
+		MGIF_GetConfig Config
+		tabset = True
+		EndIf
+	End Rem	
 	End Method
 	
 	End Type
 
+Global introcanvas:TGadget = CreateCanvas(0,0,tw,th,tabber)
+If Not introcanvas Print "Warning! Introcanvas not properly created!"
 
-addxpanel "Intro",New IntroAction,CreateCanvas(0,0,tw,th,tabber)
+addxpanel "Intro",New IntroAction,introcanvas

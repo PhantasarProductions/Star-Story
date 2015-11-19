@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.11.08
+Version: 15.11.19
 End Rem
 Strict
 'Import "framework.bmx"
@@ -95,6 +95,7 @@ End Function
 
 
 ' Main
+LoadConfig
 showpanel 0
 Repeat
 If FileType(crashf)
@@ -107,6 +108,7 @@ esource = TGadget(EventSource())
 NoCanvas = SystemFilesCheck()
 Select eid
 	Case event_AppTerminate,event_windowclose
+		SaveConfig
 		Bye
 	Case event_gadgetaction
 		If esource=tabber And (Not nocanvas)
