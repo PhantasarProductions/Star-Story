@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.18
+version: 15.11.20
 ]]
 -- @USE /Script/Use/Maps/Gen/Schuif.lua
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -97,5 +97,9 @@ Schuif = { Ga={}, Obj={} } -- Force data removal from a failed fix earlier
 InitSchuif('PDL#001',-60,-1)
 InitSchuif('PDR#001', 60,-1)
 if CVV("&SOLVED.ANHYSBYS.PD[#001]") then SetSchuif({'PDL#001','PDR#001'},"Open"); end
+Maps.GotoLayer("#003")
+InitSchuif('PDL#003',-60,-1)
+InitSchuif('PDR#003', 60,-1)
+if CVV("&SOLVED.ANHYSBYS.PD[#003]") then SetSchuif({'PDL#003','PDR#003'},"Open"); end
 Maps.GotoLayer(l)
 end
