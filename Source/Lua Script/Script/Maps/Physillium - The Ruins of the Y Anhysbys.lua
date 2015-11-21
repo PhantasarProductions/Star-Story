@@ -133,5 +133,10 @@ if CVV("&SOLVED.ANHYSBYS.PD[#003]") then SetSchuif({'PDL#003','PDR#003'},"Open")
 Maps.GotoLayer("#004") -- Boss door
 InitSchuif('BDL',-44,-1)
 InitSchuif('BDR', 44,-1)
+Maps.GotoLayer("#005") -- Exit door
+InitSchuif('EDL',-40,-1)
+InitSchuif('EDR', 40,-1)
+ZA_Enter( "OpenED",function() SetSchuif({'EDL','EDR'}, 'Open') Maps.Obj.Obj('EDB').Impassible=0 Maps.Remap() end)
+ZA_Enter("CloseED",function() SetSchuif({'EDL','EDR'},'Dicht') Maps.Obj.Obj('EDB').Impassible=1 Maps.Remap() end)
 Maps.GotoLayer(l)
 end

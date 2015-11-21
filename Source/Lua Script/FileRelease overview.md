@@ -135,6 +135,7 @@
 1. Script/JINC/InitChar/UniWendicka.lua
 1. Script/JINC/InitChar/Wendicka.lua
 1. Script/JINC/InitChar/Yirl.lua
+1. Script/JINC/Shops/HAWK_BANIKA_ATTACK.lua
 1. Script/JINC/Shops/LOSTPLANET_BAR_ITEMS.lua
 1. Script/Maps/AutoUse.lsv
 1. Script/Maps/AutoUse.lua
@@ -278,4 +279,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sat 21 November 2015; 13:50:09 CET
+### Last updated: Sat 21 November 2015; 17:43:11 CET
