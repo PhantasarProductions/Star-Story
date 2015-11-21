@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.11.19
+Version: 15.11.21
 End Rem
 Strict
 
@@ -30,7 +30,7 @@ Import tricky_units.advdatetime
 Import tricky_units.Bye
 Import "Framework.bmx"
 
-MKL_Version "LAURA II - LoadGame.bmx","15.11.19"
+MKL_Version "LAURA II - LoadGame.bmx","15.11.21"
 MKL_Lic     "LAURA II - LoadGame.bmx","GNU General Public License 3"
 
 
@@ -63,7 +63,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	Field User$,CFile$
 	Field YesNo$[] = ["No","Yes"]
 	Field RefreshButton:TGadget ' Only used on Mac
-	Field WINDOWED:TGADGET
+	Field WINDOWED:TGadget
 		
 	Method Make()
 	Crystal = CreatePanel(TW-CW,TH-CH,CW,CH,panel)
@@ -177,7 +177,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	WriteLine bt,"Var:MacReturn="+Replace(A," ","\ ")
 	?	
 	If IgnoreGameJolt And (Not Sync) WriteLine bt,"Var:IgnoreGameJolt="+YesNo[ButtonState(IgnoreGameJolt) And (Not Sync)]
-	If Sync WriteLine BT,"Var:Windowed=Yes"
+	If Sync Or ButtonState(windowed) WriteLine BT,"Var:Windowed=Yes"
 	CloseStream BT
 	SaveConfig
 	?Not MacOS

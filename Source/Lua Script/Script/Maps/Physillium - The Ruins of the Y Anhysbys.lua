@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.20
+version: 15.11.21
 ]]
 -- @USE /Script/Use/Maps/Gen/Schuif.lua
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -83,6 +83,10 @@ Maps.Obj.Kill("Wendicka",1)
 Var.D("$HAWK","ANHYSBYS.REJOIN")
 end
 
+function Boss()
+SetSchuif({'BDL','BDR'},"Open")
+end
+
 
 
 function GALE_OnLoad()
@@ -92,14 +96,17 @@ ZA_Enter("WendickaSecret",WendickaSecret)
 ZA_Enter("WendickaStop",WendickaStop)
 ZA_Enter("Wendicka_Rejoin",WendickaRejoin)
 AddClickable("Puzzle1")
-Maps.GotoLayer("#001")
+Maps.GotoLayer("#001") -- Puzzle #1
 Schuif = { Ga={}, Obj={} } -- Force data removal from a failed fix earlier
 InitSchuif('PDL#001',-60,-1)
 InitSchuif('PDR#001', 60,-1)
 if CVV("&SOLVED.ANHYSBYS.PD[#001]") then SetSchuif({'PDL#001','PDR#001'},"Open"); end
-Maps.GotoLayer("#003")
+Maps.GotoLayer("#003") -- Puzzle #2
 InitSchuif('PDL#003',-60,-1)
 InitSchuif('PDR#003', 60,-1)
 if CVV("&SOLVED.ANHYSBYS.PD[#003]") then SetSchuif({'PDL#003','PDR#003'},"Open"); end
+Maps.GotoLayer("#004") -- Boss door
+InitSchuif('BDL',-44,-1)
+InitSchuif('BDR', 44,-1)
 Maps.GotoLayer(l)
 end
