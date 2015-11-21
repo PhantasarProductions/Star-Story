@@ -20,10 +20,10 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.11.03
+Version: 15.11.21
 End Rem
 Strict
-Import tricky_units.initfile
+Import tricky_units.initfile2
 Import brl.linkedlist
 Import jcr6.jcr6main
 Import tricky_units.gamevars

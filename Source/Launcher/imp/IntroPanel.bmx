@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.11.19
+Version: 15.11.21
 End Rem
 Strict
 Import tricky_units.HotSpot
@@ -81,7 +81,7 @@ Type introaction Extends TFPanelBase
 	End Method
 	
 	Method flow()
-	Local done3
+	Local done3,cnt
 	'Print "allow = "+allowcanvas+"; no = "+nocanvas
 	If Not allowcanvas Return
 	If nocanvas Return
@@ -117,7 +117,17 @@ Type introaction Extends TFPanelBase
 					EndIf
 				done3 = done3 And f.scale<=0	
 				Next
-			If done3 process=1
+			If done3 
+				process=1
+				cnt=0
+				For Local F:TFadeFrame = EachIn ITL
+					f.scale = 1
+					f.y=TH+50+cnt; cnt:+1
+					f.color=1
+					Next
+				DebugLog "Reset scroll"	
+				EndIf
+				
 		Case 4
 			DrawImage starstory,tw/2,th/2		
 		End Select
