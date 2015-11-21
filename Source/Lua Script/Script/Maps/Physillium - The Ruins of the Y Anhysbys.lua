@@ -113,6 +113,15 @@ StartCombat()
 end
 
 
+function NPC_Banika()
+if Done("&BANIKA") then
+   MapText("BANIKA_B")
+   else
+   MapText("BANIKA_A")
+   Maps.PermaWrite("Maps.Obj.Kill('NPC_Banika')")
+   end
+end
+
 
 function GALE_OnLoad()
 local l = Maps.LayerCodeName
