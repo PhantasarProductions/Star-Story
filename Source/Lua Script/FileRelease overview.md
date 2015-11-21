@@ -238,6 +238,7 @@
 
 ## Full Release
 
+1. Script/JINC/Foes/Boss/BigLion.lua
 1. Script/JINC/Foes/Reg/BlackLizard.lua
 1. Script/JINC/Foes/Reg/Bladeh.lua
 1. Script/JINC/Foes/Reg/Lion.lua
@@ -277,4 +278,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sat 21 November 2015; 11:59:57 CET
+### Last updated: Sat 21 November 2015; 13:50:09 CET

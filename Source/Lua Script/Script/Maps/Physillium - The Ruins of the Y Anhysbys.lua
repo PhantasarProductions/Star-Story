@@ -85,6 +85,31 @@ end
 
 function Boss()
 SetSchuif({'BDL','BDR'},"Open")
+CleanCombat()
+local lv=1000000 -- In case you cheat your way around this, the boss will be impossible to beat! Heh heh heh!
+local players,totallevel=0,0
+local tag
+for i=0,5 do
+    tag = RPGChar.PartyTag(i)
+    if tag~="" then
+       players = players + 1
+       totallevel = totallevel + RPGChar.Stat(tag,"Level")
+       end
+    end
+if players>0 and totallevel>0 then lv = math.ceil(totallevel/players) end    
+Var.D("$COMBAT.BACKGROUND","Y Anhysbys.png")
+Var.D("$COMBAT.BEGIN","Default")
+Var.D("$COMBAT.FOE2","Boss/BigLion")
+Var.D("%COMBAT.LVFOE2",lv)
+Var.D("$COMBAT.ALTCOORDSFOE2","300,400")
+if skill==3 then
+   Var.D("$COMBAT.FOE1","Reg/Lion")
+   Var.D("$COMBAT.FOE2","Reg/Lion")
+   Var.D("%COMBAT.LVFOE1",lv)
+   Var.D("%COMBAT.LVFOE2",lv)
+   end
+RandomBossTune()
+StartCombat()   
 end
 
 
