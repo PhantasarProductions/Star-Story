@@ -1,6 +1,6 @@
 --[[
   MemoryAnhysbys.lua
-  Version: 15.11.20
+  Version: 15.11.22
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -34,6 +34,7 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
+
 -- Definitions
 skill = Sys.Val(Var.C("%SKILL"))
 
@@ -51,8 +52,6 @@ col = {
          {255,150,  0}, -- 10
          {180,  0,255}, -- 11
          {  0,255,  0}  -- 12
-         --{255,180,180}, -- 11
-         --{180,180,255}  -- 12
       }
 
 series = ({
