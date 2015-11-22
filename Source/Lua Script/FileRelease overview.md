@@ -135,7 +135,9 @@
 1. Script/JINC/InitChar/UniWendicka.lua
 1. Script/JINC/InitChar/Wendicka.lua
 1. Script/JINC/InitChar/Yirl.lua
+1. Script/JINC/Shops/HAWK_BAKINA_HEAL.lua
 1. Script/JINC/Shops/HAWK_BANIKA_ATTACK.lua
+1. Script/JINC/Shops/HAWK_BANIKA_HEAL.lua
 1. Script/JINC/Shops/LOSTPLANET_BAR_ITEMS.lua
 1. Script/Maps/AutoUse.lsv
 1. Script/Maps/AutoUse.lua
@@ -235,6 +237,7 @@
 1. Script/Use/Linkers/SFXLinker.lua
 1. Script/Use/Linkers/Transporter_Linker.lua
 1. Script/Use/Maps/Gen/Schuif.lua
+1. Script/Use/Maps/Hawk/Banika.Lua
 1. Script/Use/Maps/Hawk_Terminal/Jukebox.lua
 1. Script/Use/Menu/LearnSpellMessages.lua
 
@@ -280,4 +283,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sun 22 November 2015; 11:28:29 CET
+### Last updated: Sun 22 November 2015; 14:23:05 CET

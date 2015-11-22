@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.18
+version: 15.11.22
 ]]
 
 -- @USEDIR Script/Use/Maps/Hawk/
@@ -96,7 +96,7 @@ if not Done("&NAV.YAQIRPA") then ActivateRemotePad('YaqirpaStart','Return_Yaqirp
 if not FullVersion then
    MapText("ENDDEMO")
 elseif not Done("&NAV.PHYSILIUM.OLDRUINS") then
-   ActivateRemotePad('TransWendicka','Physillium - The Ruins of the Y Anhysbys','Physillium','The Ruins of the Y Anhysbys - Wendicka\'s spot',"#002")
+   ActivateRemotePad('TransWendicka','Physillium - Ruins of Y Anhysbys','Physillium','The Ruins of the Y Anhysbys - Wendicka\'s spot',"#002")
    -- Sys.Error("Protection blockout! We cannot continue yet.")
    FirstWorld("Physillium","ArrivalPhysillium")
    -- We do need to script the arrival at Physilium part first!
@@ -163,6 +163,8 @@ ZA_Leave("OpenVaultDoor",function() Schuif.Ga.Vault = 'Dicht' end)
 ZA_Enter("ShowBridge1",MapShow,'Bridge')
 ZA_Enter("ShowBridge2",MapShow,'Bridge')
 ZA_Enter("ShowBack"   ,MapShow,'Back')
+-- Show NPCs in the back only when you let them on board
+if not CVV("&BANIKA") then Maps.Obj.Kill("NPC_Banika") end
 -- Vault
 ZA_Enter("Vault",Vault)
 -- Terminals
