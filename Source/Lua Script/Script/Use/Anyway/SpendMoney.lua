@@ -1,6 +1,6 @@
 --[[
   SpendMoney.lua
-  Version: 15.10.08
+  Version: 15.11.23
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -40,16 +40,24 @@ function SpendMoney(Amount,nocrash)
 if CVV("%CASH")<Amount then if nocrash then return false else Sys.Error("More money spend than we got!") return end end
 dec("%CASH",Amount)
 inc("%CASHTOTALSPENT",Amount)
-if CVV("%ARINAREQ")<=1000000 then
+if CVV("%AURINAREQ")<=1000000 then
     inc("%CASHSPENT4RATE",Amount)
-    if CVV("%ARINAREQ")<CVV("%CASHSPENT4RATE") then
-       dec("%ARINAREQ")
-       inc("%CASHSPENT4RATE",CVV("%CASHSPENT4RATE"))
-       if CVV("%CASHSPENT4RATE")>1000000 then 
-          Var.D("%CASHSPENT4RATE",1000000)
-          inc("%AURINARATE",rand(1,5-skill))
-          CSay("New Aurina rate: "..CVV("%AURINARATE"))
-          end
+    if CVV("%AURINAREQ")<CVV("%CASHSPENT4RATE") then
+       -- dec("%AURINAREQ")
+       inc("%AURINAREQ",CVV('%AURINAREQ')) --CVV("%CASHSPENT4RATE"))
+       Var.D("%CASHSPENT4RATE",0)
+       inc("%AURINARATE",rand(1,5-skill))
+       CSay("New Aurina rate: "..CVV("%AURINARATE"))
        end
-    end 
+    end       
+if CVV("%CASHSPENT4RATE")>1000000 then 
+   Var.D("%CASHSPENT4RATE",1000000)
+   end
+end
+
+function AURINADATA() -- This is just for the debug console.
+CSay("%CASH            = "..CVV('%CASH'))
+CSay("%AURINAREQ       = "..CVV('%AURINAREQ'))
+CSay("%CASHSPENT4RATE  = "..CVV("%CASHSPENT4RATE"))
+CSay("%AURINARATE      = "..CVV("%AURINARATE"))
 end
