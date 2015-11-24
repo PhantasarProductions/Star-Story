@@ -1,5 +1,5 @@
 --[[
-  ARM_MULTIBLAST.lua
+  ABL_XENOBI_ROCK.lua
   Version: 15.11.24
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,27 +35,26 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ARM_Hit%"] = 68,
-	["ARM_MaxAmmo"] = 4,
-	["ARM_PRICE_Hit%"] = 300,
-	["ARM_PRICE_MaxAmmo"] = 600,
-	["ARM_PRICE_Weight"] = 1000,
-	["ARM_PRICE_XPower"] = 1500,
-	["ARM_XPower"] = 0,
-	["ActSpeed"] = 75,
-	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 125,
-	["AttackStat"] = "Strength",
-	["DefenseStat"] = "Defense",
-	["Description"] = "Hit all enemies in one shot!",
+	["ABL_AP"] = 24,
+	["ABL_APCut"] = 200,
+	["ABL_DblPower"] = 500,
+	["ABL_DblSpeed"] = 100,
+	["ABL_Pose"] = "Cast",
+	["ABL_Speed"] = 250,
+	["ActSpeed"] = 250,
+	["AttackElement"] = "Earth",
+	["AttackPower"] = 100,
+	["AttackStat"] = "Will",
+	["DefenseStat"] = "Resistance",
+	["Description"] = "Let's rock 'n roll",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Gun.png",
+	["Icon"] = "GFX/Elements/Earth.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Multi-Blast",
-	["Target"] = "AF",
+	["Name"] = "Rock",
+	["SpellAni_Reference"] = "ThrowRock",
+	["Target"] = "1F",
 	["UseCombat"] = true,
-	["UseField"] = true,
-	["untauntable"] = true}
+	["UseField"] = true}
 
 return ret
 

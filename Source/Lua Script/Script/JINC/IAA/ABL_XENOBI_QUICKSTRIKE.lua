@@ -1,5 +1,5 @@
 --[[
-  ARM_MULTIBLAST.lua
+  ABL_XENOBI_QUICKSTRIKE.lua
   Version: 15.11.24
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,27 +35,25 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ARM_Hit%"] = 68,
-	["ARM_MaxAmmo"] = 4,
-	["ARM_PRICE_Hit%"] = 300,
-	["ARM_PRICE_MaxAmmo"] = 600,
-	["ARM_PRICE_Weight"] = 1000,
-	["ARM_PRICE_XPower"] = 1500,
-	["ARM_XPower"] = 0,
-	["ActSpeed"] = 75,
+	["ABL_AP"] = 15,
+	["ABL_APCut"] = 5000,
+	["ABL_Cancel"] = 1054,
+	["ABL_Instant"] = 527,
+	["ABL_Pose"] = "Cast",
+	["ABL_Speed"] = 250,
+	["ActSpeed"] = 300,
 	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 125,
+	["AttackPower"] = 50,
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Hit all enemies in one shot!",
+	["Description"] = "Quick strike the enemy",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Gun.png",
+	["Icon"] = "GFX/Abilities/Light Saber.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Multi-Blast",
-	["Target"] = "AF",
-	["UseCombat"] = true,
-	["UseField"] = true,
-	["untauntable"] = true}
+	["Name"] = "Quick Strike",
+	["SpellAni_Reference"] = "Spark",
+	["Target"] = "1F",
+	["UseCombat"] = true}
 
 return ret
 

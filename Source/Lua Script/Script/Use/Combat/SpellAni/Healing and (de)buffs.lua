@@ -1,6 +1,6 @@
 --[[
   Healing and (de)buffs.lua
-  Version: 15.10.03
+  Version: 15.11.24
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -57,3 +57,7 @@ for ak=1,50 do
 end
 
 SpellAni.SingleHealing = SpellAni.SingleHeal -- An alias to prevent needless debug sessions.
+
+
+function SpellAni.AllHeal(ActG,ActT,TarG,TarT)
+end

@@ -1,5 +1,5 @@
 --[[
-  ARM_MULTIBLAST.lua
+  ABL_XENOBI_HEAL.lua
   Version: 15.11.24
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,27 +35,27 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ARM_Hit%"] = 68,
-	["ARM_MaxAmmo"] = 4,
-	["ARM_PRICE_Hit%"] = 300,
-	["ARM_PRICE_MaxAmmo"] = 600,
-	["ARM_PRICE_Weight"] = 1000,
-	["ARM_PRICE_XPower"] = 1500,
-	["ARM_XPower"] = 0,
-	["ActSpeed"] = 75,
-	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 125,
+	["ABL_AP"] = 20,
+	["ABL_APCut"] = 1000,
+	["ABL_DblPower"] = 5000,
+	["ABL_Instant"] = 2000,
+	["ABL_Pose"] = "Cast",
+	["ABL_Speed"] = 250,
+	["ActSpeed"] = 250,
+	["AttackElement"] = "Healing",
+	["AttackPower"] = 60,
 	["AttackStat"] = "Strength",
+	["CureDisease"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Hit all enemies in one shot!",
+	["Description"] = "Heals minor wounds",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Gun.png",
+	["Icon"] = "GFX/Elements/Light.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Multi-Blast",
-	["Target"] = "AF",
+	["Name"] = "Heal",
+	["SpellAni_Reference"] = "SIngleHeal",
+	["Target"] = "1A",
 	["UseCombat"] = true,
-	["UseField"] = true,
-	["untauntable"] = true}
+	["UseField"] = true}
 
 return ret
 

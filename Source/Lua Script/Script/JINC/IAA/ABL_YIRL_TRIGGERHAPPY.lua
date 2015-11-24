@@ -1,6 +1,6 @@
 --[[
   ABL_YIRL_TRIGGERHAPPY.lua
-  Version: 15.11.17
+  Version: 15.11.24
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
