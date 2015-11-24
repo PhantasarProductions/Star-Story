@@ -88,8 +88,11 @@
 1. Script/JINC/IAA/ABL_WENDICKA_SHOCK.lua
 1. Script/JINC/IAA/ABL_WENDICKA_SHOCKTHERAPY.lua
 1. Script/JINC/IAA/ABL_XENOBI_BREEZE.lua
+1. Script/JINC/IAA/ABL_XENOBI_FOCUSENERGY.lua
 1. Script/JINC/IAA/ABL_XENOBI_FROST.lua
 1. Script/JINC/IAA/ABL_XENOBI_HEAL.lua
+1. Script/JINC/IAA/ABL_XENOBI_LIGHT.lua
+1. Script/JINC/IAA/ABL_XENOBI_MINDTRICK.lua
 1. Script/JINC/IAA/ABL_XENOBI_QUICKSTRIKE.lua
 1. Script/JINC/IAA/ABL_XENOBI_RECOVER.lua
 1. Script/JINC/IAA/ABL_XENOBI_ROCK.lua
@@ -132,6 +135,7 @@
 1. Script/JINC/IAA/ITM_VLUGZOUT.lua
 1. Script/JINC/IAA/SUPER_FOXY_SKYDRAGONSLASH.lua
 1. Script/JINC/IAA/SUPER_WENDICKA_VOLTSUNAMI.lua
+1. Script/JINC/IAA/SUPER_XENOBI_WHITE_APOCALYPSE.lua
 1. Script/JINC/InitChar/Briggs.lua
 1. Script/JINC/InitChar/Crystal.lua
 1. Script/JINC/InitChar/ExHuRU.lua
@@ -290,4 +294,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 24 November 2015; 17:31:33 CET
+### Last updated: Tue 24 November 2015; 17:55:45 CET
