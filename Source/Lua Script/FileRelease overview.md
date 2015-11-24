@@ -148,6 +148,7 @@
 1. Script/JINC/InitChar/UniCrystal.lua
 1. Script/JINC/InitChar/UniWendicka.lua
 1. Script/JINC/InitChar/Wendicka.lua
+1. Script/JINC/InitChar/Xenobi.lua
 1. Script/JINC/InitChar/Yirl.lua
 1. Script/JINC/Shops/HAWK_BAKINA_HEAL.lua
 1. Script/JINC/Shops/HAWK_BANIKA_ATTACK.lua
@@ -271,6 +272,7 @@
 1. Script/Use/Maps/Gen/Next.lua
 1. Script/Use/Maps/Hawk/ArrivalPhysillium.lua
 1. Script/Use/Maps/Hawk/AutoNewNav.lua
+1. Script/Use/Sub/Party/XenobiSpells.lua
 
 
 
@@ -297,4 +299,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 24 November 2015; 21:16:37 CET
+### Last updated: Tue 24 November 2015; 22:36:35 CET

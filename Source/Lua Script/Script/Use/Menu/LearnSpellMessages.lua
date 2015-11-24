@@ -1,6 +1,6 @@
 --[[
   LearnSpellMessages.lua
-  Version: 15.11.07
+  Version: 15.11.24
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -52,7 +52,7 @@ learnspellmessages = {
                     local need = CVV("%WENDICKA.NEED") - CVV("%WENDICKA.DONE")
                     if CVV("%WENDICKA.NEED")==0 then return "" end
                     if RPGChar.ListHas("UniWendicka","ABL","WENDICKA_ELECTRICCHARGE")==1 then return "" end
-                    if RPGChar.CountList("UniWendicka","LEARN")>0 then return "Attack any enemy to learn a new spell" end
+                    if RPGChar.CountList("UniWendicka","LEARN")>0 then return "Attack any enemy to learn something new" end
                     if need==1 then return "Peform one more spell to unlock a new one" end
                     return "Perform "..need.." spells to unlock a new one"
                     end,
@@ -73,11 +73,9 @@ learnspellmessages = {
                     if RPGChar.CountList("Foxy","ABL") == 8 then return "" end -- Don't put on the "???" if Foxy got all spells. 
                     return "???" 
                     end,
-      Xenobi      = function()              
-                    local need = CVV("%XENOBI.NEED") - CVV("%MONEY.DONE")
-                    if CVV("%XENOBI.NEED")==0 then return "" end
-                    if need<=0 then return "Attack any enemy" end
-                    return "Gain "..need.." levels to learn a new spell"
+      Xenobi      = function()
+                    if RPGStat.CountList('Xenobi','LEARN')>=1 then return "Attack any enemy!" end             
+                    return Var.C("$XENOBI.LEARN") 
                     end,
       ExHuRU      = function() return needkills("ExHuRU") end,
       Rolf        = function() return needkills("Rolf") end,

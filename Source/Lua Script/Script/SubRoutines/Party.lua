@@ -1,6 +1,6 @@
 --[[
   Party.lua
-  Version: 15.11.18
+  Version: 15.11.24
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -35,11 +35,16 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 
+-- @USEDIR Script/Use/Sub/Party
+
 statusbar = Image.Load("GFX/Statusbar/StatusBar.png")
 portret = {}
 levelupanim = {}
 
 needexp = {1750,5000,10000}
+
+XCharLvUp = {}
+XCharSyncLevel = {}
 
 function GrabLevel(ch,lv)
 local linenumber,line,l
@@ -68,6 +73,7 @@ end
 
 function SyncLevel(ch)
 GrabLevel(ch,RPGChar.Stat(ch,"Level"))
+;(XCharSyncLevel[ch] or function() end)()
 end
 
 function InitCharacter(ch)
@@ -281,6 +287,7 @@ function LevelUp(ch,pos)
       [3] = function() end })[skill](ch)
 	end
    if RPGStat.Stat(ch,"Level")>=MaxLevel then RGPStat.Points(ch,EXP).Maximum=0 end   
+   ;(XCharLvUp[ch] or function() end)()
 end   
 
 

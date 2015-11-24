@@ -35,7 +35,9 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 0,
+	["ABL_AP"] = 70,
+	["ABL_APCut"] = 5000,
+	["ABL_DblSpeed"] = 2000,
 	["ABL_Pose"] = "Cast",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
