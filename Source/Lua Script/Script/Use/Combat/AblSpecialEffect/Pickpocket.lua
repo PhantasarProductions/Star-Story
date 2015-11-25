@@ -1,6 +1,6 @@
 --[[
   Pickpocket.lua
-  Version: 15.11.17
+  Version: 15.11.25
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -48,7 +48,7 @@ local defendroll = rand(0,RPGChar.Stat(myfoe.Tag,"Level"))
 if stealroll<defendroll then MINI("Your stealing attempt failed",255,180,0) return end
 local gii = rand(1,#myfoe.ItemSteal)
 if not ItemGive(myfoe.ItemSteal[gii].ITM,myhero.Tag,myfoe.ItemSteal[gii].VLT) then MINI(RPGChar.GetName(myhero.Tag).."'s bags are full") return end
-SFX("Audio/SFX/Foxy/Yes.ogg")
+if myhero.Tag=="Foxy" then SFX("Audio/SFX/Foxy/Yes.ogg") end
 myfoe.StolenFrom = true
 return true
 end

@@ -46,7 +46,7 @@ TeachWendickaArray = {
                      },
               Foxy = {
                        Requirement = function()
-                                     return RPGChar.ListHas("Foxy","ABL","FOXY_DRAGON_CHARGE")==1 or RPGChar.ListCount("Foxy","ABL")==6
+                                     return RPGChar.ListHas("Foxy","ABL","FOXY_DRAGON_CHARGE")==1 or RPGChar.CountList("Foxy","ABL")==6
                                      end,
                        Teach = 'FOXY_PICKPOCKET'              
                      },
@@ -72,8 +72,8 @@ CSay("= Teacher: "..bych)
 local teacher = TeachWendickaArray[bych]
 if not teacher then return CSay("= It seems this person has nothing to teach to Wendicka.") end
 if not teacher.Requirement() then return CSay("= It appears you did not yet meet this teacher's requirement") end
-if RPGChar.ListHas("Wendicka","ABL",teacher.Teach)   then return CSay("= Wendicka already knows what this teacher has got to teach") end
-if RPGChar.ListHas("Wendicka","LEARN",teacher.Teach) then return CSay("= Wendicka is already trying to master what this teacher has got to teach") end
+if RPGChar.ListHas("Wendicka","ABL",teacher.Teach)   == 1 then return CSay("= Wendicka already knows what this teacher has got to teach") end
+if RPGChar.ListHas("Wendicka","LEARN",teacher.Teach) == 1 then return CSay("= Wendicka is already trying to master what this teacher has got to teach") end
 CSay("= Remark")
 MapText("TEACH."..bych)
 CSay("= Teaching: "..teacher.Teach)

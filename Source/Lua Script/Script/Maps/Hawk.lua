@@ -68,7 +68,7 @@ end
 
 function TalkParty(ch)
 MapText(upper(ch).."."..CVV("$HAWK"))
-;(TeachWendicka or function() CSay("Teach Wendicka does not appear to be available") end)()
+;(TeachWendicka or function() CSay("Teach Wendicka does not appear to be available") end)(ch)
 end
 
 function CLICK_ARRIVAL_Hawk_Crystal()	TalkParty("Crystal") end
