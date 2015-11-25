@@ -272,6 +272,7 @@
 1. Script/Use/Maps/Gen/Next.lua
 1. Script/Use/Maps/Hawk/ArrivalPhysillium.lua
 1. Script/Use/Maps/Hawk/AutoNewNav.lua
+1. Script/Use/Maps/Hawk/Teach Wendicka.lua
 1. Script/Use/Sub/Party/XenobiSpells.lua
 
 
@@ -299,4 +300,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 24 November 2015; 22:36:35 CET
+### Last updated: Wed 25 November 2015; 11:00:22 CET

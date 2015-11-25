@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.22
+version: 15.11.25
 ]]
 
 -- @USEDIR Script/Use/Maps/Hawk/
@@ -68,6 +68,7 @@ end
 
 function TalkParty(ch)
 MapText(upper(ch).."."..CVV("$HAWK"))
+;(TeachWendicka or function() CSay("Teach Wendicka does not appear to be available") end)()
 end
 
 function CLICK_ARRIVAL_Hawk_Crystal()	TalkParty("Crystal") end
