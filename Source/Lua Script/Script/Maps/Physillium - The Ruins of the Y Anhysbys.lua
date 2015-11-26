@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.21
+version: 15.11.26
 ]]
 -- @USE /Script/Use/Maps/Gen/Schuif.lua
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -122,6 +122,32 @@ if Done("&BANIKA") then
    end
 end
 
+function Ji()
+if Done("&DONE.JI.VISIT.FIRST.TIME") then
+   MapText('NOGO')
+   return
+   end
+local endx=80
+local endy=48
+local begx=240
+local begy=301
+local p = {"Wendicka","Crystal","ExHuRU","Yirl","Foxy"}   
+local c=0
+LoadMap("Physillium - Ji Rubble")
+SpawnPlayer('Start')
+PartyPop("beg")
+MapText("A_ENTER")
+for ch in each(p) do Actors.MoveToSpot("POP_"..ch,"end_"..ch) end
+-- for x=begx,endx,-1 do for y=begy,endy,-1 do
+repeat
+    if Maps.CamX>endx then Maps.CamX=Maps.CamX-1 end
+    if Maps.CamY>endy then Maps.CamY=Maps.CamY-1 end
+    DrawScreen()
+    Flip()
+    until Maps.CamX==endx and Maps.CamY==endy
+Sys.Error("Unfortunately the current script ends here.")    
+end
+
 
 function GALE_OnLoad()
 local l = Maps.LayerCodeName
@@ -129,6 +155,7 @@ Music("Dungeon/The Complex.ogg")
 ZA_Enter("WendickaSecret",WendickaSecret)
 ZA_Enter("WendickaStop",WendickaStop)
 ZA_Enter("Wendicka_Rejoin",WendickaRejoin)
+ZA_Enter("Ji",Ji)
 AddClickable("Puzzle1")
 Maps.GotoLayer("#001") -- Puzzle #1
 Schuif = { Ga={}, Obj={} } -- Force data removal from a failed fix earlier
