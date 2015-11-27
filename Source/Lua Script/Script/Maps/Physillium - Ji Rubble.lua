@@ -32,10 +32,34 @@
   
  **********************************************
  
-version: 15.11.26
+version: 15.11.27
 ]]
 
 
 function GALE_OnLoad()
 Music("Scenario/Panic Stations.ogg")
+end
+
+function PostBoss()
+local p = {"Wendicka","Crystal","ExHuRU","Yirl","Foxy"}   
+CSay("Congratulations on beating that boss!")
+MapText("E_POSTBOSS")
+Actors.MoveToSpot("POP_Crystal","PostBossCrystal")
+for ch in each(p) do Actors.ChoosePic("POP_"..ch,upper(ch)..".NORTH") end
+Actors.ChoosePic("POP_Crystal","CRYSTAL.EAST")
+local cury = Maps.CamY
+for y = cury,0,-1 do
+    Maps.CamY = y
+    DrawScreen()
+    Flip()
+    end
+Actors.ChoosePic("POP_Crystal","CRYSTAL.NORTH")
+MapText("F_XENOBI")
+Maps.Obj.Obj('Ji-Zwaard').TextureFile = "GFX/Actors/SinglePic/Ji/Ji East - Black long hair.png"
+MapText("G_XENOBI")
+Actors.MoveToSpot("POP_Crystal","XenobiCrystal")    
+MapText("H_XENOBI_CRYSTAL")
+KickReggie("West","POP_Foxy","Reggie")
+MapText("I_YIRL")
+Sys.Error("Unfortunately the current script ends here.")
 end

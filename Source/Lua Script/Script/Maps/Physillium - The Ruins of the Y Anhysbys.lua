@@ -104,9 +104,9 @@ Var.D("%COMBAT.LVFOE2",lv)
 Var.D("$COMBAT.ALTCOORDSFOE2","300,400")
 if skill==3 then
    Var.D("$COMBAT.FOE1","Reg/Lion")
-   Var.D("$COMBAT.FOE2","Reg/Lion")
+   Var.D("$COMBAT.FOE3","Reg/Lion")
    Var.D("%COMBAT.LVFOE1",lv)
-   Var.D("%COMBAT.LVFOE2",lv)
+   Var.D("%COMBAT.LVFOE3",lv)
    end
 RandomBossTune()
 StartCombat()   
@@ -151,7 +151,24 @@ for ch in each(p) do Actors.ChoosePic("POP_"..ch,upper(ch)..".WEST") end
 MapText("C_CRYSTALTHREATENED")
 Actors.MoveToSpot("POP_Crystal","BossCrystal")
 MapText("D_CRYSTALRESCUE")
-Sys.Error("Unfortunately the current script ends here.")    
+Party("Crystal")
+local lv = (RPGStat.Stat("Crystal","Level")*(6+(skill*2)))
+CleanCombat()
+Var.D("$COMBAT.BACKGROUND","Ji Rubble.png")
+Var.D("$COMBAT.BEGIN","Default")
+Var.D("$COMBAT.FOE2","Boss/Cyborg Lord")
+Var.D("%COMBAT.LVFOE2",lv)
+Var.D("$COMBAT.ALTCOORDSFOE2","300,400")
+if skill>1 then
+   Var.D("$COMBAT.FOE1","Reg/Cyborg Medic")
+   Var.D("$COMBAT.FOE3","Reg/Cyborg Gunner")
+   Var.D("%COMBAT.LVFOE1",math.ceil(lv/10))
+   Var.D("%COMBAT.LVFOE3",math.ceil(lv/10))
+   end
+--RandomBossTune()
+Var.D("$COMBAT.MUSIC","Scenario/Panic Stations.ogg")
+Schedule("MAP","PostBoss")
+StartCombat()       
 end
 
 
