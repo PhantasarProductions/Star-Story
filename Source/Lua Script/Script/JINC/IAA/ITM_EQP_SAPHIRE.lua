@@ -1,5 +1,5 @@
 --[[
-  ABL_YIRL_FOLLOWME.lua
+  ITM_EQP_SAPHIRE.lua
   Version: 15.11.27
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,25 +35,22 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 125,
-	["ABL_APCut"] = 10000,
-	["ABL_Instant"] = 2500,
-	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 60,
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Move all allies to COM",
+	["Description"] = "Raises disease resistance of its owner by 10%",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Elements/Light.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Follow me",
-	["ScriptEffect_Reference"] = "FollowMe",
-	["Target"] = "OS",
+	["ITM_BuyPrice"] = 10000,
+	["ITM_EQP_SRes_Paralysis"] = 10,
+	["ITM_SellPrice"] = 7500,
+	["ITM_Sellable"] = true,
+	["Icon"] = "gfx/Inventory/Ruby.png",
+	["ItemType"] = "EquipItem",
+	["Name"] = "Ruby",
+	["Target"] = "1F",
 	["UseCombat"] = true,
-	["UseField"] = true,
-	["untauntable"] = true}
+	["UseField"] = true}
 
 return ret
 

@@ -147,9 +147,9 @@ repeat
     until Maps.CamX<=endx and Maps.CamY<=endy
 MapText('B_MEETJI')
 Maps.Obj.Obj('Ji-Zwaard').TextureFile = "GFX/Actors/SinglePic/Ji/Ji East - Black long hair - Light Saber.png"
-for ch in each(p) do Actors.ChoosePic(upper(ch)..".WEST") end
+for ch in each(p) do Actors.ChoosePic("POP_"..ch,upper(ch)..".WEST") end
 MapText("C_CRYSTALTHREATENED")
-Actors.MoveToSpot("POP_CRYSTAL","BossCrystal")
+Actors.MoveToSpot("POP_Crystal","BossCrystal")
 MapText("D_CRYSTALRESCUE")
 Sys.Error("Unfortunately the current script ends here.")    
 end
