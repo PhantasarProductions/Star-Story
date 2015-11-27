@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.26
+version: 15.11.27
 ]]
 -- @USE /Script/Use/Maps/Gen/Schuif.lua
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -127,8 +127,8 @@ if Done("&DONE.JI.VISIT.FIRST.TIME") then
    MapText('NOGO')
    return
    end
-local endx=80
-local endy=48
+local endx=160
+local endy=64
 local begx=240
 local begy=301
 local p = {"Wendicka","Crystal","ExHuRU","Yirl","Foxy"}   
@@ -141,10 +141,16 @@ for ch in each(p) do Actors.MoveToSpot("POP_"..ch,"end_"..ch) end
 -- for x=begx,endx,-1 do for y=begy,endy,-1 do
 repeat
     if Maps.CamX>endx then Maps.CamX=Maps.CamX-1 end
-    if Maps.CamY>endy then Maps.CamY=Maps.CamY-1 end
+    if Maps.CamY>endy then Maps.CamY=Maps.CamY-2 end
     DrawScreen()
     Flip()
-    until Maps.CamX==endx and Maps.CamY==endy
+    until Maps.CamX<=endx and Maps.CamY<=endy
+MapText('B_MEETJI')
+Maps.Obj.Obj('Ji-Zwaard').TextureFile = "GFX/Actors/SinglePic/Ji/Ji East - Black long hair - Light Saber.png"
+for ch in each(p) do Actors.ChoosePic(upper(ch)..".WEST") end
+MapText("C_CRYSTALTHREATENED")
+Actors.MoveToSpot("POP_CRYSTAL","BossCrystal")
+MapText("D_CRYSTALRESCUE")
 Sys.Error("Unfortunately the current script ends here.")    
 end
 
