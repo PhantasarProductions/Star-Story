@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.27
+version: 15.11.28
 ]]
 
 
@@ -43,10 +43,11 @@ end
 function PostBoss()
 local p = {"Wendicka","Crystal","ExHuRU","Yirl","Foxy"}   
 CSay("Congratulations on beating that boss!")
-MapText("E_POSTBOSS")
-Actors.MoveToSpot("POP_Crystal","PostBossCrystal")
-for ch in each(p) do Actors.ChoosePic("POP_"..ch,upper(ch)..".NORTH") end
+Maps.Obj.Kill("POP_Wendicka")
 Actors.ChoosePic("POP_Crystal","CRYSTAL.EAST")
+Actors.MoveToSpot("POP_Crystal","PostBossCrystal")
+MapText("E_POSTBOSS")
+for ch in each(p) do Actors.ChoosePic("POP_"..ch,upper(ch)..".NORTH") end
 local cury = Maps.CamY
 for y = cury,0,-1 do
     Maps.CamY = y
@@ -61,5 +62,18 @@ Actors.MoveToSpot("POP_Crystal","XenobiCrystal")
 MapText("H_XENOBI_CRYSTAL")
 KickReggie("West","POP_Foxy","Reggie")
 MapText("I_YIRL")
-Sys.Error("Unfortunately the current script ends here.")
+Party("Crystal","ExHuRU","Yirl","Foxy","Xenobi")
+LoadMap("Physillium - Ji Temple")
+SpawnPlayer("Start")
+PartyPop("Ji")
+Actors.ChoosePic("POP_Xenobi","XENOBI.SOUTH")
+MapText("MEET_GRAND_MASTER")
+KickReggie("East","POP_Foxy","Reggie")
+MapText("MEET_B")
+ActivateRemotePad('Start','Ysperon - Eugorvnia','Ysperon','Eugorvnia - Start',"#001")
+PartyUnPop()
+SetActive("Crystal")
+Var.D("$HAWK","WENDICKAGONE")
+Maps.Obj.Kill("Reggie",1)
+-- Sys.Error("Unfortunately the current script ends here.")
 end
