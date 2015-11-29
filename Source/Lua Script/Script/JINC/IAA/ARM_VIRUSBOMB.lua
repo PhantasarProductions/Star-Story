@@ -1,6 +1,6 @@
 --[[
   ARM_VIRUSBOMB.lua
-  Version: 15.11.27
+  Version: 15.11.28
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -53,7 +53,7 @@ ret = {
 	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Virus Bomb",
-	["Target"] = "AF",
+	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}
 

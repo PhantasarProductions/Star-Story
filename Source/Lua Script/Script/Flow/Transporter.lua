@@ -1,6 +1,6 @@
 --[[
   Transporter.lua
-  Version: 15.11.18
+  Version: 15.11.29
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -72,10 +72,10 @@ for k,v in pairs(Transporters.Nodes) do
 Var.D("$RET",ret.." }")
 end
 
-function ActivateRemotePad(tag,mapcode,world,location)
+function ActivateRemotePad(tag,mapcode,world,location,layer)
 local node = upper(mapcode.."."..tag)
 CSay("Activating transporter: "..tag)
-Transporters.Nodes[node] = { Map = mapcode, Transporter = "Trans.Spot."..tag }
+Transporters.Nodes[node] = { Map = mapcode, Transporter = "Trans.Spot."..tag, layer=layer }
 Transporters.Worlds[world] = Transporters.Worlds[world] or {}
 table.insert(Transporters.Worlds[world],{Location = location, Node=node}) 
 CSay('We now have '..#Transporters.Worlds[world].." transporters activated in world "..world)

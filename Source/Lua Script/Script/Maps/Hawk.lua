@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.25
+version: 15.11.29
 ]]
 
 -- @USEDIR Script/Use/Maps/Hawk/
@@ -40,7 +40,8 @@ version: 15.11.25
 -- I chose this method in order not to have to change this script (and thus changing stuff in the demo when I don't need to) for any new location you may visit.
 
 ReggieKick = {
-                ["ANHYSBYS.REJOIN"] = true 
+                ["ANHYSBYS.REJOIN"] = true, 
+                ["WENDICKAGONE"] = true
              } -- Should contain all events that leads to Foxy kicking Reggie.
 
 HeroLeadList = {"Wendicka","Crystal","Yirl","Foxy","Xenobi","ExHuRU","Rolf"}
@@ -76,6 +77,7 @@ function CLICK_ARRIVAL_Hawk_ExHuRU()	TalkParty("ExHuRU") end
 function CLICK_ARRIVAL_Hawk_Yirl()		TalkParty("Yirl") end
 function CLICK_ARRIVAL_Hawk_Foxy()		TalkParty("Foxy") end
 function CLICK_ARRIVAL_Hawk_Reggie()	TalkParty("Reggie") end
+function CLICK_ARRIVAL_Hawk_Xenobi()	TalkParty("Xenobi") end
 function CLICK_ARRIVAL_Hawk_Rolf()		TalkParty("Rolf") end
 function CLICK_ARRIVAL_Hawk_Reggie()
 TalkParty("Reggie")

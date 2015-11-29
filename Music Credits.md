@@ -32,6 +32,8 @@ I'd like to thank the next music artists for their brilliant work, and licensing
    1. Warfield
 1. Rockit Maxx
    1. Dark City
+1. Sergey Cheremisinov
+   1. The Loneliness
 1. Spiedkiks
    1. Freak Boutique
 1. WeirdoMusic

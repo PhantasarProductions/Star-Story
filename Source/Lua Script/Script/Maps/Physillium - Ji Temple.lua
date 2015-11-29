@@ -32,8 +32,18 @@
   
  **********************************************
  
-version: 15.11.28
+version: 15.11.29
 ]]
+
+function NPC_IRVONA()
+MapText("IRVONA")
+if not Done("&REVEALED.BLACKCASTLE") then
+   ActivateRemotePad('Start','Physillium - Black Castle','Physillium','Black Castle - Entrance Hall',"#001")
+   CSay("Transporter pad for Black Castle Revealed")
+   end
+end   
+
 function GALE_OnLoad()
 Music("Ji/The_Loneliness")
+SetScrollBoundaries(0,0,0,80)
 end

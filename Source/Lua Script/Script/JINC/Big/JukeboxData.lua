@@ -1,6 +1,6 @@
 --[[
   JukeboxData.lua
-  Version: 15.11.27
+  Version: 15.11.29
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -64,6 +64,9 @@ return {
      ["Blip Stream"] = {
                    File = "Music/Excalibur/Blip Stream.ogg",
                    Artist = "Kevin McLeod"},
+     ["The Loneliness"] = {
+                   File = "Music/Ji/The_Loneliness.ogg",
+                   Artist = "Sergey Cheremisinov"},
      ["Don't talk too much"] = {
                    File = "Music/Location_Pub_Jungle/1 - TDCi - Don't Talk Too Much.ogg",
                    Artist = "Fake Music Generator"},

@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.10.23
+Version: 15.11.29
 End Rem
 Function RunFlow() 
 Repeat
@@ -50,7 +50,7 @@ X = GetChar()
 If X>=32 ConsoleCommand:+Chr(X) Else
 	Select X
 		Case 8 If ConsoleCommand ConsoleCommand = Left(ConsoleCommand,Len(ConsoleCommand)-1)
-		Case KEY_UP ConsoleCommand = LastConsoleCommand
+		'Case KEY_UP ConsoleCommand = LastConsoleCommand
 		Case 13
 			ConsoleWrite ">"+ConsoleCommand
 			LastConsoleCommand = ConsoleCommand

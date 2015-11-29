@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 15.11.04
+  Version: 15.11.27
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -105,7 +105,8 @@ local effect
 local abl=act.Item
 local atkdata
 local cha = FighterTag(ag,ai)..""
-local cht = FighterTag(tg,ti).."" -- This way of forming FORCES a <nil> value error if this should happen. I need to know if the evil's done here or not :)
+local cht = FighterTag(tg,ti) --.."" -- This way of forming FORCES a <nil> value error if this should happen. I need to know if the evil's done here or not :)
+if not cht then return end -- The bug mentioned earlier was already fixed, and this can prevent enemies trying to heal their allies crashing the game if the player actually killed them before the enemy could do this.
 -- Cure death if asked or miss if not asked and the character is dead. (Must come first)
 if     RPGChar.Points(cht,"HP").Have==0 and abl.CureDeathOne  then RPGChar.Points(cht,"HP").Have=1; CharReport(tg,ti,"Revive",{180,255,0}); effect=true
 elseif RPGChar.Points(cht,"HP").Have==0 and abl.CureDeathFull then RPGChar.Points(cht,"HP").Have=RPGChar.Points(cht,"HP").Maximum; CharReport(tg,ti,"Resurrect",{180,255,0}); effect=true
