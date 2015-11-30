@@ -50,7 +50,7 @@ function CLICK_ARRIVAL_Tralies()
 end
 
 function NextFloor()
-  if not(ActivatedPads[upper(Maps.CodeName..".CellBlockLoveWithYou")]) then
+  if not(ActivatedPads[upper(Maps.CodeName..".CellBlockLoveWithYou")] or ActivatedPads["CellBlockLoveWithYou"]) then
      MINI("Perhaps you can better activate the transporter pad here first!!!",255,0,0)
      CSay(serialize("ActivatedPads",ActivatedPads))
      return 
@@ -68,4 +68,5 @@ function GALE_OnLoad()
 	Music("Dungeon/Prisoner Of War.ogg")
 	AddClickable("Tralies")
 	ZA_Enter("Next",NextFloor)
+	CSay(serialize("ActivatedPads",ActivatedPads))
 end
