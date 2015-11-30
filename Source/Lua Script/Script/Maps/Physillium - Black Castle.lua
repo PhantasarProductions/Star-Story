@@ -34,6 +34,20 @@
  
 version: 15.11.30
 ]]
+
+-- @USE /Script/Use/Maps/Gen/Next.lua
+
+BeenHere = "&DONE.BLACKCASTLE.WELCOME"
+
+function Welcome()
+if Done(BeenHere) then return end
+PartyPop("Start")
+Actors.ChoosePic("POP_Xenobi","XENOBI.SOUTH")
+MapText("WELCOME")
+PartyUnPop()
+end
+
 function GALE_OnLoad()
 Music("Dungeon/Dark_City.ogg")
+if not CVV(BeenHere) then ZA_Enter("StartRoom",Welcome) end
 end
