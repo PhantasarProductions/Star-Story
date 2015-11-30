@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.16
+version: 15.11.30
 ]]
 
 
@@ -52,6 +52,7 @@ end
 function NextFloor()
   if not(ActivatedPads[upper(Maps.CodeName..".CellBlockLoveWithYou")]) then
      MINI("Perhaps you can better activate the transporter pad here first!!!",255,0,0)
+     CSay(serialize("ActivatedPads",ActivatedPads))
      return 
      end
 	LoadMap("LostPlanet_Dungeon","#001")
