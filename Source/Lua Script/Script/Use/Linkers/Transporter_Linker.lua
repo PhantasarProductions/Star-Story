@@ -1,6 +1,6 @@
 --[[
   Transporter_Linker.lua
-  Version: 15.10.28
+  Version: 15.11.30
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -42,6 +42,8 @@ FirstNode = FirstNode or function(node,mapfunction)
 MS.LN_Run("TRANS","Script/Flow/Transporter.lua","FirstNode",node..";"..mapfunction)
 end
 
-ActivateRemotePad = ActivateRemotePad or function(tag,mapcode,world,location)
-MS.LN_Run("TRANS","Script/Flow/Transporter.lua",'ActivateRemotePad',tag..";"..mapcode..";"..world..";"..location) 
+ActivateRemotePad = ActivateRemotePad or function(tag,mapcode,world,location,layer)
+local l = ""
+if layer then l = ";"..layer end
+MS.LN_Run("TRANS","Script/Flow/Transporter.lua",'ActivateRemotePad',tag..";"..mapcode..";"..world..";"..location..l) 
 end

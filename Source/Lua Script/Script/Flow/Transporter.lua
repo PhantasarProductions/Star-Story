@@ -1,6 +1,6 @@
 --[[
   Transporter.lua
-  Version: 15.11.29
+  Version: 15.11.30
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -75,7 +75,7 @@ end
 function ActivateRemotePad(tag,mapcode,world,location,layer)
 local node = upper(mapcode.."."..tag)
 CSay("Activating transporter: "..tag)
-Transporters.Nodes[node] = { Map = mapcode, Transporter = "Trans.Spot."..tag, layer=layer }
+Transporters.Nodes[node] = { Map = mapcode, Transporter = "Trans.Spot."..tag, Layer=layer }
 Transporters.Worlds[world] = Transporters.Worlds[world] or {}
 table.insert(Transporters.Worlds[world],{Location = location, Node=node}) 
 CSay('We now have '..#Transporters.Worlds[world].." transporters activated in world "..world)
@@ -120,7 +120,7 @@ if CurrentWorld then
                 nodedata.mapfunction = nil
              else
                 Image.Cls()
-                LoadMap(nodedata.Map,nodedata.Layer)
+                LoadMap(nodedata.Map,nodedata.Layer or nodedata.layer or "#001")
                 SpawnPlayer(nodedata.Transporter,"South") --,true)
                 LAURA.Flow("FIELD")
                 end 
