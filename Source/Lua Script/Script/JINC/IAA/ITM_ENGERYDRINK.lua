@@ -1,5 +1,5 @@
 --[[
-  ABL_FOXY_MULTISTAB.lua
+  ITM_ENGERYDRINK.lua
   Version: 15.11.30
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,25 +35,23 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 25,
-	["ABL_APCut"] = 15000,
-	["ABL_Cancel"] = 100,
-	["ABL_DblPower"] = 50000,
-	["ABL_Instant"] = 1500,
-	["ABL_Pose"] = "Attack",
-	["ABL_Speed"] = 500,
-	["ActSpeed"] = 250,
+	["APRecover"] = 15,
+	["APRecoverType"] = "Absolute",
+	["ActSpeed"] = 120,
 	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 100,
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Quick attack on multiple targets",
+	["Description"] = "Grands 15 AP",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Inventory/Dagger.png",
+	["ITM_BuyPrice"] = 100,
+	["ITM_SellPrice"] = 75,
+	["ITM_Sellable"] = true,
+	["Icon"] = "gfx/inventory/Energy Drink.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Multi-stab",
-	["Target"] = "1F",
-	["UseCombat"] = true}
+	["Name"] = "Energy Drink",
+	["Target"] = "1A",
+	["UseCombat"] = true,
+	["UseField"] = true}
 
 return ret
 
