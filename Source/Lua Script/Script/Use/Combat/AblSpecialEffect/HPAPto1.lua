@@ -42,14 +42,17 @@ function To1(tag,Points,NewValue)
 RPGChar.Points(tag,Points or "HP").Have = NewValue or 1
 end
 
-function HPto1(ag,ai,tg,ti,act)
-To1(Fighters[tg][ti])
+function AblSpecialEffect.HPto1(ag,ai,tg,ti,act)
+To1(Fighters[tg][ti].Tag)
+return true
 end
 
-function APto1(ag,ai,tg,ti,act)
-To1(Fighters[tg][ti],"AP")
+function AblSpecialEffect.APto1(ag,ai,tg,ti,act)
+To1(Fighters[tg][ti].Tag,"AP")
+return true
 end
 
-function EXPDrain(ag,ai,tg,ti,act)
-To1(Fighters[tg][ti],"EXP",0)
+function AblSpecialEffect.EXPDrain(ag,ai,tg,ti,act)
+To1(Fighters[tg][ti].Tag,"EXP",0)
+return true
 end

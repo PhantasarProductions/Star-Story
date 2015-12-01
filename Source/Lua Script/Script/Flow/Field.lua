@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.11.16
+  Version: 15.12.01
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -359,6 +359,8 @@ for es in each(enemymainlist) do
         end
     end 
 arena = Maps.GetData("Arena")
+-- encmusic = Maps.GetData("AltEncounterTune")
+if encmusic=="" then encmusic=nil end
 if not suffixed(upper(arena),".PNG") then arena = arena .. ".png" end
 -- Make sure there are no foes in the field
 CSay("Searching for existing foes")
@@ -574,7 +576,7 @@ else
    Var.D("$COMBAT.BACKGROUND",arena)
    Var.D("$COMBAT.BEGIN","Default")
    encmusic = encmusic or GetEncTracks()    
-   if Maps.GetData("AltEncounterMusic")~="" then Var.D("$COMBAT.MUSIC",Maps.GetData("AltEncounterMusic")) else Var.D("$COMBAT.MUSIC",encmusic[rand(1,#encmusic)]) end
+   if Maps.GetData("AltEncounterTune")~="" then Var.D("$COMBAT.MUSIC",Maps.GetData("AltEncounterTune")) else Var.D("$COMBAT.MUSIC",encmusic[rand(1,#encmusic)]) end
    for i,v in ipairs(foe.Enemies) do
        Var.D("$COMBAT.FOE"  ..i,v.foe)
        Var.D("%COMBAT.LVFOE"..i,v.level)
