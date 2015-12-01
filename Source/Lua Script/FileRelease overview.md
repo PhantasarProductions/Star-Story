@@ -125,6 +125,7 @@
 1. Script/JINC/IAA/ITM_BLUBAFLOWER.lua
 1. Script/JINC/IAA/ITM_ENERGYDRINK.lua
 1. Script/JINC/IAA/ITM_EQP_EMERALD.lua
+1. Script/JINC/IAA/ITM_EQP_ONYX.lua
 1. Script/JINC/IAA/ITM_EQP_RUBY.lua
 1. Script/JINC/IAA/ITM_EQP_SAPHIRE.lua
 1. Script/JINC/IAA/ITM_FIRSTAIDKIT.lua
@@ -269,6 +270,7 @@
 1. Script/JINC/Foes/Boss/Cyborg Lord.lua
 1. Script/JINC/Foes/Reg/BlackLizard.lua
 1. Script/JINC/Foes/Reg/Bladeh.lua
+1. Script/JINC/Foes/Reg/Cid.lua
 1. Script/JINC/Foes/Reg/Lion.lua
 1. Script/JINC/NewGame+/PreserveVar.lua
 1. Script/Maps/Physillium - Black Castle.lua
@@ -280,6 +282,7 @@
 1. Script/MiniGame/MemoryAnhysbys.lua
 1. Script/Use/Anyway/Full.lua
 1. Script/Use/Anyway/ReLevel.lua
+1. Script/Use/Combat/AblSpecialEffect/HPAPto1.lua
 1. Script/Use/Maps/Gen/Next.lua
 1. Script/Use/Maps/Hawk/ArrivalPhysillium.lua
 1. Script/Use/Maps/Hawk/AutoNewNav.lua
@@ -311,4 +314,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 01 December 2015; 15:57:18 CET
+### Last updated: Tue 01 December 2015; 16:08:12 CET
