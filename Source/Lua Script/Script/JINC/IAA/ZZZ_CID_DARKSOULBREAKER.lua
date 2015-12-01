@@ -1,5 +1,5 @@
 --[[
-  ABL_FOE_LICKYOURWOUNDS.lua
+  ZZZ_CID_DARKSOULBREAKER.lua
   Version: 15.12.01
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,32 +35,20 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 0,
-	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 250,
-	["ActSpeed"] = 250,
-	["AttackElement"] = "Healing",
-	["AttackPower"] = 200,
+	["APRecoverType"] = "Absolute",
+	["ActSpeed"] = 25,
+	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
-	["CureAmnesia"] = true,
-	["CureBagLock"] = true,
-	["CureConfusion"] = true,
-	["CureDisease"] = true,
-	["CureHandicapped"] = true,
-	["CureParalysis"] = true,
-	["CurePoison"] = true,
-	["CureSleep"] = true,
-	["CureTerrified"] = true,
-	["DefenseStat"] = "Resistance",
-	["Description"] = "Heal",
+	["DefenseStat"] = "Defense",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Inventory/Patch.png",
+	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Lick your wounds",
-	["SpellAni_Reference"] = "SingleHeal",
-	["Target"] = "1A",
+	["Name"] = "Dark Attack",
+	["ScriptEffect_Reference"] = "HPto1",
+	["Target"] = "AF",
 	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseField"] = true,
+	["untauntable"] = true}
 
 return ret
 

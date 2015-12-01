@@ -1,5 +1,5 @@
 --[[
-  ABL_FOE_LICKYOURWOUNDS.lua
+  ZZZ_CID_DARKNESS.lua
   Version: 15.12.01
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,30 +35,18 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 0,
-	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 250,
+	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
-	["AttackElement"] = "Healing",
-	["AttackPower"] = 200,
-	["AttackStat"] = "Strength",
-	["CureAmnesia"] = true,
-	["CureBagLock"] = true,
-	["CureConfusion"] = true,
-	["CureDisease"] = true,
-	["CureHandicapped"] = true,
-	["CureParalysis"] = true,
-	["CurePoison"] = true,
-	["CureSleep"] = true,
-	["CureTerrified"] = true,
+	["AttackElement"] = "Darkness",
+	["AttackPower"] = 100,
+	["AttackStat"] = "Will",
 	["DefenseStat"] = "Resistance",
-	["Description"] = "Heal",
+	["Description"] = "Dark attack",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Inventory/Patch.png",
+	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Lick your wounds",
-	["SpellAni_Reference"] = "SingleHeal",
-	["Target"] = "1A",
+	["Name"] = "Darkness",
+	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}
 

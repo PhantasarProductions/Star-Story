@@ -1,5 +1,5 @@
 --[[
-  ABL_FOE_LICKYOURWOUNDS.lua
+  ABL_FOE_EXPDRAIN.lua
   Version: 15.12.01
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -37,30 +37,18 @@
 ret = {
 	["ABL_AP"] = 0,
 	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 250,
+	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
-	["AttackElement"] = "Healing",
-	["AttackPower"] = 200,
+	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
-	["CureAmnesia"] = true,
-	["CureBagLock"] = true,
-	["CureConfusion"] = true,
-	["CureDisease"] = true,
-	["CureHandicapped"] = true,
-	["CureParalysis"] = true,
-	["CurePoison"] = true,
-	["CureSleep"] = true,
-	["CureTerrified"] = true,
-	["DefenseStat"] = "Resistance",
-	["Description"] = "Heal",
+	["DefenseStat"] = "Defense",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Inventory/Patch.png",
+	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Lick your wounds",
-	["SpellAni_Reference"] = "SingleHeal",
-	["Target"] = "1A",
-	["UseCombat"] = true,
-	["UseField"] = true}
+	["Name"] = "Experience Drain",
+	["ScriptEffect_Reference"] = "EXPDrain",
+	["Target"] = "1F",
+	["UseCombat"] = true}
 
 return ret
 

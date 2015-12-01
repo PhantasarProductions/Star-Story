@@ -62,6 +62,7 @@
 1. Script/JINC/IAA/ABL_EXHURU_NELJA.lua
 1. Script/JINC/IAA/ABL_EXHURU_STOMP.lua
 1. Script/JINC/IAA/ABL_EXHURU_YKSI.lua
+1. Script/JINC/IAA/ABL_FOE_EXPDRAIN.lua
 1. Script/JINC/IAA/ABL_FOE_FULLHEALTH.lua
 1. Script/JINC/IAA/ABL_FOE_LICKYOURWOUNDS.lua
 1. Script/JINC/IAA/ABL_FOE_PHOTON.lua
@@ -122,7 +123,7 @@
 1. Script/JINC/IAA/ITM_BANDAGE.lua
 1. Script/JINC/IAA/ITM_BIOHAZARD.lua
 1. Script/JINC/IAA/ITM_BLUBAFLOWER.lua
-1. Script/JINC/IAA/ITM_ENGERYDRINK.lua
+1. Script/JINC/IAA/ITM_ENERGYDRINK.lua
 1. Script/JINC/IAA/ITM_EQP_EMERALD.lua
 1. Script/JINC/IAA/ITM_EQP_RUBY.lua
 1. Script/JINC/IAA/ITM_EQP_SAPHIRE.lua
@@ -141,6 +142,10 @@
 1. Script/JINC/IAA/SUPER_FOXY_SKYDRAGONSLASH.lua
 1. Script/JINC/IAA/SUPER_WENDICKA_VOLTSUNAMI.lua
 1. Script/JINC/IAA/SUPER_XENOBI_WHITE_APOCALYPSE.lua
+1. Script/JINC/IAA/ZZZ_CID_DARKCHARGE.lua
+1. Script/JINC/IAA/ZZZ_CID_DARKNESS.lua
+1. Script/JINC/IAA/ZZZ_CID_DARKSOULBREAKER.lua
+1. Script/JINC/IAA/ZZZ_CID_ULTRADARKNESS.lua
 1. Script/JINC/InitChar/Briggs.lua
 1. Script/JINC/InitChar/Crystal.lua
 1. Script/JINC/InitChar/ExHuRU.lua
@@ -306,4 +311,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 30 November 2015; 19:12:41 CET
+### Last updated: Tue 01 December 2015; 15:57:18 CET

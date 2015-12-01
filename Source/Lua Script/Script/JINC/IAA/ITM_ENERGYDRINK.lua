@@ -1,6 +1,6 @@
 --[[
-  ITM_ENGERYDRINK.lua
-  Version: 15.11.30
+  ITM_ENERGYDRINK.lua
+  Version: 15.12.01
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -41,7 +41,7 @@ ret = {
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Grands 15 AP",
+	["Description"] = "Grands 15 AP!",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 100,
 	["ITM_SellPrice"] = 75,
