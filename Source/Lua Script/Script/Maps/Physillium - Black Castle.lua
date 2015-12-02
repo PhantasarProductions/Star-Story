@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.30
+version: 15.12.02
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -47,7 +47,16 @@ MapText("WELCOME")
 PartyUnPop()
 end
 
+function Moeder()
+if Done("&DONE.DARD_MOEDER") then return end
+PartyPop("Moeder")
+MapText("MOEDER")
+Sys.Error("Boss fight not yet set up")
+end
+
+
 function GALE_OnLoad()
 Music("Dungeon/Dark_City.ogg")
 if not CVV(BeenHere) then ZA_Enter("StartRoom",Welcome) end
+ZA_Enter("Moeder",Moeder)
 end
