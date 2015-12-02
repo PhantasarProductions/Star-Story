@@ -1,6 +1,6 @@
 --[[
   ABL_XENOBI_QUICKSTRIKE.lua
-  Version: 15.12.01
+  Version: 15.12.02
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -41,6 +41,7 @@ ret = {
 	["ABL_Instant"] = 527,
 	["ABL_Pose"] = "Cast",
 	["ABL_Speed"] = 250,
+	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 300,
 	["AttackElement"] = "Non-Elemental",
 	["AttackPower"] = 50,
@@ -51,7 +52,6 @@ ret = {
 	["Icon"] = "GFX/Abilities/Light Saber.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Quick Strike",
-	["SpellAni_Reference"] = "Spark",
 	["Target"] = "1F",
 	["UseCombat"] = true}
 

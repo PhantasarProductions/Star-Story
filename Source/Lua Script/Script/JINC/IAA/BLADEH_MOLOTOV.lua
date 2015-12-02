@@ -32,9 +32,10 @@
   
  **********************************************
  
-version: 15.12.01
+version: 15.12.02
 ]]
 ret = {
+	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 200,
 	["AttackElement"] = "Fire",
 	["AttackPower"] = 116,

@@ -109,6 +109,7 @@
 1. Script/JINC/IAA/ABL_YIRL_TRIGGERHAPPY.lua
 1. Script/JINC/IAA/ABS_FOE_VENOMBITE.lua
 1. Script/JINC/IAA/ARM_DART.lua
+1. Script/JINC/IAA/ARM_FLAMETHROWER.lua
 1. Script/JINC/IAA/ARM_HEALINGSPRAY.lua
 1. Script/JINC/IAA/ARM_MULTIBLAST.lua
 1. Script/JINC/IAA/ARM_MUNCHHAUSEN.lua
@@ -314,4 +315,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 01 December 2015; 17:57:02 CET
+### Last updated: Wed 02 December 2015; 12:15:12 CET

@@ -1,6 +1,6 @@
 --[[
   ARM_MUNCHHAUSEN.lua
-  Version: 15.12.01
+  Version: 15.12.02
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -35,6 +35,7 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
+	["APRecoverType"] = "Absolute",
 	["ARM_Hit%"] = 95,
 	["ARM_MaxAmmo"] = 8,
 	["ARM_PRICE_Hit%"] = 1000,

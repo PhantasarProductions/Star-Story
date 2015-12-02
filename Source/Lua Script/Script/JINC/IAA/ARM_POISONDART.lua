@@ -32,9 +32,10 @@
   
  **********************************************
  
-version: 15.12.01
+version: 15.12.02
 ]]
 ret = {
+	["APRecoverType"] = "Absolute",
 	["ARM_Hit%"] = 75,
 	["ARM_MaxAmmo"] = 4,
 	["ARM_PRICE_Hit%"] = 750,

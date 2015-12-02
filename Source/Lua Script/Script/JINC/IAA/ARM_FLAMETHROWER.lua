@@ -1,5 +1,5 @@
 --[[
-  ZZZ_CID_DARKCHARGE.lua
+  ARM_FLAMETHROWER.lua
   Version: 15.12.02
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -36,18 +36,27 @@
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 250,
-	["AttackElement"] = "Non-Elemental",
+	["ARM_Hit%"] = 80,
+	["ARM_MaxAmmo"] = 4,
+	["ARM_PRICE_Hit%"] = 200,
+	["ARM_PRICE_MaxAmmo"] = 300,
+	["ARM_PRICE_Weight"] = 180,
+	["ARM_PRICE_XPower"] = 200,
+	["ARM_XPower"] = 0,
+	["ActSpeed"] = 100,
+	["AttackElement"] = "Fire",
+	["AttackPower"] = 125,
 	["AttackStat"] = "Strength",
-	["DefenseStat"] = "Defense",
+	["DefenseStat"] = "Evasion",
+	["Description"] = "Burn, baby, burb!",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Elements/Dark.png",
+	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Dark Charge",
-	["Target"] = "AF",
+	["Name"] = "Flame Thrower",
+	["SpellAni_Reference"] = "Burn",
+	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true,
-	["UserNextMove"] = "ZZZ_CID_DARKSOULBREAKER",
 	["untauntable"] = true}
 
 return ret
