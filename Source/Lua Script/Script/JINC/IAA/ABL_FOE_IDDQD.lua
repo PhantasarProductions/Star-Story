@@ -1,5 +1,5 @@
 --[[
-  ABL_FOXY_STUNSTAB.lua
+  ABL_FOE_IDDQD.lua
   Version: 15.12.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,24 +35,22 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 60,
-	["ABL_APCut"] = 2500,
-	["ABL_Instant"] = 4000,
+	["ABL_AP"] = 0,
 	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 80,
-	["ActSpeed"] = 80,
+	["APRecoverType"] = "Absolute",
+	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 50,
 	["AttackStat"] = "Strength",
-	["CauseParalysis"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Weak attack, but may paralyze the enemy",
+	["Description"] = "Invincibility",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Inventory/Dagger.png",
+	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Stun Stab",
+	["Name"] = "I.D.D.Q.D.",
+	["ScriptEffect_Reference"] = "Invincibility",
 	["Target"] = "1F",
-	["UseCombat"] = true}
+	["UseCombat"] = true,
+	["UseField"] = true}
 
 return ret
 

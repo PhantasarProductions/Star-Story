@@ -1,6 +1,6 @@
 --[[
   SUPER_XENOBI_WHITE_APOCALYPSE.lua
-  Version: 15.12.02
+  Version: 15.12.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -35,6 +35,7 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
+	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 100,
 	["AttackElement"] = "Light",
 	["AttackPower"] = 1000,
@@ -44,9 +45,11 @@ ret = {
 	["CauseParalysis"] = true,
 	["CauseTerrified"] = true,
 	["DefenseStat"] = "Defense",
+	["Description"] = "Super light attack",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Fist.png",
+	["Icon"] = "GFX/Elements/Light.png",
 	["ItemType"] = "Consumable",
+	["Name"] = "White Apocalypse",
 	["Target"] = "AF",
 	["UseCombat"] = true,
 	["UseField"] = true}

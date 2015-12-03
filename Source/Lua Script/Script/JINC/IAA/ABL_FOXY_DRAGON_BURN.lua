@@ -1,6 +1,6 @@
 --[[
   ABL_FOXY_DRAGON_BURN.lua
-  Version: 15.12.02
+  Version: 15.12.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================

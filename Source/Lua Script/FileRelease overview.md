@@ -64,6 +64,7 @@
 1. Script/JINC/IAA/ABL_EXHURU_YKSI.lua
 1. Script/JINC/IAA/ABL_FOE_EXPDRAIN.lua
 1. Script/JINC/IAA/ABL_FOE_FULLHEALTH.lua
+1. Script/JINC/IAA/ABL_FOE_IDDQD.lua
 1. Script/JINC/IAA/ABL_FOE_LICKYOURWOUNDS.lua
 1. Script/JINC/IAA/ABL_FOE_PHOTON.lua
 1. Script/JINC/IAA/ABL_FOE_POISONCLOUD.lua
@@ -147,6 +148,7 @@
 1. Script/JINC/IAA/ZZZ_CID_DARKCHARGE.lua
 1. Script/JINC/IAA/ZZZ_CID_DARKNESS.lua
 1. Script/JINC/IAA/ZZZ_CID_DARKSOULBREAKER.lua
+1. Script/JINC/IAA/ZZZ_CID_LORD_SUMMON.lua
 1. Script/JINC/IAA/ZZZ_CID_ULTRADARKNESS.lua
 1. Script/JINC/InitChar/Briggs.lua
 1. Script/JINC/InitChar/Crystal.lua
@@ -269,6 +271,7 @@
 
 1. Script/JINC/Foes/Boss/BigLion.lua
 1. Script/JINC/Foes/Boss/Cyborg Lord.lua
+1. Script/JINC/Foes/Boss/DardMoeder.lua
 1. Script/JINC/Foes/Reg/BlackLizard.lua
 1. Script/JINC/Foes/Reg/Bladeh.lua
 1. Script/JINC/Foes/Reg/Cid.lua
@@ -315,4 +318,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Wed 02 December 2015; 16:03:21 CET
+### Last updated: Thu 03 December 2015; 12:38:21 CET

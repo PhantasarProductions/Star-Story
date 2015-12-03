@@ -55,7 +55,7 @@ Spiedkiks | 1 | Music;
 TheSkull | 2 | Art; 
 Thobias Benjamin Koehler | 2 | Font; Misc files; 
 Tibetan_Fox | 1 | Art; 
-Tricky (this is me) :sunglasses: | 1969 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
+Tricky (this is me) :sunglasses: | 1972 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
 Unknown Artist | 34 | Art; 
 Utopia | 2 | Font; Misc files; 
 Varazuvi(TM) | 4 | Audio; 

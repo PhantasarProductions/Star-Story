@@ -1,6 +1,6 @@
 --[[
   ZZZ_CID_DARKSOULBREAKER.lua
-  Version: 15.12.02
+  Version: 15.12.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -43,7 +43,7 @@ ret = {
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Dark Attack",
+	["Name"] = "Dark Soul Breaker",
 	["ScriptEffect_Reference"] = "HPto1",
 	["Target"] = "AF",
 	["UseCombat"] = true,
