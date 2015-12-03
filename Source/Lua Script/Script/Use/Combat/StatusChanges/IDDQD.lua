@@ -1,5 +1,5 @@
 --[[
-  Flirmouse_King.lua
+  IDDQD.lua
   Version: 15.12.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -34,66 +34,34 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
+-- @IF IGNOREME
+-- These lines are only meant to "fool" the outline routine in Eclipse ;)
+-- The @IF IGNOREME and @FI command will make GALE ignore these lines. :)
+StatusResistance = {}
+StatusAltStat = {}
+StatusDrawFighter = {}
+StatusAltFatal = {}
+StatusAltUltraWeak = {}
+StatusAltWeak = {}
+StatusAltNormalHurt = {}
+StatusAltHalved = {}
+-- @FI
 
 
--- Version 15.12.03
 
+function NoHurt(ch,hp,element)
+local dodmg = 0
+local report = "NO EFFECT!"      
+local r,g,b = 255,180,0
+local rate = { Hero = { 50, 25, 5 }, Foe = {5,25,50} }
+local g = "Foe"
+-- if left(g,1)=="FOE_" then g="Foe" end   -- Safetly in in case IDDQD ever becomes available to the player
+if rand(1,rate[g][skill])==1 then RPGChar.RemList(ch,"STATUSCHANGE","IDDQD"); MINI(RPGChar.GetName(ch).."'s I.D.D.Q.D. effect has been neutralized") end
+return dodmg,report,r,g,b
+end
 
-
-Data = {
-	Name = "Flirmouse King",
-	Desc = "This guy is completely indestructable, unless its most loyal subject is killed.",
-	ImageFile = "Boss/Flirmouse_King.png",
-	AI = "Default",
-	Boss = true,
-	EleRes_Fire = 5,
-	EleRes_Wind = 5,
-	EleRes_Water = 5,
-	EleRes_Earth = 5,
-	EleRes_Cold = 5,
-	EleRes_Thunder = 5,
-	EleRes_Light = 5,
-	EleRes_Darkness = 5,
-	EleRes_Healing = 6,
-	EleRes_DarkHealing = 5,
-	Stat = {
-		["Strength"] = {1,1},
-		["Defense"] = {1,1},
-		["Will"] = {1,1},
-		["Resistance"] = {1,1},
-		["Agility"] = {1,1},
-		["Accuracy"] = {1,1},
-		["Evasion"] = {1,1},
-		["HP"] = {0,3000},
-		["AP"] = {1,1},
-		["LevelRange"] = {1,100},
-},
-	StatusResistance = {
-		["Poison"] = 100   --[[ #1 ]],
-		["Paralysis"] = 100   --[[ #2 ]],
-		["Disease"] = 100   --[[ #3 ]],
-		["Will"] = 100   --[[ #4 ]],
-		["Block"] = 100   --[[ #5 ]],
-		["Death"] = 100   --[[ #6 ]],
-		["Damned"] = 100   --[[ #7 ]],
-	},
-	Acts = {}, -- Data itself defined below
-	ActMinLevel = {}, -- Data itself defined below
-	ItemDrop = {}, -- Data itself defined below
-	ItemSteal = {} -- Data itself definded below
-}
-
-
-local temp
-
-
-Data.ActMinLevel["Sys.Attack"] = 1		for ak=1,1 do table.insert(Data.Acts,"Sys.Attack") end
-temp = { ITM='ITM_MOLOTOV', LVL=1, VLT=false }
-for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
-for ak=1,20 do table.insert(Data.ItemSteal,temp) end
-temp = { ITM='ITM_ROCK', LVL=1, VLT=false }
-for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
-for ak=1,40 do table.insert(Data.ItemSteal,temp) end
-
-
-return Data
+StatusAltFatal.IDDQD = NoHurt
+StatusAltUltraWeak.IDDQD = NoHurt
+StatusAltWeak.IDDQD = NoHurt
+StatusAltNormalHurt.IDDQD = NoHurt
+StatusAltHalved.IDDQD = NoHurt

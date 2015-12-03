@@ -41,14 +41,14 @@ ret = {
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
+	["CauseIDDQD"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Invincibility",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "I.D.D.Q.D.",
-	["ScriptEffect_Reference"] = "Invincibility",
-	["Target"] = "1F",
+	["Target"] = "OS",
 	["UseCombat"] = true,
 	["UseField"] = true}
 

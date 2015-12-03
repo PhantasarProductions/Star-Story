@@ -40,6 +40,9 @@
 
 
 return {
+     ["Exit the Premises"] = {
+                   File = "Music/Boss/Exit the Premises.ogg",
+                   Artist = "Kevin McLeod"},
      ["Dark City"] = {
                    File = "Music/Dungeon/Dark_City.ogg",
                    Artist = "Rockit Maxx"},

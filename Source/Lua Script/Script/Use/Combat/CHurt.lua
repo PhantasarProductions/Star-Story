@@ -1,6 +1,6 @@
 --[[
   CHurt.lua
-  Version: 15.11.02
+  Version: 15.12.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -59,20 +59,32 @@ if RPGStat.GetData(Fighters[tg][ti].Tag,"IMMUNE")=="YES" then elementalresistanc
                  [0] = function() -- fatal
                        report = "DEATH"; r,g,b = 255,0,0
                        dodmg = RPGStat.Points(chtarget,"HP").Have
+                       for status in iStatusChange(chtarget) do
+                           if StatusAltFatal[status] then dodmg,report,r,g,b = StatusAltFatal[status](chtarget,dodmg,element) end
+                           end                       
                        end,
                  [1] = function() -- super weakness
                        dodmg = dodmg * 4
                        report = dodmg; r,g,b = 255,0,0
+                       for status in iStatusChange(chtarget) do
+                           if StatusAltUltraWeak[status] then dodmg,report,r,g,b = StatusAltUltraWeak[status](chtarget,dodmg,element) end
+                           end                       
                        end,
                  [2] = function() -- regular weakness
                        dodmg = round(dodmg * 1.75)       
                        report = dodmg; r,g,b = 255,80,0
+                       for status in iStatusChange(chtarget) do
+                           if StatusAltWeak[status] then dodmg,report,r,g,b = StatusAltWeak[status](chtarget,dodmg,element) end
+                           end
                        end,
                  [4] = function() -- half
                        dodmg = round(dodmg/2)
                        if dodmg<1 then dodmg=1 end
                        report = dodmg
                        r,g,b = 255,180,0
+                       for status in iStatusChange(chtarget) do
+                           if StatusAltHalved[status] then dodmg,report,r,g,b = StatusAltHalved[status](chtarget,dodmg,element) end
+                           end
                        end,      
                  [5] = function() -- resistent
                        dodmg = 0
@@ -94,7 +106,11 @@ if RPGStat.GetData(Fighters[tg][ti].Tag,"IMMUNE")=="YES" then elementalresistanc
                            end
                        end,      
                  default = function() end      -- In all other situations (which includes situation 3) do nothing :)
-               })[elementalresistance] or function() end)()
+               })[elementalresistance] or function() 
+                       for status in iStatusChange(chtarget) do
+                           if StatusAltNormalHurt[status] then dodmg,report,r,g,b = StatusAltNormalHurt[status](chtarget,dodmg,element) end
+                           end
+                  end)()
 FlawlessVictory = FlawlessVictory and (not(tg=="Hero" and dodmg>0 and elementalresistance<5))
 if god and tg=="Hero" and elementalresistance<5 then dodmg = 0 end
 if jack and tg=="Foe" and elementalresistance<6 then dodmg = RPGStat.Points(chtarget,"HP").Have end

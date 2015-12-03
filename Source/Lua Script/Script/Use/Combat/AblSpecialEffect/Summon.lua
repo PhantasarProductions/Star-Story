@@ -1,5 +1,5 @@
 --[[
-  Flirmouse_King.lua
+  Summon.lua
   Version: 15.12.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,65 +35,36 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 
-
--- Version 15.12.03
-
-
-
-Data = {
-	Name = "Flirmouse King",
-	Desc = "This guy is completely indestructable, unless its most loyal subject is killed.",
-	ImageFile = "Boss/Flirmouse_King.png",
-	AI = "Default",
-	Boss = true,
-	EleRes_Fire = 5,
-	EleRes_Wind = 5,
-	EleRes_Water = 5,
-	EleRes_Earth = 5,
-	EleRes_Cold = 5,
-	EleRes_Thunder = 5,
-	EleRes_Light = 5,
-	EleRes_Darkness = 5,
-	EleRes_Healing = 6,
-	EleRes_DarkHealing = 5,
-	Stat = {
-		["Strength"] = {1,1},
-		["Defense"] = {1,1},
-		["Will"] = {1,1},
-		["Resistance"] = {1,1},
-		["Agility"] = {1,1},
-		["Accuracy"] = {1,1},
-		["Evasion"] = {1,1},
-		["HP"] = {0,3000},
-		["AP"] = {1,1},
-		["LevelRange"] = {1,100},
-},
-	StatusResistance = {
-		["Poison"] = 100   --[[ #1 ]],
-		["Paralysis"] = 100   --[[ #2 ]],
-		["Disease"] = 100   --[[ #3 ]],
-		["Will"] = 100   --[[ #4 ]],
-		["Block"] = 100   --[[ #5 ]],
-		["Death"] = 100   --[[ #6 ]],
-		["Damned"] = 100   --[[ #7 ]],
-	},
-	Acts = {}, -- Data itself defined below
-	ActMinLevel = {}, -- Data itself defined below
-	ItemDrop = {}, -- Data itself defined below
-	ItemSteal = {} -- Data itself definded below
-}
+-- @IF IGNOREME
+AblSpecialEffect = {}
+-- @FI
 
 
-local temp
-
-
-Data.ActMinLevel["Sys.Attack"] = 1		for ak=1,1 do table.insert(Data.Acts,"Sys.Attack") end
-temp = { ITM='ITM_MOLOTOV', LVL=1, VLT=false }
-for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
-for ak=1,20 do table.insert(Data.ItemSteal,temp) end
-temp = { ITM='ITM_ROCK', LVL=1, VLT=false }
-for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
-for ak=1,40 do table.insert(Data.ItemSteal,temp) end
-
-
-return Data
+function AblSpecialEffect.Summon(ag,ai,tg,ti,act,foefile)
+local me = Fighter[ag][ai]
+local tagletters = {}
+local createfoe = {
+                      File = foefile,
+                      x = rand(25,300),
+                      y = rand(250,450),
+                      Level = rand(1,RPGStat.Stat(me.Tag,"Level"))                      
+                  }
+for i= 65, 91 do tagletters[#tagletters]=string.char(i) end
+for i= 48, 57 do tagletters[#tagletters]=string.char(i) end
+for i= 96,122 do tagletters[#tagletters]=string.char(i) end
+local c = 1
+-- Determine the letter we're gonna use on the combat bar.
+repeat
+if c>#tagletters then return false end
+for _,foe in pairs(Fighters.Foe) do if foe.Letter~=tagletters[c] then createfoe.Letter=tagletters[c] end end
+c=c+1
+until createfoe.Letter
+c = 0
+repeat
+for _,foe in pairs(Fighters.Foe) do if foe.Tag~="FOE_SUMMONED_"..c then createfoe.Tag="FOE_SUMMONED_"..c end end
+c = c + 1
+until createfoe.Tag
+Fighters.Foe[#Fighters.Foe+1] = createfoe  -- Appears risky, but when records are missing, higher records will suddenly count once the
+LoadFoe(createfoe,{})  
+SpellAni.SingleHeal(ag,ai,tg,ti)
+end

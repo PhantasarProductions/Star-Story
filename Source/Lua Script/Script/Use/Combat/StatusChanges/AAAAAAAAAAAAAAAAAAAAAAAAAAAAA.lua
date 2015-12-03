@@ -1,6 +1,6 @@
 --[[
   AAAAAAAAAAAAAAAAAAAAAAAAAAAAA.lua
-  Version: 15.10.24
+  Version: 15.12.03
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -45,6 +45,11 @@ StatusAltGauge = {}       -- Each status needs a function containing the alterna
 -- StatusAltStat = {}        -- Block a stat to a certain value. Each status needs a table with a function(ch) value per affected stat. (Dropped! This made the game too slow!)
 StatusDrawFighter = {}    -- Each status should contain a function (g,i) telling the DrawFighters routine what to do to indicate to the player something is wrong.
 StatusAltHealing = {}     -- When an element starts to heal you an alternate routine will come into play. Each stat must have a function(ch,hp,element). The function must return hp,report,r,g,b
+StatusAltFatal = {}       -- When an element kills you instantly, things can change with this
+StatusAltUltraWeak = {}   -- When an element is your ultra weakness, it may not be any more
+StatusAltWeak = {}        -- When an element is your weakness, blah, blah, blah
+StatusAltNormalHurt = {}  -- When an element is neither your weakness nor half, blah, blah, blah
+StatusAltHalved = {}      -- Do I even still need to explain this to you?
 
 
 

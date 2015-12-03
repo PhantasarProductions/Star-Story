@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.12.02
+version: 15.12.03
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -47,11 +47,59 @@ MapText("WELCOME")
 PartyUnPop()
 end
 
+function Boss(BossFile)
+CleanCombat()
+local lv = MapLevel()
+local subjects = ({2,4,8})[skill]
+local x,y,si
+-- Background data
+Var.D("$COMBAT.BACKGROUND","Black Castle.png")
+-- Var.D("$COMBAT.VICTORYCHECK","Flirmouse_King")
+Var.D("$COMBAT.BEGIN","Default")
+-- The boss him/herself
+Var.D("$COMBAT.FOE1","Boss/"..BossFile)
+Var.D("%COMBAT.LVFOE1",lv)
+Var.D("$COMBAT.ALTCOORDSFOE1","300,400")
+local base = {300,400}
+local subjectxy = {
+                     {0,-100},
+                     {0, 100},
+                     { 100,0},
+                     {-100,0},
+                     
+                     { 50, 50},
+                     {-50, 50},
+                     { 50,-50},
+                     {-50,-50} 
+                  }
+
+for i=1,subjects do 
+    si = i + 1
+    Var.D("$COMBAT.FOE"..si,"Reg/Cid")
+    Var.D('%COMBAT.LVFOE'..si,lv/(4-skill))
+    -- x = 300+(math.sin(((i-1)/(subjects))*360)*200)
+    -- y = 400+(math.cos(((i-1)/(subjects))*360)*100)
+    x = base[1]+subjectxy[i][1]
+    y = base[2]+subjectxy[i][2]
+    CSay("Subject #"..i.." is set to coordinates ("..x..","..y..")")
+    Var.D("$COMBAT.ALTCOORDSFOE"..si,x..","..y)
+    end
+Var.D("$COMBAT.MUSIC","Boss/Exit the premises.ogg")    
+StartCombat()
+end    
+
 function Moeder()
 if Done("&DONE.DARD_MOEDER") then return end
 PartyPop("Moeder")
 MapText("MOEDER")
-Sys.Error("Boss fight not yet set up")
+Maps.Obj.Kill("Boss Moeder")
+Schedule("MAP","PostMoeder")
+Boss("DardMoeder")
+end
+
+function PostMoeder()
+MapText("POST_MOEDER")
+PartyUnPop()
 end
 
 
