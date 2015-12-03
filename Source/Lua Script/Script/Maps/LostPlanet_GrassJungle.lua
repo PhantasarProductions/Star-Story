@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.09.29
+version: 15.12.03
 ]]
 
 function TUT_PAD()
@@ -40,6 +40,7 @@ if Done("&DONE.TUT.TRANSPORTERPAD") then return end
 PartyPop("Pad","North")
 MapText("TUT_PAD")
 PartyUnPop()
+ActivatePad("GRASSJUNGLE_CRASH","General")
 end
 
 function GotoNext()
