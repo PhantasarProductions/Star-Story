@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.29
+version: 15.12.04
 ]]
 
 -- @USEDIR Script/Use/Maps/Hawk/
@@ -167,7 +167,7 @@ ZA_Enter("ShowBridge1",MapShow,'Bridge')
 ZA_Enter("ShowBridge2",MapShow,'Bridge')
 ZA_Enter("ShowBack"   ,MapShow,'Back')
 -- Show NPCs in the back only when you let them on board
-if not CVV("&BANIKA") then Maps.Obj.Kill("NPC_Banika") end
+if not CVV("&BANIKA") then Maps.Obj.Kill("NPC_Banika") Maps.Obj.Kill("NPC_Bakina") end
 -- Vault
 ZA_Enter("Vault",Vault)
 -- Terminals
