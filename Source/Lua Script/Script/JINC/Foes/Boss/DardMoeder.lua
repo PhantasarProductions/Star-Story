@@ -36,7 +36,7 @@ version: 15.12.04
 ]]
 
 
--- Version 15.12.03
+-- Version 15.12.04
 
 
 
@@ -60,7 +60,7 @@ Data = {
 		["Defense"] = {5,100},
 		["Will"] = {20,300},
 		["Resistance"] = {25,150},
-		["Agility"] = {9,100},
+		["Agility"] = {9,110},
 		["Accuracy"] = {90,600},
 		["Evasion"] = {25,20},
 		["HP"] = {40,10000},
@@ -91,9 +91,9 @@ Data.ActMinLevel["Abl.ABL_FOE_EXPDRAIN"] = 48		for ak=1,5 do table.insert(Data.A
 Data.ActMinLevel["Abl.ABL_WENDICKA_ELECTRICCHARGE"] = 800		for ak=1,8 do table.insert(Data.Acts,"Abl.ABL_WENDICKA_ELECTRICCHARGE") end
 Data.ActMinLevel["Abl.ABL_WENDICKA_JOLT"] = 50		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_WENDICKA_JOLT") end
 Data.ActMinLevel["Abl.ABL_WENDICKA_MJOLNIR"] = 80		for ak=1,5 do table.insert(Data.Acts,"Abl.ABL_WENDICKA_MJOLNIR") end
-Data.ActMinLevel["Abl.ABL_WENDICKA_SHOCK"] = 70		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_WENDICKA_SHOCK") end
+Data.ActMinLevel["Abl.ABL_WENDICKA_SHOCK"] = 70		for ak=1,20 do table.insert(Data.Acts,"Abl.ABL_WENDICKA_SHOCK") end
 Data.ActMinLevel["Abl.ABL_XENOBI_BLIZZARD"] = 10		for ak=1,40 do table.insert(Data.Acts,"Abl.ABL_XENOBI_BLIZZARD") end
-Data.ActMinLevel["Abl.ABL_XENOBI_BREEZE"] = 10		for ak=1,20 do table.insert(Data.Acts,"Abl.ABL_XENOBI_BREEZE") end
+Data.ActMinLevel["Abl.ABL_XENOBI_BREEZE"] = 10		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_XENOBI_BREEZE") end
 Data.ActMinLevel["Abl.ABL_XENOBI_FROST"] = 10		for ak=1,30 do table.insert(Data.Acts,"Abl.ABL_XENOBI_FROST") end
 Data.ActMinLevel["Abl.ABL_XENOBI_HEAL"] = 20		for ak=1,35 do table.insert(Data.Acts,"Abl.ABL_XENOBI_HEAL") end
 Data.ActMinLevel["Abl.ABL_XENOBI_HURRICANE"] = 5		for ak=1,40 do table.insert(Data.Acts,"Abl.ABL_XENOBI_HURRICANE") end
@@ -125,7 +125,7 @@ Data.ActMinLevel["Abl.ITM_SPORES"] = 5		for ak=1,5 do table.insert(Data.Acts,"Ab
 Data.ActMinLevel["Abl.ZZZ_CID_DARKCHARGE"] = 50		for ak=1,50 do table.insert(Data.Acts,"Abl.ZZZ_CID_DARKCHARGE") end
 Data.ActMinLevel["Abl.ZZZ_CID_DARKNESS"] = 30		for ak=1,1 do table.insert(Data.Acts,"Abl.ZZZ_CID_DARKNESS") end
 Data.ActMinLevel["Abl.ZZZ_CID_DARKSOULBREAKER"] = 9000		for ak=1,2 do table.insert(Data.Acts,"Abl.ZZZ_CID_DARKSOULBREAKER") end
-Data.ActMinLevel["Abl.ZZZ_CID_LORD_SUMMON"] = 50		for ak=1,30 do table.insert(Data.Acts,"Abl.ZZZ_CID_LORD_SUMMON") end
+Data.ActMinLevel["Abl.ZZZ_CID_LORD_SUMMON"] = 50		for ak=1,65 do table.insert(Data.Acts,"Abl.ZZZ_CID_LORD_SUMMON") end
 Data.ActMinLevel["Abl.ZZZ_CID_ULTRADARKNESS"] = 30		for ak=1,35 do table.insert(Data.Acts,"Abl.ZZZ_CID_ULTRADARKNESS") end
 
 

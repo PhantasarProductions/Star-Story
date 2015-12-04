@@ -1,6 +1,6 @@
 --[[
   ABL_XENOBI_FOCUSENERGY.lua
-  Version: 15.12.03
+  Version: 15.12.04
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -42,11 +42,11 @@ ret = {
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Charge up energy for Voltsunami",
+	["Description"] = "Charge up energy for White Apocalypse",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Electric Charge",
+	["Name"] = "Focus Energy",
 	["Target"] = "AF",
 	["UseCombat"] = true,
 	["UserNextMove"] = "SUPER_XENOBI_WHITE_APOCALYPSE",

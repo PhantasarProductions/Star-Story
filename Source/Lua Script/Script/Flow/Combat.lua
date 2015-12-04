@@ -1,6 +1,6 @@
 --[[
   Combat.lua
-  Version: 15.11.03
+  Version: 15.12.04
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -99,8 +99,13 @@ local ft,ftl,fli,fv
 HiSpeed=1
 for ft,ftl in spairs(Fighters) do --for ak=0,1 do
     for fli,fv in pairs(ftl) do -- al
-        CSay("- Speed Check on ("..ft..","..fli.."):  "..RPGStat.Stat(fv.Tag,"END_Agility") )
-        if RPGStat.Stat(fv.Tag,"END_Agility")>HiSpeed then HiSpeed=RPGStat.Stat(fv.Tag,"END_Agility") end
+        if RPGStat.CharExists(fv.Tag)==0 then
+           CSay("WARNING! Character: "..fv.Tag.." does not exist")
+         else
+           CSay("- Speed Check on ("..ft..","..fli.."):  "..fv.Tag)
+           CSay("  = Result: "..RPGStat.Stat(fv.Tag,"END_Agility") )
+           if RPGStat.Stat(fv.Tag,"END_Agility")>HiSpeed then HiSpeed=RPGStat.Stat(fv.Tag,"END_Agility") end
+           end
         end -- for fli
     end -- for ft
 CSay("HiSpeed = "..HiSpeed)    

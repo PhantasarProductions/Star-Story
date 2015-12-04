@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 15.11.27
+  Version: 15.12.04
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -157,7 +157,7 @@ if abl.ScriptEffect_Reference and abl.ScriptEffect_Reference~="" then
       MS.Run("COMBAT_ABLEFFECT","SCRIPTEFFECT",ag..";"..ai..";"..tg..";"..ti)
       effect = effect or CVV("&RET")
       else
-      effect = AblSpecialEffect[abl.ScriptEffect_Reference](ag,ai,tg,ti,act) or effect
+      effect = AblSpecialEffect[abl.ScriptEffect_Reference](ag,ai,tg,ti,act,abl.ScriptEffect_Parameters) or effect
       end 
    end
 -- Cancel powerup

@@ -300,6 +300,7 @@
 ## External Libraries
 
 1. Script/Libs/A few mathematical functions.lua
+1. Script/Libs/Append.lua
 1. Script/Libs/bool2int.lua
 1. Script/Libs/Colors.lua
 1. Script/Libs/Console.lua
@@ -320,4 +321,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 04 December 2015; 00:01:11 CET
+### Last updated: Fri 04 December 2015; 10:48:36 CET

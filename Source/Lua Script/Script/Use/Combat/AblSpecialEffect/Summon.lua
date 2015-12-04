@@ -1,6 +1,6 @@
 --[[
   Summon.lua
-  Version: 15.12.03
+  Version: 15.12.04
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -41,7 +41,8 @@ AblSpecialEffect = {}
 
 
 function AblSpecialEffect.Summon(ag,ai,tg,ti,act,foefile)
-local me = Fighter[ag][ai]
+CSay("Summoning: "..foefile)
+local me = Fighters[ag][ai]
 local tagletters = {}
 local createfoe = {
                       File = foefile,
@@ -49,22 +50,34 @@ local createfoe = {
                       y = rand(250,450),
                       Level = rand(1,RPGStat.Stat(me.Tag,"Level"))                      
                   }
-for i= 65, 91 do tagletters[#tagletters]=string.char(i) end
-for i= 48, 57 do tagletters[#tagletters]=string.char(i) end
-for i= 96,122 do tagletters[#tagletters]=string.char(i) end
+for i= 65, 91 do tagletters[#tagletters+1]=string.char(i) end
+for i= 48, 57 do tagletters[#tagletters+1]=string.char(i) end
+for i= 96,122 do tagletters[#tagletters+1]=string.char(i) end
 local c = 1
 -- Determine the letter we're gonna use on the combat bar.
 repeat
-if c>#tagletters then return false end
+if c>#tagletters then CSay("  = Failed: All leters taken") return false end
 for _,foe in pairs(Fighters.Foe) do if foe.Letter~=tagletters[c] then createfoe.Letter=tagletters[c] end end
 c=c+1
 until createfoe.Letter
+CSay("  = Gauge letter: "..createfoe.Letter)
 c = 0
+local allow
 repeat
-for _,foe in pairs(Fighters.Foe) do if foe.Tag~="FOE_SUMMONED_"..c then createfoe.Tag="FOE_SUMMONED_"..c end end
 c = c + 1
+allow = true
+for _,foe in pairs(Fighters.Foe) do allow = allow and foe.Tag~="FOE_SUMMONED_"..c  end
+if allow then createfoe.Tag="FOE_SUMMONED_"..c end 
 until createfoe.Tag
-Fighters.Foe[#Fighters.Foe+1] = createfoe  -- Appears risky, but when records are missing, higher records will suddenly count once the
+CSay("  = Spot: "..c)
+local pos = 1
+while Fighters.Foe[pos] do pos = pos + 1 end
+CSay("  = Pos: "..pos)
+Fighters.Foe[pos] = createfoe  -- Appears risky, but when records are missing, higher records will suddenly count once more
+CSay("  = Loading foe")
 LoadFoe(createfoe,{})  
-SpellAni.SingleHeal(ag,ai,tg,ti)
+createfoe.Gauge=-1000
+RPGChar.CreateList(createfoe.Tag,"STATUSCHANGE")
+SpellAni.SingleHeal(ag,ai,ag,pos)
+return true
 end

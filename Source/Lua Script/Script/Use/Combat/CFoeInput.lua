@@ -1,6 +1,6 @@
 --[[
   CFoeInput.lua
-  Version: 15.10.10
+  Version: 15.12.04
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -59,7 +59,7 @@ FoeTargetSelector = {
   ["OS"] = function(me)
            local i,v
            for i,v in pairs(Fighters.Foe) do
-               if v==me then return i end
+               if v==me then return "Foe",i end
                end
            Sys.Error("FoeTargetSelector.OS: Cannot find myself")    
            end,                  
