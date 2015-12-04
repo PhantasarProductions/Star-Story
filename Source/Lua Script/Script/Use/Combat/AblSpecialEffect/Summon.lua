@@ -55,14 +55,18 @@ for i= 48, 57 do tagletters[#tagletters+1]=string.char(i) end
 for i= 96,122 do tagletters[#tagletters+1]=string.char(i) end
 local c = 1
 -- Determine the letter we're gonna use on the combat bar.
+local allow
 repeat
 if c>#tagletters then CSay("  = Failed: All leters taken") return false end
-for _,foe in pairs(Fighters.Foe) do if foe.Letter~=tagletters[c] then createfoe.Letter=tagletters[c] end end
+allow = true
+for _,foe in pairs(Fighters.Foe) do -- if foe.Letter~=tagletters[c] then createfoe.Letter=tagletters[c] end end
+    allow = allow and foe.Letter~=tagletters[c]    
+    end
+if allow then createfoe.Letter=tagletters[c] end    
 c=c+1
 until createfoe.Letter
 CSay("  = Gauge letter: "..createfoe.Letter)
 c = 0
-local allow
 repeat
 c = c + 1
 allow = true
