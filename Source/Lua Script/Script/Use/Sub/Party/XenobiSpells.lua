@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.24
+version: 15.12.05
 ]]
 
 --[[ 
@@ -79,7 +79,7 @@ for abl,lv in spairs(XenobiSpells) do
        l = list or 'LEARN'
        RPGStat.AddList('Xenobi',l,"XENOBI_"..abl)
        CSay(abl.." has been added to Xenobi's "..l)
-    elseif (not low) or low>lv then
+    elseif ((not low) or low>lv) and xlv<lv and (RPGStat.ListHas('Xenobi','ABL',"XENOBI_"..abl)==0 and RPGStat.ListHas('Xenobi','LEARN',"XENOBI_"..abl)==0) then -- (not low) or low<lv or 
        low = lv
        xenobilearn = "Xenobi will learn something new at level "..lv
        end
