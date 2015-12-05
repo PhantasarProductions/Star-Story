@@ -1,6 +1,6 @@
 --[[
   Upgrade.lua
-  Version: 15.10.31
+  Version: 15.12.05
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -39,7 +39,8 @@ WeaponFiles = {
                     Crystal  = "Bionic Arm",
                     ExHuRU   = "Claws",
                     Yirl     = "Ray Gun",
-                    Foxy     = "Dagger"
+                    Foxy     = "Dagger",
+                    Xenobi   = "Light Saber"
               }
 WeaponImg = {} 
 
