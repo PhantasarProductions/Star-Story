@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.12.04
+version: 15.12.06
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -102,9 +102,29 @@ MapText("POST_MOEDER")
 PartyUnPop()
 end
 
+function Main008()
+local barrier = Maps.Obj.Obj("Hard Barrier")
+if skill~=3 then
+   barrier.Visible = 0
+   barrier.Impassible = 0
+   Maps.Remap()
+   end
+MapShow("Main")   
+end
+
+function Secret008()
+MapShow("Secret")
+local barrier = Maps.Obj.Obj("Hard Barrier")
+if skill~=3 then
+   barrier.Visible = 0
+   end
+end
+
 
 function GALE_OnLoad()
 Music("Dungeon/Dark_City.ogg")
 if not CVV(BeenHere) then ZA_Enter("StartRoom",Welcome) end
 ZA_Enter("Moeder",Moeder)
+ZA_Enter("Main",Main008)
+ZA_Enter("Secret",Secret008)
 end
