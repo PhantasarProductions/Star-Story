@@ -1,6 +1,6 @@
 --[[
   Upgrade.lua
-  Version: 15.12.05
+  Version: 15.12.06
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -42,6 +42,7 @@ WeaponFiles = {
                     Foxy     = "Dagger",
                     Xenobi   = "Light Saber"
               }
+              
 WeaponImg = {} 
 
 ARMStat = { HIT = "Accuracy", WEIGHT = "Weight", XPOWER = "Extra Power", AMMO = "Max Ammo"}  

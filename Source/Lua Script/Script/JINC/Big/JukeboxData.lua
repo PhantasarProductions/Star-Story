@@ -1,6 +1,6 @@
 --[[
   JukeboxData.lua
-  Version: 15.12.05
+  Version: 15.12.07
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -123,4 +123,10 @@ return {
                    Artist = "Kevin McLeod"},
      ["Panic Stations"] = {
                    File = "Music/Scenario/Panic Stations.ogg",
-                   Artist = "Widzy"}}
+                   Artist = "Widzy"},
+     ["Back to Darkness"] = {
+                   File = "Music/Special Boss/Back to Darkness.ogg",
+                   Artist = "SJ Mellia"},
+     ["Exit the Premises"] = {
+                   File = "Music/SpecialBoss/Exit the Premises.ogg",
+                   Artist = "Kevin McLeod"}}
