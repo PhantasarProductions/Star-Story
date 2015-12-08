@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.12.06
+version: 15.12.08
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -84,7 +84,7 @@ for i=1,subjects do
     CSay("Subject #"..i.." is set to coordinates ("..x..","..y..")")
     Var.D("$COMBAT.ALTCOORDSFOE"..si,x..","..y)
     end
-Var.D("$COMBAT.MUSIC","Boss/Exit the premises.ogg")    
+Var.D("$COMBAT.MUSIC","SpecialBoss/Exit the premises.ogg")    
 StartCombat()
 end    
 
@@ -120,6 +120,13 @@ if skill~=3 then
    end
 end
 
+function Boss()
+PartyPop("Boss")
+MapText("BOSS")
+PartyUnPop()
+Sys.Error("And here it ends for now.")
+end
+
 
 function GALE_OnLoad()
 Music("Dungeon/Dark_City.ogg")
@@ -127,4 +134,5 @@ if not CVV(BeenHere) then ZA_Enter("StartRoom",Welcome) end
 ZA_Enter("Moeder",Moeder)
 ZA_Enter("Main",Main008)
 ZA_Enter("Secret",Secret008)
+ZA_Enter("Boss",Boss)
 end
