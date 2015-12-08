@@ -121,6 +121,7 @@ if skill~=3 then
 end
 
 function Boss()
+if Done("&BOSS.DARDBOORTH") then return end
 PartyPop("Boss")
 MapText("BOSS")
 PartyUnPop()
