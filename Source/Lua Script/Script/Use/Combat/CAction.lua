@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 15.12.04
+  Version: 15.12.09
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -163,10 +163,12 @@ if abl.ScriptEffect_Reference and abl.ScriptEffect_Reference~="" then
 -- Cancel powerup
 if act.Cancel then CancelMove(ag,ai,tg,ti,act) end   
 -- Cause status changes (this must always be the last thing to do)
+local stcr
 for i,y in spairs(abl) do
     if prefixed(i,'Cause') and y then
        stc = right(i,len(i)-len('Cause'))
-       if RPGChar.StatExists(cht,"SR_TRUE_"..stc)==0 or rand(1,100)>RPGStat.Stat(cht,"SR_TRUE_"..stc) then
+       stcr = StatusResistance[stc] or stc
+       if RPGChar.ListHas(cht,stc)==0 and (RPGChar.StatExists(cht,"SR_TRUE_"..stcr)==0 or rand(1,100)>RPGStat.Stat(cht,"SR_TRUE_"..stcr)) then
           RPGChar.AddList(cht,"STATUSCHANGE",stc)
           CharReport(tg,ti,stc,{255,255,255})               
           effect=true

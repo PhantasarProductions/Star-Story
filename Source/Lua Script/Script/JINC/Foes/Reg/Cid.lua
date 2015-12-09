@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 15.12.01
+version: 15.12.09
 ]]
 
 
--- Version 15.12.01
+-- Version 15.12.09
 
 
 
@@ -45,6 +45,7 @@ Data = {
 	Desc = "Former Ji knight who fell to the Dark Side.\nHe hates the Ji with passion, and he's not very fond of you either.",
 	ImageFile = "Reg/Cid.png",
 	AI = "Default",
+	Boss = true,
 	EleRes_Fire = 3,
 	EleRes_Wind = 4,
 	EleRes_Water = 4,

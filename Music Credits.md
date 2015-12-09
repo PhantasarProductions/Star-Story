@@ -36,6 +36,7 @@ I'd like to thank the next music artists for their brilliant work, and licensing
    1. Dark City
 1. SJ Mellia
    1. Back to Darkness
+   1. Back to Darkness
 1. Sergey Cheremisinov
    1. The Loneliness
 1. Spiedkiks

@@ -1,6 +1,6 @@
 --[[
   IDDQD.lua
-  Version: 15.12.03
+  Version: 15.12.09
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -53,7 +53,7 @@ function NoHurt(ch,hp,element)
 local dodmg = 0
 local report = "NO EFFECT!"      
 local r,g,b = 255,180,0
-local rate = { Hero = { 50, 25, 5 }, Foe = {5,25,50} }
+local rate = { Hero = { 50, 25, 5 }, Foe = {5,10,25} }
 local g = "Foe"
 -- if left(g,1)=="FOE_" then g="Foe" end   -- Safetly in in case IDDQD ever becomes available to the player
 if rand(1,rate[g][skill])==1 then RPGChar.RemList(ch,"STATUSCHANGE","IDDQD"); MINI(RPGChar.GetName(ch).."'s I.D.D.Q.D. effect has been neutralized") end

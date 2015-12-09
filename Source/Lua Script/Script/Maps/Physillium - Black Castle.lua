@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.12.08
+version: 15.12.09
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -47,7 +47,7 @@ MapText("WELCOME")
 PartyUnPop()
 end
 
-function Boss(BossFile)
+function Boss(BossFile,track)
 CleanCombat()
 local lv = MapLevel()
 local subjects = ({2,4,8})[skill]
@@ -84,7 +84,7 @@ for i=1,subjects do
     CSay("Subject #"..i.." is set to coordinates ("..x..","..y..")")
     Var.D("$COMBAT.ALTCOORDSFOE"..si,x..","..y)
     end
-Var.D("$COMBAT.MUSIC","SpecialBoss/Exit the premises.ogg")    
+Var.D("$COMBAT.MUSIC",track )    
 StartCombat()
 end    
 
@@ -94,7 +94,7 @@ PartyPop("Moeder")
 MapText("MOEDER")
 Maps.Obj.Kill("Boss Moeder",1)
 Schedule("MAP","PostMoeder")
-Boss("DardMoeder")
+Boss("DardMoeder","SpecialBoss/Exit the premises.ogg")
 end
 
 function PostMoeder()
@@ -120,12 +120,13 @@ if skill~=3 then
    end
 end
 
-function Boss()
+function CidLord()
 if Done("&BOSS.DARDBOORTH") then return end
 PartyPop("Boss")
 MapText("BOSS")
 PartyUnPop()
-Sys.Error("And here it ends for now.")
+Boss("DardBoorth","SpecialBoss/Back to Darkness.ogg")
+-- Sys.Error("And here it ends for now.")
 end
 
 
@@ -135,5 +136,5 @@ if not CVV(BeenHere) then ZA_Enter("StartRoom",Welcome) end
 ZA_Enter("Moeder",Moeder)
 ZA_Enter("Main",Main008)
 ZA_Enter("Secret",Secret008)
-ZA_Enter("Boss",Boss)
+ZA_Enter("Boss",CidLord)
 end

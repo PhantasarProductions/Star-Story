@@ -1,6 +1,6 @@
 --[[
   JukeboxData.lua
-  Version: 15.12.08
+  Version: 15.12.09
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -126,6 +126,9 @@ return {
                    Artist = "Widzy"},
      ["Back to Darkness"] = {
                    File = "Music/Special Boss/Back to Darkness.ogg",
+                   Artist = "SJ Mellia"},
+     ["Back to Darkness"] = {
+                   File = "Music/SpecialBoss/Back to Darkness.ogg",
                    Artist = "SJ Mellia"},
      ["Exit the Premises"] = {
                    File = "Music/SpecialBoss/Exit the Premises.ogg",
