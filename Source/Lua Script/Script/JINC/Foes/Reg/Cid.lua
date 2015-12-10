@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 15.12.09
+version: 15.12.10
 ]]
 
 
--- Version 15.12.09
+-- Version 15.12.10
 
 
 
@@ -120,7 +120,7 @@ for ak=1,5 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,10 do table.insert(Data.ItemSteal,temp) end
 Data.ActMinLevel["Abl.ZZZ_CID_DARKCHARGE"] = 50		for ak=1,50 do table.insert(Data.Acts,"Abl.ZZZ_CID_DARKCHARGE") end
 Data.ActMinLevel["Abl.ZZZ_CID_DARKNESS"] = 30		for ak=1,1 do table.insert(Data.Acts,"Abl.ZZZ_CID_DARKNESS") end
-Data.ActMinLevel["Abl.ZZZ_CID_DARKSOULBREAKER"] = 2		for ak=1,9500 do table.insert(Data.Acts,"Abl.ZZZ_CID_DARKSOULBREAKER") end
+Data.ActMinLevel["Abl.ZZZ_CID_DARKSOULBREAKER"] = 9500		for ak=1,2 do table.insert(Data.Acts,"Abl.ZZZ_CID_DARKSOULBREAKER") end
 Data.ActMinLevel["Abl.ZZZ_CID_ULTRADARKNESS"] = 30		for ak=1,35 do table.insert(Data.Acts,"Abl.ZZZ_CID_ULTRADARKNESS") end
 
 

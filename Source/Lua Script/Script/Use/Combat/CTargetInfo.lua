@@ -1,6 +1,6 @@
 --[[
   CTargetInfo.lua
-  Version: 15.11.03
+  Version: 15.12.10
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -153,7 +153,7 @@ elseif data.Gauge>10000 then
 		(({
 					Hero = function()
 						White()
-						Image.Show("COMBAT.GAUGE.CHAR."..TarData.Tag,cx+cw,cy+Image.TextHeight(nm))
+						if TarData then Image.Show("COMBAT.GAUGE.CHAR."..TarData.Tag,cx+cw,cy+Image.TextHeight(nm)) else DarkText("??",cx+cw,cy,1,0) end
 					   end,
 					Foe = function()
 						local letter = left(TarData.Letter or "?",1)

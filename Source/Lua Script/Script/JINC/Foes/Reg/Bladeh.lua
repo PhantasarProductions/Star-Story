@@ -1,6 +1,6 @@
 --[[
   Bladeh.lua
-  Version: 15.11.18
+  Version: 15.12.10
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 15.11.17
+-- Version 15.12.10
 
 
 
