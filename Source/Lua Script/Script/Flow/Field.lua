@@ -818,8 +818,12 @@ function FindTreasures()
           idata = FieldTreasure[k]
           FieldTreasure[k]=nil 
           Maps.Obj.Kill(t.objtag) 
-          if idata.rate then
-			  if rand(1,idata.iratech or 1)<=1 then Var.D(idata.vtag,(idata.rate or 1) + (idata.irate or 1)) end
+          if idata.irate=="INF" then
+          elseif idata.irate=="UNIQUE" then
+             -- "%TREASURE_RATE["..ctag.."]"
+              Var.D(idata.vtag,1)              
+          elseif idata.rate then
+			       if rand(1,idata.iratech or 1)<=1 then Var.D(idata.vtag,(idata.rate or 1) + (idata.irate or 1)) end
 		  end  -- rate
 		end -- given  
 	  end    -- multi

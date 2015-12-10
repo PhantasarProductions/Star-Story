@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.12.04
+version: 15.12.10
 ]]
 
 -- @USEDIR Script/Use/Maps/Hawk/
@@ -129,6 +129,7 @@ end
 
 function HawkMusic()
 local lmusic = {}
+if CVVN('$HAWKMUSIC') and JCR6.Exists("MUSIC/"..CVV("$HAWKMUSIC"))==0 and JCR6.Exists(CVV("$HAWKMUSIC"))==0 then Var.Clear("$HAWKMUSIC") end -- and this should fix issue #304
 if CVVN('$HAWKMUSIC') then 
    Music(CVV('$HAWKMUSIC'))
 else

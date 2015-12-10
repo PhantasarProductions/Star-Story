@@ -130,6 +130,22 @@ Boss("DardBoorth","SpecialBoss/Back to Darkness.ogg")
 -- Sys.Error("And here it ends for now.")
 end
 
+function NPC_AurinaKast()
+if Done("&DONE.BLACKCASTE.AURINAKAST") then return end
+local a = 30 / skill
+Var.D("%A",a)
+MapText("AURINAKAST")
+Var.Clear('%A')
+inc('%AURINAS',a)
+inc('%AURINARATE',a*2)
+end
+
+function CLICK_ARRIVAL_App_Bestiary()
+Done("&APP.BESTIARY")
+MapText("BESTIARY")
+Maps.Obj.Kill("App_Bestiary",1) 
+end
+
 
 function GALE_OnLoad()
 Music("Dungeon/Dark_City.ogg")
@@ -137,5 +153,6 @@ if not CVV(BeenHere) then ZA_Enter("StartRoom",Welcome) end
 ZA_Enter("Moeder",Moeder)
 ZA_Enter("Main",Main008)
 ZA_Enter("Secret",Secret008)
-ZA_Enter("Boss",CidLord)
+ZA_Enter("BossZone",CidLord)
+AddClickable("App_Bestiary")
 end
