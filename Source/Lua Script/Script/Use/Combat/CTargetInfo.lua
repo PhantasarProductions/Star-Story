@@ -156,6 +156,7 @@ elseif data.Gauge>10000 then
 						if TarData then Image.Show("COMBAT.GAUGE.CHAR."..TarData.Tag,cx+cw,cy+Image.TextHeight(nm)) else DarkText("??",cx+cw,cy,1,0) end
 					   end,
 					Foe = function()
+					  TarData = TarData or { Letter='?' }
 						local letter = left(TarData.Letter or "?",1)
 						DarkText(letter,cx+cw,cy,1,0)
 					   end
