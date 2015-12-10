@@ -120,13 +120,16 @@
 1. Script/JINC/IAA/BLADEH_MULTI_STAB.lua
 1. Script/JINC/IAA/BLADEH_STUNSTAB.lua
 1. Script/JINC/IAA/BLADEH_VENOM.lua
+1. Script/JINC/IAA/EQP_GARNET.lua
 1. Script/JINC/IAA/ITM_ADHBANDAGE.lua
 1. Script/JINC/IAA/ITM_ANTIDOTE.lua
 1. Script/JINC/IAA/ITM_BANDAGE.lua
 1. Script/JINC/IAA/ITM_BIOHAZARD.lua
 1. Script/JINC/IAA/ITM_BLUBAFLOWER.lua
 1. Script/JINC/IAA/ITM_ENERGYDRINK.lua
+1. Script/JINC/IAA/ITM_EQP_CARNELIAN.lua
 1. Script/JINC/IAA/ITM_EQP_EMERALD.lua
+1. Script/JINC/IAA/ITM_EQP_GARNET.lua
 1. Script/JINC/IAA/ITM_EQP_ONYX.lua
 1. Script/JINC/IAA/ITM_EQP_RUBY.lua
 1. Script/JINC/IAA/ITM_EQP_SAPHIRE.lua
@@ -322,4 +325,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Thu 10 December 2015; 10:06:22 CET
+### Last updated: Thu 10 December 2015; 13:22:19 CET

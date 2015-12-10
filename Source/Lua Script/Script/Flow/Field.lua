@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 15.12.01
+  Version: 15.12.10
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -900,7 +900,7 @@ PartyPopArray.Actors = {}
 for ak=0,5 do
     ch = RPGChar.PartyTag(ak)
     if ch~="" then 
-       table.insert(PartyPopArray.Actors,ch)
+       table.insert(PartyPopArray.Actors,"POP_"..ch)
        Actors.Spawn("PLAYER","GFX/Actors/Player","POP_"..ch)
        Actors.MoveToSpot("POP_"..ch,TagPrefix.."_"..ch)
        Actors.ChoosePic("POP_"..ch,upper(ch).."."..upper(Wind or "North"))

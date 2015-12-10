@@ -1,5 +1,5 @@
 --[[
-  ABL_XENOBI_QUICKSTRIKE.lua
+  ITM_EQP_GARNET.lua
   Version: 15.12.10
   Copyright (C) 2015 Jeroen Petrus Broks
   
@@ -35,25 +35,23 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 15,
-	["ABL_APCut"] = 5000,
-	["ABL_Cancel"] = 1054,
-	["ABL_Instant"] = 527,
-	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 250,
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 300,
+	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 50,
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Quick strike the enemy",
+	["Description"] = "Raises resistance against will-based statuses of its owner by 10%",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Light Saber.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Quick Strike",
+	["ITM_BuyPrice"] = 10000,
+	["ITM_EQP_SRes_Will"] = 10,
+	["ITM_SellPrice"] = 7500,
+	["ITM_Sellable"] = true,
+	["Icon"] = "GFX/Inventory/Garnet.png",
+	["ItemType"] = "EquipItem",
+	["Name"] = "Garnet",
 	["Target"] = "1F",
-	["UseCombat"] = true}
+	["UseCombat"] = true,
+	["UseField"] = true}
 
 return ret
 

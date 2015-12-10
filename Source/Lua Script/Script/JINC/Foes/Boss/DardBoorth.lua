@@ -86,13 +86,17 @@ Data = {
 local temp
 
 
+Data.ActMinLevel["Abl.ABL_FOE_EXPDRAIN"] = 75		for ak=1,1 do table.insert(Data.Acts,"Abl.ABL_FOE_EXPDRAIN") end
 Data.ActMinLevel["Abl.ABL_FOE_IDDQD"] = 10		for ak=1,5 do table.insert(Data.Acts,"Abl.ABL_FOE_IDDQD") end
+Data.ActMinLevel["Abl.ABL_FOE_WATERBEAM"] = 5		for ak=1,5 do table.insert(Data.Acts,"Abl.ABL_FOE_WATERBEAM") end
 Data.ActMinLevel["Abl.ABL_WENDICKA_JOLT"] = 26		for ak=1,15 do table.insert(Data.Acts,"Abl.ABL_WENDICKA_JOLT") end
+Data.ActMinLevel["Abl.ABL_WENDICKA_SHOCK"] = 1		for ak=1,15 do table.insert(Data.Acts,"Abl.ABL_WENDICKA_SHOCK") end
 Data.ActMinLevel["Abl.ABL_XENOBI_BLIZZARD"] = 25		for ak=1,20 do table.insert(Data.Acts,"Abl.ABL_XENOBI_BLIZZARD") end
 Data.ActMinLevel["Abl.ABL_XENOBI_HEAL"] = 25		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_XENOBI_HEAL") end
 Data.ActMinLevel["Abl.ABL_XENOBI_HURRICANE"] = 25		for ak=1,20 do table.insert(Data.Acts,"Abl.ABL_XENOBI_HURRICANE") end
 Data.ActMinLevel["Abl.ABL_XENOBI_MINDTRICK"] = 25		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_XENOBI_MINDTRICK") end
 Data.ActMinLevel["Abl.ABL_XENOBI_QUAKE"] = 25		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_XENOBI_QUAKE") end
+Data.ActMinLevel["Abl.ABL_XENOBI_QUICKSTRIKE"] = 10		for ak=1,20 do table.insert(Data.Acts,"Abl.ABL_XENOBI_QUICKSTRIKE") end
 Data.ActMinLevel["Abl.ABL_XENOBI_RECOVER"] = 25		for ak=1,25 do table.insert(Data.Acts,"Abl.ABL_XENOBI_RECOVER") end
 Data.ActMinLevel["Abl.ABL_XENOBI_VITALIZE"] = 65		for ak=1,25 do table.insert(Data.Acts,"Abl.ABL_XENOBI_VITALIZE") end
 temp = { ITM='ITM_EQP_EMERALD', LVL=70, VLT=true }

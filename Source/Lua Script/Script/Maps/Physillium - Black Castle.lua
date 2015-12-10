@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.12.09
+version: 15.12.10
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -125,6 +125,7 @@ if Done("&BOSS.DARDBOORTH") then return end
 PartyPop("Boss")
 MapText("BOSS")
 PartyUnPop()
+Maps.Obj.Kill("Boss",1)
 Boss("DardBoorth","SpecialBoss/Back to Darkness.ogg")
 -- Sys.Error("And here it ends for now.")
 end
