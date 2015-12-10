@@ -1,6 +1,6 @@
 --[[
   CFoeInput.lua
-  Version: 15.12.04
+  Version: 15.12.10
   Copyright (C) 2015 Jeroen Petrus Broks
   
   ===========================
@@ -53,8 +53,10 @@ FoeTargetSelector = {
            return "Hero",t
            end,
   ["AA"] = function(me)
+           return "Foe",true
            end,
   ["AF"] = function(me)
+           return "Hero",true
            end,
   ["OS"] = function(me)
            local i,v
