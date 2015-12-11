@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.12.10
+version: 15.12.11
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -146,6 +146,9 @@ MapText("BESTIARY")
 Maps.Obj.Kill("App_Bestiary",1) 
 end
 
+function TheEnd()
+if not Done("&DONE.BLACKCASTLE") then MapEXP() end
+end
 
 function GALE_OnLoad()
 Music("Dungeon/Dark_City.ogg")
@@ -154,5 +157,6 @@ ZA_Enter("Moeder",Moeder)
 ZA_Enter("Main",Main008)
 ZA_Enter("Secret",Secret008)
 ZA_Enter("BossZone",CidLord)
+ZA_Enter("TheEnd",TheEnd)
 AddClickable("App_Bestiary")
 end
