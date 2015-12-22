@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.11.19
+Version: 15.12.22
 End Rem
 Strict
 Import tricky_units.Initfile2
@@ -33,12 +33,35 @@ Const I$ = "Star Story.app/Contents/Resources/Init.ini"
 Const I$ = "Init.ini"
 ?
 
+
+Global Myself:StringMap = New StringMap
+MapInsert Myself,"{*myself*}",AppFile
+MapInsert myself,"{*myself.name*}",AppTitle
+MapInsert myself,"{*myself.fdir*}",AppDir
+MapInsert myself,"{*myself.rdir*}",CurrentDir() ' this should always be the directory in which the app is located, as that's the standard setting for BlitzMax. It can differ though, but only when you modify the source code without thinking about this one!!!
+?MacOS
+MapInsert myself,"{*myself.resourcedir*}",CurrentDir()+"/"+StripAll(AppFile)+".app/Contents/Resources" ' Using this requires that the name of the .app bundle is the same as the executable inside. If this is not the case then this tag should not be used.
+?Not MacOS
+MapInsert myself,"{*myself.resourcedir*}",CurrentDir() ' In Windows (and perhaps Linux) this is just the same dir, since these OSes don't use the bundle structure Mac works with.
+?
+
+
 Public
 Global LIni:TIni '= LoadIni(I)
 LoadIni I,LIni
+
 
 If Not LIni 
 	Notify "ERROR!~n"+I+" could not be read"
 	Bye
 	EndIf
+
+Private
+For Local K$=EachIn MapKeys(LIni.Vars)
+	For Local MK$=EachIn MapKeys(myself)
+		MapInsert LIni.Vars,K,Replace(LIni.Vars.value(K),MK,Myself.value(MK))
+		Next
+	Print "Init var: "+K+" >>> "+Lini.Vars.value(K)
+	Next
+
 	 

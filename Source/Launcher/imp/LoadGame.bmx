@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.11.28
+Version: 15.12.22
 End Rem
 Strict
 
@@ -30,7 +30,7 @@ Import tricky_units.advdatetime
 Import tricky_units.Bye
 Import "Framework.bmx"
 
-MKL_Version "LAURA II - LoadGame.bmx","15.11.28"
+MKL_Version "LAURA II - LoadGame.bmx","15.12.22"
 MKL_Lic     "LAURA II - LoadGame.bmx","GNU General Public License 3"
 
 
@@ -150,13 +150,13 @@ Type TLoadGamePanel Extends tfpanelbase
 	Local lua$[] = ["LoadGame","Synchronize"]
 	?MacOS
 	platform = "Mac"
-	syscommand = "open "+lini.c("Mac")
+	syscommand = "open ~q"+lini.c("Mac")+"~q"
 	?Win32
 	platform = "Windows"
-	syscommand = lini.c("Windows")
+	syscommand = "~q"+lini.c("Windows")="~q"
 	?Linux
 	platform = "Linux"
-	syscommand = lini.c("Linux")
+	syscommand = "~q"+lini.c("Linux")+"~q"
 	?
 	Print "Detected platform: "+platform
 	CreateDir Dirry("$AppSupport$/$LinuxDot$Phantasar Productions/LAURA2"),2

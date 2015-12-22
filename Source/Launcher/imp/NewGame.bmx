@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.11.19
+Version: 15.12.22
 End Rem
 Strict
 Import "framework.bmx"
@@ -28,7 +28,7 @@ Import tricky_units.Dirry
 Import tricky_units.Bye
 
 
-MKL_Version "LAURA II - NewGame.bmx","15.11.19"
+MKL_Version "LAURA II - NewGame.bmx","15.12.22"
 MKL_Lic     "LAURA II - NewGame.bmx","GNU General Public License 3"
 
 JCR6CrashError = True
@@ -120,13 +120,13 @@ Type TNewGamePanel Extends tfpanelbase
 	'Return Notify("Name Accepted!")	 ' Debug line in order not to run the game during testing this out :)
 	?MacOS
 	platform = "Mac"
-	syscommand = "open "+lini.c("Mac")
+	syscommand = "open ~q"+lini.c("Mac")+"~q"
 	?Win32
 	platform = "Windows"
-	syscommand = Replace(AppDir,"/","\")+"\"+lini.c("Windows")
+	syscommand = "~q"+Replace(AppDir,"/","\")+"\"+lini.c("Windows")+"~q"
 	?Linux
 	platform = "Linux"
-	syscommand = lini.c("Linux")
+	syscommand = "~q"+lini.c("Linux")+"~q"
 	?
 	Print "Detected platform: "+platform
 	CreateDir Dirry("$AppSupport$/$LinuxDot$Phantasar Productions/LAURA2"),2

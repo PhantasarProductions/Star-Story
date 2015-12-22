@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.11.19
+Version: 15.12.22
 End Rem
 Strict
 Import "framework.bmx"
@@ -29,7 +29,7 @@ Import tricky_units.identify
 
 Global VRPanel:TGadget = AddPanel("Versions",New TversionsPanel)
 
-MKL_Version "LAURA II - Versions.bmx","15.11.19"
+MKL_Version "LAURA II - Versions.bmx","15.12.22"
 MKL_Lic     "LAURA II - Versions.bmx","GNU General Public License 3"
 
 Type TVersionsPanel Extends tfpanelbase
@@ -38,8 +38,10 @@ Type TVersionsPanel Extends tfpanelbase
 	Field ID:TID
 	Field launcherdump:TGadget
 	Field laura2dump:TGadget
+	Field jcrdump:TGadget
 	
 	Method Flow()
+	Local engineexe$
 	If made Return
 	made = True
 	Local platform$,syscommand$
@@ -51,14 +53,18 @@ Type TVersionsPanel Extends tfpanelbase
 	CloseFile BT
 	?MacOS
 	platform = "Mac"
-	syscommand = "open "+lini.c("Mac")
+	syscommand = "open ~q"+lini.c("Mac")+"~q"
+	engineexe = lini.c("Mac")
 	?Win32
 	platform = "Windows"
-	syscommand = lini.c("Windows")
+	syscommand = "~q"+lini.c("Windows")+"~q"
+	engineexe = lini.c("Windows")
 	?Linux
 	platform = "Linux"
-	syscommand = lini.c("Linux")
+	syscommand = "~q"+lini.c("Linux")+"~q"
+	engineexe = lini.c("Linux")
 	?
+	engineexe = Replace(engineexe,"\ "," ")
 	system_ syscommand	
 	Local vdumpfile$ = Dirry("$AppSupport$/$LinuxDot$Phantasar Productions/LAURA2/VersionDump.txt")
 	If FileType(vdumpfile)<>1 Notify "No version dump from LAURA II received. ~n~n"+vdumpfile+"~n~nEngine broken or non-existent?"; Bye
@@ -77,14 +83,21 @@ Type TVersionsPanel Extends tfpanelbase
 	CreateLabel "Star Story",0,0,300,25,panel
 	CreateLabel "Game version:",0,25,300,25,panel
 	CreateLabel id.Get("Version"),300,25,300,25,panel
-	CreateLabel "Launcher version: ",0,50,300,25,panel
-	CreateLabel MKL_NewestVersion(),300,50,300,25,panel
-	CreateLabel "Launcher source version dump:",0,75,300,25,panel
-	launcherdump = CreateTextArea(300,75,300,100,panel,textarea_readonly); SetGadgetText launcherdump,MKL_GetAllversions(); SetGadgetFont launcherdump,LookupGuiFont(GUIFONT_MONOSPACED,10)
-	CreateLabel "LAURA II version: ",0,175,300,15,panel
-	CreateLabel lauraversion,300,175,300,15,panel
-	CreateLabel "LAURA II source version dump:",0,200,300,25,panel
-	laura2dump = CreateTextArea(300,200,300,100,panel,textarea_readonly); SetGadgetText laura2dump,lauraversiondump; SetGadgetFont laura2dump,LookupGuiFont(GUIFONT_MONOSPACED,10)
+	CreateLabel "Game main file: ",0,50,300,25,panel
+	jcrdump = CreateTextField( 300,50,300,25,panel ); SetGadgetText jcrdump,Lini.c("Resource")
+	CreateLabel "Launcher version: ",0,75,300,25,panel
+	CreateLabel MKL_NewestVersion(),300,75,300,25,panel
+	CreateLabel "Launcher source version dump:",0,100,300,25,panel
+	launcherdump = CreateTextArea(300,100,300,100,panel,textarea_readonly); SetGadgetText launcherdump,MKL_GetAllversions(); SetGadgetFont launcherdump,LookupGuiFont(GUIFONT_MONOSPACED,10)
+	CreateLabel "LAURA II version: ",0,200,300,15,panel
+	CreateLabel lauraversion,300,200,300,15,panel
+	CreateLabel "LAURA II source version dump:",0,225,300,25,panel
+	laura2dump = CreateTextArea(300,225,300,100,panel,textarea_readonly); SetGadgetText laura2dump,lauraversiondump; SetGadgetFont laura2dump,LookupGuiFont(GUIFONT_MONOSPACED,10)
+	?Not MacOS
+	AddTextAreaText laura2dump,"~n~nLAURA II executable: "+engineexe
+	?MacOS
+	AddTextAreaText laura2dump,"~n~nLAURA II app bundle: "+engineexe
+	?
 	CreateLabel "Star Story has been written by Jeroen P. Broks",0,400,700,25,panel
 	CreateLabel "It's been copyrighted by Jeroen P. Broks",0,425,700,25,panel
 	CreateLabel "The story and its characters are property of Jeroen P. Broks and may only be",0,450,700,25,panel
