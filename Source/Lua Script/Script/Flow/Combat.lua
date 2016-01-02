@@ -1,7 +1,7 @@
 --[[
   Combat.lua
-  Version: 15.12.04
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.02
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -43,7 +43,7 @@
 StartGauge = { Hero = { Default = {0,9000}, Initiative = {7000,9000}, Ambushed = {0,4000}}, Foe = { Default = {0,9000}, Ambushed = {7000,9000}, Initiative = {0,4000}} }
 Act = { Hero = {}, Foe = {} }
 Bestiary = Bestiary or {}
-Oversoul = Oversoul or {}
+-- Oversoul = Oversoul or {} -- Oversoul has been dropped.
 Fighters = {}
 VicCheck = {}
 DefeatCheck = {}
@@ -51,6 +51,10 @@ FlawlessVictory = true
 FlawlessStreak = FlawlessStreak or 0
 FlawlessVictories = FlawlessVictories or 0
 
+
+function TransferBestiary()
+Var.D("$BESTIARYTRANSFER",serialize("ret",Bestiary))
+end
 
 function GetAch()
 Ach = {

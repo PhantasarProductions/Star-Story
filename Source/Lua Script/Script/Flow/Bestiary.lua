@@ -1,7 +1,7 @@
 --[[
-  Terminal.lua
+  Bestiary.lua
   Version: 16.01.02
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -34,72 +34,78 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
--- @USEDIR Script/Use/Maps/Hawk_Terminal/
-back = "MenuBack"
+function UpdateList()
+List = jinc('Script/JINC/Big/BestiaryData.lua')
+CSay("Receiving Bestiary Data from Battle Routine")
+MS.LoadNew("COMBAT","Script/Flow/Combat.lua")
+MS.Run("COMBAT","TransferBestiary")
+local get = loadstring(Var.C("$BESTIARYTRANSFER").."\n\nreturn ret")
+Var.Clear("$BESTIARYTRANSFER")
+Bestiary = get()
+if Bestiary then CSay(" = Succes") else CSay(' = Fail'); Sys.Error("Could not retreive Bestiary list") end
+end
 
-Menu = {
 
-         Save = {
-                   Action = function() 
-                            GotoSave()
-                            inc("%TERMINAL.SAVE")
-                            if CVV("%TERMINAL.SAVE")>=30 then Award("SAVETERMINAL30") end
-                            CSay("You used the save app in the terminal "..CVV("%TERMINAL.SAVE").." times now.")
-                            end,   
-                   AllowAlways = true                
-                },
-                
-         Tutor = {
-                    Action = function()
-                             MS.LoadNew("TUTOR","Script/Flow/Tutor.lua")
-                             LAURA.Flow("TUTOR")
-                             end,
-                    AllowAlways = true         
-                             
-                 }       
-       }
+Data = {}
+Show = Shown or {}
+
+
+function Cancel()
+if mousehit(2) then LAURA.Flow("TERMINAL"); end
+end
 
 function DrawScreen()
--- First the background
-Image.Show(back,0,0)
--- Draw all the apps
-local x = 90
-local y = 70
-local mx,my = MouseCoords()
-for idx,item in spairs(Menu) do
-    if item.AllowAlways or CVV('&APP.'..upper(idx)) or CVV("&"..(item.SysVar or "I.DONT.EXIST")) then
-       if mx>x-32 and mx<x+32 and my>y-32 and my<y+55 then
-          Image.Color(0,180,255)
-          if mousehit(1) then item.Action() end
-       else
-          Image.Color(0,100,255)
-          end
-       Image.Show(item.Icon,x,y)
-       SetFont('Terminal')
-       Image.DText(idx,x,y+40,2,0)
-       x = x + 90
-       if x>700 then x=40 y=y+70 end
+-- Base
+White()
+Image.Cls()
+Image.Show('MenuBack',0,0)
+-- Content
+Image.ViewPort(80,20,400,400); Image.Color(0,18,25)
+Image.Rect    (80,20,400,400)
+Image.Origin  (80,20)
+local y = 4
+PM = PM or 0
+local tmx,tmy = MouseCoords()
+local mx,my=tmx-80,tmy-20
+local allowdown
+local foefile
+local count,pf 
+for foefile in each(List) do
+    count = nil
+    for pf in each({"","REG/","BOSS/"}) do if Bestiary[pf.."foefile"] then count = (count or 0) + Bestiary[pf..foefile] end end
+    if not count then
+       Red()
+       Image.DText("???",4,y,0,0)
+    else
+       if Shown[FoeFile] then Image.Color(255,180,0) else Image.Color(0,180,255) end
+       Image.DText(FoeFile,4,y,0,0) -- Actual name comes later
        end
+    y = y + 20    
     end
--- Lastly the party and the mouse
+-- Closure
+Image.ViewPort(0,0,800,600)
+Image.Origin  (0,0)
+local hawk = 'Set to Hawk music'
+White()   
+if PM>0 then
+   Image.Show(imgup,20,20)
+   if INP.MouseD(1)==1 and tmy>20 and tmy<20+40 and tmx<90 then PM=PM-1 end
+   end
+if allowdown then
+   Image.Show(imgdown,20,(420)-Image.Height(imgdown))
+   if INP.MouseD(1)==1 and tmy>(420-Image.Height(imgdown)) and tmy<420 and tmx<90 then PM=PM+1 end
+   end   
+-- DarkText("("..tmx..","..tmy..") >> ("..mx..","..my..")",0,0,0,0,180,255,0) -- Debug line only
+
+-- Party
 ShowParty()
+-- Mouse
 ShowMouse()
 end
 
-function CheckExit()
-if mousehit(2) then LAURA.Flow("FIELD") end
-end
 
 function MAIN_FLOW()
 DrawScreen()
-CheckExit()
+Cancel()
 Flip()
-end
-
-function GALE_OnLoad()
-for idx,item in spairs(Menu) do
-    CSay("Loading App: ")
-    item.Icon = Image.Load("GFX/Terminal/"..idx..".png")
-    Image.HotCenter(item.Icon)
-    end
 end

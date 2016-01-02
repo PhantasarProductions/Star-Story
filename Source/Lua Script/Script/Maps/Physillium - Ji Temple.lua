@@ -1,8 +1,8 @@
 --[[
 **********************************************
   
-  Maps.lua
-  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
+  Physillium - Ji Temple.lua
+  (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,28 +32,18 @@
   
  **********************************************
  
-version: 16.01.02
+version: 15.11.29
 ]]
-ret = {
-	"EXCALIBUR_HOME",
-	"INTRO_SHIP_TRANSPORTER",
-	"PROLOGUE_YAQIRPA",
-	"EXCALIBUR_SICKBAY",
-	"EXCALIBUR_ALLQUIET",
-	"EXCALIBUR_KITCHEN",
-	"EXCALIBUR_UNDERATTACK",
-	"EXCALIBUR_SECRETPASSAGE",
-	"EXCALIBUR_HANGAR",
-	"HAWK",
-	"LOSTPLANET_GRASSJUNGLE",
-	"LOSTPLANET_GRASSJUNGLE_2",
-	"LOSTPLANET_BONUS_DARK_CAVES_OF_SHILINGTON",
-	"LOSTPLANET_GRASSJUNGLE_3",
-	"LOSTPLANET_PUB_OUTSIDE",
-	"LOSTPLANET_BARINSIDE",
-	"LOSTPLANET_DUNGEON_CELL",
-	"LOSTPLANET_DUNGEON",
-	"LOSTPLANET_JUNKYARD",
-	"LOSTPLANET_BONUS_SPACEOBSERVATORIUM"}
 
-return ret
+function NPC_IRVONA()
+MapText("IRVONA")
+if not Done("&REVEALED.BLACKCASTLE") then
+   ActivateRemotePad('Start','Physillium - Black Castle','Physillium','Black Castle - Entrance Hall',"#001")
+   CSay("Transporter pad for Black Castle Revealed")
+   end
+end   
+
+function GALE_OnLoad()
+Music("Ji/The_Loneliness")
+SetScrollBoundaries(0,0,0,80)
+end

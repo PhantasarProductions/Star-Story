@@ -1,8 +1,8 @@
 --[[
 **********************************************
   
-  Maps.lua
-  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
+  ArrivalPhysillium.lua
+  (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,28 +32,22 @@
   
  **********************************************
  
-version: 16.01.02
+version: 15.11.16
 ]]
-ret = {
-	"EXCALIBUR_HOME",
-	"INTRO_SHIP_TRANSPORTER",
-	"PROLOGUE_YAQIRPA",
-	"EXCALIBUR_SICKBAY",
-	"EXCALIBUR_ALLQUIET",
-	"EXCALIBUR_KITCHEN",
-	"EXCALIBUR_UNDERATTACK",
-	"EXCALIBUR_SECRETPASSAGE",
-	"EXCALIBUR_HANGAR",
-	"HAWK",
-	"LOSTPLANET_GRASSJUNGLE",
-	"LOSTPLANET_GRASSJUNGLE_2",
-	"LOSTPLANET_BONUS_DARK_CAVES_OF_SHILINGTON",
-	"LOSTPLANET_GRASSJUNGLE_3",
-	"LOSTPLANET_PUB_OUTSIDE",
-	"LOSTPLANET_BARINSIDE",
-	"LOSTPLANET_DUNGEON_CELL",
-	"LOSTPLANET_DUNGEON",
-	"LOSTPLANET_JUNKYARD",
-	"LOSTPLANET_BONUS_SPACEOBSERVATORIUM"}
-
-return ret
+function ArrivalPhysillium()
+Maps.CamX = 32
+Maps.CamY = -64
+MapText("ARRIVAL_PHYSILLIUM_A")
+Actors.WalkToSpot("PLAYER","Scotty")
+MapText("ARRIVAL_PHYSILLIUM_B")
+Party("Crystal","ExHuRU","Yirl","Foxy")
+SetActive("Crystal")
+LoadMap("Physillium - The Ruins of the Y Anhysbys","#000")
+SpawnPlayer("Start")
+Actors.Spawn("Start_Reggie","GFX/Actors/Reggie/ReggieW.png","STREGGIE",1)
+PartyPop("Start")
+MapText("Welcome")
+KickReggie(({"West","East","North"})[rand(1,3)],'POP_Foxy','STREGGIE')
+PartyUnPop()
+Maps.Obj.Kill("STREGGIE")
+end
