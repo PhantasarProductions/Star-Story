@@ -72,8 +72,8 @@ if not file then Sys.Error(foefile.." not found in any of the allowed directorie
 return JINC(file)
 end
 
-function SetShowEnemy(Data,File)
-Showing = { Data = Data, File = File }
+function SetShowEnemy(Data,File,Count)
+Showing = { Data = Data, File = File, Killed = Count }
 end
 
 function ShowEnemy()
@@ -106,13 +106,21 @@ White()
 Image.ScalePC(Showing.Scale,Showing.Scale)
 Image.Draw("BESTIARY_ENEMY",500,20)
 Image.ScalePC(100,100)
-DarkText(Showing.Data.Name,490+maxwidth,(maxheight/2)+20,0,2,255,0,0)    
+DarkText(Showing.Data.Name,480+maxwidth,(maxheight/2)+20,0,2,255,0,0)    
 Showing.SplitText = Showing.SplitText or mysplit(Showing.Data.Desc,"\n")
+Showing.Page = Showing.Page or 1
 y = 40 + maxheight
-for l in each(Showing.SplitText) do 
-    DarkText(l,480,y,0,0,255,180,0)
-    y = y + 20
-    end
+local pages = ({
+     function()
+       for l in each(Showing.SplitText) do 
+           DarkText(l,490,y,0,0,255,180,0)
+           y = y + 20
+           end
+       y = y +40    
+       DarkText("Killed: "..(Showing.Killed or 0),490,y,0,0,0,180,255)
+       end
+})
+pages[Showing.Page]()    
 end
 
 function DrawScreen()
@@ -147,7 +155,7 @@ for foefile in each(List) do
           end 
        Data[foefile] = Data[foefile] or GetData(foefile)
        Image.DText(Data[foefile].Name,4,y-PM,0,0) -- Actual name comes later
-       if hovering and mousehit(1) then SetShowEnemy(Data[foefile],foefile) end
+       if hovering and mousehit(1) then SetShowEnemy(Data[foefile],foefile,count) end
        end
     y = y + 20
     allowdown = y-PM>400    

@@ -42,7 +42,7 @@
 
 Data = {
 	Name = "Flirmouse",
-	Desc = "A very odd kind of bat who likes to lurk on dark places.\nDue to illegal transportations of these \ncritters they can be found on multiple \nplanets and nobody knows where \nthey originally came from",
+	Desc = "A very odd kind of bat who likes \nto lurk in dark places.\nDue to illegal transportations of these \ncritters they can be found on multiple \nplanets and nobody knows where \nthey originally came from",
 	ImageFile = "Reg/flirmouse.png",
 	AI = "Default",
 	Boss = false,
