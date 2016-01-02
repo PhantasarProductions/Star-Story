@@ -68,8 +68,51 @@ for _,path in ipairs(paths) do
     -- CSay("Searching for: "..checkfile)
     if JCR6.Exists(checkfile)==1 then file=checkfile end
     end
-if not file then Sys.Error(Foe.File.." not found in any of the allowed directories") end
+if not file then Sys.Error(foefile.." not found in any of the allowed directories") end
 return JINC(file)
+end
+
+function SetShowEnemy(Data,File)
+Showing = { Data = Data, File = File }
+end
+
+function ShowEnemy()
+if not Showing then return end
+local paths = {"","Reg/","Boss/","Special/"}
+local v,file,checkfile
+local maxheight=150
+local maxwidth=150
+local l,y
+if not Showing.Img then
+   --[[ old
+   file = nil
+   for _,path in ipairs(paths) do
+       checkfile = "GFX/Combat/Fighters/Foe/"..path..Showing.File..".png"
+       -- CSay("Searching for: "..checkfile)
+       if JCR6.Exists(checkfile)==1 then file=checkfile end
+       end
+   if not file then Sys.Error(Showing.File.." not found in any of the allowed directories") end
+   Showing.Img=true
+   ]]   
+   Image.Load("GFX/Combat/Fighters/Foe/"..Showing.Data.ImageFile,"BESTIARY_ENEMY")
+   end
+if not Showing.Scale then
+   Showing.Scale = 100
+   if Image.Height("BESTIARY_ENEMY")>maxheight and Image.Height("BESTIARY_ENEMY")>Image.Width("BESTIARY_ENEMY") then Showing.Scale = math.floor((maxheight / Image.Height("BESTIARY_ENEMY"))*100) end
+   if Image.Width("BESTIARY_ENEMY")>maxheight and Image.Height("BESTIARY_ENEMY")<=Image.Width("BESTIARY_ENEMY") then Showing.Scale = math.floor((maxheight / Image.Width ("BESTIARY_ENEMY"))*100) end
+   CSay("Scaling for "..Showing.File.." set to "..Showing.Scale.."% ("..Image.Width("BESTIARY_ENEMY").."x"..Image.Height("BESTIARY_ENEMY")..")")
+   end
+White()
+Image.ScalePC(Showing.Scale,Showing.Scale)
+Image.Draw("BESTIARY_ENEMY",500,20)
+Image.ScalePC(100,100)
+DarkText(Showing.Data.Name,480+maxwidth,(maxheight/2)+20,0,2,255,0,0)    
+Showing.SplitText = Showing.SplitText or mysplit(Showing.Data.Desc,"\n")
+y = 40 + maxheight
+for l in each(Showing.SplitText) do 
+    DarkText(l,480,y,0,0,255,180,0)
+    y = y + 20
+    end
 end
 
 function DrawScreen()
@@ -88,16 +131,23 @@ local mx,my=tmx-80,tmy-20
 local allowdown
 local foefile
 local count,pf 
+local hovering,hover
 for foefile in each(List) do
     count = nil
+    hovering = mx>0 and mx<400 and my>0 and my<400 and my>y-PM and my<(y-PM)+20    
     for pf in each({"","REG/","BOSS/","SPECIAL"}) do if Bestiary[pf..foefile] then count = (count or 0) + Bestiary[pf..foefile] end end
     if not count then
        Red()
        Image.DText("???",4,y-PM,0,0)
     else
-       if Shown[foefile] then Image.Color(255,180,0) else Image.Color(0,180,255) end
+       if Shown[foefile] then 
+       	  if hovering then Image.Color(255,180,0) else Image.Color(180,100,0) end  
+       else 
+          if hovering then Image.Color(0,180,255) else Image.Color(0,100,180) end
+          end 
        Data[foefile] = Data[foefile] or GetData(foefile)
        Image.DText(Data[foefile].Name,4,y-PM,0,0) -- Actual name comes later
+       if hovering and mousehit(1) then SetShowEnemy(Data[foefile],foefile) end
        end
     y = y + 20
     allowdown = y-PM>400    
@@ -117,6 +167,8 @@ if allowdown then
    end   
 -- DarkText("("..tmx..","..tmy..") >> ("..mx..","..my..")",0,0,0,0,180,255,0) -- Debug line only
 
+-- Show the stuff if we got some
+ShowEnemy()
 -- Party
 ShowParty()
 -- Mouse

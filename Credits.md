@@ -14,7 +14,7 @@ If you see your name below and you think I'm using your stuff against your licen
 Author | Contributions | Kind of contributions
 ---|---|---
  deusinvictus | 1 | Art; 
-Aaron Krogh | 8 | Music; 
+Aaron Krogh | 14 | Music; 
 Alexander | 4 | Audio; Misc files; Music; 
 Angela Nagtzaam | 15 | Art; 
 Ann | 1 | Art; 
@@ -31,7 +31,8 @@ GR-Sites | 26 | Art; Audio; Misc files;
 GameJolt | 1 | Art; 
 J.W.H. Broeders | 1 | Music; 
 J4p4n | 1 | Art; 
-Kevin McLeod | 11 | Music; 
+Kevin McLeod | 13 | Music; 
+Knight Of Fire | 2 | Music; 
 Kristel Kerstens | 1 | Audio; 
 Lazur URH | 2 | Art; Misc files; 
 Lindsey | 1 | Art; 
@@ -47,6 +48,8 @@ OpenClips | 1 | Art;
 Pablo Impallari | 6 | Font; Misc files; 
 PacDV | 3 | Audio; Misc files; 
 Rockit Maxx | 1 | Music; 
+SJ Mellia | 1 | Music; 
+Sergey Cheremisinov | 1 | Music; 
 Shockwave-sound.com | 1 | Audio; 
 Skurian25 | 1 | Art; 
 Spiedkiks | 1 | Music; 
