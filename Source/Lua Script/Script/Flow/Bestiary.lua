@@ -47,6 +47,7 @@ local get = loadstring(Var.C("$BESTIARYTRANSFER").."\n\nreturn ret")
 Var.Clear("$BESTIARYTRANSFER")
 Bestiary = get()
 if Bestiary then CSay(" = Succes") else CSay(' = Fail'); Sys.Error("Could not retreive Bestiary list") end
+Bestiary.BRAINDROID = 0
 end
 
 
@@ -56,6 +57,19 @@ Shown = Shown or {}
 
 function Cancel()
 if mousehit(2) then LAURA.Flow("TERMINAL"); end
+end
+
+function GetData(foefile)
+local paths = {"","Reg/","Boss/","Special/"}
+local v,file,checkfile
+file = nil
+for _,path in ipairs(paths) do
+    checkfile = "Script/JINC/Foes/"..path..foefile..".lua"
+    -- CSay("Searching for: "..checkfile)
+    if JCR6.Exists(checkfile)==1 then file=checkfile end
+    end
+if not file then Sys.Error(Foe.File.." not found in any of the allowed directories") end
+return JINC(file)
 end
 
 function DrawScreen()
@@ -76,16 +90,17 @@ local foefile
 local count,pf 
 for foefile in each(List) do
     count = nil
-    for pf in each({"","REG/","BOSS/"}) do if Bestiary[pf..foefile] then count = (count or 0) + Bestiary[pf..foefile] end end
+    for pf in each({"","REG/","BOSS/","SPECIAL"}) do if Bestiary[pf..foefile] then count = (count or 0) + Bestiary[pf..foefile] end end
     if not count then
        Red()
        Image.DText("???",4,y-PM,0,0)
     else
        if Shown[foefile] then Image.Color(255,180,0) else Image.Color(0,180,255) end
-       Image.DText(foefile,4,y-PM,0,0) -- Actual name comes later
+       Data[foefile] = Data[foefile] or GetData(foefile)
+       Image.DText(Data[foefile].Name,4,y-PM,0,0) -- Actual name comes later
        end
     y = y + 20
-    allowdown = y-PM<400    
+    allowdown = y-PM>400    
     end
 -- Closure
 Image.ViewPort(0,0,800,600)
