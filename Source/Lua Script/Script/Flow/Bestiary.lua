@@ -34,6 +34,10 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
+imgup   = Image.Load("GFX/Save/Up.png")
+imgdown = Image.Load("GFX/Save/Down.png")
+
+
 function UpdateList()
 List = jinc('Script/JINC/Big/BestiaryData.lua')
 CSay("Receiving Bestiary Data from Battle Routine")
@@ -47,7 +51,7 @@ end
 
 
 Data = {}
-Show = Shown or {}
+Shown = Shown or {}
 
 
 function Cancel()
@@ -72,15 +76,16 @@ local foefile
 local count,pf 
 for foefile in each(List) do
     count = nil
-    for pf in each({"","REG/","BOSS/"}) do if Bestiary[pf.."foefile"] then count = (count or 0) + Bestiary[pf..foefile] end end
+    for pf in each({"","REG/","BOSS/"}) do if Bestiary[pf..foefile] then count = (count or 0) + Bestiary[pf..foefile] end end
     if not count then
        Red()
-       Image.DText("???",4,y,0,0)
+       Image.DText("???",4,y-PM,0,0)
     else
-       if Shown[FoeFile] then Image.Color(255,180,0) else Image.Color(0,180,255) end
-       Image.DText(FoeFile,4,y,0,0) -- Actual name comes later
+       if Shown[foefile] then Image.Color(255,180,0) else Image.Color(0,180,255) end
+       Image.DText(foefile,4,y-PM,0,0) -- Actual name comes later
        end
-    y = y + 20    
+    y = y + 20
+    allowdown = y-PM<400    
     end
 -- Closure
 Image.ViewPort(0,0,800,600)
