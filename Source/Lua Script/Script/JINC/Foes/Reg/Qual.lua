@@ -1,7 +1,7 @@
 --[[
   Qual.lua
-  Version: 15.11.17
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.02
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -36,13 +36,13 @@
 ]]
 
 
--- Version 15.11.17
+-- Version 16.01.02
 
 
 
 Data = {
 	Name = "Qual",
-	Desc = "A kind of jellyfish that can live on land. It loves trash and due to illegal dumping you can now find it on any planet that has been target at least once of illegal dumping.",
+	Desc = "A kind of jellyfish that can live on land. \nIt loves trash and due to illegal dumping \nyou can now find it on any planet that has \nbeen target at least once of illegal dumping.",
 	ImageFile = "Reg/Qual.png",
 	AI = "Default",
 	EleRes_Fire = 1,

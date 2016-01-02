@@ -2,7 +2,7 @@
 **********************************************
   
   Cid.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,17 +32,17 @@
   
  **********************************************
  
-version: 15.12.10
+version: 16.01.02
 ]]
 
 
--- Version 15.12.10
+-- Version 16.01.02
 
 
 
 Data = {
 	Name = "Cid",
-	Desc = "Former Ji knight who fell to the Dark Side.\nHe hates the Ji with passion, and he's not very fond of you either.",
+	Desc = "Former Ji knight who fell to the Dark Side.\nHe hates the Ji with passion, \nand he's not very fond of you either.",
 	ImageFile = "Reg/Cid.png",
 	AI = "Default",
 	Boss = true,

@@ -1,7 +1,7 @@
 --[[
   BigGrassTiger.lua
-  Version: 15.11.21
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.02
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -36,13 +36,13 @@
 ]]
 
 
--- Version 15.11.21
+-- Version 16.01.02
 
 
 
 Data = {
 	Name = "Big Grass Tiger",
-	Desc = "A very big tiger that guards its place in the Grass Jungle",
+	Desc = "A very big tiger that guards its \nplace in the Grass Jungle",
 	ImageFile = "Boss/BigGrassTiger.png",
 	AI = "Default",
 	Boss = true,

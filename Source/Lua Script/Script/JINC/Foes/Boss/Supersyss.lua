@@ -2,7 +2,7 @@
 **********************************************
   
   Supersyss.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 15.11.27
+version: 16.01.02
 ]]
 
 
--- Version 15.11.27
+-- Version 16.01.02
 
 
 

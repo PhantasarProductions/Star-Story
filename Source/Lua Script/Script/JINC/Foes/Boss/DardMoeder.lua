@@ -2,7 +2,7 @@
 **********************************************
   
   DardMoeder.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,17 +32,17 @@
   
  **********************************************
  
-version: 15.12.09
+version: 16.01.02
 ]]
 
 
--- Version 15.12.09
+-- Version 16.01.02
 
 
 
 Data = {
 	Name = "Dard Moeder",
-	Desc = "A young woman who fell to the Dark Side.\nShe tries to weaken her opponents by pretending to be their mother.",
+	Desc = "A young woman who fell to the Dark Side.\nShe tries to weaken her opponents \nby pretending to be their mother.",
 	ImageFile = "Boss/DardMoeder.png",
 	AI = "Default",
 	EleRes_Fire = 3,

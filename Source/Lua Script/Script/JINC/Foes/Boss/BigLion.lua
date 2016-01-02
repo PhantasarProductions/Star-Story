@@ -1,7 +1,7 @@
 --[[
   BigLion.lua
-  Version: 15.12.09
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.02
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -36,13 +36,13 @@
 ]]
 
 
--- Version 15.12.09
+-- Version 16.01.02
 
 
 
 Data = {
 	Name = "Big Lion",
-	Desc = "Nobody knows how this lion got so big. Maybe a stunt by the Cids who used the Dark Side of the Power on it.",
+	Desc = "Nobody knows how this lion got so big. \nMaybe a stunt by the Cids who used the \nDark Side of the Power on it.",
 	ImageFile = "Boss/BigLion.png",
 	AI = "Default",
 	EleRes_Fire = 4,

@@ -2,7 +2,7 @@
 **********************************************
   
   Rat.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,17 +32,17 @@
   
  **********************************************
  
-version: 15.10.31
+version: 16.01.02
 ]]
 
 
--- Version 15.10.31
+-- Version 16.01.02
 
 
 
 Data = {
 	Name = "Rat",
-	Desc = "A rodent that always appears in places where they are not welcome.",
+	Desc = "A rodent that always appears\nin places where they are not welcome.",
 	ImageFile = "Reg/Rat.png",
 	AI = "Default",
 	Boss = false,

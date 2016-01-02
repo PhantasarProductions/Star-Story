@@ -1,7 +1,7 @@
 --[[
   Flirmouse_Subject.lua
-  Version: 15.12.09
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.02
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -36,13 +36,13 @@
 ]]
 
 
--- Version 15.12.09
+-- Version 16.01.02
 
 
 
 Data = {
 	Name = "Flirmouse Subject",
-	Desc = "Serve the Flirmouse king. Killing it might kill the king as well.",
+	Desc = "Serve the Flirmouse king. \nKilling it might kill the king as well.",
 	ImageFile = "Boss/Flirmouse_Subject.png",
 	AI = "Default",
 	Boss = true,

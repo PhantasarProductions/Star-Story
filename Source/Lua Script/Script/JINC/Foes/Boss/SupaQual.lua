@@ -1,7 +1,7 @@
 --[[
   SupaQual.lua
-  Version: 15.10.31
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.02
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -36,13 +36,13 @@
 ]]
 
 
--- Version 15.10.31
+-- Version 16.01.02
 
 
 
 Data = {
 	Name = "SupaQual",
-	Desc = "This guy is very extremly strong, but cannot bear lightning at all",
+	Desc = "This guy is very extremly strong, \nbut cannot bear lightning at all",
 	ImageFile = "Boss/SupaQual.png",
 	AI = "Default",
 	Boss = true,

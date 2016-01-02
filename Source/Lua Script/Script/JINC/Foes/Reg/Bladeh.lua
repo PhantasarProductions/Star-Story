@@ -1,7 +1,7 @@
 --[[
   Bladeh.lua
-  Version: 15.12.10
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.02
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -36,13 +36,13 @@
 ]]
 
 
--- Version 15.12.10
+-- Version 16.01.02
 
 
 
 Data = {
 	Name = "Bladeh Rogue",
-	Desc = "The Bladeh have a way of living most members of the IF deem \"criminal\". \nWe consider it \"thievery\" and \"murder\". \nThey see it as \"honorable combat\" and taking the stuff you have as their \"right by combat\".\nThey don't really understand how we can survive without those \"rules\".",
+	Desc = "The Bladeh have a way of living most members\n of the IF deem \"criminal\". \nWe consider it \"thievery\" and \"murder\". \nThey see it as \"honorable combat\"\n and taking the stuff you have as\n their \"right by combat\".\nThey don't really understand how we \ncan survive without those \"rules\".",
 	ImageFile = "Reg/Bladeh.png",
 	AI = "Default",
 	EleRes_Fire = 3,

@@ -1,7 +1,7 @@
 --[[
   flirmouse.lua
-  Version: 15.11.02
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.02
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -36,13 +36,13 @@
 ]]
 
 
--- Version 15.11.02
+-- Version 16.01.02
 
 
 
 Data = {
 	Name = "Flirmouse",
-	Desc = "A very odd kind of bat who likes to lurk on dark places.\nDue to illegal transportations of these critters they can be found on multiple planets and nobody knows where they originally came from",
+	Desc = "A very odd kind of bat who likes to lurk on dark places.\nDue to illegal transportations of these \ncritters they can be found on multiple \nplanets and nobody knows where \nthey originally came from",
 	ImageFile = "Reg/flirmouse.png",
 	AI = "Default",
 	Boss = false,

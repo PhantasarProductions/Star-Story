@@ -1,7 +1,7 @@
 --[[
   Flirmouse_King.lua
-  Version: 15.12.09
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.02
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -36,13 +36,13 @@
 ]]
 
 
--- Version 15.12.09
+-- Version 16.01.02
 
 
 
 Data = {
 	Name = "Flirmouse King",
-	Desc = "This guy is completely indestructable, unless its most loyal subject is killed.",
+	Desc = "This guy is completely indestructable, \nunless its most loyal subject is killed.",
 	ImageFile = "Boss/Flirmouse_King.png",
 	AI = "Default",
 	Boss = true,

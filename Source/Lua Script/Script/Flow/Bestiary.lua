@@ -106,7 +106,7 @@ White()
 Image.ScalePC(Showing.Scale,Showing.Scale)
 Image.Draw("BESTIARY_ENEMY",500,20)
 Image.ScalePC(100,100)
-DarkText(Showing.Data.Name,480+maxwidth,(maxheight/2)+20,0,2,255,0,0)    
+DarkText(Showing.Data.Name,490+maxwidth,(maxheight/2)+20,0,2,255,0,0)    
 Showing.SplitText = Showing.SplitText or mysplit(Showing.Data.Desc,"\n")
 y = 40 + maxheight
 for l in each(Showing.SplitText) do 
