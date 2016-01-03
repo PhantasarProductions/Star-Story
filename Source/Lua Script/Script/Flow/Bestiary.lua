@@ -1,6 +1,6 @@
 --[[
   Bestiary.lua
-  Version: 16.01.02
+  Version: 16.01.03
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -74,6 +74,7 @@ end
 
 function SetShowEnemy(Data,File,Count)
 Showing = { Data = Data, File = File, Killed = Count }
+Shown[File]=true
 end
 
 function ShowEnemy()
@@ -83,6 +84,7 @@ local v,file,checkfile
 local maxheight=150
 local maxwidth=150
 local l,y
+local mx,my = MouseCoords()
 if not Showing.Img then
    --[[ old
    file = nil
@@ -111,15 +113,38 @@ Showing.SplitText = Showing.SplitText or mysplit(Showing.Data.Desc,"\n")
 Showing.Page = Showing.Page or 1
 y = 40 + maxheight
 local pages = ({
-     function()
+     function() -- desc
        for l in each(Showing.SplitText) do 
            DarkText(l,490,y,0,0,255,180,0)
            y = y + 20
            end
        y = y +40    
        DarkText("Killed: "..(Showing.Killed or 0),490,y,0,0,0,180,255)
-       end
+       end,
+     function() -- Elemental resistances
+       local elements = {	'Fire', 'Wind', 'Water', 'Earth', 'Cold', 'Thunder', 'Light', 'Darkness' }
+       local elemcorrect = {Cold='Frost',Thunder='Lightning', Darkness='Dark'} -- Only needed due to a bug blocking the rest of the game from a proper fix. :(
+       for i,element in ipairs(elements) do
+                      White()
+                      Image.Show("ELEMICON_"..(elemcorrect[element] or element),490,(i*20)+40+maxheight)
+                      ResTxt(Showing.Data["EleRes_"..element] or 3,540,(i*20)+40+maxheight+5)
+                      end    
+       end,  
+     function() -- Status ailments resistance
+       DarkText("Status resistance",490,y,0,0,0,180,255)
+       end  
 })
+local next_tx = "Next page"
+local next_tw = Image.TextWidth(next_tx)
+local next_th = Image.TextHeight(next_tx)
+if mx>740-next_tw and my>450-next_th and my<450 then
+   Image.Color(180,255,0)
+   if mousehit(1) then Showing.Page = Showing.Page + 1 end
+   if Showing.Page>#pages then Showing.Page = 1 end
+else
+   Image.Color(100,180,0)
+   end
+Image.DText(next_tx,740,450,1,1)   
 pages[Showing.Page]()    
 end
 
