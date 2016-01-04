@@ -1,6 +1,6 @@
 --[[
   flirmouse.lua
-  Version: 16.01.02
+  Version: 16.01.04
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.01.02
+-- Version 16.01.04
 
 
 
@@ -50,10 +50,10 @@ Data = {
 	EleRes_Wind = 3,
 	EleRes_Water = 2,
 	EleRes_Earth = 0,
-	EleRes_Cold = 3,
-	EleRes_Thunder = 2,
+	EleRes_Frost = 3,
+	EleRes_Lightning = 2,
 	EleRes_Light = 1,
-	EleRes_Darkness = 5,
+	EleRes_Dark = 5,
 	EleRes_Healing = 6,
 	EleRes_DarkHealing = 0,
 	Stat = {

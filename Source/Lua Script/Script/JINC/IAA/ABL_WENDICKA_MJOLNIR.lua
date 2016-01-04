@@ -2,7 +2,7 @@
 **********************************************
   
   ABL_WENDICKA_MJOLNIR.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.12.10
+version: 16.01.04
 ]]
 ret = {
 	["ABL_AP"] = 100,
@@ -41,8 +41,9 @@ ret = {
 	["ABL_DblSpeed"] = 50000,
 	["ABL_Pose"] = "Cast",
 	["ABL_Speed"] = 10,
+	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
-	["AttackElement"] = "Thunder",
+	["AttackElement"] = "Lightning",
 	["AttackPower"] = 250,
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",

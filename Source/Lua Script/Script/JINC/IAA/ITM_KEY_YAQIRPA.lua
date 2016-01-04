@@ -25,10 +25,11 @@
   
  **********************************************
 ITM_KEY_YAQIRPA.lua
-(c) 2015 Jeroen Petrus Broks
-Version: 15.12.10
+(c) 2015, 2016 Jeroen Petrus Broks
+Version: 16.01.04
 ]]
 ret = {
+	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",

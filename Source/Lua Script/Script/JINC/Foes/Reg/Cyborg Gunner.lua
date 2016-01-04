@@ -2,7 +2,7 @@
 **********************************************
   
   Cyborg Gunner.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 15.10.31
+version: 16.01.04
 ]]
 
 
--- Version 15.10.31
+-- Version 16.01.04
 
 
 
@@ -50,10 +50,10 @@ Data = {
 	EleRes_Wind = 5,
 	EleRes_Water = 1,
 	EleRes_Earth = 5,
-	EleRes_Cold = 5,
-	EleRes_Thunder = 5,
+	EleRes_Frost = 5,
+	EleRes_Lightning = 5,
 	EleRes_Light = 5,
-	EleRes_Darkness = 5,
+	EleRes_Dark = 5,
 	EleRes_Healing = 6,
 	EleRes_DarkHealing = 5,
 	Stat = {

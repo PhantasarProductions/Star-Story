@@ -1,6 +1,6 @@
 --[[
   Bestiary.lua
-  Version: 16.01.03
+  Version: 16.01.04
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -122,8 +122,8 @@ local pages = ({
        DarkText("Killed: "..(Showing.Killed or 0),490,y,0,0,0,180,255)
        end,
      function() -- Elemental resistances
-       local elements = {	'Fire', 'Wind', 'Water', 'Earth', 'Cold', 'Thunder', 'Light', 'Darkness' }
-       local elemcorrect = {Cold='Frost',Thunder='Lightning', Darkness='Dark'} -- Only needed due to a bug blocking the rest of the game from a proper fix. :(
+       local elements = ElementList -- {	'Fire', 'Wind', 'Water', 'Earth', 'Cold', 'Thunder', 'Light', 'Darkness' }
+       local elemcorrect = {} -- {Cold='Frost',Thunder='Lightning', Darkness='Dark'} -- Only needed due to a bug blocking the rest of the game from a proper fix. :(
        for i,element in ipairs(elements) do
                       White()
                       Image.Show("ELEMICON_"..(elemcorrect[element] or element),490,(i*20)+40+maxheight)

@@ -1,7 +1,7 @@
 --[[
   ITM_EQP_CARNELIAN.lua
-  Version: 15.12.10
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.04
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -44,7 +44,7 @@ ret = {
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 100,
 	["ITM_EQP_ERes_DownLight"] = true,
-	["ITM_EQP_ERes_UPDarkness"] = true,
+	["ITM_EQP_ERes_UPDark"] = true,
 	["ITM_SellPrice"] = 75,
 	["ITM_Sellable"] = true,
 	["Icon"] = "GFX/Inventory/Carnelian.png",

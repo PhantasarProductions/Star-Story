@@ -1,6 +1,6 @@
 --[[
   SupaQual.lua
-  Version: 16.01.02
+  Version: 16.01.04
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.01.02
+-- Version 16.01.04
 
 
 
@@ -50,10 +50,10 @@ Data = {
 	EleRes_Wind = 2,
 	EleRes_Water = 6,
 	EleRes_Earth = 5,
-	EleRes_Cold = 4,
-	EleRes_Thunder = 0,
+	EleRes_Frost = 4,
+	EleRes_Lightning = 0,
 	EleRes_Light = 4,
-	EleRes_Darkness = 4,
+	EleRes_Dark = 4,
 	EleRes_Healing = 6,
 	EleRes_DarkHealing = 0,
 	Stat = {

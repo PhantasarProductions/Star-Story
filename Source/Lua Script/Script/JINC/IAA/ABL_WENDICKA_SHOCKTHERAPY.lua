@@ -4,6 +4,7 @@ ret = {
 	["ABL_Instant"] = 2000,
 	["ABL_Pose"] = "Cast",
 	["ABL_Speed"] = 300,
+	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",

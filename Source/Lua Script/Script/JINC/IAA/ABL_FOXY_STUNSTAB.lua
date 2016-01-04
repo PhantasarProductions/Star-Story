@@ -1,7 +1,7 @@
 --[[
   ABL_FOXY_STUNSTAB.lua
-  Version: 15.12.10
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.04
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -40,6 +40,7 @@ ret = {
 	["ABL_Instant"] = 4000,
 	["ABL_Pose"] = "Cast",
 	["ABL_Speed"] = 80,
+	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 80,
 	["AttackElement"] = "Non-Elemental",
 	["AttackPower"] = 50,

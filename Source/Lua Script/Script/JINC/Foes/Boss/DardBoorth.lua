@@ -2,7 +2,7 @@
 **********************************************
   
   DardBoorth.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 15.12.10
+version: 16.01.04
 ]]
 
 
--- Version 15.12.10
+-- Version 16.01.04
 
 
 
@@ -49,10 +49,10 @@ Data = {
 	EleRes_Wind = 5,
 	EleRes_Water = 5,
 	EleRes_Earth = 5,
-	EleRes_Cold = 5,
-	EleRes_Thunder = 6,
+	EleRes_Frost = 5,
+	EleRes_Lightning = 6,
 	EleRes_Light = 1,
-	EleRes_Darkness = 6,
+	EleRes_Dark = 6,
 	EleRes_Healing = 6,
 	EleRes_DarkHealing = 6,
 	Stat = {

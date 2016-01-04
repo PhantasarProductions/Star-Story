@@ -2,7 +2,7 @@
 **********************************************
   
   ITM_HEALINGCAPSULE.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,9 +32,10 @@
   
  **********************************************
  
-version: 15.12.10
+version: 16.01.04
 ]]
 ret = {
+	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 195,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",

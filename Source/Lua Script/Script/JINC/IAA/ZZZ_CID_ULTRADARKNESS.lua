@@ -1,7 +1,7 @@
 --[[
   ZZZ_CID_ULTRADARKNESS.lua
-  Version: 15.12.10
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.04
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -37,7 +37,7 @@
 ret = {
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 150,
-	["AttackElement"] = "Darkness",
+	["AttackElement"] = "Dark",
 	["AttackPower"] = 150,
 	["AttackStat"] = "Will",
 	["DefenseStat"] = "Resistance",

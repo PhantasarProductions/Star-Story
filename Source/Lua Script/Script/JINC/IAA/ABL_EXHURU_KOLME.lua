@@ -2,7 +2,7 @@
 **********************************************
   
   ABL_EXHURU_KOLME.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.12.10
+version: 16.01.04
 ]]
 ret = {
 	["ABL_AP"] = 80,
@@ -41,6 +41,7 @@ ret = {
 	["ABL_DblSpeed"] = 20000,
 	["ABL_Pose"] = "Attack",
 	["ABL_Speed"] = 100,
+	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 100,
 	["AttackElement"] = "Non-Elemental",
 	["AttackPower"] = 300,

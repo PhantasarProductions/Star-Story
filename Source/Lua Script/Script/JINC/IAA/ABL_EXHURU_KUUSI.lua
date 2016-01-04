@@ -2,7 +2,7 @@
 **********************************************
   
   ABL_EXHURU_KUUSI.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.12.10
+version: 16.01.04
 ]]
 ret = {
 	["ABL_AP"] = 200,
@@ -41,6 +41,7 @@ ret = {
 	["ABL_DblSpeed"] = 80000,
 	["ABL_Pose"] = "Attack",
 	["ABL_Speed"] = 25,
+	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 25,
 	["AttackElement"] = "Non-Elemental",
 	["AttackPower"] = 400,

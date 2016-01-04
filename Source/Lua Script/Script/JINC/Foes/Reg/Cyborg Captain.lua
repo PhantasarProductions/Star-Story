@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.01.02
+version: 16.01.04
 ]]
 
 
--- Version 16.01.02
+-- Version 16.01.04
 
 
 
@@ -50,10 +50,10 @@ Data = {
 	EleRes_Wind = 6,
 	EleRes_Water = 6,
 	EleRes_Earth = 6,
-	EleRes_Cold = 6,
-	EleRes_Thunder = 6,
+	EleRes_Frost = 6,
+	EleRes_Lightning = 6,
 	EleRes_Light = 6,
-	EleRes_Darkness = 6,
+	EleRes_Dark = 6,
 	EleRes_Healing = 6,
 	EleRes_DarkHealing = 5,
 	Stat = {
