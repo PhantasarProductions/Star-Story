@@ -2,7 +2,7 @@
 **********************************************
   
   Excalibur_AllQuiet.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.04
+version: 16.01.04
 ]]
 
 function Internal_Transporter(spot,text,labels)
@@ -158,6 +158,7 @@ if RPGChar.PartyTag(0)~="UniWendicka" then
    TurnPlayer("North")
 else
    Actors.Spawn("Voordeur","GFX/Actors/Uniform","PLAYER")
+   Maps.CamX=480
    MapShow("Woonkamer")
    TurnPlayer("North")
    MapText("CRYSTAL_UNIFORM")
