@@ -110,7 +110,7 @@ Image.Draw("BESTIARY_ENEMY",500,20)
 Image.ScalePC(100,100)
 DarkText(Showing.Data.Name,480+maxwidth,(maxheight/2)+20,0,2,255,0,0)    
 Showing.SplitText = Showing.SplitText or mysplit(Showing.Data.Desc,"\n")
-Showing.Page = Showing.Page or 1
+ShowingPage = ShowingPage or 1
 y = 40 + maxheight
 local pages = ({
      function() -- desc
@@ -132,6 +132,17 @@ local pages = ({
        end,  
      function() -- Status ailments resistance
        DarkText("Status resistance",490,y,0,0,0,180,255)
+       y=y+40
+       local r,g
+       for status,resistance in spairs(Showing.Data.StatusResistance) do
+       	   White()
+           Image.Show("STATUS_"..status,490,y) 
+           g = math.ceil(resistance*2.55)
+           r = 255-g
+           Image.Color(r,g,0)
+           Image.DText(resistance.."%",550,y)
+           y = y + 25
+           end
        end  
 })
 local next_tx = "Next page"
@@ -139,13 +150,13 @@ local next_tw = Image.TextWidth(next_tx)
 local next_th = Image.TextHeight(next_tx)
 if mx>740-next_tw and my>450-next_th and my<450 then
    Image.Color(180,255,0)
-   if mousehit(1) then Showing.Page = Showing.Page + 1 end
-   if Showing.Page>#pages then Showing.Page = 1 end
+   if mousehit(1) then ShowingPage = ShowingPage + 1 end
+   if ShowingPage>#pages then ShowingPage = 1 end
 else
    Image.Color(100,180,0)
    end
 Image.DText(next_tx,740,450,1,1)   
-pages[Showing.Page]()    
+pages[ShowingPage]()    
 end
 
 function DrawScreen()
