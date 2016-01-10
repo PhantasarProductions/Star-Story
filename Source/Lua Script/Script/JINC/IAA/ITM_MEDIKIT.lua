@@ -1,7 +1,7 @@
 --[[
-  ITM_BIOHAZARD.lua
+  ITM_MEDIKIT.lua
   Version: 16.01.10
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -36,22 +36,25 @@
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 250,
+	["ActSpeed"] = 95,
 	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 80,
 	["AttackStat"] = "Strength",
-	["CauseDisease"] = true,
-	["CausePoison"] = true,
+	["CureDisease"] = true,
+	["CureParalysis"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Poisons and diseases one target",
+	["Description"] = "Heals 800 HP",
+	["Healing"] = 800,
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 100,
-	["ITM_SellPrice"] = 75,
-	["Icon"] = "GFX/Inventory/Biohazard Box.png",
+	["ITM_BuyPrice"] = 3500,
+	["ITM_SellPrice"] = 500,
+	["ITM_Sellable"] = true,
+	["Icon"] = "GFX/Inventory/FirstAidKitGreen.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Biohazard waste",
-	["Target"] = "1F",
-	["UseCombat"] = true}
+	["Name"] = "Medikit",
+	["SpellAni_Reference"] = "SingleHeal",
+	["Target"] = "1A",
+	["UseCombat"] = true,
+	["UseField"] = true}
 
 return ret
 
