@@ -284,6 +284,7 @@
 1. Script/Maps/Physillium - Ji Temple.lua
 1. Script/Maps/Physillium - The Ruins of the Y Anhysbys.lsv
 1. Script/Maps/Physillium - The Ruins of the Y Anhysbys.lua
+1. Script/Maps/Ysperon - Eugorvnia.lua
 1. Script/MiniGame/AutoUse.lua
 1. Script/MiniGame/MemoryAnhysbys.lua
 1. Script/Use/Anyway/Full.lua
@@ -324,4 +325,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 05 January 2016; 20:32:39 CET
+### Last updated: Sun 10 January 2016; 14:08:47 CET
