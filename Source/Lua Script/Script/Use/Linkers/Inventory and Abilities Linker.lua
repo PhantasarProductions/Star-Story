@@ -1,7 +1,7 @@
 --[[
   Inventory and Abilities Linker.lua
-  Version: 15.10.13
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.10
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -61,6 +61,23 @@ for i=1,InventorySockets do
     end
 for n in iStatus() do RPGStat.DefStat(ch,"SR_EQBF_"..n,SR[n]) end     
 -- Elements
+local modifier = {}
+for i=1,InventorySockets do
+    itemcode = RPGChar.Data(ch,"INVITEM"..i)
+    if prefixed(itemcode,"EQP_") and RPGChar.Stat(ch,"INVAMNT"..i)>0 then
+       item = ItemGet("ITM_"..itemcode)       
+       for ak=1,RPGChar.Stat(ch,"INVAMNT"..i) do        
+           for ele in each(ElementList) do
+               if item['ITM_EQP_ERes_Down'..ele] then modifier[ele] = (modifier[ele] or 0) - 1 end
+               if item['ITM_EQP_ERes_Up'..ele] or item['ITM_EQP_ERes_UP'..ele] then modifier[ele] = (modifier[ele] or 0) + 1 end -- A typo in the database made the 'or' in the if itself needed
+               end -- for ele
+            end -- for ak
+        end -- if prefix
+    end -- for i    
+for ele,value in pairs(modifier) do
+    RPGChar.DefStat(ch,'ER_MODIFIER_'..ele,value)
+    CSay(ch.."> modify element "..ele.." by "..value)
+    end
 end
 
 

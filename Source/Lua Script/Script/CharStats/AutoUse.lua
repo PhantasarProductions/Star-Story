@@ -1,8 +1,8 @@
 --[[
   AutoUse.lua
   
-  version: 15.10.24
-  Copyright (C) 2015 Jeroen P. Broks
+  version: 16.01.10
+  Copyright (C) 2015, 2016 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
   arising from the use of this software.
@@ -63,6 +63,10 @@ function CALC_AP(ch)          ENDSTAT(ch,"AP") end
 ]]     
 function ELEMRESIST(ch,element)
 local ret = 3
+RPGChar.NewStat(ch,"ER_MODIFIER_"..element,0)
+ret = ret + RPGStat.Stat(ch,"ER_MODIFIER_"..element)
+if ret<0 then ret=0 end
+if ret>6 then ret=6 end
 RPGStat.DefStat(ch,"ER_"..element,ret)
 end
 
