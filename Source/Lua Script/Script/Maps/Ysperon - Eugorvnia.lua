@@ -35,15 +35,17 @@
 version: 16.01.10
 ]]
 function START()
-MapShow("STARTROOM")
+MapShow("START")
 if not Done("&DONE.EUGORVNIA.ARRIVAL") then 
-   PartyPop("Start")
+   PartyPop("Start","South")
    MapText("WELCOME")
    PartyUnPop()
    end
 end
 
+
 function GALE_OnLoad()
-Music("Dark_City.ogg")
+Music("Dungeon/Dark_City.ogg")
 ZA_Enter("STARTROOM",START)
+ZA_Leave("STARTROOM",MapShow,"*ALL*")
 end

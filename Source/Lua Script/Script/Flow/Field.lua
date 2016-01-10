@@ -1,7 +1,7 @@
 --[[
   Field.lua
-  Version: 15.12.10
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.10
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -913,14 +913,20 @@ for ak=0,5 do
 end
 
 function PartyUnPop()
-if not PartyPopArray then return end
+if not PartyPopArray then
+   CSay("Cannot unpop. No pop done before.") 
+   return 
+   end
 local ch
 for ch in each(PartyPopArray.Actors) do
-    Actors.MoveToSpot("POP_"..ch,"PLAYER")    
+    if not prefixed(ch,'POP_') then ch = "POP_"..ch end
+    Actors.MoveToSpot(ch,"PLAYER")    
     end
 WalkWait(PartyPopArray.Actors)    
 for ch in each(PartyPopArray.Actors) do
-    Maps.Obj.Kill("POP_"..ch)    
+    if not prefixed(ch,'POP_') then ch = "POP_"..ch end
+    CSay("Removing: "..ch)
+    Maps.Obj.Kill(ch)    
     end
 Actors.Actor("PLAYER").Visible = 1    
 end
