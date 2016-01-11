@@ -66,6 +66,8 @@
 1. Script/JINC/IAA/ABL_FOE_FULLHEALTH.lua
 1. Script/JINC/IAA/ABL_FOE_IDDQD.lua
 1. Script/JINC/IAA/ABL_FOE_LICKYOURWOUNDS.lua
+1. Script/JINC/IAA/ABL_FOE_MINDCONTROLFLUID.lua
+1. Script/JINC/IAA/ABL_FOE_PARALYZEFLUID.lua
 1. Script/JINC/IAA/ABL_FOE_PHOTON.lua
 1. Script/JINC/IAA/ABL_FOE_POISONCLOUD.lua
 1. Script/JINC/IAA/ABL_FOE_SCRATCH.lua
@@ -136,6 +138,7 @@
 1. Script/JINC/IAA/ITM_KEY_YAQIRPA.lua
 1. Script/JINC/IAA/ITM_MEDICINE.lua
 1. Script/JINC/IAA/ITM_MEDIKIT.lua
+1. Script/JINC/IAA/ITM_MINDCLEARPILL.lua
 1. Script/JINC/IAA/ITM_MOLOTOV.lua
 1. Script/JINC/IAA/ITM_ROCK.lua
 1. Script/JINC/IAA/ITM_SPORES.lua
@@ -278,7 +281,9 @@
 1. Script/JINC/Foes/Reg/BlackLizard.lua
 1. Script/JINC/Foes/Reg/Bladeh.lua
 1. Script/JINC/Foes/Reg/Cid.lua
+1. Script/JINC/Foes/Reg/Insetto.lua
 1. Script/JINC/Foes/Reg/Lion.lua
+1. Script/JINC/Foes/Reg/Myr.lua
 1. Script/JINC/NewGame+/PreserveVar.lua
 1. Script/Maps/Physillium - Black Castle.lua
 1. Script/Maps/Physillium - Ji Rubble.lua
@@ -326,4 +331,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sun 10 January 2016; 23:20:23 CET
+### Last updated: Mon 11 January 2016; 17:46:20 CET

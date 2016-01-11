@@ -1,7 +1,7 @@
 --[[
-  ABL_XENOBI_BLIZZARD.lua
+  ABL_FOE_PARALYZEFLUID.lua
   Version: 16.01.11
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -35,23 +35,22 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 100,
-	["ABL_APCut"] = 2000,
-	["ABL_DblPower"] = 3000,
-	["ABL_DblSpeed"] = 10000,
+	["ABL_AP"] = 0,
 	["ABL_Pose"] = "Cast",
+	["ABL_Speed"] = 25,
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 80,
-	["AttackElement"] = "Frost",
-	["AttackPower"] = 175,
-	["AttackStat"] = "Will",
-	["DefenseStat"] = "Resistance",
-	["Description"] = "Freeze all enemies",
+	["ActSpeed"] = 250,
+	["AttackElement"] = "Non-Elemental",
+	["AttackStat"] = "Strength",
+	["CauseParalysis"] = true,
+	["DefenseStat"] = "Defense",
+	["Description"] = "Paralysis enemy",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Elements/Frost.png",
+	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Blizzard",
-	["Target"] = "AF",
+	["Name"] = "Paralysis Fluid",
+	["SpellAni_Reference"] = "Heal",
+	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}
 

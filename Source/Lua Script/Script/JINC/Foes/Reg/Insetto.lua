@@ -1,7 +1,7 @@
 --[[
-  ABL_XENOBI_BLIZZARD.lua
+  Insetto.lua
   Version: 16.01.11
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -34,28 +34,65 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-ret = {
-	["ABL_AP"] = 100,
-	["ABL_APCut"] = 2000,
-	["ABL_DblPower"] = 3000,
-	["ABL_DblSpeed"] = 10000,
-	["ABL_Pose"] = "Cast",
-	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 80,
-	["AttackElement"] = "Frost",
-	["AttackPower"] = 175,
-	["AttackStat"] = "Will",
-	["DefenseStat"] = "Resistance",
-	["Description"] = "Freeze all enemies",
-	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Elements/Frost.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Blizzard",
-	["Target"] = "AF",
-	["UseCombat"] = true,
-	["UseField"] = true}
 
-return ret
 
--- This file is an automatically generated file!
+-- Version 16.01.11
 
+
+
+Data = {
+	Name = "Insetto",
+	Desc = "Watch out for its confusion fluid",
+	ImageFile = "Reg/Insetto.png",
+	AI = "Default",
+	EleRes_Fire = 5,
+	EleRes_Wind = 5,
+	EleRes_Water = 0,
+	EleRes_Earth = 0,
+	EleRes_Frost = 0,
+	EleRes_Lightning = 1,
+	EleRes_Light = 1,
+	EleRes_Dark = 6,
+	EleRes_Healing = 5,
+	EleRes_DarkHealing = 6,
+	Stat = {
+		["Strength"] = {5,6},
+		["Defense"] = {1,2},
+		["Will"] = {1,2},
+		["Resistance"] = {1,2},
+		["Agility"] = {40,50},
+		["Accuracy"] = {1000,1000},
+		["Evasion"] = {5,10},
+		["HP"] = {10,15},
+		["AP"] = {0,0},
+		["LevelRange"] = {40,1},
+},
+	StatusResistance = {
+		["Poison"] = 100   --[[ #1 ]],
+		["Paralysis"] = 100   --[[ #2 ]],
+		["Disease"] = 100   --[[ #3 ]],
+		["Will"] = 100   --[[ #4 ]],
+		["Block"] = 100   --[[ #5 ]],
+		["Death"] = 100   --[[ #6 ]],
+		["Damned"] = 100   --[[ #7 ]],
+	},
+	Acts = {}, -- Data itself defined below
+	ActMinLevel = {}, -- Data itself defined below
+	ItemDrop = {}, -- Data itself defined below
+	ItemSteal = {} -- Data itself definded below
+}
+
+
+local temp
+
+
+Data.ActMinLevel["Sys.Attack"] = 0		for ak=1,5 do table.insert(Data.Acts,"Sys.Attack") end
+Data.ActMinLevel["Abl.ABL_FOE_MINDCONTROLFLUID"] = 0		for ak=1,100 do table.insert(Data.Acts,"Abl.ABL_FOE_MINDCONTROLFLUID") end
+temp = { ITM='ITM_EQP_GARNET', LVL=40, VLT=true }
+for ak=1,10 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_MINDCLEARPILL', LVL=40, VLT=false }
+for ak=1,1000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,15 do table.insert(Data.ItemSteal,temp) end
+
+
+return Data

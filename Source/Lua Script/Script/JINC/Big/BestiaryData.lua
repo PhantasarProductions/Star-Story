@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.01.10
+version: 16.01.11
 ]]
 return {
 	"BIGGRASSTIGER",
@@ -56,7 +56,9 @@ return {
 	"FLIRMOUSE",
 	"GRASSTIGER",
 	"GUMMI",
+	"INSETTO",
 	"LION",
+	"MYR",
 	"QUAL",
 	"RAT",
 	"SYSS",

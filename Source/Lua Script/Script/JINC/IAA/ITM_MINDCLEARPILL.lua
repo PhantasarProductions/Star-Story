@@ -1,7 +1,7 @@
 --[[
-  ABL_XENOBI_BLIZZARD.lua
+  ITM_MINDCLEARPILL.lua
   Version: 16.01.11
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -35,23 +35,22 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 100,
-	["ABL_APCut"] = 2000,
-	["ABL_DblPower"] = 3000,
-	["ABL_DblSpeed"] = 10000,
-	["ABL_Pose"] = "Cast",
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 80,
-	["AttackElement"] = "Frost",
-	["AttackPower"] = 175,
-	["AttackStat"] = "Will",
-	["DefenseStat"] = "Resistance",
-	["Description"] = "Freeze all enemies",
+	["ActSpeed"] = 300,
+	["AttackElement"] = "Non-Elemental",
+	["AttackStat"] = "Strength",
+	["CureConfusion"] = true,
+	["DefenseStat"] = "Defense",
+	["Description"] = "Cures \"Confusion\"",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Elements/Frost.png",
+	["ITM_BuyPrice"] = 100,
+	["ITM_SellPrice"] = 75,
+	["ITM_Sellable"] = true,
+	["Icon"] = "GFX/Abilities/Fist.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Blizzard",
-	["Target"] = "AF",
+	["Name"] = "Mind Clearing Pill",
+	["SpellAni_Reference"] = "SingleHeal",
+	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}
 
