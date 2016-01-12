@@ -72,6 +72,7 @@
 1. Script/JINC/IAA/ABL_FOE_POISONCLOUD.lua
 1. Script/JINC/IAA/ABL_FOE_SCRATCH.lua
 1. Script/JINC/IAA/ABL_FOE_TASER.lua
+1. Script/JINC/IAA/ABL_FOE_ULTRASONIC.lua
 1. Script/JINC/IAA/ABL_FOE_VENOMBITE.lua
 1. Script/JINC/IAA/ABL_FOE_VIRUSBITE.lua
 1. Script/JINC/IAA/ABL_FOE_WATERBEAM.lua
@@ -281,6 +282,7 @@
 1. Script/JINC/Foes/Reg/BlackLizard.lua
 1. Script/JINC/Foes/Reg/Bladeh.lua
 1. Script/JINC/Foes/Reg/Cid.lua
+1. Script/JINC/Foes/Reg/Flysky.lua
 1. Script/JINC/Foes/Reg/Insetto.lua
 1. Script/JINC/Foes/Reg/Lion.lua
 1. Script/JINC/Foes/Reg/Myr.lua
@@ -331,4 +333,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 11 January 2016; 17:46:20 CET
+### Last updated: Tue 12 January 2016; 11:12:02 CET

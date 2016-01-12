@@ -1,7 +1,7 @@
 --[[
-  ABL_XENOBI_QUAKE.lua
+  ABL_FOE_ULTRASONIC.lua
   Version: 16.01.12
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -35,25 +35,23 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 100,
-	["ABL_APCut"] = 2000,
-	["ABL_DblPower"] = 3000,
-	["ABL_DblSpeed"] = 10000,
+	["ABL_AP"] = 0,
 	["ABL_Pose"] = "Cast",
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 80,
-	["AttackElement"] = "Earth",
-	["AttackPower"] = 175,
-	["AttackStat"] = "Will",
-	["DefenseStat"] = "Resistance",
-	["Description"] = "Force 10 on Richter's scale at least!",
+	["ActSpeed"] = 65,
+	["AttackElement"] = "Non-Elemental",
+	["AttackStat"] = "Strength",
+	["DefenseStat"] = "Defense",
+	["Description"] = "All AP gone!",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Elements/Earth.png",
+	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Quake",
+	["Name"] = "Ultra sonic",
+	["ScriptEffect_Reference"] = "APto0",
 	["Target"] = "AF",
 	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseField"] = true,
+	["untauntable"] = true}
 
 return ret
 

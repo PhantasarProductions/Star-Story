@@ -1,7 +1,7 @@
 --[[
   HPAPto1.lua
-  Version: 15.12.01
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.12
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -51,6 +51,12 @@ function AblSpecialEffect.APto1(ag,ai,tg,ti,act)
 To1(Fighters[tg][ti].Tag,"AP")
 return true
 end
+
+function AblSpecialEffect.APto0(ag,ai,tg,ti,act)
+To1(Fighters[tg][ti].Tag,"AP",0)
+return true
+end
+
 
 function AblSpecialEffect.EXPDrain(ag,ai,tg,ti,act)
 To1(Fighters[tg][ti].Tag,"EXP",0)
