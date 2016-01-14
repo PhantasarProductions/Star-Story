@@ -32,8 +32,11 @@
   
  **********************************************
  
-version: 16.01.10
+version: 16.01.14
 ]]
+
+-- @USE /Script/Use/Maps/Gen/Next.lua
+
 function START()
 MapShow("START")
 if not Done("&DONE.EUGORVNIA.ARRIVAL") then 
@@ -44,8 +47,16 @@ if not Done("&DONE.EUGORVNIA.ARRIVAL") then
 end
 
 
+function MultiShow(Tag,Labels,Num)
+for i=1,Num or 1 do
+    ZA_Enter(Tag..i,MapShow,Labels)
+    end
+end    
+
 function GALE_OnLoad()
 Music("Dungeon/Dark_City.ogg")
 ZA_Enter("STARTROOM",START)
 ZA_Leave("STARTROOM",MapShow,"*ALL*")
+MultiShow("ShowBase","Base",3)
+MultiShow("ShowToSecret","ToSecret",2)
 end

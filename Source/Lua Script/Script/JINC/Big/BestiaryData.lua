@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.01.12
+version: 16.01.14
 ]]
 return {
 	"BIGGRASSTIGER",
@@ -54,6 +54,7 @@ return {
 	"CYBORG GUNNER",
 	"CYBORG MEDIC",
 	"FLIRMOUSE",
+	"FLYSKY",
 	"GRASSTIGER",
 	"GUMMI",
 	"INSETTO",
