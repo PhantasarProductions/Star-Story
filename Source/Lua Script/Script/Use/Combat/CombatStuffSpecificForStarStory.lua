@@ -2,7 +2,7 @@
 **********************************************
   
   CombatStuffSpecificForStarStory.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.02
+version: 16.01.15
 ]]
 -- @IF IGNORE
 VicCheck = {}
@@ -55,7 +55,17 @@ end
 function GameSpecificPerformAction(ft,i,fv)
 if ft=="Hero" and rand(0,skill)==1 then UpPoint(i) end
 local ak
-for ak=1,3 do UpPoint(ak) end    
+local plus = 0
+local maxp = 9 / skill
+local lv = ({75,50,25})[skill]
+local ch
+for ak=1,3 do
+    plus = 1
+    if ft=="Hero" and rand(0,(skill*skill)+2)==1 then plus = plus + 1 end
+    ch = FighterTag("Hero",ak)
+    plus = plus + math.floor(RPGChar.Stat(ch,"Level")/lv) 
+    UpPoint(ak,plus) 
+    end    
 end
 
 function GameSpecificAfterPerformAction(ft,i,fv)
