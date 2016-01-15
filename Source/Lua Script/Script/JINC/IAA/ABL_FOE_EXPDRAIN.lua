@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_EXPDRAIN.lua
-  Version: 16.01.12
+  Version: 16.01.15
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -47,6 +47,7 @@ ret = {
 	["ItemType"] = "Consumable",
 	["Name"] = "Experience Drain",
 	["ScriptEffect_Reference"] = "EXPDrain",
+	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1F",
 	["UseCombat"] = true}
 

@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_MINDCONTROLFLUID.lua
-  Version: 16.01.12
+  Version: 16.01.15
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -48,6 +48,7 @@ ret = {
 	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Mind Control Fluid",
+	["SpellAni_Reference"] = "AllHeal",
 	["Target"] = "AF",
 	["UseCombat"] = true,
 	["UseField"] = true}

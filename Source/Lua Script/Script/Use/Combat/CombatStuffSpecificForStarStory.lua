@@ -64,6 +64,7 @@ for ak=1,3 do
     if ft=="Hero" and rand(0,(skill*skill)+2)==1 then plus = plus + 1 end
     ch = FighterTag("Hero",ak)
     plus = plus + math.floor(RPGChar.Stat(ch,"Level")/lv) 
+    if plus>maxp then plus=maxp end
     UpPoint(ak,plus) 
     end    
 end

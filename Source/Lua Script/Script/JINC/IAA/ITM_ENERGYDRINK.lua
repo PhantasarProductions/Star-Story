@@ -1,6 +1,6 @@
 --[[
   ITM_ENERGYDRINK.lua
-  Version: 16.01.12
+  Version: 16.01.15
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -49,6 +49,7 @@ ret = {
 	["Icon"] = "gfx/inventory/Energy Drink.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Energy Drink",
+	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true}

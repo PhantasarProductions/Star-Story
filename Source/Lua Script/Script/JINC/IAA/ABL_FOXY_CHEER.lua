@@ -16,6 +16,7 @@ ret = {
 	["Icon"] = "GFX/Inventory/Dagger.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Cheer",
+	["SpellAni_Reference"] = "AllHeal",
 	["Target"] = "AA",
 	["UseCombat"] = true,
 	["UseField"] = true}

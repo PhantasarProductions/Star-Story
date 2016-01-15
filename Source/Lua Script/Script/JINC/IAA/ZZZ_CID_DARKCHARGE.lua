@@ -1,6 +1,6 @@
 --[[
   ZZZ_CID_DARKCHARGE.lua
-  Version: 16.01.12
+  Version: 16.01.15
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -44,6 +44,7 @@ ret = {
 	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Dark Charge",
+	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "AF",
 	["UseCombat"] = true,
 	["UseField"] = true,

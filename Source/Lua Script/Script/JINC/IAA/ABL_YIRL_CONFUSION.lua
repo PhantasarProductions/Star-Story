@@ -1,6 +1,6 @@
 --[[
   ABL_YIRL_CONFUSION.lua
-  Version: 16.01.12
+  Version: 16.01.15
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -50,6 +50,7 @@ ret = {
 	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Confusion",
+	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}

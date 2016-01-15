@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.01.12
+version: 16.01.15
 ]]
 ret = {
 	["ABL_AP"] = 25,
@@ -51,6 +51,7 @@ ret = {
 	["Icon"] = "GFX/Abilities/Fist.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Battle Cry!",
+	["SpellAni_Reference"] = "AllHeal",
 	["Target"] = "AA",
 	["UseCombat"] = true}
 

@@ -1,7 +1,7 @@
 --[[
   Healing and (de)buffs.lua
-  Version: 15.11.24
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.15
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -57,7 +57,26 @@ for ak=1,50 do
 end
 
 SpellAni.SingleHealing = SpellAni.SingleHeal -- An alias to prevent needless debug sessions.
+SpellAni.Heal = SpellAni.SingleHeal -- (I was just too lazy to fix this in the database, as that would require more searching).
 
 
 function SpellAni.AllHeal(ActG,ActT,TarG,TarT)
+local sx,sy 
+local ak,x,y
+Image.LoadNew("SA_GLITTER_BASE","GFX/COMBAT/SPELLANI/GLITTER/BASE.PNG")
+for ak=1,50 do
+    DrawScreen()    
+    Image.Color(rand(0,255),rand(0,255),rand(0,255))
+    for an,ch in pairs(Fighters[TarG]) do
+        sx,sy = FighterCoords(TarG,an)
+        for al=1,25 do
+            x = rand(sx-16,sx+16)
+            y = rand(sy-64,sy)
+            Image.Rotate(rand(0,360))
+            Image.Draw('SA_GLITTER_BASE',x,y)
+            Image.Rotate(0)
+            end
+        end
+    Flip()
+    end
 end
