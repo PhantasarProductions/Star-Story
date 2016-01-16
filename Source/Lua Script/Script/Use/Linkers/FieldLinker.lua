@@ -71,4 +71,7 @@ CSay("KillWalkArrival")
 MS.LN_Run("FIELD","Flow/Field.Lua","KillWalkArrival") 
 end
  
-AddClickableScript = AddClickableScript or function(scr,sep) MS.LN_Run("FIELD","Flow/Field.Lua","AddClickableScript",scr,sep) end
+AddClickableScript = AddClickableScript or function(scr,sep)
+  CSay("Sep = "..sep) 
+  MS.LN_Run("FIELD","Flow/Field.Lua","AddClickableScript",scr,sep) 
+  end
