@@ -77,7 +77,8 @@ for gx,gy,r,c in SudoQuery(work.RootSize) do
     clkarray = { spot="SUDO_BUTT_"..id.."_"..tagc, arrival = "SudoButton", arrivalarg=id..';'..tag..";"..c }
     clkscript = serialize("ret",clkarray).."\n\nreturn ret"
     CSay("   > "..clkscript)
-    AddClickableScript(clkscript)
+    MS.Debug=1 -- Something is wrong, I need to know what!
+    AddClickableScript(clkscript,"*DIT*MAG*GEWOONWEG*NIET*GESPLIT*WORDEN")
     end
 -- CSay(serialize('PlaySolve',work.PlaySolve))    
 local ctag,c -- cut tag    
