@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 16.01.10
+  Version: 16.01.16
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -155,7 +155,7 @@ end
 
 function AddClickableScript(c)
   local f,e = loadstring(c)
-  if not f then Sys.Error("LoadString Error: "..e) end  
+  if not f then CSay("ERROR IN: "..c) Sys.Error("LoadString Error: "..e) end  
   AddClickable(f())
   end
 
@@ -188,8 +188,7 @@ if mousehit(1) then
        -- CSay("Clicked in object: "..c.." ("..mx..","..my..") ==> "..Maps.CoordsInObject(c,mx,my))
        if Maps.Obj.Exists(obj) and Maps.CoordsInObject(obj,mx,my)==1 then
           if type(c)=='table' then
-			CSay("Request from table")  
-			      
+			      CSay("Request from table")  			      
             if c.spot then succ = Actors.WalkToSpot(cplayer,c.spot)==1 CSay("Walking To Spot: "..c.spot) end
             if c.coords then succ = Acotrs.WalkTo(cplayer,c.coods.x,c.coords.y)==1 end
             if succ then

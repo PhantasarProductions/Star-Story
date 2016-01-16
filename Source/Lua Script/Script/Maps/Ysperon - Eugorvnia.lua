@@ -32,10 +32,15 @@
   
  **********************************************
  
-version: 16.01.14
+version: 16.01.16
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
+-- @USE /Script/Use/Maps/Gen/Sudoku.lua
+
+-- @IF IGNORE
+Sudoku = {}
+-- @FI
 
 function START()
 MapShow("START")
@@ -59,4 +64,22 @@ ZA_Enter("STARTROOM",START)
 ZA_Leave("STARTROOM",MapShow,"*ALL*")
 MultiShow("ShowBase","Base",3)
 MultiShow("ShowToSecret","ToSecret",2)
+-- Init Sudoku Puzzle
+Sudoku.Eugorvnia1 = {
+                             SolveRemove = {"Sudo1Solve1","Sudo1Solve2"},
+                             GroupSize = 4,
+                             Layer = "#003",
+                             Solved = { 
+                                          G11R1 = {1,2}, G12R1 = {3,4},
+                                          G11R2 = {3,4}, G12R2 = {1,2},
+                                          G21R1 = {2,1}, G22R1 = {4,3},
+                                          G21R2 = {4,3}, G22R2 = {2,1}
+                                          },
+                             ZegVoor = { {'G21R2C2'}, -- Easy Only
+                                         {'G11R2C2'},                               -- Medium + Easy
+                                         {'G11R1C1','G12R2C2','G22R1C1','G21R1C1'}  -- Hard + Medium + Easy
+                                       },
+                             Tiles = "Eugorvnia"          
+                    }
+InitSudoku('Eugorvnia1')                    
 end

@@ -301,6 +301,7 @@
 1. Script/Use/Combat/AblSpecialEffect/Summon.lua
 1. Script/Use/Combat/StatusChanges/IDDQD.lua
 1. Script/Use/Maps/Gen/Next.lua
+1. Script/Use/Maps/Gen/Sudoku.lua
 1. Script/Use/Maps/Hawk/ArrivalPhysillium.lua
 1. Script/Use/Maps/Hawk/AutoNewNav.lua
 1. Script/Use/Maps/Hawk/Teach Wendicka.lua
@@ -333,4 +334,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 15 January 2016; 17:13:07 CET
+### Last updated: Sat 16 January 2016; 18:54:57 CET
