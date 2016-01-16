@@ -74,7 +74,7 @@ for gx,gy,r,c in SudoQuery(work.RootSize) do
     work.Objects[tagc].Tiles   = tile
     work.Objects[tagc].Symbols = symb    
     CSay("= Create Clickable")
-    clkarray = { spot="SUDO_BUTT_"..id.."_"..tagc, arrival = "SudoButton", arrivalarg=id..';'..tag..";"..c }
+    clkarray = { spot="SUDO_BUTT_"..id.."_"..tagc, arrival = "SudoButton", arrivalarg=id..';'..tag..";"..c, obj="SUDO_BUTT_"..id.."_"..tagc }
     clkscript = serialize("ret",clkarray).."\n\nreturn ret"
     CSay("   > "..clkscript)
     MS.Debug=0 -- Something is wrong, I need to know what!

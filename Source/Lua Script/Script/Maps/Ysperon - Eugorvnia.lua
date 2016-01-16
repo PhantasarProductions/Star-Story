@@ -77,7 +77,7 @@ Sudoku.Eugorvnia1 = {
                                           },
                              ZegVoor = { {'G21R2C2'}, -- Easy Only
                                          {'G11R2C2'},                               -- Medium + Easy
-                                         {'G11R1C1','G12R2C2','G22R1C1','G21R1C1'}  -- Hard + Medium + Easy
+                                         {'G11R1C1','G12R2C2','G22R1C1','G21R1C1','G22R1C2'}  -- Hard + Medium + Easy
                                        },
                              Tiles = "Eugorvnia"          
                     }
