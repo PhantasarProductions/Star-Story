@@ -6,7 +6,7 @@
 	Mozilla Public License, v. 2.0. If a copy of the MPL was not 
 	distributed with this file, You can obtain one at 
 	http://mozilla.org/MPL/2.0/.
-        Version: 16.01.16
+        Version: 16.01.17
 ]]
 Sudoku = {}
 SudoRoot = {}  for i=2,9 do SudoRoot[i*i] = i end
@@ -55,8 +55,8 @@ for gx,gy,r,c in SudoQuery(work.RootSize) do
     CSay("= Default value")
     ps[tag] = ps[tag] or {}
     ps[tag][c] = 0
-    CSay("= Quick grandsol link")
-    work.grandsol = work.grandsol or {}    
+    --CSay("= Quick grandsol link") -- Dropped
+    --work.grandsol = work.grandsol or {}    
     CSay("= Create symbol object")
     work.Objects = work.Objects or {}
     work.Objects[tagc] = work.Objects[tagc] or {}
@@ -97,6 +97,12 @@ Maps.Remap()
 if work.Layer then Maps.GotoLayer(oldlayer) end    
 end
 
-function SudoButton(id,tag,c)
+function SudoButton(id,tag,pc)
+local c = Sys.Val(pc)
 CSay("Player activates sudoku button: "..id.."/"..tag.."/"..c)
+local work = Sudoku[id]
+local ps = work.PlaySolve
+ps[tag][c] = ps[tag][c] + 1
+if ps[tag][c]>work.GroupSize then ps[tag][c]=1 end
+SudoReTexture2(work.Objects[tag.."C"..c].Symbols,work,tag,c)
 end 
