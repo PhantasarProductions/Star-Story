@@ -97,7 +97,34 @@ Maps.Remap()
 if work.Layer then Maps.GotoLayer(oldlayer) end    
 end
 
+function SudoNakijken(id) -- This function will check if the current solution left by the player is right
+local work = Sudoku[id]
+local correct = true -- By default true, if one tile is out of line, then disapprove ;)
+for gx,gy,r,c in SudoQuery(work.RootSize) do 
+    tag = "G"..gx..gy.."R"..r
+    correct = correct and work.Solved[tag][c] == work.PlaySolve[tag][c]
+    end
+if not correct then return end    
+SFX("Audio/SFX/MBOX1.ogg")
+MapEXP()
+CSay("Sudoku solved")
+local tag,tagc
+for gx,gy,r,c in SudoQuery(work.RootSize) do 
+    tag = "G"..gx..gy.."R"..r
+    tagc = tag .. "C"..c
+    Maps.Obj.Seal("SUDO_SYMB_"..id.."_"..tagc)
+    CSay("= Sealed: "..tagc)
+    end
+for remove in each(work.SolveRemove) do
+    Maps.Obj.Kill(remove,1)
+    CSay("= Removed: "..remove)
+    end    
+CSay("All done")    
+Done("&SUDOKU."..id)
+end
+
 function SudoButton(id,tag,pc)
+if CVV("&SUDOKU."..id) then return end
 local c = Sys.Val(pc)
 CSay("Player activates sudoku button: "..id.."/"..tag.."/"..c)
 local work = Sudoku[id]
@@ -105,4 +132,5 @@ local ps = work.PlaySolve
 ps[tag][c] = ps[tag][c] + 1
 if ps[tag][c]>work.GroupSize then ps[tag][c]=1 end
 SudoReTexture2(work.Objects[tag.."C"..c].Symbols,work,tag,c)
+SudoNakijken(id)
 end 
