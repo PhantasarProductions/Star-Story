@@ -1,7 +1,7 @@
 --[[
   AAAAAAAAAAAAAAAAAAAAAAAAAAAAA.lua
-  Version: 15.12.03
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.19
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -50,6 +50,8 @@ StatusAltUltraWeak = {}   -- When an element is your ultra weakness, it may not 
 StatusAltWeak = {}        -- When an element is your weakness, blah, blah, blah
 StatusAltNormalHurt = {}  -- When an element is neither your weakness nor half, blah, blah, blah
 StatusAltHalved = {}      -- Do I even still need to explain this to you?
+StatusAltAI = {}          -- Alternate AI. Players and enemies alike will be tied to this when this status is active.
+StatusExpireOnAttack = {} -- When attacked on any manner make this status disappear
 
 
 

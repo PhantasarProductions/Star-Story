@@ -1,7 +1,7 @@
 --[[
-  FieldLinker.lua
-  Version: 16.01.16
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Confusion.lua
+  Version: 16.01.19
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -34,44 +34,18 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-LoadMap = LoadMap or function(map,layer) -- This way of defining makes sure we won't (by accident) overwrite the 'real' routine if it's present.
-	parameter = map
-	if layer then parameter = parameter .. ";" .. layer end	
-	MS.LN_Run("FIELD","Flow/Field.lua","LoadMap",parameter)
+-- @IF IGNOREME
+StatusResistance = {}  
+StatusAltAI = {}
+StatusExpireOnAttack = {}
+-- @FI
+
+
+StatusResitance.Confusion = 'Will'
+
+function StatusAltAI.Confusion(ag,gi)
 end
 
 
 
-Schedule = Schedule or function (scr,func)
-MS.LN_Run("FIELD","Flow/Field.lua","Schedule",scr..";"..func) 
-end
-
-SetActive = SetActive or function(P) MS.LN_Run("FIELD","Flow/Field.lua","SetActive",P) end
-
-TurnPlayer = TurnPlayer or function(w) MS.LN_Run("FIELD","Flow/Field.lua","TurnPlayer",w) end
-
-GetActive = GetActive or function() MS.LN_Run("FIELD","Flow/Field.Lua","GetActive","yes") return Var.C("$RET") end
-
-SetAutoScroll = SetAutoScroll or function(yes) MS.LN_Run("FIELD","Flow/Field.lua","SetAutoScroll",({[true]='yes',[false]='no'})[yes=='yes' or yes==true]) end
-
-SetScrollBoundaries = SetScrollBoundaries or function(xmin,ymin,xmax,ymax)
-MS.LN_Run("FIELD","Flow/Field.Lua","SetScrollBoundaries",strval(xmin)..";"..strval(ymin)..";"..strval(xmax)..";"..strval(ymax))
-end
-
-PartyPop = PartyPop or function(prefix,wind)
-MS.LN_Run("FIELD","Flow/Field.Lua","PartyPop",prefix..";"..(wind or "North")) 
-end
-
-PartyUnPop = PartyUnPop or function() 
-MS.LN_Run("FIELD","Flow/Field.Lua","PartyUnPop") 
-end
-
-KillWalkArrival = KillWalkArrival or function()
-CSay("KillWalkArrival")
-MS.LN_Run("FIELD","Flow/Field.Lua","KillWalkArrival") 
-end
- 
-AddClickableScript = AddClickableScript or function(scr,sep)
-  -- CSay("Sep = "..sep) 
-  MS.LN_Run("FIELD","Flow/Field.Lua","AddClickableScript",scr,sep) 
-  end
+StatusExpireOnAttack.Confusion = true
