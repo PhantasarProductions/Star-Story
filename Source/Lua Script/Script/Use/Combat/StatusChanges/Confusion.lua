@@ -1,6 +1,6 @@
 --[[
   Confusion.lua
-  Version: 16.01.19
+  Version: 16.01.20
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -41,9 +41,36 @@ StatusExpireOnAttack = {}
 -- @FI
 
 
-StatusResitance.Confusion = 'Will'
+StatusResistance.Confusion = 'Will'
 
-function StatusAltAI.Confusion(ag,gi)
+function StatusAltAI.Confusion(ch,ag,ai)
+Act[ag][ai].Act = "ATK"
+Act[ag][ai].ActSpeed = rand(25,450)
+local timeout = 20000
+local tg,ti,tmax
+repeat
+tmax=0
+tg = ({"Hero","Foe"})[rand(1,2)]
+for i,_ in pairs(Fighters[tg]) do
+    if i>tmax then tmax=i end
+    end
+ti = rand(1,tmax)
+timeout=timeout-1
+if timeout<0 then Sys.Error("Confusion AI Timeout!") end -- Protection against system freezings because of infinite loops. The chance this happens is very extremely small.    
+until ag~=tg and ai~=ti and Fighters[tg][ti]
+Fighters[ag][ai].Gauge = 10001
+if rand(1,10)==1 then
+   Fighters[ag][ai].Gauge = 0
+   MINI(RPGStat.GetName(ch).." is confused and totally doesn't know what to do",rand(1,255),rand(1,255),rand(1,255))
+   return
+   end
+if ag=="Hero" and RPGStat.Points(ch,"Ammo").Maximum~=0 then
+   if RPGStat.Points(ch,"Ammo").Have==0 then 
+      Act.Hero[ai].Act="RLD"      
+      return
+      end
+    Act.Hero[ai].Act="SHT"  
+   end
 end
 
 
