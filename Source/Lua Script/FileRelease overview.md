@@ -236,6 +236,7 @@
 1. Script/Use/Combat/CFoeInput.lua
 1. Script/Use/Combat/CHurt.lua
 1. Script/Use/Combat/CLoadFoe.lua
+1. Script/Use/Combat/CNobodyOnCom.lua
 1. Script/Use/Combat/CombatStuffSpecificForStarStory.lua
 1. Script/Use/Combat/CPlayerInput.lua
 1. Script/Use/Combat/CTargetInfo.lua
@@ -335,4 +336,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Wed 20 January 2016; 12:40:03 CET
+### Last updated: Wed 20 January 2016; 17:55:16 CET

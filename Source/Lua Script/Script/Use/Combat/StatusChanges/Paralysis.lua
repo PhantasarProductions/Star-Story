@@ -1,7 +1,7 @@
 --[[
   Paralysis.lua
-  Version: 15.11.22
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.20
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -78,5 +78,5 @@ for ag,aia in pairs(Fighters) do
 paralysis_erate = paralysis_erate or {}
 paralysis_erate[ch] = paralysis_erate[ch] or -1000
 paralysis_erate[ch] = paralysis_erate[ch] +   1
-if rand(1,er)<paralysis_erate[ch] then RPGChar.RemList(ch,"STATUSCHANGE","Paralysis"); paralysis_erate[ch]=nil return end
+if rand(1,er)<paralysis_erate[ch] and NobodyOnCOM() then RPGChar.RemList(ch,"STATUSCHANGE","Paralysis"); paralysis_erate[ch]=nil return end
 end

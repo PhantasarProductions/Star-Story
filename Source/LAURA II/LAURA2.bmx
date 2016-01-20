@@ -4,7 +4,7 @@ Rem
 	
 	
 	
-	(c) Jeroen P. Broks, 2015, All rights reserved
+	(c) Jeroen P. Broks, 2015, 2016, All rights reserved
 	
 		This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -20,9 +20,10 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.11.21
+Version: 16.01.20
 End Rem
 Strict
+
 
 Rem
 One thing to point out.
@@ -164,7 +165,12 @@ GaleCon = New GALEMainCon2
 
 ' Version
 MKL_Lic     "LAURA II - LAURA2.bmx","GNU General Public License 3"
-MKL_Version "LAURA II - LAURA2.bmx","15.11.21"
+MKL_Version "LAURA II - LAURA2.bmx","16.01.20"
+
+?Debug
+GJDebug=True
+?
+
 
 ' Platform information
 ?MacOS

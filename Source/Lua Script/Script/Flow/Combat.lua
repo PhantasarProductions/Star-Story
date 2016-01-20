@@ -1,6 +1,6 @@
 --[[
   Combat.lua
-  Version: 16.01.02
+  Version: 16.01.20
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -160,6 +160,17 @@ for stn,stt in pairs(StatusTimed) do
    end  
 end
 
+function RunAltAIStatus(ch,ag,ai)
+for stn,stt in pairs(StatusAltAI) do
+	  -- CSay(ch..">"..stn.."   => "..RPGChar.ListHas(ch,"STATUSCHANGE",stn))
+    if RPGChar.ListHas(ch,"STATUSCHANGE",stn)==1 then 
+       stt(ch,ag,ai)
+       return true
+       end
+    end
+return nil    
+end
+
 function RunGauge()
 local CInput = { Hero = PlayerInput, Foe = EnemyInput }
 -- Do we need to input or act?
@@ -172,6 +183,8 @@ for ft,ftl in spairs(Fighters) do
              Act[ft][fli] = fv.Next
              fv.Next=nil
              fv.Gauge=10001
+           elseif RunAltAIStatus(fv.Tag,ft,fli) then
+             return true  
            else
              return CInput[ft](fli,fv.Tag)
              end

@@ -38,12 +38,14 @@
 StatusResistance = {}  
 StatusAltAI = {}
 StatusExpireOnAttack = {}
+StatusDrawFighter = {}  
 -- @FI
 
 
 StatusResistance.Confusion = 'Will'
 
 function StatusAltAI.Confusion(ch,ag,ai)
+Act[ag][ai] = {}     Fighters[ag][ai].Act = Act[ag][ai]
 Act[ag][ai].Act = "ATK"
 Act[ag][ai].ActSpeed = rand(25,450)
 local timeout = 20000
@@ -57,22 +59,54 @@ for i,_ in pairs(Fighters[tg]) do
 ti = rand(1,tmax)
 timeout=timeout-1
 if timeout<0 then Sys.Error("Confusion AI Timeout!") end -- Protection against system freezings because of infinite loops. The chance this happens is very extremely small.    
-until ag~=tg and ai~=ti and Fighters[tg][ti]
+until (not (ag==tg and ai==ti)) and Fighters[tg][ti]
+Act[ag][ai].TargetGroup = tg; Act[ag][ai].TargetIndividual=ti 
 Fighters[ag][ai].Gauge = 10001
 if rand(1,10)==1 then
    Fighters[ag][ai].Gauge = 0
    MINI(RPGStat.GetName(ch).." is confused and totally doesn't know what to do",rand(1,255),rand(1,255),rand(1,255))
    return
    end
-if ag=="Hero" and RPGStat.Points(ch,"Ammo").Maximum~=0 then
-   if RPGStat.Points(ch,"Ammo").Have==0 then 
+if ag=="Hero" and RPGStat.Points(ch,"AMMO").Maximum~=0 then
+   if RPGStat.Points(ch,"AMMO").Have==0 then 
       Act.Hero[ai].Act="RLD"      
       return
       end
     Act.Hero[ai].Act="SHT"  
    end
+-- CSay("Confusion result:")
+-- CSay(serialize("Act",Act))   
 end
 
+
+function StatusDrawFighter.Confusion(g,i)
+Image.LoadNew("ST_CONFUSION","GFX/Combat/StatusAni/Confusion/ToBeOrNotToBe.png")
+Image.Hot("ST_CONFUSION",Image.Width("ST_CONFUSION")/2,Image.Height("ST_CONFUSION"))
+local ch = Fighters[g][i].Tag
+local w,h,er = ({
+
+                  Hero = function()
+                         return 32,64,({10000,25000,100000})[skill] 
+                         end,
+                  Foe  = function()
+                         return Image.Width("O"..Fighters.Foe[i].Tag),Image.Height("O"..Fighters.Foe[i].Tag),({10000000,25000,5000})
+                         end 
+                })[g]()
+confusion_erate = confusion_erate or {}
+confusion_erate[ch] = confusion_erate[ch] or -1000
+confusion_erate[ch] = confusion_erate[ch] +   1
+if rand(1,er)<confusion_erate[ch] and NobodyOnCOM() then 
+    RPGChar.RemList(ch,"STATUSCHANGE","Confusion"); 
+    confusion_erate[ch]=nil 
+    MINI(RPGStat.GetName(ch).." regains sanity")
+    return 
+    end
+local x,y = FighterCoords(g,i)
+local s = math.ceil(math.sin(Time.MSecs()/500)*25)+75
+Image.ScalePC(100,s)
+Image.Draw("ST_CONFUSION",x,y-h)
+Image.ScalePC(100,100)    
+end
 
 
 StatusExpireOnAttack.Confusion = true

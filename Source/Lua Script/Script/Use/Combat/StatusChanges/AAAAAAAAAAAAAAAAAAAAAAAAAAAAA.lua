@@ -1,6 +1,6 @@
 --[[
   AAAAAAAAAAAAAAAAAAAAAAAAAAAAA.lua
-  Version: 16.01.19
+  Version: 16.01.20
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -42,7 +42,7 @@ StatusResistance = {}     -- Each status needs the name of the resistance that w
 StatusTimed = {}          -- Each status needs an array with the next fields { Cycles:int, ActionFunction(g,i) }. CntCycles will be used by the fight routines itself to keep track of the number of cycles,
 StatusBlockAction = {}    -- Each status needs an array containing a list of all types of actions to be blocked like ATK or SHT or ABL etc. 
 StatusAltGauge = {}       -- Each status needs a function containing the alternate action
--- StatusAltStat = {}        -- Block a stat to a certain value. Each status needs a table with a function(ch) value per affected stat. (Dropped! This made the game too slow!)
+-- StatusAltStat = {}     -- Block a stat to a certain value. Each status needs a table with a function(ch) value per affected stat. (Dropped! This made the game too slow!)
 StatusDrawFighter = {}    -- Each status should contain a function (g,i) telling the DrawFighters routine what to do to indicate to the player something is wrong.
 StatusAltHealing = {}     -- When an element starts to heal you an alternate routine will come into play. Each stat must have a function(ch,hp,element). The function must return hp,report,r,g,b
 StatusAltFatal = {}       -- When an element kills you instantly, things can change with this
