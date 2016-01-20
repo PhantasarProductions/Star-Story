@@ -27,7 +27,6 @@ I'd like to thank the next music artists for their brilliant work, and licensing
    1. Phantom from Space
    1. Rising
    1. Dream Culture
-   1. Exit the Premises
 1. Knight Of Fire
    1. Ghosts of Disease
 1. Matt McFarland
@@ -35,7 +34,6 @@ I'd like to thank the next music artists for their brilliant work, and licensing
 1. Rockit Maxx
    1. Dark City
 1. SJ Mellia
-   1. Back to Darkness
    1. Back to Darkness
 1. Sergey Cheremisinov
    1. The Loneliness
