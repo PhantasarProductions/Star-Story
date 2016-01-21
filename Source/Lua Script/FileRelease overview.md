@@ -122,6 +122,7 @@
 1. Script/JINC/IAA/BLADEH_VENOM.lua
 1. Script/JINC/IAA/ITM_ADHBANDAGE.lua
 1. Script/JINC/IAA/ITM_ANTIDOTE.lua
+1. Script/JINC/IAA/ITM_ASTRILOPUPHONEY.lua
 1. Script/JINC/IAA/ITM_BANDAGE.lua
 1. Script/JINC/IAA/ITM_BIOHAZARD.lua
 1. Script/JINC/IAA/ITM_BLUBAFLOWER.lua
@@ -337,4 +338,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Thu 21 January 2016; 13:21:18 CET
+### Last updated: Thu 21 January 2016; 17:17:14 CET
