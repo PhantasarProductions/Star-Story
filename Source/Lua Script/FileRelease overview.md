@@ -126,6 +126,7 @@
 1. Script/JINC/IAA/ITM_BIOHAZARD.lua
 1. Script/JINC/IAA/ITM_BLUBAFLOWER.lua
 1. Script/JINC/IAA/ITM_ENERGYDRINK.lua
+1. Script/JINC/IAA/ITM_EQP_AQUAMARINE.lua
 1. Script/JINC/IAA/ITM_EQP_CARNELIAN.lua
 1. Script/JINC/IAA/ITM_EQP_EMERALD.lua
 1. Script/JINC/IAA/ITM_EQP_GARNET.lua
@@ -336,4 +337,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Wed 20 January 2016; 23:24:52 CET
+### Last updated: Thu 21 January 2016; 13:17:03 CET

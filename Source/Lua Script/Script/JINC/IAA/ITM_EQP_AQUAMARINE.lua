@@ -1,8 +1,8 @@
 --[[
 **********************************************
   
-  ABL_EXHURU_STOMP.lua
-  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
+  ITM_EQP_AQUAMARINE.lua
+  (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -35,24 +35,25 @@
 version: 16.01.21
 ]]
 ret = {
-	["ABL_AP"] = 6,
-	["ABL_APCut"] = 1000,
-	["ABL_Instant"] = 6000,
-	["ABL_Pose"] = "Attack",
-	["ABL_Speed"] = 250,
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Remove an enemy from battle",
+	["Description"] = "Inc water resist, dec thunder resist (voided by Wendicka's curse)",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Fist.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Stomp",
+	["ITM_BuyPrice"] = 125,
+	["ITM_EQP_ERes_DownLight"] = true,
+	["ITM_EQP_ERes_UpWater"] = true,
+	["ITM_EQP_SRes_Will"] = 2,
+	["ITM_SellPrice"] = 75,
+	["ITM_Sellable"] = true,
+	["Icon"] = "GFX/Inventory/Aquamarine.png",
+	["ItemType"] = "EquipItem",
+	["Name"] = "Aquamarine",
 	["Target"] = "1F",
 	["UseCombat"] = true,
-	["untauntable"] = true}
+	["UseField"] = true}
 
 return ret
 
