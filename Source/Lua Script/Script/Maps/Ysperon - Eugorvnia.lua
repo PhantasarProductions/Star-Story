@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.01.16
+version: 16.01.22
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -58,10 +58,41 @@ for i=1,Num or 1 do
     end
 end    
 
+function EnterBoss()
+local x
+if BossDone then return end
+MapShow("PreBoss")
+if not (CVV("&DONE.EUGORVNIA.COMPLETE")) then 
+   Maps.Obj.Kill("Trans.Pad.Transporter spot 4FB7229") CSay("Returner removed for first time visit")
+else 
+   x = Maps.Obj.Obj("Exit")
+   x.R = 255
+   x.G = 180
+   x.Impassible = 1
+   Maps.Remap()
+   CSay("Exit Blocked to prevent conflicts with the facility") 
+   end
+end
+
+function Boss()
+local x = Maps.Obj.Obj("Prev")
+x.R = 255
+x.G = 180
+x.Impassible = 1
+x.W = 4
+Maps.Obj.Obj("BossWallThin").W = 4
+Maps.Obj.Obj("BossWallShort").W = 804
+Maps.Remap()
+MapShow("*ALL*")
+BossDone=true
+end
+
+
 function GALE_OnLoad()
 Music("Dungeon/Dark_City.ogg")
 ZA_Enter("STARTROOM",START)
 ZA_Leave("STARTROOM",MapShow,"*ALL*")
+ZA_Enter("BossRoom",EnterBoss)
 MultiShow("ShowBase","Base",3)
 MultiShow("ShowToSecret","ToSecret",2)
 -- Init Sudoku Puzzle
