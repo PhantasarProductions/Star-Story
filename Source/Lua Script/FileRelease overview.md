@@ -155,6 +155,7 @@
 1. Script/JINC/IAA/ZZZ_CID_DARKSOULBREAKER.lua
 1. Script/JINC/IAA/ZZZ_CID_LORD_SUMMON.lua
 1. Script/JINC/IAA/ZZZ_CID_ULTRADARKNESS.lua
+1. Script/JINC/IAA/ZZZ_MYR_SUMMON.lua
 1. Script/JINC/InitChar/Briggs.lua
 1. Script/JINC/InitChar/Crystal.lua
 1. Script/JINC/InitChar/ExHuRU.lua
@@ -338,4 +339,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 22 January 2016; 13:14:19 CET
+### Last updated: Fri 22 January 2016; 13:26:29 CET

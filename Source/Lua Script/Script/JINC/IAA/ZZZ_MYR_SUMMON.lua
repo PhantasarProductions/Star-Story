@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ITM_ASTRILOPUPHONEY.lua
+  ZZZ_MYR_SUMMON.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -36,22 +36,18 @@ version: 16.01.22
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 150,
+	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
-	["CureDisease"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Heals 350 to everybody",
-	["Healing"] = 350,
+	["Description"] = "Summons a Myr",
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 900,
-	["ITM_SellPrice"] = 750,
-	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/Honey Jar.png",
+	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Astrilopup Honey",
-	["SpellAni_Reference"] = "AllHeal",
-	["Target"] = "AA",
+	["Name"] = "Aid me my subjects",
+	["ScriptEffect_Parameters"] = "Reg/Myr",
+	["ScriptEffect_Reference"] = "Summon",
+	["Target"] = "OS",
 	["UseCombat"] = true,
 	["UseField"] = true}
 

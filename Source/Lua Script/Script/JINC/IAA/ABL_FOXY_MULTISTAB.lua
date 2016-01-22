@@ -1,6 +1,6 @@
 --[[
   ABL_FOXY_MULTISTAB.lua
-  Version: 16.01.21
+  Version: 16.01.22
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
