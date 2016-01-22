@@ -75,6 +75,7 @@ else
 end
 
 function Boss()
+-- Adept the level
 local x = Maps.Obj.Obj("Prev")
 x.R = 255
 x.G = 180
@@ -85,6 +86,23 @@ Maps.Obj.Obj("BossWallShort").W = 804
 Maps.Remap()
 MapShow("*ALL*")
 BossDone=true
+-- Boss fight itself
+CSay("Init Boss Fight...")
+CleanCombat()
+local lv=RPGStat.Stat("Wendicka","Level")*skill
+Var.D("$COMBAT.BACKGROUND","Eugorvnia.png")
+Var.D("$COMBAT.BEGIN","Default")
+Var.D("$COMBAT.FOE2","Boss/QueenMyr")
+Var.D("%COMBAT.LVFOE2",lv)
+Var.D("$COMBAT.ALTCOORDSFOE2","300,400")
+if skill==3 then
+   Var.D("$COMBAT.FOE1","Reg/Myr")
+   Var.D("$COMBAT.FOE3","Reg/Myr")
+   Var.D("%COMBAT.LVFOE1",lv/2)
+   Var.D("%COMBAT.LVFOE3",lv/2)
+   end
+RandomBossTune()
+StartCombat()   
 end
 
 
