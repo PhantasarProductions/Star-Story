@@ -45,6 +45,15 @@ function Silence()
 Music("Sys/Silence")
 end
 
+function AfterWelcomeFight()
+MapText("ENTER_B")
+PartyUnPop()
+end
+
+function DoNoLeave()
+MapText("DONOTLEAVE")
+Actor.WalkTo("PLAYER","Start")
+end
 
 function GALE_OnLoad()
 ({ [true] = StartMusic, [false]=Silence})[Done("&DONE.EUGORVNIA.COMPLETE")]()

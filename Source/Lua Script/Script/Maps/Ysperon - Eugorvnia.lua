@@ -138,14 +138,48 @@ for alpha=1,0,-.002 do
     end
 MapText("WENDICKA_B")   
 MS.Run("MAP","OpenNext")
-Actors.Spawn('McLeen','McLeen','GMcLeen',0) -- Spoiler alert!
+Actors.Spawn('McLeen','GFX/Actors/McLeen','GMcLeen',0) -- Spoiler alert!
 Actors.ChoosePic('GMcLeen','MASKED.SOUTH')
 for i=0,40 do DrawScreen(); Flip() end
 Actors.WalkTo("GMcLeen","Wendicka_McLeen")
 for i=0,40 do DrawScreen(); Flip() end
 MS.Run("MAP","SluitNext")
 MapText("WENDICKA_C")
-Sys.Error("Incomplete Section") 
+Maps.Obj.Kill("Player")
+Maps.GotoLayer("#001")
+SpawnPlayer("Start")
+PartyPop("PopStart")
+MapText("ENTER_A")
+Var.D("&TRANSPORTERBLOCK","TRUE") -- We won't leave the facility without Wendicka
+CleanCombat()
+local lv=RPGStat.Stat("Wendicka","Level")*skill
+Var.D("$COMBAT.BACKGROUND","Facility.png")
+Var.D("$COMBAT.BEGIN","Default")
+-- Ast 1
+Var.D("$COMBAT.FOE1","AstrilopupGuard")
+Var.D("%COMBAT.LVFOE1",lv)
+Var.D("$COMBAT.ALTCOORDSFOE1","200,300")
+-- Ast 2
+Var.D("$COMBAT.FOE2","AstrilopupGuard")
+Var.D("%COMBAT.LVFOE2",lv)
+Var.D("$COMBAT.ALTCOORDSFOE2","200,450")
+-- Cyborg Captain
+Var.D("$COMBAT.FOE3","Cyborg Captain")
+Var.D("%COMBAT.LVFOE3",lv)
+Var.D("$COMBAT.ALTCOORDSFOE3","300,300")
+-- Cyborg Gunner
+Var.D("$COMBAT.FOE4","Cyborg Gunner")
+Var.D("%COMBAT.LVFOE4",lv)
+Var.D("$COMBAT.ALTCOORDSFOE4","300,400")
+MS.Run("MAP",'StartMusic')
+Var.D("$COMBAT.MUSIC","Dungeon/AstrilopupBase")
+StartCombat()   
+Schedule("MAP","AfterWelcomeFight")
+Maps.Obj.Kill("AstrilGuard_A",1)
+Maps.Obj.Kill("AstrilGuard_B",1)
+Maps.Obj.Kill("Cyb_A"        ,1)
+Maps.Obj.Kill("Cyb_B"        ,1)
+-- Sys.Error("Incomplete Section") 
 end
 
 
