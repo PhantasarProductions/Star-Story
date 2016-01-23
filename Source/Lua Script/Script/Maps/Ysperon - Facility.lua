@@ -50,7 +50,7 @@ MapText("ENTER_B")
 PartyUnPop()
 end
 
-function DoNoLeave()
+function DoNotLeave()
 MapText("DONOTLEAVE")
 Actor.WalkTo("PLAYER","Start")
 end
