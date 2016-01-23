@@ -1,6 +1,6 @@
 --[[
   SchuifNextReal.lua
-  Version: 16.01.23
+  Version: 16.01.24
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -37,10 +37,6 @@
 if not(Next and Prev) then Sys.Error("No next?") end
 
 
-InitSchuif("NextLinks",-30,0,"Dicht")
-InitSchuif("PrevLinks",-30,0,"Dicht")
-InitSchuif("NextRechts",30,0,"Dicht")
-InitSchuif("PrevRechts",30,0,"Dicht")
 
 function OpenPrev()
 SetSchuif({"PrevLinks","PrevRechts"},"Open")
@@ -58,7 +54,57 @@ function SluitNext()
 SetSchuif({"NextLinks","NextRechts"},"Dicht")
 end
 
+function SchuifNextDo()
+local lay = Maps.LayerCodeName
+if oldschuiflay~=lay then
+   Schuif = SchuifNextArray[lay]
+   oldschuiflay = lay
+   end
+OriginalDoSchuif()
+end
 
-ZA_Enter("SchuifPrev",OpenPrev); ZA_Leave("SchuifPrev",SluitPrev)
-ZA_Enter("SchuifNext",OpenNext); ZA_Leave("SchuifNext",SluitNext)
+OriginalDoSchuif = DoSchuif
+DoSchuif = SchuifNextDo
+if MAP_FLOW==OriginalDoSchuif then MAP_FLOW = SchuifNextDo end
 
+SchuifNextArray = {}
+
+function SchuifNextSetup()
+local function mysplit(inputstr, sep)
+        if sep == nil then
+                sep = "%s"
+        end
+        local t={} ; i=1
+        for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
+                t[i] = str
+                i = i + 1
+        end
+        return t
+      end -- Needed as @USE is not yet fully completed here.
+local layers = {"*"} -- In non multi-map we need at least one "layer"
+local orilayer
+if Maps.Multi()==1 then layers = mysplit(Maps.Layers(),";") orilayer=Maps.LayerCodeName else Sys.Error("Using SchuifNext.lua require Multi-Map") end
+for lay in each(layers) do
+    Maps.GotoLayer(lay)
+    Console.Write("= Setting up SchuifNext layer: "..lay,180,255,0)
+    SchuifNextArray[lay] = { Ga={}, Obj={} }
+    Schuif = SchuifNextArray[lay] -- Needed for the original schuif.lua routines
+    if Maps.Obj.Exists("SchuifNext")==1 then
+       InitSchuif("NextLinks",-30,0,"Dicht")
+       InitSchuif("NextRechts",30,0,"Dicht")
+       ZA_Enter("SchuifNext",OpenNext); ZA_Leave("SchuifNext",SluitNext)
+       else
+       Console.Write("No 'Next' on this floor: "..lay,255,0,0)
+       end
+    if Maps.Obj.Exists("SchuifPrev")==1 then
+       InitSchuif("PrevLinks",-30,0,"Dicht")
+       InitSchuif("PrevRechts",30,0,"Dicht")
+       ZA_Enter("SchuifPrev",OpenPrev); ZA_Leave("SchuifPrev",SluitPrev)
+       else
+       Console.Write("No 'Prev' on this floor: "..lay,255,0,0)
+       end
+    end
+Maps.GotoLayer(orilayer)    
+end 
+
+SchuifNextSetup()
