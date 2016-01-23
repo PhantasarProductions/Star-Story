@@ -52,7 +52,7 @@ end
 
 function DoNotLeave()
 MapText("DONOTLEAVE")
-Actor.WalkTo("PLAYER","Start")
+Actors.WalkTo("PLAYER","Start")
 end
 
 function GALE_OnLoad()
