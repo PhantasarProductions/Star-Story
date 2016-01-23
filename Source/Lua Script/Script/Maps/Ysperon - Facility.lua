@@ -57,4 +57,5 @@ end
 
 function GALE_OnLoad()
 ({ [true] = StartMusic, [false]=Silence})[Done("&DONE.EUGORVNIA.COMPLETE")]()
+ZA_Enter("DoNotLeave",DoNotLeave)
 end
