@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  BestiaryData.lua
+  Ysperon - Facility.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -34,35 +34,18 @@
  
 version: 16.01.23
 ]]
-return {
-	"BIGGRASSTIGER",
-	"BIGLION",
-	"BRAINDROID",
-	"CYBORG LORD",
-	"DARDBOORTH",
-	"DARDMOEDER",
-	"FLIRMOUSE_KING",
-	"FLIRMOUSE_SUBJECT",
-	"QUEENMYR",
-	"SUPAQUAL",
-	"SUPERSYSS",
-	"ASTRILOPUP",
-	"ASTRILOPUPGUARD",
-	"BATTLEDROID",
-	"BLACKLIZARD",
-	"BLADEH",
-	"CID",
-	"CYBORG CAPTAIN",
-	"CYBORG GUNNER",
-	"CYBORG MEDIC",
-	"FLIRMOUSE",
-	"FLYSKY",
-	"GRASSTIGER",
-	"GUMMI",
-	"INSETTO",
-	"LION",
-	"MYR",
-	"QUAL",
-	"RAT",
-	"SYSS",
-}
+
+-- @USE /Script/Use/Maps/Gen/SchuifNext.lua
+
+function StartMusic()
+Music("Dungeon/AstrilopupBase")
+end
+
+function Silence()
+Music("Sys/Silence")
+end
+
+
+function GALE_OnLoad()
+({ [true] = StartMusic, [false]=Silence})[Done("&DONE.EUGORVNIA.COMPLETE")]()
+end

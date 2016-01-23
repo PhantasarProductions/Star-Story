@@ -1,7 +1,7 @@
 --[[
   Schuif.lua
-  Version: 15.11.18
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.23
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -71,7 +71,7 @@ Schuif[obj] = { Dicht = { Maps.Obj.Obj(obj).X ,  Maps.Obj.Obj(obj).Y }}
 Schuif[obj].Open = { Schuif[obj].Dicht[1]+modx,Schuif[obj].Dicht[2]+mody }
 Schuif.Ga[obj] = mode or 'Dicht' -- 'Dicht' is the Dutch word for 'closed'.
 Schuif.Obj[obj] = obj -- Leftover from doing things too fast when scripting the Hawk.
-CSay("Schuif object '"..obj.."' set!")
+Console.Write("Schuif object '"..obj.."' set!",255,180,0)
 end
 
 function SetSchuif(objlist,mode)

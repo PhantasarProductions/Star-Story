@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.01.22
+version: 16.01.23
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -105,12 +105,56 @@ RandomBossTune()
 StartCombat()   
 end
 
+function ExitToFacility()
+local meanwhile = Image.Load("GFX/MeanWhile/AmberNeon.png")
+Image.HotCenter(meanwhile)
+for alpha=0,1,.002 do
+    DrawScreen()
+    Black()
+    Image.SetAlpha(alpha)
+    Image.Rect(0,0,800,600)
+    White()
+    Image.SetAlpha(1)
+    Image.Draw(meanwhile,400,300)
+    Flip()
+    end
+Image.Free(meanwhile)    
+LoadMap("Ysperon - Facility","#999")
+Maps.GotoLayer("#999")
+SpawnPlayer('Start') Actors.Actor("PLAYER").Visible=0 Actors.Actor("PLAYER").X=9000 -- Crash prevention.
+MapShow("NOTHING")
+MapText("WENDICKA_A")    
+MapShow("*ALL*")
+Maps.CamX=-16
+Maps.CamY=16
+for alpha=1,0,-.002 do
+    DrawScreen()
+    Black()
+    Image.SetAlpha(alpha)
+    Image.Rect(0,0,800,600)
+    White()
+    Image.SetAlpha(1)
+    Flip()
+    end
+MapText("WENDICKA_B")   
+MS.Run("MAP","OpenNext")
+Actors.Spawn('McLeen','McLeen','GMcLeen',0) -- Spoiler alert!
+Actors.ChoosePic('GMcLeen','MASKED.SOUTH')
+for i=0,40 do DrawScreen(); Flip() end
+Actors.WalkTo("GMcLeen","Wendicka_McLeen")
+for i=0,40 do DrawScreen(); Flip() end
+MS.Run("MAP","SluitNext")
+MapText("WENDICKA_C")
+Sys.Error("Incomplete Section") 
+end
+
 
 function GALE_OnLoad()
 Music("Dungeon/Dark_City.ogg")
 ZA_Enter("STARTROOM",START)
 ZA_Leave("STARTROOM",MapShow,"*ALL*")
 ZA_Enter("BossRoom",EnterBoss)
+ZA_Enter("Exit",ExitToFacility)
 MultiShow("ShowBase","Base",3)
 MultiShow("ShowToSecret","ToSecret",2)
 -- Init Sudoku Puzzle

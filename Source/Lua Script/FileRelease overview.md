@@ -284,6 +284,7 @@
 1. Script/JINC/Foes/Boss/DardBoorth.lua
 1. Script/JINC/Foes/Boss/DardMoeder.lua
 1. Script/JINC/Foes/Boss/QueenMyr.lua
+1. Script/JINC/Foes/Reg/AstrilopupGuard.lua
 1. Script/JINC/Foes/Reg/BlackLizard.lua
 1. Script/JINC/Foes/Reg/Bladeh.lua
 1. Script/JINC/Foes/Reg/Cid.lua
@@ -298,6 +299,7 @@
 1. Script/Maps/Physillium - The Ruins of the Y Anhysbys.lsv
 1. Script/Maps/Physillium - The Ruins of the Y Anhysbys.lua
 1. Script/Maps/Ysperon - Eugorvnia.lua
+1. Script/Maps/Ysperon - Facility.lua
 1. Script/MiniGame/AutoUse.lua
 1. Script/MiniGame/MemoryAnhysbys.lua
 1. Script/Use/Anyway/Full.lua
@@ -307,6 +309,8 @@
 1. Script/Use/Combat/StatusChanges/Confusion.lua
 1. Script/Use/Combat/StatusChanges/IDDQD.lua
 1. Script/Use/Maps/Gen/Next.lua
+1. Script/Use/Maps/Gen/SchuifNext.lua
+1. Script/Use/Maps/Gen/SchuifNextReal.lua
 1. Script/Use/Maps/Gen/Sudoku.lua
 1. Script/Use/Maps/Hawk/ArrivalPhysillium.lua
 1. Script/Use/Maps/Hawk/AutoNewNav.lua
@@ -340,4 +344,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 22 January 2016; 18:59:08 CET
+### Last updated: Sat 23 January 2016; 15:47:53 CET

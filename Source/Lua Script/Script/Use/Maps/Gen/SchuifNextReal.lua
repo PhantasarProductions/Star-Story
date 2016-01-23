@@ -1,7 +1,7 @@
 --[[
-  Next.lua
+  SchuifNextReal.lua
   Version: 16.01.23
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -34,54 +34,31 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-if not (Next and Prev) then
+if not(Next and Prev) then Sys.Error("No next?") end
 
-N_NextList = {}
-N_PrevList = {}
 
-function Next()
-local x,y = GetCoords()
-Actors.StopMoving('PLAYER')
---Actors.MoveTo('PLAYER',x,-64,1)
---WalkWait()
-local c = Sys.Val(right(Maps.LayerCodeName,3))
-c = c + 1
-local lay = "#"..right("00"..c,3)
-Maps.Obj.Kill("PLAYER")
-Maps.GotoLayer(lay)
-SpawnPlayer("Start")
-TurnPlayer("North")
-for f in each(N_NextList) do f() end
+InitSchuif("NextLinks",-30,0,"Dicht")
+InitSchuif("PrevLinks",-30,0,"Dicht")
+InitSchuif("NextRechts",30,0,"Dicht")
+InitSchuif("PrevRechts",30,0,"Dicht")
+
+function OpenPrev()
+SetSchuif({"PrevLinks","PrevRechts"},"Open")
 end
 
-function Prev()
-local x,y = GetCoords()
-Actors.StopMoving('PLAYER')
---Actors.MoveTo('PLAYER',x,3300,1)
---WalkWait()
-local c = Sys.Val(right(Maps.LayerCodeName,3))
-c = c - 1
-local lay = "#"..right("00"..c,3)
-Maps.Obj.Kill("PLAYER")
-Maps.GotoLayer(lay)
-SpawnPlayer("Einde")
-TurnPlayer("South")
-for f in each(N_PrevList) do f() end
+function OpenNext()
+SetSchuif({"NextLinks","NextRechts"},"Open")
+end
 
-function ExtraNext(f)
-if not type(f)=='function' then Sys.Error("Extra Next only allows functions!") end
-N_NextList[#N_NextList+1]=f
+function SluitPrev()
+SetSchuif({"PrevLinks","PrevRechts"},"Dicht")
+end
+
+function SluitNext()
+SetSchuif({"NextLinks","NextRechts"},"Dicht")
 end
 
 
-function ExtraPrev(f)
-if not type(f)=='function' then Sys.Error("Extra Prev only allows functions!") end
-N_PrevList[#N_PrevList+1]=f
-end
+ZA_Enter("SchuifPrev",OpenPrev); ZA_Leave("SchuifPrev",SluitPrev)
+ZA_Enter("SchuifNext",OpenNext); ZA_Leave("SchuifNext",SluitNext)
 
-end
-
-ZA_Enter("Next",Next)
-ZA_Enter("Prev",Prev)
-
-end
