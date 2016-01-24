@@ -1,6 +1,6 @@
 --[[
   Next.lua
-  Version: 16.01.23
+  Version: 16.01.24
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,8 +36,10 @@
 ]]
 if not (Next and Prev) then
 
-N_NextList = {}
-N_PrevList = {}
+N_NextList = N_NextList or {}
+N_PrevList = N_PrevList or {}
+
+EnterArea = EnterArea or {}
 
 function Next()
 local x,y = GetCoords()
@@ -52,6 +54,7 @@ Maps.GotoLayer(lay)
 SpawnPlayer("Start")
 TurnPlayer("North")
 for f in each(N_NextList) do f() end
+(EnterArea[lay] or function() end)()
 end
 
 function Prev()
@@ -67,6 +70,8 @@ Maps.GotoLayer(lay)
 SpawnPlayer("Einde")
 TurnPlayer("South")
 for f in each(N_PrevList) do f() end
+(EnterArea[lay] or function() end)()
+end
 
 function ExtraNext(f)
 if not type(f)=='function' then Sys.Error("Extra Next only allows functions!") end
@@ -79,7 +84,7 @@ if not type(f)=='function' then Sys.Error("Extra Prev only allows functions!") e
 N_PrevList[#N_PrevList+1]=f
 end
 
-end
+
 
 ZA_Enter("Next",Next)
 ZA_Enter("Prev",Prev)

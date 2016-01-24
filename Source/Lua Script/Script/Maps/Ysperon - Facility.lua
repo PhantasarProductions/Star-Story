@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.01.23
+version: 16.01.24
 ]]
 
 -- @USE /Script/Use/Maps/Gen/SchuifNext.lua
@@ -55,7 +55,13 @@ MapText("DONOTLEAVE")
 Actors.WalkTo("PLAYER","Start")
 end
 
+EnterArea = {
+               ["#002"] = function() MapShow("Main") end
+            }
+
 function GALE_OnLoad()
 ({ [true] = StartMusic, [false]=Silence})[Done("&DONE.EUGORVNIA.COMPLETE")]()
 ZA_Enter("DoNotLeave",DoNotLeave)
+ZA_Enter("ShowMain",EnterArea["#002"])
+ZA_Enter("ShowSide",MapShow,"Side")
 end

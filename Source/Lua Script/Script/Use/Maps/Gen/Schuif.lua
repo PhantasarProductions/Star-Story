@@ -1,6 +1,6 @@
 --[[
   Schuif.lua
-  Version: 16.01.23
+  Version: 16.01.24
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -55,6 +55,26 @@ for deur,toestand in pairs(Schuif.Ga) do
        -- CSay("Schuif = "..sval(Schuif))
        if obj.X>Schuif[deur][toestand][1] then obj.X = obj.X - 1 elseif obj.X<Schuif[deur][toestand][1] then obj.X = obj.X + 1 end
        if obj.Y>Schuif[deur][toestand][2] then obj.Y = obj.Y - 1 elseif obj.Y<Schuif[deur][toestand][2] then obj.Y = obj.Y + 1 end
+       -- @IF DEBUGSCHUIF
+       DarkText('Deur '..deur..' = '..toestand.."; ObjXY("..obj.X..","..obj.Y.."); MoetZijnXY("..Schuif[deur][toestand][1]..","..Schuif[deur][toestand][2]..")",5,y,0,0,255,180,0)
+       y = y + 15
+       -- @FI
+       end
+    end
+end
+
+function DoInstantSchuif()
+local obj
+local y = 5
+CSay("Call for instant!")
+for deur,toestand in pairs(Schuif.Ga) do
+    if Maps.Obj.Exists(Schuif.Obj[deur])==1 then
+       obj = Maps.Obj.Obj(Schuif.Obj[deur])
+       -- CSay("Deur = "..sval(deur).."; Toestand = "..sval(toestand))
+       -- CSay("Schuif = "..sval(Schuif))
+       obj.X = Schuif[deur][toestand][1] -- if obj.X>Schuif[deur][toestand][1] then obj.X = obj.X - 1 elseif obj.X<Schuif[deur][toestand][1] then obj.X = obj.X + 1 end
+       obj.Y = Schuif[deur][toestand][2] -- if obj.Y>Schuif[deur][toestand][2] then obj.Y = obj.Y - 1 elseif obj.Y<Schuif[deur][toestand][2] then obj.Y = obj.Y + 1 end
+       CSay("Instant move door '"..deur.."' to: ("..obj.X..","..obj.Y..")   > "..toestand)
        -- @IF DEBUGSCHUIF
        DarkText('Deur '..deur..' = '..toestand.."; ObjXY("..obj.X..","..obj.Y.."); MoetZijnXY("..Schuif[deur][toestand][1]..","..Schuif[deur][toestand][2]..")",5,y,0,0,255,180,0)
        y = y + 15

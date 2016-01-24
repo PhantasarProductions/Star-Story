@@ -54,12 +54,17 @@ function SluitNext()
 SetSchuif({"NextLinks","NextRechts"},"Dicht")
 end
 
-function SchuifNextDo()
+
+function SchuifNextLayerCheck()
 local lay = Maps.LayerCodeName
 if oldschuiflay~=lay then
    Schuif = SchuifNextArray[lay]
    oldschuiflay = lay
    end
+end
+   
+function SchuifNextDo()
+SchuifNextLayerCheck()
 OriginalDoSchuif()
 end
 
@@ -105,6 +110,8 @@ for lay in each(layers) do
        end
     end
 Maps.GotoLayer(orilayer)    
+N_PrevList = { function() SchuifNextLayerCheck() OpenNext() DoInstantSchuif() end }
+N_NextList = { function() SchuifNextLayerCheck() OpenPrev() DoInstantSchuif() end }
 end 
 
 SchuifNextSetup()
