@@ -6,4 +6,4 @@ Please do not modify any files within the repository itself. All files in this r
 
 The best way to go is to tell me about some proper modifications in the issue tracker in stead so I can apply those in the actual version.
 
-### Last update: Mon 25 January 2016; 17:46:44 CET
+### Last update: Tue 26 January 2016; 11:00:34 CET
