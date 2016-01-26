@@ -112,6 +112,7 @@
 1. Script/JINC/IAA/ARM_DART.lua
 1. Script/JINC/IAA/ARM_FLAMETHROWER.lua
 1. Script/JINC/IAA/ARM_HEALINGSPRAY.lua
+1. Script/JINC/IAA/ARM_MINICANNON.lua
 1. Script/JINC/IAA/ARM_MULTIBLAST.lua
 1. Script/JINC/IAA/ARM_MUNCHHAUSEN.lua
 1. Script/JINC/IAA/ARM_POISONDART.lua
@@ -344,4 +345,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 26 January 2016; 11:00:40 CET
+### Last updated: Tue 26 January 2016; 15:46:08 CET

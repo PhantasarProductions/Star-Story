@@ -1,7 +1,7 @@
 --[[
-  ZZZ_CID_DARKCHARGE.lua
+  ARM_MINICANNON.lua
   Version: 16.01.26
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -36,19 +36,26 @@
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 250,
+	["ARM_Hit%"] = 75,
+	["ARM_MaxAmmo"] = 3,
+	["ARM_PRICE_Hit%"] = 500,
+	["ARM_PRICE_MaxAmmo"] = 500,
+	["ARM_PRICE_Weight"] = 600,
+	["ARM_PRICE_XPower"] = 1800,
+	["ARM_XPower"] = 0,
+	["ActSpeed"] = 90,
 	["AttackElement"] = "Non-Elemental",
+	["AttackPower"] = 200,
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
+	["Description"] = "OUCH!",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Elements/Dark.png",
+	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Dark Charge",
-	["SpellAni_Reference"] = "SingleHeal",
-	["Target"] = "AF",
+	["Name"] = "Mini Cannon",
+	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true,
-	["UserNextMove"] = "ZZZ_CID_DARKSOULBREAKER",
 	["untauntable"] = true}
 
 return ret
