@@ -1,7 +1,7 @@
 --[[
-  ABL_FOXY_MULTISTAB.lua
+  ITM_EQP_SUPER_ONYX.lua
   Version: 16.01.26
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -35,26 +35,25 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 25,
-	["ABL_APCut"] = 15000,
-	["ABL_Cancel"] = 100,
-	["ABL_DblPower"] = 50000,
-	["ABL_Instant"] = 1500,
-	["ABL_Pose"] = "Attack",
-	["ABL_Speed"] = 500,
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 100,
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Quick attack on multiple targets",
+	["Description"] = "Increases resistance to Dark",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Inventory/Dagger.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Multi-stab",
-	["Target"] = "AF",
-	["UseCombat"] = true}
+	["ITM_BuyPrice"] = 100,
+	["ITM_EQP_ERes_UPDark"] = true,
+	["ITM_EQP_SRes_Damned"] = 5,
+	["ITM_EQP_SRes_Death"] = 5,
+	["ITM_SellPrice"] = 75,
+	["ITM_Sellable"] = true,
+	["Icon"] = "GFX/INVENTORY/Onyx.png",
+	["ItemType"] = "EquipItem",
+	["Name"] = "Super Onyx",
+	["Target"] = "1F",
+	["UseCombat"] = true,
+	["UseField"] = true}
 
 return ret
 

@@ -1,6 +1,6 @@
 --[[
   SchuifNextReal.lua
-  Version: 16.01.24
+  Version: 16.01.26
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -35,6 +35,9 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 if not(Next and Prev) then Sys.Error("No next?") end
+
+
+SchuifNextExtraInit = SchuifNextExtraInit or {}
 
 
 
@@ -108,6 +111,7 @@ for lay in each(layers) do
        else
        Console.Write("No 'Prev' on this floor: "..lay,255,0,0)
        end
+    (SchuifNextExtraInit[lay] or function() Console.Write("No extra init for floor "..lay,255,180,0) end)()   
     end
 Maps.GotoLayer(orilayer)    
 N_PrevList = { function() SchuifNextLayerCheck() OpenNext() DoInstantSchuif() end }

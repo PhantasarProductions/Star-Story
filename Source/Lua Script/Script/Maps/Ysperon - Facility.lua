@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.01.24
+version: 16.01.26
 ]]
 
 -- @USE /Script/Use/Maps/Gen/SchuifNext.lua
@@ -56,12 +56,27 @@ Actors.WalkTo("PLAYER","Start")
 end
 
 EnterArea = {
-               ["#002"] = function() MapShow("Main") end
+               ["#002"] = function() MapShow("Main") end,
+               ["#006"] = function() MapShow("Main")
+                                     if Maps.Obj.Exists("BossDoor")==1 then 
+                                        Maps.Obj.Obj("BossDoor").Visible = Maps.Obj.Obj("BossDoor").Impassible
+                                        CSay("Boss door adjusted: "..Maps.Obj.Obj("BossDoor").Impassible) 
+                                        end 
+                                     end
             }
+                       
 
+SchuifNextExtraInit = {
+                          ["#006"] = function() 
+                                     InitSchuif("BossLinks",-30,0,"Dicht")       
+                                     InitSchuif("BossRechts",30,0,"Dicht")                                     
+                                     ZA_Enter("OpenBoss",function() SetSchuif({"BossLinks","BossRechts"},"Open") end); ZA_Enter("GroteKamer",function() SetSchuif({"BossLinks","BossRechts"},"Dicht") end)
+                                     end
+                      }
 function GALE_OnLoad()
 ({ [true] = StartMusic, [false]=Silence})[Done("&DONE.EUGORVNIA.COMPLETE")]()
 ZA_Enter("DoNotLeave",DoNotLeave)
-ZA_Enter("ShowMain",EnterArea["#002"])
+ZA_Enter("ShowMain",EnterArea["#006"])
 ZA_Enter("ShowSide",MapShow,"Side")
+ZA_Enter("OpenBonus",MapShow,"Bonus")
 end

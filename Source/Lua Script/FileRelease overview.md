@@ -135,6 +135,9 @@
 1. Script/JINC/IAA/ITM_EQP_ONYX.lua
 1. Script/JINC/IAA/ITM_EQP_RUBY.lua
 1. Script/JINC/IAA/ITM_EQP_SAPHIRE.lua
+1. Script/JINC/IAA/ITM_EQP_SUPER_AQUAMARINE.lua
+1. Script/JINC/IAA/ITM_EQP_SUPER_CARNELIAN.lua
+1. Script/JINC/IAA/ITM_EQP_SUPER_ONYX.lua
 1. Script/JINC/IAA/ITM_FIRSTAIDKIT.lua
 1. Script/JINC/IAA/ITM_GUBAFLOWER.lua
 1. Script/JINC/IAA/ITM_HEALINGCAPSULE.lua
@@ -345,4 +348,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 26 January 2016; 15:46:08 CET
+### Last updated: Tue 26 January 2016; 21:30:13 CET
