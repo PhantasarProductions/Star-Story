@@ -4,7 +4,7 @@ Rem
 	
 	
 	
-	(c) Jeroen P. Broks, 2015, All rights reserved
+	(c) Jeroen P. Broks, 2015, 2016, All rights reserved
 	
 		This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.12.22
+Version: 16.01.27
 End Rem
 Strict
 
@@ -30,7 +30,7 @@ Import tricky_units.advdatetime
 Import tricky_units.Bye
 Import "Framework.bmx"
 
-MKL_Version "LAURA II - LoadGame.bmx","15.12.22"
+MKL_Version "LAURA II - LoadGame.bmx","16.01.27"
 MKL_Lic     "LAURA II - LoadGame.bmx","GNU General Public License 3"
 
 
@@ -71,7 +71,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	SetGadgetPixmap Crystal,PixCrystal
 	?Not MacOS
 	Go = CreateButton("Load Game",0,CH-25,CW,25,Crystal,Button_ok)
-	Sync = CreateButton("Synchronize",CW-150,CH-60,CW,25,Crystal)
+	Sync = CreateButton("Synchronize",0,CH-60,CW,25,Crystal)
 	?
 	?MacOS
 	Go = CreateButton("Load Game",CW-150,CH-25,150,25,Crystal,Button_ok)
