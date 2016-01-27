@@ -32,9 +32,10 @@
   
  **********************************************
  
-version: 16.01.26
+version: 16.01.27
 ]]
 return {
+	"ASTRILOPUPELITE",
 	"BIGGRASSTIGER",
 	"BIGLION",
 	"BRAINDROID",

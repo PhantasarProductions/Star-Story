@@ -154,6 +154,7 @@
 1. Script/JINC/IAA/SUPER_FOXY_SKYDRAGONSLASH.lua
 1. Script/JINC/IAA/SUPER_WENDICKA_VOLTSUNAMI.lua
 1. Script/JINC/IAA/SUPER_XENOBI_WHITE_APOCALYPSE.lua
+1. Script/JINC/IAA/ZZZ_ASTRILOPUPELITE_SUMMON.lua
 1. Script/JINC/IAA/ZZZ_CID_DARKCHARGE.lua
 1. Script/JINC/IAA/ZZZ_CID_DARKNESS.lua
 1. Script/JINC/IAA/ZZZ_CID_DARKSOULBREAKER.lua
@@ -283,6 +284,7 @@
 1. Script/Flow/Bestiary.lsv
 1. Script/Flow/Bestiary.lua
 1. Script/JINC/Big/BestiaryData.lua
+1. Script/JINC/Foes/Boss/AstrilopupElite.lua
 1. Script/JINC/Foes/Boss/BigLion.lua
 1. Script/JINC/Foes/Boss/Cyborg Lord.lua
 1. Script/JINC/Foes/Boss/DardBoorth.lua
@@ -348,4 +350,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Wed 27 January 2016; 12:38:00 CET
+### Last updated: Wed 27 January 2016; 13:56:01 CET

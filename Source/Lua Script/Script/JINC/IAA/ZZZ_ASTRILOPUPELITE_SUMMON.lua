@@ -1,8 +1,8 @@
 --[[
 **********************************************
   
-  ARM_HEALINGSPRAY.lua
-  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
+  ZZZ_ASTRILOPUPELITE_SUMMON.lua
+  (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -36,25 +36,18 @@ version: 16.01.27
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
-	["ARM_Hit%"] = 95,
-	["ARM_MaxAmmo"] = 5,
-	["ARM_PRICE_Hit%"] = 100,
-	["ARM_PRICE_MaxAmmo"] = 800,
-	["ARM_PRICE_Weight"] = 300,
-	["ARM_PRICE_XPower"] = 1000,
-	["ARM_XPower"] = 0,
-	["ActSpeed"] = 100,
-	["AttackElement"] = "Healing",
-	["AttackPower"] = 200,
+	["ActSpeed"] = 250,
+	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Heals an ally",
+	["Description"] = "Summons a AStrilopup Guard",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Gun.png",
-	["ItemType"] = "EquipItem",
-	["Name"] = "Healing spray",
-	["SpellAni_Reference"] = "SingleHeal",
-	["Target"] = "1A",
+	["Icon"] = "GFX/Elements/Dark.png",
+	["ItemType"] = "Consumable",
+	["Name"] = "GUARDS! GUARDS!",
+	["ScriptEffect_Parameters"] = "Reg/AstrilopupGuard",
+	["ScriptEffect_Reference"] = "Summon",
+	["Target"] = "OS",
 	["UseCombat"] = true,
 	["UseField"] = true}
 

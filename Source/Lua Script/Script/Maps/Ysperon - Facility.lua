@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.01.26
+version: 16.01.27
 ]]
 
 -- @USE /Script/Use/Maps/Gen/SchuifNext.lua
@@ -73,6 +73,28 @@ SchuifNextExtraInit = {
                                      ZA_Enter("OpenBoss",function() SetSchuif({"BossLinks","BossRechts"},"Open") end); ZA_Enter("GroteKamer",function() SetSchuif({"BossLinks","BossRechts"},"Dicht") end)
                                      end
                       }
+                      
+function Boss()
+-- Clean up all old shit
+CleanCombat()
+-- Determine the boss' level
+-- local lv=RPGStat.Stat("Wendicka","Level")*skill
+local lv = (100*skill)*ngpcount
+CSay("Playthrough:    "..ngpcount)
+CSay("Skill:          "..skill)
+CSay("Leads to level: "..lv)
+-- Boss
+Var.D("$COMBAT.FOE1","AstrilopupElite")
+Var.D("%COMBAT.LVFOE1",lv)
+Var.D("$COMBAT.ALTCOORDSFOE1","500,300")
+-- Background data
+Var.D("$COMBAT.BACKGROUND","Facility.png")
+Var.D("$COMBAT.BEGIN","Default")
+Var.D("$COMBAT.MUSIC","Dungeon/AstrilopupBase")
+-- Let combat commence
+StartCombat()   
+end 
+                      
 function GALE_OnLoad()
 ({ [true] = StartMusic, [false]=Silence})[Done("&DONE.EUGORVNIA.COMPLETE")]()
 ZA_Enter("DoNotLeave",DoNotLeave)
