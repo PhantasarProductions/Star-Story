@@ -1,7 +1,7 @@
 --[[
   CTargetInfo.lua
-  Version: 15.12.10
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.28
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -123,6 +123,7 @@ elseif data.Gauge>10000 then
 	-- Sys.Error(serialize('Data',Data));  -- Debug line
 	(({
 				ATK = function() DarkText("Attack",cx,cy,0,0,255,0,0) end,
+				SHT = function() DarkText("Shoot",cx,cy,0,0,255,0,0) end,
 				FAI = function() 
 					  local i = data.Act.Item
 					  DarkText(i.Name,cx,cy,0,0,0,180,255)
@@ -144,10 +145,10 @@ elseif data.Gauge>10000 then
 					  DarkText(i.Name,cx,cy,0,0,0,180,0)
 				  end,
 				LRN = function()
-					  DarkText("Learning...",0,0,255,80,0)
+					  DarkText("Learning...",cx,cy,0,0,255,80,0)
 					end,  
 				GRD = function() DarkText("Guarding",cx,cy,0,0,180,180,180) end
-				})[data.Act.Act])()
+				})[data.Act.Act] or function() DarkText("Unknown: "..sval(data.Act.Act),cx,cy,255,0,0) end)()
 	if data.Act.TargetGroup and data.Act.TargetIndividual then
 		TarData = Fighters[ data.Act.TargetGroup ][ data.Act.TargetIndividual ];
 		(({
