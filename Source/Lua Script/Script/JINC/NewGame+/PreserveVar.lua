@@ -70,7 +70,8 @@ ret = {
 		"%UPGRADES.WENDICKA",
 		"%UPGRADES.FOXY",
 		"%UPGRADES.XENOBI",
-		"%UPGRADES.YIRL"},
+		"%UPGRADES.YIRL",
+		"%TREASURE_RATE[Special Item 1B3E86B6]"},
 
 	prefix = {
 		"$CTIME",
@@ -104,6 +105,7 @@ ret = {
 		"%UPGRADES.FOXY",
 		"%UPGRADES.XENOBI",
 		"%UPGRADES.YIRL",
+		"%TREASURE_RATE[Special Item 1B3E86B6]",
 		"<",
 		"%PLAYTIME.",
 		"&TUT.",
