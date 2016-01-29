@@ -1,7 +1,7 @@
 --[[
   CPlayerInput.lua
-  Version: 15.11.02
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.29
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -55,7 +55,7 @@ SelectTarget = {
                               ["AA"] = function() Act.Hero[pos].TargetGroup = "Hero"; InputDone=true end,
                               ["AF"] = function() Act.Hero[pos].TargetGroup = "Foe" ; InputDone=true end,
                               ["EV"] = function() Act.Hero[pos].TargetGroup = true  ; InputDone=true end,
-                              ["OS"] = function() Act.Hero[pos].TargetGroup = "Hero"; Act.Hero[pos].TargetIndividual=pos end
+                              ["OS"] = function() Act.Hero[pos].TargetGroup = "Hero"; Act.Hero[pos].TargetIndividual=pos; InputDone=true end
                            })[trgt] or function() Sys.Error("Unknown Target type "..sval(trgt)) end)()   
                            end,           
 

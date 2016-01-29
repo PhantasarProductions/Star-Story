@@ -125,6 +125,41 @@ Actors.MoveToSpot("POP_Reggie","Wen_Reggie")
 Maps.Obj.Obj("Astrilo_A").ScaleX = -1000
 Maps.Obj.Obj("Astrilo_B").ScaleX = -1000
 MapText("Astrilopup_Alarm")
+CleanCombat()
+local lv=(RPGStat.Stat("Wendicka","Level")*skill)*.95
+Var.D("$COMBAT.BACKGROUND","Facility.png")
+Var.D("$COMBAT.BEGIN","Default")
+-- Ast 1
+Var.D("$COMBAT.FOE1","AstrilopupGuard")
+Var.D("%COMBAT.LVFOE1",lv)
+Var.D("$COMBAT.ALTCOORDSFOE1","200,300")
+-- Ast 2
+Var.D("$COMBAT.FOE2","AstrilopupGuard")
+Var.D("%COMBAT.LVFOE2",lv)
+Var.D("$COMBAT.ALTCOORDSFOE2","200,450")
+Var.D("$COMBAT.MUSIC","Dungeon/AstrilopupBase")
+StartCombat()   
+Schedule("MAP","Lab")
+Maps.Obj.Kill("Astrilo_A",1)
+Maps.Obj.Kill("Astrilo_B",1)
+end
+
+function Lab()
+MapText("FREE_WENDICA_A")
+-- McLeen beams away
+Actors.ChoosePic("GMcLeen","TELEPORT")
+for f=0,99 do
+    Image.Cls()
+    Actors.Actor("GMcLeen").Frame = f -- This function goes a bit into the hardcode of Kthura, and best not to use it yourself unless you know the deep background of Kthura.
+    Maps.Draw()
+    -- @IF *DEVELOPMENT
+    CSay("McLeen Beam away - Frame #"..f.. " >>> "..Actors.Actor("GMcLeen").Frame)
+    -- @FI
+    -- DrawScreen()
+    Flip()    
+    end    
+Maps.Obj.Kill("GMcLeen")    
+MapText("FREE_WENDICA_B")
 Sys.Error("You entered the lab, but the scenario there is not yet ready")
 end
                       

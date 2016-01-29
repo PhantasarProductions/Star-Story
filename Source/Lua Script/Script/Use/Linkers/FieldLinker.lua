@@ -1,6 +1,6 @@
 --[[
   FieldLinker.lua
-  Version: 16.01.16
+  Version: 16.01.29
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -64,6 +64,14 @@ end
 
 PartyUnPop = PartyUnPop or function() 
 MS.LN_Run("FIELD","Flow/Field.Lua","PartyUnPop") 
+end
+
+AddPartyPop = AddPartyPop or function(a)
+MS.LN_Run("FIELD","Flow/Field.Lua","AddPartyPop",a) 
+end
+
+RemPartyPop = RemPartyPop or function(a)
+MS.LN_Run("FIELD","Flow/Field.Lua","RemPartyPop",a) 
 end
 
 KillWalkArrival = KillWalkArrival or function()

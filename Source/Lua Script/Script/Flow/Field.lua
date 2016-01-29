@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 16.01.16
+  Version: 16.01.29
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -909,6 +909,21 @@ for ak=0,5 do
        Actors.ChoosePic("POP_"..ch,upper(ch).."."..upper(Wind or "North"))
        end
     end
+end
+
+function AddPartyPop(a)
+local guys = a
+if type(guys)=="string" then guys={a} end
+if type(guys)~="table" then Sys.Error("All arguments inside a AddPartyPop chain must be strings or tables and I got "..type(a)) end
+for b in each(guys) do PartyPopArray.Actors[#PartyPopArray.Actors+1]=b end 
+end
+
+function RemPartyPop(a)
+local temp = {}
+for b in each(PartyPopArray.Actors) do 
+    if b~=a and b~="POP_"..a then temp[#temp+1]=b end
+    end
+PartyPopArray.Actors = temp    
 end
 
 function PartyUnPop()

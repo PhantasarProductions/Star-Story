@@ -152,7 +152,7 @@ PartyPop("PopStart")
 MapText("ENTER_A")
 Var.D("&TRANSPORTERBLOCK","TRUE") -- We won't leave the facility without Wendicka
 CleanCombat()
-local lv=RPGStat.Stat("Wendicka","Level")*skill
+local lv=(RPGStat.Stat("Wendicka","Level")*skill)*.65
 Var.D("$COMBAT.BACKGROUND","Facility.png")
 Var.D("$COMBAT.BEGIN","Default")
 -- Ast 1
