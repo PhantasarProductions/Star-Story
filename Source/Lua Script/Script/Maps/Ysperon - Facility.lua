@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.01.27
+version: 16.01.29
 ]]
 
 -- @USE /Script/Use/Maps/Gen/SchuifNext.lua
@@ -62,7 +62,8 @@ EnterArea = {
                                         Maps.Obj.Obj("BossDoor").Visible = Maps.Obj.Obj("BossDoor").Impassible
                                         CSay("Boss door adjusted: "..Maps.Obj.Obj("BossDoor").Impassible) 
                                         end 
-                                     end
+                                     end,
+               ["#012"] = function() MapShow("Base") end                      
             }
                        
 
@@ -71,6 +72,12 @@ SchuifNextExtraInit = {
                                      InitSchuif("BossLinks",-30,0,"Dicht")       
                                      InitSchuif("BossRechts",30,0,"Dicht")                                     
                                      ZA_Enter("OpenBoss",function() SetSchuif({"BossLinks","BossRechts"},"Open") end); ZA_Enter("GroteKamer",function() SetSchuif({"BossLinks","BossRechts"},"Dicht") end)
+                                     end,
+                                     
+                          ["#012"] = function()
+                                     InitSchuif("GeheimLinks",-30,0,"Dicht")       
+                                     InitSchuif("GeheimRechts",30,0,"Dicht")                                     
+                                     ZA_Enter("OpenGeheim",function() SetSchuif({"GeheimLinks","GeheimRechts"},"Open") end); ZA_Leave("OpenGeheim",function() SetSchuif({"GeheimLinks","GeheimRechts"},"Dicht") end)
                                      end
                       }
                       
@@ -94,6 +101,32 @@ Var.D("$COMBAT.MUSIC","Dungeon/AstrilopupBase")
 -- Let combat commence
 StartCombat()   
 end 
+
+function ToLab()
+Maps.GotoLayer("#999")
+if Maps.Obj.Exists("PLAYER")==1 then Maps.Obj.Kill("PLAYER") end -- prevent conflicts
+SpawnPlayer("Start")
+if Done("&DONE.FACILITY.PART.ONE") then return end
+MapEXP(4-skill)
+Var.Clear("&TRANSPORTERBLOCK") -- This will allow passage back to the Hawk, resolving #329. We did find Wendicka again after all.
+Actors.MoveToSpot("PLAYER","WalkIn")
+if Maps.Obj.Exists("GMcLeen")==0 then Actors.Spawn('Wendicka_McLeen','GFX/Actors/McLeen','GMcLeen',0) end
+Actors.WalkToSpot("GMcLeen","Wendicka_McLeen") -- Should not have any effect normally, but this was needed because of an earlier bug.
+repeat
+if Maps.CamX<-16 then Maps.CamX=Maps.CamX+1 elseif Maps.CamX>-16 then Maps.CamX=Maps.CamX-1 end
+if Maps.CamY< 16 then Maps.CamY=Maps.CamY+1 elseif Maps.CamY> 16 then Maps.CamY=Maps.CamY-1 end
+DrawScreen()
+Flip()
+until Maps.CamX==-16 and Maps.CamY==16
+WalkWait()
+PartyPop("Wen","West")
+Actors.Spawn('WalkIn','GFX/Actors/Reggie/ReggieW.png','POP_Reggie',1)
+Actors.MoveToSpot("POP_Reggie","Wen_Reggie")
+Maps.Obj.Obj("Astrilo_A").ScaleX = -1000
+Maps.Obj.Obj("Astrilo_B").ScaleX = -1000
+MapText("Astrilopup_Alarm")
+Sys.Error("You entered the lab, but the scenario there is not yet ready")
+end
                       
 function GALE_OnLoad()
 ({ [true] = StartMusic, [false]=Silence})[Done("&DONE.EUGORVNIA.COMPLETE")]()
@@ -101,4 +134,7 @@ ZA_Enter("DoNotLeave",DoNotLeave)
 ZA_Enter("ShowMain",EnterArea["#006"])
 ZA_Enter("ShowSide",MapShow,"Side")
 ZA_Enter("OpenBonus",MapShow,"Bonus")
+ZA_Enter("To999",ToLab)
+ZA_Enter("ShowBase",MapShow,"Base")
+ZA_Enter("ShowGeheim",MapShow,"Geheim")
 end

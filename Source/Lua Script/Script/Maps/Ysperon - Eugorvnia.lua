@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.01.23
+version: 16.01.29
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -141,7 +141,7 @@ MS.Run("MAP","OpenNext")
 Actors.Spawn('McLeen','GFX/Actors/McLeen','GMcLeen',0) -- Spoiler alert!
 Actors.ChoosePic('GMcLeen','MASKED.SOUTH')
 for i=0,40 do DrawScreen(); Flip() end
-Actors.WalkTo("GMcLeen","Wendicka_McLeen")
+Actors.WalkToSpot("GMcLeen","Wendicka_McLeen")
 for i=0,40 do DrawScreen(); Flip() end
 MS.Run("MAP","SluitNext")
 MapText("WENDICKA_C")
