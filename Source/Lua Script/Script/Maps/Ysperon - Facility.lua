@@ -145,10 +145,10 @@ Maps.Obj.Kill("Astrilo_B",1)
 end
 
 function Lab()
-MapText("FREE_WENDICA_A")
+MapText("FREE_WENDICA_A") -- Wendica is of course a typo, but as the language editor didn't allow tag modifications, I kept it this way. The player won't notice the difference.
 -- McLeen beams away
 Actors.ChoosePic("GMcLeen","TELEPORT")
-for f=0,99 do
+for f=0,99 do -- The beam out does not work. This is not a bug in the code below. This bug doesn't exist. It's impossible that this doesn't work while it works on all other beam-outs. If somebody can explain this impossibility, I'm all ears.
     Image.Cls()
     Actors.Actor("GMcLeen").Frame = f -- This function goes a bit into the hardcode of Kthura, and best not to use it yourself unless you know the deep background of Kthura.
     Maps.Draw()
@@ -160,7 +160,53 @@ for f=0,99 do
     end    
 Maps.Obj.Kill("GMcLeen")    
 MapText("FREE_WENDICA_B")
-Sys.Error("You entered the lab, but the scenario there is not yet ready")
+Award("SHESPOKEFRENCH")    
+for i=0,100 do
+    DrawScreen()
+    Black()
+    Image.SetAlpha(i/100)
+    Image.Rect(0,0,800,600)
+    Flip()
+    end
+Actors.Spawn("WendickaInChains","GFX/Textures/Wendicka/Naked/WendickaNakedStandEast.png","POP_Wendicka",1)
+Maps.Obj.Kill("WendickaInChains",1)
+AddPartyPop("POP_Wendicka")
+AddPartyPop("POP_Reggie")
+RemPartyPop("POP_ExHuRU")    
+WarpPlayer("ByeBye")
+for i=100,0,-1 do -- Dirty method, I know. I was a bit lazy. At least this way everything MUST work
+    DrawScreen()
+    Black()
+    Image.SetAlpha(i/100)
+    Image.Rect(0,0,800,600)
+    Flip()
+    end
+MapText("FREE_WENDICA_C")    
+KickReggie("South","POP_Foxy","POP_Reggie")
+MapText("FREE_WENDICA_D")
+Music('Scenario/Panic Stations')
+SetSchuif({"PrevLinks","PrevRechts","NextLinks","NextRechts"},"Open")
+for i=0,40 do DrawScreen(); Flip() end
+local x = Maps.Obj.Obj("AstriloEast").X
+for y=260,620,32 do
+    Actors.Spawn("AstriloEast","GFX/Actors/SinglePic/Astrilopup/Astrilopup_W.png","AST_E_"..y,1)
+    Actors.MoveTo("AST_E_"..y,x,y)
+    end
+for x=60,330,10 do
+    Actors.Spawn("AstriloWest","GFX/Actors/SinglePic/Astrilopup/Astrilopup_E.png","AST_W_"..x,1)
+    Actors.WalkTo("AST_W_"..x,x,290)
+    end    
+MapText("FREE_WENDICA_E") 
+PartyUnPop()
+Maps.CamY=40
+ReLevel("Wendicka","Yirl")   
+Party("Crystal","Yirl","Foxy","Xenobi","Wendicka")
+SetActive("Crystal")
+ActivatePad("Lab","General")
+BlockWorld("Ysperon")
+TransporterPad("Lab",2)
+Var.D("$HAWK.BRIDGE","AfterYsperon")
+-- Sys.Error("You entered the lab, but the scenario there is not yet ready")
 end
                       
 function GALE_OnLoad()

@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 16.01.23
+  version: 16.01.29
   Copyright (C) 2015, 2016 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -219,7 +219,7 @@ if inorout==2 then
    end
 end
 
-function TransporterPad(tag)
+function TransporterPad(tag,dontask)
 ActivatePad(tag,"General")
 if Done("&TELPADINUSE") then Var.Clear("&TELPADINUSE") return end
 Actors.StopWalking("PLAYER")
@@ -250,7 +250,7 @@ Actors.MoveToSpot("PLAYER","Trans.Spot."..tag)
      
      function() -- Cancel 
      end,
-     })[RunQuestion("SCOTTY","GENERAL")]()
+     })[dontask or RunQuestion("SCOTTY","GENERAL")]()
 --MINI("Transporter routine not yet present")
 Var.Clear("&TELPADINUSE")
 end

@@ -83,3 +83,9 @@ AddClickableScript = AddClickableScript or function(scr,sep)
   -- CSay("Sep = "..sep) 
   MS.LN_Run("FIELD","Flow/Field.Lua","AddClickableScript",scr,sep) 
   end
+  
+PartyUnPopPoint = PartyUnPopPoint or function(spottag)
+MS.LN_Run("FIELD","Flow/Field.Lua","PartyUnPopPoint",spottag)
+end
+
+WarpPlayer = PartyUnPopPoint

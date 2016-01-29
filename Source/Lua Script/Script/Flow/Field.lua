@@ -945,6 +945,13 @@ for ch in each(PartyPopArray.Actors) do
 Actors.Actor("PLAYER").Visible = 1    
 end
 
+function PartyUnPopPoint(spottag)
+local play = Actors.Actor("PLAYER")
+local spot = Maps.Obj.Obj(spottag)
+play.X = spot.X
+play.Y = spot.Y
+end
+
 
 
 function Termination()

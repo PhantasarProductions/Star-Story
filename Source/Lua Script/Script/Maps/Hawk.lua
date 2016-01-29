@@ -2,7 +2,7 @@
 **********************************************
   
   Hawk.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.12.10
+version: 16.01.29
 ]]
 
 -- @USEDIR Script/Use/Maps/Hawk/
@@ -140,6 +140,16 @@ else
    end
 end
 
+
+function Bridge()
+MapShow('Bridge')
+if not HawkBridge then CSay("No extra bridge functions in the demo") return end -- Prevent trouble in the demo as this only works in the full version of the game.
+if not CVVN("$HAWK.BRIDGE") then CSay("No bridge feature was asked") return end -- Nothing here, then let's get outta here.
+CSay("Executing: "..CVV("$HAWK.BRIDGE")); -- Separator MUST be present!!!
+(HawkBridge[CVV("$HAWK.BRIDGE")] or function() MINI("Hawk Bridge event '"..CVV("$HAWK.BRIDGE").."' not found",255,0,0) end)()
+Var.Clear("$HAWK.BRIDGE")
+end
+
 function GALE_OnLoad()
 Done("&GOT.HAWK")
 -- Set the leader. In the Hawk, only this person can be used as leader. The HeroHeadList determines the priority order (in case Wendicka is not in the party Crystal will be the leader, and both Wendicka and Crystal aren't there then Yirl and so on).
@@ -165,7 +175,7 @@ ZA_Enter("OpenVaultDoor",function() Schuif.Ga.Vault = 'Open'  end)
 ZA_Leave("OpenVaultDoor",function() Schuif.Ga.Vault = 'Dicht' end)
 -- Show
 ZA_Enter("ShowBridge1",MapShow,'Bridge')
-ZA_Enter("ShowBridge2",MapShow,'Bridge')
+ZA_Enter("ShowBridge2",Bridge)
 ZA_Enter("ShowBack"   ,MapShow,'Back')
 -- Show NPCs in the back only when you let them on board
 if not CVV("&BANIKA") then Maps.Obj.Kill("NPC_Banika") Maps.Obj.Kill("NPC_Bakina") end

@@ -1,7 +1,7 @@
 --[[
   Transporter_Linker.lua
-  Version: 15.11.30
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.29
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -46,4 +46,13 @@ ActivateRemotePad = ActivateRemotePad or function(tag,mapcode,world,location,lay
 local l = ""
 if layer then l = ";"..layer end
 MS.LN_Run("TRANS","Script/Flow/Transporter.lua",'ActivateRemotePad',tag..";"..mapcode..";"..world..";"..location..l) 
+end
+
+
+BlockWorld = BlockWorld or function(world)
+MS.LN_Run("TRANS","Script/Flow/Transporter.lua","BlockWorld",world)
+end
+
+UnBlockWorld = BlockWorld or function(world)
+MS.LN_Run("TRANS","Script/Flow/Transporter.lua","UnBlockWorld",world)
 end

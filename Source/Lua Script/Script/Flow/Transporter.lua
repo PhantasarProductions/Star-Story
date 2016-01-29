@@ -1,7 +1,7 @@
 --[[
   Transporter.lua
-  Version: 15.11.30
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.29
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -89,6 +89,14 @@ function FirstNode(node,mapfunction)
 Transporters.Nodes[node].mapfunction = mapfunction
 end
 
+function BlockWorld(world)
+Transporters.Worlds[world].Blocked = true
+end 
+
+function UnBlockWorld(world)
+Transporters.Worlds[world].Blocked = nil
+end 
+
 function DrawScreen()
 local y = 0
 local mx,my = MouseCoords()
@@ -97,6 +105,7 @@ local nodedata
 Image.Show(back)
 -- Now the content
 if CurrentWorld then
+   if Transporters.Worlds[CurrentWorld].Blocked then CurrentWorld=nil return end -- No access to blocked worlds
    Image.Color(255,0,0)
    SetFont('TerminalHeader')
    Image.DText(CurrentWorld,300,15)
@@ -135,7 +144,9 @@ else
    y = 15
    SetFont('Terminal')
    for w,data in spairs(Transporters.Worlds) do
-       if my>y and my<y+15 then 
+       if Transporters.Worlds[w].Blocked then
+          Image.Color(80,80,80)
+       elseif my>y and my<y+15 then 
           Image.Color(0,180,255)
           if mousehit(1) then 
              CurrentWorld = w
