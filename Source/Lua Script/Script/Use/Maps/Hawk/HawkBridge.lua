@@ -38,7 +38,9 @@ HawkBridge = {
 
     AfterYsperon = function()
                    -- Scenario
+                   MapText("GODDESS")
                    -- Beam down to Vulpina
+                   Sys.Error("Vulpina not ready yet!")
                    -- Block Ysperon
                    BlockWorld("Ysperon")
                    CSay("Ysperon Blocked")                   
