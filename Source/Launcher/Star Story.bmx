@@ -4,7 +4,7 @@ Rem
 	
 	
 	
-	(c) Jeroen P. Broks, 2015, All rights reserved
+	(c) Jeroen P. Broks, 2015, 2016, All rights reserved
 	
 		This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.11.19
+Version: 16.01.30
 End Rem
 Strict
 
@@ -35,6 +35,7 @@ Import "imp/DeleteCrash.bmx"
 ?win32
 Import "Wendicka.o"
 ?
+Import "imp/AppTitle.bmx"
 Import "imp/LauncherIni.bmx"
 Import "imp/JCRFile.bmx"
 
@@ -48,5 +49,5 @@ Import "imp/versions.bmx"
 'Flow
 Import "Imp/Run.bmx"
 
-MKL_Version "LAURA II - Star Story.bmx","15.11.19"
+MKL_Version "LAURA II - Star Story.bmx","16.01.30"
 MKL_Lic     "LAURA II - Star Story.bmx","GNU General Public License 3"

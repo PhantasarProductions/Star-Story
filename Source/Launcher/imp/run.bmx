@@ -4,7 +4,7 @@ Rem
 	
 	
 	
-	(c) Jeroen P. Broks, 2015, All rights reserved
+	(c) Jeroen P. Broks, 2015, 2016, All rights reserved
 	
 		This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -20,11 +20,13 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.11.19
+Version: 16.01.30
 End Rem
 Strict
 'Import "framework.bmx"
 Import "LoadGame.bmx"
+
+
 
 Global crashf$ = Dirry("$AppSupport$/StarStoryLauncherCrash")
 JCR6CrashError = True

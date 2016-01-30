@@ -4,7 +4,7 @@ Rem
 	
 	
 	
-	(c) Jeroen P. Broks, 2015, All rights reserved
+	(c) Jeroen P. Broks, 2015, 2016, All rights reserved
 	
 		This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.12.22
+Version: 16.01.30
 End Rem
 Strict
 Import "framework.bmx"
@@ -28,7 +28,7 @@ Import tricky_units.Dirry
 Import tricky_units.Bye
 
 
-MKL_Version "LAURA II - NewGame.bmx","15.12.22"
+MKL_Version "LAURA II - NewGame.bmx","16.01.30"
 MKL_Lic     "LAURA II - NewGame.bmx","GNU General Public License 3"
 
 JCR6CrashError = True
@@ -51,6 +51,9 @@ Type TNewGamePanel Extends tfpanelbase
 	Field GameJoltUserName:TGadget
 	Field GameJoltToken:TGadget
 	Field Skill:TGadget
+	Field Windowed:TGadget
+	Field SkipGameJolt:TGadget
+	Field YesNo$[] = ["No","Yes"]
 
 	Method Build()
 	CreateLabel "Start: ",0,0,300,25,panel
@@ -84,11 +87,15 @@ Type TNewGamePanel Extends tfpanelbase
 	AddGadgetItem skill,"Casual Gamer"
 	AddGadgetItem skill,"No Life Gamer"  
 	SelectGadgetItem skill,1
-	CreateLabel "GameJolt Login. If you don't have a GameJolt account, simply leave the fields below blank",0,275,400,50,Panel
-	CreateLabel "UserName:",0,325,300,25,Panel
-	CreateLabel "Token:",0,350,300,25,Panel
-	GameJoltUserName = CreateTextField(300,325,300,25,Panel)
-	GameJoltToken = CreateTextField(300,350,300,25,panel,textfield_password)
+	CreateLabel "Start up flags:",0,275,300,25,Panel
+	windowed = CreateButton("Windowed",300,275,300,25,Panel,Button_CheckBox)
+	SkipGameJolt = CreateButton("Skip GameJolt",300,300,300,25,Panel,Button_CheckBox)
+	
+	CreateLabel "GameJolt Login. If you don't have a GameJolt account, simply leave the fields below blank",0,375,400,50,Panel
+	CreateLabel "UserName:",0,425,300,25,Panel
+	CreateLabel "Token:",0,450,300,25,Panel
+	GameJoltUserName = CreateTextField(300,425,300,25,Panel)
+	GameJoltToken = CreateTextField(300,450,300,25,panel,textfield_password)
 	Gamejoltusername.setenabled JCR_Exists(JCR,"Authenticate/GameJolt")
 	gamejolttoken.setenabled JCR_Exists(JCR,"Authenticate/GameJolt")
 	made = True
@@ -107,6 +114,7 @@ Type TNewGamePanel Extends tfpanelbase
 	If Not made build
 	startgame.setenabled SelectedGadgetItem(languages)>=0 And TextFieldText(yourname) And ((Not TextFieldText(GameJoltUserName)) Or (TextFieldText(GameJoltUserName) And TextFieldText(GameJoltToken))) And SelectedGadgetItem(Skill)>=0
 	GameJoltToken.setenabled Trim(TextFieldText(GameJoltUserName))<>""
+	SkipGameJolt.setenabled  Trim(TextFieldText(GameJoltUserName))<>"" And Trim(TextFieldText(GameJoltToken))<>""
 	If EID=event_gadgetaction And ESource = StartGame DoStartNewGame
 	End Method
 
@@ -144,6 +152,14 @@ Type TNewGamePanel Extends tfpanelbase
 	WriteLine Bt,"Var:CodeName=StarStory"
 	WriteLine bt,"Var:Language="+GadgetItemText(languages,SelectedGadgetItem(languages))
 	WriteLine bt,"Var:Skill="+Int(SelectedGadgetItem(skill)+1)
+	If ButtonState(SkipGameJolt)
+	   Select Proceed("WARNING!~n~nAs you can only enter your user name and password now and not when loading a game, skipping a GameJolt login now can result in never being able to login to GameJolt with this playthrough if you made a typo in your username or token.~n~nPlease make sure you entered them correctly!~n~n(And I said TOKEN!!! Not PASSWORD!!!)~n~n(Yes = Start with no login, No = Start with login, Cancel = Don't start!)")
+		Case  1 WriteLine bt,"Var:IgnoreGameJolt=Yes"  '+YesNo[ButtonState(IgnoreGameJolt) And (Not Sync)]
+		Case  0 Notify "Then I shall just login now!"
+		Case -1 Return
+		End Select
+	   EndIf
+	If ButtonState(Windowed) WriteLine BT,"Var:Windowed=Yes"
 	If TextFieldText(GameJoltUserName)
 		WriteLine bt,"Var:GameJoltUser="+TextFieldText(GameJoltUserName)
 		WriteLine bt,"Var:GameJoltToken="+TextFieldText(GameJoltToken)
