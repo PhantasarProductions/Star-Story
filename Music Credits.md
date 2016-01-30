@@ -11,6 +11,8 @@ I'd like to thank the next music artists for their brilliant work, and licensing
    1. Tense Battle 3
    1. Desert Battle
    1. Megaboss
+1. Brian Boyko
+   1. Born Barnstomers
 1. Eric Matyas
    1. Urban Sci Fi Heroes
 1. Fake Music Generator

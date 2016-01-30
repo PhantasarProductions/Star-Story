@@ -132,4 +132,7 @@ return {
                    Artist = "SJ Mellia"},
      ["Exit the Premises"] = {
                    File = "Music/SpecialBoss/Exit the Premises.ogg",
-                   Artist = "Kevin McLeod"}}
+                   Artist = "Kevin McLeod"},
+     ["Born Barnstomers"] = {
+                   File = "Music/original4alias/Born Barnstomers.ogg",
+                   Artist = "Brian Boyko"}}
