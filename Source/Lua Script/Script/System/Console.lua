@@ -324,7 +324,8 @@ for obj in KthuraEach() do
 end     
 
 function FOELIST()
-MS.RUN("FIELD","FoeList")
+-- MS.RUN("FIELD","FoeList")
+MS.Run("FIELD","FoeOverview")
 end
 
 function LISTFOES() 

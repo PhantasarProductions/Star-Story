@@ -560,9 +560,37 @@ function FoeReturning(foe)
 local enemy  = Actors.Actor(foe.Tag)
 if foe.Returning or Distance(enemy.X,enemy.Y,foe.OriPos.X,foe.OriPos.Y)>=(foe.maxchaseradius or 400) then   
    Actors.Walkto(foe.Tag,foe.OriPos.X,foe.OriPos.Y)
-   foe.Returning=foe.Walking==1
+   foe.Returning=foe.Moving==1 or Distance(enemy.X,enemy.Y,foe.OriPos.X,foe.OriPos.Y)>=(foe.maxchaseradius or 400)
    end
 return foe.Returning   
+end
+
+function FoeOverview()
+local player = Actors.Actor(cplayer)
+local enemy
+for tag,foe in spairs(FieldFoes) do
+    Console.Write("-"..tag,255,0,0)    
+    for field,value in spairs(foe) do
+        if type(value)== 'table' then
+           for subkey,subvalue in spairs(value) do
+               if type(subvalue)=='table' then
+                  CSay("  "..serialize(field.."."..subkey,subvalue))
+                  else 
+                  CSay("  "..field.."."..subkey.." = "..subvalue)
+                  end
+               end
+           else
+           CSay("  "..field.." = "..sval(value))
+           end
+        end
+    if Maps.Multi()==0 or foe.Layer==Maps.LayerMapCode then
+       enemy = Actors.Actor(foe.Tag)
+       Console.Write("Coordinates: ("..enemy.X..","..enemy.Y..")",180,255,0) 
+       Console.Write("Distance with player: "..Distance(enemy.X,enemy.Y,player.X,player.Y),0,180,255)
+       Console.Write("Distance with orispot: "..Distance(enemy.X,enemy.Y,foe.OriPos.X,foe.OriPos.Y),0,180,255) 
+       end    
+    CSay('')   
+    end
 end
 
 function GetEncTracks()
@@ -625,13 +653,15 @@ function ControlFoes()
 local foe
 local player = Actors.Actor(cplayer)
 local maxdistance
+local obj
 if not FieldFoes then return end
-for obj in KthuraEach("Actor") do
+-- for obj in KthuraEach("Actor") do
+    for maintag,foe in pairs(FieldFoes) do -- if Maps.Multi()==0 or foe.Layer==Maps.LayerCodeName then -- I hope this makes fields were a lot of objects/actors are will run faster!
     maxdistance=16 -- When the player comes within this distance, let's kill him/her :)    
-    foe = FieldFoes[replace(obj.Tag," FoeActor","")]
+    obj = Actors.Actor(foe.Tag) -- foe = FieldFoes[replace(obj.Tag," FoeActor","")] -- Needed due to the optimization
     -- CSay("We got a foe on  : "..obj.Tag.." >> "..sval(foe~=nil))
     -- CSay("We got suffix on : "..obj.Tag.." >> "..sval(suffixed(obj.Tag,"FoeActor")))
-    if foe and obj.Visible>0 and suffixed(obj.Tag,"FoeActor")  and (Maps.Multi()==0 or Maps.LayerCodeName==foe.Layer) then
+    if foe and (Maps.Multi()==0 or foe.Layer==	Maps.LayerCodeName) and obj.Visible>0 and suffixed(obj.Tag,"FoeActor")  and (Maps.Multi()==0 or Maps.LayerCodeName==foe.Layer) then
        (({   -- Switch
           HZ = function ()  -- Horizontaal
                if FoeReturning(foe) then
@@ -669,7 +699,7 @@ for obj in KthuraEach("Actor") do
           return -- An encounter has begun, so this way, we can make sure a second one won't start
           end
        end
-    end
+    end -- end
 end
 
 function PlaceTreasures()
