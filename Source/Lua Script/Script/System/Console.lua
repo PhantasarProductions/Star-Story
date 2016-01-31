@@ -1,7 +1,7 @@
 --[[
   Console.lua
-  Version: 15.11.03
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.01.31
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -512,4 +512,8 @@ function FOXYALL()
 Toggle("&CHEAT.FOXYALL")
 CSay("FOXYALL is now "..Var.C('&CHEAT.FOXYALL'))
 if CVV('&CHEAT.FOXYALL') then CSay("Perform one move with Foxy in battle and very likely all her moves will end up in her learning list") end
+end
+
+function LOOKBUTDONTTOUCH()
+MS.Run("FIELD","ToggleLookButDontTouch")
 end

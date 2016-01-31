@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 16.01.29
+  Version: 16.01.31
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -67,6 +67,12 @@ IconFunction =
           LAURA.Flow("QUIT") 
           end
 }
+
+function ToggleLookButDontTouch()
+LookButDontTouch = not LookButDontTouch
+CSay("Look but don't touch mode is "..({[false]='Off',[true]='On'})[LookButDontTouch])
+end
+
 
 
 function SetScrollBoundaries(xmin,ymin,xmax,ymax)
@@ -445,24 +451,28 @@ for lay in each(layers[Maps.Multi()]) do
 					G = 255
 					B = 0
 					foe.radius = 50
+					foe.maxchaseradius = 100 * skill
 					CSay("  = Too Easy")
 				elseif diflevel<=0 then
 					R = 180
 					G = 255
 					B = 0
 					foe.radius = 150
+					foe.maxchaseradius = 150 * skill
 					CSay("  = Easy")
 				elseif diflevel<10 then
 					R = 255
 					G = 180
 					B = 0
 					foe.radius = 300
+					foe.maxchaseradius = 250 * skill
 					CSay("  = Hard")
 				else
 					R = 255
 					G = 0
 					B = 0
 					foe.radius = 600
+					foe.maxchaseradius = 400 * skill
 					CSay("  = Too Hard")
 				end   
 				CWrite("  = Adjusting color of object "..Maps.Obj.MyObject.Tag.."  to ("..R..","..G..","..B..")",R,G,B)   
@@ -545,6 +555,16 @@ local enemy  = Actors.Actor(foe.Tag)
 return Distance(player.X,player.Y,enemy.X,enemy.Y)<=foe.radius
 end
 
+function FoeReturning(foe)
+-- local player = Actors.Actor(cplayer)
+local enemy  = Actors.Actor(foe.Tag)
+if foe.Returning or Distance(enemy.X,enemy.Y,foe.OriPos.X,foe.OriPos.Y)>=(foe.maxchaseradius or 400) then   
+   Actors.Walkto(foe.Tag,foe.OriPos.X,foe.OriPos.Y)
+   foe.Returning=foe.Walking==1
+   end
+return foe.Returning   
+end
+
 function GetEncTracks()
 local f
 local ret = {}
@@ -614,7 +634,8 @@ for obj in KthuraEach("Actor") do
     if foe and obj.Visible>0 and suffixed(obj.Tag,"FoeActor")  and (Maps.Multi()==0 or Maps.LayerCodeName==foe.Layer) then
        (({   -- Switch
           HZ = function ()  -- Horizontaal
-               if FoeActive(foe) then 
+               if FoeReturning(foe) then
+               elseif FoeActive(foe) then 
                  FoeChase(foe)
                else
                  if foe.GoEast then Actors.MoveTo(obj.Tag,obj.X+10,obj.Y) else Actors.MoveTo(obj.Tag,obj.X-10,obj.Y) end
@@ -622,7 +643,8 @@ for obj in KthuraEach("Actor") do
                  end 
                end,
           VT = function () -- Verticaal
-               if FoeActive(foe) then 
+               if FoeReturning(foe) then
+               elseif FoeActive(foe) then 
                  FoeChase(foe)
                else
                  if foe.GoSouth then Actors.MoveTo(obj.Tag,obj.X,obj.Y+10) else Actors.MoveTo(obj.Tag,obj.X,obj.Y-10) end
@@ -630,7 +652,8 @@ for obj in KthuraEach("Actor") do
                  end 
                end,     
           SS = function() -- Sta Stil!     
-               if FoeActive(foe) then 
+               if FoeReturning(foe) then
+               elseif FoeActive(foe) then 
                  FoeChase(foe)
                  end 
                end,
@@ -640,7 +663,7 @@ for obj in KthuraEach("Actor") do
                  maxdistance = 32 -- Bosses are bigger, so a bigger range to start the battle!
                  end        
        })[foe.Go] or function() Sys.Error("Unknown go code for foe #"..obj.IdNum,"Tag,"..obj.Tag..";Go,"..foe.Go) end)()        
-       if Distance(player.X,player.Y,obj.X,obj.Y)<=maxdistance then  
+       if Distance(player.X,player.Y,obj.X,obj.Y)<=maxdistance and (not LookButDontTouch) then  
           CSay("Start encounter: "..obj.Tag)    
           StartEncounter(foe)
           return -- An encounter has begun, so this way, we can make sure a second one won't start
