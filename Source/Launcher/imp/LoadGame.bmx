@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 16.01.27
+Version: 16.02.01
 End Rem
 Strict
 
@@ -30,7 +30,7 @@ Import tricky_units.advdatetime
 Import tricky_units.Bye
 Import "Framework.bmx"
 
-MKL_Version "LAURA II - LoadGame.bmx","16.01.27"
+MKL_Version "LAURA II - LoadGame.bmx","16.02.01"
 MKL_Lic     "LAURA II - LoadGame.bmx","GNU General Public License 3"
 
 
@@ -153,7 +153,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	syscommand = "open ~q"+lini.c("Mac")+"~q"
 	?Win32
 	platform = "Windows"
-	syscommand = "~q"+lini.c("Windows")="~q"
+	syscommand = "~q"+lini.c("Windows")+"~q"
 	?Linux
 	platform = "Linux"
 	syscommand = "~q"+lini.c("Linux")+"~q"
@@ -185,6 +185,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	HideGadget window
 	?
 	Print "Executing: "+syscommand
+	Notify "Executing: "+syscommand
 	system_ syscommand
 	?Not MacOS
 	Refresh User,cfile
