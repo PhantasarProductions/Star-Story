@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.01.15
+version: 16.02.01
 ]]
 -- @IF IGNORE
 VicCheck = {}
@@ -63,9 +63,11 @@ for ak=1,3 do
     plus = 1
     if ft=="Hero" and rand(0,(skill*skill)+2)==1 then plus = plus + 1 end
     ch = FighterTag("Hero",ak)
-    plus = plus + math.floor(RPGChar.Stat(ch,"Level")/lv) 
-    if plus>maxp then plus=maxp end
-    UpPoint(ak,plus) 
+    if ch and ch~="" then
+        plus = plus + math.floor(RPGChar.Stat(ch,"Level")/lv) 
+        if plus>maxp then plus=maxp end        
+        UpPoint(ak,plus)
+        end 
     end    
 end
 

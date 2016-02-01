@@ -185,7 +185,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	HideGadget window
 	?
 	Print "Executing: "+syscommand
-	Notify "Executing: "+syscommand
+	'Notify "Executing: "+syscommand
 	system_ syscommand
 	?Not MacOS
 	Refresh User,cfile
