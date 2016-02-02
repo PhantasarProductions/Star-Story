@@ -1,8 +1,8 @@
 --[[
-  Music.lua
-  
+  UseMusic.lua
+  Music for LAURA II projects
   version: 16.02.02
-  Copyright (C) 2015, 2016 Jeroen P. Broks
+  Copyright (C) 2016 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
   arising from the use of this software.
@@ -18,12 +18,14 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 
+if musicavailable==nil then musicavailable=false end
 
 ({
 
-   [ false ] = function() Music = function(s) end; PushMusic = function() end; PullMusic = function() end; PlayMusic=function() end; DestroyPushedMuisc = function() end end,
+   [ false ] = function() Music = function(s) end; PushMusic = function() end; PullMusic = function() end; PlayMusic=function() end; DestroyPushedMuisc = function() Console.Write("No music functionality present",255,0,0) end end,
    [ true ] = function()
    
+       Console.Write("Adding music functionality",180,255,0)
    
        function Music(song)
        MS.LoadNew("MUSIC","Script/SubRoutines/TrueMusic.lua")
@@ -62,5 +64,5 @@
        
        end
        
-})[musicavailable or false]()  
+})[musicavailable]()  
 
