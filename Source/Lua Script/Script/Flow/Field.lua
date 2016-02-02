@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 16.01.31
+  Version: 16.02.02
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -558,6 +558,7 @@ end
 function FoeReturning(foe)
 -- local player = Actors.Actor(cplayer)
 local enemy  = Actors.Actor(foe.Tag)
+if Maps.Multi()==1 and foe.Layer~=Maps.LayerCodeName then return end
 if foe.Returning or Distance(enemy.X,enemy.Y,foe.OriPos.X,foe.OriPos.Y)>=(foe.maxchaseradius or 400) then   
    Actors.Walkto(foe.Tag,foe.OriPos.X,foe.OriPos.Y)
    foe.Returning=foe.Moving==1 or Distance(enemy.X,enemy.Y,foe.OriPos.X,foe.OriPos.Y)>=(foe.maxchaseradius or 400)
