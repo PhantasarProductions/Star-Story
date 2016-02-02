@@ -1,7 +1,7 @@
 --[[
   SaveGame.lua
-  Version: 15.10.05
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.02.02
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -139,7 +139,7 @@ if allowdown then
    end   
 -- The button clicks
 if mx<100 and mousehit(1) then
-   if my>200 and my<250 then return PerformSave() end
+   if my>200 and my<250 and Str.Trim(SaveName)~="" then return PerformSave() end
    if my>250 and my<300 then return PerformCancel() end
    end
 -- Mouse
