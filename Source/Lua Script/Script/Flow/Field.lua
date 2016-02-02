@@ -659,10 +659,10 @@ if not FieldFoes then return end
 -- for obj in KthuraEach("Actor") do
     for maintag,foe in pairs(FieldFoes) do -- if Maps.Multi()==0 or foe.Layer==Maps.LayerCodeName then -- I hope this makes fields were a lot of objects/actors are will run faster!
     maxdistance=16 -- When the player comes within this distance, let's kill him/her :)    
-    obj = Actors.Actor(foe.Tag) -- foe = FieldFoes[replace(obj.Tag," FoeActor","")] -- Needed due to the optimization
+    if Maps.Multi()==0 or Maps.LayerCodeName==foe.Layer then obj = Actors.Actor(foe.Tag) else obj = nil end -- foe = FieldFoes[replace(obj.Tag," FoeActor","")] -- Needed due to the optimization
     -- CSay("We got a foe on  : "..obj.Tag.." >> "..sval(foe~=nil))
     -- CSay("We got suffix on : "..obj.Tag.." >> "..sval(suffixed(obj.Tag,"FoeActor")))
-    if foe and (Maps.Multi()==0 or foe.Layer==	Maps.LayerCodeName) and obj.Visible>0 and suffixed(obj.Tag,"FoeActor")  and (Maps.Multi()==0 or Maps.LayerCodeName==foe.Layer) then
+    if foe and (Maps.Multi()==0 or foe.Layer==	Maps.LayerCodeName) and obj.Visible>0 and suffixed(obj.Tag,"FoeActor")   then
        (({   -- Switch
           HZ = function ()  -- Horizontaal
                if FoeReturning(foe) then
