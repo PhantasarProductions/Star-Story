@@ -2,7 +2,7 @@
 **********************************************
   
   Excalibur_Home.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.01
+version: 16.02.04
 ]]
 
 function CLICK_ARRIVAL_Vlag_Brabant()
@@ -198,11 +198,11 @@ for i,ED in ipairs(EXD) do
     elseif EXDto[i].rs<0 then EXDto[i].rs=EXDto[i].rs+(rand(1,4)*.1) if EXDto[i].rs>0 then EXDto[i].rs=0 end end
     ok = ok and EXDto[i].rs==0
     end
-Maps.Obj.Seal("ExD1")
-Maps.Obj.Seal("ExD2")    
 DrawScreen()
 Flip()
 until ok  
+Maps.Obj.Seal("ExD1")
+Maps.Obj.Seal("ExD2")    
 TurnPlayer("South")
 MapText("EXHURU_BREAK")
 Actors.MoveToSpot("ExHuRU","Crystal",1)
