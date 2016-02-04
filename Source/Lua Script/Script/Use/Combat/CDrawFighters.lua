@@ -38,7 +38,7 @@ DrawFighter = {}
 CoordsFighter = {}
 
 function CoordsFighter.Hero(idx)
-if not idx then return 0,0 end
+if (not idx) or type(idx)~='number' then return 0,0 end
 local x = (idx* 50)+600
 local y = (idx*100)+150
 return x,y
