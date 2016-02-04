@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  BestiaryData.lua
+  HawkBridge.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -32,24 +32,22 @@
   
  **********************************************
  
-version: 16.02.04
+version: 16.01.29
 ]]
-return {
-	"BIGGRASSTIGER",
-	"BRAINDROID",
-	"FLIRMOUSE_KING",
-	"FLIRMOUSE_SUBJECT",
-	"SUPAQUAL",
-	"SUPERSYSS",
-	"ASTRILOPUP",
-	"BATTLEDROID",
-	"CYBORG CAPTAIN",
-	"CYBORG GUNNER",
-	"CYBORG MEDIC",
-	"FLIRMOUSE",
-	"GRASSTIGER",
-	"GUMMI",
-	"QUAL",
-	"RAT",
-	"SYSS",
+HawkBridge = {
+
+    AfterYsperon = function()
+                   -- Scenario
+                   MapText("GODDESS")
+                   -- Beam down to Vulpina
+                   Sys.Error("Vulpina not ready yet!")
+                   -- Block Ysperon
+                   BlockWorld("Ysperon")
+                   CSay("Ysperon Blocked")                   
+                   end
+
+
 }
+
+
+HawkBridge.AfterFacility = HawkBridge.AfterYsperon -- Leftover from an old bug.

@@ -35,7 +35,6 @@
 1. Script/Init/Start.lua
 1. Script/Init/Synchronize.lua
 1. Script/JINC/Big/Achievements.lua
-1. Script/JINC/Big/BestiaryData.lua
 1. Script/JINC/Big/JukeboxData.lua
 1. Script/JINC/Demo/Maps.lua
 1. Script/JINC/Foes/Boss/BigGrassTiger.lua
@@ -280,7 +279,52 @@
 1. Script/Use/Maps/Hawk_Terminal/Jukebox.lua
 1. Script/Use/Menu/LearnSpellMessages.lua
 
+## Full Release
 
+1. Script/Flow/Bestiary.lsv
+1. Script/Flow/Bestiary.lua
+1. Script/JINC/Big/BestiaryData.lua
+1. Script/JINC/Foes/Boss/AstrilopupElite.lua
+1. Script/JINC/Foes/Boss/BigLion.lua
+1. Script/JINC/Foes/Boss/Cyborg Lord.lua
+1. Script/JINC/Foes/Boss/DardBoorth.lua
+1. Script/JINC/Foes/Boss/DardMoeder.lua
+1. Script/JINC/Foes/Boss/QueenMyr.lua
+1. Script/JINC/Foes/Reg/AstrilopupGuard.lua
+1. Script/JINC/Foes/Reg/BlackLizard.lua
+1. Script/JINC/Foes/Reg/Bladeh.lua
+1. Script/JINC/Foes/Reg/Cid.lua
+1. Script/JINC/Foes/Reg/Flysky.lua
+1. Script/JINC/Foes/Reg/Insetto.lua
+1. Script/JINC/Foes/Reg/Lion.lua
+1. Script/JINC/Foes/Reg/Myr.lua
+1. Script/JINC/NewGame+/PreserveVar.lua
+1. Script/Maps/Physillium - Black Castle.lua
+1. Script/Maps/Physillium - Ji Rubble.lua
+1. Script/Maps/Physillium - Ji Temple.lua
+1. Script/Maps/Physillium - The Ruins of the Y Anhysbys.lsv
+1. Script/Maps/Physillium - The Ruins of the Y Anhysbys.lua
+1. Script/Maps/Vulpina - Town.lua
+1. Script/Maps/Ysperon - Eugorvnia.lua
+1. Script/Maps/Ysperon - Facility.lua
+1. Script/MiniGame/AutoUse.lua
+1. Script/MiniGame/MemoryAnhysbys.lua
+1. Script/Use/Anyway/Full.lua
+1. Script/Use/Anyway/ReLevel.lua
+1. Script/Use/Combat/AblSpecialEffect/HPAPto1.lua
+1. Script/Use/Combat/AblSpecialEffect/Summon.lua
+1. Script/Use/Combat/StatusChanges/Confusion.lua
+1. Script/Use/Combat/StatusChanges/IDDQD.lua
+1. Script/Use/Maps/Gen/Next.lua
+1. Script/Use/Maps/Gen/SchuifNext.lua
+1. Script/Use/Maps/Gen/SchuifNextReal.lua
+1. Script/Use/Maps/Gen/Sudoku.lua
+1. Script/Use/Maps/Hawk/ArrivalPhysillium.lua
+1. Script/Use/Maps/Hawk/AutoNewNav.lua
+1. Script/Use/Maps/Hawk/HawkBridge.lua
+1. Script/Use/Maps/Hawk/Teach Wendicka.lua
+1. Script/Use/Maps/Hawk_Terminal/Bestiary.lua
+1. Script/Use/Sub/Party/XenobiSpells.lua
 
 
 
@@ -308,4 +352,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Thu 04 February 2016; 11:59:56 CET
+### Last updated: Thu 04 February 2016; 13:08:53 CET

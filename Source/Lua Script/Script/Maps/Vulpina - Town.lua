@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  BestiaryData.lua
+  Vulpina - Town.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -32,24 +32,8 @@
   
  **********************************************
  
-version: 16.02.04
+version: 16.01.30
 ]]
-return {
-	"BIGGRASSTIGER",
-	"BRAINDROID",
-	"FLIRMOUSE_KING",
-	"FLIRMOUSE_SUBJECT",
-	"SUPAQUAL",
-	"SUPERSYSS",
-	"ASTRILOPUP",
-	"BATTLEDROID",
-	"CYBORG CAPTAIN",
-	"CYBORG GUNNER",
-	"CYBORG MEDIC",
-	"FLIRMOUSE",
-	"GRASSTIGER",
-	"GUMMI",
-	"QUAL",
-	"RAT",
-	"SYSS",
-}
+function GALE_OnLoad()
+Music('Town/Vulpina.ogg')
+end

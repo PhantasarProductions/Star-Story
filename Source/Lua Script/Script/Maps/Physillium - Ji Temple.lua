@@ -1,8 +1,8 @@
 --[[
 **********************************************
   
-  BestiaryData.lua
-  (c) Jeroen Broks, 2016, All Rights Reserved.
+  Physillium - Ji Temple.lua
+  (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,24 +32,18 @@
   
  **********************************************
  
-version: 16.02.04
+version: 15.11.29
 ]]
-return {
-	"BIGGRASSTIGER",
-	"BRAINDROID",
-	"FLIRMOUSE_KING",
-	"FLIRMOUSE_SUBJECT",
-	"SUPAQUAL",
-	"SUPERSYSS",
-	"ASTRILOPUP",
-	"BATTLEDROID",
-	"CYBORG CAPTAIN",
-	"CYBORG GUNNER",
-	"CYBORG MEDIC",
-	"FLIRMOUSE",
-	"GRASSTIGER",
-	"GUMMI",
-	"QUAL",
-	"RAT",
-	"SYSS",
-}
+
+function NPC_IRVONA()
+MapText("IRVONA")
+if not Done("&REVEALED.BLACKCASTLE") then
+   ActivateRemotePad('Start','Physillium - Black Castle','Physillium','Black Castle - Entrance Hall',"#001")
+   CSay("Transporter pad for Black Castle Revealed")
+   end
+end   
+
+function GALE_OnLoad()
+Music("Ji/The_Loneliness")
+SetScrollBoundaries(0,0,0,80)
+end

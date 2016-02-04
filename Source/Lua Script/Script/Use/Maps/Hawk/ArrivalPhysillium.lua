@@ -1,8 +1,8 @@
 --[[
 **********************************************
   
-  BestiaryData.lua
-  (c) Jeroen Broks, 2016, All Rights Reserved.
+  ArrivalPhysillium.lua
+  (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,24 +32,22 @@
   
  **********************************************
  
-version: 16.02.04
+version: 15.11.16
 ]]
-return {
-	"BIGGRASSTIGER",
-	"BRAINDROID",
-	"FLIRMOUSE_KING",
-	"FLIRMOUSE_SUBJECT",
-	"SUPAQUAL",
-	"SUPERSYSS",
-	"ASTRILOPUP",
-	"BATTLEDROID",
-	"CYBORG CAPTAIN",
-	"CYBORG GUNNER",
-	"CYBORG MEDIC",
-	"FLIRMOUSE",
-	"GRASSTIGER",
-	"GUMMI",
-	"QUAL",
-	"RAT",
-	"SYSS",
-}
+function ArrivalPhysillium()
+Maps.CamX = 32
+Maps.CamY = -64
+MapText("ARRIVAL_PHYSILLIUM_A")
+Actors.WalkToSpot("PLAYER","Scotty")
+MapText("ARRIVAL_PHYSILLIUM_B")
+Party("Crystal","ExHuRU","Yirl","Foxy")
+SetActive("Crystal")
+LoadMap("Physillium - The Ruins of the Y Anhysbys","#000")
+SpawnPlayer("Start")
+Actors.Spawn("Start_Reggie","GFX/Actors/Reggie/ReggieW.png","STREGGIE",1)
+PartyPop("Start")
+MapText("Welcome")
+KickReggie(({"West","East","North"})[rand(1,3)],'POP_Foxy','STREGGIE')
+PartyUnPop()
+Maps.Obj.Kill("STREGGIE")
+end
