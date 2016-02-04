@@ -2,7 +2,7 @@
 **********************************************
   
   Physillium - The Ruins of the Y Anhysbys.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.27
+version: 16.02.04
 ]]
 -- @USE /Script/Use/Maps/Gen/Schuif.lua
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -78,6 +78,7 @@ MapText("WENDICKA_REJOIN")
 PartyUnPop()
 RPGChar.SetParty(4,"Wendicka")
 ReLevel("Wendicka","Crystal")
+MS.Run("TRANS",'ActivatePad',"TRANSWENDICKA")
 MS.Run("TRANS","FixPadLayer","TRANSWENDICKA")
 Maps.Obj.Kill("Wendicka",1)
 Var.D("$HAWK","ANHYSBYS.REJOIN")
