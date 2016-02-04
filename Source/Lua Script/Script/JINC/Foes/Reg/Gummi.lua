@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.01.04
+version: 16.02.04
 ]]
 
 
--- Version 16.01.04
+-- Version 16.02.04
 
 
 
@@ -88,7 +88,6 @@ local temp
 
 
 Data.ActMinLevel["Sys.Attack"] = 0		for ak=1,1 do table.insert(Data.Acts,"Sys.Attack") end
-Data.ActMinLevel["Abl.ABL_EXHURU_BATTLECRY"] = 0		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_EXHURU_BATTLECRY") end
 temp = { ITM='ITM_ADHBANDAGE', LVL=1, VLT=false }
 for ak=1,1 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_ANTIDOTE', LVL=2, VLT=false }

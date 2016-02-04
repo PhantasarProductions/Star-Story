@@ -1,7 +1,7 @@
 --[[
   CDrawFighters.lua
-  Version: 15.11.05
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.02.04
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -38,6 +38,7 @@ DrawFighter = {}
 CoordsFighter = {}
 
 function CoordsFighter.Hero(idx)
+if not idx then return 0,0
 local x = (idx* 50)+600
 local y = (idx*100)+150
 return x,y

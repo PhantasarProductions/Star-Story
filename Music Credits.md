@@ -47,6 +47,8 @@ I'd like to thank the next music artists for their brilliant work, and licensing
    1. Prisoner of War
    1. Calm Indoors
    1. Panic Stations
+1. Your Marginally Talented Photographer Girlfriend
+   1. Emily Rose (a duet with Jennifer Carpenter)
 
 
 

@@ -1,6 +1,6 @@
 --[[
   BigLion.lua
-  Version: 16.01.11
+  Version: 16.02.04
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.01.11
+-- Version 16.02.04
 
 
 
@@ -91,7 +91,6 @@ Data.ActMinLevel["Abl.ABL_EXHURU_KAKSI"] = 20		for ak=1,80 do table.insert(Data.
 Data.ActMinLevel["Abl.ABL_EXHURU_KOLME"] = 30		for ak=1,70 do table.insert(Data.Acts,"Abl.ABL_EXHURU_KOLME") end
 Data.ActMinLevel["Abl.ABL_EXHURU_KUUSI"] = 50		for ak=1,50 do table.insert(Data.Acts,"Abl.ABL_EXHURU_KUUSI") end
 Data.ActMinLevel["Abl.ABL_EXHURU_NELJA"] = 40		for ak=1,60 do table.insert(Data.Acts,"Abl.ABL_EXHURU_NELJA") end
-Data.ActMinLevel["Abl.ABL_EXHURU_STOMP"] = 10		for ak=1,90 do table.insert(Data.Acts,"Abl.ABL_EXHURU_STOMP") end
 Data.ActMinLevel["Abl.ABL_FOE_SCRATCH"] = 60		for ak=1,40 do table.insert(Data.Acts,"Abl.ABL_FOE_SCRATCH") end
 temp = { ITM='ITM_ADHBANDAGE', LVL=1, VLT=false }
 for ak=1,100 do table.insert(Data.ItemDrop ,temp) end

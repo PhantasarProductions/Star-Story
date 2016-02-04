@@ -1,6 +1,6 @@
 --[[
   Transporter.lua
-  Version: 16.01.29
+  Version: 16.02.04
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -60,6 +60,7 @@ function FixPadLayer(tag,layer) -- to fix a bug that came up with the pad in Y A
 local obj = Maps.Obj.Obj("Trans.Spot."..tag)
 local pad = Maps.Obj.Obj("Trans.Pad." ..tag)
 local node = upper(Maps.CodeName.."."..tag)
+-- ActivatePad(tag)
 Transporters.Nodes[node].Layer = layer or Maps.LayerCodeName
 end
 

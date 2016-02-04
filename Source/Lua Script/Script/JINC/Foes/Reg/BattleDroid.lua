@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.01.04
+version: 16.02.04
 ]]
 
 
--- Version 16.01.04
+-- Version 16.02.04
 
 
 
@@ -88,7 +88,7 @@ local temp
 
 
 Data.ActMinLevel["Sys.Attack"] = 1		for ak=1,5 do table.insert(Data.Acts,"Sys.Attack") end
-Data.ActMinLevel["Abl.ABL_EXHURU_BATTLECRY"] = 0		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_EXHURU_BATTLECRY") end
+Data.ActMinLevel["Abl.ABL_EXHURU_BATTLECRY"] = 100		for ak=1,20 do table.insert(Data.Acts,"Abl.ABL_EXHURU_BATTLECRY") end
 Data.ActMinLevel["Abl.ABL_EXHURU_KAKSI"] = 10		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_EXHURU_KAKSI") end
 Data.ActMinLevel["Abl.ABL_EXHURU_KOLME"] = 15		for ak=1,30 do table.insert(Data.Acts,"Abl.ABL_EXHURU_KOLME") end
 Data.ActMinLevel["Abl.ABL_EXHURU_KUUSI"] = 30		for ak=1,60 do table.insert(Data.Acts,"Abl.ABL_EXHURU_KUUSI") end
