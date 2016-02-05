@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 16.02.01
+Version: 16.02.05
 End Rem
 Strict
 
@@ -30,7 +30,7 @@ Import tricky_units.advdatetime
 Import tricky_units.Bye
 Import "Framework.bmx"
 
-MKL_Version "LAURA II - LoadGame.bmx","16.02.01"
+MKL_Version "LAURA II - LoadGame.bmx","16.02.05"
 MKL_Lic     "LAURA II - LoadGame.bmx","GNU General Public License 3"
 
 
@@ -246,7 +246,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	'olduser = user
 	'oldfile = file	
 	'setcaption window,"Old Minute: "+OldMinute+"; True Minute: "+Minute() ' debug line
-	If oldminute<>Minute() Refresh user,cfile
+	' If oldminute<>Minute() Refresh user,cfile   ' No longer needed and only annoying
 	'SetGadgetText Window,cfile
 	End Method
 	

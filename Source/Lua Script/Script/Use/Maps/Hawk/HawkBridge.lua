@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.01.29
+version: 16.02.05
 ]]
 HawkBridge = {
 
@@ -40,7 +40,10 @@ HawkBridge = {
                    -- Scenario
                    MapText("GODDESS")
                    -- Beam down to Vulpina
-                   Sys.Error("Vulpina not ready yet!")
+                   --Sys.Error("Vulpina not ready yet!")
+                   LoadMap("Vulpina - Town")
+                   SpawnPlayer("TownStart")
+                   MapText("WELCOME")
                    -- Block Ysperon
                    BlockWorld("Ysperon")
                    CSay("Ysperon Blocked")                   
