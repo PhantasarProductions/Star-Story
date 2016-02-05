@@ -1,7 +1,7 @@
 --[[
   PartyLinker.lua
-  Version: 15.10.25
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.02.05
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -67,6 +67,14 @@ function MINI(...)
 MS.Run("PARTY","Mini",join(arg,";"))
 end
 Mini = Mini or MINI -- Now we got it covered in the console, and no conflicts with the "real" routine either.
+
+GetMiniSetting = GetMiniSetting or function()
+MS.Run("PARTY","GetMiniSetting")
+local ret = CVV("%RET")
+Var.Clear('%RET')
+return ret
+end
+
 
 function InParty(ch)
 for i=0,5 do 

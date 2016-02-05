@@ -206,6 +206,7 @@
 1. Script/SubRoutines/Flip.lua
 1. Script/SubRoutines/IO.lua
 1. Script/SubRoutines/Items and Abilities.lua
+1. Script/SubRoutines/Party.lsv
 1. Script/SubRoutines/Party.lua
 1. Script/SubRoutines/SFX.lua
 1. Script/SubRoutines/TrueMusic.lua
@@ -352,4 +353,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 05 February 2016; 00:33:03 CET
+### Last updated: Fri 05 February 2016; 13:03:48 CET

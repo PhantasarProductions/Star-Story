@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 16.02.02
+  Version: 16.02.05
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -43,11 +43,12 @@ activeplayer = activeplayer or RPGChar.PartyTag(0)
 scrolling = true
 scrollrange = {}
 
-Icons = {"Achievements","FullScreen","Quit"}
+Icons = {"Achievements","MiniMessages","Quit"}
 IconImg = {}
 IconMnX = 750 - (#Icons*40)
 IconBack = Image.Load("GFX/FieldIcons/Back.png") 
 IconClicked = nil
+MiniIcons = {}
 
 Scheduled = {}
 ScrollBoundaries = ScrollBoundaries or {}
@@ -61,7 +62,14 @@ IconFunction =
                   MS.LoadNew("ACH","Script/Flow/Achievements.lua") -- Only loads if it wasn't loaded before :)
                   LAURA.Flow("ACH") 
                   end,
-   FullScreen = LAURA.ToggleFullScreen,   
+   -- FullScreen = LAURA.ToggleFullScreen,  
+   MiniMessages = function()
+                  MS.Run('PARTY','IncMiniSetting')
+                  minisetting = GetMiniSetting()
+                  for ak,i in ipairs(Icons) do 
+                       if i=="MiniMessages" then IconImg[ak] = MiniIcons[minisetting] end
+                       end                  
+                  end, 
    Quit = function() 
           MS.LoadNew("QUIT","Script/Flow/Quit.lua")
           LAURA.Flow("QUIT") 
@@ -91,9 +99,12 @@ Image.Draw(IconBack,IconMnX,0)
 local ak,i
 local mx,my = MouseCoords()
 local x
+minisetting = minisetting or GetMiniSetting()
 Image.Color(0,180,255)
 IconClicked = nil
+for ak=0,2 do MiniIcons[ak] = MiniIcons[ak] or Image.Load("GFX/FieldIcons/Mini"..ak..".png") end 
 for ak,i in ipairs(Icons) do 
+    if i=="MiniMessages" then IconImg[ak] = MiniIcons[minisetting] end
     IconImg[ak] = IconImg[ak] or Image.Load("GFX/FieldIcons/"..i..".png")
     Image.HotCenter(IconImg[ak])
     x=IconMnX+(ak*40)+10

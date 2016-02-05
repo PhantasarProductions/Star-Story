@@ -1,7 +1,7 @@
 --[[
   Party.lua
-  Version: 15.11.24
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.02.05
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -45,6 +45,8 @@ needexp = {1750,5000,10000}
 
 XCharLvUp = {}
 XCharSyncLevel = {}
+
+minisetting = minisetting or 1
 
 function GrabLevel(ch,lv)
 local linenumber,line,l
@@ -169,9 +171,10 @@ end
 
 
 -- This has been put in the party routine, in order to make it operate fluently with the character screen
-function Mini(msg,r,g,b)
+function Mini(msg,r,g,b,force)
+if minisetting==0 and (not force) then return end
 SetFont("MiniMessage")
-local newm = {msg = msg or "?", r = Sys.Val(r or 255), g = Sys.Val(g or 255), b = Sys.Val(b or 255), y = 490, x = 810 + Image.TextWidth(msg), timer=1000 }
+local newm = {msg = msg or "?", r = Sys.Val(r or 255), g = Sys.Val(g or 255), b = Sys.Val(b or 255), y = 490, x = 810 + Image.TextWidth(msg), timer=500 }
 miniarray = miniarray or {}
 if #miniarray<50 then table.insert(miniarray,newm) end
 end
@@ -229,19 +232,35 @@ if not miniarray then return ShowGenData() end
 if #miniarray==0 then return ShowGenData() end
 local dimmer = 0.5 + (math.abs(math.sin(Time.MSecs()/500))/2)
 local i,v
+local cap,count = 3,0
 -- Show
 SetFont("MiniMessage")
 for i,v in ipairs(miniarray) do
     DarkText(v.msg,v.x,v.y,1,1,v.r*dimmer,v.g*dimmer,v.b*dimmer)
     if i<#miniarray and v.x<=790 and v.y>miniarray[i+1].y-15 then v.y=v.y-1 end
     if v.x>790 and (i==1 or miniarray[i-1].y<=v.y-15) then
-       v.x = v.x - 2
+       v.x = v.x - 3
        if v.x<790 then v.x=790 end
+       if minisetting==2 then v.x = 790 end
+       else
+       count = count + 1
        end
-    if v.x<=790 then v.timer = v.timer - 1 end            
+    if v.x<=790 then v.timer = v.timer - 1 end                   
     end
 -- Remove outdated first rank.
-if miniarray[1].timer<=0 or (miniarray[1].x<=790 and #miniarray>20) then table.remove(miniarray,1) end
+if count>cap then miniarray[1].timer = miniarray[1].timer - count end
+if miniarray[1].timer<=0 or (miniarray[1].x<=790 and #miniarray>10) then table.remove(miniarray,1) end
+end
+
+function GetMiniSetting()
+Var.D('%RET',minisetting)
+return minisetting
+end 
+
+function IncMiniSetting()
+minisetting = minisetting + 1
+if minisetting>2 then minisetting = 0 end
+Mini( ( { [0] = 'No Messages', [1] = 'Standard message flow', [2]='Instant message flow'})[minisetting],180,0,255,true)
 end
 
 function ShowCharacterPic(ch,pos)
