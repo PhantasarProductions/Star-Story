@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.05
+version: 16.02.06
 ]]
 HawkBridge = {
 
@@ -44,6 +44,8 @@ HawkBridge = {
                    LoadMap("Vulpina - Town")
                    SpawnPlayer("TownStart")
                    MapText("WELCOME")
+                   Party("Wendicka")
+                   SetActive("Wendicka")
                    -- Block Ysperon
                    BlockWorld("Ysperon")
                    CSay("Ysperon Blocked")                   

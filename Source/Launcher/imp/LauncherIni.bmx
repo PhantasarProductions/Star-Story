@@ -4,7 +4,7 @@ Rem
 	
 	
 	
-	(c) Jeroen P. Broks, 2015, All rights reserved
+	(c) Jeroen P. Broks, 2015, 2016, All rights reserved
 	
 		This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -20,12 +20,15 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.12.22
+Version: 16.02.06
 End Rem
 Strict
 Import tricky_units.Initfile2
 Import tricky_units.Bye
 Import brl.system
+
+MKL_Version "LAURA II - LauncherIni.bmx","16.02.06"
+MKL_Lic     "LAURA II - LauncherIni.bmx","GNU General Public License 3"
 Private
 ?MacOS
 Const I$ = "Star Story.app/Contents/Resources/Init.ini"
@@ -48,6 +51,11 @@ MapInsert myself,"{*myself.resourcedir*}",CurrentDir() ' In Windows (and perhaps
 
 Public
 Global LIni:TIni '= LoadIni(I)
+If Not FileType(I) Then
+	AppTitle = "NO GOOD! UH-OH!!!"
+	Notify "ERROR!~n~nCould not find the required file ~n~n"+I
+	Bye
+	EndIf
 LoadIni I,LIni
 
 

@@ -32,8 +32,34 @@
   
  **********************************************
  
-version: 16.01.30
+version: 16.02.06
 ]]
+
+function DoneHere()
+return CVV("&DONE.VULPINA.ALLTHESHITINTOWNISDONEBYNOW")
+end
+
+function CrystalXenobi()
+if DoneHere() then return end
+local text = { [false] = "LUISTERAF_", [true]="BETTERNOT_"}
+MapText(text[Done("&DONE.VULPINA.AFGELUISTERD.CRYSTALXENOBI")==true].."CRYSTALXENOBI")
+Actors.WalkToSpot("PLAYER","DoNotDisturb")
+end
+
+function GoBack()
+MapText("PLEASEDONTGO")
+Actors.WalkToSpot("PLAYER","TownStart")
+end
+
+function NPC_ActivateMidBoss()
+MapText("UNLOCK_MIDBOSS")
+if not Done("&UNLOCKED.MIDBOSS") then
+   ActivateRemotePad('Start','Poloqor - Mid-Boss','Poloqor','Strange Mansion',"#001")
+   end
+end
+
 function GALE_OnLoad()
 Music('Town/Vulpina.ogg')
+ZA_Enter('Crystal&Xenobi',CrystalXenobi)
+ZA_Enter("GoBack",GoBack)
 end
