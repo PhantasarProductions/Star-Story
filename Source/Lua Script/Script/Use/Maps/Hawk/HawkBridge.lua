@@ -49,8 +49,11 @@ HawkBridge = {
                    -- Block Ysperon
                    BlockWorld("Ysperon")
                    CSay("Ysperon Blocked")                   
-                   end
+                   end,
 
+    ToVolcania = function()
+                 Sys.Error("The next portion is not yet scripted") 
+                 end
 
 }
 
