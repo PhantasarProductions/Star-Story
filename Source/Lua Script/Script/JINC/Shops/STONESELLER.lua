@@ -1,7 +1,7 @@
 --[[
-  LOSTPLANET_BAR_ITEMS.lua
+  STONESELLER.lua
   Version: 16.02.06
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -38,16 +38,16 @@
 -- 06 Feb 2016; 15:40:06
 -- License: If stripped from any reference to the story line and its characters, this file becomes zLib
 	ret = {
-		["Stock1"] = "ITM_ADHBANDAGE.lua",
+		["Stock1"] = "ITM_EQP_AQUAMARINE.lua",
 		["Stock10"] = "*Nothing*",
-		["Stock2"] = "ITM_BANDAGE.lua",
-		["Stock3"] = "ITM_BLUBAFLOWER.lua",
-		["Stock4"] = "ITM_GUBAFLOWER.lua",
-		["Stock5"] = "ITM_HEALINGCAPSULE.lua",
-		["Stock6"] = "ITM_SPORES.lua",
-		["Stock7"] = "ITM_ANTIDOTE.lua",
-		["Stock8"] = "ITM_VLUGZOUT.lua",
+		["Stock2"] = "ITM_EQP_CARNELIAN.lua",
+		["Stock3"] = "ITM_EQP_ONYX.lua",
+		["Stock4"] = "*Nothing*",
+		["Stock5"] = "*Nothing*",
+		["Stock6"] = "*Nothing*",
+		["Stock7"] = "*Nothing*",
+		["Stock8"] = "*Nothing*",
 		["Stock9"] = "*Nothing*",
-		["StoreName"] = "Travelling Mercant"}
+		["StoreName"] = "Stone merchant"}
 
 return ret

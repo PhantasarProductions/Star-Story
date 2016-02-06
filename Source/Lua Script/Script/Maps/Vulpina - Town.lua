@@ -58,6 +58,12 @@ if not Done("&UNLOCKED.MIDBOSS") then
    end
 end
 
+function NPC_Foxy()
+MapText("FOXY")
+Done("@DONE.VULPINA.FOXY")
+end
+
+
 function GALE_OnLoad()
 Music('Town/Vulpina.ogg')
 ZA_Enter('Crystal&Xenobi',CrystalXenobi)
