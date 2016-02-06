@@ -41,6 +41,7 @@ end
 
 function CrystalXenobi()
 if DoneHere() then return end
+Actors.StopWalking("PLAYER")
 local text = { [false] = "LUISTERAF_", [true]="BETTERNOT_"}
 MapText(text[Done("&DONE.VULPINA.AFGELUISTERD.CRYSTALXENOBI")==true].."CRYSTALXENOBI")
 Actors.WalkToSpot("PLAYER","DoNotDisturb")
@@ -60,12 +61,34 @@ end
 
 function NPC_Foxy()
 MapText("FOXY")
-Done("@DONE.VULPINA.FOXY")
+Done("&DONE.VULPINA.FOXY")
 end
 
+
+function CLICK_ARRIVAL_StonesForSale()
+MapText("STONES4SALE")
+GoToStore("STONESELLER")
+end
+
+function CLICK_ARRIVAL_Amstella() MapText("AMSTELLA") end
+
+
+function NPC_Yirl()
+local removal = {"NPC_Yirl","NPC_Foxy","GoBack","Crystal","Xenobi"}
+if not(CVV("&DONE.VULPINA.FOXY") and CVV("&DONE.VULPINA.AFGELUISTERD.CRYSTALXENOBI")) then
+   MapText("YIRL_NO")
+   return
+   end
+MapText("YIRL_YES")
+Var.D('$HAWK.BRIDGE','ToVolcania')
+for i in each(removal) do Maps.Obj.Kill(i,1) end
+Party("Wendicka","Crystal","Yirl","Foxy","Xenobi")
+end   
 
 function GALE_OnLoad()
 Music('Town/Vulpina.ogg')
 ZA_Enter('Crystal&Xenobi',CrystalXenobi)
 ZA_Enter("GoBack",GoBack)
+AddClickable("StonesForSale")
+AddClickable("Amstella")
 end
