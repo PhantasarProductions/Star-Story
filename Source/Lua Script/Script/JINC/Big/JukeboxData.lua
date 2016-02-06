@@ -49,6 +49,9 @@ return {
      ["Dungeon1"] = {
                    File = "Music/Dungeon/Dungeon1.ogg",
                    Artist = "J.W.H. Broeders"},
+     ["Motherlode"] = {
+                   File = "Music/Dungeon/Motherlode.ogg",
+                   Artist = "Kevin McLeod"},
      ["Opening Theme C"] = {
                    File = "Music/Dungeon/Opening Theme C.ogg",
                    Artist = "Kevin McLeod"},
