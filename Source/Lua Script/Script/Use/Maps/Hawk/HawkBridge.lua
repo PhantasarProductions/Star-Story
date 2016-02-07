@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.06
+version: 16.02.07
 ]]
 HawkBridge = {
 
@@ -52,6 +52,7 @@ HawkBridge = {
                    end,
 
     ToVolcania = function()
+                 MapText("PIRATES_A")
                  Sys.Error("The next portion is not yet scripted") 
                  end
 
