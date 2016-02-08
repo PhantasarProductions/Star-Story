@@ -52,6 +52,7 @@ ret = {
 	["Icon"] = "GFX/Elements/Frost.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Frost",
+	["SpellAni_Reference"] = "Frost",
 	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}

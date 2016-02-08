@@ -51,6 +51,7 @@ ret = {
 	["Icon"] = "GFX/Elements/Frost.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Blizzard",
+	["SpellAni_Reference"] = "Blizzard",
 	["Target"] = "AF",
 	["UseCombat"] = true,
 	["UseField"] = true}
