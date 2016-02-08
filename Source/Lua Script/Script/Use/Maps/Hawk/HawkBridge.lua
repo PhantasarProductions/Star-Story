@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.07
+version: 16.02.08
 ]]
 HawkBridge = {
 
@@ -52,7 +52,17 @@ HawkBridge = {
                    end,
 
     ToVolcania = function()
+                 Actors.MoveToSpot("PLAYER","WELCOME",1)
+                 Actors.ChoosePic("PLAYER","WENDICKA.NORTH")
+                 Music("Sys/Silence.ogg")
                  MapText("PIRATES_A")
+                 MapShow("***NIETS***")
+                 MapText("PIRATES_B")
+                 Music("Scenario/Panic Stations")
+                 Actors.Spawn('PirateLeader',"GFX/Actors/SinglePic/Pirates/PirateLeader.png","PLead",1)
+                 for i = 1 , 10 do Actors.Spawn('Pirate'..i,"GFX/Actors/SinglePic/Pirates/PirateLeader.png","P"..i,1) end
+                 MapShow("Bridge")
+                 MapText("PIRATES_C")
                  Sys.Error("The next portion is not yet scripted") 
                  end
 
