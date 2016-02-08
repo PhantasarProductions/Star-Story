@@ -1,7 +1,7 @@
 --[[
-  ITM_HEATHRUB.lua
+  ITM_ICEBOMB.lua
   Version: 16.02.08
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -36,22 +36,23 @@
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 250,
-	["AttackElement"] = "Non-Elemental",
-	["AttackStat"] = "Strength",
-	["CureParalysis"] = true,
-	["DefenseStat"] = "Defense",
-	["Description"] = "Cures \"Paralysis\"",
+	["ActSpeed"] = 200,
+	["AttackElement"] = "Frost",
+	["AttackPower"] = 117,
+	["AttackStat"] = "Will",
+	["DefenseStat"] = "Resistance",
+	["Description"] = "In Moscow nights are cold, without your love to hold!",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 100,
 	["ITM_SellPrice"] = 75,
 	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/HeathRub.png",
+	["Icon"] = "GFX/Inventory/Ice Bomb.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Heath Rub",
-	["SpellAni_Reference"] = "SingleHeal",
-	["Target"] = "1A",
-	["UseCombat"] = true}
+	["Name"] = "Ice Bomb",
+	["SpellAni_Reference"] = "Burn",
+	["Target"] = "1F",
+	["UseCombat"] = true,
+	["UseField"] = true}
 
 return ret
 

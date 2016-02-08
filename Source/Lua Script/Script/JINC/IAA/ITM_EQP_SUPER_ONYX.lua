@@ -1,6 +1,6 @@
 --[[
   ITM_EQP_SUPER_ONYX.lua
-  Version: 16.02.06
+  Version: 16.02.08
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
