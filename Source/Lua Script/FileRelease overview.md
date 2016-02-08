@@ -256,6 +256,7 @@
 1. Script/Use/Combat/Foe_AI/Default_AI.lua
 1. Script/Use/Combat/SpellAni/AAAAAAAAAAAAAAAAAAA.lua
 1. Script/Use/Combat/SpellAni/Burn.lua
+1. Script/Use/Combat/SpellAni/Frost.lua
 1. Script/Use/Combat/SpellAni/Healing and (de)buffs.lua
 1. Script/Use/Combat/SpellAni/Reggie.lua
 1. Script/Use/Combat/SpellAni/Shoot.lua
@@ -357,4 +358,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 08 February 2016; 16:01:58 CET
+### Last updated: Mon 08 February 2016; 16:31:08 CET
