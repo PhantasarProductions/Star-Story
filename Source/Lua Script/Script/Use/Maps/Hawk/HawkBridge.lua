@@ -53,6 +53,7 @@ HawkBridge = {
 
     ToVolcania = function()
                  player = Actors.Actor("PLAYER")
+                 Actors.StopWalking("PLAYER")
                  Actors.MoveToSpot("PLAYER","Welcome",1)
                  Actors.ChoosePic("PLAYER","WENDICKA.NORTH")
                  Music("Sys/Silence.ogg")
@@ -64,13 +65,20 @@ HawkBridge = {
                  MapText("PIRATES_B")
                  Music("Scenario/Panic Stations")
                  Actors.Spawn('PirateLeader',"GFX/Actors/SinglePic/Pirates/PirateLeader.png","PLead",1)
-                 for i = 1 , 10 do Actors.Spawn('Pirate'..i,"GFX/Actors/SinglePic/Pirates/PirateLeader.png","P"..i,1) end
+                 for i = 1 , 20 do Actors.Spawn('Pirate'..i,"GFX/Actors/SinglePic/Pirates/Pirate.png","P"..i,1) end
                  MapShow("Bridge")
                  player.R = 0xff
                  player.G = 0xff
                  player.B = 0xff
                  MapText("PIRATES_C")
-                 Sys.Error("The next portion is not yet scripted") 
+                 LoadMap("Volcania - Volcanic Plains","#006")
+                 SpawnPlayer("START")
+                 PartyPop("START")
+                 MapText("WELCOME")
+                 PartyUnPop()
+                 Var.D("&TRANSPORTERBLOCK","TRUE") -- The pirates won't let us go.
+                 MS.Run("TRANS",'ActivatePad',"Start")
+                 --Sys.Error("The next portion is not yet scripted") 
                  end
 
 }

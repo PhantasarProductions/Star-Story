@@ -32,8 +32,46 @@
   
  **********************************************
  
-version: 16.02.06
+version: 16.02.08
 ]]
+
+AltComeInFromNorth = { [6]=2673 }
+AltComeInFromSouth = {}
+AltComeIn = { S = AltComeInFromNorth, N=AltComeInFromSouth }
+NSPos = { S = 96, N = 3385}
+
+function LayerNumber()
+return Sys.Val(right(Maps.LayerCodeName,3))
+end
+
+function NZ(NS)
+local oldplay = Actors.Actor("PLAYER")
+local x,y = oldplay.X,oldplay.Y
+local go = { N=-1, S = 1}
+local lay = LayerNumber()+go[NS]
+Maps.Obj.Kill("PLAYER")
+Maps.GotoLayer("#00"..lay)
+SpawnPlayer('START')
+local newplay = Actors.Actor("PLAYER")
+newplay.y = AltComeIn[NS or 'S'][lay] or NSPos[NS or 'S']
+newplay.x = oldplay.x
+end
+
+function North() NZ('N') end
+function South() NZ('S') end
+
+function MAP_FLOW()
+local play = Actors.Actor("PLAYER")
+if play.Y>3420 then South() end
+if play.Y<64   then North() end
+if (not dactiv) and Maps.LayerCodeName=='#006' then
+   MS.Run("TRANS",'ActivatePad',"Start")
+   CSay("Activating pad")
+   dactiv = true
+   end
+end
+
 function GALE_OnLoad()
 Music("Dungeon/Motherlode")
+ZA_Enter("N006",NZ,"N")
 end
