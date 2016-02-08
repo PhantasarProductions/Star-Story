@@ -52,7 +52,7 @@ HawkBridge = {
                    end,
 
     ToVolcania = function()
-                 Actors.MoveToSpot("PLAYER","WELCOME",1)
+                 Actors.MoveToSpot("PLAYER","Welcome",1)
                  Actors.ChoosePic("PLAYER","WENDICKA.NORTH")
                  Music("Sys/Silence.ogg")
                  MapText("PIRATES_A")
