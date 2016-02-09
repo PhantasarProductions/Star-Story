@@ -65,7 +65,7 @@ Data = {
 		["Evasion"] = {1,1},
 		["HP"] = {50,100},
 		["AP"] = {0,0},
-		["LevelRange"] = {50,70},
+		["LevelRange"] = {45,60},
 },
 	StatusResistance = {
 		["Poison"] = 80   --[[ #1 ]],

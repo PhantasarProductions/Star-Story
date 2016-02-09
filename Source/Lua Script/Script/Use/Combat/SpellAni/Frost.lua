@@ -1,6 +1,6 @@
 --[[
   Frost.lua
-  Version: 16.02.08
+  Version: 16.02.09
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -40,8 +40,9 @@ local ak
 local bx,by = FighterCoords(A.TargetGroup,A.Target)
 local siny
 Image.LoadNew("SA_ICE","GFX/Combat/SpellAni/Frost/IceCrystal.png")
+Image.HotCenter("SA_ICE")
 for ak=0,180 do
-    Combat_DrawScreen() 
+    DrawScreen() 
     Image.Rotate(ak)
     siny = by - ((math.sin(ak))*32)
     Image.Color(255,255,255)
@@ -56,6 +57,7 @@ local crystal = {}
 local num = rand(20,30)
 local ak
 Image.LoadNew("SA_ICE","GFX/Combat/SpellAni/Frost/IceCrystal.png")
+Image.HotCenter("SA_ICE")
 for ak=1,num do
     table.insert(crystal,{x=1000+rand(1,800),y=rand(0,600)})    
     end
@@ -63,7 +65,7 @@ local c
 local ok
 repeat
 ok=true
-Combat_DrawScreen()
+DrawScreen()
 Image.SetAlpha(.25+(math.sin(Time.MSecs()/100)*.25))
 Image.Color(0,0,255)
 Image.Rect(0,0,800,600)

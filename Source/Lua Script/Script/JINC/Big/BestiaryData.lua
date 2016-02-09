@@ -63,7 +63,9 @@ return {
 	"INSETTO",
 	"LION",
 	"MYR",
+	"PYROGUIN",
 	"QUAL",
 	"RAT",
+	"SALAMANDER",
 	"SYSS",
 }
