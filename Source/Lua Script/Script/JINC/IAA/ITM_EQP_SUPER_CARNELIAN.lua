@@ -1,6 +1,6 @@
 --[[
   ITM_EQP_SUPER_CARNELIAN.lua
-  Version: 16.02.08
+  Version: 16.02.09
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -49,7 +49,7 @@ ret = {
 	["ITM_Sellable"] = true,
 	["Icon"] = "GFX/Inventory/Carnelian.png",
 	["ItemType"] = "EquipItem",
-	["Name"] = "Carnelian",
+	["Name"] = "Super Carnelian",
 	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}

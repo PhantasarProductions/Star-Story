@@ -63,6 +63,7 @@
 1. Script/JINC/IAA/ABL_EXHURU_STOMP.lua
 1. Script/JINC/IAA/ABL_EXHURU_YKSI.lua
 1. Script/JINC/IAA/ABL_FOE_EXPDRAIN.lua
+1. Script/JINC/IAA/ABL_FOE_FLAMETOUCH.lua
 1. Script/JINC/IAA/ABL_FOE_FULLHEALTH.lua
 1. Script/JINC/IAA/ABL_FOE_IDDQD.lua
 1. Script/JINC/IAA/ABL_FOE_LICKYOURWOUNDS.lua
@@ -304,6 +305,8 @@
 1. Script/JINC/Foes/Reg/Insetto.lua
 1. Script/JINC/Foes/Reg/Lion.lua
 1. Script/JINC/Foes/Reg/Myr.lua
+1. Script/JINC/Foes/Reg/Pyroguin.lua
+1. Script/JINC/Foes/Reg/Salamander.lua
 1. Script/JINC/NewGame+/PreserveVar.lua
 1. Script/Maps/Physillium - Black Castle.lua
 1. Script/Maps/Physillium - Ji Rubble.lua
@@ -359,4 +362,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 09 February 2016; 12:24:35 CET
+### Last updated: Tue 09 February 2016; 17:15:52 CET

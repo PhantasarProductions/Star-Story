@@ -1,7 +1,7 @@
 --[[
-  ABL_FOXY_MULTISTAB.lua
+  ABL_FOE_FLAMETOUCH.lua
   Version: 16.02.09
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -35,26 +35,21 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 25,
-	["ABL_APCut"] = 15000,
-	["ABL_Cancel"] = 100,
-	["ABL_DblPower"] = 50000,
-	["ABL_Instant"] = 1500,
-	["ABL_Pose"] = "Attack",
-	["ABL_Speed"] = 500,
+	["ABL_AP"] = 0,
+	["ABL_Pose"] = "Cast",
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
-	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 100,
+	["AttackElement"] = "Fire",
+	["AttackPower"] = 150,
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Quick attack on multiple targets",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Inventory/Dagger.png",
+	["Icon"] = "GFX/Abilities/Fist.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Multi-stab",
-	["Target"] = "AF",
-	["UseCombat"] = true}
+	["Name"] = "Flame Touch",
+	["Target"] = "1F",
+	["UseCombat"] = true,
+	["UseField"] = true}
 
 return ret
 
