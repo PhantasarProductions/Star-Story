@@ -1,6 +1,6 @@
 --[[
   SaveGame.lua
-  Version: 16.02.02
+  Version: 16.02.09
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 function Scan()
 files = {}
-PM = 0
+PM = PM or 0
 dir = LAURA.GetSaveDir() .. "/" .. LAURA.User()
 if Dir.DirExists(dir)==0 then return end
 Dir.GetDir(dir)
@@ -112,6 +112,7 @@ local y,i,f
 setfont('SaveFiles')
 WH = WH or Image.Height(imglist)
 WW = WW or Image.Width (imglist)
+if PM>(#files*15)+WH+45 then PM=0 end
 for i,f in ipairs(files) do
     y = 160 + ((i*15)-PM)
     if y<160         and SaveName==f and (not Scrolled) then PM=PM-1 end

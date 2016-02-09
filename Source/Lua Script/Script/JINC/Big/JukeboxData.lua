@@ -1,6 +1,6 @@
 --[[
   JukeboxData.lua
-  Version: 16.02.08
+  Version: 16.02.09
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -109,6 +109,9 @@ return {
      ["Gm115"] = {
                    File = "Music/Original4Alias/Gm115.ogg",
                    Artist = "Kevin McLeod"},
+     ["Nearly There"] = {
+                   File = "Music/Original4Alias/Nearly_There.ogg",
+                   Artist = "Lee Rosevere"},
      ["Phantom from Space"] = {
                    File = "Music/Original4Alias/Phantom from Space.ogg",
                    Artist = "Kevin McLeod"},

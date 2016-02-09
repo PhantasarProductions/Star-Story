@@ -32,6 +32,8 @@ I'd like to thank the next music artists for their brilliant work, and licensing
    1. Dream Culture
 1. Knight Of Fire
    1. Ghosts of Disease
+1. Lee Rosevere
+   1. Nearly There
 1. Matt McFarland
    1. Warfield
 1. Rockit Maxx
