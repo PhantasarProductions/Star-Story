@@ -37,6 +37,7 @@ Kipp | 1 | Art;
 Knight Of Fire | 2 | Music; 
 Kristel Kerstens | 1 | Audio; 
 Lazur URH | 2 | Art; Misc files; 
+Lee Rosevere | 2 | Music; 
 Linda James | 1 | Art; 
 Lindsey | 1 | Art; 
 Majkel | 1 | Art; 
