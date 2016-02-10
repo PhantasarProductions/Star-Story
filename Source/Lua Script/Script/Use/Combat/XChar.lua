@@ -220,14 +220,14 @@ XCharAlternateAttack = {
 
     Wendicka = function(ai,ti,tg)    
                CSay("Wendicka attacks, but is it only an attack?")           
-               if rand(1,100)>30 then CSay("= Percantage roll failed, let's get outta here") return end -- 30% only that Wendicka even qualifies to do this.
+               if rand(1,100)>60/skill then CSay("= Percantage roll failed, let's get outta here") return end -- 30% only that Wendicka even qualifies to do this.
                if ti=="Hero" then CSay("= Nope! Not gonna do this on fellow heroes") return end -- This will not happen if Wendicka attacks one of her allies in confused state.
                if Fighters.Foe[ti].Boss then CSay("= Nope! Not gonna do this on bosses") return end -- No go on bosses! 
                local foetag = Fighters.Foe[ti].Tag
                local wentag = Fighters.Hero[ai].Tag -- (Important to know since Wendicka can also do this in her uniform form)
                local wenhp = RPGChar.Points("UniWendicka","HP").Have -- Wendicka and UniWendicka share their HP, so this is easy to do.
                local foehp = RPGChar.Points(foetag,'HP').Have
-               CSay(" = Foe: "..foetag.."; Wendicka: "..Wendicka)
+               CSay(" = Foe: "..foetag.."; Wendicka "..wentag)
                if rand(1,foehp)>rand(0,wenhp) then CSay("= HP check failed") return end -- The better Wendicka's health and the worse the enemy's health the bigger the chance Wendicka will do this.
                -- All stuff out of the way! Let's kill 'em, boys!
                CSay("= Everything ok, let's kill them guys!")

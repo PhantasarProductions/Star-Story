@@ -1,7 +1,7 @@
 --[[
   CAction.lua
-  Version: 15.12.09
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.02.10
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -228,8 +228,8 @@ if tg=="Hero" then
       return 
       end -- If "true" is returned it means the playable character cancelled the attack!
    end
-if ai=="Hero" then
-   if (XCharAltAttack[Fighters.Hero[ai].Tag] or function(ai,ti,tg) end)(ai,ti,tg) then return end
+if ag=="Hero" then
+   if (XCharAlternateAttack[Fighters.Hero[ai].Tag] or function(ai,ti,tg) end)(ai,ti,tg) then return end
    end
 CSay(sval(ag).."["..sval(ai).."]: "..sval(ch).." attacks")
 -- Animate character 
