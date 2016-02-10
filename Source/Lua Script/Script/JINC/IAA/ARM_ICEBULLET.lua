@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.09
+version: 16.02.10
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
@@ -54,7 +54,7 @@ ret = {
 	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Ice Bullet",
-	["SpellAni_Reference"] = "Ice Bullet",
+	["SpellAni_Reference"] = "Frost",
 	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true,

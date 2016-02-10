@@ -1,7 +1,7 @@
 --[[
   Menu.lua
-  Version: 15.11.04
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.02.10
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -185,19 +185,21 @@ function SellTaken()
 end
 
 function BuyHover(item,icode,char)
-	local ok
-	if not char then
+local ok
+ok = CVV("%CASH")>item.ITM_BuyPrice
+if ok then
+	-- dec("%CASH",item.ITM_BuyPrice)
+	SpendMoney(item.ITM_BuyPrice)
+	SFX("Audio/SFX/Shopping/ChaChing.ogg") 
+	else return
+	end
+if not char then
 		ChosenItem = {Taken=true,Item=icode,Icon=ItemIconCode("ITM_"..icode)}
 		ok = true
 	else
 		ok = ItemGive("ITM_"..icode,char)
 	end	
-ok = ok and CVV("%CASH")>item.ITM_BuyPrice
-if ok then
-	-- dec("%CASH",item.ITM_BuyPrice)
-	SpendMoney(item.ITM_BuyPrice)
-	SFX("Audio/SFX/Shopping/ChaChing.ogg")
-	end
+return ok	
 end
 
 
