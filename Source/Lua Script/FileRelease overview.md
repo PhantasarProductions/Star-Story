@@ -308,6 +308,7 @@
 1. Script/JINC/Foes/Reg/Myr.lua
 1. Script/JINC/Foes/Reg/Pyroguin.lua
 1. Script/JINC/Foes/Reg/Salamander.lua
+1. Script/JINC/Foes/SuperBoss/FireSpider.lua
 1. Script/JINC/NewGame+/PreserveVar.lua
 1. Script/Maps/Physillium - Black Castle.lua
 1. Script/Maps/Physillium - Ji Rubble.lua
@@ -363,4 +364,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Wed 10 February 2016; 14:43:21 CET
+### Last updated: Wed 10 February 2016; 20:35:24 CET

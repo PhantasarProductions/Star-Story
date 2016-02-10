@@ -32,13 +32,15 @@
   
  **********************************************
  
-version: 16.02.08
+version: 16.02.10
 ]]
 
 AltComeInFromNorth = { [6]=2673 }
 AltComeInFromSouth = {}
 AltComeIn = { S = AltComeInFromNorth, N=AltComeInFromSouth }
 NSPos = { S = 96, N = 3385}
+
+VBoss = "&DONE.VOLCANIA.BOSS"
 
 function LayerNumber()
 return Sys.Val(right(Maps.LayerCodeName,3))
@@ -71,7 +73,47 @@ if (not dactiv) and Maps.LayerCodeName=='#006' then
    end
 end
 
+function ToSecret()
+if not CVV(VBoss) then -- No cheating in. Only available if the boss is dead.
+   MapText("CHEATER")
+   MS.LoadNew("GAMEOVER","Script/Flow/GameOver.lua")
+   LAURA.Flow("GAMEOVER")
+   return
+   end
+end
+
+function Boss()
+if Done(VBoss) then return end -- This boss will only be met ONCE!
+PartyPop('BOSS')
+repeat
+Maps.CamY = Maps.CamY - 1
+DrawScreen()
+Flip()
+until Maps.CamY<=1450
+MapText("PREBOSS")
+-- Needed pre-combat settings
+Party("Wendicka;Crystal;Yirl;Foxy;Xenobi") -- Party order is essential. Wendicka MUST be up-front during this fight!
+RPGStat.Points("Wendicka","HP").Minimum = 1 -- Wendicka cannot die in this fight!
+Maps.Obj.Kill("BOSS")
+Music("SYS/SILENCE")
+-- Init combat
+CleanCombat()
+Var.D("$COMBAT.AltEnemyBuild","SUPERFOE","BuildBossVolcania")
+Var.D("$COMBAT.NOSWITCH","Wendicka")
+Var.D("$COMBAT.BACKGROUND","Volcano.png")
+Var.D("$COMBAT.MUSIC",'SpecialBoss/DeathPredator.ogg') -- Death Predator was the codename until the actual boss name was decided
+Var.D("$COMBAT.BEGIN","Default")
+Var.D("$COMBAT.FOE1","SuperBoss/FireSpider")
+Var.D("%COMBAT.LVFOE1",200000)
+Var.D("$COMBAT.ALTCOORDSFOE1","300,400")
+-- Let combat commence
+StartCombat()
+Sys.Error('The rest has not yet been scripted. Sorry!')
+end
+
 function GALE_OnLoad()
 Music("Dungeon/Motherlode")
 ZA_Enter("N006",NZ,"N")
+ZA_Enter("ToSecret",ToSecret)
+ZA_Enter("StartBOSS",Boss)
 end
