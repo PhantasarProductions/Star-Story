@@ -1,6 +1,6 @@
 --[[
   Combat.lua
-  Version: 16.01.20
+  Version: 16.02.11
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -266,6 +266,11 @@ for k,v in spairs(CombatData) do
        LoadFoe(Fighters.Foe[FoeCount],CombatData)           
        end
     end
+-- Alternate enemy initiation
+if CombatData.AltEnemyBuild then
+   CSay("Trying to execute alternate enemy build: "..CombatData.AltEnemyBuild)
+   MS.Run("COMBAT",CombatData.AltEnemyBuild) 
+   end    
 -- Gauge Init
 local k,f,i,fe
 CSay("Gauge Star positions")

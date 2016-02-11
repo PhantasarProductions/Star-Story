@@ -325,6 +325,7 @@
 1. Script/Use/Anyway/ReLevel.lua
 1. Script/Use/Combat/AblSpecialEffect/HPAPto1.lua
 1. Script/Use/Combat/AblSpecialEffect/Summon.lua
+1. Script/Use/Combat/AltEnemyBuild/SuperFoe_FireSpider.lua
 1. Script/Use/Combat/StatusChanges/Confusion.lua
 1. Script/Use/Combat/StatusChanges/IDDQD.lua
 1. Script/Use/Maps/Gen/Next.lua
@@ -364,4 +365,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Wed 10 February 2016; 20:35:24 CET
+### Last updated: Thu 11 February 2016; 17:18:47 CET

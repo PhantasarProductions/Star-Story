@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.10
+version: 16.02.11
 ]]
 
 AltComeInFromNorth = { [6]=2673 }
@@ -98,7 +98,7 @@ Maps.Obj.Kill("BOSS")
 Music("SYS/SILENCE")
 -- Init combat
 CleanCombat()
-Var.D("$COMBAT.AltEnemyBuild","SUPERFOE","BuildBossVolcania")
+Var.D("$COMBAT.AltEnemyBuild","SUPERFOE_BuildBossVolcania")
 Var.D("$COMBAT.NOSWITCH","Wendicka")
 Var.D("$COMBAT.BACKGROUND","Volcano.png")
 Var.D("$COMBAT.MUSIC",'SpecialBoss/DeathPredator.ogg') -- Death Predator was the codename until the actual boss name was decided
