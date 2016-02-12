@@ -1,7 +1,7 @@
 --[[
-  0000000.lua
+  FireSpider.lua
   Version: 16.02.12
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -34,4 +34,20 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-Foe_AI = {}
+
+
+-- @IF IGNORE
+Foe_AI = {}  -- Ignored, but this fools my Outliner in Eclipse ;)
+-- @FI
+
+
+
+
+function Foe_AI.FireSpider(pos)
+local me = Fighters.Foe[pos].Tag
+RPGChar.IncStat(me,"BASE_Strength",rand(0,RPGChar.Stat(me,'BASE_Strength')))
+RPGChar.IncStat(me,"BASE_Will",rand(0,RPGChar.Stat(me,'BASE_Will')))
+RPGChar.IncStat(me,"BASE_Accuracy",rand(0,RPGChar.Stat(me,'BASE_Accuracy')))
+Mini ( RPGChar.GetName(me) .. " is gathering extra power" , rand(200,255),rand(150,180),0)
+return Foe_AI.Default(pos)
+end

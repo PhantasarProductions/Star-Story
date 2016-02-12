@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.10
+version: 16.02.12
 ]]
 
 -- Kills for ExHuRU (and his "representatives")  
@@ -202,6 +202,7 @@ XCharAttacked = {
              	      if RPGStat.PartyTag(i)=="Wendicka" then pos = i end
              	      if RPGStat.PartyTag(i)=="ExHuRU" then exu=i end
              	      end
+             	 if not exu then return end -- If ExHuRU is not in the party at all, don't bother. This fixes #379    
              	 if exu<3 then return end -- ExHuRU can only do this from the back row.
              	 if Fighters.Hero[pos+1].Gauge>9995 then return end -- ExHuRU cannot cancel Wendicka's moves.
                MS.LoadNew("BOXTEXT","Script/SubRoutines/BoxText.lua")
