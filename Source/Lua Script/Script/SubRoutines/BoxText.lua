@@ -1,7 +1,7 @@
 --[[
   BoxText.lua
-  Version: 15.11.16
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.02.12
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -125,8 +125,11 @@ function BoxTextBackGround()
 end
 
 function ShowBox(data,boxback,highlight)
-local bb = boxback or "BOXTEXT"
+local bb = boxback or "BOXTEXT.KTHURA" -- "BOXTEXT"
 local ret
+-- @IF BOXTEXTDEBUG
+CSay("Calling BoxTextBackGround from MS script: "..bb)
+-- @FI
 MS.Run(bb,"BoxTextBackGround")
 -- @IF BOXTEXTDEBUG
 DarkText("background: "..bb,10,400,2,0)
@@ -182,7 +185,9 @@ Image.DText(data.Header,startx,starty-20)
 -- Text itself
 local ax,ay,y
 if data.AltTxtFont then
+   -- @IF BOXTEXTDEBUG
    CSay("Setting font: "..data.AltTxtFont,fonts.BoxText[2])
+   -- @FI
    Image.Font(data.AltTxtFont,fonts.BoxText[2])
    else
    setfont("BoxText")

@@ -1,6 +1,6 @@
 --[[
   Console.lua
-  Version: 16.01.31
+  Version: 16.02.12
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -118,6 +118,11 @@ RPGStat.Points(ch,points).Have = newhave
 end
 
 
+function KILLCH(ch)
+SETCHARPOINTS(ch,"HP",0)
+end
+
+
 function AWARD(tag)
 Award(tag)
 end
@@ -222,6 +227,7 @@ end
 function KILL(variable)
 Var.Clear(variable)
 end
+
 
 function GETHOT(tag)
 if Image.Loaded(tag)==0 then Console.Write("? That image is not loaded",255,0,0); return end

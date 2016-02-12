@@ -49,5 +49,8 @@ RPGChar.IncStat(me,"BASE_Strength",rand(0,RPGChar.Stat(me,'BASE_Strength')))
 RPGChar.IncStat(me,"BASE_Will",rand(0,RPGChar.Stat(me,'BASE_Will')))
 RPGChar.IncStat(me,"BASE_Accuracy",rand(0,RPGChar.Stat(me,'BASE_Accuracy')))
 Mini ( RPGChar.GetName(me) .. " is gathering extra power" , rand(200,255),rand(150,180),0)
+if RPGChar.Stat(me,'BASE_Strength')>1000000 then RPGChar.DefStat(me,'BASE_Strength') end
+if RPGChar.Stat(me,'BASE_Will')>1000000 then RPGChar.DefStat(me,'BASE_Strength') end
+if RPGChar.Stat(me,'BASE_Accuracy')>1000000 then RPGChar.DefStat(me,'BASE_Strength') end
 return Foe_AI.Default(pos)
 end

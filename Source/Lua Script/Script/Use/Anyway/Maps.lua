@@ -1,7 +1,7 @@
 --[[
   Maps.lua
-  Version: 15.09.17
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.02.12
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -85,4 +85,9 @@ if teleporteffect==true then
 local cp = GetActive()    
 Actors.ChoosePic("PLAYER",upper(cp).."."..upper(Wind or "SOUTH"))     
 TurnPlayer(Wind or "South")  
+end
+
+MapText = MapText or function(tag,back)
+local send = tag .. ";" .. (back or "BOXTEXT.KTHURA")
+MS.Run("MAP","MapText",send)
 end

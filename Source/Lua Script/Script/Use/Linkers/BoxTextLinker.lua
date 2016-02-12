@@ -1,7 +1,7 @@
 --[[
   BoxTextLinker.lua
-  Version: 15.09.28
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.02.12
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -54,9 +54,11 @@ if not boxtextroutine then
  MS.Run("BOXTEXT","RemoveData",f)
  end
 
+--[[ deprecated
  function MapText(tag,bck)
  SerialBoxText("MAP",tag)
  end
+]]
  
  function RunQuestion(file,tag,idx,boxback)
  local param = file..";"..tag

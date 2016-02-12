@@ -326,6 +326,7 @@
 1. Script/Use/Combat/AblSpecialEffect/HPAPto1.lua
 1. Script/Use/Combat/AblSpecialEffect/Summon.lua
 1. Script/Use/Combat/AltEnemyBuild/SuperFoe_FireSpider.lua
+1. Script/Use/Combat/Events/ReleaseTheGoddess.lua
 1. Script/Use/Combat/Foe_AI/FireSpider.lua
 1. Script/Use/Combat/StatusChanges/Confusion.lua
 1. Script/Use/Combat/StatusChanges/IDDQD.lua
@@ -366,4 +367,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 12 February 2016; 10:45:05 CET
+### Last updated: Fri 12 February 2016; 17:50:50 CET

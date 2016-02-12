@@ -82,6 +82,13 @@ if not CVV(VBoss) then -- No cheating in. Only available if the boss is dead.
    end
 end
 
+function BoxTextBackGround()
+-- MS.Run("COMBAT","DrawScreen","Yes")
+Image.Cls()
+Image.Draw("TMP_COMBATSCREEN",0,0)
+CSay("Are we here?") -- Debug line! May NOT be present in actual release!
+end
+
 function Boss()
 if Done(VBoss) then return end -- This boss will only be met ONCE!
 PartyPop('BOSS')
@@ -105,9 +112,13 @@ Var.D("$COMBAT.MUSIC",'SpecialBoss/DeathPredator.ogg') -- Death Predator was the
 Var.D("$COMBAT.BEGIN","Default")
 Var.D("$COMBAT.FOE1","SuperBoss/FireSpider")
 Var.D("%COMBAT.LVFOE1",200000)
+Var.D("$COMBAT.DEFEATEDCHECK","ReleaseTheGoddess")
+Var.D("$COMBAT.VICTORYCHECK","YouWillNeverWin")
 Var.D("$COMBAT.ALTCOORDSFOE1","300,400")
 -- Let combat commence
+BoxTextBack = "MAP"
 StartCombat()
+BoxTextBack = "BOXTEXT.KTHURA"
 -- Sys.Error('The rest has not yet been scripted. Sorry!')
 end
 

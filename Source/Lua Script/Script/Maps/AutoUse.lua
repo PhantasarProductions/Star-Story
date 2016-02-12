@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 16.01.29
+  version: 16.02.12
   Copyright (C) 2015, 2016 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -40,7 +40,7 @@ f()
 end; InitMapText()
 
 function MapText(tag,mapaltMS)
-SerialBoxText("MAP",tag,mapaltMS or "FIELD")
+SerialBoxText("MAP",tag,mapaltMS or "BOXTEXT.KTHURA")
 end
 
 

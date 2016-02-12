@@ -45,7 +45,7 @@ Act = { Hero = {}, Foe = {} }
 Bestiary = Bestiary or {}
 -- Oversoul = Oversoul or {} -- Oversoul has been dropped.
 Fighters = {}
-VicCheck = {}
+VicCheck = { YouWillNeverWin = function() return false end }
 DefeatCheck = {}
 FlawlessVictory = true
 FlawlessStreak = FlawlessStreak or 0
