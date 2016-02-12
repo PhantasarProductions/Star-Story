@@ -16,7 +16,7 @@ Author | Contributions | Kind of contributions
  deusinvictus | 1 | Art; 
 Aaron Krogh | 14 | Music; 
 Alexander | 4 | Audio; Misc files; Music; 
-Angela Nagtzaam | 17 | Art; 
+Angela Nagtzaam | 19 | Art; 
 Ann | 1 | Art; 
 April | 1 | Art; 
 Benboncan | 3 | Audio; Misc files; 
@@ -62,7 +62,7 @@ Spiedkiks | 1 | Music;
 TheSkull | 2 | Art; 
 Thobias Benjamin Koehler | 2 | Font; Misc files; 
 Tibetan_Fox | 1 | Art; 
-Tricky (this is me) :sunglasses: | 2105 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
+Tricky (this is me) :sunglasses: | 2106 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
 Unknown Artist | 50 | Art; 
 Utopia | 2 | Font; Misc files; 
 Varazuvi(TM) | 4 | Audio; 

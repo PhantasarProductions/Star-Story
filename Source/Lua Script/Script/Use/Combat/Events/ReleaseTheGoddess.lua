@@ -52,5 +52,49 @@ for i=1,3 do SpellAni.Mjolnir('Hero',1,'Hero',1) end
 MapText("RELEASE_A","MAP")
 for i=1,3 do SpellAni.Mjolnir('Hero',1,'Hero',1) end
 MapText("RELEASE_B","MAP")
-Sys.Error("The rest has yet to be scripted! Hang on!")
+Image.Load("GFX/SPECIAL/GODDESS.png","GODDESS"); Image.HotCenter("GODDESS")
+local alpha = 0
+local alphadir = .03
+local scale = 0
+repeat
+Image.Color(0,rand(100,180),rand(180,255))
+Image.Draw("TMP_COMBATSCREEN",0,0)
+for i=0,300 do
+    Image.Color(0,rand(100,180),rand(180,255))
+    Image.Line(400,300,  0,rand(0,600))
+    Image.Line(400,300,800,rand(0,600))
+    Image.Line(400,300,rand(0,800),  0)
+    Image.Line(400,300,rand(0,800),600)
+    end
+Image.Scale(scale,scale)    
+Image.SetAlpha(alpha)
+Image.Draw("GODDESS",400,300)
+scale=scale+.005
+alpha=alpha+alphadir
+if alpha>=1 then alphadir=-.02 end
+Image.Scale(1,1)
+Image.SetAlpha(1)
+Flip()
+until alpha<=0
+Image.Free('GODDESS')
+local g,b=180,255
+repeat
+if g>0 then g=g-.5 end
+if b>0 then b=b-.7 end
+Image.Cls()
+Image.Color(0,g,b)
+Image.Draw("TMP_COMBATSCREEN")
+Flip()
+if g<10 then StopMusic() end
+until g<=0 and b<=0 
+DestroyPushedMusic()
+Image.Cls()
+Image.GrabScreen("TMP_COMBATSCREEN")
+MapText("RELEASE_C","MAP")
+Image.Free("TMP_COMBATSCREEN")
+Done("&GODDESS.RELEASED") -- From this moment on Wendicka no longer heals on thunder attacks and will no longer die instantly when touched by water. That is, unless she's wearing gems that still make this happen.
+Done("&NOHAWKMUSIC") -- Make sure the transition to the Hawk goes the way it should
+Var.Clear("&TRANSPORTERBLOCK")
+LoadMap("Hawk","Bridge")
+MS.Run("MAP","AfterVolcania")
 end

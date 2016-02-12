@@ -334,6 +334,7 @@
 1. Script/Use/Maps/Gen/SchuifNext.lua
 1. Script/Use/Maps/Gen/SchuifNextReal.lua
 1. Script/Use/Maps/Gen/Sudoku.lua
+1. Script/Use/Maps/Hawk/AftermathVolcania.lua
 1. Script/Use/Maps/Hawk/ArrivalPhysillium.lua
 1. Script/Use/Maps/Hawk/AutoNewNav.lua
 1. Script/Use/Maps/Hawk/HawkBridge.lua
@@ -367,4 +368,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 12 February 2016; 17:50:50 CET
+### Last updated: Fri 12 February 2016; 20:07:27 CET

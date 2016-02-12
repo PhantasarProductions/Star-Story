@@ -1,8 +1,8 @@
 --[[
   TrueMusic.lua
   
-  version: 15.10.29
-  Copyright (C) 2015 Jeroen P. Broks
+  version: 16.02.12
+  Copyright (C) 2015, 2016 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
   arising from the use of this software.
@@ -65,6 +65,7 @@ end
 
 function StopMusic()
 local cnt=0
+CSay("Stopping music!")
 Audio.Stop("MUSIC")
 if Audio.Playing("MUSIC")~=0 then 
    Console.Write("WARNING!!! Music still playing after stop request",255,41,9)

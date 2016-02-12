@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.05
+version: 16.02.12
 ]]
 
 -- @USEDIR Script/Use/Maps/Hawk/
@@ -165,7 +165,7 @@ if not InParty('Foxy') then Maps.Obj.Kill("Hawk_Reggie_"..ch) else AddClickable(
 SetActive(HeroLead)    
 CSay("The controllable character in the Hawk will be: "..HeroLead)
 -- Let's select the music. Since you get here a lot, I see fit in the possibility to randomize the music, though in the demo I'll keep it to one track only (as the demo ends here).
-HawkMusic()
+if not CVV('&NOHAWKMUSIC') then HawkMusic() end
 -- Boundaries
 SetScrollBoundaries(0,15,0,658)
 -- Schuifdeuren

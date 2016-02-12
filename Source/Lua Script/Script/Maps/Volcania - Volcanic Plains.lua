@@ -85,8 +85,10 @@ end
 function BoxTextBackGround()
 -- MS.Run("COMBAT","DrawScreen","Yes")
 Image.Cls()
+White()
 Image.Draw("TMP_COMBATSCREEN",0,0)
-CSay("Are we here?") -- Debug line! May NOT be present in actual release!
+MS.Run("COMBAT",'ShowMessages')
+-- CSay("Are we here?") -- Debug line! May NOT be present in actual release!
 end
 
 function Boss()
