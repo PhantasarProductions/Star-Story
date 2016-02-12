@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.11
+version: 16.02.12
 ]]
 
 AltComeInFromNorth = { [6]=2673 }
@@ -108,7 +108,7 @@ Var.D("%COMBAT.LVFOE1",200000)
 Var.D("$COMBAT.ALTCOORDSFOE1","300,400")
 -- Let combat commence
 StartCombat()
-Sys.Error('The rest has not yet been scripted. Sorry!')
+-- Sys.Error('The rest has not yet been scripted. Sorry!')
 end
 
 function GALE_OnLoad()
