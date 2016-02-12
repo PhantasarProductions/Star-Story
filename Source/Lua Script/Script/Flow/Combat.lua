@@ -1,6 +1,6 @@
 --[[
   Combat.lua
-  Version: 16.02.11
+  Version: 16.02.12
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -213,6 +213,7 @@ end
 
 function InitCombat()
 local k,v
+BlockSwitch = {} -- If not in use this must just be an empty array or bad stuff may happen.
 DelEnemies()
 local arena = CVVN("$COMBAT.BACKGROUND") or "TestArena.png" 
 CombatData = Var2Table("COMBAT.",true)
@@ -271,6 +272,8 @@ if CombatData.AltEnemyBuild then
    CSay("Trying to execute alternate enemy build: "..CombatData.AltEnemyBuild)
    MS.Run("COMBAT",CombatData.AltEnemyBuild) 
    end    
+-- Switch blocking
+if CombatData.NOSWITCH then BlockSwitch = mysplit(CombatData.NOSWITCH,";") end   
 -- Gauge Init
 local k,f,i,fe
 CSay("Gauge Star positions")

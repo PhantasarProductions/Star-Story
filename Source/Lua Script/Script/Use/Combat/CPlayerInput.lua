@@ -1,6 +1,6 @@
 --[[
   CPlayerInput.lua
-  Version: 16.01.29
+  Version: 16.02.12
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -291,7 +291,10 @@ InputItems = {
     
     { Name = "Switch",
       Item = "SWT",
-      Allow = function(ch) return RPGChar.PartyTag(3)~="" end,
+      Allow = function(ch)
+              for chch in each(BlockSwitch or {}) do if chch==ch then return false end end
+              return RPGChar.PartyTag(3)~="" 
+              end,
       Input = function(ch,pos)
 				SetFont("StatusStat")
 				DarkText("Please select a character from the back row to replace: "..ch,400,300,2,2,0,180,255)
