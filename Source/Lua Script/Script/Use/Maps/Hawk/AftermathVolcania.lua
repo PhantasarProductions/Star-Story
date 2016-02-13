@@ -32,8 +32,19 @@
   
  **********************************************
  
-version: 16.02.12
+version: 16.02.13
 ]]
 function AfterVolcania()
+MapShow("*NOTHING AT ALL*")
+Time.Sleep(2500)
+Music("Scenario/Comfortable Mysery.ogg")
+Time.Sleep(500)
+MapText("VONDELING")
+Image.Cls()
+Flip()
+Time.Sleep(500)
+StopMusic()
+Time.Sleep(2500)
+Music("Scenario/Calm Indoors.ogg")
 Sys.Error("We're back on the hawk, but the rest is not yet scripted! Sorry!")
 end
