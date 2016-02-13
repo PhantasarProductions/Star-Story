@@ -1,6 +1,6 @@
 --[[
   JukeboxData.lua
-  Version: 16.02.12
+  Version: 16.02.13
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -127,6 +127,9 @@ return {
      ["Calm Indoors"] = {
                    File = "Music/Scenario/Calm Indoors.ogg",
                    Artist = "Widzy"},
+     ["Comfortable Mystery"] = {
+                   File = "Music/Scenario/Comfortable Mystery.ogg",
+                   Artist = "Kevin McLeod"},
      ["Dream Culture"] = {
                    File = "Music/Scenario/Dream Culture.ogg",
                    Artist = "Kevin McLeod"},
