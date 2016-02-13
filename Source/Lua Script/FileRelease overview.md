@@ -315,6 +315,7 @@
 1. Script/Maps/Physillium - Ji Temple.lua
 1. Script/Maps/Physillium - The Ruins of the Y Anhysbys.lsv
 1. Script/Maps/Physillium - The Ruins of the Y Anhysbys.lua
+1. Script/Maps/Poloqor - Mid-Boss.lua
 1. Script/Maps/Volcania - Volcanic Plains.lua
 1. Script/Maps/Vulpina - Town.lua
 1. Script/Maps/Ysperon - Eugorvnia.lua
@@ -368,4 +369,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sat 13 February 2016; 13:23:57 CET
+### Last updated: Sat 13 February 2016; 18:46:03 CET
