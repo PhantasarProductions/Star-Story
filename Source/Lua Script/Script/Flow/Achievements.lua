@@ -1,7 +1,7 @@
 --[[
   Achievements.lua
-  Version: 15.10.17
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.02.19
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -43,6 +43,11 @@ Achievements = JINC("Script/JINC/Big/Achievements.lua")
 Achieved = Achieved or {}
 AchIcons = {}
 PM=0
+local TReward = {Bronze	= {2,1,1},Silver={3,2,1},Gold={5,3,2},Platinum={10,5,3}}
+Reward = { Bronze = 0, Silver=0, Gold=0, Platinum=0}
+for aCLASS,aARRAY in pairs(TReward) do 
+    Reward[aCLASS] = aARRAY[skill]
+    end
 end
 
 function GRAB_Achievements(prefix)
@@ -57,12 +62,29 @@ Var.D("$GRABBEDACHIEVEMENTS",r)
 return r   
 end
 
+function RewardAurinaRate(PTag)
+local Tag = upper(PTag)
+if not Achievements[Tag] then Console.Write("ERROR! Achievement '"..Tag.."' does not exist!"); return end
+if not Achieved[Tag] then return end
+local ACLASS = Achievements[Tag]['Type']
+inc("%AURINARATE",Reward[ACLASS])
+CSay(ACLASS.." Achievement "..Tag.." ("..Achievements[Tag].Title..") rewards: "..Reward[ACLASS].." aurina rate ==> "..CVV("%AURINARATE"))
+end
+
+function SyncAurina()
+if Done("&AURINASYNCEDTOACHIEVEMENTS") then return end
+CSay("Synchronizing Aurina Rate to Achievements you already got")
+for t,_ in spairs(Achievements) do RewardAurinaRate(t) end
+end
+
 function Award(PTag)
 local Tag = upper(PTag)
 if not Achievements[Tag] then Console.Write("ERROR! Achievement '"..Tag.."' does not exist!"); return end
 if Achieved[Tag] then return end
+SyncAurina()
 CSay("Awarding: "..Tag.." > "..Achievements[Tag].Title)
 Achieved[Tag] = true
+RewardAurinaRate(Tag)
 -- @IF *GAMEJOLT
 CSay("Contacting GameJolt")
 GJ.Award(GameJoltAchievements[Tag])
