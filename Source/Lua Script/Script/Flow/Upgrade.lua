@@ -1,6 +1,6 @@
 --[[
   Upgrade.lua
-  Version: 16.02.18
+  Version: 16.02.19
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -60,6 +60,7 @@ SpecificDraw = {
               local upgrades = CVV("%UPGRADES."..upper(pchar))
               local price
               local r,g,b
+              local pricecap = 200000 * (4-skill)
               SetFont('StatusStat')
               DarkText("Upgrades done: "..upgrades.." / "..maxupgrade,400,180,2,1,255,0,180)
               for i,v in ipairs ( {"Strength", "Defense", "Will", "Resistance","Agility","Accuracy","Evasion"} ) do
@@ -69,12 +70,12 @@ SpecificDraw = {
                       DarkText(v,200,y,0,0,0,180,255)
                       DarkText(     RPGStat.Stat(pchar,"BASE_"..v),   400,y,1,0,255,180,0)
                       DarkText("+"..RPGStat.Stat(pchar,"UPGRADE_"..v),500,y,1,0,180,255,0)
-                      if upgrades<maxupgrade then
-                         price = RPGStat.Stat(pchar,"UPGRADE_"..v) * 125
-                         if price==0 then price=250 end
+                      price = RPGStat.Stat(pchar,"UPGRADE_"..v) * 125
+                      if price==0 then price=250 end
+                      if upgrades<maxupgrade and price<=pricecap then
                          if my>y and my<y+fonts["StatusStat"][2] then
                             r,g,b=255,255,255
-                            if upgrades<maxupgrade and price<=CVV('%CASH') and mousehit(1) then
+                            if upgrades<maxupgrade and price<=CVV('%CASH') and price<=pricecap and mousehit(1) then
                                SpendMoney(price)
                                SFX("Audio/SFX/Shopping/ChaChing.ogg")
                                RPGStat.IncStat(pchar,"UPGRADE_"..v)
