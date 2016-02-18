@@ -1,6 +1,6 @@
 --[[
   Party.lua
-  Version: 16.02.05
+  Version: 16.02.19
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -47,6 +47,25 @@ XCharLvUp = {}
 XCharSyncLevel = {}
 
 minisetting = minisetting or 1
+
+cashcaps = {
+                 ['%AURINAS'] = {5000,2500,1000},
+                 ["%AURINARATE"] = {2000,	1500,	500},
+                 ["%CASH"] = {1000000,	500000,	100000},
+                 ["%SHILDERS"] = {2500000,	250000,	25000}             
+           }
+
+function RunCashCaps()
+for id,cap in pairs(cashcaps) do
+    if CVVN(id) and CVV(id)>cap[skill] then 
+       CSay(id.." exceeded the cap!")
+       CSay("= value: "..CVV(id))
+       CSay("= cap:   "..cap[skill])
+       Var.D(id,cap[skill])
+       end
+    end
+end       
+
 
 function GrabLevel(ch,lv)
 local linenumber,line,l
@@ -190,6 +209,10 @@ local Show = {
        name  = "Credits",
        value = CVVN("%CASH")
     },
+    {
+       name  = "Shilders", -- Play only a role in the secret Phantasar section
+       value = CVVN("%SHILDERS")
+    },
     {     
        name  = "Time",
        value = CVVN("%PLAYTIME"),
@@ -217,6 +240,7 @@ local Show = {
 }
 local y = 500
 SetFont("MiniMessage")
+RunCashCaps()
 for s in ieach(Show) do
     -- CSay("Showing: "..s.name)
     if s.value then

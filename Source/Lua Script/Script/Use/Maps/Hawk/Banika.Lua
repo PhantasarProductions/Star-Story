@@ -2,7 +2,7 @@
 **********************************************
   
   Banika.Lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.22
+version: 16.02.19
 ]]
 
 
@@ -46,6 +46,7 @@ local Keuze = RunQuestion("MAP","BAKINA.MENU")
 ;( {   
 
       function() -- Aurina Exchange
+      MS.Run("PARTY","RunCashCaps")
       if CVV("%AURINAS")==0 then MapText("BAKINA.GEENAURINA") return end
       Var.D("%AURINARATE",CVVN("%AURINARATE") or (5-skill))
       local aurina = CVV("%AURINAS")

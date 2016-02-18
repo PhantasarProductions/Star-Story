@@ -2,7 +2,7 @@
 **********************************************
   
   LostPlanet_Pub_Outside.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.02
+version: 16.02.19
 ]]
 
 
@@ -77,6 +77,7 @@ function NPC_PoepAurina()
 if not Done("&DONE.TALK.POEP.AURINA") then MapText("POEP") end
 if CVV("%AURINAS")==0 then MapText("POEPGEENAURINA") return end
 Var.D("%AURINARATE",CVVN("%AURINARATE") or (5-skill))
+MS.Run("PARTY","RunCashCaps")
 local aurina = CVV("%AURINAS")
 local rate = CVV("%AURINARATE")
 local total = aurina * rate
