@@ -291,6 +291,7 @@
 
 1. Script/Flow/Bestiary.lsv
 1. Script/Flow/Bestiary.lua
+1. Script/Flow/BlockShooter.lua
 1. Script/JINC/Big/BestiaryData.lua
 1. Script/JINC/Foes/Boss/AstrilopupElite.lua
 1. Script/JINC/Foes/Boss/BigLion.lua
@@ -370,4 +371,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Thu 18 February 2016; 16:25:48 CET
+### Last updated: Thu 18 February 2016; 17:46:51 CET
