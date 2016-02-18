@@ -1,7 +1,7 @@
 --[[
   Upgrade.lua
-  Version: 15.12.06
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.02.18
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -93,6 +93,7 @@ SpecificDraw = {
               local y,r,g,b
               local mx,my = MouseCoords()
               local allow,statname,statval
+              local pricecap = 100000 * (4-skill)-- I want to prevent Lua going haywire because of too high values.
               SetFont('StatusStat')
               for i=1,abilities do
                   y = (i*fonts["StatusStat"][2])+200
@@ -115,6 +116,7 @@ SpecificDraw = {
                       if RPGChar.StatExists(pchar,statname)==0 then RPGChar.DefStat(pchar,statname,ARM['ARM_PRICE_'..ARMBase[id]]) end -- This will put in the price inside Crystal's record, but only if that record is still empty.
                       statval = RPGChar.Stat(pchar,statname)
                       allow = allow and statval>0
+                      allow = allow and statval<=pricecap
                       allow = allow and (id=="AMMO" or ((not ARMMax[id]) or RPGChar.Stat(pchar,"ARM."..id.."."..cARM)<ARMMax[id]))
                       if allow then DarkText(statval.." CR",780,y,1,0,180,0,255) end
                       allow = allow and CVV("%CASH")>=statval
