@@ -32,8 +32,10 @@
   
  **********************************************
  
-version: 16.02.13
+version: 16.02.14
 ]]
+
+MS.LoadNew("FIELD","Script/Flow/Field.lua")
 MS.Run("FIELD"," SetScrollBoundaries","-1;48;1;49")
 
 
@@ -47,17 +49,48 @@ Actors.Actor("PLAYER").Visible = 0 -- Needed otherwise Wendicka will be visible 
 MapText("PREBOSS_B")
 KickReggie('EAST','POP_Foxy','Reggie')
 MapText("PREBOSS_C")
-Sys.Error("Boss fight not yet set up")
+Schedule("MAP","PostMIDBOSS")
+CleanCombat()
+Var.D("$COMBAT.BACKGROUND","Mid-Boss.png")
+Var.D("$COMBAT.BEGIN","Default")
+Var.D("$COMBAT.FOE1","Boss/Mid-Boss")
+Var.D("%COMBAT.LVFOE1",RPGStat.Stat("Wendicka","Level"))
+Var.D("$COMBAT.ALTCOORDSFOE1","300,400")
+Var.D("$COMBAT.MUSIC","SpecialBoss/Exit the premises.ogg")
+StartCombat()
+--Sys.Error("Boss fight not yet set up")
+end
+
+function PostMIDBOSS()
+MapText("POSTBOSS")
+Done("&DONE.MIDBOSS")
+Maps.Obj.Kill("Reggie",1)
+PartyUnPop()
+MapEXP()
+MapShow("Un")
+Maps.Obj.Kill("Mid-Boss",1)
+TransporterPad("Start",2)
+--Sys.Error("Boss aftermath not yet set")
+end
+
+function CLICK_ARRIVAL_Stickie()
+Done("&APP.GAMESHOOT")
+MapText("GAMESHOOT")
+Maps.Obj.Kill("Stickie",1)
+local a = 24 / skill
+inc('%AURINAS',a)
+inc('%AURINARATE',a*2)
 end
 
 StartUp = {
              [true] = function() 
                       Music('Ji/The_Loneliness')
                       MapShow("*ALL*")
+                      AddClickable('Stickie')
                       end,
              [false] = function() 
                        MapShow("Un")
-                       StopMusic()
+                       Music("SYS/SILENCE.OGG")                       
                        ZA_Enter("STARTMIDBOSS",MIDBOSS)
                        end
           }

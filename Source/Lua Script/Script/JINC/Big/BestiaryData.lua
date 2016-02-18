@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.13
+version: 16.02.14
 ]]
 return {
 	"ASTRILOPUPELITE",
@@ -44,6 +44,7 @@ return {
 	"DARDMOEDER",
 	"FLIRMOUSE_KING",
 	"FLIRMOUSE_SUBJECT",
+	"MID-BOSS",
 	"QUEENMYR",
 	"SUPAQUAL",
 	"SUPERSYSS",

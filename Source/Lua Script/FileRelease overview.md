@@ -297,6 +297,7 @@
 1. Script/JINC/Foes/Boss/Cyborg Lord.lua
 1. Script/JINC/Foes/Boss/DardBoorth.lua
 1. Script/JINC/Foes/Boss/DardMoeder.lua
+1. Script/JINC/Foes/Boss/Mid-Boss.lua
 1. Script/JINC/Foes/Boss/QueenMyr.lua
 1. Script/JINC/Foes/Reg/AstrilopupGuard.lua
 1. Script/JINC/Foes/Reg/BlackLizard.lua
@@ -369,4 +370,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sat 13 February 2016; 18:46:03 CET
+### Last updated: Thu 18 February 2016; 13:15:07 CET
