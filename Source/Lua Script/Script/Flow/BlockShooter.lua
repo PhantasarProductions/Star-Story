@@ -18,11 +18,24 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 iflow = "start"
+logoalpha = 0
+
+
+function Logo(alpha)
+Image.LoadNew("BLOCKSHOOT_LOGO","GFX/APP/BLOCKSHOOTER/Logo.png")
+Image.HotCenter("BLOCKSHOOT_LOGO")
+Image.SetAlphaPC(alpha or 100)
+Image.Draw("BLOCKSHOOT_LOGO",400,200)
+end
+
+
 
 rflow = {
 
 
            start = function() 
+                   Logo(logoalpha)
+                   if logoalpha<90 then return end
                    end,
                    
            explain = function()
