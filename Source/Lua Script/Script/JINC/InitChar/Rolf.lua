@@ -50,8 +50,8 @@ for _,s in ipairs(linking) do RPGStat.LinkStat("ExHuRU","Rolf",s) end
 RPGStat.LinkPoints("ExHuRU","Rolf","EXP")
 
 -- And the ability and learn list must be copied
-RPGStat.LinkPoints("ExHuRU","Rolf","ABL")
-RPGStat.LinkPoints("ExHuRU","Rolf","LEARN")
+RPGStat.LinkList("ExHuRU","Rolf","ABL")
+RPGStat.LinkList("ExHuRU","Rolf","LEARN")
 
 
 
