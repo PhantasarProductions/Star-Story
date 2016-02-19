@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.14
+version: 16.02.19
 ]]
 
 MS.LoadNew("FIELD","Script/Flow/Field.lua")
@@ -70,6 +70,7 @@ MapEXP()
 MapShow("Un")
 Maps.Obj.Kill("Mid-Boss",1)
 TransporterPad("Start",2)
+Award("BOSS_MIDBOSS")
 --Sys.Error("Boss aftermath not yet set")
 end
 

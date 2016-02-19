@@ -343,6 +343,7 @@
 1. Script/Use/Maps/Hawk/HawkBridge.lua
 1. Script/Use/Maps/Hawk/Teach Wendicka.lua
 1. Script/Use/Maps/Hawk_Terminal/Bestiary.lua
+1. Script/Use/Maps/Hawk_Terminal/Block Shooter .lua
 1. Script/Use/Sub/Party/XenobiSpells.lua
 
 
@@ -371,4 +372,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 19 February 2016; 01:10:09 CET
+### Last updated: Fri 19 February 2016; 18:45:48 CET

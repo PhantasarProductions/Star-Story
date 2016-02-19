@@ -1,6 +1,6 @@
 --[[
   Terminal.lua
-  Version: 16.01.02
+  Version: 16.02.19
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -76,7 +76,7 @@ for idx,item in spairs(Menu) do
           end
        Image.Show(item.Icon,x,y)
        SetFont('Terminal')
-       Image.DText(idx,x,y+40,2,0)
+       Image.DText(Str.Replace(idx,"Game",""),x,y+40,2,0)
        x = x + 90
        if x>700 then x=40 y=y+70 end
        end
