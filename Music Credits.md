@@ -26,6 +26,7 @@ I'd like to thank the next music artists for their brilliant work, and licensing
    1. Opening Theme C
    1. The Complex
    1. Blip Stream
+   1. Disco Medusae
    1. Disquiet
    1. Gm115
    1. Phantom from Space
