@@ -34,6 +34,35 @@
  
 version: 16.02.20
 ]]
+
+
+
+
+-- Getting Skill
+skill = Sys.Val(Var.C('%SKILL'))
+
+
+
+;({function()
+   InventorySockets = 100         -- Max sockets
+   InventorySocketRow = 10        -- Max number of sockets per row
+   InventoryMaxStack = 25         -- Max number of items that may be stacked on a socket
+   InventoryMaxVaultStack = 500   -- Max number of items that may be stacked on a vault socket (where each (unique) item just has one socket)
+   end, function()
+   InventorySockets = 50
+   InventorySocketRow = 10   
+   InventoryMaxStack = 10
+   InventoryMaxVaultStack = 250
+   end, function()
+   InventorySockets = 25
+   InventorySocketRow = 5
+   InventoryMaxStack = 1
+   InventoryMaxVaultStack = 100
+   end})[skill]()    
+
+-- Functions
+function prefixed(s,p) return Str.Prefixed(s,p)==1 end
+
 -- Rolf taking over and linking to ExHuRU with his level and his upgrades and permanent powerups.
 
 stats = {"Strength", "Defense", "Will", "Resistance","Agility","Accuracy","Evasion"}
@@ -43,6 +72,13 @@ linking = {"Level"}
 for _,s in ipairs(stats) do linking[#linking+1] = "UPGRADE_"..s  linking[#linking+1]="POWERUP_"..s end
 
 for _,s in ipairs(linking) do RPGStat.LinkStat("ExHuRU","Rolf",s) end
+
+
+-- Inventory link up
+for i=1,InventorySockets do 
+    RPGStat.LinkStat('ExHuRU','Rolf','INVAMNT'..i)
+    RPGStat.LinkData('ExHuRU','Rolf','INVITEM'..i)
+    end
 
 
 -- Rolf most also take over and link to ExHuRU's Experience points
