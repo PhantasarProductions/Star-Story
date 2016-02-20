@@ -71,6 +71,15 @@ linking = {"Level"}
 
 for _,s in ipairs(stats) do linking[#linking+1] = "UPGRADE_"..s  linking[#linking+1]="POWERUP_"..s end
 
+for _,s in ipairs({'ER_Dark','ER_Earth','ER_Fire','ER_Frost','ER_Healing','ER_Light','ER_Lightning'}) do 
+   linking[#linking+1] = s 
+   ermod = Str.Replace(s,"ER_","ER_MODIFIER_")
+   RPGStat.NewStat('ExHuRU',ermod,0) 
+   linking[#linking+1] = ermod 
+   end
+
+for _,s in ipairs({'Block','Buff','Damned','Death','Debuff','Disease','Paralysis','Poison','Will'}) do linking[#linking+1] = "SR_BUFF_"..s linking[#linking+1] = "SR_EQBF_"..s end
+
 for _,s in ipairs(linking) do RPGStat.LinkStat("ExHuRU","Rolf",s) end
 
 
