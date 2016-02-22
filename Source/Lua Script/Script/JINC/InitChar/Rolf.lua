@@ -65,13 +65,13 @@ function prefixed(s,p) return Str.Prefixed(s,p)==1 end
 
 -- Rolf taking over and linking to ExHuRU with his level and his upgrades and permanent powerups.
 
-stats = {"Strength", "Defense", "Will", "Resistance","Agility","Accuracy","Evasion"}
+stats = {"Strength", "Defense", "Will", "Resistance","Agility","Accuracy","Evasion","HP"}
 
 linking = {"Level"}
 
 for _,s in ipairs(stats) do linking[#linking+1] = "UPGRADE_"..s  linking[#linking+1]="POWERUP_"..s end
 
-for _,s in ipairs({'ER_Dark','ER_Earth','ER_Fire','ER_Frost','ER_Healing','ER_Light','ER_Lightning'}) do 
+for _,s in ipairs({'ER_Dark','ER_Earth','ER_Fire','ER_Frost','ER_Healing','ER_Light','ER_Lightning',"ER_Water","ER_Wind"}) do 
    linking[#linking+1] = s 
    ermod = Str.Replace(s,"ER_","ER_MODIFIER_")
    RPGStat.NewStat('ExHuRU',ermod,0) 
@@ -96,7 +96,9 @@ RPGStat.LinkPoints("ExHuRU","Rolf","EXP")
 
 -- And the ability and learn list must be copied
 RPGStat.LinkList("ExHuRU","Rolf","ABL")
+RPGStat.LinkList("ExHuRU","Rolf","ABL_POWERUP")
 RPGStat.LinkList("ExHuRU","Rolf","LEARN")
+
 
 
 

@@ -1,6 +1,6 @@
 --[[
   JukeboxData.lua
-  Version: 16.02.20
+  Version: 16.02.22
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -79,6 +79,9 @@ return {
      ["Don't talk too much"] = {
                    File = "Music/Location_Pub_Jungle/1 - TDCi - Don't Talk Too Much.ogg",
                    Artist = "Fake Music Generator"},
+     ["Honey Bee"] = {
+                   File = "Music/Nizozemska/HoneyBee.ogg",
+                   Artist = "Kevin McLeod"},
      ["Emily Rose (a duet with Jennifer Carpenter)"] = {
                    File = "Music/ORIGINAL4ALIAS/Your_Marginally_Talented_Photographer_Girlfriend_-_04_-_Emily_Rose_a_duet_with_Jennifer_Carpenter.ogg",
                    Artist = "Your Marginally Talented Photographer Girlfriend"},
