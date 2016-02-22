@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.21
+version: 16.02.22
 ]]
 
 
@@ -101,9 +101,27 @@ repeat SueWalking() until Sue.X<=Wendicka.X
 Actors.ChoosePic("ActSue","SUE.NORTH")
 MapText('SUE_C')
 Actors.MoveTo('ActSue',Wendicka.X,Wendicka.Y+10)
-repeat SueWalking() until Sue.Y<=Wendicka.Y+25
+repeat SueWalking(Maps.CamX,64) until Sue.Y<=Wendicka.Y+25
 Actors.MoveTo('ActSue',Wendicka.X,Wendicka.Y+25)
 MapText("SUE_D")
+Actors.Spawn('Spawn Rolf','GFX/Actors/Player','ActRolf')
+Actors.ChoosePic("ActRolf","ROLF.NORTH")
+Actors.WalkToSpot("ActRolf","Rolf_WalkTo")
+MapText("SUE_E")
+Party("Wendicka","Crystal","Yirl","Foxy","Xenobi","Rolf")
+Actors.ChoosePic("ActRolf","ROLF.SOUTH")
+Actors.ChoosePic("ActSue","SUE.SOUTH")
+for act in each({"POP_Wendicka","POP_Crystal","POP_Yirl","POP_Foxy","POP_Xenobi","ActRolf","ActSue"}) do
+    Actors.WalkToSpot(act,"Start")
+    end
+for alpha = 0,100,.1 do
+    Black()
+    DrawScreen()
+    Image.SetAlphaPC(alpha)
+    Image.Rect(0,0,800,600)
+    Image.SetAlphaPC(100)
+    Flip()   
+    end
 Sys.Error("End of script. I'll continue later.")
 end
 
