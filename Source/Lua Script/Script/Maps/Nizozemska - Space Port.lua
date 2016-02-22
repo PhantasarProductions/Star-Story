@@ -32,24 +32,94 @@
   
  **********************************************
  
-version: 16.02.20
+version: 16.02.21
 ]]
 
 
 -- @USE /Script/Use/Maps/Gen/Schuif.lua
 
+function SchuifSetup()
+InitSchuif( 'InLinks'  ,-40,0)
+InitSchuif( 'InRechts' , 40,0)
+InitSchuif('UitLinks'  ,-40,0)
+InitSchuif('UitRechts' , 40,0)
+end
+
 function IngangSluiten()
 Maps.Obj.Obj("DoorBlock").Impassible=1
 Maps.Remap()
+SetSchuif({'InRechts','InLinks'},"Dicht")
 end
 
 function IngangOpenen()
 Maps.Obj.Obj("DoorBlock").Impassible=0
 Maps.Remap()
+SetSchuif({'InRechts','InLinks'},"Open")
 end
 
 
 function UitgangOpenen()
 Maps.Obj.Obj("DoorBlock").Impassible=0
 Maps.Remap()
+SetSchuif({'UitRechts','UitLinks'},"Open")
+end
+
+function dWait(cyc)
+for i=1,cyc do DoSchuif() DrawScreen() Flip() end
+end
+
+function SueWalking(tox,toy)
+local ctx = tox or Maps.CamX
+local cty = toy or Maps.CamY
+if Maps.CamX<ctx then Maps.CamX = Maps.CamX + 1 end
+if Maps.CamX>ctx then Maps.CamX = Maps.CamX - 1 end
+if Maps.CamY<cty then Maps.CamY = Maps.CamY + 1 end
+if Maps.CamY>cty then Maps.CamY = Maps.CamY - 1 end
+DrawScreen()
+Flip()
+end
+
+function MeetSue()
+-- Spawn Sue (happens outside of the cam view, so no prob here)
+Actors.Spawn('Point_Sue','GFX/Actors/Sue','ActSue')
+Actors.ChoosePic("ActSue","SUE.EAST")
+PartyPop("Sue","South")
+dWait(40)
+local Wendicka = Actors.Actor("POP_Wendicka")
+local Sue     = Actors.Actor("ActSue")
+MapText('SUE_A')
+repeat
+Maps.CamY = Maps.CamY + 1
+DrawScreen()
+Flip()
+until Maps.CamY>=215
+Actors.ChoosePic("ActSue","SUE.NORTH")
+MapText('SUE_B')
+Actors.ChoosePic("ActSue","SUE.WEST")
+Actors.MoveTo('ActSue',Wendicka.X,Sue.Y)
+repeat SueWalking() until Sue.X<=Wendicka.X
+Actors.ChoosePic("ActSue","SUE.NORTH")
+MapText('SUE_C')
+Actors.MoveTo('ActSue',Wendicka.X,Wendicka.Y+10)
+repeat SueWalking() until Sue.Y<=Wendicka.Y+25
+Actors.MoveTo('ActSue',Wendicka.X,Wendicka.Y+25)
+MapText("SUE_D")
+Sys.Error("End of script. I'll continue later.")
+end
+
+function InZone()
+IngangOpenen()
+dWait(40)
+Actors.MoveToSpot("PLAYER","WelcomeToNizozemska",1)
+dWait(40)
+IngangSluiten()
+if not Done("&DONE.NIZOZEMSKA.SUE") then MeetSue() end
+end
+
+
+function GALE_OnLoad()
+Music("Nizozemska/SpacePort.ogg")
+MS.Run("FIELD","SetScrollBoundaries","16;64;16;489")
+SchuifSetup()
+ZA_Enter("InZone",InZone)
 end
