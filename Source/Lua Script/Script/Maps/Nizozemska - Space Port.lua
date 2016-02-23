@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.22
+version: 16.02.23
 ]]
 
 
@@ -122,6 +122,8 @@ for alpha = 0,100,.1 do
     Image.SetAlphaPC(100)
     Flip()   
     end
+LoadRoom("Nizozemska - Groenhart Bos",'Bos')
+SpawnPlayer('Einde') -- Sounds illogical, but this is because of the alternate worldmap routine.    
 Sys.Error("End of script. I'll continue later.")
 end
 
