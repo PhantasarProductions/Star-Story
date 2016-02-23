@@ -115,14 +115,14 @@ for act in each({"POP_Wendicka","POP_Crystal","POP_Yirl","POP_Foxy","POP_Xenobi"
     Actors.WalkToSpot(act,"Start")
     end
 for alpha = 0,100,.1 do
-    Black()
     DrawScreen()
     Image.SetAlphaPC(alpha)
+    Black()
     Image.Rect(0,0,800,600)
     Image.SetAlphaPC(100)
     Flip()   
     end
-LoadRoom("Nizozemska - Groenhart Bos",'Bos')
+LoadMap("Nizozemska - Groenhart Bos",'Bos')
 SpawnPlayer('Einde') -- Sounds illogical, but this is because of the alternate worldmap routine.    
 Sys.Error("End of script. I'll continue later.")
 end
