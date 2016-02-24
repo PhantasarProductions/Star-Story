@@ -37,10 +37,18 @@ version: 16.02.24
 
 -- Entrance hut to savespot
 function NPC_Hut()  
+Maps.GotoLayer("Hut")
+SpawnPlayer("Enter")
 end  
+
+function ExitHut()
+Maps.Obj.Kill("PLAYER")
+Maps.GotoLayer("Bos")
+end
 
 -- And init all this shit (again)
 function GALE_OnLoad()
 MS.Run("FIELD","SetScrollBoundaries","-1;40;1;6400")
 Music("Nizozemska/HoneyBee.ogg")
+ZA_Enter("EXIT_HUT",ExitHut)
 end

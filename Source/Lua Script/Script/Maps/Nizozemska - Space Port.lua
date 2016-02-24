@@ -143,7 +143,7 @@ for i=65,68 do
     end
 AddPartyPop("POP_Sue")
 AddPartyPop("POP_Reggie")
-Maps.PermaWrite("for _,act in ipairs({'E_Reggie','E_Sue'}) do Maps.Obj.Kill(act) end") -- Why the easy way, if there's the hard way :-P
+Maps.PermaWrite("for _,act in ipairs({'POP_Reggie','POP_Sue'}) do Maps.Obj.Kill(act) end") -- Why the easy way, if there's the hard way :-P
 PartyUnPop()           
 -- Sys.Error("End of script. I'll continue later.")
 end
