@@ -32,8 +32,15 @@
   
  **********************************************
  
-version: 16.02.23
+version: 16.02.24
 ]]
+
+-- Entrance hut to savespot
+function NPC_Hut()  
+end  
+
+-- And init all this shit (again)
 function GALE_OnLoad()
+MS.Run("FIELD","SetScrollBoundaries","-1;40;1;6400")
 Music("Nizozemska/HoneyBee.ogg")
 end

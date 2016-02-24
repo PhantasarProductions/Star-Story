@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.23
+version: 16.02.24
 ]]
 
 
@@ -114,7 +114,7 @@ Actors.ChoosePic("ActSue","SUE.SOUTH")
 for act in each({"POP_Wendicka","POP_Crystal","POP_Yirl","POP_Foxy","POP_Xenobi","ActRolf","ActSue"}) do
     Actors.WalkToSpot(act,"Start")
     end
-for alpha = 0,100,.1 do
+for alpha = 0,100,.2 do
     DrawScreen()
     Image.SetAlphaPC(alpha)
     Black()
@@ -122,9 +122,30 @@ for alpha = 0,100,.1 do
     Image.SetAlphaPC(100)
     Flip()   
     end
+Image.Cls()    
 LoadMap("Nizozemska - Groenhart Bos",'Bos')
 SpawnPlayer('Einde') -- Sounds illogical, but this is because of the alternate worldmap routine.    
-Sys.Error("End of script. I'll continue later.")
+PartyPop('E','North')
+Actors.ChoosePic("POP_Rolf","ROLF.SOUTH")
+for y=0,6400,32 do
+    Maps.CamX=0
+    Maps.CamY=y
+    DrawScreen()
+    Image.SetAlpha(1-(y/6400))
+    Black()
+    Image.Rect(0,0,800,600)
+    Image.SetAlphaPC(100)
+    Flip()
+    end
+for i=65,68 do
+    MapText('WELCOME_'..string.char(i))
+    KickReggie('West',"POP_Foxy","POP_Reggie")
+    end
+AddPartyPop("POP_Sue")
+AddPartyPop("POP_Reggie")
+Maps.PermaWrite("for _,act in ipairs({'E_Reggie','E_Sue'}) do Maps.Obj.Kill(act) end") -- Why the easy way, if there's the hard way :-P
+PartyUnPop()           
+-- Sys.Error("End of script. I'll continue later.")
 end
 
 function InZone()
