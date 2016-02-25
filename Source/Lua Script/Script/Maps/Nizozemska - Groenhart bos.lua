@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.24
+version: 16.02.25
 ]]
 
 -- Entrance hut to savespot
@@ -44,6 +44,12 @@ end
 function ExitHut()
 Maps.Obj.Kill("PLAYER")
 Maps.GotoLayer("Bos")
+end
+
+function NPC_Save()
+if not (Done("&DONE.FIRSTPC")) then SetActive("Wendicka") MapText("WELCOME_SAVE") end
+MS.LoadNew("NIZOSAVE","Script/Flow/NizozemskaSave.lua")
+LAURA.Flow("NIZOSAVE")
 end
 
 -- And init all this shit (again)
