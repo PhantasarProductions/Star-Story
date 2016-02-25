@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.24
+version: 16.02.25
 ]]
 
 
@@ -157,10 +157,19 @@ IngangSluiten()
 if not Done("&DONE.NIZOZEMSKA.SUE") then MeetSue() end
 end
 
+function Leave()
+if not CVV('&ALLOW.WORLDMAP.NIZOZEMSKA') then 
+   LoadMap("Nizozemska - Groenhart bos","Bos")
+   SpawnPlayer("Einde")
+   return
+   end
+end
+
 
 function GALE_OnLoad()
 Music("Nizozemska/SpacePort.ogg")
-MS.Run("FIELD","SetScrollBoundaries","16;64;16;489")
+MS.Run("FIELD","SetScrollBoundaries","16;64;16;560")
 SchuifSetup()
 ZA_Enter("InZone",InZone)
+ZA_Enter("Leave",Leave)
 end

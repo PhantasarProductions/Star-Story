@@ -52,9 +52,15 @@ MS.LoadNew("NIZOSAVE","Script/Flow/NizozemskaSave.lua")
 LAURA.Flow("NIZOSAVE")
 end
 
+function ToSpacePort()
+LoadMap("Nizozemska - Space Port")
+SpawnPlayer('Start')
+end
+
 -- And init all this shit (again)
 function GALE_OnLoad()
-MS.Run("FIELD","SetScrollBoundaries","-1;40;1;6400")
+MS.Run("FIELD","SetScrollBoundaries","-1;40;1000;6480")
 Music("Nizozemska/HoneyBee.ogg")
 ZA_Enter("EXIT_HUT",ExitHut)
+ZA_Enter("ExitSouth",ToSpacePort)
 end
