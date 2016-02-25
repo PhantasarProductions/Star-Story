@@ -1,5 +1,5 @@
 --[[
-  Append.lua
+  FieldCreator.lua
   
   version: 16.02.25
   Copyright (C) 2016 Jeroen P. Broks
@@ -17,12 +17,32 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
---[[
-    (c) JPB 2015
-    zLIB License
-]]
 
 
-function append(tablevar,value)
-tablevar[#tablevar+1]=value
+-- Can be used with 'For' statements
+function FieldEnum(x1,x2,y1,y2)
+local x=x1-1
+local y=y1
+if x2<x1 or y2<y1 then Sys.Error("Illegal Function Call","F,FieldEnum;x,"..x1.."."..x2..";y,"..y1.."."..y2) end
+return function()
+       x = x + 1 
+       if x>x2 then x=x1; y=y+1 end
+       if y>y2 then return nil,nil end
+       return x,y
+       end
+end
+       
+function CreateField(w,h,v,ktr,ss1,ss2)
+local f
+if (not ktr) and type(v)=='table' then 
+    f = loadstring(serialize("ret",v).."\nreturn ret")       
+    end
+local s1 = ss1 or 1
+local s2 = ss2 or 1
+local ret = {}
+for x,y in FieldEnum(s1,s2,s1+w,s2+h) do
+    ret[x] = ret[x] or {}
+    ret[x][y] = (f or function() return v end)()
+    end
+return ret    
 end

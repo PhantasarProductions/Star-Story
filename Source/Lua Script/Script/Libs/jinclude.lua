@@ -1,8 +1,8 @@
 --[[
   jinclude.lua
   2013
-  version: 15.10.13
-  Copyright (C) 2015 Jeroen P. Broks
+  version: 16.02.25
+  Copyright (C) 2015, 2016 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
   arising from the use of this software.
