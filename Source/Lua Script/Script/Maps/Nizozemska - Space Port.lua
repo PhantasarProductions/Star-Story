@@ -148,6 +148,11 @@ PartyUnPop()
 -- Sys.Error("End of script. I'll continue later.")
 end
 
+function NPC_Jimmy()
+Done("&DONE.PHANTASAR.WORLDLOCKS.JIMMY")
+MapText("JIMMY")
+end
+
 function InZone()
 IngangOpenen()
 dWait(40)
