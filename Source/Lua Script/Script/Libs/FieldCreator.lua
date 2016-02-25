@@ -20,9 +20,12 @@
 
 
 -- Can be used with 'For' statements
-function FieldEnum(x1,x2,y1,y2)
+function FieldEnum(x1,y1,x2,y2)
+if not y2 then y2=y1 y1=1 end
+if not x1 then x2=x1 x1=1 end
 local x=x1-1
 local y=y1
+if (not x1 and x2 and y1 and y2) then Sys.Error("Illegal Function Call","F,FieldEnum;x,"..(x1 or 'nil').."."..(x2 or 'nil')..";y,"..(y1 or 'nil').."."..(y2 or 'nil')) end
 if x2<x1 or y2<y1 then Sys.Error("Illegal Function Call","F,FieldEnum;x,"..x1.."."..x2..";y,"..y1.."."..y2) end
 return function()
        x = x + 1 
