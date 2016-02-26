@@ -69,5 +69,7 @@ return {
 	"RAT",
 	"SALAMANDER",
 	"SYSS",
+	"THIEF",
+	"WOLF",
 	"FIRESPIDER",
 }
