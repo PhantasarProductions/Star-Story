@@ -16,6 +16,7 @@ Author | Contributions | Kind of contributions
  deusinvictus | 1 | Art; 
 - | 2 | Art; 
 Aaron Krogh | 14 | Music; 
+Aeris | 1 | Art; 
 Alexander | 4 | Audio; Misc files; Music; 
 Angela Nagtzaam | 21 | Art; 
 Ann | 1 | Art; 
