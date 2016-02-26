@@ -274,6 +274,7 @@
 1. Script/Use/Combat/StatusChanges/Disease.lua
 1. Script/Use/Combat/StatusChanges/Paralysis.lua
 1. Script/Use/Combat/StatusChanges/Poison.lua
+1. Script/Use/Combat/StatusChanges/Sleep.lua
 1. Script/Use/Combat/XChar.lua
 1. Script/Use/Goto/GoToMenu.lua
 1. Script/Use/Goto/GoToSave.lua
@@ -381,4 +382,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 26 February 2016; 17:52:51 CET
+### Last updated: Fri 26 February 2016; 18:55:43 CET

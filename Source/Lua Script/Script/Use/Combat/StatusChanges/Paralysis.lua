@@ -1,6 +1,6 @@
 --[[
   Paralysis.lua
-  Version: 16.01.20
+  Version: 16.02.26
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -52,7 +52,7 @@ local w,h,er = ({
                          return 32,64,({10000,25000,100000})[skill] 
                          end,
                   Foe  = function()
-                         return Image.Width("O"..Fighters.Foe[i].Tag),Image.Height("O"..Fighters.Foe[i].Tag),({10000000,25000,5000})
+                         return Image.Width("O"..Fighters.Foe[i].Tag),Image.Height("O"..Fighters.Foe[i].Tag),({10000000,25000,5000})[skill]
                          end 
                 })[g]()
 -- Get off the gauge
