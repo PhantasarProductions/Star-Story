@@ -59,7 +59,8 @@ local w,h,er,al = ({
 setfont("SaveName")
 Red()
 local x,y = FighterCoords(g,i)
-Image.DText("Z",x+w,y-h,al,1)                
+Image.DText("Z",x+w,y-h,al,1) 
+White()               
 -- Prevent wear off effect while entering moves (no I won't allow cheating) :-P 
 for ag,aia in pairs(Fighters) do
     for ai,ad in pairs(aia) do
