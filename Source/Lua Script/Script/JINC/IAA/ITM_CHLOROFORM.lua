@@ -1,5 +1,5 @@
 --[[
-  ITM_CHOROFORM.lua
+  ITM_CHLOROFORM.lua
   Version: 16.02.26
   Copyright (C) 2016 Jeroen Petrus Broks
   
