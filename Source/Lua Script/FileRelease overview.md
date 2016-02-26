@@ -316,6 +316,7 @@
 1. Script/JINC/Foes/Reg/Myr.lua
 1. Script/JINC/Foes/Reg/Pyroguin.lua
 1. Script/JINC/Foes/Reg/Salamander.lua
+1. Script/JINC/Foes/Reg/Thief.lua
 1. Script/JINC/Foes/Reg/Wolf.lua
 1. Script/JINC/Foes/SuperBoss/FireSpider.lua
 1. Script/JINC/NewGame+/PreserveVar.lua
@@ -382,4 +383,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 26 February 2016; 18:55:43 CET
+### Last updated: Fri 26 February 2016; 20:12:17 CET
