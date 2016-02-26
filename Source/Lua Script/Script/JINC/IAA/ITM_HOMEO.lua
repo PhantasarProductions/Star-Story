@@ -1,7 +1,7 @@
 --[[
-  ABL_YIRL_TRIGGERHAPPY.lua
+  ITM_HOMEO.lua
   Version: 16.02.26
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -35,24 +35,25 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 65,
-	["ABL_APCut"] = 10000,
-	["ABL_DblSpeed"] = 8000,
-	["ABL_Pose"] = "Attack",
-	["ABL_Speed"] = 95,
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 95,
+	["ActSpeed"] = 30,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
+	["CureDisease"] = true,
+	["CurePoison"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Keep shooting until your gun is empty",
+	["Description"] = "Heals 1000 HP + poison and disease",
+	["Healing"] = 1000,
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Gun.png",
+	["ITM_BuyPrice"] = 3000,
+	["ITM_SellPrice"] = 750,
+	["ITM_Sellable"] = true,
+	["Icon"] = "GFX/Inventory/Bottle (homeopatisch).png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Trigger Happy",
-	["ScriptEffect_Reference"] = "TriggerHappy",
-	["Target"] = "1F",
-	["UseCombat"] = true}
+	["Name"] = "Homeopathic medicine",
+	["Target"] = "1A",
+	["UseCombat"] = true,
+	["UseField"] = true}
 
 return ret
 

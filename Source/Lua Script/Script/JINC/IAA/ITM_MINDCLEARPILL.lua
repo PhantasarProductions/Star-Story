@@ -1,6 +1,6 @@
 --[[
   ITM_MINDCLEARPILL.lua
-  Version: 16.02.10
+  Version: 16.02.26
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -46,7 +46,7 @@ ret = {
 	["ITM_BuyPrice"] = 100,
 	["ITM_SellPrice"] = 75,
 	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Abilities/Fist.png",
+	["Icon"] = "GFX/Inventory/WhitePill.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Mind Clearing Pill",
 	["SpellAni_Reference"] = "SingleHeal",
