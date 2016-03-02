@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.25
+version: 16.02.27
 ]]
 
 -- Entrance hut to savespot
@@ -57,10 +57,21 @@ LoadMap("Nizozemska - Space Port")
 SpawnPlayer('Start')
 end
 
+function ExitNorth()
+if not Done("&DONE.GROENHART") then
+   MapText("BYE")
+   MapEXP()
+   Actors.MoveTo("PLAYER",Actors.Actor("PLAYER").X,-40)
+   for i=1,100 do DrawScreen(); Flip() end
+   Sys.Error("The rest is not scripted yet.")
+   end
+end
+
 -- And init all this shit (again)
 function GALE_OnLoad()
 MS.Run("FIELD","SetScrollBoundaries","-1;40;1000;6480")
 Music("Nizozemska/HoneyBee.ogg")
 ZA_Enter("EXIT_HUT",ExitHut)
 ZA_Enter("ExitSouth",ToSpacePort)
+ZA_Enter("ExitNorth",ExitNorth)
 end
