@@ -1,6 +1,6 @@
 --[[
   JukeboxData.lua
-  Version: 16.02.26
+  Version: 16.03.07
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -121,6 +121,9 @@ return {
      ["Nearly There"] = {
                    File = "Music/Original4Alias/Nearly_There.ogg",
                    Artist = "Lee Rosevere"},
+     ["Once around the solar system"] = {
+                   File = "Music/Original4Alias/Once-Around-the-Solar-System.ogg",
+                   Artist = "Eric Matyas"},
      ["Phantom from Space"] = {
                    File = "Music/Original4Alias/Phantom from Space.ogg",
                    Artist = "Kevin McLeod"},
