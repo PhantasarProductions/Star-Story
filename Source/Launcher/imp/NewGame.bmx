@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 16.01.30
+Version: 16.03.07
 End Rem
 Strict
 Import "framework.bmx"
@@ -28,7 +28,7 @@ Import tricky_units.Dirry
 Import tricky_units.Bye
 
 
-MKL_Version "LAURA II - NewGame.bmx","16.01.30"
+MKL_Version "LAURA II - NewGame.bmx","16.03.07"
 MKL_Lic     "LAURA II - NewGame.bmx","GNU General Public License 3"
 
 JCR6CrashError = True
@@ -175,13 +175,15 @@ Type TNewGamePanel Extends tfpanelbase
 	HideGadget window
 	?
 	'Print "Executing: "+syscommand
-	'Notify "Executing: "+syscommand	
+	'Notify "Executing: "+syscommand
+	Stopmusic	
 	system_ syscommand
 	?MacOS
 	Bye
 	?
 	?Not MacOS
 	ShowGadget Window
+	startmusic
 	?
 	End Method
 

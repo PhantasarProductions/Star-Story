@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 16.02.02
+Version: 16.03.07
 End Rem
 Strict
 Import maxgui.drivers
@@ -31,10 +31,11 @@ Import tricky_units.MKL_Version
 Import tricky_units.MaxGui_InitFile
 Import tricky_units.Dirry
 Import "JCRFile.bmx"
+Import "Music.bmx"
 
 JCR6CrashError = True
 
-MKL_Version "LAURA II - Framework.bmx","16.02.02"
+MKL_Version "LAURA II - Framework.bmx","16.03.07"
 MKL_Lic     "LAURA II - Framework.bmx","GNU General Public License 3"
 
 ?MacOS

@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 16.02.05
+Version: 16.03.07
 End Rem
 Strict
 
@@ -30,7 +30,7 @@ Import tricky_units.advdatetime
 Import tricky_units.Bye
 Import "Framework.bmx"
 
-MKL_Version "LAURA II - LoadGame.bmx","16.02.05"
+MKL_Version "LAURA II - LoadGame.bmx","16.03.07"
 MKL_Lic     "LAURA II - LoadGame.bmx","GNU General Public License 3"
 
 
@@ -182,6 +182,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	CloseStream BT
 	SaveConfig
 	?Not MacOS
+	stopmusic
 	HideGadget window
 	?
 	Print "Executing: "+syscommand
@@ -190,6 +191,7 @@ Type TLoadGamePanel Extends tfpanelbase
 	?Not MacOS
 	Refresh User,cfile
 	ShowGadget Window
+	startMusic
 	?	
 	?MacOS
 	If Not Sync Bye
