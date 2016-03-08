@@ -47,10 +47,11 @@ else
     echo "  = Downloading game"
     git pull origin master    
     cd ..
-    echo "This file marks in installed version, so the installer will not install this game twice" > Installed.txt
+    echo "This file marks an installed version, so the installer will not install this game twice" > Installed.txt
 fi
 
 cd ..
+chmod +x AlphaBuild/Alpha-Build/LinBin/*.linux
 echo "- Running the game"
 AlphaBuild/Alpha-Build/LinBin/Star\ Story.linux
 echo "- Script has ended"	
