@@ -25,6 +25,7 @@ End Rem
 Strict
 
 Import brl.freeaudioaudio
+Import brl.oggloader
 ?win32
 Import brl.directsoundaudio
 ?
@@ -33,13 +34,24 @@ Import "JCRFile.bmx"
 
 
 Private
+Const Music_Debug = False
 Global Music:TSound
 Global channel:TChannel
-
-If JCR_Exists(JCR,"Music/launcher/launcher.ogg") music = LoadSound(JCR_B(JCR,"Music/launcher/launcher.ogg"))
-
-
 Public
+
+
+If music_debug Notify "Let's check if we can do music!"
+
+If JCR_Exists(JCR,"Music/launcher/launcher.ogg") 
+	music = LoadSound(JCR_B(JCR,"Music/launcher/launcher.ogg"),SOUND_LOOP)
+	If music And music_debug Notify "We got music"
+	If Not music Then Notify "Loading music failed"
+Else
+	If music_debug Notify "We got no music"
+	EndIf
+
+
+
 
 
 Function StartMusic()

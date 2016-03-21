@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 16.02.04
+Version: 16.03.21
 End Rem
 Strict
 
@@ -141,9 +141,9 @@ Import	tricky_units.identify
 Import	tricky_units.Dirry ' Please note that the inclusion of this module requires to have the bah.volumes module by Brucey to be installed as well.
 Import	tricky_units.Bye
 Import	tricky_units.HotSpot
-Import      tricky_units.specialchars
-Import      tricky_units.RPGStats
-Import      tricky_units.SafeString
+Import  tricky_units.specialchars
+Import  tricky_units.RPGStats
+Import  tricky_units.SafeString
 Import	tricky_units.Append
 Import	tricky_units.advdatetime
 
@@ -160,6 +160,11 @@ Import	brl.freeaudioaudio
 Import	brl.glmax2d
 Import	brl.freetypefont
 
+?linux
+Import  "-ldl"
+Import  "-lfontconfig"
+?
+
 
 ' This line has been put in by recommendation from skidracer to prevent calls to an outdated audio unit.
 'SetAudioDriver "OpenAL"
@@ -169,7 +174,7 @@ GaleCon = New GALEMainCon2
 
 ' Version
 MKL_Lic     "LAURA II - LAURA2.bmx","GNU General Public License 3"
-MKL_Version "LAURA II - LAURA2.bmx","16.02.04"
+MKL_Version "LAURA II - LAURA2.bmx","16.03.21"
 
 ?Debug
 GJDebug=True
