@@ -20,10 +20,29 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 16.03.07
+Version: 16.03.24
 End Rem
 Strict
-Import maxgui.drivers
+'Import maxgui.drivers
+Rem
+MaxGUI shit copied from Brucey's MaxIDE.
+I hope they work here!
+End Rem
+?macos
+Import MaxGUI.CocoaMaxGui
+?win32
+Import MaxGUI.Win32MaxGUIEx
+?linux
+Import bah.gtkmaxgui
+Import bah.gtkwebgtkhtml
+'Import bah.gtkwebmozilla
+Import bah.maxguitextareascintilla
+?
+Import MaxGUI.ProxyGadgets
+Rem
+end of maxgui defs
+End Rem
+
 Import brl.linkedlist
 Import brl.eventqueue
 Import bah.volumes
@@ -35,7 +54,7 @@ Import "Music.bmx"
 
 JCR6CrashError = True
 
-MKL_Version "LAURA II - Framework.bmx","16.03.07"
+MKL_Version "LAURA II - Framework.bmx","16.03.24"
 MKL_Lic     "LAURA II - Framework.bmx","GNU General Public License 3"
 
 ?MacOS

@@ -33,10 +33,17 @@ while JCR6.Eof(bt)==0 do
 JCR6.Close(bt); CSay("End of file") ]]
 s = JCR6.LoadString(a)
 -- print("\n\nJ_INCLUDED SCRIPT:\n"..s.."END J_INCLUDE!\n\n")
+--[[ old
 local fn = loadstring(s)
 if not fn then Sys.Error("Included script contains errors","f,jinc;script,"..a..";error,"..err) end
 if type(fn)~="function" then CSay("WARNING! J-Include did not produce a function. It produced a "..type(fn).." in stead!") end
 return fn()
+]]
+local ok,fn = pcall(loadstring,s)
+if not ok then Sys.Error("JINC script had a compilation error","f,jinc;script,"..a..";error,"..fn) return nil end
+local ret 
+ok,ret = pcall(fn)
+if not ok then Sys.Error("JINC script had a runtime error","f,jinc;script,"..a..";error,"..fn) return nil end
 end
 
 JINC = jinc
