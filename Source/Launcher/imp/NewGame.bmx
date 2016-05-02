@@ -26,6 +26,14 @@ Strict
 Import "framework.bmx"
 Import tricky_units.Dirry
 Import tricky_units.Bye
+Import tricky_units.anna ' This may only be used in unmodified versions of the game!
+Import tricky_units.MD5
+
+Private
+Function Anna:StringMap(q$)
+Return Anna_Request(Q) ' If you are compiling a modified version, remove this line or put it on REM, as ANNA may ONLY be used on unmodified versions of the game. If you only enhanced the launcher and only allowed the launcher to create a new account or to check if an account exists (as that is all the launcher may do), I will allow you to keep it.
+End Function
+Public
 
 
 MKL_Version "LAURA II - NewGame.bmx","16.05.02"
@@ -50,6 +58,9 @@ Type TNewGamePanel Extends tfpanelbase
 	Field StartGame:TGadget
 	Field GameJoltUserName:TGadget
 	Field GameJoltToken:TGadget
+	Field AnnaID:TGadget
+	Field AnnaSecu:TGadget
+	Field AnnaCreate:TGadget
 	Field Skill:TGadget
 	Field Windowed:TGadget
 	Field SkipGameJolt:TGadget
@@ -67,6 +78,9 @@ Type TNewGamePanel Extends tfpanelbase
 	StartNewGamePlus = CreateButton("New Game +",0,25,300,25,NGP,Button_radio)
 	SetButtonState StartNewGame,True
 	startnewgameplus.setenabled False
+	HideGadget StartnewGame
+	HideGadget startnewgameplus 
+	' This is now handled differently.
 	CreateLabel "Your name: ",0,50,300,25,panel
 	yourname = CreateTextField(300,50,300,25,panel)
 	SetGadgetText yourname,StripAll(GetUserHomeDir())
@@ -104,7 +118,13 @@ Type TNewGamePanel Extends tfpanelbase
 	MGIF_GetConfig Config
 	
 	CreateLabel "Anna Login. If you have an Anna account, your achievements will be logged on the Phantasar Productions Website",0,500,400,50,Panel
-	CreateLabel "If you don't have or want an Anna account you can skip this part."0,550,400,25
+	CreateLabel "If you don't have or want an Anna account you can skip this part.",0,550,400,25,panel
+	CreateLabel "If your Anna Account is tied to your GameJolt account, can don't have to log this game itself in on GameJolt, but doing so anyway is harmless",0,600,400,50,panel
+	CreateLabel "Account id:",0,650,200,25,panel
+	CreateLabel "Secu-Code: ",0,675,200,25,panel
+	AnnaID = CreateTextField(300,650,50,25,panel)
+	AnnaSecu = CreateTextField(300,675,200,25,panel)
+	AnnaCreate = CreateButton("Create",375,650,100,25,panel)
 	Rem
 	?Win32
 	panwendicka = CreatePanel(tw-PixmapWidth(pixwendicka),th-PixmapHeight(pixwendicka),PixmapWidth(pixwendicka),PixmapHeight(pixwendicka),panel)
@@ -118,7 +138,29 @@ Type TNewGamePanel Extends tfpanelbase
 	startgame.setenabled SelectedGadgetItem(languages)>=0 And TextFieldText(yourname) And ((Not TextFieldText(GameJoltUserName)) Or (TextFieldText(GameJoltUserName) And TextFieldText(GameJoltToken))) And SelectedGadgetItem(Skill)>=0
 	GameJoltToken.setenabled Trim(TextFieldText(GameJoltUserName))<>""
 	SkipGameJolt.setenabled  Trim(TextFieldText(GameJoltUserName))<>"" And Trim(TextFieldText(GameJoltToken))<>""
-	If EID=event_gadgetaction And ESource = StartGame DoStartNewGame
+	AnnaSecu.setenabled      Trim(TextFieldText(Annaid))<>""
+	AnnaCreate.setenabled    Trim(TextFieldText(Annaid))="" And Trim(TextFieldText(yourname))<>""
+	If EID=event_gadgetaction 
+		Select ESource 
+			Case StartGame DoStartNewGame
+			Case AnnaCreate DoAnnaCreate
+			End Select
+		EndIf
+	End Method
+	
+	Method DoAnnaCreate()
+	Local Secu$ = MD5(Rand(0,MilliSecs()))
+	Local result:StringMap = Anna("&HC=Game&A=BPC_Create&Secu="+Secu+"&name="+TextFieldText(Yourname))
+	If result.value("REJECT")
+		Notify "Anna has rejected your account creation.~n~nThe reason stated is:~n"+result.value("REJECT")
+	ElseIf result.value("ID")
+		Notify "Anna has accepted your sign up.~nI will now open a browser window for you, so you can verify your account.~nThis is very important as Anna will delete all unverified accounts after 24 hours."
+		SetGadgetText Annaid,result.value("ID")
+		SetGadgetText annasecu,secu
+		OpenURL "http://www.utbbs.nl/Game.php?HC=Game&A=BPC_Verify&id="+result.value("id")+"&secu="+secu
+	Else
+		Notify "Unfortunately the creation of the Anna account failed. Possibly something wrong with the site or your internet connection."	
+		EndIf
 	End Method
 
 	Method DoStartNewGame()

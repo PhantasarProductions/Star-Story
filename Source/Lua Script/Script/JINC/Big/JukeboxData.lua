@@ -1,6 +1,6 @@
 --[[
   JukeboxData.lua
-  Version: 16.03.21
+  Version: 16.05.02
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -79,6 +79,9 @@ return {
      ["Don't talk too much"] = {
                    File = "Music/Location_Pub_Jungle/1 - TDCi - Don't Talk Too Much.ogg",
                    Artist = "Fake Music Generator"},
+     ["Funky Chunk"] = {
+                   File = "Music/Nizozemska/Funky Chunk.ogg",
+                   Artist = "Kevin McLeod"},
      ["Honey Bee"] = {
                    File = "Music/Nizozemska/HoneyBee.ogg",
                    Artist = "Kevin McLeod"},
