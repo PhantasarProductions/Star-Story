@@ -235,6 +235,7 @@
 1. Script/Use/Anyway/Loading.lua
 1. Script/Use/Anyway/Maps.lua
 1. Script/Use/Anyway/Mouse.lua
+1. Script/Use/AnyWay/MusicAvailable.lua (only available when you have the version WITH music)
 1. Script/Use/Anyway/Resistance names.lua
 1. Script/Use/Anyway/Sex.lua
 1. Script/Use/Anyway/SpendMoney.lua
@@ -383,4 +384,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 02 May 2016; 19:33:01 CET
+### Last updated: Mon 02 May 2016; 19:35:00 CET
