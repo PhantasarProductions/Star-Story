@@ -1,8 +1,8 @@
 --[[
 **********************************************
   
-  BestiaryData.lua
-  (c) Jeroen Broks, 2016, All Rights Reserved.
+  ArrivalPhysillium.lua
+  (c) Jeroen Broks, 2015, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,44 +32,22 @@
   
  **********************************************
  
-version: 16.05.02
+version: 15.11.16
 ]]
-return {
-	"ASTRILOPUPELITE",
-	"BIGGRASSTIGER",
-	"BIGLION",
-	"BRAINDROID",
-	"CYBORG LORD",
-	"DARDBOORTH",
-	"DARDMOEDER",
-	"FLIRMOUSE_KING",
-	"FLIRMOUSE_SUBJECT",
-	"MID-BOSS",
-	"QUEENMYR",
-	"SUPAQUAL",
-	"SUPERSYSS",
-	"ASTRILOPUP",
-	"ASTRILOPUPGUARD",
-	"BATTLEDROID",
-	"BLACKLIZARD",
-	"BLADEH",
-	"CID",
-	"CYBORG CAPTAIN",
-	"CYBORG GUNNER",
-	"CYBORG MEDIC",
-	"FLIRMOUSE",
-	"FLYSKY",
-	"GRASSTIGER",
-	"GUMMI",
-	"INSETTO",
-	"LION",
-	"MYR",
-	"PYROGUIN",
-	"QUAL",
-	"RAT",
-	"SALAMANDER",
-	"SYSS",
-	"THIEF",
-	"WOLF",
-	"FIRESPIDER",
-}
+function ArrivalPhysillium()
+Maps.CamX = 32
+Maps.CamY = -64
+MapText("ARRIVAL_PHYSILLIUM_A")
+Actors.WalkToSpot("PLAYER","Scotty")
+MapText("ARRIVAL_PHYSILLIUM_B")
+Party("Crystal","ExHuRU","Yirl","Foxy")
+SetActive("Crystal")
+LoadMap("Physillium - The Ruins of the Y Anhysbys","#000")
+SpawnPlayer("Start")
+Actors.Spawn("Start_Reggie","GFX/Actors/Reggie/ReggieW.png","STREGGIE",1)
+PartyPop("Start")
+MapText("Welcome")
+KickReggie(({"West","East","North"})[rand(1,3)],'POP_Foxy','STREGGIE')
+PartyUnPop()
+Maps.Obj.Kill("STREGGIE")
+end

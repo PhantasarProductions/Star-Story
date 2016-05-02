@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  BestiaryData.lua
+  Nizozemska - Groenhart bos.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -32,44 +32,46 @@
   
  **********************************************
  
-version: 16.05.02
+version: 16.02.27
 ]]
-return {
-	"ASTRILOPUPELITE",
-	"BIGGRASSTIGER",
-	"BIGLION",
-	"BRAINDROID",
-	"CYBORG LORD",
-	"DARDBOORTH",
-	"DARDMOEDER",
-	"FLIRMOUSE_KING",
-	"FLIRMOUSE_SUBJECT",
-	"MID-BOSS",
-	"QUEENMYR",
-	"SUPAQUAL",
-	"SUPERSYSS",
-	"ASTRILOPUP",
-	"ASTRILOPUPGUARD",
-	"BATTLEDROID",
-	"BLACKLIZARD",
-	"BLADEH",
-	"CID",
-	"CYBORG CAPTAIN",
-	"CYBORG GUNNER",
-	"CYBORG MEDIC",
-	"FLIRMOUSE",
-	"FLYSKY",
-	"GRASSTIGER",
-	"GUMMI",
-	"INSETTO",
-	"LION",
-	"MYR",
-	"PYROGUIN",
-	"QUAL",
-	"RAT",
-	"SALAMANDER",
-	"SYSS",
-	"THIEF",
-	"WOLF",
-	"FIRESPIDER",
-}
+
+-- Entrance hut to savespot
+function NPC_Hut()  
+Maps.GotoLayer("Hut")
+SpawnPlayer("Enter")
+end  
+
+function ExitHut()
+Maps.Obj.Kill("PLAYER")
+Maps.GotoLayer("Bos")
+end
+
+function NPC_Save()
+if not (Done("&DONE.FIRSTPC")) then SetActive("Wendicka") MapText("WELCOME_SAVE") end
+MS.LoadNew("NIZOSAVE","Script/Flow/NizozemskaSave.lua")
+LAURA.Flow("NIZOSAVE")
+end
+
+function ToSpacePort()
+LoadMap("Nizozemska - Space Port")
+SpawnPlayer('Start')
+end
+
+function ExitNorth()
+if not Done("&DONE.GROENHART") then
+   MapText("BYE")
+   MapEXP()
+   Actors.MoveTo("PLAYER",Actors.Actor("PLAYER").X,-40)
+   for i=1,100 do DrawScreen(); Flip() end
+   Sys.Error("The rest is not scripted yet.")
+   end
+end
+
+-- And init all this shit (again)
+function GALE_OnLoad()
+MS.Run("FIELD","SetScrollBoundaries","-1;40;1000;6480")
+Music("Nizozemska/HoneyBee.ogg")
+ZA_Enter("EXIT_HUT",ExitHut)
+ZA_Enter("ExitSouth",ToSpacePort)
+ZA_Enter("ExitNorth",ExitNorth)
+end

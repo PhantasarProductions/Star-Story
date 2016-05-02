@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  BestiaryData.lua
+  Nizozemska - Marlon's house.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -34,42 +34,8 @@
  
 version: 16.05.02
 ]]
-return {
-	"ASTRILOPUPELITE",
-	"BIGGRASSTIGER",
-	"BIGLION",
-	"BRAINDROID",
-	"CYBORG LORD",
-	"DARDBOORTH",
-	"DARDMOEDER",
-	"FLIRMOUSE_KING",
-	"FLIRMOUSE_SUBJECT",
-	"MID-BOSS",
-	"QUEENMYR",
-	"SUPAQUAL",
-	"SUPERSYSS",
-	"ASTRILOPUP",
-	"ASTRILOPUPGUARD",
-	"BATTLEDROID",
-	"BLACKLIZARD",
-	"BLADEH",
-	"CID",
-	"CYBORG CAPTAIN",
-	"CYBORG GUNNER",
-	"CYBORG MEDIC",
-	"FLIRMOUSE",
-	"FLYSKY",
-	"GRASSTIGER",
-	"GUMMI",
-	"INSETTO",
-	"LION",
-	"MYR",
-	"PYROGUIN",
-	"QUAL",
-	"RAT",
-	"SALAMANDER",
-	"SYSS",
-	"THIEF",
-	"WOLF",
-	"FIRESPIDER",
-}
+
+
+function GAME_OnLoad()
+  Music('Nizozemska/Funky Chunk')
+end  
