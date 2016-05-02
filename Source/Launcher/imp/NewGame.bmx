@@ -157,7 +157,7 @@ Type TNewGamePanel Extends tfpanelbase
 		Notify "Anna has accepted your sign up.~nI will now open a browser window for you, so you can verify your account.~nThis is very important as Anna will delete all unverified accounts after 24 hours."
 		SetGadgetText Annaid,result.value("ID")
 		SetGadgetText annasecu,secu
-		OpenURL "http://www.utbbs.nl/Game.php?HC=Game&A=BPC_Verify&id="+result.value("id")+"&secu="+secu
+		OpenURL "http://utbbs.tbbs.nl/Game.php?HC=Game&A=BPC_Verify&id="+result.value("ID")+"&secu="+secu
 	Else
 		Notify "Unfortunately the creation of the Anna account failed. Possibly something wrong with the site or your internet connection."	
 		'Notify result.dump() ' debugline, must be put on 'rem' in release
