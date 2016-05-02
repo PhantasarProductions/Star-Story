@@ -44,6 +44,7 @@ if not ok then Sys.Error("JINC script had a compilation error","f,jinc;script,".
 local ret 
 ok,ret = pcall(fn)
 if not ok then Sys.Error("JINC script had a runtime error","f,jinc;script,"..a..";error,"..fn) return nil end
+return ret
 end
 
 JINC = jinc
