@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 16.03.07
+Version: 16.05.02
 End Rem
 Strict
 Import "framework.bmx"
@@ -28,7 +28,7 @@ Import tricky_units.Dirry
 Import tricky_units.Bye
 
 
-MKL_Version "LAURA II - NewGame.bmx","16.03.07"
+MKL_Version "LAURA II - NewGame.bmx","16.05.02"
 MKL_Lic     "LAURA II - NewGame.bmx","GNU General Public License 3"
 
 JCR6CrashError = True
@@ -102,6 +102,9 @@ Type TNewGamePanel Extends tfpanelbase
 	MGIF_RegisterGadget "GameJolt.UserName",GameJoltUserName
 	MGIF_RegisterGadget "GameJolt.Token",GameJoltToken	
 	MGIF_GetConfig Config
+	
+	CreateLabel "Anna Login. If you have an Anna account, your achievements will be logged on the Phantasar Productions Website",0,500,400,50,Panel
+	CreateLabel "If you don't have or want an Anna account you can skip this part."0,550,400,25
 	Rem
 	?Win32
 	panwendicka = CreatePanel(tw-PixmapWidth(pixwendicka),th-PixmapHeight(pixwendicka),PixmapWidth(pixwendicka),PixmapHeight(pixwendicka),panel)
