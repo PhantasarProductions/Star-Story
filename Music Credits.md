@@ -27,6 +27,7 @@ I'd like to thank the next music artists for their brilliant work, and licensing
    1. Opening Theme C
    1. The Complex
    1. Blip Stream
+   1. Funky Chunk
    1. Honey Bee
    1. Disco Medusae
    1. Disquiet
