@@ -1,6 +1,6 @@
 --[[
   Achievements.lua
-  Version: 16.02.19
+  Version: 16.05.03
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -89,6 +89,11 @@ RewardAurinaRate(Tag)
 CSay("Contacting GameJolt")
 GJ.Award(GameJoltAchievements[Tag])
 -- @FI
+-- @IF *ANNA
+CSay("Contacting Anna")
+Anna.Award(AnnaAchievements[Tag])
+-- @FI
+
 Mini('Earned achievement: "'..Achievements[Tag].Title..'"')
 end
 

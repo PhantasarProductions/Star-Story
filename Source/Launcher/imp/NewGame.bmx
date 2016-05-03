@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 16.05.02
+Version: 16.05.03
 End Rem
 Strict
 Import "framework.bmx"
@@ -36,7 +36,7 @@ End Function
 Public
 
 
-MKL_Version "LAURA II - NewGame.bmx","16.05.02"
+MKL_Version "LAURA II - NewGame.bmx","16.05.03"
 MKL_Lic     "LAURA II - NewGame.bmx","GNU General Public License 3"
 
 JCR6CrashError = True
@@ -135,7 +135,7 @@ Type TNewGamePanel Extends tfpanelbase
 
 	Method flow()
 	If Not made build
-	startgame.setenabled SelectedGadgetItem(languages)>=0 And TextFieldText(yourname) And ((Not TextFieldText(GameJoltUserName)) Or (TextFieldText(GameJoltUserName) And TextFieldText(GameJoltToken))) And SelectedGadgetItem(Skill)>=0
+	startgame.setenabled SelectedGadgetItem(languages)>=0 And TextFieldText(yourname) And ((Not TextFieldText(GameJoltUserName)) Or (TextFieldText(GameJoltUserName) And TextFieldText(GameJoltToken))) And SelectedGadgetItem(Skill)>=0 And ((Not TextFieldText(AnnaId)) Or (TextFieldText(AnnaID) And TextFieldText(AnnaSecu)))
 	GameJoltToken.setenabled Trim(TextFieldText(GameJoltUserName))<>""
 	SkipGameJolt.setenabled  Trim(TextFieldText(GameJoltUserName))<>"" And Trim(TextFieldText(GameJoltToken))<>""
 	AnnaSecu.setenabled      Trim(TextFieldText(Annaid))<>""
@@ -148,9 +148,17 @@ Type TNewGamePanel Extends tfpanelbase
 		EndIf
 	End Method
 	
+	Method toph$(A$)
+	Local ret$
+	For Local i=0 Until Len(A)
+		ret :+ "%"+Right(Hex(a[i]),2)
+		Next
+	Return ret	
+	End Method
+	
 	Method DoAnnaCreate()
 	Local Secu$ = MD5(Rand(0,MilliSecs()))
-	Local result:StringMap = Anna("&HC=Game&A=BPC_Create&Secu="+Secu+"&name="+TextFieldText(Yourname))
+	Local result:StringMap = Anna("&HC=Game&A=BPC_Create&Secu="+Secu+"&name="+Toph(TextFieldText(Yourname)))
 	If result.value("REJECT")
 		Notify "Anna has rejected your account creation.~n~nThe reason stated is:~n"+result.value("REJECT")
 	ElseIf result.value("ID") And result.value("STATUS")="SUCCESS"
@@ -210,6 +218,10 @@ Type TNewGamePanel Extends tfpanelbase
 		WriteLine bt,"Var:GameJoltUser="+TextFieldText(GameJoltUserName)
 		WriteLine bt,"Var:GameJoltToken="+TextFieldText(GameJoltToken)
 		EndIf
+	If TextFieldText(Annaid)
+		WriteLine bt,"Var:AnnaID="+TextFieldText(AnnaID)
+		WriteLine bt,"Var:AnnaSecu="+TextFieldText(AnnaSecu)
+		EndIf	
 	?MacOS
 	Local A$ = AppFile
 	While ExtractExt(ExtractDir(A)).toupper()<>"APP" a = ExtractDir(A) Wend
