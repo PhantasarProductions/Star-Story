@@ -1,6 +1,6 @@
 --[[
   Achievements.lua
-  Version: 16.05.03
+  Version: 16.05.04
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -109,6 +109,24 @@ function SynchronizeGameJolt()
 			Console.Show()
 			Console.Flip()
 			GJ.Award(GameJoltAchievements[key])
+		end
+	end
+	Console.Write("All done.",255,180,0)
+end
+-- @FI
+
+-- @IF *ANNA
+function SynchronizeAnna()
+	Console.Write("")
+	Console.Write("Synchronizing achievements with Anna",180,0,255)
+	Console.Show()
+	Console.Flip()
+	for key,ach in spairs(Achievements) do
+		if Achieved[key] then
+			Console.Write("= Sending: "..ach.Title,0,180,255)
+			Console.Show()
+			Console.Flip()
+			Anna.Award(AnnaAchievements[key])
 		end
 	end
 	Console.Write("All done.",255,180,0)

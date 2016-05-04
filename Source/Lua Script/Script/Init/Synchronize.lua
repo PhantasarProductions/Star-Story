@@ -2,7 +2,7 @@
 **********************************************
   
   Synchronize.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.17
+version: 16.05.04
 ]]
 
 
@@ -49,7 +49,6 @@ version: 15.10.17
 ----------------------------------------------------------------------------------------
 
 
--- @IF *GAMEJOLT
 function Synchronize()
 	CSay("Synchronize achievements ... ")
 	-- Odd as it may seem this must be done, or the game cannot operate at all of ANY action.
@@ -57,14 +56,20 @@ function Synchronize()
 	LoadBaseGraphics()
 	-- And here is the actual action.
 	MS.LoadNew("ACH","Script/Flow/Achievements.lua")
+  -- @IF *GAMEJOLT
 	MS.Run("ACH","SynchronizeGameJolt")
+	-- @FI
+	-- @IF *ANNA
+	MS.Run("ACH","SynchronizeAnna")
+	-- @FI
 	Console.Write("This program will close in a few seconds.",255,180,0)
 	Console.Show()
 	Console.Flip()
 	Time.Sleep(5000)
-	Sys.Bye()	
+	Sys.Bye()
+		
 end
--- @FI
+
 
 
 -- Have a proper error when we cannot deal with GameJolt. (This script is only loaded during a synchronizing round anyway).
