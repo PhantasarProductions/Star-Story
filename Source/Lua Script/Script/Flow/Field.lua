@@ -969,7 +969,7 @@ for ak=0,5 do
     ch = RPGChar.PartyTag(ak)
     if ch~="" then 
        table.insert(PartyPopArray.Actors,"POP_"..ch)
-       Actors.Spawn(({[true]="POP_"..ch, [false]="PLAYER"})[sval(instant)=='true'],"GFX/Actors/Player","POP_"..ch)
+       Actors.Spawn(({[true]=TagPrefix.."_"..ch, [false]="PLAYER"})[sval(instant)=='true'],"GFX/Actors/Player","POP_"..ch)
        if not instant then Actors.MoveToSpot("POP_"..ch,TagPrefix.."_"..ch,bool2int(sval(ignoreblocks)=='true')) end
        Actors.ChoosePic("POP_"..ch,upper(ch).."."..upper(Wind or "North"))
        end
