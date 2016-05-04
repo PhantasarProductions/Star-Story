@@ -64,10 +64,14 @@ if not Done("&DONE.GROENHART") then
    Actors.MoveTo("PLAYER",Actors.Actor("PLAYER").X,-40)
    for i=1,100 do DrawScreen(); Flip() end
    LoadMap("Nizozemska - Marlon's House","OUTSIDE")
+   MapShow("Base")
    SpawnPlayer('Start')
    PartyPop("Mar","North",true,true)
    --PartyPopForce("Mar")
    MapText("COMINGHOME")
+   Award("SCENARIO_WENDICKAFATHER")
+   MapShow("*ALL*")
+   MapText("COMINGHOME2")
    Sys.Error("The rest is not scripted yet.")
    end
 end

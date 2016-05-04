@@ -32,10 +32,13 @@
   
  **********************************************
  
-version: 16.05.02
+version: 16.05.04
 ]]
 
 
 function GAME_OnLoad()
   Music('Nizozemska/Funky Chunk')
+  MapShow("Base")
+  Maps.CamX = 0
+  Maps.CamY = 0
 end  
