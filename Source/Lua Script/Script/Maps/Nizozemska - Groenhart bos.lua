@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.27
+version: 16.05.04
 ]]
 
 -- Entrance hut to savespot
@@ -63,6 +63,9 @@ if not Done("&DONE.GROENHART") then
    MapEXP()
    Actors.MoveTo("PLAYER",Actors.Actor("PLAYER").X,-40)
    for i=1,100 do DrawScreen(); Flip() end
+   LoadMap("Nizozemska - Marlon's House")
+   PartyPop("Mar")
+   MapText("COMINGHOME")
    Sys.Error("The rest is not scripted yet.")
    end
 end
