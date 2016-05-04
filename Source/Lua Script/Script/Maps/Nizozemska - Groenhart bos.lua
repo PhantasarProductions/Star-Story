@@ -64,6 +64,7 @@ if not Done("&DONE.GROENHART") then
    Actors.MoveTo("PLAYER",Actors.Actor("PLAYER").X,-40)
    for i=1,100 do DrawScreen(); Flip() end
    LoadMap("Nizozemska - Marlon's House")
+   SpawnPlayer('Start')
    PartyPop("Mar")
    MapText("COMINGHOME")
    Sys.Error("The rest is not scripted yet.")
