@@ -58,8 +58,8 @@ SetScrollBoundaries = SetScrollBoundaries or function(xmin,ymin,xmax,ymax)
 MS.LN_Run("FIELD","Flow/Field.Lua","SetScrollBoundaries",strval(xmin)..";"..strval(ymin)..";"..strval(xmax)..";"..strval(ymax))
 end
 
-PartyPop = PartyPop or function(prefix,wind)
-MS.LN_Run("FIELD","Flow/Field.Lua","PartyPop",prefix..";"..(wind or "North")) 
+PartyPop = PartyPop or function(prefix,wind,instant,force)
+MS.LN_Run("FIELD","Flow/Field.Lua","PartyPop",prefix..";"..(wind or "North")..";"..sval(instant)..";"..sval(force)) 
 end
 
 PartyUnPop = PartyUnPop or function() 
