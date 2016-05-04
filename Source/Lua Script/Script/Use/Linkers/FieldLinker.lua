@@ -1,6 +1,6 @@
 --[[
   FieldLinker.lua
-  Version: 16.01.29
+  Version: 16.05.04
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -73,6 +73,10 @@ end
 RemPartyPop = RemPartyPop or function(a)
 MS.LN_Run("FIELD","Flow/Field.Lua","RemPartyPop",a) 
 end
+
+--PartyPopForce = PartyPopForce or function(a)
+--MS.LN_Run("FIELD","Flow/Field.lua","PartyPopForce",a)
+--end
 
 KillWalkArrival = KillWalkArrival or function()
 CSay("KillWalkArrival")

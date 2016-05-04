@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 16.02.05
+  Version: 16.05.04
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -960,7 +960,7 @@ Var.Clear("$MAP.MAPSHOW.LASTREQUEST")
 Var.Clear("$MAP.MAPSHOW.LASTALWAYSSHOW")
 end
 
-function PartyPop(TagPrefix,Wind)
+function PartyPop(TagPrefix,Wind,ignoreblocks,instant)
 Actors.Actor("PLAYER").Visible = 0
 local ak,ch
 PartyPopArray = {}
@@ -969,12 +969,23 @@ for ak=0,5 do
     ch = RPGChar.PartyTag(ak)
     if ch~="" then 
        table.insert(PartyPopArray.Actors,"POP_"..ch)
-       Actors.Spawn("PLAYER","GFX/Actors/Player","POP_"..ch)
-       Actors.MoveToSpot("POP_"..ch,TagPrefix.."_"..ch)
+       Actors.Spawn(({[true]="POP_"..ch, [false]="PLAYER"})[instant==true],"GFX/Actors/Player","POP_"..ch)
+       if not instant then Actors.MoveToSpot("POP_"..ch,TagPrefix.."_"..ch,bool2int(ignoreblocks==true)) end
        Actors.ChoosePic("POP_"..ch,upper(ch).."."..upper(Wind or "North"))
        end
     end
 end
+
+--[[
+function PartyPopForce(a)
+if not PartyPopArray then 
+	CSay("Cannot Force. No pop done before")
+end	
+	for ch in each(PartyPopArray.Actors) do
+  		
+  end
+end
+]]
 
 function AddPartyPop(a)
 local guys = a

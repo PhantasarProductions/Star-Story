@@ -65,7 +65,8 @@ if not Done("&DONE.GROENHART") then
    for i=1,100 do DrawScreen(); Flip() end
    LoadMap("Nizozemska - Marlon's House","OUTSIDE")
    SpawnPlayer('Start')
-   PartyPop("Mar","North")
+   PartyPop("Mar","North",true,true)
+   --PartyPopForce("Mar")
    MapText("COMINGHOME")
    Sys.Error("The rest is not scripted yet.")
    end
