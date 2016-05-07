@@ -1,6 +1,6 @@
 --[[
   JukeboxData.lua
-  Version: 16.05.04
+  Version: 16.05.07
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -147,6 +147,9 @@ return {
                    Artist = "Kevin McLeod"},
      ["Dream Culture"] = {
                    File = "Music/Scenario/Dream Culture.ogg",
+                   Artist = "Kevin McLeod"},
+     ["Night on the Docks - Sax"] = {
+                   File = "Music/Scenario/Night on the Docks - Sax.ogg",
                    Artist = "Kevin McLeod"},
      ["Panic Stations"] = {
                    File = "Music/Scenario/Panic Stations.ogg",

@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.04
+version: 16.05.07
 ]]
 
 -- Entrance hut to savespot
@@ -64,14 +64,55 @@ if not Done("&DONE.GROENHART") then
    Actors.MoveTo("PLAYER",Actors.Actor("PLAYER").X,-40)
    for i=1,100 do DrawScreen(); Flip() end
    LoadMap("Nizozemska - Marlon's House","OUTSIDE")
+   Maps.CamX = 0
+   Maps.CamY = 0
    MapShow("Base")
    SpawnPlayer('Start')
+   Maps.CamX = 0
+   Maps.CamY = 0
    PartyPop("Mar","North",true,true)
+   Maps.Obj.Obj("PLAYER").Visible=0
    --PartyPopForce("Mar")
    MapText("COMINGHOME")
    Award("SCENARIO_WENDICKAFATHER")
    MapShow("*ALL*")
+   Maps.Obj.Obj("PLAYER").Visible=0
    MapText("COMINGHOME2")
+   Maps.GoToLayer("INSIDE")
+   SpawnPlayer('Fake')
+   Maps.CamX = 0
+   Maps.CamY = 0
+   Maps.Obj.Obj("PLAYER").Visible=0
+   MapText("MARLON")
+   Done("MARLON")
+   for alpha=0,100 do
+       DrawScreen()
+   	   Image.SetAlphaPC(alpha)
+   	   Black()
+   	   Image.Rect(0,0,800,600)
+   	   Flip()
+   end
+   Image.Cls()
+   Flip()
+   Party("Wendicka")
+   LoadMap("Nizozemska - Lake")
+   SpawnPlayer("Start")
+   TurnPlayer("North")
+   Maps.CamX=0
+   Maps.CamY=0
+   for alpha=100,0,-.75 do
+       DrawScreen()
+   	   Image.SetAlphaPC(alpha)
+   	   Black()
+   	   Image.Rect(0,0,800,600)
+   	   Flip()
+   end
+   Actors.Spawn("StartYirl","GFX/ACTORS/PLAYER","Yirl")
+   Actors.ChoosePic("Yirl","YIRL.NORTH")
+   Actors.MoveToSpot("Yirl","YirlGoTo")
+   for i=1,300 do DrawScreen() Flip() end
+   TurnPlayer("South")
+   MapText("START")
    Sys.Error("The rest is not scripted yet.")
    end
 end
