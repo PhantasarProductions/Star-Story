@@ -4,7 +4,7 @@ Rem
 	
 	
 	
-	(c) Jeroen P. Broks, 2015, All rights reserved
+	(c) Jeroen P. Broks, 2015, 2016, All rights reserved
 	
 		This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 15.11.03
+Version: 16.05.08
 End Rem
 
 Function GetActorSaveDump$(SMap:TKthura)
@@ -229,10 +229,12 @@ If Map.Multi laura2maps.GotoLayer LayerTag
 DebugLog "Check after force: "+laura2maps.LayerCodeName
 ' Perform perma-change if it's there
 Local permafile$ = SwapDir+"/Perma-Map/"+laura2maps.CodeName+".lua"
+' -- Is this needed?
 If Map.Multi permafile = SwapDir+"/Perma-Map/"+laura2maps.CodeName+"/"+Laura2maps.LayerCodeName+".lua"
 If FileType(permafile)
-	GALE_LoadScript(Raw2JCR(permafile,permafile),permafile)
+	GALE_LoadScript Raw2JCR(permafile,StripDir(permafile),StripDir(permafile)
 	EndIf	
+' -- / Is this needed?	
 ' Network data
 LoadNet BD,startup						
 ' Security check
