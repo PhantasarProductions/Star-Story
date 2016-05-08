@@ -52,6 +52,8 @@ I'd like to thank the next music artists for their brilliant work, and licensing
    1. The Loneliness
 1. Spiedkiks
    1. Freak Boutique
+1. Wan Kee Chan & Wouter Wershkull
+   1. The Start To Fanatasy
 1. WeirdoMusic
    1. Fiber visits the Q continuum
 1. Widzy

@@ -136,6 +136,9 @@ return {
      ["Rising"] = {
                    File = "Music/Original4Alias/Rising.ogg",
                    Artist = "Kevin McLeod"},
+     ["The Start To Fanatasy"] = {
+                   File = "Music/Original4Alias/The Start To Fanatasy.ogg",
+                   Artist = "Wan Kee Chan & Wouter Wershkull"},
      ["Urban Sci Fi Heroes"] = {
                    File = "Music/Original4Alias/Urban-Sci-Fi-Heroes.ogg",
                    Artist = "Eric Matyas"},
