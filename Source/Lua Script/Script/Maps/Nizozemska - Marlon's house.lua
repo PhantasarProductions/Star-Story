@@ -36,10 +36,11 @@ version: 16.05.08
 ]]
 
 
-function GAME_OnLoad()
+function GALE_OnLoad()
+	MS.Run("FIELD","SetScrollBoundaries","-1;1;-1;1")
   Music('Nizozemska/Funky Chunk')
   MapShow("Base")
   Maps.CamX = 0
   Maps.CamY = 0
-  if not Done("MARLON") then Maps.Obj.Kill("MarlonDown") end
+  if not Done("&DONE.MARLON") then Maps.Obj.Kill("DownMarlon") end
 end  
