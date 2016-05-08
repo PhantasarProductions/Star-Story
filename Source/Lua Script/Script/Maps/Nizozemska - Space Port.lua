@@ -171,6 +171,19 @@ if not CVV('&DONE.MARLON') then
 GoWorld('Nizozemska')   
 end
 
+function CLICK_ARRIVAL_Douanier()
+MapText('DOUANE')
+UitgangOpenen()
+-- Actors.WalkToSpot('PLAYER','LeaveNizozemska') -- Doesn't work
+Actors.MoveTo('PLAYER',690,391,1)
+dWait(100)
+Actors.MoveTo('PLAYER',640,190,1)
+dWait(150)
+SetSchuif({'UitRechts','UitLinks'},"Dicht")
+dWait(50)
+LoadMap("Hawk","Bridge")
+SpawnPlayer("Scotty","South")
+end
 
 function GALE_OnLoad()
 Music("Nizozemska/SpacePort.ogg")
@@ -178,4 +191,5 @@ MS.Run("FIELD","SetScrollBoundaries","16;64;16;560")
 SchuifSetup()
 ZA_Enter("InZone",InZone)
 ZA_Enter("Leave",Leave)
+if not CVV("&DONE.MARLON") then Maps.Obj.Kill("Douanier") else AddClickable("Douanier") end 
 end

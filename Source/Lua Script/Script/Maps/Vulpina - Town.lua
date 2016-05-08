@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.06
+version: 16.05.08
 ]]
 
 function DoneHere()
@@ -72,6 +72,13 @@ end
 
 function CLICK_ARRIVAL_Amstella() MapText("AMSTELLA") end
 
+function CLICK_ARRIVAL_Vulpivix()
+MapText("VULPIVIX")
+if not(Done("&DONE.PHANTASAR.WORLDLOCKS.VULPIVIX")) then
+   ActivateRemotePad('Start','Phantasar - Frendor Bushes - Arrival','Phantasar','Frendor Bushes')
+   end
+end
+
 
 function NPC_Yirl()
 local removal = {"NPC_Yirl","NPC_Foxy","GoBack","Crystal","Xenobi"}
@@ -91,4 +98,5 @@ ZA_Enter('Crystal&Xenobi',CrystalXenobi)
 ZA_Enter("GoBack",GoBack)
 AddClickable("StonesForSale")
 AddClickable("Amstella")
+if not CVV("&DONE.PHANTASAR.WORLDLOCKS.JIMMY") then Maps.Obj.Kill("Vulpivix") end
 end

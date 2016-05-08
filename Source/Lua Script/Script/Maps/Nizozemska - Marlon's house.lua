@@ -46,6 +46,7 @@ function GALE_OnLoad()
   if not Done("&DONE.MARLON") then Maps.Obj.Kill("DownMarlon") end
   AddClickable("DownMarlon")
   AddClickable("Sue")
+  if not Done("&DONE.MARLONHAWK") then Var.D("$HAWK","MARLON") end
 end  
 
 
