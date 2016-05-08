@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.07
+version: 16.05.08
 ]]
 
 -- Entrance hut to savespot
@@ -84,7 +84,6 @@ if not Done("&DONE.GROENHART") then
    Maps.CamY = 0
    Maps.Obj.Obj("PLAYER").Visible=0
    MapText("MARLON")
-   Done("MARLON")
    for alpha=0,100 do
        DrawScreen()
    	   Image.SetAlphaPC(alpha)
@@ -95,7 +94,7 @@ if not Done("&DONE.GROENHART") then
    Image.Cls()
    Flip()
    Party("Wendicka")
-   LoadMap("Nizozemska - Lake")
+   LoadMap("Nizozemska - Lake","Lake")
    SpawnPlayer("Start")
    TurnPlayer("North")
    Maps.CamX=0
@@ -113,7 +112,32 @@ if not Done("&DONE.GROENHART") then
    for i=1,300 do DrawScreen() Flip() end
    TurnPlayer("South")
    MapText("START")
-   Sys.Error("The rest is not scripted yet.")
+   Maps.GotoLayer('Moon')
+   SpawnPlayer("Start") -- Crash prevention as the actor will not be shown
+   Maps.CamX=0
+   Maps.CamY=0
+   local alpha=100
+   local ac = 255
+   local bc = 255
+   local back = Maps.Obj.Obj("Back")
+   local love = Maps.Obj.Obj("Tortelduifjes")
+   repeat
+    if alpha>0 then alpha=alpha-.5 end
+    if ac > 0 then ac = ac - 1 else bc = bc - .5 end
+    back.Alpha = alpha/100
+    love.R = ac
+    love.G = ac
+    love.B = ac
+    Image.Color(bc,bc,bc)
+    Image.Rect(0,0,800,600)
+    Maps.Draw()
+    Flip()
+   until bc<=0
+   Party("Wendicka","Crystal","Yirl","Foxy","Xenobi","Rolf")
+   LoadMap("Nizozemska - Marlon's House","OUTSIDE")
+   SpawnPlayer("Start")
+   MapText("AFTERROMANCE")
+   -- Sys.Error("The rest is not scripted yet.")
    end
 end
 

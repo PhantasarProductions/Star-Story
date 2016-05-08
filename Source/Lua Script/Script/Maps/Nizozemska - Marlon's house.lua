@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.04
+version: 16.05.08
 ]]
 
 
@@ -41,4 +41,5 @@ function GAME_OnLoad()
   MapShow("Base")
   Maps.CamX = 0
   Maps.CamY = 0
+  if not Done("MARLON") then Maps.Obj.Kill("MarlonDown") end
 end  

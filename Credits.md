@@ -67,7 +67,7 @@ Spiedkiks | 1 | Music;
 TheSkull | 2 | Art; 
 Thobias Benjamin Koehler | 2 | Font; Misc files; 
 Tibetan_Fox | 1 | Art; 
-Tricky (this is me) :sunglasses: | 2196 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
+Tricky (this is me) :sunglasses: | 2197 | Art; Audio; Data; Dutch translation; Font; Misc files; Music; Original English Scenario; Script; 
 Unknown Artist | 52 | Art; 
 Utopia | 2 | Font; Misc files; 
 Varazuvi(TM) | 4 | Audio; 
@@ -92,6 +92,6 @@ pitr | 1 | Art;
 qubodub | 3 | Art; 
 soundscrate.com | 1 | Audio; 
 tzunghaor | 1 | Art; 
-wallpaperpal.com | 1 | Art; 
+wallpaperpal.com | 2 | Art; 
 warszawianka | 1 | Art; 
 One final note. Since JCR6 uses an aliasing system some contributions are counted twice (or even more times) due to them being aliased. The system updating this list is (unfortunately) not able to tell a true contributions apart from aliases.
