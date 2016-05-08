@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.25
+version: 16.05.08
 ]]
 
 
@@ -163,11 +163,12 @@ if not Done("&DONE.NIZOZEMSKA.SUE") then MeetSue() end
 end
 
 function Leave()
-if not CVV('&ALLOW.WORLDMAP.NIZOZEMSKA') then 
+if not CVV('&DONE.MARLON') then 
    LoadMap("Nizozemska - Groenhart bos","Bos")
    SpawnPlayer("Einde")
    return
    end
+GoWorld('Nizozemska')   
 end
 
 

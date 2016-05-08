@@ -138,6 +138,8 @@ if not Done("&DONE.GROENHART") then
    SpawnPlayer("Start")
    MapText("AFTERROMANCE")
    -- Sys.Error("The rest is not scripted yet.")
+else
+	 GoWorld("Nizozemska")   
    end
 end
 

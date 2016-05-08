@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  Nizozemska - Marlon's house.lua
+  Nizozemska.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -34,30 +34,26 @@
  
 version: 16.05.08
 ]]
+local nizozemska = {
+
+          name = "Nizozemska",
+
+          locations = {
+                           { Name = "Space port", Map = "Nizozemska - Space Port"},
+                           { Name = "Groenhart Forest", Map = "Nizozemska - Groenhart bos", Layer='Bos'},
+                           { Name = "Marlon's House", Map = "Nizozemska - Marlon's house", Layer='OUTSIDE'},
+                           { Name = "Belioss",Map = "Nizozemska - Belioss"},  -- Anagram to "Liesbos" a small forest between Breda en Etten-Leur (the Netherlands)
+                           { Name = "Marlon's Garden", Map="Nizozemska - Garden", Wanted = "&DONE.BELIOSS"}           
+                      },
+                      
+          init = function() end,
+          
+          font = "BoxText",
+             
+          
 
 
-function GALE_OnLoad()
-  RecoverParty()
-	MS.Run("FIELD","SetScrollBoundaries","-1;1;-1;1")
-  Music('Nizozemska/Funky Chunk')
-  MapShow("Base")
-  Maps.CamX = 0
-  Maps.CamY = 0
-  if not Done("&DONE.MARLON") then Maps.Obj.Kill("DownMarlon") end
-  AddClickable("DownMarlon")
-  AddClickable("Sue")
-end  
+}
 
 
-function CLICK_ARRIVAL_DownMarlon()
-	TurnPlayer("North")
-  MapText("DOWNMARLON")
-  MS.LoadNew("NIZOSAVE","Script/Flow/NizozemskaSave.lua")
-  LAURA.Flow("NIZOSAVE")  
-end
-
-function CLICK_ARRIVAL_Sue()
-  TurnPlayer("South")
-  MapText("SUE_LEAVE")
-  GoWorld("Nizozemska")
-end  
+return nizozemska
