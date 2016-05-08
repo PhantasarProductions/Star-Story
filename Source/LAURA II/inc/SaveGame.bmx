@@ -232,7 +232,8 @@ Local permafile$ = SwapDir+"/Perma-Map/"+laura2maps.CodeName+".lua"
 ' -- Is this needed?
 If Map.Multi permafile = SwapDir+"/Perma-Map/"+laura2maps.CodeName+"/"+Laura2maps.LayerCodeName+".lua"
 If FileType(permafile)
-	GALE_LoadScript Raw2JCR(permafile,StripDir(permafile),StripDir(permafile)
+	'GALE_LoadScript Raw2JCR(permafile,StripDir(permafile),StripDir(permafile)
+	ConsoleWrite("Skip this round. I think it's not needed")
 	EndIf	
 ' -- / Is this needed?	
 ' Network data

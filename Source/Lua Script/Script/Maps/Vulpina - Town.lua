@@ -98,5 +98,5 @@ ZA_Enter('Crystal&Xenobi',CrystalXenobi)
 ZA_Enter("GoBack",GoBack)
 AddClickable("StonesForSale")
 AddClickable("Amstella")
-if not CVV("&DONE.PHANTASAR.WORLDLOCKS.JIMMY") then Maps.Obj.Kill("Vulpivix") end
+if not CVV("&DONE.PHANTASAR.WORLDLOCKS.JIMMY") then Maps.Obj.Kill("Vulpivix") else AddClickable("Vulpivix") end
 end
