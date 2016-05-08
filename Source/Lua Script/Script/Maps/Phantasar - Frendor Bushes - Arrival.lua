@@ -40,6 +40,7 @@ function Arrival()
 		MapText("ARRIVAL")
 		PartyUnPop()
 	end		
+	Award("SCENARIO_PHANTASAR")
 end
 
 function GALE_OnLoad()

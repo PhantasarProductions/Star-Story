@@ -970,7 +970,8 @@ for ak=0,5 do
     if ch~="" then 
        table.insert(PartyPopArray.Actors,"POP_"..ch)
        Actors.Spawn(({[true]=TagPrefix.."_"..ch, [false]="PLAYER"})[sval(instant)=='true'],"GFX/Actors/Player","POP_"..ch)
-       if not instant then 
+       if sval(instant)~='true' then 
+          Console.Write('POP_'..ch.." goes to "..TagPrefix.."_"..ch)
           Actors.MoveToSpot("POP_"..ch,TagPrefix.."_"..ch) 
           --,bool2int(sval(ignoreblocks)=='true')) 
           end
