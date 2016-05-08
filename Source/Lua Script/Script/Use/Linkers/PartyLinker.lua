@@ -1,6 +1,6 @@
 --[[
   PartyLinker.lua
-  Version: 16.02.05
+  Version: 16.05.07
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -44,6 +44,7 @@ for i,v in ipairs(arg) do
     end
 MS.Run("PARTY","Party",p)
 end
+NewParty = Party
 
 
 ShowParty = ShowParty or function()

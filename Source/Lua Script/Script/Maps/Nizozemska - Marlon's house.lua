@@ -43,4 +43,12 @@ function GALE_OnLoad()
   Maps.CamX = 0
   Maps.CamY = 0
   if not Done("&DONE.MARLON") then Maps.Obj.Kill("DownMarlon") end
+  AddClickable("DownMarlon")
 end  
+
+
+function CLICK_ARRIVAL_DownMarlon()
+  MapText("DOWNMARLON")
+  MS.LoadNew("NIZOSAVE","Script/Flow/NizozemskaSave.lua")
+  LAURA.Flow("NIZOSAVE")  
+end

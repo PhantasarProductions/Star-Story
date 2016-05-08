@@ -1,6 +1,6 @@
 --[[
   JukeboxData.lua
-  Version: 16.05.07
+  Version: 16.05.08
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -111,6 +111,9 @@ return {
                    Artist = "Aaron Krogh"},
      ["Disco Medusae"] = {
                    File = "Music/Original4Alias/Disco Medusae.ogg",
+                   Artist = "Kevin McLeod"},
+     ["Disco4"] = {
+                   File = "Music/Original4Alias/Disco4.ogg",
                    Artist = "Kevin McLeod"},
      ["Disquiet"] = {
                    File = "Music/Original4Alias/Disquiet.ogg",

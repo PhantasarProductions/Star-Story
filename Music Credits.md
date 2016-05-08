@@ -30,6 +30,7 @@ I'd like to thank the next music artists for their brilliant work, and licensing
    1. Funky Chunk
    1. Honey Bee
    1. Disco Medusae
+   1. Disco4
    1. Disquiet
    1. Gm115
    1. Phantom from Space
