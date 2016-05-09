@@ -1,8 +1,8 @@
 --[[
   Fonts.lua
   
-  version: 15.11.03
-  Copyright (C) 2015 Jeroen P. Broks
+  version: 16.05.09
+  Copyright (C) 2015, 2016 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
   arising from the use of this software.
@@ -46,8 +46,9 @@ fonts = {
     CombatMessage = {"Robotica.ttf",35},
     Terminal = {"Robotica.ttf",15},
     TerminalHeader = {"Robotica.ttf",20},
-	  LayerInField = {"Robotica.ttf",12}
-	
+	  LayerInField = {"Robotica.ttf",12},
+	  PhantasarWorld = {"Coolvetica.ttf",25},
+	  Phantasar = {"Coolvetica.ttf"}
 }
 
 
