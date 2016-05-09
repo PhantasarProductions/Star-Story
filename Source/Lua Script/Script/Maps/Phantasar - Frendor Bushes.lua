@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  Phantasar - Frendor Bushes - Arrival.lua
+  Phantasar - Frendor Bushes.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -34,22 +34,6 @@
  
 version: 16.05.09
 ]]
-function Arrival()
-	if not Done("&DONE.ARRIVED.PHANTASAR") then
-		PartyPop("A","South",false)
-		MapText("ARRIVAL")
-		PartyUnPop()
-	end		
-	Award("SCENARIO_PHANTASAR")
-end
-
-function Bye()
-	GoWorld("Phantasar")
-end	
-
 function GALE_OnLoad()
-	Music("World/Phantasar.ogg")
-	ZA_Enter("Base",Arrival)
-	ZA_Enter("Bye",Bye)
-end
-
+	Music('Dungeon/Pippin the Hunchback')
+end	

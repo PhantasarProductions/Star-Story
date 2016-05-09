@@ -48,7 +48,7 @@ fonts = {
     TerminalHeader = {"Robotica.ttf",20},
 	  LayerInField = {"Robotica.ttf",12},
 	  PhantasarWorld = {"Coolvetica.ttf",25},
-	  Phantasar = {"Coolvetica.ttf"}
+	  Phantasar = {"Coolvetica.ttf",15}
 }
 
 

@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  Phantasar - Frendor Bushes - Arrival.lua
+  Phantasar.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -34,22 +34,26 @@
  
 version: 16.05.09
 ]]
-function Arrival()
-	if not Done("&DONE.ARRIVED.PHANTASAR") then
-		PartyPop("A","South",false)
-		MapText("ARRIVAL")
-		PartyUnPop()
-	end		
-	Award("SCENARIO_PHANTASAR")
-end
+local phantasar = {
 
-function Bye()
-	GoWorld("Phantasar")
-end	
+          name = "Nizozemska",
 
-function GALE_OnLoad()
-	Music("World/Phantasar.ogg")
-	ZA_Enter("Base",Arrival)
-	ZA_Enter("Bye",Bye)
-end
+          locations = {
+                           { Name = "Transporter Pad", Map = "Phantasar - Frendor Bushes - Arrival"},
+                           { Name = "Frendor Bushes", Map = "Phantasar - Frendor Bushes"},
+                           { Name = "The city of Frendor", Map = "Phantasar - Frendor", Wanted='&DONE.FRENDORBUSHES'},
+                      },
+                      
+          init = function() end,
+          
+          font = "PhantasarWorld",
+          
+          
+             
+          
 
+
+}
+
+
+return phantasar

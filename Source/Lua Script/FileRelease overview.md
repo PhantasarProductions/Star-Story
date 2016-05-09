@@ -322,11 +322,13 @@
 1. Script/JINC/Foes/SuperBoss/FireSpider.lua
 1. Script/JINC/NewGame+/PreserveVar.lua
 1. Script/JINC/World/Nizozemska.lua
+1. Script/JINC/World/Phantasar.lua
 1. Script/Maps/Nizozemska - Groenhart bos.lua
 1. Script/Maps/Nizozemska - Lake.lua
 1. Script/Maps/Nizozemska - Marlon's house.lua
 1. Script/Maps/Nizozemska - Space Port.lua
 1. Script/Maps/Phantasar - Frendor Bushes - Arrival.lua
+1. Script/Maps/Phantasar - Frendor Bushes.lua
 1. Script/Maps/Physillium - Black Castle.lua
 1. Script/Maps/Physillium - Ji Rubble.lua
 1. Script/Maps/Physillium - Ji Temple.lua
@@ -389,4 +391,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 09 May 2016; 17:53:25 CET
+### Last updated: Mon 09 May 2016; 19:45:06 CET

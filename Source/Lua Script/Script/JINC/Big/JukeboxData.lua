@@ -52,11 +52,17 @@ return {
      ["Dungeon1"] = {
                    File = "Music/Dungeon/Dungeon1.ogg",
                    Artist = "J.W.H. Broeders"},
+     ["Enchanted Valley"] = {
+                   File = "Music/Dungeon/Enchanted Valley.ogg",
+                   Artist = "Kevin McLeod"},
      ["Motherlode"] = {
                    File = "Music/Dungeon/Motherlode.ogg",
                    Artist = "Kevin McLeod"},
      ["Opening Theme C"] = {
                    File = "Music/Dungeon/Opening Theme C.ogg",
+                   Artist = "Kevin McLeod"},
+     ["Pippin the Hunchback"] = {
+                   File = "Music/Dungeon/Pippin the Hunchback.ogg",
                    Artist = "Kevin McLeod"},
      ["Prisoner of War"] = {
                    File = "Music/Dungeon/Prisoner of War.ogg",

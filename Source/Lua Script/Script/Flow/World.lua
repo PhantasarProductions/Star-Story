@@ -1,6 +1,6 @@
 --[[
   World.lua
-  Version: 16.05.08
+  Version: 16.05.09
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -60,6 +60,10 @@ function MAIN_FLOW()
           if my>y and my<y+world.fdata[2] then
              r,g,b = 255,180,0
              if INP.MouseH(1)==1 then
+             	  Cls()
+             	  Flip()
+             	  Cls()
+             	  Flip()
                 LoadMap(loc.Map,loc.Layer)
                 SpawnPlayer(loc.Spawn or "Start")
                 LAURA.Flow("FIELD")
