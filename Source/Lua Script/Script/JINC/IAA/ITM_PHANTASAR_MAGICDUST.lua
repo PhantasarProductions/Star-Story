@@ -1,8 +1,8 @@
 --[[
 **********************************************
   
-  ABL_YIRL_INTIMIDATE.lua
-  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
+  ITM_PHANTASAR_MAGICDUST.lua
+  (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -35,23 +35,21 @@
 version: 16.05.12
 ]]
 ret = {
-	["ABL_AP"] = 10,
-	["ABL_APCut"] = 20000,
-	["ABL_Instant"] = 1000,
-	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 400,
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
+	["CureParalysis"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Cancel enemy move",
+	["Description"] = "Cures paralysis",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Fist.png",
+	["ITM_BuyPrice"] = 100,
+	["ITM_SellPrice"] = 75,
+	["ITM_Sellable"] = true,
+	["Icon"] = "GFX/Inventory/Phantasar_MagicDust.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Intimidate",
-	["ScriptEffect_Reference"] = "Cancel",
-	["Target"] = "1F",
+	["Name"] = "Magic Dust",
+	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true}
 

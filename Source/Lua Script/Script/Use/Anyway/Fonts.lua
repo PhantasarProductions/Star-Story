@@ -1,7 +1,7 @@
 --[[
   Fonts.lua
   
-  version: 16.05.09
+  version: 16.05.12
   Copyright (C) 2015, 2016 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -48,7 +48,8 @@ fonts = {
     TerminalHeader = {"Robotica.ttf",20},
 	  LayerInField = {"Robotica.ttf",12},
 	  PhantasarWorld = {"Coolvetica.ttf",25},
-	  Phantasar = {"Coolvetica.ttf",15}
+	  Phantasar = {"Coolvetica.ttf",15},
+	  PhantasarDungTitle = {"Coolvetica.ttf",40}
 }
 
 

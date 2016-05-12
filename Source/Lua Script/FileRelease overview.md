@@ -154,10 +154,14 @@
 1. Script/JINC/IAA/ITM_MEDIKIT.lua
 1. Script/JINC/IAA/ITM_MINDCLEARPILL.lua
 1. Script/JINC/IAA/ITM_MOLOTOV.lua
+1. Script/JINC/IAA/ITM_PHANTASAR_ANTIDOTE.lua
+1. Script/JINC/IAA/ITM_PHANTASAR_APPLE.lua
+1. Script/JINC/IAA/ITM_PHANTASAR_MAGICDUST.lua
 1. Script/JINC/IAA/ITM_ROCK.lua
 1. Script/JINC/IAA/ITM_SPORES.lua
 1. Script/JINC/IAA/ITM_THUNDER_DIAMOND.lua
 1. Script/JINC/IAA/ITM_VLUGZOUT.lua
+1. Script/JINC/IAA/PHANTASAR_APPLE.lua
 1. Script/JINC/IAA/SUPER_FOXY_SKYDRAGONSLASH.lua
 1. Script/JINC/IAA/SUPER_WENDICKA_VOLTSUNAMI.lua
 1. Script/JINC/IAA/SUPER_XENOBI_WHITE_APOCALYPSE.lua
@@ -329,6 +333,7 @@
 1. Script/Maps/Nizozemska - Space Port.lua
 1. Script/Maps/Phantasar - Frendor Bushes - Arrival.lua
 1. Script/Maps/Phantasar - Frendor Bushes.lua
+1. Script/Maps/Phantasar.lua
 1. Script/Maps/Physillium - Black Castle.lua
 1. Script/Maps/Physillium - Ji Rubble.lua
 1. Script/Maps/Physillium - Ji Temple.lua
@@ -391,4 +396,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 10 May 2016; 01:59:37 CET
+### Last updated: Thu 12 May 2016; 13:21:12 CET

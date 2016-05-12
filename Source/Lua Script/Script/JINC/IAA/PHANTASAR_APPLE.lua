@@ -1,7 +1,7 @@
 --[[
-  ITM_MOLOTOV.lua
-  Version: 16.05.12
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  PHANTASAR_APPLE.lua
+  Version: 16.05.10
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -35,22 +35,18 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
+	["APRecover"] = 5,
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 200,
-	["AttackElement"] = "Fire",
-	["AttackPower"] = 116,
-	["AttackStat"] = "Will",
-	["DefenseStat"] = "Resistance",
-	["Description"] = "Put one enemy on fire!",
+	["ActSpeed"] = 250,
+	["AttackElement"] = "Non-Elemental",
+	["AttackStat"] = "Strength",
+	["DefenseStat"] = "Defense",
+	["Description"] = "Cures 1200 HP",
+	["Healing"] = 1200,
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 100,
-	["ITM_SellPrice"] = 75,
-	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/Molotov.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Molotov Cocktail",
-	["SpellAni_Reference"] = "Burn",
-	["Target"] = "1F",
+	["Name"] = "Apple",
+	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true}
 

@@ -1,6 +1,6 @@
 --[[
   ITM_EQP_SAPHIRE.lua
-  Version: 16.02.26
+  Version: 16.05.12
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================

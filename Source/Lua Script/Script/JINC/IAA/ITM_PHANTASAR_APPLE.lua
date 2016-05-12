@@ -1,8 +1,8 @@
 --[[
 **********************************************
   
-  ABL_YIRL_INTIMIDATE.lua
-  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
+  ITM_PHANTASAR_APPLE.lua
+  (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -35,23 +35,22 @@
 version: 16.05.12
 ]]
 ret = {
-	["ABL_AP"] = 10,
-	["ABL_APCut"] = 20000,
-	["ABL_Instant"] = 1000,
-	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 400,
+	["APRecover"] = 5,
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Cancel enemy move",
+	["Description"] = "Cures 1200 HP",
+	["Healing"] = 1200,
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Fist.png",
+	["ITM_BuyPrice"] = 1000,
+	["ITM_SellPrice"] = 750,
+	["ITM_Sellable"] = true,
+	["Icon"] = "gfx/inventory/Phantasar_Apple.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Intimidate",
-	["ScriptEffect_Reference"] = "Cancel",
-	["Target"] = "1F",
+	["Name"] = "Apple",
+	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true}
 
