@@ -120,7 +120,40 @@ if rand(0,travelled)<encrange[skill] then return end
 -- No more reasons to back out! 
 -- GREAT! Then let's start the show!
 if not Done("&DONE.PHANTASAR.RANDOMENCOUNTER."..upper(ActivePlayer)) then SerialBoxText("PHANTASAR","RAND."..upper(ActivePlayer),"BOXTEXT.KTHURA") end
-Sys.Error("Random Encounters not yet scripted!") 
+CleanCombat()
+Var.D("$COMBAT.BACKGROUND",(EncounterBack or "Bos-Spar")..".png")
+Var.D("$COMBAT.MUSIC",EncounterMusic or 'AltCombat/X-Ray.ogg') -- Death Predator was the codename until the actual boss name was decided
+Var.D("$COMBAT.BEGIN","Default")
+local num = ({
+                rand(1,3),
+                (function() 
+                   if rand(1,10)==1 then return 6 else return 3 end
+                 end  
+                 )(),
+                (function() 
+                   if rand(1,20)<5 then return 6 elseif rand(1,20)==20 then return 9 else return 3 end
+                 end  
+                 )(),
+             })[skill]
+local pt = ngpcount or 1
+if pt>99 then pt=99 end
+local dt = "PT "..right(" "..pt,2).." Level Range"
+while Maps.GetData(dt)=="" do
+      pt = pt - 1      
+      dt = "PT "..right(" "..pt,2).." Level Range"
+      if pt<=0 then return("No foe levels set, ignoring foe request!") end
+      end 
+local lvrange = mysplit(Maps.GetData(dt),"-")
+if #lvrange<2 then GALE_Error("Level range for playthrough #"..pt.." not properly set up!") end
+for i,v in ipairs(lvrange) do lvrange[i] = Sys.Val(v) end
+if lvrange[2]<lvrange[1] then GALE_Error("Negative level range for playthrough #"..pt) end             
+for i=1,num do             
+    Var.D("$COMBAT.FOE"..i,monsters[rand(1,#monsters)])
+	  Var.D("%COMBAT.LVFOE"..i,rand(lvrange[1],lvrange[2]))
+end	  
+-- Var.D("$COMBAT.VICTORYCHECK","Phantasar") -- Needed if I want the Dyrt victory tune played, but that is not yet certain.
+-- Sys.Error("Random Encounters not yet scripted!")
+StartCombat() 
 end
     
 

@@ -40,6 +40,9 @@
 
 
 return {
+     ["X-Ray"] = {
+                   File = "Music/AltCombat/X-Ray.ogg",
+                   Artist = "Jeroen Petrus Broks"},
      ["Overworld"] = {
                    File = "Music/BlockShooter/Overworld.ogg",
                    Artist = "Kevin McLeod"},

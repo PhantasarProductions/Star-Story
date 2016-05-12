@@ -40,4 +40,5 @@ version: 16.05.12
 function GALE_OnLoad()
 	Music('Dungeon/Pippin the Hunchback')
 	AddEnemy("Hawk")
+	EncounterBack = "Bos - Spar"
 end	

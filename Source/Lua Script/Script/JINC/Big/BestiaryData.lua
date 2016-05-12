@@ -61,6 +61,7 @@ return {
 	"FLYSKY",
 	"GRASSTIGER",
 	"GUMMI",
+	"HAWK",
 	"INSETTO",
 	"LION",
 	"MYR",

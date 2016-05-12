@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.01
+version: 16.05.12
 ]]
 -- @IF IGNORE
 VicCheck = {}
@@ -150,10 +150,14 @@ for i=0,5 do
     end
 -- Get an Aurina?
 herolevel = AVGLevel("Hero")
-if rand(0,enemylevel)>rand(0,herolevel*skill) then
+if rand(0,enemylevel)>rand(0,herolevel*skill) and (not myfoe.Shilders) then
    inc("%AURINAS")
    MINI("You found an Aurina")
    if not Done("&TUT.AURINA") then Tutorial("If you are lucky an enemy will drop an Aurina.\nThey are very important.\nSome businessmen throughout the universe will pay you money for them.") end
+elseif myfoe.Shilders and rand(1,(skill*skill)+1) then
+	 local getshilders = myfoe.Shilders / rand(1,skill*skill)
+	 inc('%SHILDERS',getshilders)
+	 MINI("You found "..getshilders.." shilders")   
    end
 -- Item Drop
 local gip = rand(1,3) -- Who will get the item
