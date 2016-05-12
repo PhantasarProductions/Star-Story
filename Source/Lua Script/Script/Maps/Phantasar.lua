@@ -119,6 +119,8 @@ local travelled = math.floor(Distance(player.x,player.y,oripos.x,oripos.y))
 if rand(0,travelled)<encrange[skill] then return end
 -- No more reasons to back out! 
 -- GREAT! Then let's start the show!
+player.Walking=0
+player.Moving=0
 local ActivePlayer = GetActive()
 if not Done("&DONE.PHANTASAR.RANDOMENCOUNTER."..upper(ActivePlayer)) then SerialBoxText("PHANTASAR","RAND."..upper(ActivePlayer),"BOXTEXT.KTHURA") end
 CleanCombat()
@@ -155,6 +157,7 @@ end
 -- Var.D("$COMBAT.VICTORYCHECK","Phantasar") -- Needed if I want the Dyrt victory tune played, but that is not yet certain.
 -- Sys.Error("Random Encounters not yet scripted!")
 StartCombat() 
+oripos = {x = player.x, y=player.y}
 end
     
 

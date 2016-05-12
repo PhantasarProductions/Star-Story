@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.12
+version: 16.05.13
 ]]
 
 
@@ -45,7 +45,6 @@ Data = {
 	Desc = "A bird native to Phantasar, and very extremely dangerous",
 	ImageFile = "Reg/Hawk.png",
 	AI = "Default",
-	Shilders = 100,
 	EleRes_Fire = 3,
 	EleRes_Wind = 2,
 	EleRes_Water = 3,
@@ -57,14 +56,14 @@ Data = {
 	EleRes_Healing = 6,
 	EleRes_DarkHealing = 0,
 	Stat = {
-		["Strength"] = {1000,1200},
-		["Defense"] = {0,100},
+		["Strength"] = {750,1000},
+		["Defense"] = {0,50},
 		["Will"] = {0,100},
 		["Resistance"] = {0,100},
-		["Agility"] = {800,820},
+		["Agility"] = {80,90},
 		["Accuracy"] = {10000,10000},
 		["Evasion"] = {1,5},
-		["HP"] = {2000,5000},
+		["HP"] = {200,500},
 		["AP"] = {0,0},
 		["LevelRange"] = {65,70},
 },
@@ -88,6 +87,7 @@ local temp
 
 
 Data.ActMinLevel["Sys.Attack"] = 0		for ak=1,100 do table.insert(Data.Acts,"Sys.Attack") end
+Data.ActMinLevel["Abl.ABL_FOE_PARA_DIVE"] = 65		for ak=1,20 do table.insert(Data.Acts,"Abl.ABL_FOE_PARA_DIVE") end
 
 
 return Data
