@@ -119,6 +119,7 @@ local travelled = math.floor(Distance(player.x,player.y,oripos.x,oripos.y))
 if rand(0,travelled)<encrange[skill] then return end
 -- No more reasons to back out! 
 -- GREAT! Then let's start the show!
+local ActivePlayer = GetActive()
 if not Done("&DONE.PHANTASAR.RANDOMENCOUNTER."..upper(ActivePlayer)) then SerialBoxText("PHANTASAR","RAND."..upper(ActivePlayer),"BOXTEXT.KTHURA") end
 CleanCombat()
 Var.D("$COMBAT.BACKGROUND",(EncounterBack or "Bos-Spar")..".png")
@@ -163,6 +164,8 @@ end
 function PhantasarFlow()
 	-- Dung Titles
 	DungTitleShow()
+	-- Random Encounters
+	CheckEncounter()
 end
 
 MAP_FLOW = MAP_FLOW or PhantasarFlow

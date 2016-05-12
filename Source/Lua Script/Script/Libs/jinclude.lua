@@ -40,10 +40,10 @@ if type(fn)~="function" then CSay("WARNING! J-Include did not produce a function
 return fn()
 ]]
 local ok,fn = pcall(loadstring,s)
-if not ok then Sys.Error("JINC script had a compilation error","f,jinc;script,"..a..";error,"..fn) return nil end
+if not ok then Sys.Error("JINC script had a compilation error","f,jinc;script,"..a..";error,"..(fn or "unprintable error")) return nil end
 local ret 
 ok,ret = pcall(fn)
-if not ok then Sys.Error("JINC script had a runtime error","f,jinc;script,"..a..";error,"..fn) return nil end
+if not ok then Sys.Error("JINC script had a runtime error","f,jinc;script,"..a..";error,"..(ret or "unprintable error")) return nil end
 return ret
 end
 
