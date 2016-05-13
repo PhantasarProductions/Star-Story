@@ -1,7 +1,7 @@
 --[[
   CLoadFoe.lua
-  Version: 15.10.23
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.05.13
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -89,6 +89,8 @@ RPGStat.Points(Foe.Tag,"HP").Have = RPGStat.Points(Foe.Tag,"HP").Maximum
 for stat,value in spairs(FoeData.StatusResistance) do
     RPGStat.DefStat(Foe.Tag,"SR_TRUE_"..stat,value) -- The enemy will not be influence by equipment anyway.
     end    
+-- Shilders
+Foe.Shilders = FoeData.Shilders    
 -- Boss?
 Foe.Boss = FoeData.Boss
 -- Elemental resistances

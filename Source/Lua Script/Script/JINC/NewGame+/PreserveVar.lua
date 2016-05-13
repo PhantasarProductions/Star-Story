@@ -76,7 +76,8 @@ ret = {
 		"%TREASURE_RATE[Special Item 16C94499]",
 		"%TREASURE_RATE[Special Item 16CAA2ED]",
 		"%TREASURE_RATE[Special Item 16CAF652]",
-		"%TREASURE_RATE[Special Item 16CB4472]"},
+		"%TREASURE_RATE[Special Item 16CB4472]",
+		"%SHILDERS"},
 
 	prefix = {
 		"$CTIME",
@@ -116,6 +117,7 @@ ret = {
 		"%TREASURE_RATE[Special Item 16CAA2ED]",
 		"%TREASURE_RATE[Special Item 16CAF652]",
 		"%TREASURE_RATE[Special Item 16CB4472]",
+		"%SHILDERS",
 		"<",
 		"%PLAYTIME.",
 		"&TUT.",

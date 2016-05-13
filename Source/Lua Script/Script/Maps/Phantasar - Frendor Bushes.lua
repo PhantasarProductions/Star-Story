@@ -37,10 +37,28 @@ version: 16.05.13
 
 -- @USE Phantasar.lua
 
+
+function Boss()
+	oripos = nil
+	for i=1,3 do Maps.Obj.Kill("NPC_GREEN_"..i) end -- Prevent savespot abuse. If you want to do this boss again, you must redo the ENTIRE dungeon!!!
+	Maps.Remap() -- Of course the savespot removal leads to a new blockmap setup.
+	CleanCombat()
+	Var.D("$COMBAT.BACKGROUND","Bos - Spar.png")
+	Var.D("$COMBAT.BEGIN","Default")
+	Var.D("$COMBAT.FOE1","Boss/GiantSnake")
+	Var.D("$COMBAT.ALTCOORDSFOE1","300,400")
+	Var.D("%COMBAT.LVFOE1",RPGStat.Stat("Wendicka","Level"))
+	Var.D("$COMBAT.MUSIC","AltCombat/Phantasar_Boss.ogg")
+	StartCombat()	
+end
+
 function GALE_OnLoad()
 	Music('Dungeon/Pippin the Hunchback')
 	AddEnemy("Hawk",10)
 	AddEnemy("Goblin",20)
 	EncounterBack = "Bos - Spar"
 	NPC_GREEN_1 = savespot.green
+	NPC_GREEN_2 = savespot.green
+	NPC_GREEN_3 = savespot.green
+	NPC_RED_1   = savespot.red
 end	

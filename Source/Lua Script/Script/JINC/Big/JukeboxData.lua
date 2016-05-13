@@ -127,6 +127,9 @@ return {
      ["Disquiet"] = {
                    File = "Music/Original4Alias/Disquiet.ogg",
                    Artist = "Kevin McLeod"},
+     ["Fahuds Waltz Loopable Battle"] = {
+                   File = "Music/Original4Alias/Fahuds Waltz Loopable Battle.ogg",
+                   Artist = "Widzy"},
      ["Ghosts of Disease"] = {
                    File = "Music/Original4Alias/Ghosts of Disease.ogg",
                    Artist = "Knight Of Fire"},

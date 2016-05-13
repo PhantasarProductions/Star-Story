@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.12
+version: 16.05.13
 ]]
 -- @IF IGNORE
 VicCheck = {}
@@ -155,7 +155,7 @@ if rand(0,enemylevel)>rand(0,herolevel*skill) and (not myfoe.Shilders) then
    MINI("You found an Aurina")
    if not Done("&TUT.AURINA") then Tutorial("If you are lucky an enemy will drop an Aurina.\nThey are very important.\nSome businessmen throughout the universe will pay you money for them.") end
 elseif myfoe.Shilders and rand(1,(skill*skill)+1) then
-	 local getshilders = myfoe.Shilders / rand(1,skill*skill)
+	 local getshilders = math.ceil(myfoe.Shilders / rand(1,skill*skill))
 	 inc('%SHILDERS',getshilders)
 	 MINI("You found "..getshilders.." shilders")   
    end
