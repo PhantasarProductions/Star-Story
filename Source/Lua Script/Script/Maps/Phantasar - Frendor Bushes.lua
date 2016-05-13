@@ -52,6 +52,9 @@ function Boss()
 	StartCombat()	
 end
 
+function ByeSW() GoWorld("Phantasar") end
+function ByeNE() Done("&DONE.PHANTASAR.FRENDORBUSHES") GoWorld("Phantasar") end
+
 function GALE_OnLoad()
 	Music('Dungeon/Pippin the Hunchback')
 	AddEnemy("Hawk",10)
@@ -61,4 +64,6 @@ function GALE_OnLoad()
 	NPC_GREEN_2 = savespot.green
 	NPC_GREEN_3 = savespot.green
 	NPC_RED_1   = savespot.red
+	ZA_Enter('ExitNorthEast',ByeNE)
+	ZA_Enter("ExitSouthWest",ByeSW)
 end	

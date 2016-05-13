@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.09
+version: 16.05.13
 ]]
 local phantasar = {
 
@@ -41,7 +41,7 @@ local phantasar = {
           locations = {
                            { Name = "Transporter Pad", Map = "Phantasar - Frendor Bushes - Arrival"},
                            { Name = "Frendor Bushes", Map = "Phantasar - Frendor Bushes"},
-                           { Name = "The city of Frendor", Map = "Phantasar - Frendor", Wanted='&DONE.FRENDORBUSHES'},
+                           { Name = "The city of Frendor", Map = "Phantasar - Frendor", Wanted='&DONE.PHANTASAR.FRENDORBUSHES'},
                       },
                       
           init = function() end,
