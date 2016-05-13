@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 16.05.08
+  Version: 16.05.13
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -1091,6 +1091,15 @@ if (not ManWalkChecked) and (Actors.Actor(cplayer).Walking==1) and (me=="Yirl" o
    Award("ASMALLSTEPFORMAN")
    end
 end
+
+function ResetChar()
+-- if not (CVVN("%LASTSPAWN.X") and CVVN("%LASTSPAN.Y")) then MINI("CANNOT DO THIS! LAST SPAWN WAS NOT COMPLETE!",255,0,0,true) end
+if INP.KeyD(KEY_LCONTROL)==1 and INP.KeyD(KEY_LALT)==1 and INP.KeyD(KEY_R)==1 then
+	if not CVVN("$LASTSPAWN") then MINI("CANNOT DO THIS! LAST SPAWN WAS NOT COMPLETE!",255,0,0,true) end
+	Maps.Obj.Kill("PLAYER")
+	SpawnPlayer(CVV('$LASTSPAWN'))
+	end
+end
    
 function MAIN_FLOW()
 DrawScreen()
@@ -1104,5 +1113,6 @@ Termination()
 EmergencySave()
 ControlFoes()
 FindTreasures()
+ResetChar()
 Flip()
 end

@@ -32,13 +32,15 @@
   
  **********************************************
  
-version: 16.05.12
+version: 16.05.13
 ]]
 
 -- @USE Phantasar.lua
 
 function GALE_OnLoad()
 	Music('Dungeon/Pippin the Hunchback')
-	AddEnemy("Hawk")
+	AddEnemy("Hawk",10)
+	AddEnemy("Goblin",20)
 	EncounterBack = "Bos - Spar"
+	NPC_GREEN_1 = savespot.green
 end	

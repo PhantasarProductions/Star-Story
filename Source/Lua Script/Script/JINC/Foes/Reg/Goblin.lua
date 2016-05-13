@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  Hawk.lua
+  Goblin.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -41,41 +41,38 @@ version: 16.05.13
 
 
 Data = {
-	Name = "Hawk",
-	Desc = "A bird native to Phantasar, and very extremely dangerous",
-	ImageFile = "Reg/Hawk.png",
+	Name = "Goblin",
+	Desc = "Dumb creatures who roam the forests and some old ruins of Phantasar. \nTheir intelligence always goes like \"Me king, you dead!\"",
+	ImageFile = "Reg/Goblin.png",
 	AI = "Default",
 	Shilders = 100,
 	EleRes_Fire = 3,
-	EleRes_Wind = 2,
+	EleRes_Wind = 3,
 	EleRes_Water = 3,
-	EleRes_Earth = 1,
-	EleRes_Frost = 3,
-	EleRes_Lightning = 5,
+	EleRes_Earth = 3,
 	EleRes_Light = 3,
-	EleRes_Dark = 3,
 	EleRes_Healing = 6,
 	EleRes_DarkHealing = 0,
 	Stat = {
-		["Strength"] = {750,1000},
-		["Defense"] = {0,50},
-		["Will"] = {0,100},
-		["Resistance"] = {0,100},
-		["Agility"] = {80,90},
-		["Accuracy"] = {10000,10000},
-		["Evasion"] = {1,5},
-		["HP"] = {200,500},
+		["Strength"] = {314,500},
+		["Defense"] = {61,70},
+		["Will"] = {1,20},
+		["Resistance"] = {61,62},
+		["Agility"] = {60,70},
+		["Accuracy"] = {67,70},
+		["Evasion"] = {1,2},
+		["HP"] = {2422,5000},
 		["AP"] = {0,0},
-		["LevelRange"] = {65,70},
+		["LevelRange"] = {50,100},
 },
 	StatusResistance = {
-		["Poison"] = 30   --[[ #1 ]],
-		["Paralysis"] = 100   --[[ #2 ]],
-		["Disease"] = 50   --[[ #3 ]],
-		["Will"] = 100   --[[ #4 ]],
-		["Block"] = 100   --[[ #5 ]],
-		["Death"] = 40   --[[ #6 ]],
-		["Damned"] = 10   --[[ #7 ]],
+		["Poison"] = 0   --[[ #1 ]],
+		["Paralysis"] = 0   --[[ #2 ]],
+		["Disease"] = 0   --[[ #3 ]],
+		["Will"] = 0   --[[ #4 ]],
+		["Block"] = 0   --[[ #5 ]],
+		["Death"] = 0   --[[ #6 ]],
+		["Damned"] = 0   --[[ #7 ]],
 	},
 	Acts = {}, -- Data itself defined below
 	ActMinLevel = {}, -- Data itself defined below
@@ -87,8 +84,18 @@ Data = {
 local temp
 
 
-Data.ActMinLevel["Sys.Attack"] = 0		for ak=1,100 do table.insert(Data.Acts,"Sys.Attack") end
-Data.ActMinLevel["Abl.ABL_FOE_PARA_DIVE"] = 65		for ak=1,20 do table.insert(Data.Acts,"Abl.ABL_FOE_PARA_DIVE") end
+Data.ActMinLevel["Sys.Attack"] = 1		for ak=1,100 do table.insert(Data.Acts,"Sys.Attack") end
+Data.ActMinLevel["Abl.ABL_FOE_IDDQD"] = 500		for ak=1,1 do table.insert(Data.Acts,"Abl.ABL_FOE_IDDQD") end
+Data.ActMinLevel["Abl.ABL_YIRL_INTIMIDATE"] = 60		for ak=1,5 do table.insert(Data.Acts,"Abl.ABL_YIRL_INTIMIDATE") end
+temp = { ITM='ITM_EQP_GARNET', LVL=70, VLT=false }
+for ak=1,1 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_PHANTASAR_APPLE', LVL=1, VLT=false }
+for ak=1,1000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,50 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_PHANTASAR_MAGICDUST', LVL=1, VLT=false }
+for ak=1,200 do table.insert(Data.ItemDrop ,temp) end
+temp = { ITM='ITM_ROCK', LVL=1, VLT=false }
+for ak=1,1300 do table.insert(Data.ItemDrop ,temp) end
 
 
 return Data

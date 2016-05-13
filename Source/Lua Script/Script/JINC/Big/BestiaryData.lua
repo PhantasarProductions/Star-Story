@@ -59,6 +59,7 @@ return {
 	"CYBORG MEDIC",
 	"FLIRMOUSE",
 	"FLYSKY",
+	"GOBLIN",
 	"GRASSTIGER",
 	"GUMMI",
 	"HAWK",

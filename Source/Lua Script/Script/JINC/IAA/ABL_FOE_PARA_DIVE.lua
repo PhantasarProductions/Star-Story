@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_PARA_DIVE.lua
-  Version: 16.05.12
+  Version: 16.05.13
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -46,6 +46,7 @@ ret = {
 	["DefenseStat"] = "Defense",
 	["Description"] = "Attack + Paralyze",
 	["HealingType"] = "Absolute",
+	["Icon"] = "GFX/Abilities/Fist.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Para Dive",
 	["Target"] = "1F",

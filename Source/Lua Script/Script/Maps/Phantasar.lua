@@ -1,6 +1,6 @@
 --[[
   Phantasar.lua
-  Version: 16.05.12
+  Version: 16.05.13
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -161,6 +161,22 @@ oripos = {x = player.x, y=player.y}
 end
     
 
+
+-- Savespots
+savespot = {
+               red = function()
+                       if skill==1 then RecoverParty(true) end
+                       GotoSave()
+                     end,
+               green = function()
+                         if skill~=1 then RecoverParty(true) end
+                         GotoSave()
+                       end,
+               blue = function()
+                         RecoverParty()
+                         GotoSave()
+                      end
+           }
 
 
 -- flow

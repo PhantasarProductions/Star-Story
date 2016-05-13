@@ -1,6 +1,6 @@
 --[[
   Maps.lua
-  Version: 16.02.12
+  Version: 16.05.13
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -85,6 +85,9 @@ if teleporteffect==true then
 local cp = GetActive()    
 Actors.ChoosePic("PLAYER",upper(cp).."."..upper(Wind or "SOUTH"))     
 TurnPlayer(Wind or "South")  
+-- Var.D("%LASTSPAWN.X",Actors.PX("PLAYER"))
+-- Var.D("%LASTSPAWN.Y",Actors.PY("PLAYER"))
+Var.D("$LASTSPAWN",spot)
 end
 
 MapText = MapText or function(tag,back)

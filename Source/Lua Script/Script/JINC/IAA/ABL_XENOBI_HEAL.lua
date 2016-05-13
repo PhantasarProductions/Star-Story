@@ -1,6 +1,6 @@
 --[[
   ABL_XENOBI_HEAL.lua
-  Version: 16.05.12
+  Version: 16.05.13
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -44,7 +44,7 @@ ret = {
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Healing",
-	["AttackPower"] = 60,
+	["AttackPower"] = 120,
 	["AttackStat"] = "Strength",
 	["CureDisease"] = true,
 	["DefenseStat"] = "Defense",
