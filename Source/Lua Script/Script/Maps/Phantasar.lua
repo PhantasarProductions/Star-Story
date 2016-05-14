@@ -42,7 +42,7 @@
            
 ]]
 
--- @DEFINE PHANTASAR_DEBUG
+-- @UNDEF PHANTASAR_DEBUG
 
 
 -- Phantasar text

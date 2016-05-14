@@ -337,6 +337,7 @@
 1. Script/Maps/Nizozemska - Space Port.lua
 1. Script/Maps/Phantasar - Frendor Bushes - Arrival.lua
 1. Script/Maps/Phantasar - Frendor Bushes.lua
+1. Script/Maps/Phantasar - Frendor.lua
 1. Script/Maps/Phantasar.lua
 1. Script/Maps/Physillium - Black Castle.lua
 1. Script/Maps/Physillium - Ji Rubble.lua
@@ -400,4 +401,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 13 May 2016; 17:35:48 CET
+### Last updated: Sat 14 May 2016; 16:59:53 CET
