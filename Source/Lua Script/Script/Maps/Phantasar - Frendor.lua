@@ -52,6 +52,7 @@ function NPC_Rosetta()
 		MapText("ROSETTA")
 	else
 		rosetta=true
+		MapText("ROSETTA_PRE")
 		PartyPop("Rosetta")
 		MapText("ROSETTA_FIRST")
 		PartyUnPop()

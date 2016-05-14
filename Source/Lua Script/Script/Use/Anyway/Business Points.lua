@@ -1,7 +1,7 @@
 --[[
   Business Points.lua
-  Version: 15.11.07
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.05.14
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -74,7 +74,8 @@ local calcscore = {
                       aurinahave = CVV("%AURINAS")*10,
                       aurinaexchanged = CVV('%AURINAEXCHANGED')*5,
                       cash = CVV("%CASH")/200,
-                      cashspent = CVV("%CASHTOTALSPENT")/300
+                      cashspent = CVV("%CASHTOTALSPENT")/300,
+                      shilderhave = CVV("%SHILDERS")/({10,25,50})[skill]
                   }
 
 local ch
