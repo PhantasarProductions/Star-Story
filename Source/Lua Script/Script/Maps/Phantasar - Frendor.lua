@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.14
+version: 16.05.15
 ]]
 
 rosettavar = "&DONE.SPOKEN.ROSETTA"
@@ -83,12 +83,44 @@ function NPC_Irravonia() RosettaText("Irravonia") end
 
 function NPC_Merya()
 	RosettaText("MERYA")
-	
+	if (not rosetta) and Done("&DONE.PHANTASAR.MERYA.KICK.REGGIE") then return end
+	SetActive("Foxy")
+	Actors.ChoosePic('PLAYER',"FOXY.NORTH")
+	MapText("MERYA.REGGIE")
+	local ireggie = Image.Load("GFX/Scenario/Reggie_Big.png")
+	Image.HotCenter(ireggie)
+	local x = Actors.PX("PLAYER")
+	local y = Actors.PY("PLAYER")
+	for scale=0,200 do
+	    DrawScreen()
+	    Image.ScalePC(scale)
+	    Image.Rotate(scale*2)
+	    Image.Draw(ireggie,x,y)
+	    Flip()
+	end
+	local flits = false
+	SFX("Audio/SFX/Scenario/Reggie_Crash.ogg")
+	for i=0,10 do
+	    flits = not flits 
+	    CSay(sval(flits));
+	    white=white or White
+	    black=black or Black;
+	    ({[true]=white,[false]=black})[flits==true]()	   
+		  Image.Rect(0,0,800,600)
+		  Flip()
+	end
+	Cls() Flip() Cls() Flip() -- Make sure the screen is dark
+	MapShow("NIETS")
+	Time.Sleep(100)
+	MapShow("*ALL*")
+	reggie.Visible = 0	  
+	Award("SCENARIO_CRASH")    	    
 end
 
 function GALE_OnLoad()
 	Music('Dungeon/Enchanted Valley.ogg')
 	NPC_SAVESPOT = savespot.blue
+	ZA_Enter("Byebye",GoWorld,"Phantasar")
 end
 
 
