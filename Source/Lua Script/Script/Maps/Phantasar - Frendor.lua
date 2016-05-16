@@ -83,22 +83,24 @@ function NPC_Irravonia() RosettaText("Irravonia") end
 
 function NPC_Merya()
 	RosettaText("MERYA")
-	if (not rosetta) and Done("&DONE.PHANTASAR.MERYA.KICK.REGGIE") then return end
+	if (not rosetta) or Done("&DONE.PHANTASAR.MERYA.KICK.REGGIE") then return end
 	SetActive("Foxy")
 	Actors.ChoosePic('PLAYER',"FOXY.NORTH")
 	MapText("MERYA.REGGIE")
 	local ireggie = Image.Load("GFX/Scenario/Reggie_Big.png")
 	Image.HotCenter(ireggie)
-	local x = Actors.PX("PLAYER")
-	local y = Actors.PY("PLAYER")
+	local x = Actors.PX("PLAYER") - Maps.CamX
+	local y = Actors.PY("PLAYER") - Maps.CamY
 	for scale=0,200 do
 	    DrawScreen()
-	    Image.ScalePC(scale)
+	    Image.DText("cycle: "..scale.." C ("..x..","..y..")")
+	    Image.Scale(scale/100,scale/100)
 	    Image.Rotate(scale*2)
 	    Image.Draw(ireggie,x,y)
 	    Flip()
 	end
 	local flits = false
+	Music('Sys/Silence.ogg')
 	SFX("Audio/SFX/Scenario/Reggie_Crash.ogg")
 	for i=0,10 do
 	    flits = not flits 
@@ -108,13 +110,32 @@ function NPC_Merya()
 	    ({[true]=white,[false]=black})[flits==true]()	   
 		  Image.Rect(0,0,800,600)
 		  Flip()
+		  Time.Sleep(1)
 	end
 	Cls() Flip() Cls() Flip() -- Make sure the screen is dark
-	MapShow("NIETS")
+	local cbars = Maps.Obj.Obj('ColorBars')
+	--cbars.Alpha = 1
+	cbars.X = Maps.CamX
+	cbars.Y = Maps.CamY
+	cbars.W = 800
+	cbars.H = 600
+	cbars.R = 255
+	cbars.G = 255
+	cbars.B = 255
+	CSay(cbars.X.."/"..cbars.y)
+	CSay(cbars.W.."/"..cbars.h)
+	CSay(cbars.R..","..cbars.G..","..cbars.B)
+	Maps.Remap() 
+	DrawScreen()
+	--MapShow("NIETS")
 	Time.Sleep(100)
-	MapShow("*ALL*")
-	reggie.Visible = 0	  
-	Award("SCENARIO_CRASH")    	    
+	MapText('FOXY.OOPS')
+	--MapShow("*ALL*")
+	--reggie.Visible = 0	  
+	Award("SCENARIO_CRASH")  
+	cbars.Visible = 0
+	Maps.Remap() 
+	Music('Dungeon/Enchanted Valley.ogg')  	    
 end
 
 function GALE_OnLoad()

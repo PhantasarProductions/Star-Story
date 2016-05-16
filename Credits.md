@@ -27,6 +27,7 @@ CoolText | 2 | Art;
 Courtney Novits | 3 | Font; Misc files; 
 Cynix | 1 | Art; 
 Dedicated Teacher | 1 | Art; 
+Denelson83 | 1 | Art; 
 Emily Esposito | 1 | Art; 
 Eric Matyas | 4 | Music; 
 Fake Music Generator | 1 | Music; 
