@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.15
+version: 16.05.16
 ]]
 
 rosettavar = "&DONE.SPOKEN.ROSETTA"
@@ -136,6 +136,14 @@ function NPC_Merya()
 	cbars.Visible = 0
 	Maps.Remap() 
 	Music('Dungeon/Enchanted Valley.ogg')  	    
+end
+
+function NPC_Merchant()
+   CSay("Let's talk to the merchant")
+   RosettaText("MERCHANT")
+   if rosetta then
+      CSay("Phantasar Shop not yet available")
+   end   
 end
 
 function GALE_OnLoad()

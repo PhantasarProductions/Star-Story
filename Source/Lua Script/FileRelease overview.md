@@ -303,6 +303,8 @@
 1. Script/Flow/BlockShooter.lua
 1. Script/Flow/NizozemskaSave.lsv
 1. Script/Flow/NizozemskaSave.lua
+1. Script/Flow/PhantasarStore.lsv
+1. Script/Flow/PhantasarStore.lua
 1. Script/Flow/World.lua
 1. Script/JINC/Big/BestiaryData.lua
 1. Script/JINC/Foes/Boss/AstrilopupElite.lua
@@ -401,4 +403,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sun 15 May 2016; 22:08:41 CET
+### Last updated: Tue 17 May 2016; 02:14:45 CET
