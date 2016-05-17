@@ -142,7 +142,8 @@ function NPC_Merchant()
    CSay("Let's talk to the merchant")
    RosettaText("MERCHANT")
    if rosetta then
-      MS.LN_Run("PHANTASARSTORE","script/flow/PhantasarStore.lua","GenerateStock")
+      MS.LN_Run ("PHANTASARSTORE","script/flow/PhantasarStore.lua","GenerateStock")
+      LAURA.Flow("PHANTASARSTORE")
       CSay("Phantasar Shop not yet available")
    end   
 end
