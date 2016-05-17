@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.16
+version: 16.05.17
 ]]
 
 rosettavar = "&DONE.SPOKEN.ROSETTA"
@@ -142,6 +142,7 @@ function NPC_Merchant()
    CSay("Let's talk to the merchant")
    RosettaText("MERCHANT")
    if rosetta then
+      MS.LN_Run("PHANTASARSTORE","script/flow/PhantasarStore.lua","GenerateStock")
       CSay("Phantasar Shop not yet available")
    end   
 end
