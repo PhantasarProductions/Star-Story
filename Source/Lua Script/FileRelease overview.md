@@ -333,6 +333,7 @@
 1. Script/JINC/NewGame+/PreserveVar.lua
 1. Script/JINC/World/Nizozemska.lua
 1. Script/JINC/World/Phantasar.lua
+1. Script/Maps/Nizozemska - Belioss.lua
 1. Script/Maps/Nizozemska - Groenhart bos.lua
 1. Script/Maps/Nizozemska - Lake.lua
 1. Script/Maps/Nizozemska - Marlon's house.lua
@@ -403,4 +404,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 17 May 2016; 22:23:50 CET
+### Last updated: Thu 19 May 2016; 01:12:53 CET

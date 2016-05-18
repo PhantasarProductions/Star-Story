@@ -1,6 +1,6 @@
 --[[
   JukeboxData.lua
-  Version: 16.05.17
+  Version: 16.05.18
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -55,6 +55,9 @@ return {
      ["Dungeon1"] = {
                    File = "Music/Dungeon/Dungeon1.ogg",
                    Artist = "J.W.H. Broeders"},
+     ["Electro Cabello"] = {
+                   File = "Music/Dungeon/Electro Cabello.ogg",
+                   Artist = "Kevin McLeod"},
      ["Enchanted Valley"] = {
                    File = "Music/Dungeon/Enchanted Valley.ogg",
                    Artist = "Kevin McLeod"},

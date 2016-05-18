@@ -1,6 +1,6 @@
 --[[
   Upgrade.lua
-  Version: 16.02.19
+  Version: 16.05.18
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -40,7 +40,8 @@ WeaponFiles = {
                     ExHuRU   = "Claws",
                     Yirl     = "Ray Gun",
                     Foxy     = "Dagger",
-                    Xenobi   = "Light Saber"
+                    Xenobi   = "Light Saber",
+                    Rolf     = "Knuckles"
               }
               
 WeaponImg = {} 
