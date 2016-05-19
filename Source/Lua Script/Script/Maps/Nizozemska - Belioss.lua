@@ -34,6 +34,29 @@
  
 version: 16.05.19
 ]]
+
+-- @USE /Script/Use/Maps/Gen/Next.lua
+
+
+function Enter()
+    if not Done("&DONE.NIZOZEMSKA.BELIOSS.ENTER") then MapText("ENTER") end
+end
+
+function Renew()
+    RecoverParty()
+    MS.Run("FIELD","SetUpFoes")
+    MS.Run("FIELD","SetUpTreasure")    
+end
+
+function NPC_SaveSpot()
+  MS.LoadNew("NIZOSAVE","Script/Flow/NizozemskaSave.lua")
+  LAURA.Flow("NIZOSAVE")
+end
+
 function GALE_OnLoad()
   Music('Dungeon/Electro Cabello.ogg')
+  ZA_Enter("ByeBye",GoWorld,"Nizozemska")
+  ZA_Enter("Enter",Enter)
+  ZA_Enter("Renew",Renew)
 end
+

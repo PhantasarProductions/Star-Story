@@ -1,3 +1,9 @@
+### NOTE
+
+Due to the Alpha Build getting to big for this github repository to contain, I have no choice but to remove it.
+This shall happen in June 2016
+After that the Alpha version shall only be available through request. This because of the current stage of the game in which an open alpha is no longer desirable anyway.
+
 # Alpha Build
 
 In this part of the repository the alpha versions for both Mac and Windows will be kept up-to-date on a regular basis. Please note that the game was created on a Mac and thefore the Mac Executable may predate the Windows executables. The assests and scripts are always the same in both versions. A few bugs in the Windows version may therefore come to life due to a few version conflicts, though I'll try to keep the Windows executables up-to-date.

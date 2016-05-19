@@ -1,6 +1,6 @@
 --[[
   World.lua
-  Version: 16.05.09
+  Version: 16.05.19
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -65,6 +65,7 @@ function MAIN_FLOW()
              	  Cls()
              	  Flip()
                 LoadMap(loc.Map,loc.Layer)
+                Maps.GotoLayer(loc.Layer)
                 SpawnPlayer(loc.Spawn or "Start")
                 LAURA.Flow("FIELD")
                 MS.Destroy("WORLD")
