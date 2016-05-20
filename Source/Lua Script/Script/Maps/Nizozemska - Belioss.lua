@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.19
+version: 16.05.20
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -53,10 +53,24 @@ function NPC_SaveSpot()
   LAURA.Flow("NIZOSAVE")
 end
 
+function To6()
+   Maps.GotoLayer("#006")
+   SpawnPlayer("Start")
+end
+
+function To4()
+   Maps.GotoPlayer('#004')
+   SpawnPlayer('From6')
+end
+
 function GALE_OnLoad()
   Music('Dungeon/Electro Cabello.ogg')
   ZA_Enter("ByeBye",GoWorld,"Nizozemska")
   ZA_Enter("Enter",Enter)
   ZA_Enter("Renew",Renew)
+  ZA_Enter("To6",To6)
+  ZA_Enter("To4",To4)
+  for i=1,4 do ZA_Enter("Base"  ..i,MapShow,"Base"  ) end
+  for i=1,2 do ZA_Enter("Secret"..i,MapShow,"Secret") end  
 end
 
