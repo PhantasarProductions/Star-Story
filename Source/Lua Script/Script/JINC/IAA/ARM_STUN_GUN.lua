@@ -1,8 +1,8 @@
 --[[
 **********************************************
   
-  ABL_FOE_SCRATCH.lua
-  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
+  ARM_STUN_GUN.lua
+  (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -35,21 +35,37 @@
 version: 16.05.20
 ]]
 ret = {
-	["ABL_AP"] = 0,
-	["ABL_Pose"] = "Attack",
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 100,
-	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 125,
+	["ARM_Hit%"] = 70,
+	["ARM_MaxAmmo"] = 3,
+	["ARM_PRICE_Hit%"] = 1000,
+	["ARM_PRICE_MaxAmmo"] = 750,
+	["ARM_PRICE_Weight"] = 560,
+	["ARM_PRICE_XPower"] = 400,
+	["ARM_XPower"] = 0,
+	["ActSpeed"] = 80,
+	["AttackElement"] = "Lightning",
+	["AttackPower"] = 120,
 	["AttackStat"] = "Strength",
+	["Buff_Accuracy"] = -40,
+	["Buff_Agility"] = -200,
+	["Buff_Defense"] = -70,
+	["Buff_Evasion"] = -2000,
+	["Buff_Resistance"] = -70,
+	["Buff_Strength"] = -5,
+	["Buff_Will"] = -100,
+	["CauseParalysis"] = true,
 	["DefenseStat"] = "Defense",
+	["Description"] = "Shocking attack. Thunder attack + paralysis",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Fist.png",
+	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Scratch",
+	["Name"] = "Stun Gun",
+	["SpellAni_Reference"] = "Spark",
 	["Target"] = "1F",
 	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseField"] = true,
+	["untauntable"] = true}
 
 return ret
 
