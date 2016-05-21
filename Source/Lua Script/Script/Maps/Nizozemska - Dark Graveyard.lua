@@ -35,7 +35,7 @@
 version: 16.05.21
 ]]
 function Bye()
-   LoadMap('Nizozemska - Belioss')
+   LoadMap('Nizozemska - Belioss','#007')
    Maps.GotoLayer('#007')   
    SpawnPlayer('FromSide')
 end
