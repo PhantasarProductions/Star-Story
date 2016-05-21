@@ -1,6 +1,6 @@
 --[[
   ITM_EQP_KYANITE.lua
-  Version: 16.05.20
+  Version: 16.05.21
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================

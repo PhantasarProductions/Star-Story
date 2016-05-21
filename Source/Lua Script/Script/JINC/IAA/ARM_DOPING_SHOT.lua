@@ -1,8 +1,8 @@
 --[[
 **********************************************
   
-  ABL_FOXY_BACKSTAB.lua
-  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
+  ARM_DOPING_SHOT.lua
+  (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -35,26 +35,26 @@
 version: 16.05.21
 ]]
 ret = {
-	["ABL_AP"] = 120,
-	["ABL_APCut"] = 2000,
-	["ABL_DblSpeed"] = 3000,
-	["ABL_Pose"] = "Attack",
-	["ABL_Speed"] = 50,
+	["APRecover"] = 100,
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 96,
+	["ARM_Hit%"] = 80,
+	["ARM_MaxAmmo"] = 2,
+	["ARM_PRICE_Hit%"] = 2500,
+	["ARM_PRICE_MaxAmmo"] = 3000,
+	["ARM_PRICE_Weight"] = 5000,
+	["ARM_XPower"] = 0,
+	["ActSpeed"] = 50,
 	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 60,
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Kick a foe off the time gauge",
+	["Description"] = "Recovers 100 AP to ally",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Inventory/Dagger.png",
+	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Backstab",
-	["ScriptEffect_Reference"] = "Backstab",
-	["Target"] = "1F",
+	["Name"] = "Doping shot",
+	["Target"] = "1A",
 	["UseCombat"] = true,
-	["UseField"] = true}
+	["untauntable"] = true}
 
 return ret
 

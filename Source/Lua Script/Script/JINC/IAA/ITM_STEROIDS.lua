@@ -1,8 +1,8 @@
 --[[
 **********************************************
   
-  ABL_FOXY_BACKSTAB.lua
-  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
+  ITM_STEROIDS.lua
+  (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -35,24 +35,30 @@
 version: 16.05.21
 ]]
 ret = {
-	["ABL_AP"] = 120,
-	["ABL_APCut"] = 2000,
-	["ABL_DblSpeed"] = 3000,
-	["ABL_Pose"] = "Attack",
-	["ABL_Speed"] = 50,
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 96,
+	["ActSpeed"] = 70,
 	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 60,
 	["AttackStat"] = "Strength",
+	["Buff_AP"] = 2,
+	["Buff_Accuracy"] = 30,
+	["Buff_Agility"] = 500,
+	["Buff_Defense"] = 20,
+	["Buff_Evasion"] = 600,
+	["Buff_HP"] = 2,
+	["Buff_Resistance"] = 5,
+	["Buff_Strength"] = 250,
+	["Buff_Will"] = 15,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Kick a foe off the time gauge",
+	["Description"] = "Increases all stats but most of all speed and strength",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Inventory/Dagger.png",
+	["ITM_BuyPrice"] = 4000,
+	["ITM_SellPrice"] = 1234,
+	["ITM_Sellable"] = true,
+	["Icon"] = "GFX/Inventory/Steroids.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Backstab",
-	["ScriptEffect_Reference"] = "Backstab",
-	["Target"] = "1F",
+	["Name"] = "Steroids",
+	["SpellAni_Reference"] = "SingleHeal",
+	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true}
 

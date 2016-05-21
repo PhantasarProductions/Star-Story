@@ -112,6 +112,7 @@
 1. Script/JINC/IAA/ABL_YIRL_TAUNT.lua
 1. Script/JINC/IAA/ABL_YIRL_TRIGGERHAPPY.lua
 1. Script/JINC/IAA/ARM_DART.lua
+1. Script/JINC/IAA/ARM_DOPING_SHOT.lua
 1. Script/JINC/IAA/ARM_FLAMETHROWER.lua
 1. Script/JINC/IAA/ARM_HEALINGSPRAY.lua
 1. Script/JINC/IAA/ARM_ICEBULLET.lua
@@ -161,6 +162,7 @@
 1. Script/JINC/IAA/ITM_PHANTASAR_MAGICDUST.lua
 1. Script/JINC/IAA/ITM_ROCK.lua
 1. Script/JINC/IAA/ITM_SPORES.lua
+1. Script/JINC/IAA/ITM_STEROIDS.lua
 1. Script/JINC/IAA/ITM_THUNDER_DIAMOND.lua
 1. Script/JINC/IAA/ITM_VLUGZOUT.lua
 1. Script/JINC/IAA/PHANTASAR_APPLE.lua
@@ -406,4 +408,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sat 21 May 2016; 19:13:57 CET
+### Last updated: Sat 21 May 2016; 19:18:54 CET
