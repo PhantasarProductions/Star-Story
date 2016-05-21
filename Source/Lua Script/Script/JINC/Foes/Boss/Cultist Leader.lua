@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  Cultist.lua
+  Cultist Leader.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.21
+version: 16.05.22
 ]]
 
 
@@ -41,9 +41,9 @@ version: 16.05.21
 
 
 Data = {
-	Name = "Cultist",
+	Name = "Cultist Leader",
 	Desc = "Fools who devoted their lives to demons\nand demonic creatures. \nIs Chthulu real?\nThese guys seem to believe so!",
-	ImageFile = "*CULTIST",
+	ImageFile = "*CULTISTLEADER",
 	AI = "Default",
 	EleRes_Fire = 3,
 	EleRes_Wind = 3,
@@ -51,19 +51,19 @@ Data = {
 	EleRes_Earth = 3,
 	EleRes_Frost = 3,
 	EleRes_Lightning = 3,
-	EleRes_Light = 0,
+	EleRes_Light = 1,
 	EleRes_Dark = 5,
 	EleRes_Healing = 6,
 	EleRes_DarkHealing = 6,
 	Stat = {
-		["Strength"] = {1,800},
+		["Strength"] = {0,800},
 		["Defense"] = {1,100},
-		["Will"] = {1,850},
+		["Will"] = {0,850},
 		["Resistance"] = {1,80},
 		["Agility"] = {1,200},
 		["Accuracy"] = {1,100},
 		["Evasion"] = {1,50},
-		["HP"] = {100,2000},
+		["HP"] = {100,10000},
 		["AP"] = {0,0},
 		["LevelRange"] = {1,100},
 },
@@ -87,6 +87,9 @@ local temp
 
 
 Data.ActMinLevel["Sys.Attack"] = 1		for ak=1,1 do table.insert(Data.Acts,"Sys.Attack") end
+Data.ActMinLevel["Abl.ABL_CULIST_CALL"] = 80		for ak=1,2 do table.insert(Data.Acts,"Abl.ABL_CULIST_CALL") end
+Data.ActMinLevel["Abl.ABL_CULTIST_CTHULU"] = 9000		for ak=1,1 do table.insert(Data.Acts,"Abl.ABL_CULTIST_CTHULU") end
+Data.ActMinLevel["Abl.ABL_CULTIST_PRAYCTHULU"] = 95		for ak=1,2 do table.insert(Data.Acts,"Abl.ABL_CULTIST_PRAYCTHULU") end
 Data.ActMinLevel["Abl.ABL_EXHURU_KAKSI"] = 2		for ak=1,2 do table.insert(Data.Acts,"Abl.ABL_EXHURU_KAKSI") end
 Data.ActMinLevel["Abl.ABL_EXHURU_KOLME"] = 3		for ak=1,3 do table.insert(Data.Acts,"Abl.ABL_EXHURU_KOLME") end
 Data.ActMinLevel["Abl.ABL_EXHURU_KUUSI"] = 4		for ak=1,4 do table.insert(Data.Acts,"Abl.ABL_EXHURU_KUUSI") end

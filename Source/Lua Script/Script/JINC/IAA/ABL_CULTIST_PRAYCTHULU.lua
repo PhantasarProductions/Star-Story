@@ -1,8 +1,8 @@
 --[[
 **********************************************
   
-  ITM_GUBAFLOWER.lua
-  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
+  ABL_CULTIST_PRAYCTHULU.lua
+  (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -35,25 +35,21 @@
 version: 16.05.22
 ]]
 ret = {
+	["ABL_AP"] = 0,
+	["ABL_Pose"] = "Cast",
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
-	["CurePoison"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Heals 47 HP and cures poison",
-	["Healing"] = 75,
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 112,
-	["ITM_SellPrice"] = 60,
-	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/Yellow Flower.png",
+	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Guba Flower",
-	["SpellAni_Reference"] = "SingleHeal",
-	["Target"] = "1A",
+	["Name"] = "Pray to Cthulu",
+	["Target"] = "AF",
 	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseField"] = true,
+	["UserNextMove"] = "ABL_CULTIST_CTHULU"}
 
 return ret
 

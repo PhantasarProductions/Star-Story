@@ -2,7 +2,7 @@
 **********************************************
   
   Teach Wendicka.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.25
+version: 16.05.22
 ]]
 TeachWendickaArray = {
 
@@ -40,7 +40,7 @@ TeachWendickaArray = {
              
               Yirl = {
                        Requirement = function() 
-                                     return CVV('&WENDICKA.LOVES.YIRL') and RPGChar.ListHas("Yirl","ABL","YIRL_FOLLOWME")
+                                     return CVV('&DONE.GROENHART') and RPGChar.ListHas("Yirl","ABL","YIRL_FOLLOWME")
                                      end,
                        Teach = 'YIRL_FOLLOWME'              
                      },
@@ -52,9 +52,9 @@ TeachWendickaArray = {
                      },
               Rolf = {
                        Requirement = function()
-                                     return RPGChar.ListHas("Rolf","ABL","EXHURU_KAKSI")==1 and CVV("&NIZOZEMSKASIDEQUEST") and RPGStat.Stat("Wendicka","Level")>=50
+                                     return RPGChar.ListHas("Rolf","ABL","EXHURU_KOLME")==1 and CVV("&DONE.NIZOZEMSKA.DARKGRAVEYARD.COMPLETE") and RPGStat.Stat("Wendicka","Level")>=50
                                      end,
-                       Teach = "EXHURU_KAKSI"              
+                       Teach = "EXHURU_KOLME"              
                      },
               Xenobi = {
                        Requirement = function()

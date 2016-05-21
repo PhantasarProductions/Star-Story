@@ -54,6 +54,9 @@
 1. Script/JINC/Foes/Reg/Qual.lua
 1. Script/JINC/Foes/Reg/Rat.lua
 1. Script/JINC/Foes/Reg/Syss.lua
+1. Script/JINC/IAA/ABL_CULIST_CALL.lua
+1. Script/JINC/IAA/ABL_CULTIST_CTHULU.lua
+1. Script/JINC/IAA/ABL_CULTIST_PRAYCTHULU.lua
 1. Script/JINC/IAA/ABL_EXHURU_BATTLECRY.lua
 1. Script/JINC/IAA/ABL_EXHURU_CONCENTRATE.lua
 1. Script/JINC/IAA/ABL_EXHURU_KAKSI.lua
@@ -314,6 +317,7 @@
 1. Script/JINC/Big/BestiaryData.lua
 1. Script/JINC/Foes/Boss/AstrilopupElite.lua
 1. Script/JINC/Foes/Boss/BigLion.lua
+1. Script/JINC/Foes/Boss/Cultist Leader.lua
 1. Script/JINC/Foes/Boss/Cyborg Lord.lua
 1. Script/JINC/Foes/Boss/DardBoorth.lua
 1. Script/JINC/Foes/Boss/DardMoeder.lua
@@ -340,6 +344,7 @@
 1. Script/JINC/World/Nizozemska.lua
 1. Script/JINC/World/Phantasar.lua
 1. Script/Maps/Nizozemska - Belioss.lua
+1. Script/Maps/Nizozemska - Dark Graveyard.lsv
 1. Script/Maps/Nizozemska - Dark Graveyard.lua
 1. Script/Maps/Nizozemska - Groenhart bos.lua
 1. Script/Maps/Nizozemska - Lake.lua
@@ -412,4 +417,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sat 21 May 2016; 20:33:48 CET
+### Last updated: Sun 22 May 2016; 01:31:11 CET

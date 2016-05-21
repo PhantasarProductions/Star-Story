@@ -44,3 +44,7 @@ FoeAltImage = {}
 FoeAltImage['*CULTIST'] = function (f)
     Image.AssignLoad("O"..f.Tag,"GFX/Combat/Fighters/Foe/reg/Cultist "..({'Male','Female'})[rand(1,2)]..".png")
 end
+
+FoeAltImage['*CULTISTLEADER'] = function (f)
+    Image.AssignLoad("O"..f.Tag,"GFX/Combat/Fighters/Foe/reg/Cultist Leader "..({'Male','Female'})[rand(1,2)]..".png")
+end

@@ -1,8 +1,8 @@
 --[[
 **********************************************
   
-  ITM_GUBAFLOWER.lua
-  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
+  ABL_CULTIST_CTHULU.lua
+  (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -35,23 +35,28 @@
 version: 16.05.22
 ]]
 ret = {
+	["ABL_AP"] = 0,
+	["ABL_Pose"] = "Cast",
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 250,
-	["AttackElement"] = "Non-Elemental",
+	["ActSpeed"] = 1,
+	["AttackElement"] = "Dark",
+	["AttackPower"] = 200,
 	["AttackStat"] = "Strength",
-	["CurePoison"] = true,
+	["CauseAmnesia"] = true,
+	["CauseBagLock"] = true,
+	["CauseConfusion"] = true,
+	["CauseDisease"] = true,
+	["CauseHandicapped"] = true,
+	["CauseParalysis"] = true,
+	["CausePoison"] = true,
+	["CauseSleep"] = true,
+	["CauseTerrified"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Heals 47 HP and cures poison",
-	["Healing"] = 75,
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 112,
-	["ITM_SellPrice"] = 60,
-	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/Yellow Flower.png",
+	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Guba Flower",
-	["SpellAni_Reference"] = "SingleHeal",
-	["Target"] = "1A",
+	["Name"] = "Wrath of Chtulu",
+	["Target"] = "AF",
 	["UseCombat"] = true,
 	["UseField"] = true}
 

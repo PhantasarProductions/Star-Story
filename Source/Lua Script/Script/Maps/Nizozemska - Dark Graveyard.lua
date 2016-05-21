@@ -40,7 +40,31 @@ function Bye()
    SpawnPlayer('FromSide')
 end
 
+function Boss()
+BossLv = Bosslv or 100
+if RPGChar.ListHas('Crystal','ARM','DOPING_SHOT')==1 then BossLv = BossLv + (50 *skill) end
+local lv = BossLv
+Var.D("$COMBAT.BACKGROUND","BOS - Kerkhof.png")
+Var.D("$COMBAT.BEGIN","Default")
+Var.D("$COMBAT.FOE2","Boss/Cultist Leader")
+Var.D("%COMBAT.LVFOE2",lv)
+if skill==3 then
+   Var.D("$COMBAT.FOE1","Reg/Cultist")
+   Var.D("$COMBAT.FOE3","Reg/Cultist")
+   Var.D("%COMBAT.LVFOE1",rand(1,lv))
+   Var.D("%COMBAT.LVFOE3",rand(1,lv))
+   end
+Var.D("$COMBAT.MUSIC","DUNGEON/AGNUS DEI X.OGG")
+StartCombat()   
+end
+
+function Complete()
+  Award("SECRETDUNGEON_DEATHBECOMESHER")
+  if not Done("&DONE.NIZOZEMSKA.DARKGRAVEYARD.COMPLETE") then MapEXP() end
+end
+
 function GALE_OnLoad()
     Music("DUNGEON/AGNUS DEI X.OGG")
     ZA_Enter('Bye',Bye)
+    ZA_Enter('Complete',Complete)
 end
