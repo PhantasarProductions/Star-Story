@@ -1,6 +1,6 @@
 --[[
   CLoadFoe.lua
-  Version: 16.05.13
+  Version: 16.05.21
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -109,7 +109,11 @@ for cvalue in each(FoeData.Acts) do
     end
 Foe.AI=FoeData.AI    
 -- Load the pictures
-Image.AssignLoad("O"..Foe.Tag,"GFX/Combat/Fighters/Foe/"..FoeData.ImageFile)  
+if left(FoeData.ImageFile)=="*" then 
+   FoeAltImage[FoeData.ImageFile](Foe)
+else   
+   Image.AssignLoad("O"..Foe.Tag,"GFX/Combat/Fighters/Foe/"..FoeData.ImageFile)
+end     
 Image.Negative("O"..Foe.Tag,"N"..Foe.Tag)  
 Image.Hot("O"..Foe.Tag,Image.Width("O"..Foe.Tag)/2,Image.Height("O"..Foe.Tag))
 Image.Hot("N"..Foe.Tag,Image.Width("N"..Foe.Tag)/2,Image.Height("N"..Foe.Tag))

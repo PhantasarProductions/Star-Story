@@ -104,6 +104,7 @@
 1. Script/JINC/IAA/ABL_XENOBI_QUICKSTRIKE.lua
 1. Script/JINC/IAA/ABL_XENOBI_RECOVER.lua
 1. Script/JINC/IAA/ABL_XENOBI_ROCK.lua
+1. Script/JINC/IAA/ABL_XENOBI_SOLARIA.lua
 1. Script/JINC/IAA/ABL_XENOBI_VITALIZE.lua
 1. Script/JINC/IAA/ABL_YIRL_CONFUSION.lua
 1. Script/JINC/IAA/ABL_YIRL_DEATHSHOT.lua
@@ -256,6 +257,7 @@
 1. Script/Use/Combat/AblSpecialEffect/Pickpocket.lua
 1. Script/Use/Combat/AblSpecialEffect/RemoveEnemy.lua
 1. Script/Use/Combat/AblSpecialEffect/Yirl.lua
+1. Script/Use/Combat/Alg.lua
 1. Script/Use/Combat/CAction.lua
 1. Script/Use/Combat/CDrawFighters.lua
 1. Script/Use/Combat/CDrawScreen.lua
@@ -364,8 +366,8 @@
 1. Script/Use/Combat/AblSpecialEffect/HPAPto1.lua
 1. Script/Use/Combat/AblSpecialEffect/Summon.lua
 1. Script/Use/Combat/AltEnemyBuild/SuperFoe_FireSpider.lua
-1. Script/Use/Combat/Cultist.lua
 1. Script/Use/Combat/Events/ReleaseTheGoddess.lua
+1. Script/Use/Combat/FoeAltImage/Cultist.lua
 1. Script/Use/Combat/Foe_AI/FireSpider.lua
 1. Script/Use/Combat/StatusChanges/Confusion.lua
 1. Script/Use/Combat/StatusChanges/IDDQD.lua
@@ -410,4 +412,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sat 21 May 2016; 20:14:56 CET
+### Last updated: Sat 21 May 2016; 20:33:48 CET

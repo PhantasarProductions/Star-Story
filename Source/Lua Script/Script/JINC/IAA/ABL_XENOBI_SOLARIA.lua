@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  BestiaryData.lua
+  ABL_XENOBI_SOLARIA.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -34,46 +34,31 @@
  
 version: 16.05.21
 ]]
-return {
-	"ASTRILOPUPELITE",
-	"BIGGRASSTIGER",
-	"BIGLION",
-	"BRAINDROID",
-	"CYBORG LORD",
-	"DARDBOORTH",
-	"DARDMOEDER",
-	"FLIRMOUSE_KING",
-	"FLIRMOUSE_SUBJECT",
-	"GIANTSNAKE",
-	"MID-BOSS",
-	"QUEENMYR",
-	"SUPAQUAL",
-	"SUPERSYSS",
-	"ASTRILOPUP",
-	"ASTRILOPUPGUARD",
-	"BATTLEDROID",
-	"BLACKLIZARD",
-	"BLADEH",
-	"CID",
-	"CULTIST",
-	"CYBORG CAPTAIN",
-	"CYBORG GUNNER",
-	"CYBORG MEDIC",
-	"FLIRMOUSE",
-	"FLYSKY",
-	"GOBLIN",
-	"GRASSTIGER",
-	"GUMMI",
-	"HAWK",
-	"INSETTO",
-	"LION",
-	"MYR",
-	"PYROGUIN",
-	"QUAL",
-	"RAT",
-	"SALAMANDER",
-	"SYSS",
-	"THIEF",
-	"WOLF",
-	"FIRESPIDER",
-}
+ret = {
+	["ABL_AP"] = 250,
+	["ABL_APCut"] = 2000,
+	["ABL_DblPower"] = 8000,
+	["ABL_DblSpeed"] = 4000,
+	["ABL_Pose"] = "Cast",
+	["ABL_Speed"] = 20,
+	["APRecoverType"] = "Absolute",
+	["ActSpeed"] = 50,
+	["AttackElement"] = "Light",
+	["AttackPower"] = 300,
+	["AttackStat"] = "Will",
+	["Buff_Accuracy"] = -30,
+	["CauseHandicapped"] = true,
+	["DefenseStat"] = "Resistance",
+	["Description"] = "Light attack on all enemies",
+	["HealingType"] = "Absolute",
+	["Icon"] = "GFX/Elements/Light.png",
+	["ItemType"] = "Consumable",
+	["Name"] = "Solaria",
+	["Target"] = "AF",
+	["UseCombat"] = true,
+	["untauntable"] = true}
+
+return ret
+
+-- This file is an automatically generated file!
+
