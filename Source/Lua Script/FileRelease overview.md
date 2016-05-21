@@ -322,6 +322,7 @@
 1. Script/JINC/Foes/Reg/BlackLizard.lua
 1. Script/JINC/Foes/Reg/Bladeh.lua
 1. Script/JINC/Foes/Reg/Cid.lua
+1. Script/JINC/Foes/Reg/Cultist.lua
 1. Script/JINC/Foes/Reg/Flysky.lua
 1. Script/JINC/Foes/Reg/Goblin.lua
 1. Script/JINC/Foes/Reg/Hawk.lua
@@ -363,6 +364,7 @@
 1. Script/Use/Combat/AblSpecialEffect/HPAPto1.lua
 1. Script/Use/Combat/AblSpecialEffect/Summon.lua
 1. Script/Use/Combat/AltEnemyBuild/SuperFoe_FireSpider.lua
+1. Script/Use/Combat/Cultist.lua
 1. Script/Use/Combat/Events/ReleaseTheGoddess.lua
 1. Script/Use/Combat/Foe_AI/FireSpider.lua
 1. Script/Use/Combat/StatusChanges/Confusion.lua
@@ -408,4 +410,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sat 21 May 2016; 20:10:40 CET
+### Last updated: Sat 21 May 2016; 20:14:56 CET
