@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  Nizozemska - Belioss.lua
+  Nizozemska - Dark Graveyard.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -34,50 +34,12 @@
  
 version: 16.05.21
 ]]
-
--- @USE /Script/Use/Maps/Gen/Next.lua
-
-
-function Enter()
-    if not Done("&DONE.NIZOZEMSKA.BELIOSS.ENTER") then MapText("ENTER") end
-end
-
-function Renew()
-    RecoverParty()
-    MS.Run("FIELD","SetUpFoes")
-    MS.Run("FIELD","SetUpTreasure")    
-end
-
-function NPC_SaveSpot()
-  MS.LoadNew("NIZOSAVE","Script/Flow/NizozemskaSave.lua")
-  LAURA.Flow("NIZOSAVE")
-end
-
-function To6()
-   Maps.GotoLayer("#006")
-   SpawnPlayer("Start")
-end
-
-function To4()
-   Maps.GotoPlayer('#004')
-   SpawnPlayer('From6')
-end
-
-function ToDarkGraveyard()
-   LoadMap("Nizozemska - Dark Graveyard")
-   SpawnPlayer("Start")
-   if not Done("&DONE.NIZOZEMSKA.DARKGRAVEYARD.WELCOME") then MapText("WELCOME") end
+function Bye()
+   LoadMap('Nizozemska - Belioss')
+   Maps.GotoLayer('#007')   
+   SpawnPlayer('FromSide')
 end
 
 function GALE_OnLoad()
-  Music('Dungeon/Electro Cabello.ogg')
-  ZA_Enter("SideQuest",ToDarkGraveyard)
-  ZA_Enter("ByeBye",GoWorld,"Nizozemska")
-  ZA_Enter("Enter",Enter)
-  ZA_Enter("Renew",Renew)
-  ZA_Enter("To6",To6)
-  ZA_Enter("To4",To4)
-  for i=1,4 do ZA_Enter("Base"  ..i,MapShow,"Base"  ) end
-  for i=1,2 do ZA_Enter("Secret"..i,MapShow,"Secret") end  
+    Music("DUNGEON/ANGUS DEI X.OGG")
 end
-
