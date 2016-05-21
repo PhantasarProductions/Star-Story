@@ -41,5 +41,6 @@ function Bye()
 end
 
 function GALE_OnLoad()
-    Music("DUNGEON/ANGUS DEI X.OGG")
+    Music("DUNGEON/AGNUS DEI X.OGG")
+    ZA_Enter('Bye',Bye)
 end
