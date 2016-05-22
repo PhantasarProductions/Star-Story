@@ -26,6 +26,8 @@ function rand(a,b)
 if a and b then return Math.Rand(a,b) end
 if a and (not b) then return Math.Rand(1,a) end
 if not a then Console.Write("WARNING! Rand() First value is nil") end
+CSay('rand.a ='..sval(a))
+CSay('rand.b ='..sval(b))
 Sys.Error('Random Definition invalid')
 end
 

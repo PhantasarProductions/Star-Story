@@ -324,6 +324,7 @@
 1. Script/JINC/Foes/Boss/GiantSnake.lua
 1. Script/JINC/Foes/Boss/Mid-Boss.lua
 1. Script/JINC/Foes/Boss/QueenMyr.lua
+1. Script/JINC/Foes/Boss/Thief Chief.lua
 1. Script/JINC/Foes/Reg/AstrilopupGuard.lua
 1. Script/JINC/Foes/Reg/BlackLizard.lua
 1. Script/JINC/Foes/Reg/Bladeh.lua
@@ -372,6 +373,7 @@
 1. Script/Use/Combat/AblSpecialEffect/Summon.lua
 1. Script/Use/Combat/AltEnemyBuild/SuperFoe_FireSpider.lua
 1. Script/Use/Combat/Events/ReleaseTheGoddess.lua
+1. Script/Use/Combat/FoeAltImage/Alg.lua
 1. Script/Use/Combat/FoeAltImage/Cultist.lua
 1. Script/Use/Combat/Foe_AI/FireSpider.lua
 1. Script/Use/Combat/StatusChanges/Confusion.lua
@@ -417,4 +419,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sun 22 May 2016; 01:31:11 CET
+### Last updated: Sun 22 May 2016; 12:07:43 CET

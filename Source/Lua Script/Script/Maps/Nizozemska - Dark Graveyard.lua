@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.21
+version: 16.05.22
 ]]
 function Bye()
    LoadMap('Nizozemska - Belioss','#007')
@@ -44,6 +44,7 @@ function Boss()
 BossLv = Bosslv or 100
 if RPGChar.ListHas('Crystal','ARM','DOPING_SHOT')==1 then BossLv = BossLv + (50 *skill) end
 local lv = BossLv
+CleanCombat()
 Var.D("$COMBAT.BACKGROUND","BOS - Kerkhof.png")
 Var.D("$COMBAT.BEGIN","Default")
 Var.D("$COMBAT.FOE2","Boss/Cultist Leader")

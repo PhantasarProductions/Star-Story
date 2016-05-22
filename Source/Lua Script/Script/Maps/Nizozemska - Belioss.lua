@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.21
+version: 16.05.22
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -69,6 +69,40 @@ function ToDarkGraveyard()
    if not Done("&DONE.NIZOZEMSKA.DARKGRAVEYARD.WELCOME") then MapText("WELCOME") end
 end
 
+function Boss()
+   Boss = true
+   MapShow('*ALL*')
+   CleanCombat()
+	 local lv = MapLevel() + (skill*5)
+	 CSay("Boss level will be:"..lv)
+	 Var.D("$COMBAT.BACKGROUND","BOS - Loofbomen.png")
+   Var.D("$COMBAT.BEGIN","Default")
+   Var.D("$COMBAT.FOE5","Boss/Thief Chief")
+   Var.D("%COMBAT.LVFOE5",lv)
+   if skill>1 then
+      Var.D("$COMBAT.FOE1","Reg/Thief")
+      Var.D("$COMBAT.FOE3","Reg/Thief")
+      Var.D("%COMBAT.LVFOE1",rand(1,lv))
+      Var.D("%COMBAT.LVFOE3",rand(1,lv))
+   end
+   if skill==3 then
+      Var.D("$COMBAT.FOE7","Reg/Thief")
+      Var.D("$COMBAT.FOE9","Reg/Thief")
+      Var.D("%COMBAT.LVFOE7",rand(1,lv))
+      Var.D("%COMBAT.LVFOE9",rand(1,lv))
+   end   
+   RandomBossTune()
+   StartCombat()   
+end
+
+function ShowPreBossOnly()
+   if not BossDown then MapShow("PreBoss") end
+end
+
+function Complete()
+   if not Done("&DONE.NIZOZEMSKA.BELIOSS") then MapExp() end
+end
+
 function GALE_OnLoad()
   Music('Dungeon/Electro Cabello.ogg')
   ZA_Enter("SideQuest",ToDarkGraveyard)
@@ -77,6 +111,8 @@ function GALE_OnLoad()
   ZA_Enter("Renew",Renew)
   ZA_Enter("To6",To6)
   ZA_Enter("To4",To4)
+  ZA_Enter("ShowPreBossOnly",ShowPreBossOnly)
+  ZA_Enter("Complete",Complete)
   for i=1,4 do ZA_Enter("Base"  ..i,MapShow,"Base"  ) end
   for i=1,2 do ZA_Enter("Secret"..i,MapShow,"Secret") end  
 end

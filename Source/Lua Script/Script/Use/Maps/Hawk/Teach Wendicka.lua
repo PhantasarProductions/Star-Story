@@ -34,6 +34,7 @@
  
 version: 16.05.22
 ]]
+
 TeachWendickaArray = {
 
              

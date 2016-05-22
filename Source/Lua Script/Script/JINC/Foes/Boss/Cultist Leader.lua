@@ -36,7 +36,7 @@ version: 16.05.22
 ]]
 
 
--- Version 16.05.21
+-- Version 16.05.22
 
 
 
@@ -45,6 +45,7 @@ Data = {
 	Desc = "Fools who devoted their lives to demons\nand demonic creatures. \nIs Chthulu real?\nThese guys seem to believe so!",
 	ImageFile = "*CULTISTLEADER",
 	AI = "Default",
+	Boss = true,
 	EleRes_Fire = 3,
 	EleRes_Wind = 3,
 	EleRes_Water = 3,

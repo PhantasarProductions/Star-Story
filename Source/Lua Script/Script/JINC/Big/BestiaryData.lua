@@ -32,13 +32,14 @@
   
  **********************************************
  
-version: 16.05.21
+version: 16.05.22
 ]]
 return {
 	"ASTRILOPUPELITE",
 	"BIGGRASSTIGER",
 	"BIGLION",
 	"BRAINDROID",
+	"CULTIST LEADER",
 	"CYBORG LORD",
 	"DARDBOORTH",
 	"DARDMOEDER",
@@ -49,6 +50,7 @@ return {
 	"QUEENMYR",
 	"SUPAQUAL",
 	"SUPERSYSS",
+	"THIEF CHIEF",
 	"ASTRILOPUP",
 	"ASTRILOPUPGUARD",
 	"BATTLEDROID",
