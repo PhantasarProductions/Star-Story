@@ -1,6 +1,6 @@
 --[[
   Bestiary.lua
-  Version: 16.01.04
+  Version: 16.05.22
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -34,6 +34,9 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
+
+-- @USEDIR Script/Use/Combat/FoeAltImage
+
 imgup   = Image.Load("GFX/Save/Up.png")
 imgdown = Image.Load("GFX/Save/Down.png")
 
@@ -95,8 +98,13 @@ if not Showing.Img then
        end
    if not file then Sys.Error(Showing.File.." not found in any of the allowed directories") end
    Showing.Img=true
-   ]]   
-   Image.Load("GFX/Combat/Fighters/Foe/"..Showing.Data.ImageFile,"BESTIARY_ENEMY")
+   ]]
+   if left(Showing.Data.ImageFile,1)=="*" then
+      AltFoeImage[Showing.Data.ImageFile]({tag="BESTIARY_ENEMY"})
+      Image.Assign("BESTIARY_ENEMY","OBESTIARY_ENEMY")
+   else   
+      Image.Load("GFX/Combat/Fighters/Foe/"..Showing.Data.ImageFile,"BESTIARY_ENEMY")      
+      end
    end
 if not Showing.Scale then
    Showing.Scale = 100

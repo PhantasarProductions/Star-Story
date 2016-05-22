@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.19
+version: 16.05.22
 ]]
 local nizozemska = {
 
@@ -43,7 +43,7 @@ local nizozemska = {
                            { Name = "Groenhart Forest", Map = "Nizozemska - Groenhart bos", Layer='Bos'},
                            { Name = "Marlon's House", Map = "Nizozemska - Marlon's house", Layer='OUTSIDE'},
                            { Name = "Belioss",Map = "Nizozemska - Belioss", Layer='#001'},  -- Anagram to "Liesbos" a small forest between Breda en Etten-Leur (the Netherlands)
-                           { Name = "Marlon's Garden", Map="Nizozemska - Garden", Wanted = "&DONE.BELIOSS"}           
+                           { Name = "Marlon's Garden", Map="Nizozemska - Garden", Wanted = "&DONE.NIZOZEMSKA.BELIOSS"}                                     
                       },
                       
           init = function() end,
