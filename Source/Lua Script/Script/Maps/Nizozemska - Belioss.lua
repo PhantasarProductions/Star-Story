@@ -100,7 +100,8 @@ function ShowPreBossOnly()
 end
 
 function Complete()
-   if not Done("&DONE.NIZOZEMSKA.BELIOSS") then MapExp() end
+   if not Done("&DONE.NIZOZEMSKA.BELIOSS") then MapEXP() end
+   GoWorld('Nizozemska')
 end
 
 function GALE_OnLoad()
