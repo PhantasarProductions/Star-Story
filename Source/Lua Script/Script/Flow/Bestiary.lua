@@ -100,9 +100,11 @@ if not Showing.Img then
    Showing.Img=true
    ]]
    if left(Showing.Data.ImageFile,1)=="*" then
-      AltFoeImage[Showing.Data.ImageFile]({tag="BESTIARY_ENEMY"})
-      Image.Assign("BESTIARY_ENEMY","OBESTIARY_ENEMY")
+      FoeAltImage[Showing.Data.ImageFile]({Tag="BESTIARY_ENEMY"})
+      Image.Assign("OBESTIARY_ENEMY","BESTIARY_ENEMY")
+      Showing.Img = true
    else   
+      Showing.Img = true
       Image.Load("GFX/Combat/Fighters/Foe/"..Showing.Data.ImageFile,"BESTIARY_ENEMY")      
       end
    end
