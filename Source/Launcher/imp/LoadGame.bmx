@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 16.03.07
+Version: 16.05.24
 End Rem
 Strict
 
@@ -30,7 +30,7 @@ Import tricky_units.advdatetime
 Import tricky_units.Bye
 Import "Framework.bmx"
 
-MKL_Version "LAURA II - LoadGame.bmx","16.03.07"
+MKL_Version "LAURA II - LoadGame.bmx","16.05.24"
 MKL_Lic     "LAURA II - LoadGame.bmx","GNU General Public License 3"
 
 
@@ -126,10 +126,13 @@ Type TLoadGamePanel Extends tfpanelbase
 	ClearGadgetItems Files
 	Local i=-1,c=-1
 	For Local F$=EachIn ListDir(Dirry(Save)+"/"+User,1)
-		AddGadgetItem Files,F 
-		c:+1
-		If SFILE And SFILE=F i=c
-		DebugLog "SFILE = "+SFILE+"; F = "+F+"; i = "+i+"; c = "+c
+		If F=Trim(F) 
+			AddGadgetItem Files,F 
+			c:+1
+			If SFILE And SFILE=F i=c
+			DebugLog "SFILE = "+SFILE+"; F = "+F+"; i = "+i+"; c = "+c
+		Else
+			DebugLog "Trim error so file ignored: "+F
 		Next
 	If i>-1 
 		SelectGadgetItem Files,i	

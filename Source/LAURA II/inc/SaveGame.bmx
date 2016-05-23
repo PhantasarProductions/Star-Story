@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 16.05.08
+Version: 16.05.24
 End Rem
 
 Function GetActorSaveDump$(SMap:TKthura)
@@ -60,7 +60,7 @@ Local FD$ = ExtractDir(SaveDir+"/"+File)
 If FileType(FD)=1 GALE_Error "Cannot create a folder due to a file with the same name!"
 If FileType(FD)=0 CreateDir FD,2; ConsoleWrite "Creating folder: "+FD,255,95,10
 ' Open
-Local BT:TJCRCreate = JCR_Create(SaveDir+"/"+File)
+Local BT:TJCRCreate = JCR_Create(Trim(SaveDir+"/"+File))
 Local K$
 Local Save$
 ConsoleWrite "Saving: "+file,255,95,10
