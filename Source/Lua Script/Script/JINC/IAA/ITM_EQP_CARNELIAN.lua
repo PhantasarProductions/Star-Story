@@ -1,6 +1,6 @@
 --[[
   ITM_EQP_CARNELIAN.lua
-  Version: 16.05.22
+  Version: 16.05.23
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================

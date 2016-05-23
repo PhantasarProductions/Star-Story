@@ -4,7 +4,9 @@ This tracker can be used to look into the source code of Star Story. You can see
 
 You can also use the issue tracker to report bugs, or request/suggest features.
 
-The source code, some documentation, and the alpha builds can be found here (I decided to go for full builds in this repository because [BlitzMax](http://blitzmax.com) is not a very common compiler, and I cannot assume everybody knows how to use JCR6 properly, plus that the file does contain third party assets I do not want to put in this repository in "raw" form out of respect for the copyrights of the original creators.
+The source code, some documentation,
+The alpha build is no longer available here. It can be obtained by request.
+Assets are not part of this repository in order not to violate copyright of third party owners.
 
 This game will be set up to work in Windows and Mac. Unfortunately, I cannot go for a Linux version. This is due to some technical difficulties Linux offers. Since you can find the source in this repository you might try to compile this yourself in Linux, I won't stop you, but I'm not going to pain myself with it any more.
 

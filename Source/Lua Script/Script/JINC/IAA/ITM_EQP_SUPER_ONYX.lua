@@ -1,6 +1,6 @@
 --[[
   ITM_EQP_SUPER_ONYX.lua
-  Version: 16.05.22
+  Version: 16.05.23
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -40,7 +40,7 @@ ret = {
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Increases resistance to Dark",
+	["Description"] = "Increases resistance to Darkness",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 100,
 	["ITM_EQP_ERes_UPDark"] = true,

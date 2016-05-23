@@ -163,6 +163,8 @@
 1. Script/JINC/IAA/ITM_MOLOTOV.lua
 1. Script/JINC/IAA/ITM_PHANTASAR_ANTIDOTE.lua
 1. Script/JINC/IAA/ITM_PHANTASAR_APPLE.lua
+1. Script/JINC/IAA/ITM_PHANTASAR_LIONHEAD.lua
+1. Script/JINC/IAA/ITM_PHANTASAR_MAGICDISC.lua
 1. Script/JINC/IAA/ITM_PHANTASAR_MAGICDUST.lua
 1. Script/JINC/IAA/ITM_ROCK.lua
 1. Script/JINC/IAA/ITM_SPORES.lua
@@ -260,7 +262,6 @@
 1. Script/Use/Combat/AblSpecialEffect/Pickpocket.lua
 1. Script/Use/Combat/AblSpecialEffect/RemoveEnemy.lua
 1. Script/Use/Combat/AblSpecialEffect/Yirl.lua
-1. Script/Use/Combat/Alg.lua
 1. Script/Use/Combat/CAction.lua
 1. Script/Use/Combat/CDrawFighters.lua
 1. Script/Use/Combat/CDrawScreen.lua
@@ -354,6 +355,7 @@
 1. Script/Maps/Phantasar - Frendor Bushes - Arrival.lua
 1. Script/Maps/Phantasar - Frendor Bushes.lua
 1. Script/Maps/Phantasar - Frendor.lua
+1. Script/Maps/Phantasar - Slagimon Forest.lua
 1. Script/Maps/Phantasar.lua
 1. Script/Maps/Physillium - Black Castle.lua
 1. Script/Maps/Physillium - Ji Rubble.lua
@@ -419,4 +421,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sun 22 May 2016; 19:47:24 CET
+### Last updated: Mon 23 May 2016; 09:48:59 CET

@@ -63,6 +63,7 @@ I'd like to thank the next music artists for their brilliant work, and licensing
 1. WeirdoMusic
    1. Fiber visits the Q continuum
 1. Widzy
+   1. Evergreen Dream
    1. Prisoner of War
    1. Fahuds Waltz Loopable Battle
    1. Calm Indoors
