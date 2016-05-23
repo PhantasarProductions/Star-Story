@@ -130,6 +130,7 @@
 1. Script/JINC/IAA/BLADEH_MULTI_STAB.lua
 1. Script/JINC/IAA/BLADEH_STUNSTAB.lua
 1. Script/JINC/IAA/BLADEH_VENOM.lua
+1. Script/JINC/IAA/ITEM_PHAN_TRAVEL.lua
 1. Script/JINC/IAA/ITM_ADHBANDAGE.lua
 1. Script/JINC/IAA/ITM_ANTIDOTE.lua
 1. Script/JINC/IAA/ITM_ASTRILOPUPHONEY.lua
@@ -170,6 +171,7 @@
 1. Script/JINC/IAA/ITM_PHANTASAR_MEDICINE.lua
 1. Script/JINC/IAA/ITM_PHANTASAR_PHOENIX.lua
 1. Script/JINC/IAA/ITM_PHANTASAR_SALVE.lua
+1. Script/JINC/IAA/ITM_PHAN_TRAVEL.lua
 1. Script/JINC/IAA/ITM_ROCK.lua
 1. Script/JINC/IAA/ITM_SPORES.lua
 1. Script/JINC/IAA/ITM_STEROIDS.lua
@@ -425,4 +427,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 23 May 2016; 11:23:33 CET
+### Last updated: Mon 23 May 2016; 11:35:37 CET
