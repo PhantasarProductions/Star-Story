@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ITM_PHANTASAR_ANTIDOTE.lua
+  ITM_PHANTASAR_MEDICINE.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -39,16 +39,16 @@ ret = {
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
-	["CurePoison"] = true,
+	["CureDisease"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Cures poison",
+	["Description"] = "Cures \"Disease\"",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 100,
 	["ITM_SellPrice"] = 75,
 	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/Phantasar_Antidote.png",
+	["Icon"] = "GFX/Inventory/Phan_Medicine.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Herbal Antidote",
+	["Name"] = "Medicine",
 	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1A",
 	["UseCombat"] = true,

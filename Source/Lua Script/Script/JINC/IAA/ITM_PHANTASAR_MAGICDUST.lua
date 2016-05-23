@@ -49,6 +49,7 @@ ret = {
 	["Icon"] = "GFX/Inventory/Phantasar_MagicDust.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Magic Dust",
+	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true}

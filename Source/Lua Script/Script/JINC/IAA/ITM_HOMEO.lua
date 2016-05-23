@@ -51,6 +51,7 @@ ret = {
 	["Icon"] = "GFX/Inventory/Bottle (homeopatisch).png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Homeopathic medicine",
+	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true}

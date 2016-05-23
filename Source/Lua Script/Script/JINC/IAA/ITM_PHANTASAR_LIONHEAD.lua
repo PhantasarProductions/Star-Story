@@ -49,6 +49,7 @@ ret = {
 	["Icon"] = "GFX/Inventory/Phan_LionHead.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Lion's Head",
+	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true}

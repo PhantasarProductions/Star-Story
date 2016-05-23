@@ -49,6 +49,7 @@ ret = {
 	["Icon"] = "GFX/Inventory/Phan_MagicDisc.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Magic Disc",
+	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true}

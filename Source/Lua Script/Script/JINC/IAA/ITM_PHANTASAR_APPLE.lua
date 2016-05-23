@@ -50,6 +50,7 @@ ret = {
 	["Icon"] = "gfx/inventory/Phantasar_Apple.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Apple",
+	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true}
