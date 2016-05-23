@@ -39,7 +39,19 @@ version: 16.05.23
 -- @USE Phantasar.lua
 
 
+function Complete()
+   if not Done("&DONE.PHANTASAR.SLAGIMON") then MapEXP() end
+   GoWorld("Phantasar")
+end
+
 function GALE_OnLoad()
-	-- AddEnemy("Goblin",20)
+  EncounterBack = "Bos - Spar"
+	AddEnemy("Goblin",20)
+	AddEnemy("Shroom",20)
+	AddEnemy("Imp",10)
   Music("Dungeon/Evergreen Dream")
+  ZA_Enter("GoodBye",GoWorld,"Phantasar")
+  ZA_Enter("Complete",Complete)
+  NPC_SAVE_GREEN1 = savespot.green
+  NPC_SAVE_GREEN2 = savespot.green
 end  

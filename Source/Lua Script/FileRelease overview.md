@@ -340,11 +340,13 @@
 1. Script/JINC/Foes/Reg/Flysky.lua
 1. Script/JINC/Foes/Reg/Goblin.lua
 1. Script/JINC/Foes/Reg/Hawk.lua
+1. Script/JINC/Foes/Reg/Imp.lua
 1. Script/JINC/Foes/Reg/Insetto.lua
 1. Script/JINC/Foes/Reg/Lion.lua
 1. Script/JINC/Foes/Reg/Myr.lua
 1. Script/JINC/Foes/Reg/Pyroguin.lua
 1. Script/JINC/Foes/Reg/Salamander.lua
+1. Script/JINC/Foes/Reg/Shroom.lua
 1. Script/JINC/Foes/Reg/Thief.lua
 1. Script/JINC/Foes/Reg/Wolf.lua
 1. Script/JINC/Foes/SuperBoss/FireSpider.lua
@@ -427,4 +429,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 23 May 2016; 11:35:37 CET
+### Last updated: Mon 23 May 2016; 19:48:30 CET
