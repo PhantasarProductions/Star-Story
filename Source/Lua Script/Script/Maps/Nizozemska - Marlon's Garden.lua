@@ -46,6 +46,7 @@ function setup_koelevels()
 end
 
 function Welcome()
+   if Done('&DONE.NIZOZEMSKA.GARDEN.WELCOME') then return end
    PartyPop('Start')
    MapText('WELCOME')
    KickReggie('North',"POP_Foxy","Reggie")
