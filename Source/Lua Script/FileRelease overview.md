@@ -177,6 +177,16 @@
 1. Script/JINC/IAA/ITM_STEROIDS.lua
 1. Script/JINC/IAA/ITM_THUNDER_DIAMOND.lua
 1. Script/JINC/IAA/ITM_VLUGZOUT.lua
+1. Script/JINC/IAA/MOO_AGLDOWN.lua
+1. Script/JINC/IAA/MOO_APDOWN.lua
+1. Script/JINC/IAA/MOO_DEFDOWN.lua
+1. Script/JINC/IAA/MOO_EVADOWN.lua
+1. Script/JINC/IAA/MOO_KUN_JE_NIET_BETER_MIKKEN.lua
+1. Script/JINC/IAA/MOO_MAXAPDOWN.lua
+1. Script/JINC/IAA/MOO_MAXHPDOWN.lua
+1. Script/JINC/IAA/MOO_POWERDOWN.lua
+1. Script/JINC/IAA/MOO_RESDOWN.lua
+1. Script/JINC/IAA/MOO_WILLDOWN.lua
 1. Script/JINC/IAA/PHANTASAR_APPLE.lua
 1. Script/JINC/IAA/SUPER_FOXY_SKYDRAGONSLASH.lua
 1. Script/JINC/IAA/SUPER_WENDICKA_VOLTSUNAMI.lua
@@ -430,4 +440,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Thu 26 May 2016; 11:58:30 CET
+### Last updated: Thu 26 May 2016; 12:12:40 CET

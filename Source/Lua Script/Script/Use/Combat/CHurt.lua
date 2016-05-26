@@ -1,7 +1,7 @@
 --[[
   CHurt.lua
-  Version: 15.12.03
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.05.26
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -122,6 +122,15 @@ end
 
 function Heal(tg,ti,hp)
 Hurt ( tg , ti , hp , "Healing")
+end
+
+function RecoverAP(tg,ti,ap)
+local chtarget = FighterTag(tg,ti)
+if chtarget then return CSay("No target on <"..tg..","..ti.."> so cannot handle AP") end
+if ap==0 then return CSay("If zero then ignore") end
+if ap>0 then CharReport(tg,ti,"+"..ap.." AP",{0,180,255}) else CharReport(tg,ti,ap.." AP",{180,0,255}) end
+local AP = RPGChar.Points(chtarget,"AP")
+AP.Have = AP.Have + ap
 end
 
 
