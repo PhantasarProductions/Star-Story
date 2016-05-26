@@ -162,6 +162,18 @@ if abl.AttackPower and abl.AttackPower>0 then
    Attack(ag,ai,act,atkdata,tg,ti)   
    effect=true
    end
+-- Buff or debuff
+for k,v in pairs(abl) do
+    if prefixed(k,"Buff_") then
+       local tk = replace(k,"Buff","")
+       local bf = RPGStat.Stat(cht,"BUFF_"..tk)
+       local tv = round(RPGStat.Stat(cht,"BASE_"..tk)*(v/100))
+       if (tv<0 and bf>tv) or (tv>0 and bf<tv) then 
+          CharReport(tg,ti,tk.." "..v.."%",{255,255,0})
+          RPGStat.DefStat(cht,"BUFF_"..tk,tv)
+       end   
+    end
+end   
 -- Scripted stuff
 if abl.ScriptEffect_Reference and abl.ScriptEffect_Reference~="" then
    if abl.ScriptEffect_External then
