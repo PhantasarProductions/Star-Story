@@ -1,6 +1,6 @@
 --[[
   Combat.lua
-  Version: 16.02.12
+  Version: 16.05.26
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -47,6 +47,7 @@ Bestiary = Bestiary or {}
 Fighters = {}
 VicCheck = { YouWillNeverWin = function() return false end }
 DefeatCheck = {}
+FlowCheck = {}
 FlawlessVictory = true
 FlawlessStreak = FlawlessStreak or 0
 FlawlessVictories = FlawlessVictories or 0
@@ -338,6 +339,7 @@ end
 
 
 function MAIN_FLOW()
+for f in each(FlowCheck) do f() end
 DrawScreen()
 if Defeated() then RunDefeated() elseif Victory() then RunVictory() else RunGauge() end
 Flip()

@@ -32,11 +32,42 @@
   
  **********************************************
  
-version: 16.05.13
+version: 16.05.26
 ]]
 -- @IF IGNORE
 VicCheck = {}
+FlowCheck = {}
 -- @FI
+
+
+function BuffChecks()
+ MaxBuffPos = MaxBuffPos or { Hero = ({10000,1000,  500})[skill],
+                              Foe  = ({  500,1000,10000})[skill]}
+ MaxBuffNeg = maxBuffNeg of { Foe  = ({10000,1000,  500})[skill],
+                              Hero = ({  500,1000,10000})[skill]}
+ MaxBuff = {MaxBuffPos,MaxBuffNeg}
+ TimeBuff = TimeBuff or {}
+ for i,v in ipairs(maxBuff) do
+     TimeBuff[i] = (TimeBuff[i] or (v+1))-1
+     if TimeBuff[i]<=0 then
+     	  AlterBuffs = AlterBuffs or {
+     	      function(ch,stat)
+     	        local v = RPGStat.Stat(ch,"BUFF_"..stat)
+     	        if v>0 then RPGStat.DefStat(ch,"BUFF_"..stat,v-1) end
+     	      end,
+     	      function(ch,stat)
+     	        local v = RPGStat.Stat(ch,"BUFF_"..stat)
+     	        if v<0 then RPGStat.DefStat(ch,"BUFF_"..stat,v+1) end
+     	      end
+     	   }
+     	  for stat in each({"Strength", "Defense", "Will", "Resistance","Agility","Accuracy","Evasion"}) do
+     	      for prt,group in pairs(Fighters) do for ch,data in pairs(group) do
+     	          AlterBuffs(FighterTag(prt,group),stat)
+     	      end end    
+     	  end 
+     end
+ end                  
+end FlowCheck[#FlowCheck+1] = BuffChecks
 
 function UpPoint(i,amount)
 if not Fighters.Hero[i] then return end
