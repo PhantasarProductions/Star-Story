@@ -39,7 +39,7 @@ VicCheck = {}
 FlowCheck = {}
 -- @FI
 
--- @DEFINE BUFFDEBUG
+-- @UNDEF BUFFDEBUG
 
 
 function BuffChecks()
@@ -84,7 +84,7 @@ function BuffChecks()
      	        if v<0 then RPGStat.DefStat(ch,"BUFF_"..stat,v+1) end
      	      end
      	   }
-     	  for stat in each({"Strength", "Defense", "Will", "Resistance","Agility","Accuracy","Evasion"}) do
+     	  for stat in each({"Strength", "Defense", "Will", "Resistance","Agility","Accuracy","Evasion","AP","HP"}) do
      	       for ch,data in pairs(groupdata) do
      	          -- @IF BUFFDEBUG
      	          CSay('Script> AlterBuffs['..i..']("'..group..'", "'..FighterTag(group,ch)..'", "'..stat..'");')

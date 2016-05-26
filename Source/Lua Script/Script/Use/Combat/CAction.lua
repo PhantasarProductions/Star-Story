@@ -165,7 +165,7 @@ if abl.AttackPower and abl.AttackPower>0 then
 -- Buff or debuff
 for k,v in pairs(abl) do
     if prefixed(k,"Buff_") then
-       local tk = replace(k,"Buff","")
+       local tk = replace(k,"Buff_","")
        local bf = RPGStat.Stat(cht,"BUFF_"..tk)
        local tv = round(RPGStat.Stat(cht,"BASE_"..tk)*(v/100))
        if (tv<0 and bf>tv) or (tv>0 and bf<tv) then 

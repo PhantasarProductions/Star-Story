@@ -46,8 +46,11 @@ function setup_koelevels()
 end
 
 function Welcome()
-   PartyPop('Welcome')
+   PartyPop('Start')
    MapText('WELCOME')
+   KickReggie('North',"POP_Foxy","Reggie")
+   MapText("WELCOME2")
+   Maps.Obj.Kill('Reggie')   
    PartyUnPop()
 end
 
@@ -73,7 +76,7 @@ function KOE(tag)
   CleanCombat()
   Var.D("$COMBAT.BACKGROUND","Bos - Loofbomen.png")
   Var.D("$COMBAT.BEGIN","Default")
-  Var.D("$COMBAT.MUSIC","'Garden/River Valley Breakdown.ogg")
+  Var.D("$COMBAT.MUSIC","Garden/River Valley Breakdown.ogg")
   for i=1,skill do
       Var.D("$COMBAT.FOE"..i,"Reg/Cow")
       Var.D("%COMBAT.LVFOE"..i,rand(koe.minlevel,koe.maxlevel))      
