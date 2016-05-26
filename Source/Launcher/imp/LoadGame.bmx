@@ -133,6 +133,7 @@ Type TLoadGamePanel Extends tfpanelbase
 			DebugLog "SFILE = "+SFILE+"; F = "+F+"; i = "+i+"; c = "+c
 		Else
 			DebugLog "Trim error so file ignored: "+F
+			endif
 		Next
 	If i>-1 
 		SelectGadgetItem Files,i	

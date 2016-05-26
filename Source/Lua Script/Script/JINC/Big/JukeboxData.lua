@@ -1,6 +1,6 @@
 --[[
   JukeboxData.lua
-  Version: 16.05.23
+  Version: 16.05.26
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -90,6 +90,12 @@ return {
                    Artist = "WeirdoMusic"},
      ["Blip Stream"] = {
                    File = "Music/Excalibur/Blip Stream.ogg",
+                   Artist = "Kevin McLeod"},
+     ["Ranz des Vaches"] = {
+                   File = "Music/Garden/Ranz des Vaches.ogg",
+                   Artist = "Kevin McLeod"},
+     ["River Valley Breakdown"] = {
+                   File = "Music/Garden/River Valley Breakdown.ogg",
                    Artist = "Kevin McLeod"},
      ["The Loneliness"] = {
                    File = "Music/Ji/The_Loneliness.ogg",

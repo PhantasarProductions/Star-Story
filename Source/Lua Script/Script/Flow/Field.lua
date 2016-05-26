@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 16.05.13
+  Version: 16.05.26
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -207,7 +207,7 @@ if mousehit(1) then
           if type(c)=='table' then
 			      CSay("Request from table")  			      
             if c.spot then succ = Actors.WalkToSpot(cplayer,c.spot)==1 CSay("Walking To Spot: "..c.spot) end
-            if c.coords then succ = Acotrs.WalkTo(cplayer,c.coods.x,c.coords.y)==1 end
+            if c.coords then succ = Actors.WalkTo(cplayer,c.coods.x,c.coords.y)==1 end
             if succ then
                WalkArrival = c.arrival   ; CSay("Execute: "..WalkArrival)   
 			         WalkArrivalArg = c.arrivalarg
@@ -226,7 +226,15 @@ if mousehit(1) then
                WalkArrival = c
 			         WalkArrivalArg = nil
                ret=true
-               end            
+               end 
+          elseif prefixed(c,"KOE") then -- Star Story Only. Remove this block in all other productions!
+             CSay("Clicked: "..c)
+             if Actors.WalkTo(cplayer,Maps.Obj.Obj(c).X,Maps.Obj.Obj(c).Y+32)==1 then
+                CSay("Walking to: "..c)
+                WalkArrival = "KOE"
+                WalkArrivalArg = c
+                ret = true
+             end                   
           elseif prefixed(c,"ARMCHST") then -- This block until the next "else" statement is specifically for Star Story.
               ARMSpot = replace(c,"ARMCHST","ARMSPOT")
               if Actors.WalkToSpot(cplayer,ARMSpot)==1 then 

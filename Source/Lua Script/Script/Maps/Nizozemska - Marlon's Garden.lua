@@ -1,8 +1,8 @@
 --[[
 **********************************************
   
-  Maps.lua
-  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
+  Nizozemska - Marlon's Garden.lua
+  (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,28 +32,28 @@
   
  **********************************************
  
-version: 16.05.26
+version: 16.05.25
 ]]
-ret = {
-	"EXCALIBUR_HOME",
-	"INTRO_SHIP_TRANSPORTER",
-	"PROLOGUE_YAQIRPA",
-	"EXCALIBUR_SICKBAY",
-	"EXCALIBUR_ALLQUIET",
-	"EXCALIBUR_KITCHEN",
-	"EXCALIBUR_UNDERATTACK",
-	"EXCALIBUR_SECRETPASSAGE",
-	"EXCALIBUR_HANGAR",
-	"HAWK",
-	"LOSTPLANET_GRASSJUNGLE",
-	"LOSTPLANET_GRASSJUNGLE_2",
-	"LOSTPLANET_BONUS_DARK_CAVES_OF_SHILINGTON",
-	"LOSTPLANET_GRASSJUNGLE_3",
-	"LOSTPLANET_PUB_OUTSIDE",
-	"LOSTPLANET_BARINSIDE",
-	"LOSTPLANET_DUNGEON_CELL",
-	"LOSTPLANET_DUNGEON",
-	"LOSTPLANET_JUNKYARD",
-	"LOSTPLANET_BONUS_SPACEOBSERVATORIUM"}
 
-return ret
+koeien = 6
+
+function Welcome()
+end
+
+function KOE(tag)
+CSay("Activating: "..tag)
+end
+
+function GALE_OnLoad()
+  if CVV("&DONE.NIZOZEMSKA.GARDEN") then
+     Music('Garden/Ranz des Vaches.ogg')
+     ZA_Enter("Exit",GoWorld,"Nizozemska")
+  else
+     Music('Garden/River Valley Breakdown.ogg')
+     Maps.Obj.Obj('DIABLO').Visible = 0
+     for i=1,koeien do
+        AddClickable("KOE"..i)
+     end     
+     ZA_Enter("Welcome",Welcome)
+  end 
+end
