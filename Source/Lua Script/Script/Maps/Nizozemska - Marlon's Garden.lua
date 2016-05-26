@@ -50,7 +50,7 @@ function Welcome()
    MapText('WELCOME')
    KickReggie('North',"POP_Foxy","Reggie")
    MapText("WELCOME2")
-   Maps.Obj.Kill('Reggie')   
+   Maps.Obj.Kill('Reggie',1)   
    PartyUnPop()
 end
 
@@ -66,12 +66,13 @@ function KOE_KAPOT()
    if over==0 then
       Maps.Obj.Obj('DIABLO').Visible = 1
       AddClickable("DIABLO")
+      MINI("Diablo has appeared and he's furious with you",180,0,255,1)
    end
 end
 
 function KOE(tag)
   CSay("Activating: "..tag)
-  Maps.Obj.Kill(tag)
+  Maps.Obj.Kill(tag,1)
   Schedule("MAP","KOE_KAPOT")
   CleanCombat()
   Var.D("$COMBAT.BACKGROUND","Bos - Loofbomen.png")
