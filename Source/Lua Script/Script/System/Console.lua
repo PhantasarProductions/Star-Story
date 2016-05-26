@@ -1,6 +1,6 @@
 --[[
   Console.lua
-  Version: 16.02.12
+  Version: 16.05.26
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -524,3 +524,33 @@ end
 function LOOKBUTDONTTOUCH()
 MS.Run("FIELD","ToggleLookButDontTouch")
 end
+
+function SHOWBUFF(ch,stat,onlywhengotvalue)
+   if RPGChar.CharExists(ch)==0 then CWrite("? Character '"..sval(ch).."' does not exist!",255,0,0) return end
+   local v=RPGStat.Stat(ch,"BUFF_"..stat)
+   if v~=0 or (not onlywhengotvalue) then
+      Console.Write("= "..stat.." buffed with "..v.." points",0,180,255)
+   end 
+   return v~=0
+end
+
+function BUFFS()
+ local got,ch
+ for i=0,5 do
+    got=false
+    ch = RPGStat.PartyTag(i)
+    if ch~="" then
+       for stat in each({"Strength", "Defense", "Will", "Resistance","Agility","Accuracy","Evasion"}) do
+           Console.Write("Character: "..ch,180,100,0)
+           got = SHOWBUFF(ch,stat,true) or got
+       end
+       if not got then Console.Write("No buffs found") end
+    end   
+ end
+end 
+
+function SETBUFF(ch,stat,value)
+  if LAURA.GetFlow()~="COMBAT" then CWrite("? This command only works in combat mode!",255,0,0) return end
+  if RPGChar.CharExists(ch)==0 then CWrite("? Character '"..sval(ch).."' does not exist!",255,0,0) return end
+  RPGStat.DefStat(ch,"BUFF_"..stat,value)
+end  
