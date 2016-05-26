@@ -171,6 +171,8 @@ for k,v in pairs(abl) do
        if (tv<0 and bf>tv) or (tv>0 and bf<tv) then 
           CharReport(tg,ti,tk.." "..v.."%",{255,255,0})
           RPGStat.DefStat(cht,"BUFF_"..tk,tv)
+          CSay(cht.." BUFF VALUE "..tv.."  from "..v.."% on stat "..tk.." -- END VALUE NOW >> "..RPGStat.Stat(cht,"END_"..tk))
+          effect=true
        end   
     end
 end   
