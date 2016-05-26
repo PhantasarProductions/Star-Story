@@ -133,6 +133,7 @@ if Fighters[ft][p].Gauge>9999 then Fighters[ft][p].Gauge = 0 end
 end
 
 function FighterTag(t,i)
+if not t then CSay("! WARNING ! Call to nil target group") end
 if not Fighters[t] then CSay("! WARNING! Group "..t.." does not exist") return nil end
 if not Fighters[t][i] then CSay("! WARNING! Fighter "..t.."["..sval(i).."] does not exist!") return nil end
 return Fighters[t][i].Tag
@@ -339,8 +340,8 @@ end
 
 
 function MAIN_FLOW()
-for f in each(FlowCheck) do f() end
 DrawScreen()
+for f in each(FlowCheck) do f() end
 if Defeated() then RunDefeated() elseif Victory() then RunVictory() else RunGauge() end
 Flip()
 LAURA.TerminateBye()

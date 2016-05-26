@@ -32,16 +32,53 @@
   
  **********************************************
  
-version: 16.05.25
+version: 16.05.26
 ]]
 
 koeien = 6
+function setup_koelevels()
+  koe = {
+         minlevel = (function()
+                     if skill==1 then return 1 else return MapLevel() - round( MapLevel()/2 ) end 
+                     end)(),
+         maxlevel = MapLevel() + round((MapLevel()/5)*skill)            
+        }
+end
 
 function Welcome()
+   PartyPop('Welcome')
+   MapText('WELCOME')
+   PartyUnPop()
+end
+
+function CLICK_ARRIVAL_DIABLO()
+end
+
+function KOE_KAPOT()
+   local over = 0
+   for i=1,koeien do
+       over = over + Maps.Obj.Exists("KOE"..i)       
+   end
+   CSay(over.." cows left")
+   if over==0 then
+      Maps.Obj.Obj('DIABLO').Visible = 1
+      AddClickable("DIABLO")
+   end
 end
 
 function KOE(tag)
-CSay("Activating: "..tag)
+  CSay("Activating: "..tag)
+  Maps.Obj.Kill(tag)
+  Schedule("MAP","KOE_KAPOT")
+  CleanCombat()
+  Var.D("$COMBAT.BACKGROUND","Bos - Loofbomen.png")
+  Var.D("$COMBAT.BEGIN","Default")
+  Var.D("$COMBAT.MUSIC","'Garden/River Valley Breakdown.ogg")
+  for i=1,skill do
+      Var.D("$COMBAT.FOE"..i,"Reg/Cow")
+      Var.D("%COMBAT.LVFOE"..i,rand(koe.minlevel,koe.maxlevel))      
+  end
+  StartCombat()       
 end
 
 function GALE_OnLoad()
@@ -55,5 +92,8 @@ function GALE_OnLoad()
         AddClickable("KOE"..i)
      end     
      ZA_Enter("Welcome",Welcome)
+     setup_koelevels()
+     ZA_Enter('Exit',MapText,'NOEXIT')
+     KOE_KAPOT() -- No cows died yet, but this makes it possible to properly work from a debug savegame.
   end 
 end

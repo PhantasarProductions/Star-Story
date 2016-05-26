@@ -39,34 +39,62 @@ VicCheck = {}
 FlowCheck = {}
 -- @FI
 
+-- @DEFINE BUFFDEBUG
+
 
 function BuffChecks()
- MaxBuffPos = MaxBuffPos or { Hero = ({10000,1000,  500})[skill],
-                              Foe  = ({  500,1000,10000})[skill]}
- MaxBuffNeg = maxBuffNeg of { Foe  = ({10000,1000,  500})[skill],
-                              Hero = ({  500,1000,10000})[skill]}
+ MaxBuffPos = MaxBuffPos or { Hero = ({5000,500, 250})[skill],
+                              Foe  = ({ 500,500,5000})[skill]}
+ MaxBuffNeg = MaxBuffNeg or { Foe  = ({5000,500, 250})[skill],
+                              Hero = ({ 250,500,5000})[skill]}
  MaxBuff = {MaxBuffPos,MaxBuffNeg}
  TimeBuff = TimeBuff or {}
- for i,v in ipairs(maxBuff) do
-     TimeBuff[i] = (TimeBuff[i] or (v+1))-1
-     if TimeBuff[i]<=0 then
+ local inputting = false
+ for ft,ftl in spairs(Fighters) do
+    for fli,fv in pairs(ftl) do
+        inputting = inputting or fv.Gauge==10000
+    end
+ end
+ -- @IF BUFFDEBUG
+ local dbg_y = 0
+ Image.NoFont()
+ -- @FI
+ for group,groupdata in pairs(Fighters) do for i,v in ipairs(MaxBuff) do
+     if not (v[group]) then CSay("Warning! No data for MaxBuff "..group.."/"..i) end
+     TimeBuff[i] = TimeBuff[i] or {}
+     TimeBuff[i][group] = (TimeBuff[i][group] or (v[group]+1))
+     -- @IF BUFFDEBUG
+     Image.DText(group.."/"..i.."> time: "..TimeBuff[i][group].." inp:"..sval(inputting),0,dbg_y)
+     dbg_y = dbg_y + 15
+     -- @FI
+     if not inputting then TimeBuff[i][group] = TimeBuff[i][group] - 1 end
+     if TimeBuff[i][group]<=0 then
      	  AlterBuffs = AlterBuffs or {
-     	      function(ch,stat)
+     	      function(group,ch,stat)
      	        local v = RPGStat.Stat(ch,"BUFF_"..stat)
-     	        if v>0 then RPGStat.DefStat(ch,"BUFF_"..stat,v-1) end
+     	        if v>0 then 
+     	           RPGStat.DefStat(ch,"BUFF_"..stat,v-1)
+     	           -- @IF BUFFDEBUG
+     	           CSay('Char: '..ch.." Stat: "..stat.." buff down 1 point >>> "..RPGStat.Stat(ch,"BUFF_"..stat))
+     	           -- @FI 
+     	        end
      	      end,
-     	      function(ch,stat)
+     	      function(group,ch,stat)
      	        local v = RPGStat.Stat(ch,"BUFF_"..stat)
      	        if v<0 then RPGStat.DefStat(ch,"BUFF_"..stat,v+1) end
      	      end
      	   }
      	  for stat in each({"Strength", "Defense", "Will", "Resistance","Agility","Accuracy","Evasion"}) do
-     	      for prt,group in pairs(Fighters) do for ch,data in pairs(group) do
-     	          AlterBuffs(FighterTag(prt,group),stat)
-     	      end end    
+     	       for ch,data in pairs(groupdata) do
+     	          -- @IF BUFFDEBUG
+     	          CSay('Script> AlterBuffs['..i..']("'..group..'", "'..FighterTag(group,ch)..'", "'..stat..'");')
+     	          -- @FI
+     	          AlterBuffs[i](group,FighterTag(group,ch),stat)
+     	      end     
      	  end 
+     TimeBuff[i][group] = v[group] -- reset time	  
      end
- end                  
+ end end                  
 end FlowCheck[#FlowCheck+1] = BuffChecks
 
 function UpPoint(i,amount)

@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.25
+version: 16.05.26
 ]]
 return {
 	"ASTRILOPUPELITE",
@@ -57,6 +57,7 @@ return {
 	"BLACKLIZARD",
 	"BLADEH",
 	"CID",
+	"COW",
 	"CULTIST",
 	"CYBORG CAPTAIN",
 	"CYBORG GUNNER",
