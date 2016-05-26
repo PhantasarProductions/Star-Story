@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  MOO_APDOWN.lua
+  MOO_Z1_GIF.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -36,17 +36,17 @@ version: 16.05.26
 ]]
 ret = {
 	["APRecover"] = -50,
-	["APRecoverType"] = "Percent",
+	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
+	["CausePoison"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Moo",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Inventory/Moo.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Moo",
-	["SpellAni_Reference"] = "Moo",
 	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true,

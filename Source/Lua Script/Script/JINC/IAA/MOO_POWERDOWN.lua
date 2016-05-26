@@ -46,6 +46,7 @@ ret = {
 	["Icon"] = "GFX/Inventory/Moo.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Moo",
+	["SpellAni_Reference"] = "Moo",
 	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true,
