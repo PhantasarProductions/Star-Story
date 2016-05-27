@@ -1,6 +1,6 @@
 --[[
   Transporter_Linker.lua
-  Version: 16.01.29
+  Version: 16.05.27
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -53,6 +53,6 @@ BlockWorld = BlockWorld or function(world)
 MS.LN_Run("TRANS","Script/Flow/Transporter.lua","BlockWorld",world)
 end
 
-UnBlockWorld = BlockWorld or function(world)
+UnBlockWorld = UnBlockWorld or function(world)
 MS.LN_Run("TRANS","Script/Flow/Transporter.lua","UnBlockWorld",world)
 end

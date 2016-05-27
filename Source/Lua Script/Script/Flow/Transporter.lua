@@ -1,6 +1,6 @@
 --[[
   Transporter.lua
-  Version: 16.02.05
+  Version: 16.05.27
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -96,6 +96,7 @@ end
 
 function UnBlockWorld(world)
 Transporters.Worlds[world].Blocked = nil
+CSay('Unblocked: '..world)
 end 
 
 function DrawScreen()
