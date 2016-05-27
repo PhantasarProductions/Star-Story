@@ -74,15 +74,17 @@ end
 function DIABLO_KAPOT()
   Maps.CamX = 1680
   Maps.CamY = 3728
+  Maps.Obj.Obj('Blokkade').Impassible = 0 -- This line (and the next) should allow Sue to reach this spot 
+  Maps.Remap()
   Actors.Spawn('SueSpot','GFX/Actors/Sue','Sue')
   Actors.ChoosePic("Sue","SUE.NORTH")
-  Actors.WalkToSpot('Sue','Start')
-  PartyPop('Start')
+  Actors.MoveToSpot('Sue','Start',1)
+  PartyPop('Start',"South")
   MapText('SUE')
-  Actors.WalkToSpot('Sue','SueSpot')
-  Actors.WalkToSpot('POP_Wendicka','Start')
+  Actors.MoveToSpot('Sue','SueSpot',1)
+  Actors.MoveToSpot('POP_Wendicka','Start')
   MapText('SUE2')
-  LoadMap('Hawk')
+  LoadMap('Hawk','Bridge')
   Maps.GotoLayer('Bridge')
   SpawnPlayer('Scotty')
   Award("SCENARIO_DIABLO")
