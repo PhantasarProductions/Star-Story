@@ -6,7 +6,7 @@ Part | Last build update
 -----|-----
 Mac Engine | Last built: 24 May 2016; 00:06:29
 Windows Engine | Last built: 24 May 2016; 13:42:00
-JCR6 Resource Files | Last built: 27 May 2016; 17:15:08
+JCR6 Resource Files | Last built: 27 May 2016; 17:28:30
 All times are in CET (Central European Time: Amsterdam, Brussels, Paris, Madrid)
 
 
