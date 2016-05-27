@@ -70,6 +70,7 @@
 1. Script/JINC/IAA/ABL_FOE_FULLHEALTH.lua
 1. Script/JINC/IAA/ABL_FOE_IDDQD.lua
 1. Script/JINC/IAA/ABL_FOE_LICKYOURWOUNDS.lua
+1. Script/JINC/IAA/ABL_FOE_LIGHTNINGENCHANT.lua
 1. Script/JINC/IAA/ABL_FOE_MINDCONTROLFLUID.lua
 1. Script/JINC/IAA/ABL_FOE_PARALYZEFLUID.lua
 1. Script/JINC/IAA/ABL_FOE_PARA_DIVE.lua
@@ -455,4 +456,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 27 May 2016; 16:23:14 CET
+### Last updated: Fri 27 May 2016; 17:15:16 CET

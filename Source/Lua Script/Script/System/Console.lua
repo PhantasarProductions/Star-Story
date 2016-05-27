@@ -1,6 +1,6 @@
 --[[
   Console.lua
-  Version: 16.05.26
+  Version: 16.05.27
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -554,3 +554,7 @@ function SETBUFF(ch,stat,value)
   if RPGChar.CharExists(ch)==0 then CWrite("? Character '"..sval(ch).."' does not exist!",255,0,0) return end
   RPGStat.DefStat(ch,"BUFF_"..stat,value)
 end  
+
+function MAPEVENT(func)
+  MS.Run("MAP",func)
+end   

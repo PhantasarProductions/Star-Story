@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ITM_PHANTASAR_CARROT.lua
+  ABL_FOE_LIGHTNINGENCHANT.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -35,21 +35,24 @@
 version: 16.05.27
 ]]
 ret = {
-	["APRecover"] = 250,
+	["ABL_AP"] = 0,
+	["ABL_Pose"] = "Cast",
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 250,
-	["AttackElement"] = "Non-Elemental",
+	["ActSpeed"] = 100,
+	["AttackElement"] = "Lightning",
+	["AttackPower"] = 100,
 	["AttackStat"] = "Strength",
+	["Buff_AP"] = -25,
+	["Buff_Agility"] = -25,
+	["CauseParalysis"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Recover 250 AP",
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 100,
-	["ITM_SellPrice"] = 750,
-	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/Phan_Carrot.png",
+	["Icon"] = "GFX/Abilities/Fist.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Carrot",
-	["Target"] = "1A",
+	["Name"] = "Lightning Enchant",
+	["SpellAni_External"] = true,
+	["SpellAni_Reference"] = "Voltsunami",
+	["Target"] = "AF",
 	["UseCombat"] = true,
 	["UseField"] = true}
 

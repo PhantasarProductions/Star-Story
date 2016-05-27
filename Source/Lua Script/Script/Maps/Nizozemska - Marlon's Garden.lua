@@ -65,7 +65,7 @@ CleanCombat()
       Var.D("%COMBAT.LVFOE"..i,rand(koe.minlevel,koe.maxlevel))      
   end
   Var.D("$COMBAT.FOE5","BOSS/DIABLO")
-  Var.D("%COMBAT.LVFOE",koe.maxlevel+(10-((3-skill)*10)))
+  Var.D("%COMBAT.LVFOE5",koe.maxlevel+(10-((3-skill)*10)))
   Schedule("MAP","DIABLO_KAPOT")
   StartCombat()         
 end
@@ -85,6 +85,7 @@ function DIABLO_KAPOT()
   Award("SCENARIO_DIABLO")
   Var.D('$HAWK','BACK2YSPERON')
   UnBlockWorld('Ysperon')
+  Done('&DONE.NIZOZEMSKA.GARDEN')
 end
 
 function KOE_KAPOT()
