@@ -83,6 +83,8 @@ function DIABLO_KAPOT()
   Maps.GotoLayer('Bridge')
   SpawnPlayer('Scotty')
   Award("SCENARIO_DIABLO")
+  Var.D('$HAWK','BACK2YSPERON')
+  UnBlockWorld('Ysperon')
 end
 
 function KOE_KAPOT()
