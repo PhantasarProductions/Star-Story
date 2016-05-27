@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.26
+version: 16.05.27
 ]]
 
 koeien = 6
@@ -56,6 +56,33 @@ function Welcome()
 end
 
 function CLICK_ARRIVAL_DIABLO()
+CleanCombat()
+  Var.D("$COMBAT.BACKGROUND","Bos - Loofbomen.png")
+  Var.D("$COMBAT.BEGIN","Default")
+  Var.D("$COMBAT.MUSIC","Garden/River Valley Breakdown.ogg")
+  for i=1,skill do
+      Var.D("$COMBAT.FOE"..i,"Reg/Cow")
+      Var.D("%COMBAT.LVFOE"..i,rand(koe.minlevel,koe.maxlevel))      
+  end
+  Var.D("$COMBAT.FOE5","BOSS/DIABLO")
+  Var.D("%COMBAT.LVFOE",koe.maxlevel+(10-((3-skill)*10)))
+  Schedule("MAP","DIABLO_KAPOT")
+  StartCombat()         
+end
+
+function DIABLO_KAPOT()
+  Actors.Spawn('SueSpot','GFX/Actors/Sue','Sue')
+  Actors.ChoosePic("Sue","SUE.NORTH")
+  Actors.WalkToSpot('Sue','Start')
+  PartyPop('Start')
+  MapText('SUE')
+  Actors.WalkToSpot('Sue','SueSpot')
+  Actors.WalkToSpot('POP_Wendicka','Start')
+  MapText('SUE2')
+  LoadMap('Hawk')
+  Maps.GotoLayer('Bridge')
+  SpawnPlayer('Scotty')
+  Award("SCENARIO_DIABLO")
 end
 
 function KOE_KAPOT()
