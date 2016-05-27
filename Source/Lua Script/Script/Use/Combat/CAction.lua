@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 16.05.26
+  Version: 16.05.27
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -140,14 +140,14 @@ if abl.Healing and abl.Healing>0 then
 -- Recover AP absolute or by percent
 if abl.APRecover and abl.APRecover>0 then
    (({ Absolute = function() HealAP(tg,ti,abl.APRecover); effect=true end,
-      Percent  = function()
+       Percent  = function()
                  local hpt = RPGChar.Points(cht,"AP")
                  local hpm = hpt.Maximum
                  local points = (hpm/100)*abl.APReciver
                  HealAP(tg,ti,points)
                  effect=true
                  end
-   })[abl.APReciver] or function() Sys.Error("Unknown APRecover Type: "..sval(abl.HealingType)) end )()               
+   })[abl.APRecover] or function() Sys.Error("Unknown APRecover Type: "..sval(abl.HealingType)) end )()               
    end
 -- Hurt target (can also heal if the element is being absored)
 if abl.AttackPower and abl.AttackPower>0 then

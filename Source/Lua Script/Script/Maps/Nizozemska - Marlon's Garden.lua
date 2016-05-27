@@ -67,10 +67,13 @@ CleanCombat()
   Var.D("$COMBAT.FOE5","BOSS/DIABLO")
   Var.D("%COMBAT.LVFOE5",koe.maxlevel+(10-((3-skill)*10)))
   Schedule("MAP","DIABLO_KAPOT")
-  StartCombat()         
+  StartCombat()     
+  Maps.Obj.Kill('DIABLO',1)    
 end
 
 function DIABLO_KAPOT()
+  Maps.CamX = 1680
+  Maps.CamY = 3728
   Actors.Spawn('SueSpot','GFX/Actors/Sue','Sue')
   Actors.ChoosePic("Sue","SUE.NORTH")
   Actors.WalkToSpot('Sue','Start')
