@@ -38,7 +38,7 @@ version: 16.05.30
 -- @USE Phantasar.lua
 -- @USE /Script/Use/Maps/Gen/Next.lua
 
-local maxback = 5
+local maxback = 25
 
 function Back()
   local player = Actors.Actor('PLAYER')
@@ -65,7 +65,7 @@ end
 function GALE_OnLoad()
   Music('Dungeon/Tempting Secrets')
   ZA_Enter('Back',Back)
-  for i=1,maxback do ZA_Enter('Back',Back) end
+  for i=1,maxback do ZA_Enter('Back'..i,Back) end
   ZA_Enter('Plate2Open',OpenDoor)
 end
 
