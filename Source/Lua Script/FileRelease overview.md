@@ -389,6 +389,7 @@
 1. Script/Maps/Phantasar - Frendor Bushes - Arrival.lua
 1. Script/Maps/Phantasar - Frendor Bushes.lua
 1. Script/Maps/Phantasar - Frendor.lua
+1. Script/Maps/Phantasar - Ghost House.lua
 1. Script/Maps/Phantasar - Slagimon Forest.lua
 1. Script/Maps/Phantasar.lua
 1. Script/Maps/Physillium - Black Castle.lua
@@ -456,4 +457,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 27 May 2016; 20:00:15 CET
+### Last updated: Mon 30 May 2016; 22:22:24 CET

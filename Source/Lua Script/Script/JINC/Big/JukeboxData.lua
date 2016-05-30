@@ -1,6 +1,6 @@
 --[[
   JukeboxData.lua
-  Version: 16.05.27
+  Version: 16.05.30
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -82,6 +82,9 @@ return {
      ["Freak Boutique"] = {
                    File = "Music/Dungeon/Spiedkiks_-_05_-_Freak_Boutique.ogg",
                    Artist = "Spiedkiks"},
+     ["Tempting Secrets"] = {
+                   File = "Music/Dungeon/Tempting Secrets.ogg",
+                   Artist = "Kevin McLeod"},
      ["The Complex"] = {
                    File = "Music/Dungeon/The Complex.ogg",
                    Artist = "Kevin McLeod"},

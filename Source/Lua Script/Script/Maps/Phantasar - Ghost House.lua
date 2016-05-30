@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  Phantasar.lua
+  Phantasar - Ghost House.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -34,28 +34,38 @@
  
 version: 16.05.30
 ]]
-local phantasar = {
 
-          name = "Nizozemska",
+-- @USE Phantasar.lua
+-- @USE /Script/Use/Maps/Gen/Next.lua
 
-          locations = {
-                           { Name = "Transporter Pad", Map = "Phantasar - Frendor Bushes - Arrival"},
-                           { Name = "Frendor Bushes", Map = "Phantasar - Frendor Bushes"},
-                           { Name = "The city of Frendor", Map = "Phantasar - Frendor", Wanted='&DONE.PHANTASAR.FRENDORBUSHES'},
-                           { Name = "Slagimon Forest", Map = "Phantasar - Slagimon Forest", Wanted = '&DONE.PHANTASAR.FEENA_1'},
-                           { Name = "The Ghosthouse", Map = "Phantasar - Ghost House", Wanted = "&DONE.PHANTASAR.SLAGIMON", Layer='#000'}
-                      },
-                      
-          init = function() end,
-          
-          font = "PhantasarWorld",
-          
-          
-             
-          
+local maxback = 5
 
+function Back()
+  local player = Actors.Actor('PLAYER')
+  local start = Maps.Obj.Obj('Start')
+  local vsolved = CVV('&DONE.PHANTASAR.GHOSTHOUSE.ROOM['..Maps.LayerCodeName..']')
+  if vsolved then return end
+  player.X = start.X
+  player.Y = start.Y
+  player.Walking=0
+  player.Moving=0
+  MapText("BACK."..GetActive())
+end
 
-}
+function OpenDoor()
+  local tag = '&DONE.PHANTASAR.GHOSTHOUSE.ROOM['..Maps.LayerCodeName..']'
+  -- local vsolved = CVV(tag)
+  if not Done(tag) then
+     MapEXP()
+     Maps.Obj.Kill('BlockNext',1)
+     Maps.Obj.Kill('Plate2Open',1)
+  end
+end     
 
+function GALE_OnLoad()
+  Music('Dungeon/Tempting Secrets')
+  ZA_Enter('Back',Back)
+  for i=1,maxback do ZA_Enter('Back',Back) end
+  ZA_Enter('Plate2Open',OpenDoor)
+end
 
-return phantasar

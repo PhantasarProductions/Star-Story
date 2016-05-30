@@ -31,6 +31,7 @@ I'd like to thank the next music artists for their brilliant work, and licensing
    1. Motherlode
    1. Opening Theme C
    1. Pippin the Hunchback
+   1. Tempting Secrets
    1. The Complex
    1. Blip Stream
    1. Ranz des Vaches
