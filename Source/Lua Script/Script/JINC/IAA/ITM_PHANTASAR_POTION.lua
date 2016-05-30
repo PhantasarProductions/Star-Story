@@ -1,8 +1,8 @@
 --[[
 **********************************************
   
-  ITM_HEALINGCAPSULE.lua
-  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
+  ITM_PHANTASAR_POTION.lua
+  (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -35,21 +35,25 @@
 version: 16.05.30
 ]]
 ret = {
+	["APRecover"] = 250,
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 195,
+	["ActSpeed"] = 20,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
+	["Buff_Resistance"] = 5,
+	["Buff_Will"] = 5,
+	["CureDisease"] = true,
+	["CurePoison"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Heals 112 HP",
-	["Healing"] = 112,
+	["Description"] = "Cures 2400 HP, Poison, Disease and recovers 250 AP.",
+	["Healing"] = 2400,
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 75,
-	["ITM_SellPrice"] = 25,
+	["ITM_BuyPrice"] = 100,
+	["ITM_SellPrice"] = 5000,
 	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/Capsule - Rood-Blauw.png",
+	["Icon"] = "GFX/Inventory/Phan_Potion.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Healing Capsule",
-	["SpellAni_Reference"] = "SingleHeal",
+	["Name"] = "Potion",
 	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true}

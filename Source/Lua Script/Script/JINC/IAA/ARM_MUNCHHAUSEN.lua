@@ -1,6 +1,6 @@
 --[[
   ARM_MUNCHHAUSEN.lua
-  Version: 16.05.27
+  Version: 16.05.30
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
