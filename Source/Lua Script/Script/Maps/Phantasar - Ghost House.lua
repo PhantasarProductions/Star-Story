@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.30
+version: 16.05.31
 ]]
 
 -- @USE Phantasar.lua
@@ -67,5 +67,7 @@ function GALE_OnLoad()
   ZA_Enter('Back',Back)
   for i=1,maxback do ZA_Enter('Back'..i,Back) end
   ZA_Enter('Plate2Open',OpenDoor)
+  NPC_SAVE_GREEN = savespot.green
+  NPC_SAVE_RED   = savespot.red
 end
 
