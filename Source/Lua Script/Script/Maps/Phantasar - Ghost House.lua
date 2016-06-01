@@ -62,6 +62,9 @@ function OpenDoor()
   end
 end     
 
+function StopRandomEncounters()
+end
+
 function GALE_OnLoad()
   Music('Dungeon/Tempting Secrets')
   ZA_Enter('Back',Back)
@@ -70,6 +73,7 @@ function GALE_OnLoad()
      ZA_Enter("RMBack"..i,Maps.Obj.Kill,'Back'..i) 
      end
   ZA_Enter('Plate2Open',OpenDoor)
+  ZA_Enter('StopRandomEncounters',StopRandomEncounters)
   NPC_SAVE_GREEN = savespot.green
   NPC_SAVE_RED   = savespot.red
 end
