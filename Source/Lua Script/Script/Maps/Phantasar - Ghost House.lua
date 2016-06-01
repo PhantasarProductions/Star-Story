@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.31
+version: 16.06.01
 ]]
 
 -- @USE Phantasar.lua
@@ -65,7 +65,10 @@ end
 function GALE_OnLoad()
   Music('Dungeon/Tempting Secrets')
   ZA_Enter('Back',Back)
-  for i=1,maxback do ZA_Enter('Back'..i,Back) end
+  for i=1,maxback do 
+     ZA_Enter(  'Back'..i,Back)
+     ZA_Enter("RMBack"..i,Maps.Obj.Kill,'Back'..i) 
+     end
   ZA_Enter('Plate2Open',OpenDoor)
   NPC_SAVE_GREEN = savespot.green
   NPC_SAVE_RED   = savespot.red
