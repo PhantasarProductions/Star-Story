@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.01
+version: 16.06.02
 ]]
 
 -- @USE Phantasar.lua
@@ -63,6 +63,7 @@ function OpenDoor()
 end     
 
 function StopRandomEncounters()
+   Var.D('&BLOCK.EMERGENCY.SAVE','TRUE')  -- No more emergency saves. This can only spook things up from here!
 end
 
 function GALE_OnLoad()

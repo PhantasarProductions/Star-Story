@@ -1,7 +1,7 @@
 --[[
   Quit.lua
-  Version: 15.09.29
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.06.02
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -35,6 +35,7 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 
+function InitItems()
 -- @IF ALLOW_QUITSAVE
 QuitMenuItems = {
 
@@ -50,7 +51,8 @@ QuitMenuItems = {
                 LAURA.Save("System/Quit Game",1)
                 LAURA.KillSaveGame("System/Emergency")
                 Sys.Bye()
-                end
+                end,
+       Disabled = CVV('&BLOCK.EMERGENCY.SAVE')          
       },
      { Display = "Don't Save",
        Help    = "Don't save, just quit the game immediately",
@@ -58,7 +60,7 @@ QuitMenuItems = {
        },
      { Display = "Cancel",
        Help    = "Don't quit and go back to the game",
-       Action = function() LAURA.Flow("FIELD") end
+       Action = function() LAURA.Flow("FIELD") MS.Destroy("QUIT") end
        }
    }
 -- @ELSE   
@@ -70,11 +72,23 @@ QuitMenuItems = {
        },
      { Display = "Cancel",
        Help    = "Don't quit and go back to the game",
-       Action = function() LAURA.Flow("FIELD") end
+       Action = function() LAURA.Flow("FIELD") MS.Destroy("QUIT") end
        }
    }
 -- @FI   
+end
 
+function GALE_OnLoad()
+InitItems()
+--[[
+for item in each(QuitMenuItems) do
+    CSay('-- Quit item --')
+	  for k,v in pairs(item) do
+	     CSay(k.." = "..sval(v))
+	     end
+	  end
+--]]	     
+end
 
 function MAIN_FLOW()
 local x = 400
@@ -88,10 +102,19 @@ SetFont("CombatPlayerInput")
 for item in each(QuitMenuItems) do
     th = Image.TextHeight(item.Display)
     if my>y-(th/2) and my<y+(th/2) then
-       selection = item
-       Image.Color(0,255,255)
+    	 if item.Disabled then
+    	 	  Image.Color(80,80,80)
+    	 	  selection=nil
+    	 else	    	 
+         selection = item       
+         Image.Color(0,255,255)
+         end
     else
-       Image.Color(0,180,255)
+    	 if item.Disabled then
+    	 	  Image.Color(60,60,60)
+    	 else	    	 
+          Image.Color(0,180,255)
+          end
        end
     Image.DText(item.Display,x,y,2,2)
     y = y + Image.TextHeight(item.Display)           

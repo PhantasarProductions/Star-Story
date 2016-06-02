@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 16.05.26
+  Version: 16.06.02
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -363,6 +363,7 @@ local obj,foe
 local R,G,B
 local pt = ngpcount or 1
 local lvrange
+Var.D('&BLOCK.EMERGENCY.SAVE','FALSE')
 -- local minenemies = {1,2,3}
 -- local maxenemies = {3,6,9}
 local hilevel,diflevel
@@ -666,6 +667,7 @@ if foe.barrier then
    Maps.Obj.Obj(foe.barrier).Impassible = 0
    Maps.Obj.Obj(foe.barrier).Visible = 0
    Maps.Remap()
+   Var.D('&BLOCK.EMERGENCY.SAVE','TRUE')
    end
 end
 
@@ -1048,6 +1050,7 @@ if INP.Terminate>0 then IconFunction.Quit() end
 end
 
 function EmergencySave()
+if CVV('&BLOCK.EMERGENCY.SAVE') then return end -- Postpone Emergency save if blocked. It will happen as soon as this is unblocked.
 local maxtime=600
 -- @IF EMSAVEDEBUG
    maxtime = 10
