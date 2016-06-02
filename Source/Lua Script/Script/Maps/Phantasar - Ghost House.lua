@@ -66,6 +66,38 @@ function StopRandomEncounters()
    Var.D('&BLOCK.EMERGENCY.SAVE','TRUE')  -- No more emergency saves. This can only spook things up from here!
 end
 
+function DrawTeleporter()
+  local tp = Maps.CObj
+  local sx = Maps.CamX
+  local sy = Maps.CamY
+  tcl = tcl or {255,255,255}
+  local cl = tcl
+  local cli = rand(1,3)
+  local x = tp.X - sx
+  local y = tp.Y - sy
+  local s  
+  --CSay("DrawTeleporter") -- Debug line. May ABSOLUTELY not be present in release!
+  for yi = 0,tp.H-1 do
+      s = abs(sin((Time.MSecs()/5)+(yi*3)))
+      -- --[[
+      Image.Color(
+                    cl[1]*s,
+                    cl[2]*s,
+                    cl[3]*s
+                 )
+      -- ]]           
+      Image.Line(x,y+yi,x+tp.W,y+yi)           
+      for ci=1,3 do
+          if     cli==ci and cl[ci]<255 then cl[ci] = cl[ci] + 1
+          elseif cli==ci                then ci = rand(1,3)
+          elseif cl[ci]>0               then cl[ci] = cl[ci] - 1 end
+          
+      end    
+  end
+  --White()
+  --Image.DText("sx="..sx.."; sy="..sy.."; x="..x.."; y="..y.."; s="..s,0,30)
+end
+
 function GALE_OnLoad()
   Music('Dungeon/Tempting Secrets')
   ZA_Enter('Back',Back)
