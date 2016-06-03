@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 16.02.12
+  version: 16.06.03
   Copyright (C) 2015, 2016 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -149,6 +149,10 @@ for ak=0,5 do
        hp = RPGChar.Points(ch,"HP")
        ap = RPGChar.Points(ch,"AP")
        if skill>=2 and (not dontresetap) then ap.Have=0 end
+       for stn in each({"Strength","Defense","Will","AP","HP","Resistance","Agility","Accuracy","Evasion"}) do
+       	  if (skill~=3 and RPGStat.Stat(ch,"BUFF_"..stn)<0) then RPGStat.DefStat(ch,"BUFF_"..stn,0) end
+       	  if (skill~=1 and RPGStat.Stat(ch,"BUFF_"..stn)>0) then RPGStat.DefStat(ch,"BUFF_"..stn,0) end
+       	  end  
        hp.Have = hp.Maximum
        end
     if ch=="Crystal" and (not dontresetap) then -- Reload all ARMS

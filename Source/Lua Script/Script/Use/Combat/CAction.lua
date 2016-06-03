@@ -147,7 +147,7 @@ if abl.APRecover and abl.APRecover>0 then
                  HealAP(tg,ti,points)
                  effect=true
                  end
-   })[abl.APRecover] or function() Sys.Error("Unknown APRecover Type: "..sval(abl.HealingType)) end )()               
+   })[abl.APRecoverType] or function() Sys.Error("Unknown APRecover Type: "..sval(abl.HealingType)) end )()               
    end
 -- Hurt target (can also heal if the element is being absored)
 if abl.AttackPower and abl.AttackPower>0 then
