@@ -48,8 +48,8 @@ return true
 end
 
 function AblSpecialEffect.HalfHP(ag,ai,tg,ti,act)
-local tag=Fighters[ti][ti].Tag
-To1(tag,"HP",floor(RPGChar.Points(tag,"HP").Have/2))
+local tag=Fighters[tg][ti].Tag
+To1(tag,"HP",math.ceil(RPGChar.Points(tag,"HP").Have/2))
 end
 
 function AblSpecialEffect.APto1(ag,ai,tg,ti,act)

@@ -112,5 +112,9 @@ function GALE_OnLoad()
   EncounterBack = "Phan - Dung"
   EncounterMusic = "Dungeon/Tempting Secrets"
 	AddEnemy("Goblin",20)  
+	AddEnemy("PhanUndeadKid_Befindo",1000)
+	for i=1,#encrange do
+	    encrange[i] = math.ceil(encrange[i]/2)
+	end 
 end
 

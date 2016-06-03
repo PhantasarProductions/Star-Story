@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.02
+version: 16.06.03
 ]]
 return {
 	"ASTRILOPUPELITE",
@@ -73,6 +73,7 @@ return {
 	"INSETTO",
 	"LION",
 	"MYR",
+	"PHANUNDEADKID_BEFINDO",
 	"PYROGUIN",
 	"QUAL",
 	"RAT",
