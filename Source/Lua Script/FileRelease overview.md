@@ -381,11 +381,15 @@
 1. Script/JINC/Foes/Reg/Lion.lua
 1. Script/JINC/Foes/Reg/Myr.lua
 1. Script/JINC/Foes/Reg/PhanUndeadKid_Befindo.lua
+1. Script/JINC/Foes/Reg/PhanUndeadKid_Elf.lua
+1. Script/JINC/Foes/Reg/PhanUndeadKid_Fairy.lua
 1. Script/JINC/Foes/Reg/PhanUndeadKid_Human.lua
+1. Script/JINC/Foes/Reg/PhanUndeadKid_Phelynx.lua
 1. Script/JINC/Foes/Reg/Pyroguin.lua
 1. Script/JINC/Foes/Reg/Salamander.lua
 1. Script/JINC/Foes/Reg/Shroom.lua
 1. Script/JINC/Foes/Reg/Thief.lua
+1. Script/JINC/Foes/Reg/UndedKid_Elf.lua
 1. Script/JINC/Foes/Reg/Wolf.lua
 1. Script/JINC/Foes/SuperBoss/FireSpider.lua
 1. Script/JINC/NewGame+/PreserveVar.lua
@@ -471,4 +475,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 03 June 2016; 21:32:52 CET
+### Last updated: Fri 03 June 2016; 21:57:59 CET
