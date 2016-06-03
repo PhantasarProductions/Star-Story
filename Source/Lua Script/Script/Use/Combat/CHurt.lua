@@ -1,6 +1,6 @@
 --[[
   CHurt.lua
-  Version: 16.05.26
+  Version: 16.06.03
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -132,7 +132,7 @@ if ap>0 then CharReport(tg,ti,"+"..ap.." AP",{0,180,255}) else CharReport(tg,ti,
 local AP = RPGChar.Points(chtarget,"AP")
 AP.Have = AP.Have + ap
 end
-
+HealAP = RecoverAP
 
 function Attack(ag,ai,act,pdata,ptg,pti)
 local chactor = FighterTag(ag,ai)
