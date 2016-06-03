@@ -65,6 +65,8 @@
 1. Script/JINC/IAA/ABL_EXHURU_NELJA.lua
 1. Script/JINC/IAA/ABL_EXHURU_STOMP.lua
 1. Script/JINC/IAA/ABL_EXHURU_YKSI.lua
+1. Script/JINC/IAA/ABL_FOE_DEATH.lua
+1. Script/JINC/IAA/ABL_FOE_DEMON_SOUL_BREAKER.lua
 1. Script/JINC/IAA/ABL_FOE_EXPDRAIN.lua
 1. Script/JINC/IAA/ABL_FOE_FLAMETOUCH.lua
 1. Script/JINC/IAA/ABL_FOE_FULLHEALTH.lua
@@ -78,6 +80,7 @@
 1. Script/JINC/IAA/ABL_FOE_POISONCLOUD.lua
 1. Script/JINC/IAA/ABL_FOE_SCRATCH.lua
 1. Script/JINC/IAA/ABL_FOE_TASER.lua
+1. Script/JINC/IAA/ABL_FOE_THRILLINGCHARGE.lua
 1. Script/JINC/IAA/ABL_FOE_ULTRASONIC.lua
 1. Script/JINC/IAA/ABL_FOE_VENOMBITE.lua
 1. Script/JINC/IAA/ABL_FOE_VIRUSBITE.lua
@@ -204,6 +207,7 @@
 1. Script/JINC/IAA/MOO_Z2_STERF.lua
 1. Script/JINC/IAA/PHANTASAR_APPLE.lua
 1. Script/JINC/IAA/SUPER_FOXY_SKYDRAGONSLASH.lua
+1. Script/JINC/IAA/SUPER_THRILLING_DAMNNATION.lua
 1. Script/JINC/IAA/SUPER_WENDICKA_VOLTSUNAMI.lua
 1. Script/JINC/IAA/SUPER_XENOBI_WHITE_APOCALYPSE.lua
 1. Script/JINC/IAA/ZZZ_ASTRILOPUPELITE_SUMMON.lua
@@ -338,6 +342,7 @@
 
 ## Full Release
 
+1. Script/External/SpellAni/Thriller.lua
 1. Script/Flow/Bestiary.lsv
 1. Script/Flow/Bestiary.lua
 1. Script/Flow/BlockShooter.lua
@@ -371,6 +376,7 @@
 1. Script/JINC/Foes/Reg/Insetto.lua
 1. Script/JINC/Foes/Reg/Lion.lua
 1. Script/JINC/Foes/Reg/Myr.lua
+1. Script/JINC/Foes/Reg/PhanUndeadKid_Befindo.lua
 1. Script/JINC/Foes/Reg/Pyroguin.lua
 1. Script/JINC/Foes/Reg/Salamander.lua
 1. Script/JINC/Foes/Reg/Shroom.lua
@@ -460,4 +466,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 03 June 2016; 12:11:46 CET
+### Last updated: Fri 03 June 2016; 16:08:48 CET

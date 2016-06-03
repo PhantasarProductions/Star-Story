@@ -1,7 +1,7 @@
 --[[
-  HPAPto1.lua
+  ABL_FOE_THRILLINGCHARGE.lua
   Version: 16.06.03
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -34,36 +34,25 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
--- @IF IGNORE
-AblSpecialEffect = {}
--- @FI
+ret = {
+	["ABL_AP"] = 0,
+	["ABL_Pose"] = "Cast",
+	["APRecoverType"] = "Absolute",
+	["ActSpeed"] = 10,
+	["AttackElement"] = "Non-Elemental",
+	["AttackStat"] = "Strength",
+	["DefenseStat"] = "Defense",
+	["HealingType"] = "Absolute",
+	["Icon"] = "GFX/Elements/Dark.png",
+	["ItemType"] = "Consumable",
+	["Name"] = "Thrilling charge",
+	["Target"] = "AF",
+	["UseCombat"] = true,
+	["UseField"] = true,
+	["UserNextMove"] = "SUPER_THRILLING_DAMNNATION",
+	["untauntable"] = true}
 
-function To1(tag,Points,NewValue)
-RPGChar.Points(tag,Points or "HP").Have = NewValue or 1
-end
+return ret
 
-function AblSpecialEffect.HPto1(ag,ai,tg,ti,act)
-To1(Fighters[tg][ti].Tag)
-return true
-end
+-- This file is an automatically generated file!
 
-function AblSpecialEffect.HalfHP(ag,ai,tg,ti,act)
-local tag=Fighters[ti][ti].Tag
-To1(tag,"HP",floor(RPGChar.Points(tag,"HP").Have/2))
-end
-
-function AblSpecialEffect.APto1(ag,ai,tg,ti,act)
-To1(Fighters[tg][ti].Tag,"AP")
-return true
-end
-
-function AblSpecialEffect.APto0(ag,ai,tg,ti,act)
-To1(Fighters[tg][ti].Tag,"AP",0)
-return true
-end
-
-
-function AblSpecialEffect.EXPDrain(ag,ai,tg,ti,act)
-To1(Fighters[tg][ti].Tag,"EXP",0)
-return true
-end

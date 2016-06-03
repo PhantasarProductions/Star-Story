@@ -64,6 +64,7 @@ end
 
 function StopRandomEncounters()
    Var.D('&BLOCK.EMERGENCY.SAVE','TRUE')  -- No more emergency saves. This can only spook things up from here!
+   monsters = nil -- No more random encounters ;)
 end
 
 function DrawTeleporter()
@@ -90,8 +91,7 @@ function DrawTeleporter()
       for ci=1,3 do
           if     cli==ci and cl[ci]<255 then cl[ci] = cl[ci] + 1
           elseif cli==ci                then ci = rand(1,3)
-          elseif cl[ci]>0               then cl[ci] = cl[ci] - 1 end
-          
+          elseif cl[ci]>0               then cl[ci] = cl[ci] - 1 end          
       end    
   end
   --White()
@@ -109,6 +109,8 @@ function GALE_OnLoad()
   ZA_Enter('StopRandomEncounters',StopRandomEncounters)
   NPC_SAVE_GREEN = savespot.green
   NPC_SAVE_RED   = savespot.red
+  EncounterBack = "Phan - Dung"
+  EncounterMusic = "Dungeon/Tempting Secrets"
 	AddEnemy("Goblin",20)  
 end
 
