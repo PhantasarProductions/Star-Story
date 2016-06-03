@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 16.05.27
+  Version: 16.06.03
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -196,6 +196,7 @@ for i,y in spairs(abl) do
        stcr = StatusResistance[stc] or stc
        if RPGChar.ListHas(cht,stc)==0 and (RPGChar.StatExists(cht,"SR_TRUE_"..stcr)==0 or rand(1,100)>RPGStat.Stat(cht,"SR_TRUE_"..stcr)) then
           RPGChar.AddList(cht,"STATUSCHANGE",stc)
+          ;(StatusInflict[stc] or StatusInflict.Nothing)(tg,ti)
           CharReport(tg,ti,stc,{255,255,255})               
           effect=true
           end

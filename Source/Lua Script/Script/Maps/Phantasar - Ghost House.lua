@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.02
+version: 16.06.03
 ]]
 
 -- @USE Phantasar.lua
@@ -109,5 +109,6 @@ function GALE_OnLoad()
   ZA_Enter('StopRandomEncounters',StopRandomEncounters)
   NPC_SAVE_GREEN = savespot.green
   NPC_SAVE_RED   = savespot.red
+	AddEnemy("Goblin",20)  
 end
 

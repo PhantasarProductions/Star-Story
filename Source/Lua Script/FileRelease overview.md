@@ -416,6 +416,7 @@
 1. Script/Use/Combat/Foe_AI/FireSpider.lua
 1. Script/Use/Combat/SpellAni/Moo.lua
 1. Script/Use/Combat/StatusChanges/Confusion.lua
+1. Script/Use/Combat/StatusChanges/Death.lua
 1. Script/Use/Combat/StatusChanges/IDDQD.lua
 1. Script/Use/Linkers/WorldLinker.lua
 1. Script/Use/Maps/Gen/Next.lua
@@ -458,4 +459,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Thu 02 June 2016; 20:01:17 CET
+### Last updated: Fri 03 June 2016; 11:20:20 CET

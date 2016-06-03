@@ -1,6 +1,6 @@
 --[[
   AAAAAAAAAAAAAAAAAAAAAAAAAAAAA.lua
-  Version: 16.01.20
+  Version: 16.06.03
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -52,6 +52,9 @@ StatusAltNormalHurt = {}  -- When an element is neither your weakness nor half, 
 StatusAltHalved = {}      -- Do I even still need to explain this to you?
 StatusAltAI = {}          -- Alternate AI. Players and enemies alike will be tied to this when this status is active.
 StatusExpireOnAttack = {} -- When attacked on any manner make this status disappear
+StatusInflict = {}        -- This function is immediately called on the moment it's inflicted.
+
+function StatusInflict.Nothing(g,i) end 
 
 
 
