@@ -1,7 +1,7 @@
 --[[
-  ARM_VIRUSBOMB.lua
+  ITM_PHANTASAR_HOLYWATER.lua
   Version: 16.06.03
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -36,27 +36,23 @@
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
-	["ARM_Hit%"] = 65,
-	["ARM_MaxAmmo"] = 2,
-	["ARM_PRICE_Hit%"] = 7500,
-	["ARM_PRICE_MaxAmmo"] = 2800,
-	["ARM_PRICE_Weight"] = 5000,
-	["ARM_PRICE_XPower"] = 4200,
-	["ARM_XPower"] = 0,
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 100,
 	["AttackStat"] = "Strength",
-	["CauseDisease"] = true,
+	["CureDamned"] = true,
+	["CureZombie"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Hurts and diseases the enemy",
+	["Description"] = "Cures \"Zombie\" and \"Damned\"",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Gun.png",
+	["ITM_BuyPrice"] = 100,
+	["ITM_SellPrice"] = 75,
+	["ITM_Sellable"] = true,
+	["Icon"] = "GFX/Inventory/HolyWater.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Virus Bomb",
-	["Target"] = "1F",
-	["UseCombat"] = true,
-	["UseField"] = true}
+	["Name"] = "Holy Water",
+	["SpellAni_Reference"] = "SingleHeal",
+	["Target"] = "1A",
+	["UseCombat"] = true}
 
 return ret
 

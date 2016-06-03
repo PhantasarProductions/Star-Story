@@ -1,6 +1,6 @@
 --[[
   SUPER_XENOBI_WHITE_APOCALYPSE.lua
-  Version: 16.05.30
+  Version: 16.06.03
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================

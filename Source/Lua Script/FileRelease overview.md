@@ -166,6 +166,7 @@
 1. Script/JINC/IAA/ITM_PHANTASAR_ANTIDOTE.lua
 1. Script/JINC/IAA/ITM_PHANTASAR_APPLE.lua
 1. Script/JINC/IAA/ITM_PHANTASAR_CARROT.lua
+1. Script/JINC/IAA/ITM_PHANTASAR_HOLYWATER.lua
 1. Script/JINC/IAA/ITM_PHANTASAR_LIONHEAD.lua
 1. Script/JINC/IAA/ITM_PHANTASAR_MAGICDISC.lua
 1. Script/JINC/IAA/ITM_PHANTASAR_MAGICDUST.lua
@@ -459,4 +460,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 03 June 2016; 11:56:13 CET
+### Last updated: Fri 03 June 2016; 12:11:46 CET
