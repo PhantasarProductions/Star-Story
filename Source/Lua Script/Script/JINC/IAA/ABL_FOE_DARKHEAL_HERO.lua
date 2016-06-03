@@ -8,6 +8,7 @@ ret = {
 	["AttackStat"] = "Resistance",
 	["DefenseStat"] = "Evasion",
 	["HealingType"] = "Absolute",
+	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Dark Healing",
 	["SpellAni_Reference"] = "SingleHeal",

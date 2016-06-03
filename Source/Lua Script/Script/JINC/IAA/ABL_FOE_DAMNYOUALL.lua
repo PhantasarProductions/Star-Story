@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ABL_FOE_DARKHEAL_FOE.lua
+  ABL_FOE_DAMNYOUALL.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -39,19 +39,18 @@ ret = {
 	["ABL_Pose"] = "Cast",
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
-	["AttackElement"] = "DarkHealing",
-	["AttackPower"] = 250,
-	["AttackStat"] = "Resistance",
-	["DefenseStat"] = "Evasion",
+	["AttackElement"] = "Dark",
+	["AttackPower"] = 80,
+	["AttackStat"] = "Strength",
+	["CauseDamned"] = true,
+	["DefenseStat"] = "Defense",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Dark Healing",
-	["SpellAni_Reference"] = "SingleHeal",
-	["Target"] = "1A",
+	["Name"] = "Damn you all",
+	["Target"] = "AF",
 	["UseCombat"] = true,
-	["UseField"] = true,
-	["untauntable"] = true}
+	["UseField"] = true}
 
 return ret
 
