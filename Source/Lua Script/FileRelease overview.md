@@ -377,6 +377,7 @@
 1. Script/JINC/Foes/Reg/Lion.lua
 1. Script/JINC/Foes/Reg/Myr.lua
 1. Script/JINC/Foes/Reg/PhanUndeadKid_Befindo.lua
+1. Script/JINC/Foes/Reg/PhanUndeadKid_Human.lua
 1. Script/JINC/Foes/Reg/Pyroguin.lua
 1. Script/JINC/Foes/Reg/Salamander.lua
 1. Script/JINC/Foes/Reg/Shroom.lua
@@ -466,4 +467,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 03 June 2016; 18:03:15 CET
+### Last updated: Fri 03 June 2016; 19:01:44 CET

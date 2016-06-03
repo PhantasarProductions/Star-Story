@@ -91,7 +91,7 @@ stages = {
        local michael = Image.Load("GFX/Actors/SinglePic/Phantasar/Michael.png")
        Image.HotCenter(michael)
        Time.Sleep(500)
-       zombiecopy[#zombiecopy] = { x = 400, y = 550, img = michael }
+       zombiecopy[#zombiecopy+1] = { x = 400, y = 550, img = michael }
        Image.Cls()
        drawzombies()
        Flip()

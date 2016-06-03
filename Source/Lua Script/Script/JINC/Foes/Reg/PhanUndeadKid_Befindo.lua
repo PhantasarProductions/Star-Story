@@ -130,7 +130,7 @@ for ak=1,1 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_ROCK', LVL=190, VLT=false }
 for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,1 do table.insert(Data.ItemSteal,temp) end
-Data.ActMinLevel["Abl.SUPER_THRILLING_DAMNNATION"] = 0		for ak=1,10000 do table.insert(Data.Acts,"Abl.SUPER_THRILLING_DAMNNATION") end
+Data.ActMinLevel["Abl.SUPER_THRILLING_DAMNNATION"] = 400		for ak=1,4 do table.insert(Data.Acts,"Abl.SUPER_THRILLING_DAMNNATION") end
 
 
 return Data
