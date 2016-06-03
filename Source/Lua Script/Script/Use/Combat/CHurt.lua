@@ -129,8 +129,8 @@ local chtarget = FighterTag(tg,ti)
 if chtarget then return CSay("No target on <"..tg..","..ti.."> so cannot handle AP") end
 if ap==0 then return CSay("If zero then ignore") end
 if ap>0 then CharReport(tg,ti,"+"..ap.." AP",{0,180,255}) else CharReport(tg,ti,ap.." AP",{180,0,255}) end
-local AP = RPGChar.Points(chtarget,"AP")
-AP.Have = AP.Have + ap
+local RAP = RPGChar.Points(chtarget,"AP")
+RAP.Have = RAP.Have + ap
 end
 HealAP = RecoverAP
 

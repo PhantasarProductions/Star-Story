@@ -143,7 +143,7 @@ if abl.APRecover and abl.APRecover>0 then
        Percent  = function()
                  local hpt = RPGChar.Points(cht,"AP")
                  local hpm = hpt.Maximum
-                 local points = (hpm/100)*abl.APReciver
+                 local points = (hpm/100)*abl.APRecover
                  HealAP(tg,ti,points)
                  effect=true
                  end
