@@ -104,10 +104,32 @@ function Boss()
 	Var.D("$COMBAT.BACKGROUND","Phan - Dung.png")
 	Var.D("$COMBAT.BEGIN","Default")
 	Var.D("$COMBAT.FOE1","Boss/LichKing")
-	Var.D("$COMBAT.ALTCOORDSFOE1","300,400")
+	Var.D("$COMBAT.ALTCOORDSFOE1","300,600")
 	Var.D("%COMBAT.LVFOE1",MapLevel())
 	Var.D("$COMBAT.MUSIC","AltCombat/Phantasar_Boss.ogg")
 	StartCombat()	
+end
+
+function BackDown()
+  Maps.GotoLayer("#001")
+  SpawnPlayer('GetBack')
+  local deur = Maps.Obj.Obj('DEUR')
+  deur.Impassible = 1
+  deur.TextureFile = 'GFX/TEXTURES/PHANTASAR/DUNGEON/ARCH2DOOR.PNG'
+  Maps.Remap()
+end
+
+function MarrilonaAndMyrah()
+   if not Done("&DONE.PHANTASAR.GHOSTHOUSE.COMPLETE") then
+      PartyPop("MAR")
+      MapText("MARRILONA")
+      AddPartyPop("NPC_Marrilona")
+      AddPartyPop("NPC_Myrah")
+      PartyUnPop()
+      Award("SCENARIO_PHANTASAR_GHOSTHOUSE")
+      Maps.Obj.Kill("NPC_Marrilona",1)
+      Maps.Obj.Kill("NPC_Myrah",1)
+   end
 end
 
 
@@ -118,8 +140,11 @@ function GALE_OnLoad()
      ZA_Enter(  'Back'..i,Back)
      ZA_Enter("RMBack"..i,Maps.Obj.Kill,'Back'..i) 
      end
+  ZA_Enter('BackDown',BackDown)
   ZA_Enter('Plate2Open',OpenDoor)
   ZA_Enter('StopRandomEncounters',StopRandomEncounters)
+  ZA_Enter('THE_END',MarrilonaAndMyrah)
+  ZA_Enter("Byebye",GoWorld,"Phantasar")
   NPC_SAVE_GREEN = savespot.green
   NPC_SAVE_RED   = savespot.red
   EncounterBack = "Phan - Dung"

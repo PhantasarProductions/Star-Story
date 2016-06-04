@@ -1,6 +1,6 @@
 --[[
   CDrawFighters.lua
-  Version: 16.02.04
+  Version: 16.06.04
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -78,6 +78,7 @@ local fi,fg,fgl,f
 if not ReportList then return end
 for fg,fgl in spairs(ReportList) do for fi,f in pairs(fgl) do
     if #f>0 then
+       if f[1].y>450 then f[1].y=f[1].y-5 end
        --Image.Scale(f[1].scale,f[1].scale)
        if round(f[1].scale)>=1 then Image.Font("Fonts/Robotica.ttf",round(f[1].scale)) end
        DarkText(f[1].m,f[1].x,f[1].y,2,2,f[1].r,f[1].g,f[1].b)
