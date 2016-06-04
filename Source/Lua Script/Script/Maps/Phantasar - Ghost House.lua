@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.03
+version: 16.06.04
 ]]
 
 -- @USE Phantasar.lua
@@ -97,6 +97,19 @@ function DrawTeleporter()
   --White()
   --Image.DText("sx="..sx.."; sy="..sy.."; x="..x.."; y="..y.."; s="..s,0,30)
 end
+
+function Boss()
+	oripos = nil
+	CleanCombat()
+	Var.D("$COMBAT.BACKGROUND","Phan - Dung.png")
+	Var.D("$COMBAT.BEGIN","Default")
+	Var.D("$COMBAT.FOE1","Boss/LichKing")
+	Var.D("$COMBAT.ALTCOORDSFOE1","300,400")
+	Var.D("%COMBAT.LVFOE1",MapLevel())
+	Var.D("$COMBAT.MUSIC","AltCombat/Phantasar_Boss.ogg")
+	StartCombat()	
+end
+
 
 function GALE_OnLoad()
   Music('Dungeon/Tempting Secrets')
