@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 16.06.03
+  Version: 16.06.04
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -247,6 +247,7 @@ end
 function ActionFuncs.ATK(ag,ai,act)
 local ch = FighterTag(ag,ai) --RPGChar.PartyTag(ag,ai)
 local tg,ti = TargetFromAct(act)
+local cht = FighterTag(tg,ti)
 if not CheckTarget(tg,ti) then MINI("Attack cancelled",255,0,0); MINI("There's no enemy on that spot anymore",255,180,0); return end
 if tg=="Hero" then
    if (XCharAttacked[Fighters.Hero[ti].Tag] or function(ag,ai) end)(ag,ai) then
@@ -267,6 +268,14 @@ if AccuracyEvasion(ag,ai,tg,ti) then
    else
    Attack(ag,ai,act)
    end
+-- Remove any status changes from the victim that expire after attacking
+for s,v in pairs(StatusExpireOnAttack) do
+	  CSay("Attack-expire check: "..s)
+    if v then
+    	 CSay(cht.." has "..RPGChar.ListHas(cht,"STATUSCHANGE",s))
+       if RPGChar.ListHas(cht,"STATUSCHANGE",s)>0 then RPGChar.RemList(cht,"STATUSCHANGE",s) end 
+       end
+    end 
 -- Reset character sprit
 Fighters[ag][ai].Pick="Default"      
 end

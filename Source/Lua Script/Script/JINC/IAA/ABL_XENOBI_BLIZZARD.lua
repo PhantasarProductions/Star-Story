@@ -1,6 +1,6 @@
 --[[
   ABL_XENOBI_BLIZZARD.lua
-  Version: 16.06.03
+  Version: 16.06.04
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================

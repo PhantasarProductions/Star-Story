@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_PARA_DIVE.lua
-  Version: 16.06.03
+  Version: 16.06.04
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
