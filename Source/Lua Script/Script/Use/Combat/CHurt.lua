@@ -1,6 +1,6 @@
 --[[
   CHurt.lua
-  Version: 16.06.03
+  Version: 16.06.04
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -125,8 +125,9 @@ Hurt ( tg , ti , hp , "Healing")
 end
 
 function RecoverAP(tg,ti,ap)
+CSay("AP recovery request ("..tg..","..ti..","..ap..")")
 local chtarget = FighterTag(tg,ti)
-if chtarget then return CSay("No target on <"..tg..","..ti.."> so cannot handle AP") end
+if not chtarget then return CSay("No target on <"..tg..","..ti.."> so cannot handle AP") end
 if ap==0 then return CSay("If zero then ignore") end
 if ap>0 then CharReport(tg,ti,"+"..ap.." AP",{0,180,255}) else CharReport(tg,ti,ap.." AP",{180,0,255}) end
 local RAP = RPGChar.Points(chtarget,"AP")
