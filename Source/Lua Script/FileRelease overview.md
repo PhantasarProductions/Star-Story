@@ -65,6 +65,7 @@
 1. Script/JINC/IAA/ABL_EXHURU_NELJA.lua
 1. Script/JINC/IAA/ABL_EXHURU_STOMP.lua
 1. Script/JINC/IAA/ABL_EXHURU_YKSI.lua
+1. Script/JINC/IAA/ABL_FOE_CURSEDHEALING.lua
 1. Script/JINC/IAA/ABL_FOE_DAMNYOU.lua
 1. Script/JINC/IAA/ABL_FOE_DAMNYOUALL.lua
 1. Script/JINC/IAA/ABL_FOE_DARKHEAL_FOE.lua
@@ -480,4 +481,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sat 04 June 2016; 13:45:48 CET
+### Last updated: Sat 04 June 2016; 15:05:38 CET
