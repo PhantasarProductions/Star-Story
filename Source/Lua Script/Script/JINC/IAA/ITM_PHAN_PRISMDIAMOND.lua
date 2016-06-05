@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  MOO_Z2_ALLE_STATUSSEN.lua
+  ITM_PHAN_PRISMDIAMOND.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -35,31 +35,21 @@
 version: 16.06.05
 ]]
 ret = {
-	["APRecover"] = -50,
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
-	["CauseAmnesia"] = true,
-	["CauseBagLock"] = true,
-	["CauseConfusion"] = true,
-	["CauseDisease"] = true,
-	["CauseHandicapped"] = true,
-	["CauseParalysis"] = true,
-	["CausePoison"] = true,
-	["CauseSleep"] = true,
-	["CauseTerrified"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Moo",
+	["Description"] = "Useless but worth a lot of money",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Inventory/Moo.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Moo",
-	["SpellAni_Reference"] = "Moo",
+	["ITM_SellPrice"] = 1000000,
+	["ITM_Sellable"] = true,
+	["Icon"] = "GFX/Inventory/PrismDiamond.png",
+	["ItemType"] = "EquipItem",
+	["Name"] = "Prism Diamond",
 	["Target"] = "1F",
 	["UseCombat"] = true,
-	["UseField"] = true,
-	["untauntable"] = true}
+	["UseField"] = true}
 
 return ret
 

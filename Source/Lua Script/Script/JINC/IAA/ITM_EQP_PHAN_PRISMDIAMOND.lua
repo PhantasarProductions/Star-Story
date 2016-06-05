@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  MOO_Z2_ALLE_STATUSSEN.lua
+  ITM_EQP_PHAN_PRISMDIAMOND.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -35,31 +35,36 @@
 version: 16.06.05
 ]]
 ret = {
-	["APRecover"] = -50,
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
-	["CauseAmnesia"] = true,
-	["CauseBagLock"] = true,
-	["CauseConfusion"] = true,
-	["CauseDisease"] = true,
-	["CauseHandicapped"] = true,
-	["CauseParalysis"] = true,
-	["CausePoison"] = true,
-	["CauseSleep"] = true,
-	["CauseTerrified"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Moo",
+	["Description"] = "Raises defense against all elements and status changes",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Inventory/Moo.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Moo",
-	["SpellAni_Reference"] = "Moo",
+	["ITM_EQP_ERes_UPDark"] = true,
+	["ITM_EQP_ERes_UpEarth"] = true,
+	["ITM_EQP_ERes_UpFire"] = true,
+	["ITM_EQP_ERes_UpFrost"] = true,
+	["ITM_EQP_ERes_UpLight"] = true,
+	["ITM_EQP_ERes_UpLightning"] = true,
+	["ITM_EQP_ERes_UpWater"] = true,
+	["ITM_EQP_ERes_UpWind"] = true,
+	["ITM_EQP_SRes_Block"] = 5,
+	["ITM_EQP_SRes_Damned"] = 5,
+	["ITM_EQP_SRes_Death"] = 5,
+	["ITM_EQP_SRes_Disease"] = 5,
+	["ITM_EQP_SRes_Paralysis"] = 5,
+	["ITM_EQP_SRes_Poison"] = 5,
+	["ITM_EQP_SRes_Will"] = 5,
+	["ITM_SellPrice"] = 1000000,
+	["ITM_Sellable"] = true,
+	["Icon"] = "GFX/Inventory/PrismDiamond.png",
+	["ItemType"] = "EquipItem",
+	["Name"] = "Prism Diamond",
 	["Target"] = "1F",
 	["UseCombat"] = true,
-	["UseField"] = true,
-	["untauntable"] = true}
+	["UseField"] = true}
 
 return ret
 

@@ -154,6 +154,7 @@
 1. Script/JINC/IAA/ITM_EQP_GARNET.lua
 1. Script/JINC/IAA/ITM_EQP_KYANITE.lua
 1. Script/JINC/IAA/ITM_EQP_ONYX.lua
+1. Script/JINC/IAA/ITM_EQP_PHAN_PRISMDIAMOND.lua
 1. Script/JINC/IAA/ITM_EQP_RUBY.lua
 1. Script/JINC/IAA/ITM_EQP_SAPHIRE.lua
 1. Script/JINC/IAA/ITM_EQP_SUPER_AQUAMARINE.lua
@@ -182,6 +183,7 @@
 1. Script/JINC/IAA/ITM_PHANTASAR_PHOENIX.lua
 1. Script/JINC/IAA/ITM_PHANTASAR_POTION.lua
 1. Script/JINC/IAA/ITM_PHANTASAR_SALVE.lua
+1. Script/JINC/IAA/ITM_PHAN_PRISMDIAMOND.lua
 1. Script/JINC/IAA/ITM_PHAN_TRAVEL.lua
 1. Script/JINC/IAA/ITM_ROCK.lua
 1. Script/JINC/IAA/ITM_SPORES.lua
@@ -482,4 +484,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sun 05 June 2016; 09:52:59 CET
+### Last updated: Sun 05 June 2016; 11:08:27 CET

@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.17
+version: 16.06.05
 ]]
 
 rosettavar = "&DONE.SPOKEN.ROSETTA"
@@ -152,6 +152,7 @@ function GALE_OnLoad()
 	Music('Dungeon/Enchanted Valley.ogg')
 	NPC_SAVESPOT = savespot.blue
 	ZA_Enter("Byebye",GoWorld,"Phantasar")
+	if not CVV("&DONE.PHANTASAR.GHOSTHOUSE.COMPLETE") then Maps.Obj.Kill("NPC_MT_MARRILONA",0) end	
 end
 
 

@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_MINDCONTROLFLUID.lua
-  Version: 16.06.04
+  Version: 16.06.05
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================

@@ -1,6 +1,6 @@
 --[[
   ABL_XENOBI_FOCUSENERGY.lua
-  Version: 16.06.04
+  Version: 16.06.05
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -45,7 +45,7 @@ ret = {
 	["DefenseStat"] = "Defense",
 	["Description"] = "Charge up energy for White Apocalypse",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Gun.png",
+	["Icon"] = "GFX/Elements/Light.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Focus Energy",
 	["Target"] = "AF",

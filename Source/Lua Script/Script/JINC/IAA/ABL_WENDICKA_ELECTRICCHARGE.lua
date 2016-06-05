@@ -1,6 +1,6 @@
 --[[
   ABL_WENDICKA_ELECTRICCHARGE.lua
-  Version: 16.06.04
+  Version: 16.06.05
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -45,7 +45,7 @@ ret = {
 	["DefenseStat"] = "Defense",
 	["Description"] = "Charge up energy for Voltsunami",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Gun.png",
+	["Icon"] = "GFX/Abilities/Lightning.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Electric Charge",
 	["Target"] = "AF",
