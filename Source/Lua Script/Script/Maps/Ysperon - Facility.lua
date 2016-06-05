@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.01.29
+version: 16.06.05
 ]]
 
 -- @USE /Script/Use/Maps/Gen/SchuifNext.lua
@@ -208,6 +208,17 @@ TransporterPad("Lab",2)
 Var.D("$HAWK.BRIDGE","AfterYsperon")
 -- Sys.Error("You entered the lab, but the scenario there is not yet ready")
 end
+
+function ToFacility012()
+Maps.GotoLayer("#012")
+SpawnPlayer('Einde')
+end
+
+function ToFacility2()
+LoadMap("Ysperon - Facility 2","#014")
+Maps.GotoLayer("#014")
+SpawnPlayer("Start")
+end
                       
 function GALE_OnLoad()
 ({ [true] = StartMusic, [false]=Silence})[Done("&DONE.EUGORVNIA.COMPLETE")]()
@@ -218,4 +229,5 @@ ZA_Enter("OpenBonus",MapShow,"Bonus")
 ZA_Enter("To999",ToLab)
 ZA_Enter("ShowBase",MapShow,"Base")
 ZA_Enter("ShowGeheim",MapShow,"Geheim")
+ZA_Enter("ToFacility012",ToFacility012)
 end

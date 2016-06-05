@@ -43,6 +43,9 @@ reggie.Visible = 0
 
 mpts = { [true] = "CANSPEAK", [false] = "CANNOTSPEAK"}
 
+prismdiamondsgiven = prismdiamondsgiven or 1
+
+
 function RosettaText(Tag)
 	MapText(Tag.."."..mpts[rosetta])
 end
@@ -60,6 +63,7 @@ function NPC_Rosetta()
 end
 
 function NPC_FEENALARIA()
+  local diamant,give 
 	if rosetta then
 		if not Done("&DONE.PHANTASAR.FEENA_1") then
 			MapText("FEENA_1A")
@@ -70,6 +74,22 @@ function NPC_FEENALARIA()
 			MapText("FEENA_1C")
 			PartyUnPop()
 			reggie.Visible = 0
+		elseif CVV("&DONE.PHANTASAR.GHOSTHOUSE.COMPLETE") and (not CVV("&DONE.PHANTASAR.GHOSTHOUSE.FEENAREWARD") ) then
+			 MapText("FEENA_REWARD")
+			 give = rand(1,prismdiamondsgiven)==1
+			 diamant = ({ [true]='ITM_EQP_PHAN_PRISMDIAMOND', [false]='ITEM_PHAN_PRISMDIAMOND'})[give]
+			 if ItemGive(diamant) then
+			    MapEXP()
+			    if give then 
+			       prismdiamondsgiven = prismdiamondsgiven + (skill*skill)
+			       if prismdiamondsgiven>100000 then prismdiamondsgiven=100000 end -- Prevent crashes in long term
+			   end
+			   Done("&DONE.PHANTASAR.GHOSTHOUSE.FEENAREWARD")
+			 else
+			   MapText("FEENA_FULL")
+			 end
+		elseif CVV("&DONE.PHANTASAR.GHOSTHOUSE.FEENAREWARD") then
+		  MapText("FEENA_NEVER")
 		else
 			MapText("FEENA_ONLYHOPE")	
 		end	
@@ -153,6 +173,7 @@ function GALE_OnLoad()
 	NPC_SAVESPOT = savespot.blue
 	ZA_Enter("Byebye",GoWorld,"Phantasar")
 	if not CVV("&DONE.PHANTASAR.GHOSTHOUSE.COMPLETE") then Maps.Obj.Kill("NPC_MT_MARRILONA",0) end	
+	if skill==3 and prismdiamondsgiven<10 then prismdiamondsgiven=10 end
 end
 
 
