@@ -1,7 +1,7 @@
 --[[
-  ABL_FOE_VENOMBITE.lua
+  ITM_SHOT.lua
   Version: 16.06.06
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -35,21 +35,31 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 0,
-	["ABL_Pose"] = "Cast",
-	["APRecoverType"] = "Absolute",
+	["APRecover"] = 5,
+	["APRecoverType"] = "Percent",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 60,
 	["AttackStat"] = "Strength",
-	["CausePoison"] = true,
+	["Buff_AP"] = 1,
+	["Buff_Accuracy"] = 1,
+	["Buff_Agility"] = 3,
+	["Buff_Defense"] = 1,
+	["Buff_Evasion"] = 2,
+	["Buff_HP"] = 1,
+	["Buff_Resistance"] = 1,
+	["Buff_Strength"] = 2,
+	["Buff_Will"] = 2,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Poisons you",
-	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Inventory/Poison Cloud.png",
+	["Description"] = "OUCH! (50% heal, 5% AP, and cure poison + disease)",
+	["Healing"] = 50,
+	["HealingType"] = "Percent",
+	["ITM_BuyPrice"] = 2500,
+	["ITM_SellPrice"] = 800,
+	["ITM_Sellable"] = true,
+	["Icon"] = "GFX/Inventory/Shot.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Venom Bite",
-	["Target"] = "1F",
+	["Name"] = "Health Shot",
+	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true}
 

@@ -187,6 +187,7 @@
 1. Script/JINC/IAA/ITM_PHAN_PRISMDIAMOND.lua
 1. Script/JINC/IAA/ITM_PHAN_TRAVEL.lua
 1. Script/JINC/IAA/ITM_ROCK.lua
+1. Script/JINC/IAA/ITM_SHOT.lua
 1. Script/JINC/IAA/ITM_SPORES.lua
 1. Script/JINC/IAA/ITM_STEROIDS.lua
 1. Script/JINC/IAA/ITM_THUNDER_DIAMOND.lua
@@ -488,4 +489,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 06 June 2016; 19:19:37 CET
+### Last updated: Mon 06 June 2016; 19:24:56 CET
