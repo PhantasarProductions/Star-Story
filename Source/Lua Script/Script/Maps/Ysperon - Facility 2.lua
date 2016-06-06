@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  BestiaryData.lua
+  Ysperon - Facility 2.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -34,58 +34,20 @@
  
 version: 16.06.06
 ]]
-return {
-	"ASTRILOPUPELITE",
-	"BIGGRASSTIGER",
-	"BIGLION",
-	"BRAINDROID",
-	"CULTIST LEADER",
-	"CYBORG LORD",
-	"DARDBOORTH",
-	"DARDMOEDER",
-	"DIABLO",
-	"FLIRMOUSE_KING",
-	"FLIRMOUSE_SUBJECT",
-	"GIANTSNAKE",
-	"LICHKING",
-	"MID-BOSS",
-	"QUEENMYR",
-	"SUPAQUAL",
-	"SUPERSYSS",
-	"THIEF CHIEF",
-	"ASTRILOPUP",
-	"ASTRILOPUPGUARD",
-	"BATTLEDROID",
-	"BLACKLIZARD",
-	"BLADEH",
-	"CID",
-	"COW",
-	"CULTIST",
-	"CYBORG CAPTAIN",
-	"CYBORG GUNNER",
-	"CYBORG MEDIC",
-	"FLIRMOUSE",
-	"FLYSKY",
-	"GOBLIN",
-	"GRASSTIGER",
-	"GUMMI",
-	"HAWK",
-	"IMP",
-	"INSETTO",
-	"LION",
-	"MYR",
-	"PHANUNDEADKID_BEFINDO",
-	"PHANUNDEADKID_ELF",
-	"PHANUNDEADKID_FAIRY",
-	"PHANUNDEADKID_HUMAN",
-	"PHANUNDEADKID_PHELYNX",
-	"PYROGUIN",
-	"QUAL",
-	"RAT",
-	"SALAMANDER",
-	"SHROOM",
-	"SYSS",
-	"THIEF",
-	"WOLF",
-	"FIRESPIDER",
-}
+-- @USE /Script/Use/Maps/Gen/SchuifNext.lua
+
+
+function StartMusic()
+Music("Dungeon/AstrilopupBase")
+end
+
+function Silence()
+Music("Sys/Silence")
+end
+
+
+function GALE_OnLoad()
+({ [true] = StartMusic, [false]=Silence })[Done("&DONE.EUGORVNIA.COMPLETE")]()
+end
+
+

@@ -429,6 +429,7 @@
 1. Script/Maps/Volcania - Volcanic Plains.lua
 1. Script/Maps/Vulpina - Town.lua
 1. Script/Maps/Ysperon - Eugorvnia.lua
+1. Script/Maps/Ysperon - Facility 2.lua
 1. Script/Maps/Ysperon - Facility.lua
 1. Script/MiniGame/AutoUse.lua
 1. Script/MiniGame/MemoryAnhysbys.lua
@@ -486,4 +487,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 06 June 2016; 02:17:05 CET
+### Last updated: Mon 06 June 2016; 02:19:19 CET
