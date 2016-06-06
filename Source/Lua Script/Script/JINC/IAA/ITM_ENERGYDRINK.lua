@@ -1,6 +1,6 @@
 --[[
   ITM_ENERGYDRINK.lua
-  Version: 16.06.05
+  Version: 16.06.06
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================

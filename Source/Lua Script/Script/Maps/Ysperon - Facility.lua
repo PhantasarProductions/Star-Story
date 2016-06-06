@@ -230,4 +230,5 @@ ZA_Enter("To999",ToLab)
 ZA_Enter("ShowBase",MapShow,"Base")
 ZA_Enter("ShowGeheim",MapShow,"Geheim")
 ZA_Enter("ToFacility012",ToFacility012)
+ZA_Enter("ToFacility2",ToFacility2)
 end

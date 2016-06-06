@@ -124,6 +124,7 @@
 1. Script/JINC/IAA/ABL_YIRL_INTIMIDATE.lua
 1. Script/JINC/IAA/ABL_YIRL_TAUNT.lua
 1. Script/JINC/IAA/ABL_YIRL_TRIGGERHAPPY.lua
+1. Script/JINC/IAA/ARM_BIOHAZARD.lua
 1. Script/JINC/IAA/ARM_DART.lua
 1. Script/JINC/IAA/ARM_DOPING_SHOT.lua
 1. Script/JINC/IAA/ARM_FLAMETHROWER.lua
@@ -485,4 +486,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sun 05 June 2016; 14:28:10 CET
+### Last updated: Mon 06 June 2016; 02:17:05 CET

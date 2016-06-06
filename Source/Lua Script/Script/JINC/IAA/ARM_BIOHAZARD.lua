@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  MOO_MAXAPDOWN.lua
+  ARM_BIOHAZARD.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -35,23 +35,41 @@
 version: 16.06.06
 ]]
 ret = {
-	["APRecover"] = -50,
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 250,
+	["ARM_Hit%"] = 65,
+	["ARM_MaxAmmo"] = 3,
+	["ARM_PRICE_Hit%"] = 50,
+	["ARM_PRICE_MaxAmmo"] = 200,
+	["ARM_PRICE_Weight"] = 125,
+	["ARM_PRICE_XPower"] = 20,
+	["ARM_XPower"] = 0,
+	["ActSpeed"] = 5,
 	["AttackElement"] = "Non-Elemental",
+	["AttackPower"] = 50,
 	["AttackStat"] = "Strength",
-	["Buff_AP"] = -100,
+	["Buff_Accuracy"] = -3,
+	["Buff_Agility"] = -4,
+	["Buff_Defense"] = -10,
+	["Buff_Evasion"] = -100,
+	["Buff_HP"] = -2,
+	["Buff_Resistance"] = -10,
+	["Buff_Strength"] = -5,
+	["Buff_Will"] = -5,
+	["CauseAmnesia"] = true,
+	["CauseConfusion"] = true,
+	["CauseDisease"] = true,
+	["CauseParalysis"] = true,
+	["CausePoison"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Moo",
+	["Description"] = "You dirty environment killer!",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Inventory/Moo.png",
+	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Moo",
-	["SpellAni_Reference"] = "Moo",
+	["Name"] = "Biohazard cannon",
+	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1F",
 	["UseCombat"] = true,
-	["UseField"] = true,
-	["untauntable"] = true}
+	["UseField"] = true}
 
 return ret
 
