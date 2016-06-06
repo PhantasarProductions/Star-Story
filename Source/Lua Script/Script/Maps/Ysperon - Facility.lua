@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.05
+version: 16.06.06
 ]]
 
 -- @USE /Script/Use/Maps/Gen/SchuifNext.lua
@@ -215,8 +215,8 @@ SpawnPlayer('Einde')
 end
 
 function ToFacility2()
-LoadMap("Ysperon - Facility 2","#014")
-Maps.GotoLayer("#014")
+LoadMap("Ysperon - Facility 2","#013")
+Maps.GotoLayer("#013")
 SpawnPlayer("Start")
 end
                       

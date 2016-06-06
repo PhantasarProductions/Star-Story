@@ -383,6 +383,7 @@
 1. Script/JINC/Foes/Reg/Cid.lua
 1. Script/JINC/Foes/Reg/Cow.lua
 1. Script/JINC/Foes/Reg/Cultist.lua
+1. Script/JINC/Foes/Reg/Cyborg Ji.lua
 1. Script/JINC/Foes/Reg/Flysky.lua
 1. Script/JINC/Foes/Reg/Goblin.lua
 1. Script/JINC/Foes/Reg/Hawk.lua
@@ -487,4 +488,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 06 June 2016; 02:19:19 CET
+### Last updated: Mon 06 June 2016; 19:19:37 CET
