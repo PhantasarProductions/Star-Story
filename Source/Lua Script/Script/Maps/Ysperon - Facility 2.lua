@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.06
+version: 16.06.09
 ]]
 -- @USE /Script/Use/Maps/Gen/SchuifNext.lua
 
@@ -45,9 +45,49 @@ function Silence()
 Music("Sys/Silence")
 end
 
+function CamScroll(pos)
+	repeat
+	   if Maps.CamX<pos.x then Maps.CamX = Maps.CamX + 1 elseif Maps.CamX>pos.x then Maps.CamX = Maps.CamX - 1 end 
+	   if Maps.CamY<pos.y then Maps.CamY = Maps.CamY + 1 elseif Maps.CamY>pos.y then Maps.CamY = Maps.CamY - 1 end
+	   DrawScreen()
+	   Flip()
+	until Maps.CamX==pos.x and Maps.CamY==pos.y 
+end
+
+function ExOpen()
+  SetSchuif({'ExLinks','ExRechts'},'Open')
+end  
+
+
+function ExDicht()
+  SetSchuif({'ExLinks','ExRechts'},'Dicht')
+end  
+
+function Boss()
+  if Done("&DONE.YSPERON.EXHURU.KILLED") then return end
+  local camposes = { {x=-96,y=1456},{x=-96,y=1712}}
+  PartyPop("Ex")
+  MapText("EXHURU1")
+  CamScroll(composes[1])
+  Actors.Spawn("SpotExHuRU","GFX/Actors/Player","ExHuRU")
+  ExOpen()
+  Actors.MoveToSpot("ExHuRU","MeetExHuRU")
+  CamScroll(composes[2])
+  ExDicht()
+  MapText("EXHURU2")
+  Sys.Error('Fight not yet set up')
+end
+
 
 function GALE_OnLoad()
-({ [true] = StartMusic, [false]=Silence })[Done("&DONE.EUGORVNIA.COMPLETE")]()
+  ({ [true] = StartMusic, [false]=Silence })[Done("&DONE.EUGORVNIA.COMPLETE")]()
+  InitSchuif("ExLinks",-39,0)
+  InitSchuif("ExRechts",39,0)
+  ZA_Enter("ShowOne",MapShow,"One")
+  ZA_Enter("ShowTwo",MapShow,"Two")
+  ZA_Enter("Boss",Boss)
+  ZA_Enter("OpenEx",ExOpen)
+  ZA_Leave("OpenEx",ExDicht)
 end
 
 

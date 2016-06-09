@@ -190,6 +190,7 @@
 1. Script/JINC/IAA/ITM_SHOT.lua
 1. Script/JINC/IAA/ITM_SPORES.lua
 1. Script/JINC/IAA/ITM_STEROIDS.lua
+1. Script/JINC/IAA/ITM_SUPERCAPSULE.lua
 1. Script/JINC/IAA/ITM_THUNDER_DIAMOND.lua
 1. Script/JINC/IAA/ITM_VLUGZOUT.lua
 1. Script/JINC/IAA/MOO_AGLDOWN.lua
@@ -384,6 +385,7 @@
 1. Script/JINC/Foes/Reg/Cid.lua
 1. Script/JINC/Foes/Reg/Cow.lua
 1. Script/JINC/Foes/Reg/Cultist.lua
+1. Script/JINC/Foes/Reg/CyberAstrilopop.lua
 1. Script/JINC/Foes/Reg/Cyborg Ji.lua
 1. Script/JINC/Foes/Reg/Flysky.lua
 1. Script/JINC/Foes/Reg/Goblin.lua
@@ -489,4 +491,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 06 June 2016; 23:27:35 CET
+### Last updated: Thu 09 June 2016; 10:37:37 CET

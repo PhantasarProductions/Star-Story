@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ITM_EQP_AQUAMARINE.lua
+  ITM_SUPERCAPSULE.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -32,28 +32,30 @@
   
  **********************************************
  
-version: 16.06.07
+version: 16.06.08
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 250,
+	["ActSpeed"] = 25,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
+	["Buff_HP"] = 1,
+	["CureParalysis"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Inc water resist, dec thunder resist (voided by Wendicka's curse)",
+	["Description"] = "Heals 1500 HP",
+	["Healing"] = 1500,
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 125,
-	["ITM_EQP_ERes_DownLightning"] = true,
-	["ITM_EQP_ERes_UpWater"] = true,
-	["ITM_EQP_SRes_Will"] = 2,
-	["ITM_SellPrice"] = 75,
+	["ITM_BuyPrice"] = 5000,
+	["ITM_SellPrice"] = 2500,
 	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/Aquamarine.png",
-	["ItemType"] = "EquipItem",
-	["Name"] = "Aquamarine",
-	["Target"] = "1F",
+	["Icon"] = "GFX/Inventory/Capsule - Rood-Blauw.png",
+	["ItemType"] = "Consumable",
+	["Name"] = "Super Capsule",
+	["SpellAni_Reference"] = "SingleHeal",
+	["Target"] = "1A",
 	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseField"] = true,
+	["untauntable"] = true}
 
 return ret
 

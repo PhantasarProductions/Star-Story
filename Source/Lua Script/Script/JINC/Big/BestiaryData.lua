@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.06
+version: 16.06.09
 ]]
 return {
 	"ASTRILOPUPELITE",
@@ -61,6 +61,7 @@ return {
 	"CID",
 	"COW",
 	"CULTIST",
+	"CYBERASTRILOPOP",
 	"CYBORG CAPTAIN",
 	"CYBORG GUNNER",
 	"CYBORG JI",

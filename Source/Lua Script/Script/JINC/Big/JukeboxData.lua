@@ -1,6 +1,6 @@
 --[[
   JukeboxData.lua
-  Version: 16.06.06
+  Version: 16.06.08
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -201,4 +201,7 @@ return {
                    Artist = "Kevin McLeod"},
      ["Born Barnstomers"] = {
                    File = "Music/original4alias/Born Barnstomers.ogg",
-                   Artist = "Brian Boyko"}}
+                   Artist = "Brian Boyko"},
+     ["Strangled"] = {
+                   File = "Music/original4alias/strangled.ogg",
+                   Artist = "Matt McFarland"}}

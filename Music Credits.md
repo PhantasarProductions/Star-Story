@@ -53,6 +53,7 @@ I'd like to thank the next music artists for their brilliant work, and licensing
    1. Nearly There
 1. Matt McFarland
    1. Warfield
+   1. Strangled
 1. Rockit Maxx
    1. Dark City
 1. SJ Mellia
