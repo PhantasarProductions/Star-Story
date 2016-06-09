@@ -63,6 +63,24 @@ function ExDicht()
   SetSchuif({'ExLinks','ExRechts'},'Dicht')
 end  
 
+function SetUpBossFight()
+-- Clean up all old shit
+CleanCombat()
+-- Boss
+Var.D("$COMBAT.AltEnemyBuild","BOSS_ExHuRU")
+Var.D("$COMBAT.FOE1","ExHuRU")
+Var.D("%COMBAT.LVFOE1",RPGChar.Stat("ExHuRU","Level"))
+Var.D("$COMBAT.ALTCOORDSFOE1","500,300")
+-- Background data
+Var.D("$COMBAT.BACKGROUND","Facility.png")
+Var.D("$COMBAT.BEGIN","Default")
+Var.D("$COMBAT.MUSIC","SpecialBoss/ExHuRU")
+-- Set the post boss stuff on
+Schedule("MAP","PostBoss")
+-- Let combat commence
+StartCombat()   
+end
+
 function Boss()
   if Done("&DONE.YSPERON.EXHURU.KILLED") then return end
   local camposes = { {x=-96,y=1456},{x=-96,y=1712}}
@@ -77,8 +95,18 @@ function Boss()
   CamScroll(camposes[2])
   ExDicht()
   MapText("EXHURU2")
-  Sys.Error('Fight not yet set up')
+  SyncLevel("ExHuRU")
+  SetUpBossFight()
+  -- Sys.Error('Fight not yet set up')
 end
+
+
+function PostBoss()
+  Actors.ChoosePic("ExHuRU","EXHURU.DEAD")
+  MapText("EXHURU3")
+	PartyUnPop()
+  -- Sys.Error("This stuff not set up yet")
+end  
 
 
 function GALE_OnLoad()

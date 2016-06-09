@@ -149,6 +149,7 @@
 1. Script/JINC/IAA/ITM_BLUBAFLOWER.lua
 1. Script/JINC/IAA/ITM_CHLOROFORM.lua
 1. Script/JINC/IAA/ITM_ENERGYDRINK.lua
+1. Script/JINC/IAA/ITM_EPO.lua
 1. Script/JINC/IAA/ITM_EQP_AQUAMARINE.lua
 1. Script/JINC/IAA/ITM_EQP_CARNELIAN.lua
 1. Script/JINC/IAA/ITM_EQP_EMERALD.lua
@@ -248,6 +249,7 @@
 1. Script/JINC/Shops/HAWK_BAKINA_HEAL.lua
 1. Script/JINC/Shops/HAWK_BANIKA_ATTACK.lua
 1. Script/JINC/Shops/HAWK_BANIKA_HEAL.lua
+1. Script/JINC/Shops/HAWK_BANIKA_SUPPORT.lua
 1. Script/JINC/Shops/LOSTPLANET_BAR_ITEMS.lua
 1. Script/JINC/Shops/STONESELLER.lua
 1. Script/Maps/AutoUse.lsv
@@ -375,6 +377,7 @@
 1. Script/JINC/Foes/Boss/DardBoorth.lua
 1. Script/JINC/Foes/Boss/DardMoeder.lua
 1. Script/JINC/Foes/Boss/Diablo.lua
+1. Script/JINC/Foes/Boss/ExHuRU.lua
 1. Script/JINC/Foes/Boss/GiantSnake.lua
 1. Script/JINC/Foes/Boss/LichKing.lua
 1. Script/JINC/Foes/Boss/Mid-Boss.lua
@@ -442,10 +445,12 @@
 1. Script/Use/Anyway/ReLevel.lua
 1. Script/Use/Combat/AblSpecialEffect/HPAPto1.lua
 1. Script/Use/Combat/AblSpecialEffect/Summon.lua
+1. Script/Use/Combat/AltEnemyBuild/ExHuRU.lua
 1. Script/Use/Combat/AltEnemyBuild/SuperFoe_FireSpider.lua
 1. Script/Use/Combat/Events/ReleaseTheGoddess.lua
 1. Script/Use/Combat/FoeAltImage/Alg.lua
 1. Script/Use/Combat/FoeAltImage/Cultist.lua
+1. Script/Use/Combat/Foe_AI/ExHuRU_AI.lua
 1. Script/Use/Combat/Foe_AI/FireSpider.lua
 1. Script/Use/Combat/SpellAni/Moo.lua
 1. Script/Use/Combat/StatusChanges/Confusion.lua
@@ -492,4 +497,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Thu 09 June 2016; 12:01:07 CET
+### Last updated: Thu 09 June 2016; 19:51:34 CET

@@ -1,8 +1,8 @@
 --[[
 **********************************************
   
-  HAWK_BANIKA_ATTACK.lua
-  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
+  HAWK_BANIKA_SUPPORT.lua
+  (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -38,16 +38,16 @@ version: 16.06.09
 -- 09 Jun 2016; 19:46:07
 -- License: If stripped from any reference to the story line and its characters, this file becomes zLib
 	ret = {
-		["Stock1"] = "ITM_ROCK.lua",
-		["Stock10"] = "*Nothing*",
-		["Stock2"] = "ITM_MOLOTOV.lua",
-		["Stock3"] = "ITM_THUNDER_DIAMOND.lua",
-		["Stock4"] = "ITM_ICEBOMB.lua",
+		["Stock1"] = "ITM_EPO.lua",
+		["Stock10"] = "ITM_STEROIDS.lua",
+		["Stock2"] = "*Nothing*",
+		["Stock3"] = "*Nothing*",
+		["Stock4"] = "*Nothing*",
 		["Stock5"] = "*Nothing*",
 		["Stock6"] = "*Nothing*",
 		["Stock7"] = "*Nothing*",
 		["Stock8"] = "*Nothing*",
 		["Stock9"] = "*Nothing*",
-		["StoreName"] = "Banika's Attacking Stuff"}
+		["StoreName"] = ""}
 
 return ret
