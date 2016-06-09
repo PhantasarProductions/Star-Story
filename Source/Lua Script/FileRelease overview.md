@@ -232,6 +232,7 @@
 1. Script/JINC/IAA/ZZZ_LK_SUM_HUMAN.lua
 1. Script/JINC/IAA/ZZZ_LK_SUM_PHELYNX.lua
 1. Script/JINC/IAA/ZZZ_MYR_SUMMON.lua
+1. Script/JINC/IAA/ZZZ_TOTALDESTRUCTION.lua
 1. Script/JINC/InitChar/Briggs.lua
 1. Script/JINC/InitChar/Crystal.lua
 1. Script/JINC/InitChar/ExHuRU.lua
@@ -491,4 +492,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Thu 09 June 2016; 11:33:57 CET
+### Last updated: Thu 09 June 2016; 12:01:07 CET

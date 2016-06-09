@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ITM_PHAN_TRAVEL.lua
+  ZZZ_TOTALDESTRUCTION.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -36,24 +36,19 @@ version: 16.06.09
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 500,
+	["ActSpeed"] = 50,
 	["AttackElement"] = "Non-Elemental",
+	["AttackPower"] = 1000000,
 	["AttackStat"] = "Strength",
-	["DefenseStat"] = "Defense",
-	["Description"] = "Make all enemies disappear (does not work on bosses)",
+	["DefenseStat"] = "Evasion",
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 100,
-	["ITM_SellPrice"] = 75,
-	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/Phan_Travel.png",
+	["Icon"] = "GFX/Abilities/Fist.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Traveler's Emblem",
-	["ScriptEffect_Reference"] = "RemoveEnemy",
-	["SpellAni_Reference"] = "SmokeBomb",
-	["Target"] = "AF",
+	["Name"] = "Armageddon",
+	["ScriptEffect_Reference"] = "IDDQDisDEATH",
+	["Target"] = "EV",
 	["UseCombat"] = true,
-	["UseField"] = true,
-	["untauntable"] = true}
+	["UseField"] = true}
 
 return ret
 

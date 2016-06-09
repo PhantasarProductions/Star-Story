@@ -1,6 +1,6 @@
 --[[
   PartyLinker.lua
-  Version: 16.05.07
+  Version: 16.06.09
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -52,6 +52,9 @@ MS.Run("PARTY","ShowParty")
 if XShowParty then XShowParty() end
 end
 
+SyncLevel = SyncLevel or function(ch)
+  MS.Run("PARTY",'SyncLevel',ch)
+end
 
 function ClickedChar(chn)
 if chn<3 then return RPGChar.PartyTag(chn)~="" and mousehit(1) and INP.MouseY()>500 and INP.MouseX()>=chn*200 and INP.MouseX()<(chn+1)*200 end
