@@ -103,10 +103,17 @@ end
 
 function PostBoss()
   Actors.ChoosePic("ExHuRU","EXHURU.DEAD")
+  Actors.MoveToSpot("POP_Wendicka","Wendicka_Analyse")
   MapText("EXHURU3")
 	PartyUnPop()
   -- Sys.Error("This stuff not set up yet")
 end  
+
+function GoBackToTheLab()
+  LoadMap("Ysperon - Facility","#999")
+  Maps.GotoLayer("#999")
+  SpawnPlayer("Einde")
+end
 
 
 function GALE_OnLoad()
@@ -118,6 +125,7 @@ function GALE_OnLoad()
   ZA_Enter("Boss",Boss)
   ZA_Enter("OpenEx",ExOpen)
   ZA_Leave("OpenEx",ExDicht)
+  ZA_Enter("GoBackToTheLab",GoBackToTheLab)
 end
 
 
