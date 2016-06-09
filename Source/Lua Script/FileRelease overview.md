@@ -164,6 +164,7 @@
 1. Script/JINC/IAA/ITM_EQP_SUPER_KYANITE.lua
 1. Script/JINC/IAA/ITM_EQP_SUPER_ONYX.lua
 1. Script/JINC/IAA/ITM_FIRSTAIDKIT.lua
+1. Script/JINC/IAA/ITM_FISH.lua
 1. Script/JINC/IAA/ITM_GUBAFLOWER.lua
 1. Script/JINC/IAA/ITM_HEALINGCAPSULE.lua
 1. Script/JINC/IAA/ITM_HEATHRUB.lua
@@ -497,4 +498,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Thu 09 June 2016; 20:08:18 CET
+### Last updated: Thu 09 June 2016; 21:42:15 CET
