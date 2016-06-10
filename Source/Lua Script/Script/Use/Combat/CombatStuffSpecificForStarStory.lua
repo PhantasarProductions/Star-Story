@@ -286,6 +286,28 @@ if not Fighters.Foe[1] then -- If the chosen subject and the king are gone, the 
 return DefaultVictory()      
 end
 
+
+function BuffNerf()
+for i = 0,5 do
+    local ch = RPGStat.PartyTag(i)
+    if ch and ch~="" then   
+     for s in each({'Strength','Defense','Will','Resistance','Accuracy','Evasion',"Agility"}) do   
+        ({
+           function()
+             if RPGStat.Stat(ch,s)<0 then  RPGStat.DefStat(ch,s,0) end
+           end ,
+           function ()
+             RPGStat.DefStat(ch,s,math.ceil(RPGStat.Stat(ch,s)/2))
+           end,  
+           function()
+             if RPGStat.Stat(ch,s)>0 then  RPGStat.DefStat(ch,s,0) end
+           end ,
+        })[skill]()
+     end -- for s   
+    end -- if ch  
+   end -- for i
+end
+
 function RunVictory()
 ywscale = ywscale or 0
 ywtimer = ywtimer or 150
@@ -320,27 +342,10 @@ if ywscale<360 then
       else
          FlawlessStreak = 0 
          end
+      BuffNerf()   
       LAURA.Flow(CombatData.RETURNFLOW or "FIELD") 
       end
    end
-for i = 0,5 do
-    local ch = RPGStat.PartyTag(i)
-    if ch and ch~="" then   
-     for s in each({'Strength','Defense','Will','Resistance','Accuracy','Evasion',"Agility"}) do   
-        ({
-           function()
-             if RPGStat.Stat(ch,s)<0 then  RPGStat.DefStat(ch,s,0) end
-           end ,
-           function ()
-             RPGStat.DefStat(ch,s,math.ceil(RPGStat(ch,s)/2))
-           end,  
-           function()
-             if RPGStat.Stat(ch,s)>0 then  RPGStat.DefStat(ch,s,0) end
-           end ,
-        })[skill]()
-     end -- for s   
-    end -- if ch  
-   end -- for i
 end -- func
 
 DefeatedFunctions = { 
