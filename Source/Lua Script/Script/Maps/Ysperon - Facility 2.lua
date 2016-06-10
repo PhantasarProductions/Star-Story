@@ -118,6 +118,7 @@ end
 
 function GALE_OnLoad()
   ({ [true] = StartMusic, [false]=Silence })[Done("&DONE.EUGORVNIA.COMPLETE")]()
+  Maps.GotoLayer("#018")
   InitSchuif("ExLinks",-39,0)
   InitSchuif("ExRechts",39,0)
   ZA_Enter("ShowOne",MapShow,"One")

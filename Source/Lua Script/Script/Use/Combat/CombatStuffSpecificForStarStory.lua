@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.26
+version: 16.06.10
 ]]
 -- @IF IGNORE
 VicCheck = {}
@@ -323,7 +323,25 @@ if ywscale<360 then
       LAURA.Flow(CombatData.RETURNFLOW or "FIELD") 
       end
    end
-end
+for i = 0,5 do
+    local ch = RPGStat.PartyTag(i)
+    if ch and ch~="" then   
+     for s in each({'Strength','Defense','Will','Resistance','Accuracy','Evasion',"Agility"}) do   
+        ({
+           function()
+             if RPGStat.Stat(ch,s)<0 then  RPGStat.DefStat(ch,s,0) end
+           end ,
+           function ()
+             RPGStat.DefStat(ch,s,math.ceil(RPGStat(ch,s)/2))
+           end,  
+           function()
+             if RPGStat.Stat(ch,s)>0 then  RPGStat.DefStat(ch,s,0) end
+           end ,
+        })[skill]()
+     end -- for s   
+    end -- if ch  
+   end -- for i
+end -- func
 
 DefeatedFunctions = { 
       Default = function()
