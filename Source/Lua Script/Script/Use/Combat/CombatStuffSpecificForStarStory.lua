@@ -291,7 +291,8 @@ function BuffNerf()
 for i = 0,5 do
     local ch = RPGStat.PartyTag(i)
     if ch and ch~="" then   
-     for s in each({'Strength','Defense','Will','Resistance','Accuracy','Evasion',"Agility"}) do   
+     for ss in each({'Strength','Defense','Will','Resistance','Accuracy','Evasion',"Agility"}) do
+        local s = "BUFF_"..ss;   
         ({
            function()
              if RPGStat.Stat(ch,s)<0 then  RPGStat.DefStat(ch,s,0) end
