@@ -194,6 +194,7 @@
 1. Script/JINC/IAA/ITM_STEROIDS.lua
 1. Script/JINC/IAA/ITM_SUPERCAPSULE.lua
 1. Script/JINC/IAA/ITM_THUNDER_DIAMOND.lua
+1. Script/JINC/IAA/ITM_VITAMINC.lua
 1. Script/JINC/IAA/ITM_VLUGZOUT.lua
 1. Script/JINC/IAA/MOO_AGLDOWN.lua
 1. Script/JINC/IAA/MOO_ALLDOWN.lua
@@ -498,4 +499,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sat 11 June 2016; 15:55:33 CET
+### Last updated: Sat 11 June 2016; 17:14:31 CET

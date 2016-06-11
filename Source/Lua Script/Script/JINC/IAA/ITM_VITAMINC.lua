@@ -1,7 +1,7 @@
 --[[
-  ITM_FIRSTAIDKIT.lua
+  ITM_VITAMINC.lua
   Version: 16.06.11
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -36,23 +36,22 @@
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 100,
+	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
+	["Buff_Defense"] = 25,
+	["Buff_Resistance"] = 25,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Heals 400 HP",
-	["Healing"] = 400,
+	["Description"] = "Raises Defense and Resistance by 25% if used in combat",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 500,
-	["ITM_SellPrice"] = 175,
+	["ITM_SellPrice"] = 250,
 	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/FirstAidKit.png",
+	["Icon"] = "GFX/Inventory/Vitamin_C.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "First Aid Kit",
-	["SpellAni_Reference"] = "SingleHeal",
+	["Name"] = "Vitamin C",
 	["Target"] = "1A",
-	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseCombat"] = true}
 
 return ret
 
