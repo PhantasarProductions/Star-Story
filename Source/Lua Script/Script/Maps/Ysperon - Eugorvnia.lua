@@ -183,7 +183,7 @@ Maps.Obj.Kill("Cyb_B"        ,1)
 end
 
 function ToSecret()
-LoadMap("ToSecret","#000")
+LoadMap("Ysperon - Eugorvnia Cave","#000")
 Maps.GotoLayer("#000")
 SpawnPlayer("Start")
 end
