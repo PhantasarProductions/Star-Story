@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.01.29
+version: 16.06.11
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -182,9 +182,16 @@ Maps.Obj.Kill("Cyb_B"        ,1)
 -- Sys.Error("Incomplete Section") 
 end
 
+function ToSecret()
+LoadMap("ToSecret","#000")
+Maps.GotoLayer("#000")
+SpawnPlayer("Start")
+end
+
 
 function GALE_OnLoad()
 Music("Dungeon/Dark_City.ogg")
+ZA_Enter("ToSecret",ToSecret)
 ZA_Enter("STARTROOM",START)
 ZA_Leave("STARTROOM",MapShow,"*ALL*")
 ZA_Enter("BossRoom",EnterBoss)
