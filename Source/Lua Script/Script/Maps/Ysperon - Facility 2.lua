@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.09
+version: 16.06.11
 ]]
 -- @USE /Script/Use/Maps/Gen/SchuifNext.lua
 
@@ -115,6 +115,37 @@ function GoBackToTheLab()
   SpawnPlayer("Einde")
 end
 
+function McLeen()
+  if Done("&DONE.YSPERON.FACILITY.TWO") then return end
+  PartyPop("END")
+  MapText('DEADEND1')
+  --OpenNext()
+  local links  = Maps.Obj.Obj("NextLinks")
+  local rechts = Maps.Obj.Obj("NextRechts")
+  for i=0,39 do
+      --SchuifNextDo()
+      links .X = links .X - 1
+      rechts.X = rechts.X + 1
+      DrawScreen()
+      Flip()
+  end
+  MapText("DEADEND2")
+  Maps.GotoLayer('MOL')
+  Silence()
+  SpawnPlayer('Start') Actors.Actor('PLAYER').Visible=0 -- This is only crash prevention.
+  Maps.CamX=0
+  Maps.CamY=-16
+  MapText("MOL1")
+  KickReggie('East','Foxy','Reggie')
+  MapText("MOL2")
+  Award("SCENARIO_CRYSTALFATHER")
+  Var.D("$HAWK","CRYSTALFATHER")
+  LoadMap("HAWK","Bridge")
+  SpawnPlayer("Scotty")
+  ActivateRemotePad("Start","Vulpina - Flower Forest","Vulpina","Flower Forest - Entrance","#001")
+  -- Sys.Error("Rest not yet written")
+end
+
 
 function GALE_OnLoad()
   ({ [true] = StartMusic, [false]=Silence })[Done("&DONE.EUGORVNIA.COMPLETE")]()
@@ -127,6 +158,7 @@ function GALE_OnLoad()
   ZA_Enter("OpenEx",ExOpen)
   ZA_Leave("OpenEx",ExDicht)
   ZA_Enter("GoBackToTheLab",GoBackToTheLab)
+  ZA_Enter("McLeen",McLeen)
 end
 
 

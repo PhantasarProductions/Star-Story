@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.19
+version: 16.06.11
 ]]
 
 
@@ -66,7 +66,11 @@ local Keuze = RunQuestion("MAP","BAKINA.MENU")
             
       function() -- Healing items
       GoToStore("HAWK_BANIKA_HEAL")
-      end      
+      end,      
+      
+      function() -- powerup items
+      GoToStore('HAWK_BANIKA_SUPPORT')
+      end
 
 } )[Keuze]() 
 end
