@@ -42,10 +42,17 @@ end
 function StartTrans()
 	ActivatePad("EUGCAVESTART","General")
 end	
+
+function ToCity()
+  LoadMap("Ysperon - Eugorvnia","#002")
+  Maps.GotoLayer("#002")
+  SpawnPlayer("FromSecret")
+end
    
 
 function GALE_OnLoad()
   Music("Dungeon/Motherlode.ogg")
   ZA_Enter("Welcome",Welcome)
   ZA_Enter("ActivateTransporter",StartTrans)
+  ZA_Enter("ToCity",ToCity)
 end  
