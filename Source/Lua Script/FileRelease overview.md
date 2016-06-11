@@ -438,6 +438,7 @@
 1. Script/Maps/Poloqor - Mid-Boss.lua
 1. Script/Maps/Volcania - Volcanic Plains.lua
 1. Script/Maps/Vulpina - Town.lua
+1. Script/Maps/Ysperon - Eugorvnia Caves.lua
 1. Script/Maps/Ysperon - Eugorvnia.lua
 1. Script/Maps/Ysperon - Facility 2.lua
 1. Script/Maps/Ysperon - Facility.lua
@@ -499,4 +500,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sat 11 June 2016; 17:50:25 CET
+### Last updated: Sat 11 June 2016; 19:32:56 CET
