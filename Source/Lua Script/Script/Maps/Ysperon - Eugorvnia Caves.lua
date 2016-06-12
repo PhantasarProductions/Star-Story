@@ -32,8 +32,11 @@
   
  **********************************************
  
-version: 16.06.11
+version: 16.06.12
 ]]
+
+-- @USE /Script/Use/Maps/Gen/Next.lua
+
 function Welcome()
 	if not Done("&DONE.EUGORVNIA.CAVES.WELCOME") then MapText("WELCOME") end
 end
