@@ -1,7 +1,7 @@
 --[[
-  ITM_EQP_GARNET.lua
+  ITM_VIRUSDART.lua
   Version: 16.06.13
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -38,17 +38,15 @@ ret = {
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
+	["AttackPower"] = 100,
 	["AttackStat"] = "Strength",
+	["CauseDisease"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Raises resistance against will-based statuses of its owner by 10%",
+	["Description"] = "Hurts and diseases the enemy",
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 10000,
-	["ITM_EQP_SRes_Will"] = 10,
-	["ITM_SellPrice"] = 7500,
-	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/Garnet.png",
-	["ItemType"] = "EquipItem",
-	["Name"] = "Garnet",
+	["Icon"] = "GFX/Inventory/Dart.png",
+	["ItemType"] = "Consumable",
+	["Name"] = "Virus Dart",
 	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}

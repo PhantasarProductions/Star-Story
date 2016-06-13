@@ -1,7 +1,7 @@
 --[[
-  ITM_EQP_GARNET.lua
+  ITM_SUPERICEBOMB.lua
   Version: 16.06.13
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -36,20 +36,21 @@
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 250,
-	["AttackElement"] = "Non-Elemental",
-	["AttackStat"] = "Strength",
-	["DefenseStat"] = "Defense",
-	["Description"] = "Raises resistance against will-based statuses of its owner by 10%",
+	["ActSpeed"] = 80,
+	["AttackElement"] = "Frost",
+	["AttackPower"] = 600,
+	["AttackStat"] = "Will",
+	["DefenseStat"] = "Resistance",
+	["Description"] = "Freeze all enemies",
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 10000,
-	["ITM_EQP_SRes_Will"] = 10,
-	["ITM_SellPrice"] = 7500,
+	["ITM_BuyPrice"] = 4000,
+	["ITM_SellPrice"] = 2000,
 	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/Garnet.png",
-	["ItemType"] = "EquipItem",
-	["Name"] = "Garnet",
-	["Target"] = "1F",
+	["Icon"] = "GFX/Inventory/Ice Bomb.png",
+	["ItemType"] = "Consumable",
+	["Name"] = "Super Ice Bomb",
+	["SpellAni_Reference"] = "Blizzard",
+	["Target"] = "AF",
 	["UseCombat"] = true,
 	["UseField"] = true}
 

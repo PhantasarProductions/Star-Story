@@ -1,7 +1,7 @@
 --[[
-  ITM_EQP_GARNET.lua
+  ITM_SUPER_THUNDER_DIAMAND.lua
   Version: 16.06.13
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -37,21 +37,22 @@
 ret = {
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
-	["AttackElement"] = "Non-Elemental",
-	["AttackStat"] = "Strength",
-	["DefenseStat"] = "Defense",
-	["Description"] = "Raises resistance against will-based statuses of its owner by 10%",
+	["AttackElement"] = "Lightning",
+	["AttackPower"] = 800,
+	["AttackStat"] = "Will",
+	["CauseParalysis"] = true,
+	["DefenseStat"] = "Resistance",
+	["Description"] = "Electric attack on one enemy",
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 10000,
-	["ITM_EQP_SRes_Will"] = 10,
-	["ITM_SellPrice"] = 7500,
+	["ITM_BuyPrice"] = 2500,
+	["ITM_SellPrice"] = 1025,
 	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/Garnet.png",
-	["ItemType"] = "EquipItem",
-	["Name"] = "Garnet",
+	["Icon"] = "GFX/Inventory/Blue Diamond.png",
+	["ItemType"] = "Consumable",
+	["Name"] = "Super Thunder Diamond",
+	["SpellAni_Reference"] = "Mjolnir",
 	["Target"] = "1F",
-	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseCombat"] = true}
 
 return ret
 

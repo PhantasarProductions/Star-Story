@@ -1,7 +1,7 @@
 --[[
-  ITM_EQP_GARNET.lua
+  ITM_SUPERFIRSTAIDKIT.lua
   Version: 16.06.13
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -36,20 +36,21 @@
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 250,
+	["ActSpeed"] = 100,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Raises resistance against will-based statuses of its owner by 10%",
+	["Description"] = "Heals 3000 HP",
+	["Healing"] = 400,
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 10000,
-	["ITM_EQP_SRes_Will"] = 10,
-	["ITM_SellPrice"] = 7500,
+	["ITM_BuyPrice"] = 5000,
+	["ITM_SellPrice"] = 1750,
 	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/Garnet.png",
-	["ItemType"] = "EquipItem",
-	["Name"] = "Garnet",
-	["Target"] = "1F",
+	["Icon"] = "GFX/Inventory/FirstAidKit.png",
+	["ItemType"] = "Consumable",
+	["Name"] = "Super First Aid Kit",
+	["SpellAni_Reference"] = "SingleHeal",
+	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true}
 
