@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.06.09
+version: 16.06.13
 ]]
 
 
--- Version 16.06.09
+-- Version 16.06.13
 
 
 
@@ -45,6 +45,7 @@ Data = {
 	Desc = "It's a bull and his name is Diablo.\nA killer to whoever hurt his cows.\n",
 	ImageFile = "Boss/Diablo.png",
 	AI = "Default",
+	Boss = true,
 	EleRes_Fire = 2,
 	EleRes_Wind = 2,
 	EleRes_Water = 2,
