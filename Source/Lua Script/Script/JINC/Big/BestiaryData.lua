@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.13
+version: 16.06.15
 ]]
 return {
 	"ASTRILOPUPELITE",
@@ -67,6 +67,7 @@ return {
 	"CYBORG GUNNER",
 	"CYBORG JI",
 	"CYBORG MEDIC",
+	"DEATHMYR",
 	"FLIRMOUSE",
 	"FLYSKY",
 	"GOBLIN",
