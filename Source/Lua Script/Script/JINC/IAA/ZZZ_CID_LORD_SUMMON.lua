@@ -1,6 +1,6 @@
 --[[
   ZZZ_CID_LORD_SUMMON.lua
-  Version: 16.06.13
+  Version: 16.06.15
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================

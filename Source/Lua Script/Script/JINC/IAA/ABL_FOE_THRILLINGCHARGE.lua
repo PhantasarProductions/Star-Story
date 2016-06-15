@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_THRILLINGCHARGE.lua
-  Version: 16.06.13
+  Version: 16.06.15
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================

@@ -1,7 +1,7 @@
 --[[
-  ABL_FOXY_STUNSTAB.lua
+  ABL_FOE_CAPTUREWEB.lua
   Version: 16.06.15
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -35,25 +35,25 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 60,
-	["ABL_APCut"] = 2500,
-	["ABL_Instant"] = 4000,
+	["ABL_AP"] = 0,
 	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 80,
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 80,
+	["ActSpeed"] = 125,
 	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 50,
+	["AttackPower"] = 100,
 	["AttackStat"] = "Strength",
+	["Buff_Agility"] = -60,
 	["CauseParalysis"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Weak attack, but may paralyze the enemy",
+	["Description"] = "Attack + Paralyses all foes",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Inventory/Dagger.png",
+	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Stun Stab",
-	["Target"] = "1F",
-	["UseCombat"] = true}
+	["Name"] = "Capture Web",
+	["Target"] = "AF",
+	["UseCombat"] = true,
+	["UseField"] = true,
+	["untauntable"] = true}
 
 return ret
 
