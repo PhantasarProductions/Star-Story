@@ -1,8 +1,8 @@
 --[[
 **********************************************
   
-  ABL_WENDICKA_JOLT.lua
-  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
+  ARM_HEALINGSHOWER.lua
+  (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -35,25 +35,38 @@
 version: 16.06.16
 ]]
 ret = {
-	["ABL_AP"] = 40,
-	["ABL_APCut"] = 5000,
-	["ABL_DblPower"] = 100000,
-	["ABL_DblSpeed"] = 1000,
-	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 100,
+	["APRecover"] = 10,
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 300,
-	["AttackElement"] = "Lightning",
-	["AttackPower"] = 50,
-	["AttackStat"] = "Will",
-	["DefenseStat"] = "Resistance",
-	["Description"] = "Shock the enemies",
+	["ARM_Hit%"] = 50,
+	["ARM_MaxAmmo"] = 2,
+	["ARM_PRICE_Hit%"] = 5,
+	["ARM_PRICE_MaxAmmo"] = 2500,
+	["ARM_PRICE_Weight"] = 2500,
+	["ARM_PRICE_XPower"] = 2500,
+	["ARM_XPower"] = 0,
+	["ActSpeed"] = 1,
+	["AttackElement"] = "Healing",
+	["AttackPower"] = 3000,
+	["AttackStat"] = "Strength",
+	["CureAmnesia"] = true,
+	["CureBagLock"] = true,
+	["CureConfusion"] = true,
+	["CureDamned"] = true,
+	["CureDisease"] = true,
+	["CureHandicapped"] = true,
+	["CureParalysis"] = true,
+	["CurePoison"] = true,
+	["CureSleep"] = true,
+	["CureTerrified"] = true,
+	["CureZombie"] = true,
+	["DefenseStat"] = "Defense",
+	["Description"] = "Powerful healing on the entire party and heal all status changes",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Lightning.png",
+	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Jolt",
-	["SpellAni_Reference"] = "Jolt",
-	["Target"] = "AF",
+	["Name"] = "Healing Shower",
+	["SpellAni_Reference"] = "AllHeal",
+	["Target"] = "AA",
 	["UseCombat"] = true}
 
 return ret

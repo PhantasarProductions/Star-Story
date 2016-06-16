@@ -1,8 +1,8 @@
 --[[
 **********************************************
   
-  ABL_WENDICKA_JOLT.lua
-  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
+  ZZZ_SUMMON_DEATH_MYR.lua
+  (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -35,26 +35,21 @@
 version: 16.06.16
 ]]
 ret = {
-	["ABL_AP"] = 40,
-	["ABL_APCut"] = 5000,
-	["ABL_DblPower"] = 100000,
-	["ABL_DblSpeed"] = 1000,
-	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 100,
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 300,
-	["AttackElement"] = "Lightning",
-	["AttackPower"] = 50,
-	["AttackStat"] = "Will",
-	["DefenseStat"] = "Resistance",
-	["Description"] = "Shock the enemies",
+	["ActSpeed"] = 250,
+	["AttackElement"] = "Non-Elemental",
+	["AttackStat"] = "Strength",
+	["DefenseStat"] = "Defense",
+	["Description"] = "Summons a Myr",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Lightning.png",
+	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Jolt",
-	["SpellAni_Reference"] = "Jolt",
-	["Target"] = "AF",
-	["UseCombat"] = true}
+	["Name"] = "Aid me my subjects",
+	["ScriptEffect_Parameters"] = "Reg/DeathMyr",
+	["ScriptEffect_Reference"] = "Summon",
+	["Target"] = "OS",
+	["UseCombat"] = true,
+	["UseField"] = true}
 
 return ret
 

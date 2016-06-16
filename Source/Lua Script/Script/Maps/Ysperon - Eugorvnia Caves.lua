@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.12
+version: 16.06.16
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -51,6 +51,33 @@ function ToCity()
   Maps.GotoLayer("#002")
   SpawnPlayer("FromSecret")
 end
+
+function Boss()
+	CleanCombat()
+	local lv=math.ceil( MapLevel() * ({.75,1,1.25})[skill] )
+	Var.D("$COMBAT.BACKGROUND","Ember Caves.png")
+	Var.D("$COMBAT.BEGIN","Default")
+	Var.D("$COMBAT.FOE2","Boss/DeathMyrQueen")
+	Var.D("%COMBAT.LVFOE2",lv)
+	Var.D("$COMBAT.ALTCOORDSFOE2","300,400")
+	if skill==3 then
+		Var.D("$COMBAT.FOE1","Reg/Spider")
+   	Var.D("$COMBAT.FOE3","Reg/Spider")
+   	Var.D("%COMBAT.LVFOE1",lv/2)
+   	Var.D("%COMBAT.LVFOE3",lv/2)
+	end
+	RandomBossTune()
+	StartCombat()
+end
+
+
+function Complete()
+  if not Done("&DONE.SECRETDUNGEON.EUGORVNIA.CAVES") then
+    Award('SECRETDUNGEON_EUGCAVES')
+    MapEXP()
+    Inc("%AURINARATE",50)
+  end
+end
    
 
 function GALE_OnLoad()
@@ -58,4 +85,5 @@ function GALE_OnLoad()
   ZA_Enter("Welcome",Welcome)
   ZA_Enter("ActivateTransporter",StartTrans)
   ZA_Enter("ToCity",ToCity)
+  ZA_Enter("Complete",Complete)
 end  

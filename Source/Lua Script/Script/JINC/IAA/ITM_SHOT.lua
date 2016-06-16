@@ -1,6 +1,6 @@
 --[[
   ITM_SHOT.lua
-  Version: 16.06.15
+  Version: 16.06.16
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================

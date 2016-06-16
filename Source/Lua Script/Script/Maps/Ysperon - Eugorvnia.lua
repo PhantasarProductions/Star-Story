@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.11
+version: 16.06.16
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -187,6 +187,7 @@ LoadMap("Ysperon - Eugorvnia Caves","#000")
 Maps.GotoLayer("#000")
 SpawnPlayer("Start")
 end
+
 
 
 function GALE_OnLoad()

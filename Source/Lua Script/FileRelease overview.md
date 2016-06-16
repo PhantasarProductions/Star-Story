@@ -131,6 +131,7 @@
 1. Script/JINC/IAA/ARM_DART.lua
 1. Script/JINC/IAA/ARM_DOPING_SHOT.lua
 1. Script/JINC/IAA/ARM_FLAMETHROWER.lua
+1. Script/JINC/IAA/ARM_HEALINGSHOWER.lua
 1. Script/JINC/IAA/ARM_HEALINGSPRAY.lua
 1. Script/JINC/IAA/ARM_ICEBULLET.lua
 1. Script/JINC/IAA/ARM_MINICANNON.lua
@@ -244,6 +245,7 @@
 1. Script/JINC/IAA/ZZZ_LK_SUM_HUMAN.lua
 1. Script/JINC/IAA/ZZZ_LK_SUM_PHELYNX.lua
 1. Script/JINC/IAA/ZZZ_MYR_SUMMON.lua
+1. Script/JINC/IAA/ZZZ_SUMMON_DEATH_MYR.lua
 1. Script/JINC/IAA/ZZZ_TOTALDESTRUCTION.lua
 1. Script/JINC/InitChar/Briggs.lua
 1. Script/JINC/InitChar/Crystal.lua
@@ -387,6 +389,7 @@
 1. Script/JINC/Foes/Boss/Cyborg Lord.lua
 1. Script/JINC/Foes/Boss/DardBoorth.lua
 1. Script/JINC/Foes/Boss/DardMoeder.lua
+1. Script/JINC/Foes/Boss/DeathMyrQueen.lua
 1. Script/JINC/Foes/Boss/Diablo.lua
 1. Script/JINC/Foes/Boss/ExHuRU.lua
 1. Script/JINC/Foes/Boss/GiantSnake.lua
@@ -511,4 +514,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Thu 16 June 2016; 17:13:54 CET
+### Last updated: Thu 16 June 2016; 20:56:08 CET
