@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.12
+version: 16.06.16
 ]]
 
 -- @USEDIR Script/Use/Maps/Hawk/
@@ -41,7 +41,8 @@ version: 16.02.12
 
 ReggieKick = {
                 ["ANHYSBYS.REJOIN"] = true, 
-                ["WENDICKAGONE"] = true
+                ["WENDICKAGONE"] = true,
+                ["CRYSTALFATHER"] = true
              } -- Should contain all events that leads to Foxy kicking Reggie.
 
 HeroLeadList = {"Wendicka","Crystal","Yirl","Foxy","Xenobi","ExHuRU","Rolf"}

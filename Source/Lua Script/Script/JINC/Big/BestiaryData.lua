@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.15
+version: 16.06.16
 ]]
 return {
 	"ASTRILOPUPELITE",
@@ -88,6 +88,7 @@ return {
 	"RAT",
 	"SALAMANDER",
 	"SHROOM",
+	"SPIDER",
 	"SYSS",
 	"THIEF",
 	"WOLF",
