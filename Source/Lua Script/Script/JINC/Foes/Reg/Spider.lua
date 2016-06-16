@@ -87,10 +87,13 @@ local temp
 
 
 Data.ActMinLevel["Sys.Attack"] = 0		for ak=1,100 do table.insert(Data.Acts,"Sys.Attack") end
-Data.ActMinLevel["Abl.ABL_EXHURU_KAKSI"] = 60		for ak=1,5 do table.insert(Data.Acts,"Abl.ABL_EXHURU_KAKSI") end
-Data.ActMinLevel["Abl.ABL_FOE_CAPTUREWEB"] = 85		for ak=1,25 do table.insert(Data.Acts,"Abl.ABL_FOE_CAPTUREWEB") end
+Data.ActMinLevel["Abl.ABL_EXHURU_KAKSI"] = 60		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_EXHURU_KAKSI") end
+Data.ActMinLevel["Abl.ABL_EXHURU_YKSI"] = 93		for ak=1,15 do table.insert(Data.Acts,"Abl.ABL_EXHURU_YKSI") end
+Data.ActMinLevel["Abl.ABL_FOE_CAPTUREWEB"] = 85		for ak=1,5 do table.insert(Data.Acts,"Abl.ABL_FOE_CAPTUREWEB") end
 Data.ActMinLevel["Abl.ABL_FOE_DEATHSTING"] = 90		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_FOE_DEATHSTING") end
+Data.ActMinLevel["Abl.ABL_FOE_EXPDRAIN"] = 70		for ak=1,1 do table.insert(Data.Acts,"Abl.ABL_FOE_EXPDRAIN") end
 Data.ActMinLevel["Abl.ABL_FOE_IDDQD"] = 120		for ak=1,1 do table.insert(Data.Acts,"Abl.ABL_FOE_IDDQD") end
+Data.ActMinLevel["Abl.ABL_FOE_SCRATCH"] = 4		for ak=1,5 do table.insert(Data.Acts,"Abl.ABL_FOE_SCRATCH") end
 Data.ActMinLevel["Abl.ABL_FOE_VENOMSTING"] = 70		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_FOE_VENOMSTING") end
 temp = { ITM='ITM_ANTIDOTE', LVL=25, VLT=false }
 for ak=1,9950 do table.insert(Data.ItemDrop ,temp) end
