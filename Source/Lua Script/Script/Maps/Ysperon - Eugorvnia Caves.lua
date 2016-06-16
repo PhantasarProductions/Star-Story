@@ -75,7 +75,7 @@ function Complete()
   if not Done("&DONE.SECRETDUNGEON.EUGORVNIA.CAVES") then
     Award('SECRETDUNGEON_EUGCAVES')
     MapEXP()
-    Inc("%AURINARATE",50)
+    inc("%AURINARATE",50)
   end
 end
    
