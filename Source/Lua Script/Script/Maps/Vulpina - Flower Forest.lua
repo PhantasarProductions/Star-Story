@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  BestiaryData.lua
+  Vulpina - Flower Forest.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -34,64 +34,6 @@
  
 version: 16.06.17
 ]]
-return {
-	"ASTRILOPUPELITE",
-	"BIGGRASSTIGER",
-	"BIGLION",
-	"BRAINDROID",
-	"CULTIST LEADER",
-	"CYBORG LORD",
-	"DARDBOORTH",
-	"DARDMOEDER",
-	"DEATHMYRQUEEN",
-	"DIABLO",
-	"EXHURU",
-	"FLIRMOUSE_KING",
-	"FLIRMOUSE_SUBJECT",
-	"GIANTSNAKE",
-	"LICHKING",
-	"MID-BOSS",
-	"QUEENMYR",
-	"SUPAQUAL",
-	"SUPERSYSS",
-	"THIEF CHIEF",
-	"ASTRILOPUP",
-	"ASTRILOPUPGUARD",
-	"BATTLEDROID",
-	"BLACKLIZARD",
-	"BLADEH",
-	"CID",
-	"COW",
-	"CULTIST",
-	"CYBERASTRILOPUP",
-	"CYBORG CAPTAIN",
-	"CYBORG GUNNER",
-	"CYBORG JI",
-	"CYBORG MEDIC",
-	"DEATHMYR",
-	"FLIRMOUSE",
-	"FLYSKY",
-	"GOBLIN",
-	"GRASSTIGER",
-	"GUMMI",
-	"HAWK",
-	"IMP",
-	"INSETTO",
-	"LION",
-	"MYR",
-	"PHANUNDEADKID_BEFINDO",
-	"PHANUNDEADKID_ELF",
-	"PHANUNDEADKID_FAIRY",
-	"PHANUNDEADKID_HUMAN",
-	"PHANUNDEADKID_PHELYNX",
-	"PYROGUIN",
-	"QUAL",
-	"RAT",
-	"SALAMANDER",
-	"SHROOM",
-	"SPIDER",
-	"SYSS",
-	"THIEF",
-	"WOLF",
-	"FIRESPIDER",
-}
+function GALE_OnLoad()
+  Music("Dungeon/Weirdomusic_-_34_-_Fiber_visits_the_Q_Continuum.ogg")
+end
