@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.16
+version: 16.06.18
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
@@ -40,7 +40,7 @@ ret = {
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Summons a Myr",
+	["Description"] = "Summons a Death Myr",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",

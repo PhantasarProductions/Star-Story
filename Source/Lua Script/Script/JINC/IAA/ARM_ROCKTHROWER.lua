@@ -1,7 +1,7 @@
 --[[
-  ABL_YIRL_CONFUSION.lua
+  ARM_ROCKTHROWER.lua
   Version: 16.06.18
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -35,25 +35,29 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 25,
-	["ABL_APCut"] = 8000,
-	["ABL_DblSpeed"] = 7500,
-	["ABL_Pose"] = "Cast",
 	["APRecoverType"] = "Absolute",
+	["ARM_Hit%"] = 75,
+	["ARM_MaxAmmo"] = 6,
+	["ARM_PRICE_Hit%"] = 250,
+	["ARM_PRICE_MaxAmmo"] = 500,
+	["ARM_PRICE_Weight"] = 100,
+	["ARM_PRICE_XPower"] = 1000,
+	["ARM_XPower"] = 0,
 	["ActSpeed"] = 250,
-	["AttackElement"] = "Non-Elemental",
+	["AttackElement"] = "Earth",
+	["AttackPower"] = 250,
 	["AttackStat"] = "Strength",
-	["CauseConfusion"] = true,
+	["Buff_Will"] = -10,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Confuse the enemy",
+	["Description"] = "Launches a rock towards the enemy",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Elements/Dark.png",
+	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Confusion",
-	["SpellAni_Reference"] = "SingleHeal",
+	["Name"] = "Rock Thrower",
+	["SpellAni_Reference"] = "Rock",
 	["Target"] = "1F",
 	["UseCombat"] = true,
-	["UseField"] = true}
+	["untauntable"] = true}
 
 return ret
 

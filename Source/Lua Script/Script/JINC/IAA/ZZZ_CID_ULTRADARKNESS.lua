@@ -1,6 +1,6 @@
 --[[
   ZZZ_CID_ULTRADARKNESS.lua
-  Version: 16.06.16
+  Version: 16.06.18
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
