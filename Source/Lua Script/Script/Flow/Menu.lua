@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 16.02.10
+  Version: 16.06.18
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -731,7 +731,7 @@ function DrawScreen()
 	local tpos
 	Feature.VAULT = Feature.VAULT or "Items"
 	Feature[returnto] = Feature[returnto] or "Status"
-	if not Done("&"..returnto.."."..Feature[returnto]) then 
+	if not Done(upper("&MENUTUT."..returnto.."."..Feature[returnto])) then 
 		Tutorial(tuts[returnto.."."..Feature[returnto]])
 		CSay("Showing menu tutorial: "..returnto.."."..Feature[returnto]) 
 	end

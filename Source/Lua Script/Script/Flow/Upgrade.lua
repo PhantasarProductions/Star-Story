@@ -1,6 +1,6 @@
 --[[
   Upgrade.lua
-  Version: 16.05.18
+  Version: 16.06.18
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -95,10 +95,11 @@ SpecificDraw = {
               local y,r,g,b
               local mx,my = MouseCoords()
               local allow,statname,statval
+              -- local pchar = "Crystal"
               local pricecap = 100000 * (4-skill)-- I want to prevent Lua going haywire because of too high values.
               SetFont('StatusStat')
               for i=1,abilities do
-                  y = (i*fonts["StatusStat"][2])+200
+                  y = (i*fonts["StatusStat"][2])+160
                   ARMName = RPGStat.ListItem(pchar,"ARMS",i)
                   ARM = ItemGet("ARM_"..ARMName)
                   DarkText(Var.S(ARM.Name),70,y,0,0,({[true]=function() return 0,180,255 end, [false]=function() return 0,80,100 end})[ARMName==cARM]())
@@ -107,7 +108,12 @@ SpecificDraw = {
               if cARM then
                  y = 200
                  ARM = ItemGet("ARM_"..cARM)
+            		 if RPGChar.Points(pchar,"ARM.AMMO."..cARM,1).Maximum == 0 then RPGChar.Points(pchar,"ARM.AMMO."..cARM,1).Maximum = ARM["ARM_MaxAmmo"] end
+             		 if RPGChar.StatExists(pchar,"ARM.HIT."..cARM)==0 then RPGChar.DefStat(pchar,"ARM.HIT."..cARM,ARM["ARM_Hit%"]) end
+                 if RPGChar.StatExists(pchar,"ARM.WEIGHT."..cARM)==0 then RPGChar.DefStat(pchar,"ARM.WEIGHT."..cARM,ARM["ARM_Weight"]) end
+                 if RPGChar.StatExists(pchar,"ARM.XPOWER."..cARM)==0 then RPGChar.DefStat(pchar,"ARM.XPOWER."..cARM,ARM["ARM_XPower"]) end
                  for id,stat in spairs(ARMStat) do
+                      -- Make sure all data is properly set up. Fixes #456
                       DarkText(stat,300,y,0,0,0,180,255) ;
                       (({ AMMO = function() DarkText(RPGChar.Points(pchar,"ARM.AMMO."..cARM).Maximum,500,y,1,0,180,255,0) end,
                           WEIGHT = function() DarkText("-"..RPGChar.Stat(pchar,"ARM.WEIGHT."..cARM),500,y,1,0,180,255,0) end,
@@ -115,7 +121,10 @@ SpecificDraw = {
                            })[id] or function() DarkText(RPGChar.Stat(pchar,"ARM."..id.."."..cARM),500,y,1,0,180,255,0) end)()
                       allow = true
                       statname = "ARM."..cARM..".PRICE."..id
-                      if RPGChar.StatExists(pchar,statname)==0 then RPGChar.DefStat(pchar,statname,ARM['ARM_PRICE_'..ARMBase[id]]) end -- This will put in the price inside Crystal's record, but only if that record is still empty.
+                      if RPGChar.StatExists(pchar,statname)==0 then 
+                         RPGChar.DefStat(pchar,statname,ARM['ARM_PRICE_'..ARMBase[id]])
+                         CSay("Pricing "..cARM.." part "..id.." to ".. sval(ARMBase[ARM['ARM_PRICE_'..id]])) 
+                         end -- This will put in the price inside Crystal's record, but only if that record is still empty.                      
                       statval = RPGChar.Stat(pchar,statname)
                       allow = allow and statval>0
                       allow = allow and statval<=pricecap

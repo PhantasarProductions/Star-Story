@@ -32,8 +32,12 @@
   
  **********************************************
  
-version: 16.06.17
+version: 16.06.18
 ]]
+
+-- @USE /Script/Use/Maps/Gen/Next.lua
+
 function GALE_OnLoad()
+  MS.Run("FIELD","SetScrollBoundaries","1;-2000;2;6400")
   Music("Dungeon/Weirdomusic_-_34_-_Fiber_visits_the_Q_Continuum.ogg")
 end
