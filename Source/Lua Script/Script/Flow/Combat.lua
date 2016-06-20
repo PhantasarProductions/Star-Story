@@ -1,6 +1,6 @@
 --[[
   Combat.lua
-  Version: 16.05.26
+  Version: 16.06.20
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -125,8 +125,21 @@ function PerformAction(ft,p,fv)
 -- @IF DEBUG_COMBAT_ACT
 for l in each(mysplit(serialize("FIGHTER_IN_ACTION",Fighters[ft][p]),"\n")) do MINI(l); CSay(l) end 
 -- @FI
-(GameSpecificPerformAction or function() end)(ft,p,fv);
-(ActionFuncs[Fighters[ft][p].Act.Act] or ActionFuncs.Error)(ft,p,Fighters[ft][p].Act)
+local allowmove,mv
+allowmove=true
+for st,vals in StatusBlockAction do
+    mv = ({ ['string'] = { vals }, ['table']=vals})[type(vals)]
+    for blm in each(mv) do
+        allowmove = allowmove and blm~=Fighters[ft][p].Act.Act 
+        end
+    end
+if allowmove then    
+  (GameSpecificPerformAction or function() end)(ft,p,fv);
+  (ActionFuncs[Fighters[ft][p].Act.Act] or ActionFuncs.Error)(ft,p,Fighters[ft][p].Act)
+else
+  MINI("Action cancelled!",255,180,0)
+  MINI(RPGChar.GetName(Fighters[ft][p].Tag).."'s current condition does not allow that action",255,0,0)  
+  end
 -- Reset gauge
 if Fighters[ft][p].Gauge>9999 then Fighters[ft][p].Gauge = 0 end
 (GameSpecificAfterPerformAction or function() CSay("No After action") end)(ft,p,fv);
