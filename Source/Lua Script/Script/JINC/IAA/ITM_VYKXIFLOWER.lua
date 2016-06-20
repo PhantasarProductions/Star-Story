@@ -1,5 +1,5 @@
 --[[
-  ITM_EQP_SUPER_KYANITE.lua
+  ITM_VYKXIFLOWER.lua
   Version: 16.06.20
   Copyright (C) 2016 Jeroen Petrus Broks
   
@@ -35,21 +35,25 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
+	["APRecover"] = 5,
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 250,
+	["ActSpeed"] = 100,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
+	["CureBagLock"] = true,
+	["CureHandicapped"] = true,
+	["CureTerrified"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Increases resistance to Frost",
+	["Description"] = "Heals 2500 HP and cures all blocking effects",
+	["Healing"] = 2500,
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 100,
-	["ITM_EQP_ERes_UpFrost"] = true,
-	["ITM_SellPrice"] = 75,
+	["ITM_BuyPrice"] = 10000,
+	["ITM_SellPrice"] = 5000,
 	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/EQ_JW_Kyanite.png",
-	["ItemType"] = "EquipItem",
-	["Name"] = "Super Kyanite",
-	["Target"] = "1F",
+	["Icon"] = "GFX/Inventory/Red Flower.png",
+	["ItemType"] = "Consumable",
+	["Name"] = "Vykxi Flower",
+	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true}
 
