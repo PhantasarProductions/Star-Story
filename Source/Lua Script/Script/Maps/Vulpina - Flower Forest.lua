@@ -32,12 +32,19 @@
   
  **********************************************
  
-version: 16.06.18
+version: 16.06.20
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
 
+function Boundaries()
+   MS.Run("FIELD","SetScrollBoundaries","1;-2000;2;6400")
+   if Maps.LayerCodeName=="#001" then MS.Run("FIELD","SetScrollBoundaries","1;-2000;368;6400") end
+end
+
 function GALE_OnLoad()
-  MS.Run("FIELD","SetScrollBoundaries","1;-2000;2;6400")
+  Boundaries()
   Music("Dungeon/Weirdomusic_-_34_-_Fiber_visits_the_Q_Continuum.ogg")
+  ZA_Enter("BCheck",Boundaries)
+  ZA_Enter("BCheck2",Boundaries)
 end
