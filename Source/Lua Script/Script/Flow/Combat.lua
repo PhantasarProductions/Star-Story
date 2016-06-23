@@ -130,7 +130,7 @@ allowmove=true
 for st,vals in pairs(StatusBlockAction) do
     mv = ({ ['string'] = { vals }, ['table']=vals})[type(vals)]
     for blm in each(mv) do
-        allowmove = allowmove and blm~=Fighters[ft][p].Act.Act 
+        allowmove = allowmove and (RPGChar.ListHas("STATUSCHANGE",st)==0 or blm~=Fighters[ft][p].Act.Act) 
         end
     end
 if allowmove then    
