@@ -244,6 +244,7 @@
 1. Script/JINC/IAA/ZZZ_CID_DARKSOULBREAKER.lua
 1. Script/JINC/IAA/ZZZ_CID_LORD_SUMMON.lua
 1. Script/JINC/IAA/ZZZ_CID_ULTRADARKNESS.lua
+1. Script/JINC/IAA/ZZZ_FOE_LEOPARD_UPGRADE.lua
 1. Script/JINC/IAA/ZZZ_LK_SUM_BEFINDO.lua
 1. Script/JINC/IAA/ZZZ_LK_SUM_ELF.lua
 1. Script/JINC/IAA/ZZZ_LK_SUM_FAIRY.lua
@@ -416,6 +417,7 @@
 1. Script/JINC/Foes/Reg/Hawk.lua
 1. Script/JINC/Foes/Reg/Imp.lua
 1. Script/JINC/Foes/Reg/Insetto.lua
+1. Script/JINC/Foes/Reg/Leopard.lua
 1. Script/JINC/Foes/Reg/Lion.lua
 1. Script/JINC/Foes/Reg/Myr.lua
 1. Script/JINC/Foes/Reg/PhanUndeadKid_Befindo.lua
@@ -426,6 +428,7 @@
 1. Script/JINC/Foes/Reg/Pyroguin.lua
 1. Script/JINC/Foes/Reg/Salamander.lua
 1. Script/JINC/Foes/Reg/Shroom.lua
+1. Script/JINC/Foes/Reg/SnowLeopard.lua
 1. Script/JINC/Foes/Reg/Spider.lua
 1. Script/JINC/Foes/Reg/Thief.lua
 1. Script/JINC/Foes/Reg/UndedKid_Elf.lua
@@ -468,6 +471,7 @@
 1. Script/Use/Anyway/ReLevel.lua
 1. Script/Use/Combat/AblSpecialEffect/HPAPto1.lua
 1. Script/Use/Combat/AblSpecialEffect/Summon.lua
+1. Script/Use/Combat/AblSpecialEffect/UpgradeToSnowLeopard.lua
 1. Script/Use/Combat/AltEnemyBuild/ExHuRU.lua
 1. Script/Use/Combat/AltEnemyBuild/SuperFoe_FireSpider.lua
 1. Script/Use/Combat/Events/ReleaseTheGoddess.lua
@@ -521,4 +525,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Thu 23 June 2016; 08:46:47 CET
+### Last updated: Thu 23 June 2016; 16:44:19 CET

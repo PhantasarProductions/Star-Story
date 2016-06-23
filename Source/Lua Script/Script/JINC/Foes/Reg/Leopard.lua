@@ -1,7 +1,7 @@
 --[[
-  Lion.lua
+  Leopard.lua
   Version: 16.06.23
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -41,39 +41,39 @@
 
 
 Data = {
-	Name = "Lion",
-	Desc = "Set out on several planets like Physillium. \nToo bad they can sometimes act a \nbit aggressive to visitors making a \nfight inevitable.",
-	ImageFile = "Reg/Lion.png",
+	Name = "Leopard",
+	Desc = "A cat-like animal who can be quite a threat.\nIt has a secret trick ready for you.",
+	ImageFile = "Reg/Leopard.png",
 	AI = "Default",
-	EleRes_Fire = 4,
-	EleRes_Wind = 3,
+	EleRes_Fire = 3,
+	EleRes_Wind = 5,
 	EleRes_Water = 3,
-	EleRes_Earth = 3,
-	EleRes_Frost = 2,
-	EleRes_Lightning = 3,
+	EleRes_Earth = 1,
+	EleRes_Frost = 3,
+	EleRes_Lightning = 4,
 	EleRes_Light = 3,
 	EleRes_Dark = 3,
 	EleRes_Healing = 6,
 	EleRes_DarkHealing = 0,
 	Stat = {
-		["Strength"] = {15,450},
-		["Defense"] = {10,180},
-		["Will"] = {10,290},
-		["Resistance"] = {10,60},
-		["Agility"] = {7,75},
-		["Accuracy"] = {12,40},
-		["Evasion"] = {0,10},
-		["HP"] = {50,4000},
+		["Strength"] = {44,346},
+		["Defense"] = {10,99},
+		["Will"] = {33,227},
+		["Resistance"] = {28,148},
+		["Agility"] = {23,138},
+		["Accuracy"] = {171,900},
+		["Evasion"] = {30,79},
+		["HP"] = {218,1990},
 		["AP"] = {0,0},
-		["LevelRange"] = {0,95},
+		["LevelRange"] = {10,100},
 },
 	StatusResistance = {
-		["Poison"] = 50   --[[ #1 ]],
+		["Poison"] = 25   --[[ #1 ]],
 		["Paralysis"] = 30   --[[ #2 ]],
 		["Disease"] = 40   --[[ #3 ]],
-		["Will"] = 50   --[[ #4 ]],
-		["Block"] = 50   --[[ #5 ]],
-		["Death"] = 100   --[[ #6 ]],
+		["Will"] = 100   --[[ #4 ]],
+		["Block"] = 100   --[[ #5 ]],
+		["Death"] = 30   --[[ #6 ]],
 		["Damned"] = 100   --[[ #7 ]],
 	},
 	Acts = {}, -- Data itself defined below
@@ -86,17 +86,27 @@ Data = {
 local temp
 
 
-Data.ActMinLevel["Sys.Attack"] = 0		for ak=1,1000 do table.insert(Data.Acts,"Sys.Attack") end
-Data.ActMinLevel["Abl.ABL_EXHURU_KAKSI"] = 40		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_EXHURU_KAKSI") end
-Data.ActMinLevel["Abl.ABL_EXHURU_KOLME"] = 60		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_EXHURU_KOLME") end
-Data.ActMinLevel["Abl.ABL_EXHURU_KUUSI"] = 80		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_EXHURU_KUUSI") end
-Data.ActMinLevel["Abl.ABL_EXHURU_NELJA"] = 100		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_EXHURU_NELJA") end
-Data.ActMinLevel["Abl.ABL_EXHURU_YKSI"] = 35		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_EXHURU_YKSI") end
-Data.ActMinLevel["Abl.ABL_FOE_FEAR"] = 85		for ak=1,5 do table.insert(Data.Acts,"Abl.ABL_FOE_FEAR") end
-Data.ActMinLevel["Abl.ABL_FOE_SCRATCH"] = 30		for ak=1,500 do table.insert(Data.Acts,"Abl.ABL_FOE_SCRATCH") end
-temp = { ITM='ITM_HEALINGCAPSULE', LVL=1, VLT=false }
+Data.ActMinLevel["Abl.ABL_FOE_LICKYOURWOUNDS"] = 10		for ak=1,70 do table.insert(Data.Acts,"Abl.ABL_FOE_LICKYOURWOUNDS") end
+Data.ActMinLevel["Abl.ABL_FOE_SCRATCH"] = 30		for ak=1,20 do table.insert(Data.Acts,"Abl.ABL_FOE_SCRATCH") end
+temp = { ITM='ITM_ASTRILOPUPHONEY', LVL=70, VLT=false }
+for ak=1,900 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,10 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_EPO', LVL=65, VLT=false }
+for ak=1,800 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,20 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_EQP_EMERALD', LVL=85, VLT=false }
 for ak=1,1 do table.insert(Data.ItemDrop ,temp) end
-for ak=1,1 do table.insert(Data.ItemSteal,temp) end
+for ak=1,15 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_FISH', LVL=90, VLT=false }
+for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,25 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_SUPERICEBOMB', LVL=75, VLT=false }
+for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,40 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_VYKXIFLOWER', LVL=60, VLT=false }
+for ak=1,1000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,50 do table.insert(Data.ItemSteal,temp) end
+Data.ActMinLevel["Abl.ZZZ_FOE_LEOPARD_UPGRADE"] = 80		for ak=1,10 do table.insert(Data.Acts,"Abl.ZZZ_FOE_LEOPARD_UPGRADE") end
 
 
 return Data

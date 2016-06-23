@@ -1,6 +1,6 @@
 --[[
   Myr.lua
-  Version: 16.06.03
+  Version: 16.06.23
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.06.03
+-- Version 16.06.23
 
 
 
