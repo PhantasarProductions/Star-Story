@@ -126,11 +126,12 @@ function PerformAction(ft,p,fv)
 for l in each(mysplit(serialize("FIGHTER_IN_ACTION",Fighters[ft][p]),"\n")) do MINI(l); CSay(l) end 
 -- @FI
 local allowmove,mv
+local ch = FighterTag(ft,p)
 allowmove=true
 for st,vals in pairs(StatusBlockAction) do
     mv = ({ ['string'] = { vals }, ['table']=vals})[type(vals)]
     for blm in each(mv) do
-        allowmove = allowmove and (RPGChar.ListHas("STATUSCHANGE",st)==0 or blm~=Fighters[ft][p].Act.Act) 
+        allowmove = allowmove and (RPGChar.ListHas(ch,"STATUSCHANGE",st)==0 or blm~=Fighters[ft][p].Act.Act) 
         end
     end
 if allowmove then    
