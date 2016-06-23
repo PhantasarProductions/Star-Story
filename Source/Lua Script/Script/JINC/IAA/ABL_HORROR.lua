@@ -1,7 +1,7 @@
 --[[
-  ITM_BIOHAZARD.lua
+  ABL_HORROR.lua
   Version: 16.06.23
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -35,23 +35,22 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
+	["ABL_AP"] = 0,
+	["ABL_Pose"] = "Cast",
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 80,
 	["AttackStat"] = "Strength",
-	["CauseDisease"] = true,
-	["CausePoison"] = true,
+	["CauseTerrified"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Poisons and diseases one target",
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 100,
-	["ITM_SellPrice"] = 75,
-	["Icon"] = "GFX/Inventory/Biohazard Box.png",
+	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Biohazard waste",
+	["Name"] = "Horror",
+	["SpellAni_Reference"] = "Single_Heal",
 	["Target"] = "1F",
-	["UseCombat"] = true}
+	["UseCombat"] = true,
+	["UseField"] = true}
 
 return ret
 

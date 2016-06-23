@@ -1,6 +1,6 @@
 --[[
   Fear.lua
-  Version: 16.06.20
+  Version: 16.06.23
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -41,11 +41,11 @@ StatusBlockAction = {}
 -- @FI
 
 
-StatusResistance.Fear  = 'Fear'
-StatusBlockAction.Fear = {'ATK','SHT'}
+StatusResistance.Terrified  = 'Will'
+StatusBlockAction.Terrified = {'ATK','SHT'}
 
 
-function StatusDrawFighter.Fear(g,i)
+function StatusDrawFighter.Terrified(g,i)
 local ch = Fighters[g][i].Tag
 local w,h,er = ({
 
