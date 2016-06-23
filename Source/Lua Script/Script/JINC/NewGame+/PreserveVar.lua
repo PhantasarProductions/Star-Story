@@ -129,7 +129,8 @@ ret = {
 		"&ANNOUNCEDSECRET.",
 		"%VAULT.",
 		"&VAULT.",
-		"&MENUTUT.FIELD"}}
+		"&MENUTUT.FIELD",
+		"&MENUTUT"}}
 
 
 return ret

@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.11
+version: 16.06.23
 ]]
 -- @USE /Script/Use/Maps/Gen/SchuifNext.lua
 
@@ -139,6 +139,7 @@ function McLeen()
   KickReggie('East','Foxy','Reggie')
   MapText("MOL2")
   Award("SCENARIO_CRYSTALFATHER")
+  Award("SCENARIO_WENDICKAPREGNANT")
   Var.D("$HAWK","CRYSTALFATHER")
   LoadMap("HAWK","Bridge")
   SpawnPlayer("Scotty")

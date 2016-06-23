@@ -1,6 +1,6 @@
 --[[
   CLoadFoe.lua
-  Version: 16.05.21
+  Version: 16.06.23
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -48,6 +48,7 @@ if not file then Sys.Error(Foe.File.." not found in any of the allowed directori
 FoeData = JINC(file)
 if not FoeData then Sys.Error("Either no data returned or a faulty foe load script","File,"..file) end
 RPGChar.CreateChar(Foe.Tag)
+RPGStat.CreateList(Foe.Tag,"STATUSCHANGE")
 -- Compile the data to get the right stats of the right level
 local ckey,cvalue
 local lvrange = FoeData.Stat.LevelRange
