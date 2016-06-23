@@ -1,6 +1,6 @@
 --[[
   Combat.lua
-  Version: 16.06.20
+  Version: 16.06.23
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -127,7 +127,7 @@ for l in each(mysplit(serialize("FIGHTER_IN_ACTION",Fighters[ft][p]),"\n")) do M
 -- @FI
 local allowmove,mv
 allowmove=true
-for st,vals in StatusBlockAction do
+for st,vals in pairs(StatusBlockAction) do
     mv = ({ ['string'] = { vals }, ['table']=vals})[type(vals)]
     for blm in each(mv) do
         allowmove = allowmove and blm~=Fighters[ft][p].Act.Act 
