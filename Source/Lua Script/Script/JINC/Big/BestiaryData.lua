@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.20
+version: 16.06.23
 ]]
 return {
 	"ASTRILOPUPELITE",
@@ -77,6 +77,7 @@ return {
 	"HAWK",
 	"IMP",
 	"INSETTO",
+	"LEOPARD",
 	"LION",
 	"MYR",
 	"PHANUNDEADKID_BEFINDO",
@@ -89,6 +90,7 @@ return {
 	"RAT",
 	"SALAMANDER",
 	"SHROOM",
+	"SNOWLEOPARD",
 	"SPIDER",
 	"SYSS",
 	"THIEF",
