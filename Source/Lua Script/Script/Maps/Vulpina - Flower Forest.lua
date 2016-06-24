@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.20
+version: 16.06.24
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -40,6 +40,19 @@ version: 16.06.20
 function Boundaries()
    MS.Run("FIELD","SetScrollBoundaries","1;-2000;2;6400")
    if Maps.LayerCodeName=="#001" then MS.Run("FIELD","SetScrollBoundaries","1;-2000;368;6400") end
+end
+
+function NPC_Kota()
+  if GetActive()~="Yirl" and (not CVV('&DONE.KOTA')) then
+     MapText("KOTA.NOTYIRL")
+  elseif (not Done('&DONE.KOTA')) then
+     Sys.Error("This part is not yet scripted")
+  elseif rand(1,skill*2)==1 and (not Done("&DONE.REVEALED.SEWERS")) then
+     MapText("KOTA.SEWERS")
+     ActivateRemotePad("Start","Vulpina - Sewers","Vulpina","Sewers - Start","#001")
+  else
+     MapText("KOTA.BANIKA")
+  end            
 end
 
 function GALE_OnLoad()
