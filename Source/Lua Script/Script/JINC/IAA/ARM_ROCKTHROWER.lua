@@ -1,6 +1,6 @@
 --[[
   ARM_ROCKTHROWER.lua
-  Version: 16.06.23
+  Version: 16.06.24
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -54,7 +54,7 @@ ret = {
 	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Rock Thrower",
-	["SpellAni_Reference"] = "Rock",
+	["SpellAni_Reference"] = "ThrowRock",
 	["Target"] = "1F",
 	["UseCombat"] = true,
 	["untauntable"] = true}

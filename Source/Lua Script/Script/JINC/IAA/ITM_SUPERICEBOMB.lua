@@ -1,6 +1,6 @@
 --[[
   ITM_SUPERICEBOMB.lua
-  Version: 16.06.23
+  Version: 16.06.24
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
