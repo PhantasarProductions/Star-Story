@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
-  Version: 15.11.01
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.06.25
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -37,6 +37,20 @@
 -- @USEDIR Script/Use/Anyway
 
 Image.SetAlphaBlend()
+
+-- @IF $BMXNG
+Image.Cls()
+Image.DText("*** WARNING ***",0,0)
+Image.DText("You are running the game in a build of LAURA II created",0,30)
+Image.DText("with BlitzMax NG. This game is officially NOT compatible",0,60)
+Image.DText("With the NG build of LAURA II.",0,90)
+Image.DText("I will let you play on, but expect unstable behavior",0,130)
+Image.DText("Bugs reported due to the game running in NG will be",0,160)
+Image.DText("ignored if put on the issue tracker!")
+Image.Flip()
+Time.Sleep(5000)
+-- @FI
+
 
 function LoadFlowsScripts()
 CSay("Loading Flow Scripts")
