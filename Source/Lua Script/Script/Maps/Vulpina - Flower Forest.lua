@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.24
+version: 16.06.25
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -42,11 +42,26 @@ function Boundaries()
    if Maps.LayerCodeName=="#001" then MS.Run("FIELD","SetScrollBoundaries","1;-2000;368;6400") end
 end
 
+function KotaInside()
+	MapText("KOTA.1")
+	Map.GotoLayer('Binnen')
+	SpawnPlayer('Start')
+	Actors.Actor("PLAYER").Visible = 0 -- Crash prevention, that's all! :-P
+	Maps.CamX=0
+	Maps.CamY=0
+	MapText("KOTA.2")
+	Actors.MoveTo("Wendicka",277,152)
+	for i=0,20 do DrawScreen() Flip() end
+	Actors.MoveTo("Kota",112,76)
+	MapText("KOTA.3")
+	MiniGame()
+end
+
 function NPC_Kota()
   if GetActive()~="Yirl" and (not CVV('&DONE.KOTA')) then
      MapText("KOTA.NOTYIRL")
   elseif (not Done('&DONE.KOTA')) then
-     Sys.Error("This part is not yet scripted")
+     KotaInside()
   elseif rand(1,skill*2)==1 and (not Done("&DONE.REVEALED.SEWERS")) then
      MapText("KOTA.SEWERS")
      ActivateRemotePad("Start","Vulpina - Sewers","Vulpina","Sewers - Start","#001")
