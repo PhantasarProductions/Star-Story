@@ -45,7 +45,7 @@ end
 function MiniGame()
 	MapText("TUTORIAL")
 	Maps.GotoLayer("#003")
-	SpawnPlayer("GetLost")
+	-- SpawnPlayer("GetLost")
 	MS.Load("NIM","Script/Flow/Nim.lua")
 	LAURA.Flow("NIM")
 end	
@@ -80,6 +80,9 @@ function NPC_Kota()
      MapText("KOTA.NOTYIRL")
   elseif (not Done('&DONE.KOTA')) then
      KotaInside()
+  elseif not CVV('&DONE.WON.NIM') then
+     MapScript("KOTA.AGAIN")
+     MiniGame()    
   elseif rand(1,skill*2)==1 and (not Done("&DONE.REVEALED.SEWERS")) then
      MapText("KOTA.SEWERS")
      ActivateRemotePad("Start","Vulpina - Sewers","Vulpina","Sewers - Start","#001")
