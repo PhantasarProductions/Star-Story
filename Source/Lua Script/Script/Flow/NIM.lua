@@ -55,6 +55,18 @@ pic = {
          Image.Load('GFX/Actors/SinglePic/Random/AlienGirl.png')
       }
       
+for _,p in ipairs(pic) do Image.HotCenter(p) end      
+
+ufo = {}
+ufo.img = Image.Load("GFX/Special/UFO.png")
+Image.HotCenter(ufo.img)
+
+shots = {
+           img = Image.Load("GFX/Special/Projectile.png"),
+           shots = {}
+        }
+Image.HotCenter(shots.img)        
+      
 rc = {
         {r=255,g=  0,b  =0},
         {r=255,g=255,b=255},
@@ -79,7 +91,7 @@ funprocess = {
                                        if INP.KeyH(KEY_4)==1 or INP.KeyH(KEY_NUM4)==1 then playerinput.remove=4 end
                                        if INP.KeyH(KEY_5)==1 or INP.KeyH(KEY_NUM5)==1 then playerinput.remove=5 end
                                        if INP.KeyH(KEY_ESCAPE)==1 then process='askplayerrow' end
-                                       if playerinput.remove and playerinput.remove<=#chars[playerinput.row] then process='killplayer' end
+                                       if playerinput.remove and playerinput.remove<=#chars[playerinput.row] then process='killplayer' ufo.x=-100 end
                                     end
              }     
              
