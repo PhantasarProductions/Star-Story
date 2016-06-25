@@ -42,18 +42,36 @@ function Boundaries()
    if Maps.LayerCodeName=="#001" then MS.Run("FIELD","SetScrollBoundaries","1;-2000;368;6400") end
 end
 
+function MiniGame()
+	MapText("TUTORIAL")
+	Maps.GotoLayer("#003")
+	SpawnPlayer("GetLost")
+	MS.Load("NIM","Script/Flow/Nim.lua")
+	LAURA.Flow("NIM")
+end	
+
 function KotaInside()
-	MapText("KOTA.1")
-	Map.GotoLayer('Binnen')
+  TurnPlayer("NORTH")
+	MapText("KOTA.TALK1")
+	Maps.GotoLayer('Binnen')
 	SpawnPlayer('Start')
 	Actors.Actor("PLAYER").Visible = 0 -- Crash prevention, that's all! :-P
 	Maps.CamX=0
 	Maps.CamY=0
-	MapText("KOTA.2")
-	Actors.MoveTo("Wendicka",277,152)
-	for i=0,20 do DrawScreen() Flip() end
-	Actors.MoveTo("Kota",112,76)
-	MapText("KOTA.3")
+	MapText("KOTA.TALK2")
+	--Actors.MoveTo("Wendicka",277,152,1)
+	--for i=0,20 do DrawScreen() Flip() end
+	--Actors.MoveTo("Kota",112,76,1)
+	Wen = Maps.Obj.Obj("Wendicka")
+	Kot = Maps.Obj.Obj("Kota")
+	repeat
+	   if Wen.X>277 then Wen.X=Wen.X-1 end
+	   if Wen.Y>160 then Wen.Y=Wen.Y-1 end
+	   DrawScreen()
+	   Flip()
+	until Wen.X<=277 and Wen.Y<=160
+	Kot.Y=156
+	MapText("KOTA.TALK3")
 	MiniGame()
 end
 
