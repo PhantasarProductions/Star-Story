@@ -183,7 +183,7 @@ funprocess = {
                                     if INP.KeyH(KEY_1)==1 or INP.KeyH(KEY_NUM1)==1 then playerinput.row=1 end
                                     if INP.KeyH(KEY_2)==1 or INP.KeyH(KEY_NUM2)==1 then playerinput.row=2 end
                                     if INP.KeyH(KEY_3)==1 or INP.KeyH(KEY_NUM3)==1 then playerinput.row=3 end
-                                    if playerinput.row then process='askplayerremove' end
+                                    if playerinput.row and count(playerinput.row)>0 then process='askplayerremove' end
                                  end,
                   askplayerremove = function()
                                        DarkText("Row #"..playerinput.row..": How many do you want to remove?",400,450,2,2,180,0,255) 
