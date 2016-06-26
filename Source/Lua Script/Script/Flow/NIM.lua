@@ -35,6 +35,8 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 
+-- @DEFINE NIM_DEBUG
+
 NIM = { 5,4,3 }
 chars = {}
 
@@ -322,6 +324,9 @@ end
 function MAIN_FLOW()
    -- Clear Screen
    Image.Cls()
+   -- @IF NIM_DEBUG
+   DarkText("Current process: "..sval(process),20,20,0,0,0,180,255)
+   -- @FI
    White()
    -- Draw all the characters
    for i,row in ipairs(chars) do
