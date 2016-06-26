@@ -168,6 +168,7 @@ function GenerateScheldParade()
       until thisisnew
       ret[i]={ woord = sw, r=rand(1,255), g=rand(1,255), b=rand(1,255) }
    end
+   return ret
 end
 
      
@@ -347,11 +348,11 @@ funprocess = {
                          scheld = scheld or GenerateScheldParade()
                          pwt = (pwt or 0) + 1
                          DarkText("Due so some",400,0,2,0,0,180,255)
-                         for i=1,math.floor(pwt/1000) do 
+                         for i=1,math.floor(pwt/100) do 
                              if i<=#scheld then DarkText(scheld[i].woord,400,i*20,2,0,scheld[i].r,scheld[i].g,scheld[i].b) end
                          end
-                         if pwt>800 then DarkText("desparate move",400,100,2,0,255,0,0) end
-                         if pwt>1000 then DarkText("you win",400,200,2,0,255,180,0) end
+                         if pwt>800 then DarkText("desparate move",400,200,2,0,255,0,0) end
+                         if pwt>1000 then DarkText("you win",400,400,2,0,255,180,0) end
                          if pwt>2000 then    
                             Sys.Error('You Win') -- True script comes later
                          end 
