@@ -345,9 +345,9 @@ funprocess = {
                   enemykill = function() kill('enemy') end,
                   playerwin = function()
                          scheld = scheld or GenerateScheldParade()
-                         pwt = (pwt or 0)+1
+                         pwt = (pwt or 0) + 1
                          DarkText("Due so some",400,0,2,0,0,180,255)
-                         for i=1,math.floor(ptw/1000) do 
+                         for i=1,math.floor(pwt/1000) do 
                              if i<=#scheld then DarkText(scheld[i].woord,400,i*20,2,0,scheld[i].r,scheld[i].g,scheld[i].b) end
                          end
                          if pwt>800 then DarkText("desparate move",400,100,2,0,255,0,0) end
