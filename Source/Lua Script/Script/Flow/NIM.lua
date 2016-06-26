@@ -89,6 +89,14 @@ function leftover()
    return num,str
 end
 
+function count(row)
+  local ret = 0
+  for ch in each(chars[row]) do
+      if not ch.die then ret = ret + 1 end
+  end
+  return ret
+end
+
 function kill(p)
   ufo.x = ufo.x or -100
   ufo.x = ufo.x + 2
@@ -113,8 +121,10 @@ function kill(p)
          sh.y=1200 -- Just remove the bullet from sight
       end
   end  
+  local n,s = leftover()
   if ufo.x>900 then 
-  	if p=='player' then process='enemyai' else process='askplayerrow' end
+    if n==0 then process = p.."win" 
+  	elseif p=='player' then process='enemyai' else process='askplayerrow' end
   end
 end
 
@@ -286,8 +296,17 @@ funprocess = {
                                                        remove = rand(1,count(rows))
                                                        return { row=row,remove=remove }
                                                      end
+                                 process = "enemykill"                    
                                
-                            end                  
+                            end                  ,
+                  enemykill = function() kill('enemy') end,
+                  playerwin = function()
+                       Sys.Error('You Win') -- True script comes later
+                       end,
+                  enemywin = function()
+                       Sys.Error("I Win") -- True script comes later
+                  end     
+                                      
              }     
              
 function noprocess()
