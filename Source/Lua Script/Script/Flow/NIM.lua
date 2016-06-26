@@ -116,10 +116,13 @@ function kill(p)
      SFX('audio/sfx/photon.ogg')
   end 
   for sh in each(shots.shots) do
+      White()
       Image.Draw(shots.img,sh.x,sh.y)
       if sh.y>chars[sh.tr][sh.ti].y and sh.y<1000 then 
          chars[sh.tr][sh.ti].die = true
          sh.y=1200 -- Just remove the bullet from sight
+      else 
+        sh.y = sh.y + 1
       end
   end  
   local n,s = leftover()
