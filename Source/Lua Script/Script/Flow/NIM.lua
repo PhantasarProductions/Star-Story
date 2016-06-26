@@ -45,7 +45,19 @@ scheldwoorden = { 'rough' , 'odd', 'cheap', 'crazy', 'idiot', 'foolish', 'ridicu
                   'rusty', 'old-fashioned', 'abnormal', 'blindering', 'catastophic',' disasterous',
                   'eeky','freaking','grotesque','hallucinating','joke','heretical','lazy','malicious',
                   'needless','overrated','poopy','quirky','raging','stupid','terrible','dumb',
-                  'vicious','revolting','yucky'}
+                  'vicious','revolting','yucky',"rude"}
+                  
+
+BackChain = { 
+                Flow = "TERMINAL"
+            }                  
+
+function SetBackChain(d)
+local script = "return {"..d.."}"
+local exe = loadstring(script)
+BackChain = exe()
+end              
+   
 
 function PRINT(A)
   Console.Write(A,0,180,255)
@@ -133,7 +145,7 @@ function kill(p)
   end      
   Image.Draw(ufo.img,ufo.x,60)
   local s = #shots.shots
-  if ufo.x>=(s+1)*100 and s<i.remove then
+  if chars[i.row][s+1] and ufo.x>=chars[i.row][s+1].x and s<i.remove then
      shots.shots[s+1] = { y = 60, x=0, tr=i.row, ti=s+1}
      shots.shots[s+1].x = chars[shots.shots[s+1].tr][shots.shots[s+1].ti].x
      SFX('audio/sfx/photon.ogg')
@@ -348,6 +360,7 @@ funprocess = {
                             end                  ,
                   enemykill = function() kill('enemy') end,
                   playerwin = function()
+                         Award('ZZ_NIM')
                          scheld = scheld or GenerateScheldParade()
                          pwt = (pwt or 0) + 1
                          DarkText("Due so some",400,0,2,0,0,180,255)
@@ -357,14 +370,16 @@ funprocess = {
                          if pwt>800 then DarkText("desparate move",400,200,2,0,255,0,0) end
                          if pwt>1000 then DarkText("you win",400,400,2,0,255,180,0) end
                          if pwt>2000 then    
-                            Sys.Error('You Win') -- True script comes later
+                            -- Sys.Error('You Win') -- True script comes later
+                            Leave(true)
                          end 
                        end,
                   enemywin = function()
                        pwt = (pwt or 0) + 1
                        Image.Draw(iwin,400,300)
                        if pwt>1000 then
-                          Sys.Error("I Win") -- True script comes later
+                          -- Sys.Error("I Win") -- True script comes later
+                          Leave(false)
                        end
                   end     
                                       
@@ -399,6 +414,16 @@ function MAIN_FLOW()
    ShowParty()
    -- Flip
    Flip()
+end
+
+function Leave(win)
+   for p in each(pic) do Image.Free(p) end
+   Image.Free(ufo.pic)
+   Image.Free(shots.pic)
+   LAURA.Flow(BackChain.Flow)
+   if     win and BackChain.victory then MS.Run(BackChain.victory.stag,BackChain.victory.sfun) end      
+   if not win and BackChain.victory then MS.Run(BackChain.defeat.stag, BackChain.defeat.sfun) end
+   MS.Kill("NIM")      
 end
 
 

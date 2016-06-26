@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.25
+version: 16.06.26
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -47,8 +47,19 @@ function MiniGame()
 	Maps.GotoLayer("#003")
 	-- SpawnPlayer("GetLost")
 	MS.Load("NIM","Script/Flow/Nim.lua")
+	MS.Run("NIM","SetBackChain","Flow='FIELD', victory={stag='MAP', sfun='KotaWin'}, defeat={stag='MAP', sfun='KotaLose'}")
 	LAURA.Flow("NIM")
 end	
+
+function KotaWin()
+  MapText("KOTA.WIN")
+  Done("&DONE.WON.NIM")
+  Sys.Error("The rest is not yet implemented!")
+end
+
+function KotaLose()
+  MapText("KOTA.LOSE")
+end  
 
 function KotaInside()
   TurnPlayer("NORTH")
