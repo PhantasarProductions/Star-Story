@@ -157,6 +157,19 @@ function kill(p)
   end
 end
 
+function GenerateScheldParade()
+   local ret = {}
+   local sw, thisisnew
+   for i=1,6 do
+      repeat
+        sw = scheldwoorden[rand(1,#scheldwoorden)]
+        thisisnew = true
+        for swc in each(ret) do thisisnew=thisisnew and swc.woord~=sw end
+      until thisisnew
+      ret[i]={ woord = sw, r=rand(1,255), g=rand(1,255), b=rand(1,255) }
+   end
+end
+
      
 funprocess = {
 
@@ -331,7 +344,17 @@ funprocess = {
                             end                  ,
                   enemykill = function() kill('enemy') end,
                   playerwin = function()
-                       Sys.Error('You Win') -- True script comes later
+                         scheld = scheld or GenerateScheldParade()
+                         pwt = (pwt or 0)+1
+                         DarkText("Due so some",400,0,2,0,0,180,255)
+                         for i=1,math.floor(ptw/1000) do 
+                             if i<=#scheld then DarkText(scheld[i].woord,400,i*20,2,0,scheld[i].r,scheld[i].g,scheld[i].b) end
+                         end
+                         if pwt>800 then DarkText("desparate move",400,100,2,0,255,0,0) end
+                         if pwt>1000 then DarkText("you win",400,200,2,0,255,180,0) end
+                         if pwt>2000 then    
+                            Sys.Error('You Win') -- True script comes later
+                         end 
                        end,
                   enemywin = function()
                        Sys.Error("I Win") -- True script comes later
