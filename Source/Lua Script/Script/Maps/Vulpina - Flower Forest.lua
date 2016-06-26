@@ -55,7 +55,12 @@ function KotaWin()
   MapText("KOTA.WIN")
   Done("&DONE.WON.NIM")
   MapEXP()
-  Sys.Error("The rest is not yet implemented!")
+  LoadMap("Hawk","Bridge")
+  SpawnPlayer("Welcome")
+  ActivateRemotePad('InDenBeginne','Excalibur - Final','Excalibur','Excalibur - Secret Hangar',"#000")
+  FirstWorld("Excalibur","ArrivalExcalibur")
+  MapText("AfterKota")
+  Var.D("$HAWK","AFTERKOTA")
 end
 
 function KotaLose()
