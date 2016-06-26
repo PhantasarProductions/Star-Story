@@ -78,6 +78,7 @@ rc = {
 function leftover()
    local num,str
    str = ""
+   num = 0
    for row in each(chars) do
        local rn = 0
        for ch in each(row) do
