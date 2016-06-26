@@ -1,6 +1,6 @@
 --[[
   NIM.lua
-  Version: 16.06.25
+  Version: 16.06.26
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -42,10 +42,12 @@ function PRINT(A)
   Console.Write(A,0,180,255)
 end
 
+
+
 for n,row in ipairs(NIM) do
     chars[n] = {}
     for i = 1,row do
-        chars[n][#chars[n]+1] = {x=i*100,y=n*100,sex=Math.Rand(1,2)}
+        chars[n][#chars[n]+1] = {x=i*100,y=n*100,sex=Math.Rand(1,2), alpha=100}
         PRINT("Created char on row: #"..n)
     end
 end        
@@ -72,6 +74,19 @@ rc = {
         {r=255,g=255,b=255},
         {r=  0,g=  0,b=255}
      }      
+
+
+function kill(p)
+  ufo.x = ufo.x or -100
+  ufo.x = ufo.x + 1
+  if p=='player' then
+     Image.Color(0,255,255)
+  else
+     Image.Color(255,0,255)
+  end      
+  Image.DrawImage(ufo.img,ufo.x,60)
+end
+
      
 funprocess = {
 
@@ -92,7 +107,8 @@ funprocess = {
                                        if INP.KeyH(KEY_5)==1 or INP.KeyH(KEY_NUM5)==1 then playerinput.remove=5 end
                                        if INP.KeyH(KEY_ESCAPE)==1 then process='askplayerrow' end
                                        if playerinput.remove and playerinput.remove<=#chars[playerinput.row] then process='killplayer' ufo.x=-100 end
-                                    end
+                                    end,
+                  killplayer = function() kill('player') end                  
              }     
              
 function noprocess()
@@ -108,8 +124,10 @@ function MAIN_FLOW()
        DarkText(i..":",90,(i*100)+50,1,2,rc[i].r,rc[i].g,rc[i].b)
        White()
        for ch in each(row) do
+           Image.SetAlphaPC(ch.alpha)
            DrawImage(pic[ch.sex],ch.x,ch.y)
        end
+       Image.SetAlphaPC(100)
    end
    -- Process
    process = process or 'askplayerrow';
