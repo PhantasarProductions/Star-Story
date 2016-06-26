@@ -104,7 +104,7 @@ end
 function packrows()
    for row in each(chars) do
        repeat
-         if row[1].die then table.remove(row,1) end
+         if #row>0 and row[1].die then table.remove(row,1) end
        until #row==0 or (not row[1].die) 
        CSay("Row packed, now has "..#row.." entries")
    end
