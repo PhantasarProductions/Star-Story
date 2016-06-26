@@ -40,6 +40,13 @@
 NIM = { 5,4,3 }
 chars = {}
 
+scheldwoorden = { 'rough' , 'odd', 'cheap', 'crazy', 'idiot', 'foolish', 'ridiculous', 
+                  'retarded', 'nasty', 'fucking', 'silly', 'sick', 'unhealthy', 'dead', 
+                  'rusty', 'old-fashioned', 'abnormal', 'blindering', 'catastophic',' disasterous',
+                  'eeky','freaking','grotesque','hallucinating','joke','heretical','lazy','malicious',
+                  'needless','overrated','poopy','quirky','raging','stupid','terrible','dumb',
+                  'vicious','revolting','yucky'}
+
 function PRINT(A)
   Console.Write(A,0,180,255)
 end
