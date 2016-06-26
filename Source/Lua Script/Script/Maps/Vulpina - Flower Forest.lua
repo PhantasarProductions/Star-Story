@@ -93,7 +93,7 @@ function NPC_Kota()
   elseif (not Done('&DONE.KOTA')) then
      KotaInside()
   elseif not CVV('&DONE.WON.NIM') then
-     MapScript("KOTA.AGAIN")
+     MapText("KOTA.AGAIN")
      MiniGame()    
   elseif rand(1,skill*2)==1 and (not Done("&DONE.REVEALED.SEWERS")) then
      MapText("KOTA.SEWERS")
