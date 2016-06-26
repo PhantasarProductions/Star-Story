@@ -101,6 +101,14 @@ function count(row)
   return ret
 end
 
+function packrows()
+   for row in each(chars) do
+       repeat
+         if row[1].die then table.remove(row,1) end
+       until not row[1].die 
+   end
+end
+
 function kill(p)
   ufo.x = ufo.x or -100
   ufo.x = ufo.x + 2
@@ -132,6 +140,7 @@ function kill(p)
   end  
   local n,s = leftover()
   if ufo.x>900 and (not gotproj) then 
+    packrows()
     if n==0 then process = p.."win" 
   	elseif p=='player' then process='enemyai' else process='askplayerrow' end
   end
