@@ -84,7 +84,7 @@ function kill(p)
   else
      Image.Color(255,0,255)
   end      
-  Image.DrawImage(ufo.img,ufo.x,60)
+  Image.Draw(ufo.img,ufo.x,60)
 end
 
      
