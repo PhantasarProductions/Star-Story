@@ -94,6 +94,7 @@ end
 
 function count(row)
   local ret = 0
+  assert(chars[row],"There is no row #"..sval(row).." to check")
   for ch in each(chars[row]) do
       if not ch.die then ret = ret + 1 end
   end
@@ -300,8 +301,8 @@ funprocess = {
                                                           row = rand(1,3)
                                                           timeout=timeout-1
                                                           if timeout<=0 then Sys.Error("NIM-AI-TIMEOUT!") end
-                                                       until count(rows)>0
-                                                       remove = rand(1,count(rows))
+                                                       until count(row)>0
+                                                       remove = rand(1,count(row))
                                                        return { row=row,remove=remove }
                                                      end)()
                                  process = "enemykill"                    
