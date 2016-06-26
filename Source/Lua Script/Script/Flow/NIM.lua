@@ -35,7 +35,7 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 
--- @DEFINE NIM_DEBUG
+-- @UNDEF NIM_DEBUG
 
 NIM = { 5,4,3 }
 chars = {}
@@ -363,7 +363,7 @@ funprocess = {
                          Award('ZZ_NIM')
                          scheld = scheld or GenerateScheldParade()
                          pwt = (pwt or 0) + 1
-                         DarkText("Due so some",400,0,2,0,0,180,255)
+                         DarkText("Due to some",400,0,2,0,0,180,255)
                          for i=1,math.floor(pwt/100) do 
                              if i<=#scheld then DarkText(scheld[i].woord,400,i*20,2,0,scheld[i].r,scheld[i].g,scheld[i].b) end
                          end

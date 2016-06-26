@@ -59,6 +59,7 @@ function KotaWin()
   SpawnPlayer("Welcome")
   ActivateRemotePad('InDenBeginne','Excalibur - Final','Excalibur','Excalibur - Secret Hangar',"#000")
   FirstWorld("Excalibur","ArrivalExcalibur")
+  TurnPlayer('North')
   MapText("AfterKota")
   Var.D("$HAWK","AFTERKOTA")
 end
