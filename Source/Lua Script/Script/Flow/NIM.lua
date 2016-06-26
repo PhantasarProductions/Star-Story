@@ -112,7 +112,7 @@ function kill(p)
   Image.Draw(ufo.img,ufo.x,60)
   local s = #shots.shots
   if ufo.x>=(s+1)*100 and s<i.remove then
-     shots[s+1] = { y = 60, x=(s+1)*100, tr=i.row, ti=s+1}
+     shots.shots[s+1] = { y = 60, x=(s+1)*100, tr=i.row, ti=s+1}
      SFX('audio/sfx/photon.ogg')
   end 
   for sh in each(shots.shots) do
