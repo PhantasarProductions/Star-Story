@@ -423,10 +423,12 @@ function Leave(win)
    LAURA.Flow(BackChain.Flow)
    if     win and BackChain.victory then MS.Run(BackChain.victory.stag,BackChain.victory.sfun) end      
    if not win and BackChain.victory then MS.Run(BackChain.defeat.stag, BackChain.defeat.sfun) end
-   MS.Kill("NIM")      
+   PullMusic()
+   MS.Destroy("NIM")      
 end
 
 
 function GALE_OnLoad()
+   PushMusic()
    Music("BlockShooter/Overworld.ogg")
 end        

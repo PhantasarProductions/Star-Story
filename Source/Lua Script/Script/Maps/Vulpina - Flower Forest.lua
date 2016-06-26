@@ -54,6 +54,7 @@ end
 function KotaWin()
   MapText("KOTA.WIN")
   Done("&DONE.WON.NIM")
+  MapEXP()
   Sys.Error("The rest is not yet implemented!")
 end
 
