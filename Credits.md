@@ -24,7 +24,7 @@ April | 1 | Art;
 BMCGOWAN | 2 | Art; 
 Benboncan | 3 | Audio; Misc files; 
 Brian Boyko | 2 | Music; 
-CoolText | 2 | Art; 
+CoolText | 3 | Art; 
 Courtney Novits | 3 | Font; Misc files; 
 Cynix | 1 | Art; 
 Dedicated Teacher | 1 | Art; 

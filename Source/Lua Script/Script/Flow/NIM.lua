@@ -82,7 +82,10 @@ rc = {
         {r=255,g=  0,b  =0},
         {r=255,g=255,b=255},
         {r=  0,g=  0,b=255}
-     }      
+     }
+     
+iwin = Image.Load("GFX/Special/I WIN.PNG")
+Image.HotCenter(iwin)           
 
 function leftover()
    local num,str
@@ -358,7 +361,11 @@ funprocess = {
                          end 
                        end,
                   enemywin = function()
-                       Sys.Error("I Win") -- True script comes later
+                       pwt = (pwt or 0) + 1
+                       Image.Draw(iwin,400,300)
+                       if pwt>1000 then
+                          Sys.Error("I Win") -- True script comes later
+                       end
                   end     
                                       
              }     
