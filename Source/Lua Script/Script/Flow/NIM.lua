@@ -105,7 +105,8 @@ function packrows()
    for row in each(chars) do
        repeat
          if row[1].die then table.remove(row,1) end
-       until not row[1].die 
+       until #row==0 or (not row[1].die) 
+       CSay("Row packed, now has "..#row.." entries")
    end
 end
 
@@ -123,24 +124,27 @@ function kill(p)
   Image.Draw(ufo.img,ufo.x,60)
   local s = #shots.shots
   if ufo.x>=(s+1)*100 and s<i.remove then
-     shots.shots[s+1] = { y = 60, x=(s+1)*100, tr=i.row, ti=s+1}
+     shots.shots[s+1] = { y = 60, x=0, tr=i.row, ti=s+1}
+     shots.shots[s+1].x = chars[shots.shots[s+1].tr][shots.shots[s+1].ti]
      SFX('audio/sfx/photon.ogg')
   end 
   local gotproj = false
   for sh in each(shots.shots) do
       White()
       Image.Draw(shots.img,sh.x,sh.y)      
-      if sh.y>chars[sh.tr][sh.ti].y and sh.y<1000 then 
+      if sh.y<1000 and sh.y>chars[sh.tr][sh.ti].y then 
          chars[sh.tr][sh.ti].die = true
          sh.y=1200 -- Just remove the bullet from sight
       elseif sh.y<1000 then 
         sh.y = sh.y + 1
         gotproj = true
       end
-  end  
+  end
+  for row in each(chars) do for ch in each(row) do gotproj = gotproj or (ch.die and ch.alpha>0) end end  
   local n,s = leftover()
   if ufo.x>900 and (not gotproj) then 
-    packrows()
+  	packrows()  	
+  	shots.shots={}
     if n==0 then process = p.."win" 
   	elseif p=='player' then process='enemyai' else process='askplayerrow' end
   end
@@ -314,8 +318,9 @@ funprocess = {
                                                        remove = rand(1,count(row))
                                                        return { row=row,remove=remove }
                                                      end)()
-                                 process = "enemykill"                    
-                               
+                                 process = "enemykill"             
+                                 ufo.x=-300
+                                 CSay('Computer wants to remove '..enemyinput.remove.." characters from row #"..enemyinput.row)                                      
                             end                  ,
                   enemykill = function() kill('enemy') end,
                   playerwin = function()
