@@ -78,13 +78,16 @@ rc = {
 
 function kill(p)
   ufo.x = ufo.x or -100
-  ufo.x = ufo.x + 1
+  ufo.x = ufo.x + 2
   if p=='player' then
      Image.Color(0,255,255)
   else
      Image.Color(255,0,255)
   end      
   Image.Draw(ufo.img,ufo.x,60)
+  if ufo.x>900 then 
+  	if p=='player' then process='enemyai' else process='askplayerrow' end
+  end
 end
 
      
@@ -125,7 +128,7 @@ function MAIN_FLOW()
        White()
        for ch in each(row) do
            Image.SetAlphaPC(ch.alpha)
-           DrawImage(pic[ch.sex],ch.x,ch.y)
+           DrawImage(pic[ch.sex],(ch.x)+50,ch.y)
        end
        Image.SetAlphaPC(100)
    end
