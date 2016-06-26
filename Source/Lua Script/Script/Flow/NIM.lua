@@ -125,7 +125,7 @@ function kill(p)
   local s = #shots.shots
   if ufo.x>=(s+1)*100 and s<i.remove then
      shots.shots[s+1] = { y = 60, x=0, tr=i.row, ti=s+1}
-     shots.shots[s+1].x = chars[shots.shots[s+1].tr][shots.shots[s+1].ti]
+     shots.shots[s+1].x = chars[shots.shots[s+1].tr][shots.shots[s+1].ti].x
      SFX('audio/sfx/photon.ogg')
   end 
   local gotproj = false
