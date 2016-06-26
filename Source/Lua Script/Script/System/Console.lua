@@ -1,6 +1,6 @@
 --[[
   Console.lua
-  Version: 16.05.27
+  Version: 16.06.26
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -46,6 +46,10 @@
       
  ]]
  
+function NIM()
+	MS.Load("NIM","Script/Flow/Nim.lua")
+	LAURA.Flow("NIM")
+end 
  
 function TEST(...)
 local a,i

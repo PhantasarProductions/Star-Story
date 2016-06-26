@@ -124,7 +124,7 @@ function kill(p)
       if sh.y>chars[sh.tr][sh.ti].y and sh.y<1000 then 
          chars[sh.tr][sh.ti].die = true
          sh.y=1200 -- Just remove the bullet from sight
-      elseif sh.y<1000 
+      elseif sh.y<1000 then 
         sh.y = sh.y + 1
         gotproj = true
       end
