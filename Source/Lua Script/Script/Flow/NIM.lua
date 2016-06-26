@@ -115,18 +115,20 @@ function kill(p)
      shots.shots[s+1] = { y = 60, x=(s+1)*100, tr=i.row, ti=s+1}
      SFX('audio/sfx/photon.ogg')
   end 
+  local gotproj = false
   for sh in each(shots.shots) do
       White()
-      Image.Draw(shots.img,sh.x,sh.y)
+      Image.Draw(shots.img,sh.x,sh.y)      
       if sh.y>chars[sh.tr][sh.ti].y and sh.y<1000 then 
          chars[sh.tr][sh.ti].die = true
          sh.y=1200 -- Just remove the bullet from sight
       else 
         sh.y = sh.y + 1
+        gotproj = true
       end
   end  
   local n,s = leftover()
-  if ufo.x>900 then 
+  if ufo.x>900 and (not gotproj) then 
     if n==0 then process = p.."win" 
   	elseif p=='player' then process='enemyai' else process='askplayerrow' end
   end
@@ -290,7 +292,7 @@ funprocess = {
                                                   ['001'] = { row=3, remove=1}
                                                                                                     
                                                    
-                                            })[s] or function()
+                                            })[s] or (function()
                                                        local row,remove
                                                        repeat
                                                           row = rand(1,3)
@@ -299,7 +301,7 @@ funprocess = {
                                                        until count(rows)>0
                                                        remove = rand(1,count(rows))
                                                        return { row=row,remove=remove }
-                                                     end
+                                                     end)()
                                  process = "enemykill"                    
                                
                             end                  ,
