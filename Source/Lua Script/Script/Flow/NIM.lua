@@ -75,16 +75,44 @@ rc = {
         {r=  0,g=  0,b=255}
      }      
 
+function leftover()
+   local num,str
+   str = ""
+   for row in each(chars) do
+       local rn = 0
+       for ch in each(row) do
+           if not ch.die then rn = rn + 1 end
+       end
+       str = str .. rn
+       num = num + rn
+   end
+   return num,str
+end
 
 function kill(p)
   ufo.x = ufo.x or -100
   ufo.x = ufo.x + 2
+  local i
   if p=='player' then
      Image.Color(0,255,255)
+     i = playerinput
   else
      Image.Color(255,0,255)
+     i = enemyinput
   end      
   Image.Draw(ufo.img,ufo.x,60)
+  local s = #shots.shots
+  if ufo.x>=(s+1)*100 and s<i.remove then
+     shots[s+1] = { y = 60, x=(s+1)*100, tr=i.row, ti=s+1}
+     SFX('audio/sfx/photon.ogg')
+  end 
+  for sh in each(shots.shots) do
+      Image.Draw(shots.img,sh.x,sh.y)
+      if sh.y>chars[tr][ti].y then 
+         chars[tr][ti].die = true
+         sh.y=1200 -- Just remove the bullet from sight
+      end
+  end  
   if ufo.x>900 then 
   	if p=='player' then process='enemyai' else process='askplayerrow' end
   end
@@ -111,7 +139,155 @@ funprocess = {
                                        if INP.KeyH(KEY_ESCAPE)==1 then process='askplayerrow' end
                                        if playerinput.remove and playerinput.remove<=#chars[playerinput.row] then process='killplayer' ufo.x=-100 end
                                     end,
-                  killplayer = function() kill('player') end                  
+                  killplayer = function() kill('player') end,
+                  enemyai = function()
+                               local timeout = 10000
+                               local n,s = leftover()
+                               enemyinput = ({
+                                                  ['543'] = { row=3, remove=2},
+                                                  ['533'] = { row=1, remove=5},
+                                                  ['523'] = { row=1, remove=4},
+                                                  ['513'] = { row=1, remove=3},
+                                                  ['540'] = { row=1, remove=1},
+                                                  ['503'] = { row=1, remove=2},
+                                                  
+                                                  ['532'] = { row=1, remove=4},
+                                                  ['531'] = { row=1, remove=3},
+                                                  ['530'] = { row=1, remove=2},
+                                                  
+                                                  ['523'] = { row=1, remove=4},
+                                                  ['522'] = { row=1, remove=5},
+                                                  ['521'] = { row=1, remove=2},
+                                                  ['520'] = { row=1, remove=3},
+                                                  
+                                                  ['513'] = { row=1, remove=3},
+                                                  ['512'] = { row=1, remove=2},
+                                                  ['511'] = { row=1, remove=5},
+                                                  ['510'] = { row=1, remove=4},
+                                                  
+                                                  ['503'] = { row=1, remove=2},
+                                                  ['502'] = { row=1, remove=3},
+                                                  ['501'] = { row=1, remove=4},
+                                                  ['500'] = { row=1, remove=5},
+                                                  
+                                                  ------------------------------
+                                                  
+                                                  ['443'] = { row=3, remove=3},
+                                                  ['442'] = { row=3, remove=2},
+                                                  ['441'] = { row=3, remove=1},
+                                                  
+                                                  ['433'] = { row=1, remove=4},                                                            
+                                                  ['431'] = { row=1, remove=2},
+                                                  ['430'] = { row=1, remove=1},
+                                                  
+                                                  ['423'] = { row=1, remove=3},
+                                                  ['422'] = { row=1, remove=4},
+                                                  ['421'] = { row=1, remove=2},
+                                                  ['420'] = { row=1, remove=2},
+                                                  
+                                                  ['413'] = { row=1, remove=2},
+                                                  ['412'] = { row=1, remove=1},
+                                                  ['411'] = { row=1, remove=4},
+                                                  ['410'] = { row=1, remove=3},
+                                                  
+                                                  ['403'] = { row=1, remove=1},
+                                                  ['402'] = { row=1, remove=2},
+                                                  ['401'] = { row=1, remove=3},
+                                                  ['400'] = { row=1, remove=4},
+
+                                                  ------------------------------
+                                                  
+                                                  ['343'] = { row=2, remove=4},
+                                                  ['342'] = { row=2, remove=3},
+                                                  ['341'] = { row=2, remove=2},
+                                                  ['340'] = { row=2, remove=1},
+                                                  
+                                                  ['333'] = { row=rand(1,3), remove=3},
+                                                  ['332'] = { row=3, remove=2},
+                                                  ['331'] = { row=3, remove=1},
+                                                  
+                                                  ['323'] = { row=2, remove=2},
+                                                  ['311'] = { row=1, remove=3},
+                                                  ['310'] = { row=1, remove=2},
+                                                  
+                                                  ['302'] = { row=1, remove=1},
+                                                  ['301'] = { row=1, remove=2},
+                                                  ['300'] = { row=1, remove=3},
+
+                                                  ------------------------------
+                                                  
+                                                  ['243'] = { row=2, remove=3},
+                                                  ['241'] = { row=2, remove=1},
+                                                  ['242'] = { row=2, remove=4},
+                                                  ['240'] = { row=2, remove=2},
+                                                  
+                                                  ['233'] = { row=1, remove=2},
+                                                  ['232'] = { row=2, remove=3},
+                                                  ['230'] = { row=2, remove=1},
+                                                  
+                                                  ['223'] = { row=3, remove=3},
+                                                  ['222'] = { row=rand(1,3), remove=2},
+                                                  ['221'] = { row=3, remove=3},
+                                                  
+                                                  ['212'] = { row=2, remove=1},
+                                                  ['211'] = { row=1, remove=2},
+                                                  ['210'] = { row=1, remove=1},
+                                                  
+                                                  ['203'] = { row=3, remove=1},
+                                                  ['201'] = { row=1, remove=1},
+                                                  ['200'] = { row=1, remove=2},
+                                                  
+                                                  ------------------------------
+                                                  
+                                                  ['143'] = { row=2, remove=2},
+                                                  ['142'] = { row=2, remove=1},
+                                                  ['141'] = { row=2, remove=4},
+                                                  ['140'] = { row=2, remove=3},
+                                                  
+                                                  ['133'] = { row=1, remove=1},
+                                                  ['131'] = { row=2, remove=3},
+                                                  ['130'] = { row=2, remove=2},
+                                                  
+                                                  ['113'] = { row=3, remove=3},
+                                                  ['112'] = { row=3, remove=2},
+                                                  ['111'] = { row=rand(1,3), remove=1},
+                                                   
+                                                  ------------------------------
+                                                  
+                                                  ['043'] = { row=2, remove=1},
+                                                  ['042'] = { row=2, remove=2},
+                                                  ['041'] = { row=2, remove=3},
+                                                  ['040'] = { row=2, remove=4},
+                                                  
+                                                  ['032'] = { row=2, remove=2},
+                                                  ['031'] = { row=2, remove=2},
+                                                  ['030'] = { row=2, remove=4},
+                                                  
+                                                  ['023'] = { row=3, remove=1},
+                                                  ['021'] = { row=2, remove=1},
+                                                  ['020'] = { row=2, remove=2},
+                                                  
+                                                  ['013'] = { row=3, remove=2},
+                                                  ['012'] = { row=3, remove=1},
+                                                  ['010'] = { row=2, remove=1},
+                                                  
+                                                  ['003'] = { row=3, remove=3},
+                                                  ['002'] = { row=3, remove=2},
+                                                  ['001'] = { row=3, remove=1}
+                                                                                                    
+                                                   
+                                            })[s] or function()
+                                                       local row,remove
+                                                       repeat
+                                                          row = rand(1,3)
+                                                          timeout=timeout-1
+                                                          if timeout<=0 then Sys.Error("NIM-AI-TIMEOUT!") end
+                                                       until count(rows)>0
+                                                       remove = rand(1,count(rows))
+                                                       return { row=row,remove=remove }
+                                                     end
+                               
+                            end                  
              }     
              
 function noprocess()
@@ -128,7 +304,8 @@ function MAIN_FLOW()
        White()
        for ch in each(row) do
            Image.SetAlphaPC(ch.alpha)
-           DrawImage(pic[ch.sex],(ch.x)+50,ch.y)
+           DrawImage(pic[ch.sex],(ch.x),ch.y+50)
+           if ch.die and ch.alpha>0 then ch.alpha = ch.alpha - 1 end
        end
        Image.SetAlphaPC(100)
    end
