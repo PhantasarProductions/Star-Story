@@ -503,29 +503,6 @@
 
 
 
-## External Libraries
 
-1. Script/Libs/A few mathematical functions.lua
-1. Script/Libs/Append.lua
-1. Script/Libs/bool2int.lua
-1. Script/Libs/Colors.lua
-1. Script/Libs/Console.lua
-1. Script/Libs/CVV.lua
-1. Script/Libs/DarkText.lua
-1. Script/Libs/Debug.lua
-1. Script/Libs/FieldCreator.lua
-1. Script/Libs/jinclude.lua
-1. Script/Libs/join.lua
-1. Script/Libs/KeyCodes_BlitzMax.lua
-1. Script/Libs/Kthura.lua
-1. Script/Libs/Markers.lua
-1. Script/Libs/mysplit.lua
-1. Script/Libs/Quick String Routines.lua
-1. Script/Libs/QuickImage.lua
-1. Script/Libs/QuickJCR6.lua
-1. Script/Libs/RPGSTAT_Iterator.lua
-1. Script/Libs/switch.lua
-1. Script/Libs/tablecontains.lua
-1. Script/Libs/valstr.lua
 
-### Last updated: Sun 03 July 2016; 21:27:25 CET
+### Last updated: Sun 03 July 2016; 22:27:04 CET
