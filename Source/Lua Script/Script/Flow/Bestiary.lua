@@ -1,6 +1,6 @@
 --[[
   Bestiary.lua
-  Version: 16.05.22
+  Version: 16.07.04
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -39,7 +39,6 @@
 
 imgup   = Image.Load("GFX/Save/Up.png")
 imgdown = Image.Load("GFX/Save/Down.png")
-
 
 function UpdateList()
 List = jinc('Script/JINC/Big/BestiaryData.lua')

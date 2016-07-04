@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 16.06.03
+  version: 16.07.04
   Copyright (C) 2015, 2016 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -17,6 +17,9 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
+
+
+
 -- @USEDIR Script/Use/Anyway
 
 ROOM_ME = Maps.CodeName
