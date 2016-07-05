@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 16.06.18
+  Version: 16.07.05
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -706,6 +706,7 @@ FeatureHandleArray = {
 									RPGChar.SetParty(orderchosen,ch)
 									RPGChar.SetParty(i,tempch)
 									orderchosen = nil
+									pchar = RPGChar.PartyTag(pcharn)
 								else
 									orderchosen = i
 								end
