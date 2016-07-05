@@ -1,6 +1,6 @@
 --[[
   SaveGame.lua
-  Version: 16.02.09
+  Version: 16.07.05
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -34,6 +34,7 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
+
 function Scan()
 files = {}
 PM = PM or 0
@@ -65,7 +66,7 @@ setfont("SaveName")
 Red()
 Image.DText("Saving",400,300,2,2)
 Flip()
-LAURA.Save(LAURA.User().."/"..SaveName)
+LAURA.Save(trim(LAURA.User().."/"..SaveName))
 Mini("The game has been saved",255,180,0)
 Scrolled=false
 end
