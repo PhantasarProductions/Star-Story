@@ -45,8 +45,41 @@ function Boss()
    MapText('ALIVE2')
    Maps.Kill("Frank",1)
    Maps.Kill("Monster",1)
-   Sys.Error('Boss Event itself not yet scripted')
+   local lv=MapLevel()
+   Var.D("$COMBAT.BACKGROUND","Riool.png")
+   Var.D("$COMBAT.BEGIN","Default")
+   Var.D("$COMBAT.FOE5","Boss/SuperZombie")
+   Var.D("%COMBAT.LVFOE5",lv)
+   if skill==2 then
+      Var.D("$COMBAT.FOE4","Reg/Zombie")
+      Var.D("$COMBAT.FOE6","Reg/Zombie")
+      Var.D("%COMBAT.LVFOE4",rand(1,lv))
+      Var.D("%COMBAT.LVFOE6",rand(1,lv))
+   end
+   if skill==3 then
+      Var.D("$COMBAT.FOE1","Reg/Zombie")
+      Var.D("$COMBAT.FOE2","Reg/Zombie")
+      Var.D("$COMBAT.FOE3","Reg/Zombie")
+      Var.D("%COMBAT.LVFOE1",rand(50,lv))
+      Var.D("%COMBAT.LVFOE2",rand(50,lv))
+      Var.D("%COMBAT.LVFOE3",rand(50,lv))
+      Var.D("$COMBAT.FOE7","Reg/Zombie")
+      Var.D("$COMBAT.FOE8","Reg/Zombie")
+      Var.D("$COMBAT.FOE9","Reg/Zombie")
+      Var.D("%COMBAT.LVFOE7",rand(50,lv))
+      Var.D("%COMBAT.LVFOE8",rand(50,lv))
+      Var.D("%COMBAT.LVFOE9",rand(50,lv))
+   end
+   RandomBossTune()
+   StartCombat()   
+   Schedule("MAP","PostBoss")
+   -- Sys.Error('Boss Event itself not yet scripted')
 end
+
+function PostBoss()
+  MapExp()
+  Award("SECRETDUNGEON_SEWERS")
+end  
 
 function GALE_OnLoad()
    Music("Dungeon/Prisoner of War.ogg")
