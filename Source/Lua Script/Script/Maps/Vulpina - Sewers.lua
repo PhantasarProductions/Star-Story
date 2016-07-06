@@ -32,10 +32,20 @@
   
  **********************************************
  
-version: 16.07.05
+version: 16.07.06
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
+
+function Boss()
+   TurnPlayer('West')
+   MapText('ALIVE1')
+   Maps.Obj.Obj('Frank').TextureFile='GFX/Actors/SinglePic/Sewers/MadScientistHU.png'
+   MapText('ALIVE2')
+   Maps.Kill("Frank",1)
+   Maps.Kill("Monster",1)
+   Sys.Error('Boss Event itself not yet scripted')
+end
 
 function GALE_OnLoad()
    Music("Dungeon/Prisoner of War.ogg")

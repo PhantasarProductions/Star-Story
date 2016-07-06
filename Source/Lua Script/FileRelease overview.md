@@ -437,6 +437,7 @@
 1. Script/JINC/Foes/Reg/Thief.lua
 1. Script/JINC/Foes/Reg/UndedKid_Elf.lua
 1. Script/JINC/Foes/Reg/Wolf.lua
+1. Script/JINC/Foes/Reg/Zombie.lua
 1. Script/JINC/Foes/SuperBoss/FireSpider.lua
 1. Script/JINC/NewGame+/PreserveVar.lua
 1. Script/JINC/World/Nizozemska.lua
@@ -531,4 +532,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Wed 06 July 2016; 16:31:08 CET
+### Last updated: Wed 06 July 2016; 16:53:16 CET
