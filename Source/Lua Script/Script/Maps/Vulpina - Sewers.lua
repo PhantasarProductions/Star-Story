@@ -77,7 +77,7 @@ function Boss()
 end
 
 function PostBoss()
-  MapExp()
+  MapEXP()
   Award("SECRETDUNGEON_SEWERS")
 end  
 
