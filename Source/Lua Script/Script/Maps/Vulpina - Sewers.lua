@@ -82,7 +82,7 @@ function PostBoss()
 end  
 
 function NIMStick()
-  Done("&APP.NIMGAME")
+  Done("&APP.GAMENIM")
   MINI("NIMGAME added to terminal on the Hawk",255,180,0)
   MapEXP()
   Maps.Obj.Kill('NIMSTICK')
