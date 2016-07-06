@@ -95,5 +95,6 @@ return {
 	"SYSS",
 	"THIEF",
 	"WOLF",
+	"ZOMBIE",
 	"FIRESPIDER",
 }

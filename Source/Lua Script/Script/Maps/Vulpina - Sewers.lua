@@ -49,4 +49,5 @@ end
 
 function GALE_OnLoad()
    Music("Dungeon/Prisoner of War.ogg")
+   ZA_Enter('Boss',Boss)
 end   
