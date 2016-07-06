@@ -38,6 +38,7 @@ version: 16.07.06
 -- @USE /Script/Use/Maps/Gen/Next.lua
 
 function Boss()
+   if Done("&DONE.SECRETDUNGEON.SEWERS") then return end
    TurnPlayer('West')
    MapText('ALIVE1')
    Maps.Obj.Obj('Frank').TextureFile='GFX/Actors/SinglePic/Sewers/MadScientistHU.png'
