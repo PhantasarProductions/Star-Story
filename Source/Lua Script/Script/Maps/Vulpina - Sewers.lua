@@ -85,7 +85,7 @@ function NIMStick()
   Done("&APP.NIMGAME")
   MINI("MINGAME added to terminal on the Hawk",255,180,0)
   MapEXP()
-  Map.Obj.Kill('NIMSTICK')
+  Maps.Obj.Kill('NIMSTICK')
 end  
 
 function GALE_OnLoad()
