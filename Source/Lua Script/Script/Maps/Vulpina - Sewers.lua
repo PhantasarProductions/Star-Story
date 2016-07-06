@@ -81,7 +81,15 @@ function PostBoss()
   Award("SECRETDUNGEON_SEWERS")
 end  
 
+function NIMStick()
+  Done("&APP.NIMGAME")
+  MINI("MINGAME added to terminal on the Hawk",255,180,0)
+  MapEXP()
+  Map.Obj.Kill('NIMSTICK')
+end  
+
 function GALE_OnLoad()
    Music("Dungeon/Prisoner of War.ogg")
    ZA_Enter('Boss',Boss)
+   ZA_Enter("NIMSTICK",MIMStick)
 end   
