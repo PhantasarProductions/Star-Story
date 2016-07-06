@@ -198,6 +198,7 @@
 1. Script/JINC/IAA/ITM_PHAN_TRAVEL.lua
 1. Script/JINC/IAA/ITM_POISONDART.lua
 1. Script/JINC/IAA/ITM_ROCK.lua
+1. Script/JINC/IAA/ITM_SHIT.lua
 1. Script/JINC/IAA/ITM_SHOT.lua
 1. Script/JINC/IAA/ITM_SPORES.lua
 1. Script/JINC/IAA/ITM_STEROIDS.lua
@@ -528,4 +529,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 05 July 2016; 20:45:06 CET
+### Last updated: Wed 06 July 2016; 13:28:43 CET

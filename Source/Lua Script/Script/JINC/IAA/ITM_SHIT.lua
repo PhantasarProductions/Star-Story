@@ -1,5 +1,5 @@
 --[[
-  ITM_SUPERFIRSTAIDKIT.lua
+  ITM_SHIT.lua
   Version: 16.07.06
   Copyright (C) 2016 Jeroen Petrus Broks
   
@@ -36,23 +36,26 @@
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 100,
+	["ActSpeed"] = 10,
 	["AttackElement"] = "Non-Elemental",
+	["AttackPower"] = 25,
 	["AttackStat"] = "Strength",
+	["Buff_Accuracy"] = -10,
+	["Buff_Evasion"] = -15,
+	["CauseDisease"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Heals 3000 HP",
-	["Healing"] = 400,
+	["Description"] = "That stuff stinks. Can we get rid of it?",
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 5000,
-	["ITM_SellPrice"] = 1750,
+	["ITM_BuyPrice"] = 100,
+	["ITM_SellPrice"] = 75,
 	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/FirstAidKit.png",
+	["Icon"] = "GFX/Inventory/Poep.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Super First Aid Kit",
-	["SpellAni_Reference"] = "SingleHeal",
-	["Target"] = "1A",
+	["Name"] = "Shit",
+	["Target"] = "AF",
 	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseField"] = true,
+	["untauntable"] = true}
 
 return ret
 

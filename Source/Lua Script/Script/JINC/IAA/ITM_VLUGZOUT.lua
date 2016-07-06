@@ -15,7 +15,7 @@ not longer than 70 years ago, you can deem this file
 with basically comes down to the same lack of
 restriction the public domain offers. (YAY!)
 *********************************************************** 
-Version 16.07.03
+Version 16.07.06
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",

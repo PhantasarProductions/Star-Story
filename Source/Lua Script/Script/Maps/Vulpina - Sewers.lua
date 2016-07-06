@@ -32,8 +32,10 @@
   
  **********************************************
  
-version: 16.06.27
+version: 16.07.05
 ]]
+
+-- @USE /Script/Use/Maps/Gen/Next.lua
 
 function GALE_OnLoad()
    Music("Dungeon/Prisoner of War.ogg")

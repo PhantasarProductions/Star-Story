@@ -1,6 +1,6 @@
 --[[
   ITM_ICEBOMB.lua
-  Version: 16.07.03
+  Version: 16.07.06
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
