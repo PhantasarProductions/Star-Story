@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  MOO_Z1_MOEDEEERRRRRRRRRR_WAT_BEN_IK_BANG.lua
+  ARM_NAPALMSHOWER.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -35,23 +35,29 @@
 version: 16.07.07
 ]]
 ret = {
-	["APRecover"] = -50,
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 250,
-	["AttackElement"] = "Non-Elemental",
+	["ARM_Hit%"] = 80,
+	["ARM_MaxAmmo"] = 2,
+	["ARM_PRICE_Hit%"] = 250,
+	["ARM_PRICE_MaxAmmo"] = 100,
+	["ARM_PRICE_Weight"] = 1,
+	["ARM_PRICE_XPower"] = 500,
+	["ARM_XPower"] = 0,
+	["ActSpeed"] = 50,
+	["AttackElement"] = "Fire",
+	["AttackPower"] = 400,
 	["AttackStat"] = "Strength",
-	["CauseTerrified"] = true,
+	["Buff_Resistance"] = -10,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Moo",
+	["Description"] = "We don't need no water, let the motherf***er burn!",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Inventory/Moo.png",
+	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Moo",
-	["SpellAni_Reference"] = "Moo",
-	["Target"] = "1F",
+	["Name"] = "Napalm Shower",
+	["SpellAni_Reference"] = "Inferno",
+	["Target"] = "AF",
 	["UseCombat"] = true,
-	["UseField"] = true,
-	["untauntable"] = true}
+	["UseField"] = true}
 
 return ret
 

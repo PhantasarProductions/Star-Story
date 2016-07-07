@@ -142,6 +142,7 @@
 1. Script/JINC/IAA/ARM_MINICANNON.lua
 1. Script/JINC/IAA/ARM_MULTIBLAST.lua
 1. Script/JINC/IAA/ARM_MUNCHHAUSEN.lua
+1. Script/JINC/IAA/ARM_NAPALMSHOWER.lua
 1. Script/JINC/IAA/ARM_POISONDART.lua
 1. Script/JINC/IAA/ARM_ROCKTHROWER.lua
 1. Script/JINC/IAA/ARM_STUN_GUN.lua
@@ -535,4 +536,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Thu 07 July 2016; 09:44:33 CET
+### Last updated: Thu 07 July 2016; 10:51:12 CET
