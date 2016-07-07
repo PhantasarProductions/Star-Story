@@ -464,6 +464,7 @@
 1. Script/Maps/Physillium - The Ruins of the Y Anhysbys.lsv
 1. Script/Maps/Physillium - The Ruins of the Y Anhysbys.lua
 1. Script/Maps/Poloqor - Mid-Boss.lua
+1. Script/Maps/Volcania - Caves.lua
 1. Script/Maps/Volcania - Volcanic Plains.lua
 1. Script/Maps/Vulpina - Flower Forest.lua
 1. Script/Maps/Vulpina - Sewers.lua
@@ -534,4 +535,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Thu 07 July 2016; 09:28:01 CET
+### Last updated: Thu 07 July 2016; 09:44:33 CET
