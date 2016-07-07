@@ -35,6 +35,20 @@
 version: 16.07.07
 ]]
 
+bosstune = "SpecialBoss/DeathPredator.ogg"
+
+function Boss()
+  CleanCombat()
+  Var.D("$COMBAT.AltEnemyBuild","SUPERFOE_BuildBossVolcania")
+  Var.D("$COMBAT.BACKGROUND","Volcano.png")
+  Var.D("$COMBAT.MUSIC",'SpecialBoss/DeathPredator.ogg') 
+  Var.D("$COMBAT.BEGIN","Default")
+  Var.D("$COMBAT.FOE1","Boss/FireSpiderYoung")
+  Var.D("%COMBAT.LVFOE1",MapLevel())
+  Var.D("$COMBAT.ALTCOORDSFOE1","300,400")
+  StartCombat()
+end
+
 function GALE_OnLoad()
      Music("Dungeon/Dungeon1.ogg")
 end     

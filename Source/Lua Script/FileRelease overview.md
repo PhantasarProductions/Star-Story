@@ -403,6 +403,7 @@
 1. Script/JINC/Foes/Boss/DeathMyrQueen.lua
 1. Script/JINC/Foes/Boss/Diablo.lua
 1. Script/JINC/Foes/Boss/ExHuRU.lua
+1. Script/JINC/Foes/Boss/FireSpiderYoung.lua
 1. Script/JINC/Foes/Boss/GiantSnake.lua
 1. Script/JINC/Foes/Boss/LichKing.lua
 1. Script/JINC/Foes/Boss/Mid-Boss.lua
@@ -536,4 +537,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Thu 07 July 2016; 11:18:13 CET
+### Last updated: Thu 07 July 2016; 12:11:47 CET
