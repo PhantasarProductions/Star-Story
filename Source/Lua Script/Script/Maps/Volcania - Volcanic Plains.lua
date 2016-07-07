@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.12
+version: 16.07.07
 ]]
 
 AltComeInFromNorth = { [6]=2673 }
@@ -121,6 +121,7 @@ Var.D("$COMBAT.ALTCOORDSFOE1","300,400")
 BoxTextBack = "MAP"
 StartCombat()
 BoxTextBack = "BOXTEXT.KTHURA"
+Maps.Obj.Kill("BOSS",1)
 -- Sys.Error('The rest has not yet been scripted. Sorry!')
 end
 
