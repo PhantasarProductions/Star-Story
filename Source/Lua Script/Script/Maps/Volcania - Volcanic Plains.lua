@@ -80,7 +80,8 @@ if not CVV(VBoss) then -- No cheating in. Only available if the boss is dead.
    LAURA.Flow("GAMEOVER")
    return
    end
-LoadMap("Volcania - Caves")
+LoadMap("Volcania - Caves","#001")
+Maps.GotoLayer("#001")
 SpawnPlayer("Start")   
 end
 
