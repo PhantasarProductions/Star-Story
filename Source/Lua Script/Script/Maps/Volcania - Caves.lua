@@ -55,6 +55,11 @@ function EndDungeon()
    ;(inc or Inc)("%AURINARATE",100)
 end   
 
+function ByeBye()
+  LoadMap("Volcania - Volcanic Plains","#000")
+  SpawnPlayer("FromSecret")
+end
+
 function GALE_OnLoad()
      Music("Dungeon/Dungeon1.ogg")
      ZA_Enter("EndDungeon",EndDungeon)
