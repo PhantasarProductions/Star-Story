@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.08
+version: 16.07.07
 ]]
 
 -- Entrance hut to savespot
@@ -94,6 +94,7 @@ if not Done("&DONE.GROENHART") then
    Image.Cls()
    Flip()
    Party("Wendicka")
+   SetActive("Wendicka")
    LoadMap("Nizozemska - Lake","Lake")
    SpawnPlayer("Start")
    TurnPlayer("North")
