@@ -57,12 +57,14 @@ end
 
 function ByeBye()
   LoadMap("Volcania - Volcanic Plains","#000")
+  Maps.GotoLayer("#000")
   SpawnPlayer("FromSecret")
 end
 
 function GALE_OnLoad()
      Music("Dungeon/Dungeon1.ogg")
      ZA_Enter("EndDungeon",EndDungeon)
+     ZA_Enter("ByeBye",ByeBye)
 end     
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
