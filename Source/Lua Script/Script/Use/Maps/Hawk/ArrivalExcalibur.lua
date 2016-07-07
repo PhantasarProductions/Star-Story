@@ -32,8 +32,12 @@
   
  **********************************************
  
-version: 16.06.26
+version: 16.07.07
 ]]
 function ArrivalExcalibur()
-	Sys.Error("Section not yet available")
+  Var.D('$HAWK',"EXCALIBUR")
+  MapText("BACK2EXCALIBUR")
+  LoadMap("Excalibur - Final","#000")
+  Maps.GoToLayer("#000")
+	SpawnPlayer('VeryStart')
 end	

@@ -34,6 +34,52 @@
  
 version: 16.07.07
 ]]
+
+-- @USE /Script/Use/Maps/Gen/Schuif.lua
+
+Names = {
+            ['#000'] = 'Secret Hangar',
+            ['#001'] = 'Hidden layer',
+            ['#003'] = 'Lady of the Lake - Artificial Park'
+        }
+        
+function initkeycards() keycards = {} end     
+
+function HangarEntrance()
+   local left  = Maps.Obj.Obj("EntranceLeft")
+   local right = Maps.Obj.Obj("EntranceRight")
+   left.X = left.X-39
+   right.X = right.X+39
+   local PLAYER = Actors.Actor("PLAYER")
+   local Barrier = Maps.Obj.Obj("BlockStart")
+   Barrier.Impassible = 0
+   Maps.Remap()
+   Actors.MoveToSpot("PLAYER","BeginDungeon")
+   repeat
+     DrawScreen()
+     CSay("Player on Y: "..PLAYER.Y)
+     Flip()
+   until PLAYER.Y>=365
+   for i=39,0,-1 do
+       left.X=left.X+1
+       right.X=right.X-1
+       DrawScreen()
+       Flip()
+   end  
+   if not(Done('&DONE.EXCALIBUR.WENDICKAWELCOMEBACK')) then MapText("WENDICKA_WELCOMEBACK") end
+   Barrier.Impassible = 1
+   Maps.Remap()
+end   
+
 function GALE_OnLoad()
-   Music("Excalibur - Final.ogg")
+   if not (Done("&DONE.INIT.EXCALIBUR.KEYS")) then initkeycards() end
+   if (CVV("&JOINED.JOHNSON")) then
+      Party("Wendicka","Crystal","Yirl","Foxy","Xenobi","Johnson")
+      SyncLevel('Johnson')
+      MapText("JOHNSON_BACK")
+   else
+      Party("Wendicka","Crystal","Yirl","Foxy","Xenobi")
+   end
+   Music("Excalibur/Final.ogg")
+   ZA_Enter("EntranceWalkSouth",HangarEntrance)
 end
