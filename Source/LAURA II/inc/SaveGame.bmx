@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 16.05.24
+Version: 16.07.07
 End Rem
 
 Function GetActorSaveDump$(SMap:TKthura)

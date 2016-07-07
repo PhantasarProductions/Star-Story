@@ -73,6 +73,7 @@ end
 
 function GALE_OnLoad()
    if not (Done("&DONE.INIT.EXCALIBUR.KEYS")) then initkeycards() end
+   MS.LoadNew("PARTY","Script/Subroutines/Party.lua")
    if (CVV("&JOINED.JOHNSON")) then
       Party("Wendicka","Crystal","Yirl","Foxy","Xenobi","Johnson")
       SyncLevel('Johnson')
