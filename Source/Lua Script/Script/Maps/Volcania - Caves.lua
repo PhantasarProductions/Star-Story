@@ -39,7 +39,6 @@ bosstune = "SpecialBoss/DeathPredator.ogg"
 
 function Boss()
   CleanCombat()
-  Var.D("$COMBAT.AltEnemyBuild","SUPERFOE_BuildBossVolcania")
   Var.D("$COMBAT.BACKGROUND","Volcano.png")
   Var.D("$COMBAT.MUSIC",'SpecialBoss/DeathPredator.ogg') 
   Var.D("$COMBAT.BEGIN","Default")
