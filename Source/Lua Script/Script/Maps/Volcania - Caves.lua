@@ -39,3 +39,4 @@ function GALE_OnLoad()
      Music("Dungeon/Dungeon1.ogg")
 end     
 
+-- @USE /Script/Use/Maps/Next.lua
