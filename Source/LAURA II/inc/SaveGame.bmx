@@ -159,7 +159,7 @@ For Local line$=EachIn JCR_ListFile(BD,"LAURA/System")
 		If Len ls<2 GALE_Error("LoadGame: System Syntax Error",["File,"+StripDir(File),"Line,"+line,"Len,"+Len(ls)])
 		For Local ak=0 Until Len ls ls[ak]=Trim(ls[ak]) Next
 		Select ls[0]
-			Case "FullScreen"	graphicsfullscreen=ls[1].toint()
+			Case "FullScreen"	graphicsfullscreen=(ls[1].toint() Or (Not id.get("AllowFullOrWindowedScreenInSaveGame")))
 			Case "Flow"		currentflow = ls[1]
 			Case "Maps.Layer" LayerTag = ls[1]; DebugLog "LG: Set layer is: "+ls[1]
 			Case "Maps.File"	MapFIle = ls[1]; LAURA2MAPS.Load MapFile,LayerTag; DebugLog "LG: Map is: "+ls[1]+";"+LayerTag
