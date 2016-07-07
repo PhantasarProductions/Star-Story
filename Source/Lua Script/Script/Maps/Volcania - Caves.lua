@@ -49,8 +49,16 @@ function Boss()
   StartCombat()
 end
 
+function EndDungeon()
+   if Done("&DONE.SECRETDUNGEON.VOLCANIA.CAVES") then return end
+   MapEXP()
+   Award("SECRETDUNGEON_VOLCANIACAVES")
+   ;(inc or Inc)("%AURINARATE",100)
+end   
+
 function GALE_OnLoad()
      Music("Dungeon/Dungeon1.ogg")
+     ZA_Enter("EndDungeon",EndDungeon)
 end     
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
