@@ -83,7 +83,7 @@ CSay('We now have '..#Transporters.Worlds[world].." transporters activated in wo
 end
 
 function ReDefNode(tag,mapcode,world,location,layer,node)
-if notTransporters.Nodes[node] then ActivateRemotePad(tag,mapcode,world,location,layer,node); return end
+if not Transporters.Nodes[node] then ActivateRemotePad(tag,mapcode,world,location,layer,node); return end
 Transporters.Nodes[node] = { Map = mapcode, Transporter = "Trans.Spot."..tag, Layer=layer }
 for d in each ( Transporters.Worlds[world] ) do
     if d.Node==node then d.Location = location end

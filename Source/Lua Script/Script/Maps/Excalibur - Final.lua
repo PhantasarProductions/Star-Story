@@ -115,7 +115,7 @@ end
 
 function TerugNaarHawk()
    local node = "EXN"..math.ceil(tonumber(right(Maps.LayerCodeName,3))/5)
-   MS.LN_Run("TRANS","Script/SubRoutines/Transporter.lua","RefDefNode","F"..right(Maps.LayerCodeName,3)..";".."Excalibur - Final;Excalibur;"..Names[Maps.LayerCodeName]..";"..Maps.LayerCodeName..";"..node)
+   MS.LN_Run("TRANS","Script/SubRoutines/Transporter.lua","ReDefNode","F"..right(Maps.LayerCodeName,3)..";".."Excalibur - Final;Excalibur;"..Names[Maps.LayerCodeName]..";"..Maps.LayerCodeName..";"..node)
    TelEffect(TEL_OUT)
    if CVV('&JOINED.JOHNSON') then MapText('JOHNSON_LEAVE') end
    LoadMap("Hawk","Bridge")
