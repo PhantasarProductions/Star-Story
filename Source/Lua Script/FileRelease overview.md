@@ -153,6 +153,7 @@
 1. Script/JINC/IAA/BLADEH_VENOM.lua
 1. Script/JINC/IAA/ITEM_PHAN_TRAVEL.lua
 1. Script/JINC/IAA/ITM_ADHBANDAGE.lua
+1. Script/JINC/IAA/ITM_ADV_MEDIKIT.lua
 1. Script/JINC/IAA/ITM_ANTIDOTE.lua
 1. Script/JINC/IAA/ITM_ASTRILOPUPHONEY.lua
 1. Script/JINC/IAA/ITM_BANDAGE.lua
@@ -539,4 +540,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 08 July 2016; 15:48:28 CET
+### Last updated: Fri 08 July 2016; 15:54:42 CET

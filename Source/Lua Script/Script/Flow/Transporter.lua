@@ -1,6 +1,6 @@
 --[[
   Transporter.lua
-  Version: 16.05.27
+  Version: 16.07.08
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -73,13 +73,21 @@ for k,v in pairs(Transporters.Nodes) do
 Var.D("$RET",ret.." }")
 end
 
-function ActivateRemotePad(tag,mapcode,world,location,layer)
-local node = upper(mapcode.."."..tag)
+function ActivateRemotePad(tag,mapcode,world,location,layer,mynode)
+local node = mynode or upper(mapcode.."."..tag)
 CSay("Activating transporter: "..tag)
 Transporters.Nodes[node] = { Map = mapcode, Transporter = "Trans.Spot."..tag, Layer=layer }
 Transporters.Worlds[world] = Transporters.Worlds[world] or {}
 table.insert(Transporters.Worlds[world],{Location = location, Node=node}) 
 CSay('We now have '..#Transporters.Worlds[world].." transporters activated in world "..world)
+end
+
+function ReDefNode(tag,mapcode,world,location,layer,node)
+if notTransporters.Nodes[node] then ActivateRemotePad(tag,mapcode,world,location,layer,node); return end
+Transporters.Nodes[node] = { Map = mapcode, Transporter = "Trans.Spot."..tag, Layer=layer }
+for d in each ( Transporters.Worlds[world] ) do
+    if d.Node==node then d.Location = location end
+    end
 end
 
 function FirstWorld(world,mapfunction) -- Perfrom this function on the Hawk if this function is there. (this function will be removed from this record after it's performed)

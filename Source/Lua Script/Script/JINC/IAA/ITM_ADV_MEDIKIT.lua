@@ -1,7 +1,7 @@
 --[[
-  ZZZ_CID_DARKCHARGE.lua
+  ITM_ADV_MEDIKIT.lua
   Version: 16.07.08
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -35,20 +35,25 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
+	["APRecover"] = 5,
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 250,
+	["ActSpeed"] = 100,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
+	["CureDisease"] = true,
 	["DefenseStat"] = "Defense",
+	["Description"] = "Heals 3000 HP to a party member",
+	["Healing"] = 3000,
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Elements/Dark.png",
+	["ITM_BuyPrice"] = 8000,
+	["ITM_SellPrice"] = 4500,
+	["ITM_Sellable"] = true,
+	["Icon"] = "GFX/Inventory/FirstAidKit.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Dark Charge",
-	["SpellAni_Reference"] = "SingleHeal",
-	["Target"] = "AF",
+	["Name"] = "Advanced Medikit",
+	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true,
-	["UserNextMove"] = "ZZZ_CID_DARKSOULBREAKER",
 	["untauntable"] = true}
 
 return ret
