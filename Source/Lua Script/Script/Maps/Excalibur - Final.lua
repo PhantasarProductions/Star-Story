@@ -81,7 +81,7 @@ function GetKey(pname)
   local Name = upper(pname)
   local lay = Maps.LayerCodeName
   assert(keycolors[Name],"No keycard with color "..Name)
-  MINI(Name.." keycard found",keycolors[Name][1],keycolor[Name][2],keycolor[Name][3])
+  MINI(Name.." keycard found",keycolors[Name][1],keycolors[Name][2],keycolors[Name][3])
   keycards[lay][Name] = true
   Maps.Obj.Kill("NPC_"..Name,1)
 end
