@@ -48,8 +48,13 @@ Names = {
 keycolors = {RED = {255,0,0}, GREEN={0,255,0},BLUE={0,0,255},GOLD={255,180,0}}        
         
 Image.Load("GFX/Textures/Excalibur/Keycard.png","EX_KEYCARD")
+
+keyinsysvar = "$DITISVIEZEVUILEKUTCODEDIEJEVOORALNIETMOETLEZENENWAARIKEERDERVANBAALDANTROTSOPBENMAARDAARCODEVOLGENSDEREGELSNIETWILWERKENDANDOENWEHETMAAROPDESHITMETHODE.HETZOUDEKEYCARDSINEXCALIBURINIEDERGEVALMOETENLATENWERKEN.HOOPIK"
         
-function initkeycards() keycards = {} end     
+function initkeycards() 
+    keycards = {}
+    CSay('KeyCards reset as requested!')     
+end     
 
 function HangarEntrance()
    local left  = Maps.Obj.Obj("EntranceLeft")
@@ -84,6 +89,7 @@ function GetKey(pname)
   MINI(Name.." keycard found",keycolors[Name][1],keycolors[Name][2],keycolors[Name][3])
   keycards[lay][Name] = true
   Maps.Obj.Kill("NPC_"..Name,1)
+  Var.D(keyinsysvar,serialize('ret',keycards))
 end
 
 function NPC_RED  () GetKey('RED')   end
@@ -153,7 +159,10 @@ function MAP_FLOW()
 end
 
 function GALE_OnLoad()
-   if not (Done("&DONE.INIT.EXCALIBUR.KEYS")) then initkeycards() end
+   --if not (Done("&DONE.INIT.EXCALIBUR.KEYS")) then initkeycards() end
+   --CSay(serialize('keycards',keycards))
+   local getkeycard = loadstring(CVV(keyinsysvar).."\n\nreturn ret")
+   keycards = (getkeycard or function() Sys.Error("Error generated in getting keycard data") end)()
    MS.LoadNew("PARTY","Script/Subroutines/Party.lua")
    if (CVV("&JOINED.JOHNSON")) then
       Party("Wendicka","Crystal","Yirl","Foxy","Xenobi","Johnson")
