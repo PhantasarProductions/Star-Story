@@ -125,7 +125,7 @@ end
 function Transporter()
      -- ReDefNode(tag,mapcode,world,location,layer,node)
      Actors.Actor('PLAYER').Walking=0
-     Actors.Actor('Player').Moving=0
+     Actors.Actor('PLAYER').Moving=0
      Actors.MoveToSpot('PLAYER',"Trans.Spot.F"..right(Maps.LayerCodeName,3))
      local i = RunQuestion('MAP','TRANSPORTER')
      TurnPlayer('South')
