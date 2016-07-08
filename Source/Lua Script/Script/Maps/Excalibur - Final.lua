@@ -124,8 +124,8 @@ end
 
 function Transporter()
      -- ReDefNode(tag,mapcode,world,location,layer,node)
+     Actors.MoveToSpot('PLAYER',"Trans.Spot.F"..right(Maps.LayerCodeName,3))
      local i = RunQuestion('MAP','TRANSPORTER')
-     Actors.MoveToSpot('PLAYER',"F"..right(Maps.LayerCodeName,3))
      TurnPlayer('South')
      ;(({ InternStralen, TerugNaarHawk, Opslaan })[i] or function() Sys.Error("Unknown transporter answer code (#"..i..")") end)()
 end
