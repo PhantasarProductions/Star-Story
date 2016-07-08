@@ -128,6 +128,8 @@ function InternStralen()
    Sys.Error('This feature is not yet implemented') 
 end
 
+function CancelTrans() end -- This function just had to exist, that's all
+
 function Transporter()
      -- ReDefNode(tag,mapcode,world,location,layer,node)
      Actors.Actor('PLAYER').Walking=0
@@ -135,7 +137,7 @@ function Transporter()
      Actors.MoveToSpot('PLAYER',"Trans.Spot.F"..right(Maps.LayerCodeName,3))
      local i = RunQuestion('MAP','TRANSPORTER')
      TurnPlayer('South')
-     ;(({ InternStralen, TerugNaarHawk, Opslaan })[i] or function() Sys.Error("Unknown transporter answer code (#"..i..")") end)()
+     ;(({ InternStralen, TerugNaarHawk, Opslaan, CancelTrans })[i] or function() Sys.Error("Unknown transporter answer code (#"..i..")") end)()
 end
 
 function MAP_FLOW()
