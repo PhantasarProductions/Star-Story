@@ -103,6 +103,33 @@ function ToHangar()
    SpawnPlayer('From001')
 end
 
+function Opslaan()
+   GotoSave()
+end
+
+function TerugNaarHawk()
+   local node = "EXN"..math.ceil(tonumber(right(Maps.LayerCodeName,3))/5)
+   LN_Run("TRANS","Script/SubRoutines/Transporter.lua","RefDefNode","F"..right(Maps.LayerCodeName,3)..";".."Excalibur - Final;Excalibur;"..Names[Maps.LayerCodeName]..";"..Maps.LayerCodeName..";"..node)
+   TelEffect(TEL_OUT)
+   if CVV('&JOINED.JOHNSON') then MapText('JOHNSON_LEAVE') end
+   LoadMap("Hawk","Bridge")
+   SpawnPlayer("Scotty","South")
+   Party("Wendicka","Crystal","Yirl","Foxy","Xenobi","Rolf")
+   if not(Done("&DONE.HAWK.ROLF.WELCOME.BACK")) then MapText("ROLF_IS_BACK") end
+end
+
+function InternStralen()
+   Sys.Error('This feature is not yet implemented') 
+end
+
+function Transporter()
+     -- ReDefNode(tag,mapcode,world,location,layer,node)
+     local i = RunQuestion('MAP','TRANSPORTER')
+     Actors.MoveToSpot('PLAYER',"F"..right(Maps.LayerCodeName,3))
+     TurnPlayer('South')
+     ;(({ InternStralen, TerugNaarHawk, Opslaan })[i] or function() Sys.Error("Unknown transporter answer code (#"..i..")") end)()
+end
+
 function MAP_FLOW()
   local lay = Maps.LayerCodeName
   keycards = keycards or {} -- crash prevention. This line may actually never be needed!
@@ -137,4 +164,5 @@ function GALE_OnLoad()
    ZA_Enter("EntranceWalkSouth",HangarEntrance)
    ZA_Enter("ToDungeon",ToDungeon)
    ZA_Enter("TerugNaarHangar",ToHangar)
+   ZA_Enter("Transporter",Transporter)
 end
