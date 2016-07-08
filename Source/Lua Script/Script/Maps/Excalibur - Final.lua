@@ -32,16 +32,22 @@
   
  **********************************************
  
-version: 16.07.07
+version: 16.07.08
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Schuif.lua
+
+center=400
 
 Names = {
             ['#000'] = 'Secret Hangar',
             ['#001'] = 'Hidden layer',
             ['#003'] = 'Lady of the Lake - Artificial Park'
-        }
+        }; names=Names
+        
+keycolors = {RED = {255,0,0}, GREEN={0,255,0},BLUE={0,0,255},GOLD={255,180,0}}        
+        
+Image.Load("GFX/Textures/Excalibur/Keycard.png","EX_KEYCARD")
         
 function initkeycards() keycards = {} end     
 
@@ -70,6 +76,26 @@ function HangarEntrance()
    Barrier.Impassible = 1
    Maps.Remap()
 end   
+
+function MAP_FLOW()
+  local lay = Maps.LayerCodeName
+  keycards = keycards or {} -- crash prevention. This line may actually never be needed!
+  keycards[lay] = keycards[lay] or {}
+  local kcc = keycards[lay]
+  SetFont('ExFinal')
+  DarkText(names[lay],center,2,2,0,180,0,255)
+  local kx=center
+  kx = kx - (17*2)
+  for kn in each({'RED','GREEN','BLUE','GOLD'}) do
+      if keycards[lay][kn] then  
+         Image.Color(keycolors[kn][1],keycolors[kn][2],keycolors[kn][3])
+      else
+         Image.Color(80,80,80)
+      end      
+      Image.Draw("EX_KEYCARD",kx,15)
+      kx = kx + 17
+  end
+end
 
 function GALE_OnLoad()
    if not (Done("&DONE.INIT.EXCALIBUR.KEYS")) then initkeycards() end
