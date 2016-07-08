@@ -77,6 +77,20 @@ function HangarEntrance()
    Maps.Remap()
 end   
 
+function GetKey(pname)
+  local Name = upper(pname)
+  local lay = Maps.LayerCodeName
+  assert(keycolors[Name],"No keycard with color "..Name)
+  MINI(Name.." keycard found",keycolors[Name][1],keycolor[Name][2],keycolor[Name][3])
+  keycards[lay][Name] = true
+  Maps.Obj.Kill("NPC_"..Name)
+end
+
+function NPC_RED  () GetKey('RED')   end
+function NPC_GREEN() GetKey('GREEN') end
+function NPC_BLUE()  GetKey('BLUE')  end
+function NPC_GOLD()  GetKey('GOLD')  end
+
 function MAP_FLOW()
   local lay = Maps.LayerCodeName
   keycards = keycards or {} -- crash prevention. This line may actually never be needed!
