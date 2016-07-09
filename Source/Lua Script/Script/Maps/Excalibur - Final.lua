@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.08
+version: 16.07.09
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Schuif.lua
@@ -42,7 +42,8 @@ center=400
 Names = {
             ['#000'] = 'Secret Hangar',
             ['#001'] = 'Hidden layer',
-            ['#003'] = 'Lady of the Lake - Artificial Park'
+            ['#002'] = 'Security department',
+            ['#003'] = 'Lady of the Lake - Artificial Park',
         }; names=Names
         
 keycolors = {RED = {255,0,0}, GREEN={0,255,0},BLUE={0,0,255},GOLD={255,180,0}}        
@@ -90,6 +91,7 @@ function GetKey(pname)
   keycards[lay][Name] = true
   Maps.Obj.Kill("NPC_"..Name,1)
   Var.D(keyinsysvar,serialize('ret',keycards))
+  SFX('Audio/Sfx/Yeah/Yeah.ogg')
 end
 
 function NPC_RED  () GetKey('RED')   end
@@ -125,7 +127,11 @@ function TerugNaarHawk()
 end
 
 function InternStralen()
-   Sys.Error('This feature is not yet implemented') 
+   Var.D("$EXCALIBURTRANSPORT","return  { "..serialize('keys',keycards)..", "..serialize('locs',Names).." }")
+   MS.LoadNew("EXCATRANS","Script/Flow/Excalibur_Transport.lua")
+   MS.Run('EXCATRANS','TransferVarsFromMap')
+   LAURA.Flow('EXCATRANS')
+   -- Sys.Error('This feature is not yet implemented') 
 end
 
 function CancelTrans() end -- This function just had to exist, that's all
@@ -138,6 +144,16 @@ function Transporter()
      local i = RunQuestion('MAP','TRANSPORTER')
      TurnPlayer('South')
      ;(({ InternStralen, TerugNaarHawk, Opslaan, CancelTrans })[i] or function() Sys.Error("Unknown transporter answer code (#"..i..")") end)()
+end
+
+
+function Trans_GOTO(parea)
+  local area = parea or Var.C('$EXCAL_IWANTTOGOTO')
+  if area==Maps.LayerCodeName then return end
+  TelEffect(TEL_OUT)
+  Maps.Obj.Kill('PLAYER')
+  Maps.GotoLayer(area)
+  SpawnPlayer("Trans.Spot.F"..right(area,3))
 end
 
 function MAP_FLOW()
