@@ -94,10 +94,10 @@ function GetKey(pname)
   SFX('Audio/Sfx/Yeah/Yeah.ogg')
 end
 
-function NPC_RED  () GetKey('RED')   end
-function NPC_GREEN() GetKey('GREEN') end
-function NPC_BLUE()  GetKey('BLUE')  end
-function NPC_GOLD()  GetKey('GOLD')  end
+function NPC_RED  ()  GetKey('RED')   end
+function NPC_GREEN()  GetKey('GREEN') end
+function NPC_BLUE()   GetKey('BLUE')  end
+function NPC_GOLD()   GetKey('GOLD')  end
 
 function ToDungeon()
    Maps.Obj.Kill("PLAYER")
@@ -194,4 +194,5 @@ function GALE_OnLoad()
    ZA_Enter("ToDungeon",ToDungeon)
    ZA_Enter("TerugNaarHangar",ToHangar)
    ZA_Enter("Transporter",Transporter)
+   Award('SCENARIO_FINALDUNGEON')
 end

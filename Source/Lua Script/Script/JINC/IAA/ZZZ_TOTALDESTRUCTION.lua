@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.08
+version: 16.07.09
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
@@ -46,7 +46,7 @@ ret = {
 	["ItemType"] = "Consumable",
 	["Name"] = "Armageddon",
 	["ScriptEffect_Reference"] = "IDDQDisDEATH",
-	["Target"] = "EV",
+	["Target"] = "AF",
 	["UseCombat"] = true,
 	["UseField"] = true}
 

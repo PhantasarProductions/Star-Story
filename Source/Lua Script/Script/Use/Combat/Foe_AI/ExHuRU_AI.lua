@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.09
+version: 16.07.09
 ]]
 -- @IF IGNORE
 Foe_AI = {}  -- Ignored, but this fools my Outliner in Eclipse ;)
@@ -52,6 +52,7 @@ function Foe_AI.ExHuRU(pos)
   if not Wendicka then
      CSay("Wendicka isn't there, so let's kill everybody")
      DefaultProcess.Abl(me,"ZZZ_TOTALDESTRUCTION",myact)
+     myact.TargetGroup='Hero'
   else
      CSay("Wendicka = "..Wendicka)
      myact.TargetIndividual = Wendicka   
