@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.05.12
+version: 16.07.10
 ]]
 
 
--- Version 16.05.12
+-- Version 16.07.10
 
 
 
@@ -87,8 +87,8 @@ Data = {
 local temp
 
 
-Data.ActMinLevel["Sys.Attack"] = 0		for ak=1,1 do table.insert(Data.Acts,"Sys.Attack") end
-Data.ActMinLevel["Abl.ABL_EXHURU_BATTLECRY"] = 0		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_EXHURU_BATTLECRY") end
+Data.ActMinLevel["Sys.Attack"] = 0		for ak=1,50 do table.insert(Data.Acts,"Sys.Attack") end
+Data.ActMinLevel["Abl.ABL_EXHURU_BATTLECRY"] = 30		for ak=1,5 do table.insert(Data.Acts,"Abl.ABL_EXHURU_BATTLECRY") end
 Data.ActMinLevel["Abl.ABL_FOE_SCRATCH"] = 10		for ak=1,100 do table.insert(Data.Acts,"Abl.ABL_FOE_SCRATCH") end
 temp = { ITM='ITM_ADHBANDAGE', LVL=1, VLT=false }
 for ak=1,1 do table.insert(Data.ItemSteal,temp) end
