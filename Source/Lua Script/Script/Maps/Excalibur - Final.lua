@@ -151,6 +151,7 @@ function CancelTrans() end -- This function just had to exist, that's all
 
 function Transporter()
      -- ReDefNode(tag,mapcode,world,location,layer,node)
+     FinalMapShow()
      Actors.Actor('PLAYER').Walking=0
      Actors.Actor('PLAYER').Moving=0
      Actors.MoveToSpot('PLAYER',"Trans.Spot.F"..right(Maps.LayerCodeName,3))
@@ -214,6 +215,11 @@ function OpenKeyDoor(color)
   FinalMapShow()    
 end
 
+function Admiraal()
+  -- Yeah, admiral Johnson will join the group
+  Sys.Error("I'm sorry! This leads to a part that is not yet properly scripted. Please come back soon!")
+end
+
 function GALE_OnLoad()
    --if not (Done("&DONE.INIT.EXCALIBUR.KEYS")) then initkeycards() end
    --CSay(serialize('keycards',keycards))
@@ -236,6 +242,7 @@ function GALE_OnLoad()
    ZA_Enter('OPEN_GREEN',OpenKeyDoor,'GREEN')
    ZA_Enter('OPEN_BLUE',OpenKeyDoor,'BLUE')
    ZA_Enter('OPEN_GOLD',OpenKeyDoor,"GOLD")
+   ZA_Enter("Admiraal",Admiraal)
    Award('SCENARIO_FINALDUNGEON')
    FinalMapShow()
 end
