@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.09
+version: 16.07.10
 ]]
 -- @IF IGNORE
 Foe_AI = {}  -- Ignored, but this fools my Outliner in Eclipse ;)
@@ -46,7 +46,7 @@ function Foe_AI.ExHuRU(pos)
   Foe_AI.Default(pos)
   local myact = Act.Foe[pos]
   local Wendicka=nil
-  for i=0,3 do
+  for i=0,2 do
       if RPGChar.PartyTag(i)=="Wendicka" and RPGStat.Points("Wendicka","HP").Have>0 then Wendicka=i+1 end
   end
   if not Wendicka then

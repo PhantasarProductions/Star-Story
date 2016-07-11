@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.09
+version: 16.07.11
 ]]
 ret = {
 	["ABL_AP"] = 40,
@@ -44,7 +44,7 @@ ret = {
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 300,
 	["AttackElement"] = "Lightning",
-	["AttackPower"] = 50,
+	["AttackPower"] = 120,
 	["AttackStat"] = "Will",
 	["DefenseStat"] = "Resistance",
 	["Description"] = "Shock the enemies",

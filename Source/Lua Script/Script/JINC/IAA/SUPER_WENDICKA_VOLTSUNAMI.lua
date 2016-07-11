@@ -1,6 +1,6 @@
 --[[
   SUPER_WENDICKA_VOLTSUNAMI.lua
-  Version: 16.07.09
+  Version: 16.07.11
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -38,7 +38,7 @@ ret = {
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 50,
 	["AttackElement"] = "Lightning",
-	["AttackPower"] = 600,
+	["AttackPower"] = 900,
 	["AttackStat"] = "Will",
 	["CauseParalysis"] = true,
 	["DefenseStat"] = "Resistance",
