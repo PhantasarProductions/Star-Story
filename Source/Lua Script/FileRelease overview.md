@@ -112,6 +112,7 @@
 1. Script/JINC/IAA/ABL_WENDICKA_MJOLNIR.lua
 1. Script/JINC/IAA/ABL_WENDICKA_SHOCK.lua
 1. Script/JINC/IAA/ABL_WENDICKA_SHOCKTHERAPY.lua
+1. Script/JINC/IAA/ABL_WENDICKA_SISTERS.lua
 1. Script/JINC/IAA/ABL_XENOBI_BLIZZARD.lua
 1. Script/JINC/IAA/ABL_XENOBI_BREEZE.lua
 1. Script/JINC/IAA/ABL_XENOBI_FOCUSENERGY.lua
@@ -541,4 +542,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 11 July 2016; 16:06:43 CET
+### Last updated: Mon 11 July 2016; 17:17:40 CET

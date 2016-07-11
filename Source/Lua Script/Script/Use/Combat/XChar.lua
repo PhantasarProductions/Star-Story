@@ -218,7 +218,7 @@ XCharAttacked = {
     Xenobi = function(attackergroup,attackterindividual)
              local HP = RPGStat.Points('Xenobi','HP')
              local AP = RPGStat.Points('Xenobi','AP')
-             if HP.Have<HP.Maximum/2 then AP.Have=AP.Maximum end
+             if HP.Have<(HP.Maximum/2)/skill then AP.Have=AP.Maximum end
              end           
 
 }	
