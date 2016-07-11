@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.09
+version: 16.07.11
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Schuif.lua
@@ -47,6 +47,8 @@ Names = {
         }; names=Names
         
 keycolors = {RED = {255,0,0}, GREEN={0,255,0},BLUE={0,0,255},GOLD={255,180,0}}        
+
+keyopen = {}
         
 Image.Load("GFX/Textures/Excalibur/Keycard.png","EX_KEYCARD")
 
@@ -98,6 +100,17 @@ function NPC_RED  ()  GetKey('RED')   end
 function NPC_GREEN()  GetKey('GREEN') end
 function NPC_BLUE()   GetKey('BLUE')  end
 function NPC_GOLD()   GetKey('GOLD')  end
+
+function FinalMapShow()
+  local floors = {'BASE'}
+  local LAY = Maps.LayerCodeName
+  keyopen[LAY] = keyopen[LAY] or {}
+  for c in each({'RED','GREEN','BLUE','GOLD'}) do
+      if keyopen[LAY][c] then floors[#floors+1]="K_"..c end
+  end
+  MapShow(join(floors,","))
+end
+
 
 function ToDungeon()
    Maps.Obj.Kill("PLAYER")
@@ -154,6 +167,7 @@ function Trans_GOTO(parea)
   Maps.Obj.Kill('PLAYER')
   Maps.GotoLayer(area)
   SpawnPlayer("Trans.Spot.F"..right(area,3))
+  FinalMapShow()
 end
 
 function MAP_FLOW()
@@ -176,6 +190,30 @@ function MAP_FLOW()
   end
 end
 
+
+function OpenKeyDoor(color)
+  local c = upper(color)
+  local L = Maps.Obj.Obj(c.."_LINKS")
+  local R = Maps.Obj.Obj(c.."_RECHTS")
+  local LAY = Maps.LayerCodeName
+  if not keycards[LAY][c] then return end
+  keyopen[LAY] = keyopen[LAY] or {}
+  if keyopen[LAY][c] then return end
+  keyopen[LAY][c] = true  
+  MINI(c.." access granted",keycolors[c][1],keycolors[c][2],keycolors[c][3])
+  Maps.Obj.Kill("OPEN_"..c)
+  L.Impassible = 0
+  R.Impassible = 0
+  Maps.Remap()
+  for i=1,30 do
+      L.X = L.X - 1
+      R.X = R.X + 1
+      DrawScreen()
+      Flip()
+  end
+  FinalMapShow()    
+end
+
 function GALE_OnLoad()
    --if not (Done("&DONE.INIT.EXCALIBUR.KEYS")) then initkeycards() end
    --CSay(serialize('keycards',keycards))
@@ -194,5 +232,10 @@ function GALE_OnLoad()
    ZA_Enter("ToDungeon",ToDungeon)
    ZA_Enter("TerugNaarHangar",ToHangar)
    ZA_Enter("Transporter",Transporter)
+   ZA_Enter('OPEN_RED',OpenKeyDoor,'RED')
+   ZA_Enter('OPEN_GREEN',OpenKeyDoor,'GREEN')
+   ZA_Enter('OPEN_BLUE',OpenKeyDoor,'BLUE')
+   ZA_Enter('OPEN_GOLD',OpenKeyDoor,"GOLD")
    Award('SCENARIO_FINALDUNGEON')
+   FinalMapShow()
 end
