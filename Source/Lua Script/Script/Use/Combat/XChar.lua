@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.12
+version: 16.07.11
 ]]
 
 -- Kills for ExHuRU (and his "representatives")  
@@ -213,7 +213,13 @@ XCharAttacked = {
                RPGChar.SetParty(exu,"Wendicka")
 						   RPGChar.SetParty(pos,"ExHuRU")
 						   Fighters.Hero[pos+1] = { Tag = "ExHuRU", Gauge=9995 }             	      
-               end
+               end,
+    
+    Xenobi = function(attackergroup,attackterindividual)
+             local HP = RPGStat.Points('Xenobi','HP')
+             local AP = RPGStat.Points('Xenobi','AP')
+             if HP.Have<HP.Maximum/2 then AP.Have=AP.Maximum end
+             end           
 
 }	
 	
