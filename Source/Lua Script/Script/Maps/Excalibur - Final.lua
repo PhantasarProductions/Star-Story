@@ -237,6 +237,7 @@ function Admiraal()
   SyncLevel('Johnson') -- In the new game + we must make sure her stats are properly updated.
   RPGChar.SetName("Johnson","Admiral Johnson")
   Var.D("$JOHNSON","Johnson")
+  PartyUnPop()
   -- Sys.Error("I'm sorry! This leads to a part that is not yet properly scripted. Please come back soon!")
 end
 
