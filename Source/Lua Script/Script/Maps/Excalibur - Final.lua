@@ -216,6 +216,7 @@ function OpenKeyDoor(color)
 end
 
 function Admiraal()
+  if Done('&JOINED.JOHNSON') then return end
   -- Yeah, admiral Johnson will join the group
   PartyPop('adm','South')
   Maps.Obj.Obj('Reggie').Visible=1
@@ -234,6 +235,8 @@ function Admiraal()
   MapText('ADMIRAAL3')
   Party('Wendicka','Crystal','Johnson','Yirl','Foxy','Xenobi')
   SyncLevel('Johnson') -- In the new game + we must make sure her stats are properly updated.
+  RPGChar.SetName("Johnson","Admiral Johnson")
+  Var.D("$JOHNSON","Johnson")
   -- Sys.Error("I'm sorry! This leads to a part that is not yet properly scripted. Please come back soon!")
 end
 
