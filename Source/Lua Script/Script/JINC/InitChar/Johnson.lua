@@ -100,10 +100,12 @@ RPGStat.LinkList("ExHuRU","Johnson","LEARN")
 
 -- And the status resistances of Johnson
 
-RPGStat.DefStat("Johnson","SR_BASE_Poison",76/skill)
-RPGStat.DefStat("Johnson","SR_BASE_Paralysis",69/skill)
+RPGStat.DefStat("Johnson","SR_BASE_Poison",99/skill)
+RPGStat.DefStat("Johnson","SR_BASE_Paralysis",72/skill)
 RPGStat.DefStat("Johnson","SR_BASE_Disease",78/skill)
-RPGStat.DefStat("Johnson","SR_BASE_Will",40/skill)
-RPGStat.DefStat("Johnson","SR_BASE_Block",59/skill)
-RPGStat.DefStat("Johnson","SR_BASE_Death",73/skill)
-RPGStat.DefStat("Johnson","SR_BASE_Damned",39/skill)
+RPGStat.DefStat("Johnson","SR_BASE_Will",60/skill)
+RPGStat.DefStat("Johnson","SR_BASE_Block",27/skill)
+RPGStat.DefStat("Johnson","SR_BASE_Death",100/skill)
+RPGStat.DefStat("Johnson","SR_BASE_Damned",100)
+
+RPGChar.DefStat("Johnson","PXM",45)

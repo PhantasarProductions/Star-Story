@@ -224,7 +224,7 @@ function Admiraal()
   Actors.Spawn('go_admiraal','GFX/Actors/Player','Johnson')
   Actors.ChoosePic('Johnson','JOHNSON.NORTH')
   -- Actors.MoveToSpot('Johnson','go_admiraal',1) -- No matter what I do, things refuse to work :(
-  AddPartyPop('Johnson')
+  --AddPartyPop('Johnson')
   repeat
      Maps.CamY = Maps.CamY + 1
      DrawScreen()
@@ -237,6 +237,8 @@ function Admiraal()
   SyncLevel('Johnson') -- In the new game + we must make sure her stats are properly updated.
   RPGChar.SetName("Johnson","Admiral Johnson")
   Var.D("$JOHNSON","Johnson")
+  Maps.Obj.Kill('Johnson')
+  Maps.Obj.Obj('Reggie').Visible=0
   PartyUnPop()
   -- Sys.Error("I'm sorry! This leads to a part that is not yet properly scripted. Please come back soon!")
 end
