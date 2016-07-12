@@ -252,7 +252,7 @@ function GALE_OnLoad()
    if (CVV("&JOINED.JOHNSON")) then
       Party("Wendicka","Crystal","Yirl","Foxy","Xenobi","Johnson")
       SyncLevel('Johnson')
-      MapText("JOHNSON_BACK")
+      -- MapText("JOHNSON_BACK") -- temp crash prevention. A more neat solution is on the way.
    else
       Party("Wendicka","Crystal","Yirl","Foxy","Xenobi")
    end

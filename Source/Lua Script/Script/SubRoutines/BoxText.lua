@@ -1,6 +1,6 @@
 --[[
   BoxText.lua
-  Version: 16.02.12
+  Version: 16.07.12
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -180,7 +180,7 @@ if data.PicRef then
 -- Header
 Red()
 setfont("BoxText")
-Image.DText(data.Header,startx,starty-20)
+Image.DText(Var.S(data.Header),startx,starty-20)
 --print(serialize("boxtext",data))
 -- Text itself
 local ax,ay,y
