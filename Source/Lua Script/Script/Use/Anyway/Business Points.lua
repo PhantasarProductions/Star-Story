@@ -1,6 +1,6 @@
 --[[
   Business Points.lua
-  Version: 16.05.14
+  Version: 16.07.12
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -54,6 +54,7 @@
       - 1 point per 300 credits spent 
       - 5 points per item you pocess on any character (he or she MUST be in the active party on the moment of checking).
       - 2.5 points per item stored in the vault
+      = 1 point per 10 shilders in the easy mode, 25 shilders in the normal mode and 50 shilders in the hard mode
       
       - I do set %BUSINESSBONUS value, which might have extra points after completing some bonus missions (I just want to keep an option open to myself as nothing has been decided on this one).
       

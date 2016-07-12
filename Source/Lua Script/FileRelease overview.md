@@ -263,6 +263,7 @@
 1. Script/JINC/InitChar/Crystal.lua
 1. Script/JINC/InitChar/ExHuRU.lua
 1. Script/JINC/InitChar/Foxy.lua
+1. Script/JINC/InitChar/Johnson.lua
 1. Script/JINC/InitChar/Rolf.lua
 1. Script/JINC/InitChar/Share/Crystal.lua
 1. Script/JINC/InitChar/Share/Wendicka.lua
@@ -542,4 +543,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 11 July 2016; 20:03:10 CET
+### Last updated: Tue 12 July 2016; 17:25:24 CET

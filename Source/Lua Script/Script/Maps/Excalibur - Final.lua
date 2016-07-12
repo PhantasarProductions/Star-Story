@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.11
+version: 16.07.12
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Schuif.lua
@@ -217,7 +217,24 @@ end
 
 function Admiraal()
   -- Yeah, admiral Johnson will join the group
-  Sys.Error("I'm sorry! This leads to a part that is not yet properly scripted. Please come back soon!")
+  PartyPop('adm','South')
+  Maps.Obj.Obj('Reggie').Visible=1
+  MapText('ADMIRAAL1')
+  Actors.Spawn('go_admiraal','GFX/Actors/Player','Johnson')
+  Actors.ChoosePic('Johnson','JOHNSON.NORTH')
+  -- Actors.MoveToSpot('Johnson','go_admiraal',1) -- No matter what I do, things refuse to work :(
+  AddPartyPop('Johnson')
+  repeat
+     Maps.CamY = Maps.CamY + 1
+     DrawScreen()
+     Flip()
+  until Maps.CamY>=800
+  MapText('ADMIRAAL2')
+  KickReggie('East','POP_Foxy','Reggie')
+  MapText('ADMIRAAL3')
+  Party('Wendicka','Crystal','Johnson','Yirl','Foxy','Xenobi')
+  SyncLevel('Johnson') -- In the new game + we must make sure her stats are properly updated.
+  -- Sys.Error("I'm sorry! This leads to a part that is not yet properly scripted. Please come back soon!")
 end
 
 function GALE_OnLoad()

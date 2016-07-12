@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  Rolf.lua
+  Johnson.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -34,10 +34,6 @@
  
 version: 16.07.12
 ]]
-
-
-
-
 -- Getting Skill
 skill = Sys.Val(Var.C('%SKILL'))
 
@@ -63,7 +59,7 @@ skill = Sys.Val(Var.C('%SKILL'))
 -- Functions
 function prefixed(s,p) return Str.Prefixed(s,p)==1 end
 
--- Rolf taking over and linking to ExHuRU with his level and his upgrades and permanent powerups.
+-- Johnson taking over and linking to ExHuRU with his level and his upgrades and permanent powerups.
 
 stats = {"Strength", "Defense", "Will", "Resistance","Agility","Accuracy","Evasion","HP"}
 
@@ -80,36 +76,34 @@ for _,s in ipairs({'ER_Dark','ER_Earth','ER_Fire','ER_Frost','ER_Healing','ER_Li
 
 for _,s in ipairs({'Block','Buff','Damned','Death','Debuff','Disease','Paralysis','Poison','Will'}) do linking[#linking+1] = "SR_BUFF_"..s linking[#linking+1] = "SR_EQBF_"..s end
 
-for _,s in ipairs(linking) do RPGStat.LinkStat("ExHuRU","Rolf",s) end
+for _,s in ipairs(linking) do RPGStat.LinkStat("ExHuRU","Johnson",s) end
 
 
 -- Inventory link up
 for i=1,InventorySockets do 
-    RPGStat.LinkStat('ExHuRU','Rolf','INVAMNT'..i)
-    RPGStat.LinkData('ExHuRU','Rolf','INVITEM'..i)
+    RPGStat.LinkStat('ExHuRU','Johnson','INVAMNT'..i)
+    RPGStat.LinkData('ExHuRU','Johnson','INVITEM'..i)
     end
 
 
--- Rolf most also take over and link to ExHuRU's Experience points
+-- Johnson most also take over and link to ExHuRU's Experience points
 
-RPGStat.LinkPoints("ExHuRU","Rolf","EXP")
+RPGStat.LinkPoints("ExHuRU","Johnson","EXP")
 
 -- And the ability and learn list must be copied
-RPGStat.LinkList("ExHuRU","Rolf","ABL")
-RPGStat.LinkList("ExHuRU","Rolf","ABL_POWERUP")
-RPGStat.LinkList("ExHuRU","Rolf","LEARN")
+RPGStat.LinkList("ExHuRU","Johnson","ABL")
+RPGStat.LinkList("ExHuRU","Johnson","ABL_POWERUP")
+RPGStat.LinkList("ExHuRU","Johnson","LEARN")
 
 
 
 
--- And the status resistances of Rolf
+-- And the status resistances of Johnson
 
-RPGStat.DefStat("Rolf","SR_BASE_Poison",76/skill)
-RPGStat.DefStat("Rolf","SR_BASE_Paralysis",69/skill)
-RPGStat.DefStat("Rolf","SR_BASE_Disease",78/skill)
-RPGStat.DefStat("Rolf","SR_BASE_Will",40/skill)
-RPGStat.DefStat("Rolf","SR_BASE_Block",59/skill)
-RPGStat.DefStat("Rolf","SR_BASE_Death",73/skill)
-RPGStat.DefStat("Rolf","SR_BASE_Damned",39/skill)
-
-Var.D("%UPGRADES.ROLF",Var.C("%UPGRADES.EXHURU"))
+RPGStat.DefStat("Johnson","SR_BASE_Poison",76/skill)
+RPGStat.DefStat("Johnson","SR_BASE_Paralysis",69/skill)
+RPGStat.DefStat("Johnson","SR_BASE_Disease",78/skill)
+RPGStat.DefStat("Johnson","SR_BASE_Will",40/skill)
+RPGStat.DefStat("Johnson","SR_BASE_Block",59/skill)
+RPGStat.DefStat("Johnson","SR_BASE_Death",73/skill)
+RPGStat.DefStat("Johnson","SR_BASE_Damned",39/skill)
