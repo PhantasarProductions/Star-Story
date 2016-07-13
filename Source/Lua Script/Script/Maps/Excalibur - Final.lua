@@ -45,7 +45,9 @@ Names = {
             ['#002'] = 'Security department',
             ['#003'] = 'Lady of the Lake - Artificial Park',
             ['#004'] = 'Coder Section - LAURA',
-            ['#005'] = 'Residential Area - Galahad'
+            ['#005'] = 'Residential Area - Galahad',
+            ['#008'] = 'Coder Section - BLITZ',
+            ['#016'] = 'Coder Section - LUA'
         }; names=Names
         
 keycolors = {RED = {255,0,0}, GREEN={0,255,0},BLUE={0,0,255},GOLD={255,180,0}}        

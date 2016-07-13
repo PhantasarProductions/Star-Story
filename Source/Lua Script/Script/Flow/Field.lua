@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 16.06.02
+  Version: 16.07.13
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,6 +36,8 @@
 ]]
 
 -- @UNDEF EMSAVEDEBUG
+
+-- @USEDIR Script/Use/Maps/AltArena
 
 cplayer = cplayer or "PLAYER"
 activeplayer = activeplayer or RPGChar.PartyTag(0)
@@ -642,6 +644,7 @@ else
     end
    -- Let's now define the new shit we got    
    Var.D("$COMBAT.BACKGROUND",arena)
+   if AltArena[upper(Maps.CodeName)] and AltArena[upper(Maps.CodeName)][upper(Maps.LayerCodeName)] then Var.D("$COMBAT.BACKGROUND",AltArena[upper(Maps.CodeName)][upper(Maps.LayerCodeName)]) end
    Var.D("$COMBAT.BEGIN","Default")
    encmusic = encmusic or GetEncTracks()    
    if Maps.GetData("AltEncounterTune")~="" then Var.D("$COMBAT.MUSIC",Maps.GetData("AltEncounterTune")) else Var.D("$COMBAT.MUSIC",encmusic[rand(1,#encmusic)]) end

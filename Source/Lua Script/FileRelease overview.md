@@ -379,6 +379,7 @@
 1. Script/Use/Linkers/PartyLinker.lua
 1. Script/Use/Linkers/SFXLinker.lua
 1. Script/Use/Linkers/Transporter_Linker.lua
+1. Script/Use/Maps/AltArena/AAA.lua
 1. Script/Use/Maps/Gen/Schuif.lua
 1. Script/Use/Maps/Hawk/Banika.Lua
 1. Script/Use/Maps/Hawk_Terminal/Jukebox.lua
@@ -501,6 +502,7 @@
 1. Script/Use/Combat/StatusChanges/Fear.lua
 1. Script/Use/Combat/StatusChanges/IDDQD.lua
 1. Script/Use/Linkers/WorldLinker.lua
+1. Script/Use/Maps/AltArenas/Excalibur.lua
 1. Script/Use/Maps/Gen/Next.lua
 1. Script/Use/Maps/Gen/SchuifNext.lua
 1. Script/Use/Maps/Gen/SchuifNextReal.lua
@@ -543,4 +545,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 12 July 2016; 22:42:36 CET
+### Last updated: Wed 13 July 2016; 12:34:37 CET
