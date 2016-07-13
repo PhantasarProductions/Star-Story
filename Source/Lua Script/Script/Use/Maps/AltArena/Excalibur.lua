@@ -41,8 +41,8 @@ AltArena = {}
 
 
 AltArena['EXCALIBUR - FINAL'] = {
-                                     ['#001'] = 'Excalibur_SecretPassage',
-                                     ['#004'] = 'Bos - Spar'
+                                     ['#001'] = 'Excalibur_SecretPassage.png',
+                                     ['#004'] = 'Bos - Spar.png'
                                 }
                                 
 --CSay('AltArea - Excalibur - All set')                                
