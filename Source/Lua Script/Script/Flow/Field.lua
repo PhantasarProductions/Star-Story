@@ -37,6 +37,7 @@
 
 -- @UNDEF EMSAVEDEBUG
 
+-- -- @USEDIR Script/Use/Maps/AltArena
 -- @USEDIR Script/Use/Maps/AltArena
 
 cplayer = cplayer or "PLAYER"

@@ -502,7 +502,7 @@
 1. Script/Use/Combat/StatusChanges/Fear.lua
 1. Script/Use/Combat/StatusChanges/IDDQD.lua
 1. Script/Use/Linkers/WorldLinker.lua
-1. Script/Use/Maps/AltArenas/Excalibur.lua
+1. Script/Use/Maps/AltArena/Excalibur.lua
 1. Script/Use/Maps/Gen/Next.lua
 1. Script/Use/Maps/Gen/SchuifNext.lua
 1. Script/Use/Maps/Gen/SchuifNextReal.lua
@@ -545,4 +545,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Wed 13 July 2016; 12:34:37 CET
+### Last updated: Wed 13 July 2016; 19:52:23 CET
