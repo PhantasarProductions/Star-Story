@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  Excalibur.lua
+  Johnson_Phaser.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -35,14 +35,38 @@
 version: 16.07.14
 ]]
 -- @IF IGNORE
-AltArena = {}
+SpellAni = {}
 -- @FI
 
 
+function SpellAni.Johnson_Phaser(ActG,ActT,TarG,TarT)
+  local ax,ay = FighterCoords(ActG,ActT)
+  local tx,ty = FighterCoords(TarG,TarT)
+  local gx = (tx-ax)/10
+  local gy = (ty-ay)/10
+  local x,y=ax,ay
+  --Image.LoadNew("PROJECTILE_YIRL_LASER","GFX/Combat/Projectiles/Yirl_Laser.png")
+  SFX("Audio/SFX/Photon.ogg")
+  repeat
+    x = x + gx
+    y = y + gy
+    --[[DrawScreen()
+    White()
+    Image.Show("PROJECTILE_YIRL_LASER",x,y)
+    Flip()]]
+  until x<-50 or x>850 or y<-50 or y>650
+  -- I got the data I need now. That routine from Yirl was good for something, eh?
+  local sx = ax-16
+  local sy = ay-43
+  local r = rand(100,255)
+  local g = rand(100,255)
+  local b = rand(100,255)
+  DrawScreen()
+  Image.Color(r,g,b)
+  Image.Line(sx,sy,x,y)
+  Flip()
+  Time.Sleep(500)
+end
 
-AltArena['EXCALIBUR - FINAL'] = {
-                                     ['#001'] = 'Excalibur_SecretPassage.png',
-                                     ['#003'] = 'Bos - Spar.png'
-                                }
-                                
---CSay('AltArea - Excalibur - All set')                                
+
+SpellAni.Johnson_PhotonBlade = SpellAni.Johnson_Phaser -- Originally this was meant to be a photon blade, but due to animation issues, I just used a phaser. This line is to prevent conflicts in savegames.
