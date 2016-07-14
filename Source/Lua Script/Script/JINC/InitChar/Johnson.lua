@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.12
+version: 16.07.14
 ]]
 -- Getting Skill
 skill = Sys.Val(Var.C('%SKILL'))
@@ -108,7 +108,7 @@ RPGStat.DefStat("Johnson","SR_BASE_Block",27/skill)
 RPGStat.DefStat("Johnson","SR_BASE_Death",100/skill)
 RPGStat.DefStat("Johnson","SR_BASE_Damned",100)
 
-RPGStat.SetData("Johnson","ShootSpellAni","Johnson_PhotonBlade")
+RPGStat.SetData("Johnson","ShootSpellAni","Johnson_Phasar") -- Johnson_PhotonBlade
 RPGChar.DefStat("Johnson","AMMO_BASE",12)
 
 RPGChar.DefStat("Johnson","PXM",45)
