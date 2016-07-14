@@ -48,7 +48,10 @@ Names = {
             ['#003'] = 'Lady of the Lake - Artificial Park',
             ['#004'] = 'Coder Section - LAURA',
             ['#005'] = 'Residential Area - Galahad',
+            ['#006'] = 'Junk collection area - Donald',            
             ['#008'] = 'Coder Section - BLITZ',
+            ['#012'] = 'Junk collection area - Geert',
+            ['#018'] = 'Junk collection area - Marine',
             ['#016'] = 'Coder Section - LUA'
         }; names=Names
         

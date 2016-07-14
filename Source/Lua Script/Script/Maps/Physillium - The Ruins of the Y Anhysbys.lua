@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.04
+version: 16.07.14
 ]]
 -- @USE /Script/Use/Maps/Gen/Schuif.lua
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -44,8 +44,9 @@ if InParty("Wendicka") and (not Done("&DONE.WENDICKA.YANHYSBYS.SECRETPASSAGE.CRY
 end
 
 function StartPuzzle()
-MS.Load("MINIGAME","Script/MiniGame/MemoryAnhysbys.lua")
-LAURA.Flow("MINIGAME")
+   if Done('&DONE.YANHYSBYS.PUZZLE.SEQUENCE.'..upper(Maps.LayerCodeName)) then return end
+   MS.Load("MINIGAME","Script/MiniGame/MemoryAnhysbys.lua")
+   LAURA.Flow("MINIGAME")
 end
 
 CLICK_ARRIVAL_Puzzle1 = StartPuzzle
