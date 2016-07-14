@@ -37,6 +37,8 @@ version: 16.07.14
 
 -- @USE /Script/Use/Maps/Gen/Schuif.lua
 
+chats = 1
+
 center=400
 
 Names = {
@@ -249,6 +251,10 @@ function Admiraal()
   -- Sys.Error("I'm sorry! This leads to a part that is not yet properly scripted. Please come back soon!")
 end
 
+function ExecChat(i)
+   if not Done('&DONE.EXCALIBUR.FINAL.CHAT['..i..']') then MapText('CHAT'..i) end
+end   
+
 function GALE_OnLoad()
    --if not (Done("&DONE.INIT.EXCALIBUR.KEYS")) then initkeycards() end
    --CSay(serialize('keycards',keycards))
@@ -273,6 +279,7 @@ function GALE_OnLoad()
    ZA_Enter('OPEN_GOLD',OpenKeyDoor,"GOLD")
    ZA_Enter("Admiraal",Admiraal)
    ZA_Leave("Transporter",Var.Clear,'&IGNORE.TRANSPORTER')
+   for i=1,chats do ZA_Enter('CHAT'..i,ExecChat,i) end
    Award('SCENARIO_FINALDUNGEON')
    FinalMapShow()
 end
