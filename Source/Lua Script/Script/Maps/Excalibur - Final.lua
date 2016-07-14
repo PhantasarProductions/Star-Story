@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.12
+version: 16.07.14
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Schuif.lua
@@ -117,6 +117,7 @@ end
 
 
 function ToDungeon()
+   Var.Clear('&IGNORE.TRANSPORTER')
    Maps.Obj.Kill("PLAYER")
    Maps.GotoLayer("#001")
    SpawnPlayer('BeginMetNummer1')
@@ -155,6 +156,7 @@ function CancelTrans() end -- This function just had to exist, that's all
 
 function Transporter()
      -- ReDefNode(tag,mapcode,world,location,layer,node)
+     if Done("&IGNORE.TRANSPORTER") then return end
      FinalMapShow()
      Actors.Actor('PLAYER').Walking=0
      Actors.Actor('PLAYER').Moving=0
@@ -256,7 +258,7 @@ function GALE_OnLoad()
    if (CVV("&JOINED.JOHNSON")) then
       Party("Wendicka","Crystal","Yirl","Foxy","Xenobi","Johnson")
       SyncLevel('Johnson')
-      -- MapText("JOHNSON_BACK") -- temp crash prevention. A more neat solution is on the way.
+      if not CVV('&IGNORE.TRANSPORTER') then MapText("JOHNSON_BACK") end -- temp crash prevention. A more neat solution is on the way.
    else
       Party("Wendicka","Crystal","Yirl","Foxy","Xenobi")
    end
@@ -270,6 +272,7 @@ function GALE_OnLoad()
    ZA_Enter('OPEN_BLUE',OpenKeyDoor,'BLUE')
    ZA_Enter('OPEN_GOLD',OpenKeyDoor,"GOLD")
    ZA_Enter("Admiraal",Admiraal)
+   ZA_Leave("Transporter",Var.Clear,'&IGNORE.TRANSPORTER')
    Award('SCENARIO_FINALDUNGEON')
    FinalMapShow()
 end
