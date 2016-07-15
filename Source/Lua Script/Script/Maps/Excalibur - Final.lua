@@ -39,7 +39,7 @@ version: 16.07.15
 
 -- @USEDIR Script/Use/Maps/AltArena
 
-chats = 1
+chats = 2
 
 center=400
 
@@ -198,7 +198,7 @@ function Niets() end -- Believe it or not I need this!
 
 function MAP_FLOW()
   local lay = Maps.LayerCodeName
-  ;(floorfloor[lay] or nothing)()
+  ;(floorflow[lay] or nothing)()
   keycards = keycards or {} -- crash prevention. This line may actually never be needed!
   keycards[lay] = keycards[lay] or {}
   local kcc = keycards[lay]
