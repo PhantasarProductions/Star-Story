@@ -71,7 +71,7 @@ floorflow = {
                ['#006'] = function()
                             local b = Maps.Obj.Obj('Conveyor')
                             b.InsertY = b.InsertY - rand(1,3)
-                            if b.InsertY<-832 then b.InsertY = b.InsertY + 1664 end
+                            if b.InsertY<-900 then b.InsertY = b.InsertY + 1800 end
                           end  
             }        
             
