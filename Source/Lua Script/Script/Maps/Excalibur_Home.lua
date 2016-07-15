@@ -225,6 +225,7 @@ if CVV('&JOINED.JOHNSON') then
   LoadMap("Excalibur - Final","#005")
   Maps.GotoLayer('#005')
   SpawnPlayer("Start","South")
+  Var.Clear('&IGNORE.TRANSPORTER')
   return
   end
 if not CVV("&ATTACKED.EXCALIBUR") then return MapText("DONTLEAVE") end
