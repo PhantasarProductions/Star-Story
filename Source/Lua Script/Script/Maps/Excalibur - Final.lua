@@ -321,7 +321,10 @@ function PostBoss005()
   Award('BOSS_SUPERCYBORG')
 end  
 
-
+function GoHome() 
+  LoadMap('Excalibur_Home')
+  SpawnPlayer('Voordeur')
+end
 
 function GALE_OnLoad()
    --if not (Done("&DONE.INIT.EXCALIBUR.KEYS")) then initkeycards() end
@@ -347,6 +350,7 @@ function GALE_OnLoad()
    ZA_Enter('OPEN_GOLD',OpenKeyDoor,"GOLD")
    ZA_Enter("Admiraal",Admiraal)
    ZA_Enter('Boss005',Boss005)
+   ZA_Enter('Go Home',GoHome)
    ZA_Leave("Transporter",Var.Clear,'&IGNORE.TRANSPORTER')
    for i=1,chats do ZA_Enter('CHAT'..i,ExecChat,i) end
    Award('SCENARIO_FINALDUNGEON')
