@@ -198,7 +198,7 @@ function Niets() end -- Believe it or not I need this!
 
 function MAP_FLOW()
   local lay = Maps.LayerCodeName
-  ;(floorflow[lay] or nothing)()
+  ;(floorflow[lay] or Niets)()
   keycards = keycards or {} -- crash prevention. This line may actually never be needed!
   keycards[lay] = keycards[lay] or {}
   local kcc = keycards[lay]
