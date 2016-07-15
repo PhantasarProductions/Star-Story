@@ -67,6 +67,14 @@ Image.Load("GFX/Textures/Excalibur/Keycard.png","EX_KEYCARD")
 
 keyinsysvar = "$DITISVIEZEVUILEKUTCODEDIEJEVOORALNIETMOETLEZENENWAARIKEERDERVANBAALDANTROTSOPBENMAARDAARCODEVOLGENSDEREGELSNIETWILWERKENDANDOENWEHETMAAROPDESHITMETHODE.HETZOUDEKEYCARDSINEXCALIBURINIEDERGEVALMOETENLATENWERKEN.HOOPIK"
         
+floorflow = {
+               ['#008'] = function()
+                            local b = Maps.Obj.Obj('Conveyor')
+                            b.InsertY = b.InsertY - Rand(1,3)
+                            if b.InsertY<-800 then b.InsertY = b.InsertY + 1600 end
+                          end  
+            }        
+            
 function initkeycards() 
     keycards = {}
     CSay('KeyCards reset as requested!')     
@@ -186,8 +194,11 @@ function Trans_GOTO(parea)
   FinalMapShow()
 end
 
+function Niets() end -- Believe it or not I need this!
+
 function MAP_FLOW()
   local lay = Maps.LayerCodeName
+  ;(floorfloor[lay] or nothing)()
   keycards = keycards or {} -- crash prevention. This line may actually never be needed!
   keycards[lay] = keycards[lay] or {}
   local kcc = keycards[lay]
@@ -325,6 +336,7 @@ function GoHome()
   LoadMap('Excalibur_Home')
   SpawnPlayer('Voordeur')
   Award('BONUS_HOME')
+  Var.D('&IGNORE.TRANSPORTER','TRUE')
 end
 
 function GALE_OnLoad()
