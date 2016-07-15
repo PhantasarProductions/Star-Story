@@ -68,10 +68,10 @@ Image.Load("GFX/Textures/Excalibur/Keycard.png","EX_KEYCARD")
 keyinsysvar = "$DITISVIEZEVUILEKUTCODEDIEJEVOORALNIETMOETLEZENENWAARIKEERDERVANBAALDANTROTSOPBENMAARDAARCODEVOLGENSDEREGELSNIETWILWERKENDANDOENWEHETMAAROPDESHITMETHODE.HETZOUDEKEYCARDSINEXCALIBURINIEDERGEVALMOETENLATENWERKEN.HOOPIK"
         
 floorflow = {
-               ['#008'] = function()
+               ['#006'] = function()
                             local b = Maps.Obj.Obj('Conveyor')
-                            b.InsertY = b.InsertY - Rand(1,3)
-                            if b.InsertY<-800 then b.InsertY = b.InsertY + 1600 end
+                            b.InsertY = b.InsertY - rand(1,3)
+                            if b.InsertY<-832 then b.InsertY = b.InsertY + 1664 end
                           end  
             }        
             
