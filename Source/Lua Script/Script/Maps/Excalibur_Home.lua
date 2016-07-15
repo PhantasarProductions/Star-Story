@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.02.04
+version: 16.07.15
 ]]
 
 function CLICK_ARRIVAL_Vlag_Brabant()
@@ -221,6 +221,12 @@ end
 
 -- Leave the room if you are allowed to do so
 function Opzouten()
+if CVV('&JOINED.JOHNSON') then
+  LoadMap("Excalibur - Final","#005")
+  Maps.GotoLayer('#005')
+  SpawnPlayer("Start","South")
+  return
+  end
 if not CVV("&ATTACKED.EXCALIBUR") then return MapText("DONTLEAVE") end
 CleanCombat()
 LoadMap("Excalibur_UnderAttack")
@@ -247,7 +253,8 @@ end
 
 
 function GALE_OnLoad()
-if not CVV("&DONE.PROLOGUE")      then Music("Scenario/Panic Stations.ogg") 
+if     CVV('&JOINED.JOHNSON')     then Music('Excalibur/Final.ogg')
+elseif not CVV("&DONE.PROLOGUE")  then Music("Scenario/Panic Stations.ogg") 
 --elseif CVV("&DONE.EXHURU")        then Music("Scenario/Panic Stations.ogg")
 elseif CVV("&ATTACKED.EXCALIBUR") then Music("Excalibur/Attacked.ogg")
 else                                   Music("Scenario/Calm Indoors.ogg") end
