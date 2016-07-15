@@ -32,10 +32,12 @@
   
  **********************************************
  
-version: 16.07.14
+version: 16.07.15
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Schuif.lua
+
+-- @USEDIR Script/Use/Maps/AltArena
 
 chats = 1
 
@@ -51,8 +53,10 @@ Names = {
             ['#006'] = 'Junk collection area - Donald',            
             ['#008'] = 'Coder Section - BLITZ',
             ['#012'] = 'Junk collection area - Geert',
+            ['#016'] = 'Coder Section - LUA',
             ['#018'] = 'Junk collection area - Marine',
-            ['#016'] = 'Coder Section - LUA'
+            ['#019'] = 'Staff department',
+            ['#020'] = 'High Security Department'
         }; names=Names
         
 keycolors = {RED = {255,0,0}, GREEN={0,255,0},BLUE={0,0,255},GOLD={255,180,0}}        
@@ -161,8 +165,8 @@ function CancelTrans() end -- This function just had to exist, that's all
 
 function Transporter()
      -- ReDefNode(tag,mapcode,world,location,layer,node)
-     if Done("&IGNORE.TRANSPORTER") then return end
      FinalMapShow()
+     if Done("&IGNORE.TRANSPORTER") then return end
      Actors.Actor('PLAYER').Walking=0
      Actors.Actor('PLAYER').Moving=0
      Actors.MoveToSpot('PLAYER',"Trans.Spot.F"..right(Maps.LayerCodeName,3))
@@ -258,6 +262,67 @@ function ExecChat(i)
    if not Done('&DONE.EXCALIBUR.FINAL.CHAT['..i..']') then MapText('CHAT'..i) end
 end   
 
+function Boss(BossFile,track)
+local cyb = {'Gunner','Medic','Captain'}
+local lvmul = {.50,.75,1}
+CleanCombat()
+local lv = MapLevel()*lvmul[skill]
+local subjects = ({2,4,8})[skill]
+local x,y,si
+-- Background data
+Var.D("$COMBAT.BACKGROUND",AltArena['EXCALIBUR - FINAL'][Maps.LayerCodeName] or "Excalibur.png")
+-- Var.D("$COMBAT.VICTORYCHECK","Flirmouse_King")
+Var.D("$COMBAT.BEGIN","Default")
+-- The boss him/herself
+Var.D("$COMBAT.FOE1","Boss/"..BossFile)
+Var.D("%COMBAT.LVFOE1",lv)
+Var.D("$COMBAT.ALTCOORDSFOE1","300,400")
+local base = {300,400}
+local subjectxy = {
+                     {0,-100},
+                     {0, 100},
+                     { 100,0},
+                     {-100,0},
+                     
+                     { 50, 50},
+                     {-50, 50},
+                     { 50,-50},
+                     {-50,-50} 
+                  }
+
+for i=1,subjects do 
+    si = i + 1
+    Var.D("$COMBAT.FOE"..si,"Reg/Cyborg "..cyb[rand(1,#cyb)])
+    Var.D('%COMBAT.LVFOE'..si,lv/(4-skill))
+    -- x = 300+(math.sin(((i-1)/(subjects))*360)*200)
+    -- y = 400+(math.cos(((i-1)/(subjects))*360)*100)
+    x = base[1]+subjectxy[i][1]
+    y = base[2]+subjectxy[i][2]
+    CSay("Subject #"..i.." is set to coordinates ("..x..","..y..")")
+    Var.D("$COMBAT.ALTCOORDSFOE"..si,x..","..y)
+    end
+Var.D("$COMBAT.MUSIC",track )    
+StartCombat()
+end    
+
+
+
+
+function Boss005()
+  if Done('&DONE.BOSS005') then return end
+  MapText('BOSS005.'..upper(GetActive()))
+  -- Sys.Error('The rest is not yet scripted')
+  Maps.Obj.Kill("SuperCyborg",1)
+  Schedule("MAP","PostBoss005")
+  Boss("SuperCyborg","SpecialBoss/Exit the premises.ogg")
+end
+
+function PostBoss005()
+  Award('BOSS_SUPERCYBORG')
+end  
+
+
+
 function GALE_OnLoad()
    --if not (Done("&DONE.INIT.EXCALIBUR.KEYS")) then initkeycards() end
    --CSay(serialize('keycards',keycards))
@@ -281,6 +346,7 @@ function GALE_OnLoad()
    ZA_Enter('OPEN_BLUE',OpenKeyDoor,'BLUE')
    ZA_Enter('OPEN_GOLD',OpenKeyDoor,"GOLD")
    ZA_Enter("Admiraal",Admiraal)
+   ZA_Enter('Boss005',Boss005)
    ZA_Leave("Transporter",Var.Clear,'&IGNORE.TRANSPORTER')
    for i=1,chats do ZA_Enter('CHAT'..i,ExecChat,i) end
    Award('SCENARIO_FINALDUNGEON')

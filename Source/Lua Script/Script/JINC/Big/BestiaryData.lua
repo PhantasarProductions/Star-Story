@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.14
+version: 16.07.15
 ]]
 return {
 	"ASTRILOPUPELITE",
@@ -54,6 +54,7 @@ return {
 	"MID-BOSS",
 	"QUEENMYR",
 	"SUPAQUAL",
+	"SUPERCYBORG",
 	"SUPERSYSS",
 	"SUPERZOMBIE",
 	"THIEF CHIEF",
