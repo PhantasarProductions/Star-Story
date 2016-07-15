@@ -324,6 +324,7 @@ end
 function GoHome() 
   LoadMap('Excalibur_Home')
   SpawnPlayer('Voordeur')
+  Award('BONUS_HOME')
 end
 
 function GALE_OnLoad()
