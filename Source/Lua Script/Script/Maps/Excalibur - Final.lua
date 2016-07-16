@@ -85,7 +85,8 @@ floorflow = {
             }     
             
 function UnLockEmgSave()
-  Var.Clear('&BLOCK.EMERGENCY.SAVE')
+  --Var.Clear('&BLOCK.EMERGENCY.SAVE')
+  Var.D('&BLOCK.EMERGENCY.SAVE',"TRUE") -- The key system makes it too dangerous to have emergency saves. They can be done on moments that can lock you up eternally.
 end
                
             
@@ -432,9 +433,10 @@ function GALE_OnLoad()
    ZA_Enter("ToSecret1",ToSecret1)
    ZA_Leave('GetOutSecret1',Var.Clear,'&IGNORE.GETOUT')
    ZA_Enter('GetOutSecret1',GetOutSecret1)
-   ZA_Enter('Nova',Nova)
+   ZA_Enter('NOVA',Nova)
    for i=1,chats do ZA_Enter('CHAT'..i,ExecChat,i) end
    for i=1,chats do ZA_Enter('Chat'..i,ExecChat,i) end
    Award('SCENARIO_FINALDUNGEON')
    FinalMapShow()
+   Var.D('&BLOCK.EMERGENCY.SAVE',"TRUE")
 end
