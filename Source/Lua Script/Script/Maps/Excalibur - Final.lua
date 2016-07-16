@@ -39,7 +39,7 @@ version: 16.07.16
 
 -- @USEDIR Script/Use/Maps/AltArena
 
-chats = 2
+chats = 3
 
 center=400
 
@@ -65,7 +65,7 @@ Names = {
             ['#018'] = 'Junk collection area - Marine',
             ['#019'] = 'Staff department',
             ['#020'] = 'High Security Department',
-            Secret1  = 'Secret Science Lab'
+            SECRET1  = 'Secret Science Lab'
         }; names=Names
         
 keycolors = {RED = {255,0,0}, GREEN={0,255,0},BLUE={0,0,255},GOLD={255,180,0}}        
@@ -252,10 +252,10 @@ end
 
 function OpenSecret1()
    local LAY = '#007'
-   local c = 'Red'
+   local c = 'RED'
    if not keycards[LAY][c] then return end
    OpenKeyDoor(c)
-   MapShow({'BASE','K_RED','SECRET'})
+   MapShow('BASE,K_RED,SECRET')
 end
 
 function Admiraal()
@@ -356,6 +356,22 @@ function GoHome()
   Var.D('&IGNORE.TRANSPORTER','TRUE')
 end
 
+function ToSecret1()
+  TelEffect(TEL_OUT)
+  Maps.Obj.Kill('PLAYER')
+  Maps.GotoLayer('SECRET1')
+  SpawnPlayer('Start')
+  Done('&IGNORE.GETOUT')
+end
+
+function GetOutSecret1()
+  if CVV('&IGNORE.GETOUT') then return end
+  TelEffect(TEL_OUT)
+  Maps.Obj.Kill('PLAYER')
+  Maps.GotoLayer('#007')
+  SpawnPlayer('FromSecret')
+end
+  
 function GALE_OnLoad()
    --if not (Done("&DONE.INIT.EXCALIBUR.KEYS")) then initkeycards() end
    --CSay(serialize('keycards',keycards))
@@ -381,10 +397,14 @@ function GALE_OnLoad()
    ZA_Enter("Admiraal",Admiraal)
    ZA_Enter('Boss005',Boss005)
    ZA_Enter('Go Home',GoHome)
-   ZA_Enter('ShowSecret',MapShow,{'BASE','SECRET'})
-   ZA_Enter('OPEN_SECRET1',OpenSecret1)
+   ZA_Enter('ShowSecret',MapShow,'BASE,SECRET')
+   ZA_Enter('OPEN_SECRET_1',OpenSecret1)
    ZA_Leave("Transporter",Var.Clear,'&IGNORE.TRANSPORTER')
+   ZA_Enter("ToSecret1",ToSecret1)
+   ZA_Leave('GetOutSecret1',Var.Clear,'&IGNORE.GETOUT')
+   ZA_Enter('GetOutSecret1',GetOutSecret1)
    for i=1,chats do ZA_Enter('CHAT'..i,ExecChat,i) end
+   for i=1,chats do ZA_Enter('Chat'..i,ExecChat,i) end
    Award('SCENARIO_FINALDUNGEON')
    FinalMapShow()
 end
