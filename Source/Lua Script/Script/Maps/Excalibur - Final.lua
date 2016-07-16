@@ -390,7 +390,7 @@ function BossSecret1()
   Var.D("$COMBAT.FOE1","Boss/HWSNBN")
   Var.D("$COMBAT.ALTCOORDSFOE1","300,400")
   Var.D("%COMBAT.LVFOE1",MapLevel()*({.50,.95,1})[skill])
-  Var.D('$COMBAT.MUSIC','Back to Darkness.ogg')
+  Var.D('$COMBAT.MUSIC','specialboss/Back to Darkness.ogg')
   Schedule('MAP','UnLockEmgSave')
   StartCombat()
 end
