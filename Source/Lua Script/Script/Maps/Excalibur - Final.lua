@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.15
+version: 16.07.16
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Schuif.lua
@@ -50,13 +50,22 @@ Names = {
             ['#003'] = 'Lady of the Lake - Artificial Park',
             ['#004'] = 'Coder Section - LAURA',
             ['#005'] = 'Residential Area - Galahad',
-            ['#006'] = 'Junk collection area - Donald',            
+            ['#006'] = 'Junk collection area - Donald',
+            ['#007'] = 'Camelot - Town Square',            
             ['#008'] = 'Coder Section - BLITZ',
+            ['#009'] = 'Maintenance Deck',
+            ['#010'] = 'Residential Area - Guinevere',
+            ['#011'] = "Crystal's bar",
             ['#012'] = 'Junk collection area - Geert',
+            ['#013'] = 'Casino',
+            ['#014'] = 'Weapon Storage',
+            ['#015'] = 'Medical department',
             ['#016'] = 'Coder Section - LUA',
+            ['#017'] = 'Playground',
             ['#018'] = 'Junk collection area - Marine',
             ['#019'] = 'Staff department',
-            ['#020'] = 'High Security Department'
+            ['#020'] = 'High Security Department',
+            Secret1  = 'Secret Science Lab'
         }; names=Names
         
 keycolors = {RED = {255,0,0}, GREEN={0,255,0},BLUE={0,0,255},GOLD={255,180,0}}        
@@ -241,6 +250,14 @@ function OpenKeyDoor(color)
   FinalMapShow()    
 end
 
+function OpenSecret1()
+   local LAY = '#007'
+   local c = 'Red'
+   if not keycards[LAY][c] then return end
+   OpenKeyDoor(c)
+   MapShow({'BASE','K_RED','SECRET'})
+end
+
 function Admiraal()
   if Done('&JOINED.JOHNSON') then return end
   -- Yeah, admiral Johnson will join the group
@@ -364,6 +381,8 @@ function GALE_OnLoad()
    ZA_Enter("Admiraal",Admiraal)
    ZA_Enter('Boss005',Boss005)
    ZA_Enter('Go Home',GoHome)
+   ZA_Enter('ShowSecret',MapShow,{'BASE','SECRET'})
+   ZA_Enter('OPEN_SECRET1',OpenSecret1)
    ZA_Leave("Transporter",Var.Clear,'&IGNORE.TRANSPORTER')
    for i=1,chats do ZA_Enter('CHAT'..i,ExecChat,i) end
    Award('SCENARIO_FINALDUNGEON')
