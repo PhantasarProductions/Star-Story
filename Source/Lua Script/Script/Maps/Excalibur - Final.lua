@@ -82,7 +82,12 @@ floorflow = {
                             b.InsertY = b.InsertY - rand(1,3)
                             if b.InsertY<-900 then b.InsertY = b.InsertY + 1800 end
                           end  
-            }        
+            }     
+            
+function UnLockEmgSave()
+  Var.Clear('&BLOCK.EMERGENCY.SAVE')
+end
+               
             
 function initkeycards() 
     keycards = {}
@@ -124,6 +129,11 @@ function GetKey(pname)
   Maps.Obj.Kill("NPC_"..Name,1)
   Var.D(keyinsysvar,serialize('ret',keycards))
   SFX('Audio/Sfx/Yeah/Yeah.ogg')
+  UnLockEmgSave()
+  if skill~=3 then 
+    MapEXP()
+    inc('%AURINARATE',6/skill) 
+    end
 end
 
 function NPC_RED  ()  GetKey('RED')   end
@@ -356,6 +366,7 @@ function GoHome()
   Var.D('&IGNORE.TRANSPORTER','TRUE')
 end
 
+
 function ToSecret1()
   TelEffect(TEL_OUT)
   Maps.Obj.Kill('PLAYER')
@@ -370,6 +381,24 @@ function GetOutSecret1()
   Maps.Obj.Kill('PLAYER')
   Maps.GotoLayer('#007')
   SpawnPlayer('FromSecret')
+end
+
+function BossSecret1() 
+  CleanCombat()
+  Var.D("$COMBAT.BACKGROUND","Facility.png")
+  Var.D("$COMBAT.BEGIN","Default")
+  Var.D("$COMBAT.FOE1","Boss/HWSNBN")
+  Var.D("$COMBAT.ALTCOORDSFOE1","300,400")
+  Var.D("%COMBAT.LVFOE1",MapLevel()*({.50,.95,1})[skill])
+  Var.D('$COMBAT.MUSIC','Back to Darkness.ogg')
+  Schedule('MAP',UnLockEmgSave)
+  StartCombat()
+end
+
+function Nova()
+  if Done('&DONE.RISING.NOVA') then return end
+  Award('BONUS_NOVA')
+  if skill~=3 then for i=1,(6/skill) do MapEXP() end end
 end
   
 function GALE_OnLoad()
@@ -403,6 +432,7 @@ function GALE_OnLoad()
    ZA_Enter("ToSecret1",ToSecret1)
    ZA_Leave('GetOutSecret1',Var.Clear,'&IGNORE.GETOUT')
    ZA_Enter('GetOutSecret1',GetOutSecret1)
+   ZA_Enter('Nova',Nova)
    for i=1,chats do ZA_Enter('CHAT'..i,ExecChat,i) end
    for i=1,chats do ZA_Enter('Chat'..i,ExecChat,i) end
    Award('SCENARIO_FINALDUNGEON')

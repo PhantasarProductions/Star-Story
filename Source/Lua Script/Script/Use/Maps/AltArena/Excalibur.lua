@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.14
+version: 16.07.16
 ]]
 -- @IF IGNORE
 AltArena = {}
@@ -42,7 +42,14 @@ AltArena = {}
 
 AltArena['EXCALIBUR - FINAL'] = {
                                      ['#001'] = 'Excalibur_SecretPassage.png',
-                                     ['#003'] = 'Bos - Spar.png'
+                                     ['#003'] = 'Bos - Spar.png',
+                                     Secret1  = 'Facility.png'
                                 }
                                 
 --CSay('AltArea - Excalibur - All set')                                
+
+
+
+-- @IF IGNORE
+return AltArena -- Just fooling my command outliner, as the game ignores this line :-P
+-- @FI
