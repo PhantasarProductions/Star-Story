@@ -32,10 +32,10 @@
   
  **********************************************
  
-version: 16.07.16
+version: 16.07.18
 ]]
 
--- @USE /Script/Use/Maps/Gen/Schuif.lua
+-- [[ @USE /Script/Use/Maps/Gen/Schuif.lua ]]
 
 -- @USEDIR Script/Use/Maps/AltArena
 
@@ -172,7 +172,7 @@ end
 
 function TerugNaarHawk()
    local node = "EXN"..math.ceil(tonumber(right(Maps.LayerCodeName,3))/5)
-   MS.LN_Run("TRANS","Script/SubRoutines/Transporter.lua","ReDefNode","F"..right(Maps.LayerCodeName,3)..";".."Excalibur - Final;Excalibur;"..Names[Maps.LayerCodeName]..";"..Maps.LayerCodeName..";"..node)
+   MS.LN_Run("TRANS","Script/SubRoutines/Transporter.lua","ReDefNode","F"..right(Maps.LayerCodeName,3)..";"..Maps.CodeName..";Excalibur;"..Names[Maps.LayerCodeName]..";"..Maps.LayerCodeName..";"..node)
    TelEffect(TEL_OUT)
    if CVV('&JOINED.JOHNSON') then MapText('JOHNSON_LEAVE') end
    LoadMap("Hawk","Bridge")
@@ -209,6 +209,10 @@ function Trans_GOTO(parea)
   if area==Maps.LayerCodeName then return end
   TelEffect(TEL_OUT)
   Maps.Obj.Kill('PLAYER')
+  local narea = tonumber(right(area,3))
+  local tomap
+  if narea>10 then tomap="Excalibur - Final - 2" else tomap = "Excalibur - Final" end
+  if Maps.CodeName~=tomap then LoadMap(tomap,area) end
   Maps.GotoLayer(area)
   SpawnPlayer("Trans.Spot.F"..right(area,3))
   FinalMapShow()
@@ -401,6 +405,30 @@ function Nova()
   Award('BONUS_NOVA')
   if skill~=3 then for i=1,(6/skill) do MapEXP() end end
 end
+
+function U()
+  Maps.Obj.OBJ('UBU').Impassible = 1 
+  Maps.Obj.OBJ('UBD').Impassible = 1 
+  Maps.Obj.OBJ('DBL').Impassible = 0 
+  Maps.Obj.OBJ('DBR').Impassible = 0
+  Maps.Remap() 
+end
+
+function D()
+  Maps.Obj.OBJ('UBU').Impassible = 0 
+  Maps.Obj.OBJ('UBD').Impassible = 0 
+  Maps.Obj.OBJ('DBL').Impassible = 1 
+  Maps.Obj.OBJ('DBR').Impassible = 1
+  Maps.Remap() 
+end
+
+function F10T(p)
+  Maps.Obj.Kill("PLAYER")
+  SpawnPlayer('Play'..p)
+  Actors.Actor('PLAYER').Dominance = ({U=80,D=20})[p]
+  -- Maps.Remap()
+  ;({U=U,D=D})[p]()
+end
   
 function GALE_OnLoad()
    --if not (Done("&DONE.INIT.EXCALIBUR.KEYS")) then initkeycards() end
@@ -434,6 +462,13 @@ function GALE_OnLoad()
    ZA_Leave('GetOutSecret1',Var.Clear,'&IGNORE.GETOUT')
    ZA_Enter('GetOutSecret1',GetOutSecret1)
    ZA_Enter('NOVA',Nova)
+   -- 10 specific
+   --ZA_Enter('UB',U)
+   --ZA_Enter('DB',D)
+   ZA_Enter('10setD',D)
+   ZA_Enter('ToU',F10T,'U')
+   ZA_Enter('ToD',F10T,'D')
+   -- end 10
    for i=1,chats do ZA_Enter('CHAT'..i,ExecChat,i) end
    for i=1,chats do ZA_Enter('Chat'..i,ExecChat,i) end
    Award('SCENARIO_FINALDUNGEON')

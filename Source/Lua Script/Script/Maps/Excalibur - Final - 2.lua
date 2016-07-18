@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  BestiaryData.lua
+  Excalibur - Final - 2.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -34,71 +34,4 @@
  
 version: 16.07.18
 ]]
-return {
-	"ASTRILOPUPELITE",
-	"BIGGRASSTIGER",
-	"BIGLION",
-	"BRAINDROID",
-	"CULTIST LEADER",
-	"CYBORG LORD",
-	"DARDBOORTH",
-	"DARDMOEDER",
-	"DEATHMYRQUEEN",
-	"DIABLO",
-	"EXHURU",
-	"FIRESPIDERYOUNG",
-	"FLIRMOUSE_KING",
-	"FLIRMOUSE_SUBJECT",
-	"GIANTSNAKE",
-	"HWSNBN",
-	"LICHKING",
-	"MID-BOSS",
-	"QUEENMYR",
-	"SUPAQUAL",
-	"SUPERCYBORG",
-	"SUPERSYSS",
-	"SUPERZOMBIE",
-	"THIEF CHIEF",
-	"ASTRILOPUP",
-	"ASTRILOPUPGUARD",
-	"BATTLEDROID",
-	"BLACKLIZARD",
-	"BLADEH",
-	"CID",
-	"COW",
-	"CULTIST",
-	"CYBERASTRILOPUP",
-	"CYBORG CAPTAIN",
-	"CYBORG GUNNER",
-	"CYBORG JI",
-	"CYBORG MEDIC",
-	"DEATHMYR",
-	"FLIRMOUSE",
-	"FLYSKY",
-	"GOBLIN",
-	"GRASSTIGER",
-	"GUMMI",
-	"HAWK",
-	"IMP",
-	"INSETTO",
-	"LEOPARD",
-	"LION",
-	"MYR",
-	"PHANUNDEADKID_BEFINDO",
-	"PHANUNDEADKID_ELF",
-	"PHANUNDEADKID_FAIRY",
-	"PHANUNDEADKID_HUMAN",
-	"PHANUNDEADKID_PHELYNX",
-	"PYROGUIN",
-	"QUAL",
-	"RAT",
-	"SALAMANDER",
-	"SHROOM",
-	"SNOWLEOPARD",
-	"SPIDER",
-	"SYSS",
-	"THIEF",
-	"WOLF",
-	"ZOMBIE",
-	"FIRESPIDER",
-}
+-- @USE Excalibur - Final.Lua

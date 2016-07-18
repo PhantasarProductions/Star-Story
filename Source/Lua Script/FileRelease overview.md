@@ -458,6 +458,7 @@
 1. Script/JINC/NewGame+/PreserveVar.lua
 1. Script/JINC/World/Nizozemska.lua
 1. Script/JINC/World/Phantasar.lua
+1. Script/Maps/Excalibur - Final - 2.lua
 1. Script/Maps/Excalibur - Final.lsv
 1. Script/Maps/Excalibur - Final.lua
 1. Script/Maps/Nizozemska - Belioss.lua
@@ -554,4 +555,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sun 17 July 2016; 10:32:04 CET
+### Last updated: Mon 18 July 2016; 16:55:39 CET
