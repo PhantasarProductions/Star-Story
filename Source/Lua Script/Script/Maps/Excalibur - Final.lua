@@ -174,6 +174,8 @@ function TerugNaarHawk()
    local node = "EXN"..math.ceil(tonumber(right(Maps.LayerCodeName,3))/5)
    MS.LN_Run("TRANS","Script/SubRoutines/Transporter.lua","ReDefNode","F"..right(Maps.LayerCodeName,3)..";"..Maps.CodeName..";Excalibur;"..Names[Maps.LayerCodeName]..";"..Maps.LayerCodeName..";"..node)
    TelEffect(TEL_OUT)
+   DrawScreen() Flip()
+   DrawScreen() Flip()
    if CVV('&JOINED.JOHNSON') then MapText('JOHNSON_LEAVE') end
    LoadMap("Hawk","Bridge")
    SpawnPlayer("Scotty","South")
@@ -208,6 +210,8 @@ function Trans_GOTO(parea)
   local area = parea or Var.C('$EXCAL_IWANTTOGOTO')
   if area==Maps.LayerCodeName then return end
   TelEffect(TEL_OUT)
+  DrawScreen() Flip()
+  DrawScreen() Flip()
   Maps.Obj.Kill('PLAYER')
   local narea = tonumber(right(area,3))
   local tomap
