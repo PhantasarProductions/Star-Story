@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.17
+version: 16.07.21
 ]]
 -- @IF IGNORE
 AltArena = {}
@@ -45,6 +45,7 @@ AltArena['EXCALIBUR - FINAL'] = {
                                      ['#003'] = 'Bos - Spar.png',
                                      ['#006'] = 'Junkyard.png',
                                      ['#007'] = 'Camelot.png',
+                                     ['#011'] = 'Mansion.png',
                                      ['#012'] = 'Junkyard.png',
                                      ['#018'] = 'Junkyard.png',
                                      Secret1  = 'Facility.png'
