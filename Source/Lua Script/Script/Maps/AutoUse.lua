@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 16.07.04
+  version: 16.07.21
   Copyright (C) 2015, 2016 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -403,6 +403,8 @@ function KickReggie(direction,foxy,reggie)
 	-- Move Foxy
 	if Maps.Obj.Kind(foxy) == 'Actor' then	
 		foxyoriginalimg = Actors.Actor(foxy).ChosenPic		
+		Actors.Actor(foxy).WalkingIsMotion = 0
+		Actors.Actor(foxy).NotInMotionThen0 = 0
 		Actors.ChoosePic(foxy,"FOXY."..upper(direction))
 		Actors.Actor(foxy).Frame=1
 	else

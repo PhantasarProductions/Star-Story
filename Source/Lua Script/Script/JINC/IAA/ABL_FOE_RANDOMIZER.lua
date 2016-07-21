@@ -1,7 +1,7 @@
 --[[
-  ABL_XENOBI_QUICKSTRIKE.lua
+  ABL_FOE_RANDOMIZER.lua
   Version: 16.07.21
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -35,25 +35,21 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 15,
-	["ABL_APCut"] = 5000,
-	["ABL_Cancel"] = 1054,
-	["ABL_Instant"] = 527,
+	["ABL_AP"] = 0,
 	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 250,
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 300,
+	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 50,
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
-	["Description"] = "Quick strike the enemy",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Light Saber.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Quick Strike",
+	["Name"] = "Randomizer",
+	["ScriptEffect_Reference"] = "Randomizer",
+	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1F",
-	["UseCombat"] = true}
+	["UseCombat"] = true,
+	["UseField"] = true}
 
 return ret
 

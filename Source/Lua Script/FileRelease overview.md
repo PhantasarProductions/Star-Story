@@ -81,6 +81,7 @@
 1. Script/JINC/IAA/ABL_FOE_FEAR.lua
 1. Script/JINC/IAA/ABL_FOE_FLAMETOUCH.lua
 1. Script/JINC/IAA/ABL_FOE_FULLHEALTH.lua
+1. Script/JINC/IAA/ABL_FOE_GROUPRANDOMIZER.lua
 1. Script/JINC/IAA/ABL_FOE_HORROR.lua
 1. Script/JINC/IAA/ABL_FOE_IDDQD.lua
 1. Script/JINC/IAA/ABL_FOE_IMPERIO.lua
@@ -92,6 +93,7 @@
 1. Script/JINC/IAA/ABL_FOE_PARA_DIVE.lua
 1. Script/JINC/IAA/ABL_FOE_PHOTON.lua
 1. Script/JINC/IAA/ABL_FOE_POISONCLOUD.lua
+1. Script/JINC/IAA/ABL_FOE_RANDOMIZER.lua
 1. Script/JINC/IAA/ABL_FOE_SCRATCH.lua
 1. Script/JINC/IAA/ABL_FOE_TASER.lua
 1. Script/JINC/IAA/ABL_FOE_THRILLINGCHARGE.lua
@@ -557,4 +559,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Thu 21 July 2016; 21:26:38 CET
+### Last updated: Thu 21 July 2016; 21:58:30 CET

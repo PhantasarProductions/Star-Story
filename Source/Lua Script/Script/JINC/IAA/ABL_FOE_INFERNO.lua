@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_INFERNO.lua
-  Version: 16.07.16
+  Version: 16.07.21
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
