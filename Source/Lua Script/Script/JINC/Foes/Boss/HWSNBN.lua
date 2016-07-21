@@ -1,6 +1,6 @@
 --[[
   HWSNBN.lua
-  Version: 16.07.16
+  Version: 16.07.18
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.07.16
+-- Version 16.07.18
 
 
 

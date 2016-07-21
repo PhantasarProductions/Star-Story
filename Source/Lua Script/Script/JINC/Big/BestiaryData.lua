@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.18
+version: 16.07.21
 ]]
 return {
 	"ASTRILOPUPELITE",
@@ -50,6 +50,7 @@ return {
 	"FLIRMOUSE_KING",
 	"FLIRMOUSE_SUBJECT",
 	"GIANTSNAKE",
+	"GOLD KILLER DROID",
 	"HWSNBN",
 	"LICHKING",
 	"MID-BOSS",

@@ -32,14 +32,14 @@
   
  **********************************************
  
-version: 16.07.18
+version: 16.07.21
 ]]
 
 -- [[ @USE /Script/Use/Maps/Gen/Schuif.lua ]]
 
 -- @USEDIR Script/Use/Maps/AltArena
 
-chats = 3
+chats = 4
 
 center=400
 
@@ -81,7 +81,12 @@ floorflow = {
                             local b = Maps.Obj.Obj('Conveyor')
                             b.InsertY = b.InsertY - rand(1,3)
                             if b.InsertY<-900 then b.InsertY = b.InsertY + 1800 end
-                          end  
+                          end,  
+               ['#012'] = function()
+                            local j = Maps.Obj.Obj('JerrycanTrack')
+                            j.InsertX = j.InsertX - 1
+                            if j.InsertX<-400 then j.InsertX = j.insertX + 4000 end 
+                          end           
             }     
             
 function UnLockEmgSave()
@@ -433,6 +438,16 @@ function F10T(p)
   -- Maps.Remap()
   ;({U=U,D=D})[p]()
 end
+
+function Boss10()
+  if Done('&DONE.EXCALIBUR.FINALDUNGEON.BOSS.AREA[010]') then return end
+  local tune = 'Dungeon/Spiedkiks_-_05_-_Freak_Boutique.ogg'
+  local boss = 'Gold Killer Droid'
+  Boss(boss,tune)
+  Maps.Obj.Kill('Boss10Obj')
+  MapEXP()
+  inc("%AURINARATE",120/skill)
+end
   
 function GALE_OnLoad()
    --if not (Done("&DONE.INIT.EXCALIBUR.KEYS")) then initkeycards() end
@@ -472,6 +487,7 @@ function GALE_OnLoad()
    ZA_Enter('10setD',D)
    ZA_Enter('ToU',F10T,'U')
    ZA_Enter('ToD',F10T,'D')
+   ZA_Enter('Boss10',Boss10)
    -- end 10
    for i=1,chats do ZA_Enter('CHAT'..i,ExecChat,i) end
    for i=1,chats do ZA_Enter('Chat'..i,ExecChat,i) end
