@@ -32,14 +32,14 @@
   
  **********************************************
  
-version: 16.07.21
+version: 16.07.22
 ]]
 
 -- [[ @USE /Script/Use/Maps/Gen/Schuif.lua ]]
 
 -- @USEDIR Script/Use/Maps/AltArena
 
-chats = 4
+chats = 5
 
 center=400
 
