@@ -1,7 +1,7 @@
 --[[
-  ITM_EQP_SAPHIRE.lua
+  ITM_SUPER_SHOT.lua
   Version: 16.07.22
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -35,23 +35,38 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["APRecoverType"] = "Absolute",
+	["APRecover"] = 100,
+	["APRecoverType"] = "Percent",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
+	["Buff_Accuracy"] = -10,
+	["Buff_Agility"] = 25,
+	["Buff_Defense"] = -10,
+	["Buff_Evasion"] = -100,
+	["Buff_HP"] = -5,
+	["Buff_Resistance"] = -10,
+	["Buff_Strength"] = -10,
+	["Buff_Will"] = -10,
+	["CauseConfusion"] = true,
+	["CauseParalysis"] = true,
+	["CauseSleep"] = true,
+	["CureDamned"] = true,
+	["CureZombie"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Raises paralyis resistance of its owner by 10%",
-	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 10000,
-	["ITM_EQP_SRes_Paralysis"] = 10,
+	["Description"] = "Full HP and AP. It has a few nasty side effects though.",
+	["Healing"] = 100,
+	["HealingType"] = "Percent",
+	["ITM_BuyPrice"] = 100,
 	["ITM_SellPrice"] = 7500,
 	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/Saphire.png",
-	["ItemType"] = "EquipItem",
-	["Name"] = "Saphire",
-	["Target"] = "1F",
+	["Icon"] = "GFX/Inventory/Shot.png",
+	["ItemType"] = "Consumable",
+	["Name"] = "Super Shot",
+	["Target"] = "1A",
 	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseField"] = true,
+	["untauntable"] = true}
 
 return ret
 

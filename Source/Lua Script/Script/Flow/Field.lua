@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 16.07.13
+  Version: 16.07.22
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -55,6 +55,10 @@ MiniIcons = {}
 
 Scheduled = {}
 ScrollBoundaries = ScrollBoundaries or {}
+
+if JCR6.Exists('Audio/sfx/Field/Get.ogg')==1 then
+  GetSound = GetSound or Audio.Load('Audio/sfx/Field/Get.ogg')
+end  
 
 -- This array is used by the party pop routine. If not in use it should always be "nil".
 PartyPopArray = nil
@@ -893,6 +897,7 @@ function FindTreasures()
 		    end -- if full  
 	  end -- distance ok
 	  if given then 
+	        if GetSound then Audio.Play(GetSound) end
           idata = FieldTreasure[k]
           FieldTreasure[k]=nil 
           Maps.Obj.Kill(t.objtag) 
