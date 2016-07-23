@@ -177,6 +177,7 @@ function Opslaan()
 end
 
 function TerugNaarHawk()
+   if left(Maps.LayerCodeName,1)~="#" then return MapText('NOHAWK') end
    local node = "EXN"..math.ceil(tonumber(right(Maps.LayerCodeName,3))/5)
    MS.LN_Run("TRANS","Script/SubRoutines/Transporter.lua","ReDefNode","F"..right(Maps.LayerCodeName,3)..";"..Maps.CodeName..";Excalibur;"..Names[Maps.LayerCodeName]..";"..Maps.LayerCodeName..";"..node)
    TelEffect(TEL_OUT)
@@ -494,12 +495,26 @@ function ToSecret2()
 end
 
 function TalkLab()
+   MapShow('Lab')
    if Done('&DONE.EXCALIBUR.FINAL.SECRET.LAB') then return end
-   PartyPop('LAB')
+   PartyPop('LAB','South')
+   repeat
+      Maps.CamY = Maps.CamY + 1
+      DrawScreen()
+      Flip()
+   until Maps.CamY>=3072
    MapText('LAB')
    PartyUnPop()
    Award('BONUS_SECRETLAB')
    for i=1,math.ceil(6/(skill*2)) do MapEXP() end
+end
+
+function FightMcLeen()
+   PartyPop('Mac','West')
+   Var.D('$JOHNSON',"Ashley")
+   RPGChar.SetName("Johnson","Ashley")
+   MapText('MCLEEN1')
+   Sys.Error('Boss fight not yet scripted') 
 end
   
 function GALE_OnLoad()
@@ -547,8 +562,12 @@ function GALE_OnLoad()
    ZA_Enter('EnterLab',MapShow,'Lab')
    ZA_Enter('LeaveLab',MapShow,'BASE')
    ZA_Enter('TalkLab',TalkLab)
+   -- George McLeen
+   ZA_Enter('FightMcLeen',FightMcLeen)   
+   -- Chat
    for i=1,chats do ZA_Enter('CHAT'..i,ExecChat,i) end
    for i=1,chats do ZA_Enter('Chat'..i,ExecChat,i) end
+   -- And some final shit
    Award('SCENARIO_FINALDUNGEON')
    FinalMapShow()
    Var.D('&BLOCK.EMERGENCY.SAVE',"TRUE")
