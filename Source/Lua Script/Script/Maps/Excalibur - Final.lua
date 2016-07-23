@@ -265,13 +265,13 @@ function OpenKeyDoor(color)
   Maps.Obj.Kill("OPEN_"..c)
   L.Impassible = 0
   R.Impassible = 0
-  Maps.Remap()
   for i=1,30 do
       L.X = L.X - 1
       R.X = R.X + 1
       DrawScreen()
       Flip()
   end
+  Maps.Remap()
   FinalMapShow()    
 end
 
@@ -492,6 +492,15 @@ function ToSecret2()
    Maps.GotoLayer('SECRET2')
    SpawnPlayer('Start')   
 end
+
+function TalkLab()
+   if Done('&DONE.EXCALIBUR.FINAL.SECRET.LAB') then return end
+   PartyPop('LAB')
+   MapText('LAB')
+   PartyUnPop()
+   Award('BONUS_SECRETLAB')
+   for i=1,math.ceil(6/(skill*2)) do MapEXP() end
+end
   
 function GALE_OnLoad()
    --if not (Done("&DONE.INIT.EXCALIBUR.KEYS")) then initkeycards() end
@@ -533,7 +542,11 @@ function GALE_OnLoad()
    ZA_Enter('ToD',F10T,'D')
    ZA_Enter('Boss10',Boss10)
    -- end 10
+   -- secret 2
    ZA_Enter('ToSecret2',ToSecret2)
+   ZA_Enter('EnterLab',MapShow,'Lab')
+   ZA_Enter('LeaveLab',MapShow,'BASE')
+   ZA_Enter('TalkLab',TalkLab)
    for i=1,chats do ZA_Enter('CHAT'..i,ExecChat,i) end
    for i=1,chats do ZA_Enter('Chat'..i,ExecChat,i) end
    Award('SCENARIO_FINALDUNGEON')
