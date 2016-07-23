@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.22
+version: 16.07.23
 ]]
 
 -- [[ @USE /Script/Use/Maps/Gen/Schuif.lua ]]
@@ -447,6 +447,41 @@ function Boss10()
   Maps.Obj.Kill('Boss10Obj')
   MapEXP()
   inc("%AURINARATE",120/skill)
+end
+
+function NPC_AMMO()
+  local crTAG = '%EX.CRYSTAL.RECHARGES[' .. Maps.LayerCodeName ..']'
+  if skill~=1 and (not CVVN(crTAG)) then
+     Var.D(crTAG,({rand(100,256)*rand(1,3),rand(1,5)})[skill])
+  end
+  if skill~=1 and CVV(crTAG)<=0 then
+     MapText('CRYSTAL.EMPTY')
+     return
+  end    
+  local loaded = false
+  local arm
+  for key in each(mysplit(RPGChar.PointsFields('Crystal'),";")) do
+      if prefixed(key,'ARM.AMMO') then
+         arm = RPGChar.Points('Crystal',key)
+         loaded = loaded or arm.Have~=arm.Maximum
+         arm.Have=arm.Maximum 
+      end
+  end
+  if loaded then
+     if skill~=1 then 
+        dec(crTAG)
+        if CVV(crTAG)>1 then
+           MINI(Var.S('At this AMMO box you can refill your ARMS '..crTAG..' more times'),180,255,0)
+        elseif CVV(crTAG)>1 then
+           MINI('There is only one more refill round left in this AMMO box',180,100,0)
+        else
+           MINI('This AMMO box is empty now',255,0)
+        end       
+     end
+     MapText('CRYSTAL.REFILL') 
+  else
+     MapText('CRYSTAL.FULL')
+  end
 end
   
 function GALE_OnLoad()
