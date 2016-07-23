@@ -65,7 +65,8 @@ Names = {
             ['#018'] = 'Junk collection area - Marine',
             ['#019'] = 'Staff department',
             ['#020'] = 'High Security Department',
-            SECRET1  = 'Secret Science Lab'
+            SECRET1  = 'Secret Science Lab',
+            SECRET2  = 'Secret labyrinth of "the Mole"'
         }; names=Names
         
 keycolors = {RED = {255,0,0}, GREEN={0,255,0},BLUE={0,0,255},GOLD={255,180,0}}        
@@ -452,7 +453,7 @@ end
 function NPC_AMMO()
   local crTAG = '%EX.CRYSTAL.RECHARGES[' .. Maps.LayerCodeName ..']'
   if skill~=1 and (not CVVN(crTAG)) then
-     Var.D(crTAG,({rand(100,256)*rand(1,3),rand(1,5)})[skill])
+     Var.D(crTAG,({rand(100,256)*rand(1,3),rand(1,5)})[skill-1])
   end
   if skill~=1 and CVV(crTAG)<=0 then
      MapText('CRYSTAL.EMPTY')
@@ -482,6 +483,14 @@ function NPC_AMMO()
   else
      MapText('CRYSTAL.FULL')
   end
+end
+
+function ToSecret2()
+   Actors.MoveToSpot('PLAYER','Geheimpje')
+   TelEffect(TEL_OUT)
+   Maps.Obj.Kill('PLAYER')
+   Maps.GotoLayer('SECRET2')
+   SpawnPlayer('Start')   
 end
   
 function GALE_OnLoad()
