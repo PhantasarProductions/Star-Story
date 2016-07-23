@@ -533,6 +533,7 @@ function GALE_OnLoad()
    ZA_Enter('ToD',F10T,'D')
    ZA_Enter('Boss10',Boss10)
    -- end 10
+   ZA_Enter('ToSecret2',ToSecret2)
    for i=1,chats do ZA_Enter('CHAT'..i,ExecChat,i) end
    for i=1,chats do ZA_Enter('Chat'..i,ExecChat,i) end
    Award('SCENARIO_FINALDUNGEON')
