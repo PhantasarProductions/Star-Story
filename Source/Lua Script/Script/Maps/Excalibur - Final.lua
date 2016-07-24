@@ -531,6 +531,7 @@ function OnlyCrystalIsLeft()
    TelEffect(TEL_OUT)
    Actors.Actor('PLAYER').Visible=0
    MapText('MCLEEN.CRYSTALALONE2')
+   DrawScreen()
    MS.Load("GAMEOVER","Script/Flow/GameOver.Lua")
    LAURA.Flow("GAMEOVER")
 end
