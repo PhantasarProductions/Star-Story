@@ -329,6 +329,7 @@ Var.D("$COMBAT.BACKGROUND",AltArena['EXCALIBUR - FINAL'][Maps.LayerCodeName] or 
 Var.D("$COMBAT.BEGIN","Default")
 -- The boss him/herself
 Var.D("$COMBAT.FOE1","Boss/"..BossFile)
+if prefixed(BossFile,'SpecialBoss/') then Var.D("$COMBAT.FOE1",BossFile) end
 Var.D("%COMBAT.LVFOE1",lv)
 Var.D("$COMBAT.ALTCOORDSFOE1","300,400")
 local base = {300,400}
