@@ -68,11 +68,12 @@ function Foe_AI.McLeen(pos)
    local myact = Act.Foe[pos]
    local ok = true
    local item = {Target='1F'} 
-   if item.Act=='FAI' then item = ItemGet(myact.Item) end
+   if myact.Act=='FAI' then item = ItemGet(myact.ItemCode) end
    if item.Target == 'AF' then 
       ok=false
-   elseif item.Taget == '1F' then
-      ok = ok and Fighters[myact.TargetGroup][myact.TargetIndividual].Tag~='Crystal'    
+   elseif item.Target == '1F' then
+      ok = ok and Fighters[myact.TargetGroup][myact.TargetIndividual].Tag~='Crystal'
+      CSay("Tag of McLeen's victim is: "..sval(Fighters[myact.TargetGroup][myact.TargetIndividual].Tag).." and that is ok("..sval(ok)..")")    
       end      
   until ok  
 end  
