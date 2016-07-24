@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.23
+version: 16.07.24
 ]]
 
 -- [[ @USE /Script/Use/Maps/Gen/Schuif.lua ]]
@@ -514,7 +514,25 @@ function FightMcLeen()
    Var.D('$JOHNSON',"Ashley")
    RPGChar.SetName("Johnson","Ashley")
    MapText('MCLEEN1')
-   Sys.Error('Boss fight not yet scripted') 
+   OnlyCrystalIsLeft() -- Debug line to test the alternate ending. May NOT be active in the actual game.
+   -- Sys.Error('Boss fight not yet scripted') 
+end
+
+function OnlyCrystalIsLeft()
+   PartyUnPop()
+   for i=1,100 do DrawScreen() end -- No Flipping. The Player should not see this. 
+   MapShow('BASE,DEAD')
+   Party('Crystal')
+   SetActive('Crystal')
+   TurnPlayer('West')
+   Actors.Actor('PLAYER').X = Maps.Obj.Obj('Mac_Crystal').X
+   Actors.Actor('PLAYER').Y = Maps.Obj.Obj('Mac_Crystal').Y
+   MapText('MCLEEN.CRYSTALALONE1')
+   TelEffect(TEL_OUT)
+   Actors.Actor('PLAYER').Visible=0
+   MapText('MCLEEN.CRYSTALALONE2')
+   MS.Load("GAMEOVER","Script/Flow/GameOver.Lua")
+   LAURA.Flow("GAMEOVER")
 end
   
 function GALE_OnLoad()
