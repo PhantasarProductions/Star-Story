@@ -67,7 +67,8 @@ function Foe_AI.McLeen(pos)
    end
    local myact = Act.Foe[pos]
    local ok = true
-   local item = ItemGet(myact.Item)
+   local item = {Target='1F'} 
+   if item.Act=='FAI' then item = ItemGet(myact.Item) end
    if item.Target == 'AF' then 
       ok=false
    elseif item.Taget == '1F' then
