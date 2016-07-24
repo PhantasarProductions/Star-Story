@@ -98,7 +98,7 @@ Data.ActMinLevel["Abl.ABL_FOXY_BACKSTAB"] = 180		for ak=1,25 do table.insert(Dat
 Data.ActMinLevel["Abl.ARM_DART"] = 5		for ak=1,100 do table.insert(Data.Acts,"Abl.ARM_DART") end
 Data.ActMinLevel["Abl.ARM_FLAMETHROWER"] = 55		for ak=1,19 do table.insert(Data.Acts,"Abl.ARM_FLAMETHROWER") end
 Data.ActMinLevel["Abl.ARM_HEALINGSHOWER"] = 10		for ak=1,90 do table.insert(Data.Acts,"Abl.ARM_HEALINGSHOWER") end
-Data.ActMinLevel["Abl.ARM_HEALINGSPRAY"] = 35		for ak=1,40 do table.insert(Data.Acts,"Abl.ARM_HEALINGSPRAY") end
+Data.ActMinLevel["Abl.ARM_HEALINGSPRAY"] = 935		for ak=1,1 do table.insert(Data.Acts,"Abl.ARM_HEALINGSPRAY") end
 Data.ActMinLevel["Abl.ARM_ICEBULLET"] = 40		for ak=1,30 do table.insert(Data.Acts,"Abl.ARM_ICEBULLET") end
 Data.ActMinLevel["Abl.ARM_MINICANNON"] = 45		for ak=1,20 do table.insert(Data.Acts,"Abl.ARM_MINICANNON") end
 Data.ActMinLevel["Abl.ARM_MULTIBLAST"] = 15		for ak=1,80 do table.insert(Data.Acts,"Abl.ARM_MULTIBLAST") end
