@@ -516,7 +516,7 @@ function FightMcLeen()
    RPGChar.SetName("Johnson","Ashley")
    MapText('MCLEEN1')
    Schedule('MAP','McLeenPostFight')
-   Boss('SpecialBoss/McLeen','SpecialBoss/McLeen.ogg')
+   Boss('SpecialBoss/McLeen','SpecialBoss/GeorgeMcLeen.ogg')
    -- OnlyCrystalIsLeft() -- Debug line to test the alternate ending. May NOT be active in the actual game.
    -- Sys.Error('Boss fight not yet scripted') 
 end
