@@ -514,7 +514,9 @@ function FightMcLeen()
    Var.D('$JOHNSON',"Ashley")
    RPGChar.SetName("Johnson","Ashley")
    MapText('MCLEEN1')
-   OnlyCrystalIsLeft() -- Debug line to test the alternate ending. May NOT be active in the actual game.
+   Schedule('MAP','McLeenPostFight')
+   Boss('SpecialBoss/GeorgeMcLeen','SpecialBoss/McLeen.ogg')
+   -- OnlyCrystalIsLeft() -- Debug line to test the alternate ending. May NOT be active in the actual game.
    -- Sys.Error('Boss fight not yet scripted') 
 end
 
@@ -534,6 +536,20 @@ function OnlyCrystalIsLeft()
    DrawScreen()
    MS.Load("GAMEOVER","Script/Flow/GameOver.Lua")
    LAURA.Flow("GAMEOVER")
+end
+
+function McLeenVictory()
+   Maps.Obj.Kill('McLeen',1)
+   MapText('McLeen2')
+   PartyUnPop()
+   Award('BOSS_MCLEEN')
+   inc('%AURINAS',30/skill)
+end
+
+function McLeenPostFight()
+  local v = Var.C('&GAMEOVER')=='TRUE';
+  ({ [false]=McLeenVictory, [true]=OnlyCrystalIsLeft})[v]()
+  -- Cool, eh? Avoiding "if" commands. :-P
 end
   
 function GALE_OnLoad()
