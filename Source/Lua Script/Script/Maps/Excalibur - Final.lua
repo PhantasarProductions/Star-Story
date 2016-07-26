@@ -102,7 +102,7 @@ floorflow = {
                             local miny = mrk.Y
                             local minx = mrk.X
                             -- Animate
-                            if o.Y<minY then o.X = minx + maxy; o.Y = miny + maxy end -- Yes, x is set with maxy too. After all we got a perfect 45 degree angle.
+                            if o.Y<miny then o.X = minx + maxy; o.Y = miny + maxy end -- Yes, x is set with maxy too. After all we got a perfect 45 degree angle.
                             o.X = o.X - 1
                             o.Y = o.Y - 1                            
                           end                 
