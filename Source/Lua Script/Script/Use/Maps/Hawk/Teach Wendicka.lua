@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.22
+version: 16.07.26
 ]]
 
 TeachWendickaArray = {
@@ -47,7 +47,7 @@ TeachWendickaArray = {
                      },
               Foxy = {
                        Requirement = function()
-                                     return RPGChar.ListHas("Foxy","ABL","FOXY_DRAGON_CHARGE")==1 or RPGChar.CountList("Foxy","ABL")==6
+                                     return RPGChar.ListHas("Foxy","ABL","FOXY_DRAGON_CHARGE")==1 or RPGChar.CountList("Foxy","ABL")>=7
                                      end,
                        Teach = 'FOXY_PICKPOCKET'              
                      },

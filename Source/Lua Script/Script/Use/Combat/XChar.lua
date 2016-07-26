@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.11
+version: 16.07.26
 ]]
 
 -- Kills for ExHuRU (and his "representatives")  
@@ -112,7 +112,15 @@ XCharLearnAbility = {
     UniWendicka = function() XCharAbility.Wendicka(); RPGChar.Points("UniWendicka","EXP").Inc(2000) end,
     ExHuRU = function() XCharKillCount(false) RPGChar.Points("ExHuRU","EXP").Inc(1250) end,
     Rolf = function() XCharKillCount(false) RPGChar.Points("ExHuRU","EXP").Inc(1250) end,
-    Johnson = function() XCharKillCount(false) RPGChar.Points("ExHuRU","EXP").Inc(1250) end
+    Johnson = function() XCharKillCount(false) RPGChar.Points("ExHuRU","EXP").Inc(1250) end,
+    Foxy = function() 
+       RPGChar.Points("Foxy","EXP").Inc(2000)
+       if RPGChar.CountList("Foxy","ABL") == 9 then 
+          RPGChar.Points("Foxy","EXP").Inc(9000/3)
+          Award('ALLABL_FOXY')
+          end 
+       end,
+    Yirl = function() RPGChar.Points("Yirl","EXP").Inc(3000) end,
   
   }    
 
@@ -121,7 +129,7 @@ XCharAfterAction = {
 	Foxy = function()
 				local lv = RPGChar.Stat("Foxy","Level")
 				local foxyused = CVV('%FOXY.USED') * (4-skill)       
-				local abilities = { DRAGON_BURN = 200, DRAGON_INFERNO = 8400, STUNSTAB = 6400, BACKSTAB = 1600, CHEER = 25600, SMOKEBOMB = 4600, DRAGON_CHARGE = 6553600 }
+				local abilities = { DRAGON_BURN = 200, DRAGON_INFERNO = 8400, STUNSTAB = 6400, BACKSTAB = 1600, CHEER = 25600, SMOKEBOMB = 4600, DRAGON_CHARGE = 655360 }
 				local hasall = true
 				local hasit,learnit,allowlearn
 				local r

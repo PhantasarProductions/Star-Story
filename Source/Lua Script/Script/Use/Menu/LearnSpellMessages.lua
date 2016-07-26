@@ -1,7 +1,7 @@
 --[[
   LearnSpellMessages.lua
-  Version: 15.11.24
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.07.26
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -70,7 +70,7 @@ learnspellmessages = {
                     return "You have "..score.." business points. "..need.." are required for a new skill."
                     end,
       Foxy        = function()
-                    if RPGChar.CountList("Foxy","ABL") == 8 then return "" end -- Don't put on the "???" if Foxy got all spells. 
+                    if RPGChar.CountList("Foxy","ABL") == 9 then return "" end -- Don't put on the "???" if Foxy got all spells. 
                     return "???" 
                     end,
       Xenobi      = function()
