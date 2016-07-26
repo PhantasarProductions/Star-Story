@@ -96,13 +96,13 @@ floorflow = {
                             local lt = 'Len'
                             local lnm = Maps.Obj.Obj(lt)
                             -- Corrections
-                            local hx,hy = 0,0
+                            local hx,hy = -5,5
                             local exy = 100
                             local maxy = lnm.Y + lnm.H + exy
                             local miny = mrk.Y
                             local minx = mrk.X
                             -- Animate
-                            if o.Y<miny then o.X = minx + maxy; o.Y = miny + maxy end -- Yes, x is set with maxy too. After all we got a perfect 45 degree angle.
+                            if o.Y<miny then o.X = minx + maxy + hx; o.Y = miny + maxy + hy end -- Yes, x is set with maxy too. After all we got a perfect 45 degree angle.
                             o.X = o.X - 1
                             o.Y = o.Y - 1                            
                           end                 
