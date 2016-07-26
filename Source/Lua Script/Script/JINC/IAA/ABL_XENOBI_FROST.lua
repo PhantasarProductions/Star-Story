@@ -1,6 +1,6 @@
 --[[
   ABL_XENOBI_FROST.lua
-  Version: 16.07.24
+  Version: 16.07.26
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================

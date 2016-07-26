@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 16.01.10
+  version: 16.07.26
   Copyright (C) 2015, 2016 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -37,6 +37,7 @@ local r = 0
 local i,v
 for i,v in ipairs( { "BASE_", "UPGRADE_", "POWERUP_", "BUFF_" }) do r = r + RPGStat.Stat(ch,v..stat) end
 --CSay(ch.."."..stat.." ==> "..r)
+if r<1 then r=1 end
 RPGStat.DefStat(ch,"END_"..stat,r)
 -- if LAURA.GetFlow()=="COMBAT" then MS.Run("COMBAT","PerformAltStat",ch,stat) end -- This line will adept a stat if there's a status change telling the game to do so.
 end

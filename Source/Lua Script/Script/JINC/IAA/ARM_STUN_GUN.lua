@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.24
+version: 16.07.26
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
@@ -48,9 +48,9 @@ ret = {
 	["AttackPower"] = 120,
 	["AttackStat"] = "Strength",
 	["Buff_Accuracy"] = -40,
-	["Buff_Agility"] = -200,
+	["Buff_Agility"] = -60,
 	["Buff_Defense"] = -70,
-	["Buff_Evasion"] = -2000,
+	["Buff_Evasion"] = -100,
 	["Buff_Resistance"] = -70,
 	["Buff_Strength"] = -5,
 	["Buff_Will"] = -100,

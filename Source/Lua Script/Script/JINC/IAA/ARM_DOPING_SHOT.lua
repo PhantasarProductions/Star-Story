@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.24
+version: 16.07.26
 ]]
 ret = {
 	["APRecover"] = 100,
@@ -46,6 +46,14 @@ ret = {
 	["ActSpeed"] = 50,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
+	["Buff_Accuracy"] = 200,
+	["Buff_Agility"] = 25,
+	["Buff_Defense"] = 75,
+	["Buff_Evasion"] = 75,
+	["Buff_HP"] = 20,
+	["Buff_Resistance"] = 75,
+	["Buff_Strength"] = 100,
+	["Buff_Will"] = 20,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Recovers 100 AP to ally",
 	["HealingType"] = "Absolute",
