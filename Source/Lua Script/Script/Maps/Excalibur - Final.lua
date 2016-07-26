@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.24
+version: 16.07.26
 ]]
 
 -- [[ @USE /Script/Use/Maps/Gen/Schuif.lua ]]
@@ -87,7 +87,25 @@ floorflow = {
                             local j = Maps.Obj.Obj('JerrycanTrack')
                             j.InsertX = j.InsertX - 1
                             if j.InsertX<-400 then j.InsertX = j.insertX + 4000 end 
-                          end           
+                          end     ,
+               ['#018'] = function()
+                            -- Define quick refs
+                            local o = Maps.Obj.Obj('CONV_BAG')
+                            local mt = 'Coordinate Marker Up'
+                            local mrk = Maps.Obj.Obj(mt)
+                            local lt = 'Len'
+                            local lnm = Maps.Obj.Obj(lt)
+                            -- Corrections
+                            local hx,hy = 0,0
+                            local exy = 100
+                            local maxy = lnm.Y + lnm.H + exy
+                            local miny = mrk.Y
+                            local minx = mrk.X
+                            -- Animate
+                            if o.Y<minY then o.X = minx + maxy; o.Y = miny + maxy end -- Yes, x is set with maxy too. After all we got a perfect 45 degree angle.
+                            o.X = o.X - 1
+                            o.Y = o.Y - 1                            
+                          end                 
             }     
             
 function UnLockEmgSave()
