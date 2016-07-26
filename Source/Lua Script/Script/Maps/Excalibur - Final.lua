@@ -39,7 +39,7 @@ version: 16.07.26
 
 -- @USEDIR Script/Use/Maps/AltArena
 
-chats = 5
+chats = 6
 
 center=400
 
