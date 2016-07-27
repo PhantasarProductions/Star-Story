@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.17
+version: 16.07.27
 ]]
 
 
@@ -186,15 +186,19 @@ function MAIN_FLOW()
         Image.DText(price[itm].." shilders",780,y,1,2)        
     end
     Image.ViewPort(0,0,800,600)
-    local pcharn
+    --local pcharn
+    CSay('-- checking phantasar store click ---')
     for i=0,5 do 
+        CSay('Check clickchar: '..i..'; currently is: '..sval(pcharn))
         if ClickedChar(i) then
            if i==pcharn then Bye() return end
            char=RPGChar.PartyTag(i)
         end
     	  if RPGChar.PartyTag(i)==char then pcharn=i end
     end
+    CSay('-- end check --')
     if pcharn<3 then
+       White()
 		   Image.Draw(chpointer,(pcharn*200)+100,450)
 	  end
   	ShowParty()

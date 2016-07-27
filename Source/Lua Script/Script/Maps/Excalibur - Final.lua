@@ -32,16 +32,16 @@
   
  **********************************************
  
-version: 16.07.26
+version: 16.07.27
 ]]
 
 -- [[ @USE /Script/Use/Maps/Gen/Schuif.lua ]]
 
 -- @USEDIR Script/Use/Maps/AltArena
 
-chats = 6
+chats  = 7
 
-center=400
+center = 400
 
 Names = {
             ['#000'] = 'Secret Hangar',
