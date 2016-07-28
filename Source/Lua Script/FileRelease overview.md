@@ -479,6 +479,7 @@
 1. Script/Maps/Nizozemska - Marlon's Garden.lua
 1. Script/Maps/Nizozemska - Marlon's house.lua
 1. Script/Maps/Nizozemska - Space Port.lua
+1. Script/Maps/Phantasar - Airom.lua
 1. Script/Maps/Phantasar - Frendor Bushes - Arrival.lua
 1. Script/Maps/Phantasar - Frendor Bushes.lua
 1. Script/Maps/Phantasar - Frendor.lsv
@@ -567,4 +568,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Thu 28 July 2016; 09:57:05 CET
+### Last updated: Thu 28 July 2016; 17:59:49 CET
