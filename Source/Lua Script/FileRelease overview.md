@@ -204,6 +204,8 @@
 1. Script/JINC/IAA/ITM_PHANTASAR_MAGICDISC.lua
 1. Script/JINC/IAA/ITM_PHANTASAR_MAGICDUST.lua
 1. Script/JINC/IAA/ITM_PHANTASAR_MEDICINE.lua
+1. Script/JINC/IAA/ITM_PHANTASAR_PANACEA.lua
+1. Script/JINC/IAA/ITM_PHANTASAR_PEPPER.lua
 1. Script/JINC/IAA/ITM_PHANTASAR_PHOENIX.lua
 1. Script/JINC/IAA/ITM_PHANTASAR_POTION.lua
 1. Script/JINC/IAA/ITM_PHANTASAR_SALVE.lua
@@ -568,4 +570,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Thu 28 July 2016; 17:59:49 CET
+### Last updated: Thu 28 July 2016; 23:30:35 CET

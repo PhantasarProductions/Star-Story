@@ -1,6 +1,6 @@
 --[[
   ABL_YIRL_TAUNT.lua
-  Version: 16.07.26
+  Version: 16.07.28
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================

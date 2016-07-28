@@ -40,5 +40,10 @@ version: 16.07.28
 
 function GALE_OnLoad()
    Music('Dungeon/Dungeon1.ogg')
+   MapShow('BASE')
+   for i=1,5 do
+       ZA_Enter('ShowSecret'..i,MapShow,"BASE,SECRET"..i)
+       ZA_Enter('HideSecret'..i,MapShow,"BASE")
+   end
 end
    

@@ -1,7 +1,7 @@
 --[[
-  ITM_BIOHAZARD.lua
+  ITM_PHANTASAR_PANACEA.lua
   Version: 16.07.28
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -38,20 +38,32 @@ ret = {
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 80,
 	["AttackStat"] = "Strength",
-	["CauseDisease"] = true,
-	["CausePoison"] = true,
+	["CureAmnesia"] = true,
+	["CureBagLock"] = true,
+	["CureConfusion"] = true,
+	["CureDamned"] = true,
+	["CureDeathFull"] = true,
+	["CureDeathOne"] = true,
+	["CureDisease"] = true,
+	["CureHandicapped"] = true,
+	["CureParalysis"] = true,
+	["CurePoison"] = true,
+	["CureSleep"] = true,
+	["CureTerrified"] = true,
+	["CureZombie"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Poisons and diseases one target",
+	["Description"] = "Cures all status changes",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 100,
 	["ITM_SellPrice"] = 75,
-	["Icon"] = "GFX/Inventory/Biohazard Box.png",
+	["ITM_Sellable"] = true,
+	["Icon"] = "gfx/inventory/Phan_Panacea.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Biohazard waste",
-	["Target"] = "1F",
-	["UseCombat"] = true}
+	["Name"] = "Panacea",
+	["Target"] = "1A",
+	["UseCombat"] = true,
+	["untauntable"] = true}
 
 return ret
 

@@ -3,19 +3,19 @@ ret = {
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
-	["Buff_Defense"] = 25,
-	["Buff_Resistance"] = 25,
+	["Buff_Will"] = 250,
+	["CureHandicapped"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Raises Defense and Resistance by 25% if used in combat",
+	["Description"] = "Raises you Will greatly",
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 500,
-	["ITM_SellPrice"] = 250,
+	["ITM_SellPrice"] = 300,
 	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/Vitamin_C.png",
+	["Icon"] = "GFX/Inventory/Phan_Pepper.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Vitamin C",
+	["Name"] = "Pepper",
 	["Target"] = "1A",
-	["UseCombat"] = true}
+	["UseCombat"] = true,
+	["UseField"] = true}
 
 return ret
 
