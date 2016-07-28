@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.05
+version: 16.07.28
 ]]
 
 rosettavar = "&DONE.SPOKEN.ROSETTA"
@@ -45,6 +45,35 @@ mpts = { [true] = "CANSPEAK", [false] = "CANNOTSPEAK"}
 
 prismdiamondsgiven = prismdiamondsgiven or 1
 
+
+-- We gotta check if Crystal has all ARMS (except for the ARC SMASH). If not Rachel should not appear.
+function DoesCrystalHaveAllARMS()
+ local ARMS = {
+                      'DART',
+                      'HEALINGSPRAY',
+                      'POISONDART',
+                      'VIRUSBOMB',
+                      'MUNCHHAUSEN',
+                      'MULTIBLAST',
+                      'FLAMETHROWER',
+                      'MINICANNON',
+                      'ICEBULLET',
+                      'STUN_GUN',
+                      'DOPING_SHOT',
+                      'BIOHAZARD',
+                      'HEALINGSHOWER',
+                      'ROCKTHROWER',
+                      'NAPALMSHOWER',
+                      'RISINGNOVA'}
+ local ret = true                      
+ local have
+ for ARM in each(ARMS) do
+     have = RPGChar.ListHas('Crystal','ARMS',ARM)==1
+     ret = ret and have
+     CSay('Check ARM: '..ARM.."  => "..sval(have).." == ret> "..sval(ret))
+ end
+ return ret                      
+end
 
 function RosettaText(Tag)
 	MapText(Tag.."."..mpts[rosetta])
@@ -168,12 +197,27 @@ function NPC_Merchant()
    end   
 end
 
+-- Rachel
+function NPC_Rachel()
+   if not rosetta then
+     MapText('RACHEL.CANNOTSPEAK')
+     return
+   end
+   if GetActive()~='Crystal' or (CVV('&RACHEL.DONE.ARKSMASH')) then
+      MapText('RACHEL.NOTCRYSTAL')
+      return
+   end
+   MapText('RACHEL.CRYSTAL')
+   Done('&RACHEL.DONE.UNLOCK.AIROM') 
+end
+
 function GALE_OnLoad()
 	Music('Dungeon/Enchanted Valley.ogg')
 	NPC_SAVESPOT = savespot.blue
 	ZA_Enter("Byebye",GoWorld,"Phantasar")
 	if not CVV("&DONE.PHANTASAR.GHOSTHOUSE.COMPLETE") then Maps.Obj.Kill("NPC_MT_MARRILONA",0) end	
 	if skill==3 and prismdiamondsgiven<10 then prismdiamondsgiven=10 end
+	if not DoesCrystalHaveAllARMS() then Maps.Obj.Kill('NPC_Rachel') end -- Rachel only appears if Crystal has all ARMS except the ARC SMASH
 end
 
 

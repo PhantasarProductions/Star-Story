@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.30
+version: 16.07.28
 ]]
 local phantasar = {
 
@@ -43,7 +43,8 @@ local phantasar = {
                            { Name = "Frendor Bushes", Map = "Phantasar - Frendor Bushes"},
                            { Name = "The city of Frendor", Map = "Phantasar - Frendor", Wanted='&DONE.PHANTASAR.FRENDORBUSHES'},
                            { Name = "Slagimon Forest", Map = "Phantasar - Slagimon Forest", Wanted = '&DONE.PHANTASAR.FEENA_1'},
-                           { Name = "The Ghosthouse", Map = "Phantasar - Ghost House", Wanted = "&DONE.PHANTASAR.SLAGIMON", Layer='#000'}
+                           { Name = "The Ghosthouse", Map = "Phantasar - Ghost House", Wanted = "&DONE.PHANTASAR.SLAGIMON", Layer='#000'},
+                           { Name = "The Abandoned Mines of Airom", Map = "Phantasar - Airom", Wanted = '&RACHEL.DONE.UNLOCK.AIROM'}
                       },
                       
           init = function() end,
