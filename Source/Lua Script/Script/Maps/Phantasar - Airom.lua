@@ -32,10 +32,76 @@
   
  **********************************************
  
-version: 16.07.29
+version: 16.07.30
 ]]
 -- @USE Phantasar.lua
 
+
+function Boss()
+  oripos = nil
+  if Done('&RACHEL.DONE.AIROM.STUFF') then return end
+  MapText('STUFF')
+  Schedule('MAP','PostBoss')  
+  CleanCombat()
+  Var.D("$COMBAT.BACKGROUND","Mines.png")
+  Var.D("$COMBAT.BEGIN","Default")
+  Var.D("$COMBAT.FOE1","Boss/UberGremlin")
+  Var.D("$COMBAT.ALTCOORDSFOE1","300,400")
+  Var.D("%COMBAT.LVFOE1",MapLevel())
+  Var.D("$COMBAT.MUSIC","AltCombat/Phantasar_Boss.ogg")
+  StartCombat() 
+end
+
+function PostBoss()
+  MapText("POSTBOSS")
+  MapEXP()
+  LoadMap("Phantasar - Frendor")
+  SpawnPlayer('RachelSpot')
+  SetActive('Crystal')
+  MapText('RACHEL.GOTIT')
+  local ce = RPGChar.Points("Cyrstal","EXP")
+  ce.Have = ce.Maximum
+  Award('ALLABL_CRYSTAL')
+  -- Update all other ARMS
+  local ARMS = {
+                      'DART',
+                      'HEALINGSPRAY',
+                      'POISONDART',
+                      'VIRUSBOMB',
+                      'MUNCHHAUSEN',
+                      'MULTIBLAST',
+                      'FLAMETHROWER',
+                      'MINICANNON',
+                      'ICEBULLET',
+                      'STUN_GUN',
+                      'DOPING_SHOT',
+                      'BIOHAZARD',
+                      'HEALINGSHOWER',
+                      'ROCKTHROWER',
+                      'NAPALMSHOWER',
+                      'RISINGNOVA'}
+  local stats = mysplit(RPGChar.StatFields('Crystal'),";")
+  -- X Power, Weight and Hit%
+  for s in each(stats) do
+      if prefixed(s,"ARM.") then
+         if prefixed("ARM.HIT") then 
+            RPGChar.DefStat('Crystal',s,RPGChar.Stat('Crystal',s)+({10,5,1})[skill])
+            if RPGChar.Stat('Crystal',s)>100 then RPGChar.Stat('Crystal',100) end
+         elseif prefixed("ARM.WEIGHT") then 
+            RPGChar.DefStat('Crystal',s,RPGChar.Stat('Crystal',s)+({100,10,2})[skill])
+         elseif prefixed("ARM.XPOWER") then 
+            RPGChar.DefStat('Crystal',s,RPGChar.Stat('Crystal',s)+({20,10,1})[skill])
+         end         
+      end
+  end
+  -- Ammo
+  for a in each(ARMS) do
+     local ammo = RPGChar.Points("Crystal","ARM.AMMO."..a)
+     ammo.Maximum = ammo.Maximum + (4-skill)
+  end    
+  -- Give the ARM
+  RPGChar.AddList('Crystal','ARMS','ARKSMASH')
+end
 
 
 function GALE_OnLoad()
@@ -70,5 +136,7 @@ function GALE_OnLoad()
    AddEnemy("Ghoul",25)
    AddEnemy("Gremlin",2)
    EncounterBack = "Mines"
+   if CVV('&RACHEL.DONE.AIROM.STUFF') then Maps.Obj.Kill("Stuff") end
+   ZA_Enter('Boss',Boss)
 end
    

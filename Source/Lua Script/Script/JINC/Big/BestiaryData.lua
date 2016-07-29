@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.29
+version: 16.07.30
 ]]
 return {
 	"ASTRILOPUPELITE",
@@ -60,6 +60,7 @@ return {
 	"SUPERSYSS",
 	"SUPERZOMBIE",
 	"THIEF CHIEF",
+	"UBERGREMLIN",
 	"ASTRILOPUP",
 	"ASTRILOPUPGUARD",
 	"BATTLEDROID",
