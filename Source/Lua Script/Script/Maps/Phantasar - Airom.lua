@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.28
+version: 16.07.29
 ]]
 -- @USE Phantasar.lua
 
@@ -45,5 +45,23 @@ function GALE_OnLoad()
        ZA_Enter('ShowSecret'..i,MapShow,"BASE,SECRET"..i)
        ZA_Enter('HideSecret'..i,MapShow,"BASE")
    end
+   NPC_GREEN_1 = savespot.green
+   NPC_GREEN_2 = savespot.green
+   NPC_GREEN_3 = savespot.green
+   NPC_GREEN_4 = savespot.green
+   NPC_GREEN_5 = savespot.green
+   NPC_GREEN_6 = savespot.green
+   NPC_GREEN_7 = savespot.green
+   NPC_GREEN_8 = savespot.green
+   NPC_GREEN_9 = savespot.green
+   NPC_GREEN_0 = savespot.green
+   NPC_RED_1   = savespot.red
+   if skill>1 then
+      for i=0,9 do
+          if rand(1,({6,2})[skill-1])==1 then -- Yeah, at harder difficulty settings, less savespots. 
+             Maps.Obj.Kill('NPC_GREEN_'..i) 
+          end
+      end    
+   end       
 end
    

@@ -74,6 +74,7 @@
 1. Script/JINC/IAA/ABL_FOE_DAMNYOUALL.lua
 1. Script/JINC/IAA/ABL_FOE_DARKHEAL_FOE.lua
 1. Script/JINC/IAA/ABL_FOE_DARKHEAL_HERO.lua
+1. Script/JINC/IAA/ABL_FOE_DARK_VITALIZE.lua
 1. Script/JINC/IAA/ABL_FOE_DEATH.lua
 1. Script/JINC/IAA/ABL_FOE_DEATHSTING.lua
 1. Script/JINC/IAA/ABL_FOE_DEMON_SOUL_BREAKER.lua
@@ -577,4 +578,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 29 July 2016; 12:10:25 CET
+### Last updated: Fri 29 July 2016; 19:42:35 CET
