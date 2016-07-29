@@ -107,5 +107,6 @@ return {
 	"WOLF",
 	"ZOMBIE",
 	"MCLEEN",
+	"BLACKHOLEDWELLER",
 	"FIRESPIDER",
 }

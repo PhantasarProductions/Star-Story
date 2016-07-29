@@ -553,6 +553,7 @@
 1. Script/Use/Maps/Hawk/AutoNewNav.lua
 1. Script/Use/Maps/Hawk/HawkBridge.lua
 1. Script/Use/Maps/Hawk/Teach Wendicka.lua
+1. Script/Use/Maps/Hawk/UnlockBlackHoleDweller.lua
 1. Script/Use/Maps/Hawk_Terminal/Bestiary.lua
 1. Script/Use/Maps/Hawk_Terminal/Block Shooter .lua
 1. Script/Use/Maps/Hawk_Terminal/NIM.lua
@@ -585,4 +586,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sat 30 July 2016; 01:30:36 CET
+### Last updated: Sat 30 July 2016; 01:50:53 CET

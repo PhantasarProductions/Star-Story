@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.27
+version: 16.07.30
 ]]
 
 -- [[ @USE /Script/Use/Maps/Gen/Schuif.lua ]]
@@ -625,4 +625,5 @@ function GALE_OnLoad()
    Award('SCENARIO_FINALDUNGEON')
    FinalMapShow()
    Var.D('&BLOCK.EMERGENCY.SAVE',"TRUE")
+   ZA_Enter('FLOOR20REACHERD',Done,'&DONE.EXCALIBUR.FLOOR20.REACHED') -- Needed for Black Hole Dweller
 end
