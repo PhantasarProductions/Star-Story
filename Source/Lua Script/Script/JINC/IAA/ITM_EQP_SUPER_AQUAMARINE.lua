@@ -1,6 +1,6 @@
 --[[
   ITM_EQP_SUPER_AQUAMARINE.lua
-  Version: 16.07.28
+  Version: 16.07.29
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================

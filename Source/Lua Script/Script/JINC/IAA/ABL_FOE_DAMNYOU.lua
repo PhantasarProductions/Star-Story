@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.28
+version: 16.07.29
 ]]
 ret = {
 	["ABL_AP"] = 0,
@@ -47,7 +47,7 @@ ret = {
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Damn you",
+	["Name"] = "Damn you!",
 	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}

@@ -1,6 +1,6 @@
 --[[
   ITM_PHANTASAR_PANACEA.lua
-  Version: 16.07.28
+  Version: 16.07.29
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -43,7 +43,6 @@ ret = {
 	["CureBagLock"] = true,
 	["CureConfusion"] = true,
 	["CureDamned"] = true,
-	["CureDeathFull"] = true,
 	["CureDeathOne"] = true,
 	["CureDisease"] = true,
 	["CureHandicapped"] = true,
