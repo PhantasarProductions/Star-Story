@@ -44,6 +44,7 @@ ret = {
 	["AttackStat"] = "Will",
 	["DefenseStat"] = "Resistance",
 	["HealingType"] = "Absolute",
+	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Dark Vitalization",
 	["SpellAni_Reference"] = "AllHeal",
