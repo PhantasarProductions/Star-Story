@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.26
+version: 16.07.29
 ]]
 
 -- Kills for ExHuRU (and his "representatives")  
@@ -254,7 +254,18 @@ XCharAlternateAttack = {
                CharReport(tg,ti,"DEATH!",{255,0,0})
                RPGChar.Points(foetag,'HP').Have = 0
                return true      
-               end
+               end,
+    Rolf = function(ai,ti,gh)
+               if rand(1,100)>30/skill then return end
+               MS.LoadNew("BOXTEXT","Script/SubRoutines/BoxText.lua")
+               MS.Run("BOXTEXT","RemoveData","NEWABILITY")
+               MS.Run("BOXTEXT","LoadData","GENERAL/COMBAT;NEWABILITY")
+               SerialBoxText("NEWABILITY","SPECIAL.ROLF","Combat")
+               local act = Fighters.Hero[ai].Act
+               act.ItemCode = "ABL_ROLF_AUTO_CRITICAL"
+               ActionFuncs.ABL('Hero',ai,act)
+               return true
+           end           
    
 }	
 
