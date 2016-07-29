@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.16
+version: 16.07.30
 ]]
 
 -- @USEDIR Script/Use/Maps/Hawk/
@@ -93,6 +93,7 @@ LAURA.Flow("TERMINAL")
 end
 
 function CLICK_ARRIVAL_Nav()
+if CheckOutBlackHoleDweller then CheckOutBlackHoleDweller() end
 if not Done("&TUT.NAV.HAWK") then 
    MapText("NAVTUTORIAL") 
    end
