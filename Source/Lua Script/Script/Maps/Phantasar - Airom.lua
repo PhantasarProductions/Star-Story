@@ -86,7 +86,7 @@ function PostBoss()
       if prefixed(s,"ARM.") then
          if prefixed("ARM.HIT") then 
             RPGChar.DefStat('Crystal',s,RPGChar.Stat('Crystal',s)+({10,5,1})[skill])
-            if RPGChar.Stat('Crystal',s)>100 then RPGChar.Stat('Crystal',s,100) end
+            if RPGChar.Stat('Crystal',s)>100 then RPGChar.DefStat('Crystal',s,100) end
          elseif prefixed("ARM.WEIGHT") then 
             RPGChar.DefStat('Crystal',s,RPGChar.Stat('Crystal',s)+({100,10,2})[skill])
          elseif prefixed("ARM.XPOWER") then 

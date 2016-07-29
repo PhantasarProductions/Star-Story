@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.28
+version: 16.07.30
 ]]
 
 rosettavar = "&DONE.SPOKEN.ROSETTA"
@@ -203,7 +203,7 @@ function NPC_Rachel()
      MapText('RACHEL.CANNOTSPEAK')
      return
    end
-   if GetActive()~='Crystal' or (CVV('&RACHEL.DONE.ARKSMASH')) then
+   if GetActive()~='Crystal' or (CVV('&RACHEL.DONE.AIROM.STUFF')) then
       MapText('RACHEL.NOTCRYSTAL')
       return
    end
