@@ -59,7 +59,7 @@ function PostBoss()
   SpawnPlayer('RachelSpot')
   SetActive('Crystal')
   MapText('RACHEL.GOTIT')
-  local ce = RPGChar.Points("Cyrstal","EXP")
+  local ce = RPGChar.Points("Crystal","EXP")
   ce.Have = ce.Maximum
   Award('ALLABL_CRYSTAL')
   -- Update all other ARMS
