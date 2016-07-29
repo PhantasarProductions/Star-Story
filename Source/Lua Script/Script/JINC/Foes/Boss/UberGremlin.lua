@@ -152,8 +152,8 @@ for ak=1,1 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_PHAN_TRAVEL', LVL=330, VLT=false }
 for ak=1,35 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,35 do table.insert(Data.ItemSteal,temp) end
-Data.ActMinLevel["Abl.SUPER_WENDICKA_VOLTSUNAMI"] = 5		for ak=1,3000 do table.insert(Data.Acts,"Abl.SUPER_WENDICKA_VOLTSUNAMI") end
-Data.ActMinLevel["Abl.ZZZ_CID_DARKNESS"] = 25		for ak=1,2000 do table.insert(Data.Acts,"Abl.ZZZ_CID_DARKNESS") end
+Data.ActMinLevel["Abl.SUPER_WENDICKA_VOLTSUNAMI"] = 3000		for ak=1,5 do table.insert(Data.Acts,"Abl.SUPER_WENDICKA_VOLTSUNAMI") end
+Data.ActMinLevel["Abl.ZZZ_CID_DARKNESS"] = 2000		for ak=1,25 do table.insert(Data.Acts,"Abl.ZZZ_CID_DARKNESS") end
 
 
 return Data
