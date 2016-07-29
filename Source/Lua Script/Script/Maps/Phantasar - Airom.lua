@@ -63,5 +63,12 @@ function GALE_OnLoad()
           end
       end    
    end       
+   -- Instant random encounters
+   AddEnemy("Goblin",20)
+   AddEnemy("HellHound",20)
+   AddEnemy("Hag",20)
+   AddEnemy("Ghoul",25)
+   AddEnemy("Gremlin",2)
+   EncounterBack = "Mines"
 end
    
