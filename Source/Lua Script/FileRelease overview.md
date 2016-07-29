@@ -114,6 +114,7 @@
 1. Script/JINC/IAA/ABL_FOXY_SMOKEBOMB.lua
 1. Script/JINC/IAA/ABL_FOXY_STUNSTAB.lua
 1. Script/JINC/IAA/ABL_HORROR.lua
+1. Script/JINC/IAA/ABL_ROLF_AUTO_CRITICAL.lua
 1. Script/JINC/IAA/ABL_ROTTEN_BREATH.lua
 1. Script/JINC/IAA/ABL_WENDICKA_ELECTRICCHARGE.lua
 1. Script/JINC/IAA/ABL_WENDICKA_JOLT.lua
@@ -141,6 +142,7 @@
 1. Script/JINC/IAA/ABL_YIRL_INTIMIDATE.lua
 1. Script/JINC/IAA/ABL_YIRL_TAUNT.lua
 1. Script/JINC/IAA/ABL_YIRL_TRIGGERHAPPY.lua
+1. Script/JINC/IAA/ARM_ARKSMASH.lua
 1. Script/JINC/IAA/ARM_BIOHAZARD.lua
 1. Script/JINC/IAA/ARM_DART.lua
 1. Script/JINC/IAA/ARM_DOPING_SHOT.lua
@@ -581,4 +583,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 29 July 2016; 21:55:16 CET
+### Last updated: Fri 29 July 2016; 23:01:36 CET

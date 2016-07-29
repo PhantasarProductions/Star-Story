@@ -1,20 +1,20 @@
 ret = {
 	["ABL_AP"] = 0,
-	["ABL_Pose"] = "Cast",
+	["ABL_Pose"] = "Attack",
+	["ABL_Speed"] = 10000,
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 250,
+	["ActSpeed"] = 10000,
 	["AttackElement"] = "Non-Elemental",
+	["AttackPower"] = 400,
 	["AttackStat"] = "Strength",
-	["CauseTerrified"] = true,
 	["DefenseStat"] = "Defense",
+	["Description"] = "KILL! KILL! KILL!",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Elements/Dark.png",
+	["Icon"] = "GFX/Abilities/Fist.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Horror",
-	["SpellAni_Reference"] = "Single_Heal",
+	["Name"] = "Critical Hit",
 	["Target"] = "1F",
-	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseCombat"] = true}
 
 return ret
 
