@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 16.06.04
+  Version: 16.07.30
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -138,7 +138,7 @@ if abl.Healing and abl.Healing>0 then
    })[abl.HealingType] or function() Sys.Error("Unknown healing type: "..sval(abl.HealingType)) end )()               
    end
 -- Recover AP absolute or by percent
-if abl.APRecover and abl.APRecover>0 then
+if abl.APRecover and abl.APRecover>0 and tg=='Hero' then
    (({ Absolute = function() HealAP(tg,ti,abl.APRecover); effect=true end,
        Percent  = function()
                  local hpt = RPGChar.Points(cht,"AP")

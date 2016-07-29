@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.29
+version: 16.07.30
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
@@ -45,7 +45,7 @@ ret = {
 	["ARM_XPower"] = 0,
 	["ActSpeed"] = 100,
 	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 6000,
+	["AttackPower"] = 2000,
 	["AttackStat"] = "Strength",
 	["Buff_Defense"] = -100,
 	["Buff_Evasion"] = -100,
