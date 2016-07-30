@@ -92,6 +92,7 @@ function SpellAni.ArkSmash(ActG,ActT,TarG,TarT)
     until theend    
     -- Burn into the sun
     for sunx=-2000,0,5 do
+        Image.Cls()
         White()
         for star in each(stars) do
             Image.Line(star.x,star.y,star.x,star.y)
