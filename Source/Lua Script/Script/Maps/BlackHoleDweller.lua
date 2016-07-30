@@ -59,8 +59,9 @@ function StartBoss()
 end
 
 function PostBoss()
+  Maps.Obj.Kill('Dweller')
   MapText('POSTBOSS')
-  ItemGive('EQP_LOUSYTSHIRT',{'Wendicka','Crystal','Yirl','Foxy','Xenobi','Rolf'},true,false)
+  if not ItemGive('EQP_LOUSYTSHIRT',{'Wendicka','Crystal','Yirl','Foxy','Xenobi','Rolf'},true,false) then CSay("WARNING! Lousy T-Shirt not awarded") end
   Award("BOSS_BLACKHOLEDWELLER")
   BlockWorld("Black Hole")
   LoadMap("Hawk","Bridge")
