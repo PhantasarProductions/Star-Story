@@ -41,7 +41,7 @@ function CheckOutBlackHoleDweller()
                            "&DONE.NIZOZEMSKA.DARKGRAVEYARD.COMPLETE",     -- Dark Graveyard Nizozemska
                            '&RACHEL.DONE.AIROM.STUFF',                    -- Airom complete Phantasar
                            "&DONE.PHANTASAR.GHOSTHOUSE.COMPLETE",         -- Ghost house complete Phantasar
-                           "&BOSS.DARDBOORTH",                           -- Black Castle complete Physillium
+                           "&BOSS.DARDBOORTH",                            -- Black Castle complete Physillium
                            "&DONE.SECRETDUNGEON.VOLCANIA.CAVES",          -- Volcania Caves Volcania
                            "&DONE.SECRETDUNGEON.SEWERS",                  -- Sewers Vulpina
                            "&DONE.SECRETDUNGEON.EUGORVNIA.CAVES",         -- Eugorvnia Caves Ysperon
