@@ -44,7 +44,21 @@ function StartBoss()
   Maps.CamY = 0
   PartyPop('BH',"West")
   MapText("PREBOSS")
-  Sys.Error("No more scripting yet")
+  oripos = nil
+  CleanCombat()
+  Var.D("$COMBAT.BACKGROUND","Phan - Dung.png") -- Just have some value, to prevent a crash
+  Var.D("$COMBAT.ALTBACKGROUND","BlackHoleDweller")
+  Var.D("$COMBAT.BEGIN","Default")
+  Var.D("$COMBAT.FOE1","SuperBoss/BlackHoleDweller")
+  Var.D("$COMBAT.ALTCOORDSFOE1","300,600")
+  Var.D("%COMBAT.LVFOE1",10000)
+  Var.D("$COMBAT.MUSIC",'SpecialBoss/BlackHoleDweller.ogg')
+  StartCombat()
+  Schedule('MAP','PostBoss') 
+end
+
+function PostBoss()
+  Sys.Error('Sorry, no postboss script yet')
 end
 
 function GALE_OnLoad()

@@ -366,6 +366,7 @@
 1. Script/Use/Combat/AblSpecialEffect/Pickpocket.lua
 1. Script/Use/Combat/AblSpecialEffect/RemoveEnemy.lua
 1. Script/Use/Combat/AblSpecialEffect/Yirl.lua
+1. Script/Use/Combat/AltBackGrounds/Algemeen.lua
 1. Script/Use/Combat/CAction.lua
 1. Script/Use/Combat/CDrawFighters.lua
 1. Script/Use/Combat/CDrawScreen.lua
@@ -528,6 +529,7 @@
 1. Script/Use/Combat/AblSpecialEffect/Randomizer.lua
 1. Script/Use/Combat/AblSpecialEffect/Summon.lua
 1. Script/Use/Combat/AblSpecialEffect/UpgradeToSnowLeopard.lua
+1. Script/Use/Combat/AltBackGrounds/Black Hole Dweller.lua
 1. Script/Use/Combat/AltEnemyBuild/ExHuRU.lua
 1. Script/Use/Combat/AltEnemyBuild/SuperFoe_FireSpider.lua
 1. Script/Use/Combat/Events/ReleaseTheGoddess.lua
@@ -587,4 +589,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sat 30 July 2016; 12:29:49 CET
+### Last updated: Sat 30 July 2016; 13:03:17 CET

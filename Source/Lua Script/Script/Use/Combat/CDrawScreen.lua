@@ -1,7 +1,7 @@
 --[[
   CDrawScreen.lua
-  Version: 15.11.02
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.07.30
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -130,7 +130,7 @@ end
 function DrawScreen(noparty)
 Image.Cls()
 White()
-Image.Draw("ARENA",0,0)
+if AltBackGround then AltBackGrounds[AltBackGround]() else Image.Draw("ARENA",0,0) end
 DrawGauge()
 DrawFighters()
 ShowCharReports()

@@ -1,6 +1,6 @@
 --[[
   Combat.lua
-  Version: 16.06.23
+  Version: 16.07.30
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -236,6 +236,7 @@ CombatData = Var2Table("COMBAT.",true)
 for _,l in ipairs(mysplit(serialize("CombatData",CombatData),"\n")) do CSay("CBD> "..l) end
 CombatData.BEGIN = CombatData.BEGIN or "Default" -- If Ambush or Initiative not set then the default situation will be taken ;)
 Image.AssignLoad("ARENA", "GFX/Combat/Arena/"..arena)
+if CVVN("$COMBAT.ALTBACKGROUND") then AltBackGround = CVV("$COMBAT.ALBACKGROUND") end
 Fighters = { Hero = {}, Foe = {} } -- Fighters.Friend = Fighters.Hero
 -- Init Players
 local ptag
