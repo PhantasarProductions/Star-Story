@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 16.06.02
+Version: 16.07.30
 End Rem
 Strict
 
@@ -147,6 +147,7 @@ Import  tricky_units.RPGStats
 Import  tricky_units.SafeString
 Import	tricky_units.Append
 Import	tricky_units.advdatetime
+Import	tircky_units.blackhole
 
 
 ' Lastly some brl modules I really need
@@ -175,7 +176,7 @@ GaleCon = New GALEMainCon2
 
 ' Version
 MKL_Lic     "LAURA II - LAURA2.bmx","GNU General Public License 3"
-MKL_Version "LAURA II - LAURA2.bmx","16.06.02"
+MKL_Version "LAURA II - LAURA2.bmx","16.07.30"
 
 ?Debug
 GJDebug=True
@@ -215,6 +216,7 @@ Include     "inc/api/Maps.bmx"
 Include 	"inc/api/Actors.bmx"
 Include	"inc/api/LAURA.bmx"
 Include     "inc/api/Effects.bmx"
+Include "inc/api/BlackHole.bmx"
 
 StartUpFile ' Must be called BEFORE the games goes into graphics mode as it's also possible we are only informing about the version.
 Init
