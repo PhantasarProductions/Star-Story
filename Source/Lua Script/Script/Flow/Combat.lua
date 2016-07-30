@@ -236,7 +236,7 @@ CombatData = Var2Table("COMBAT.",true)
 for _,l in ipairs(mysplit(serialize("CombatData",CombatData),"\n")) do CSay("CBD> "..l) end
 CombatData.BEGIN = CombatData.BEGIN or "Default" -- If Ambush or Initiative not set then the default situation will be taken ;)
 Image.AssignLoad("ARENA", "GFX/Combat/Arena/"..arena)
-if CVVN("$COMBAT.ALTBACKGROUND") then AltBackGround = CVV("$COMBAT.ALBACKGROUND") end
+if CVVN("$COMBAT.ALTBACKGROUND") then AltBackGround = CVV("$COMBAT.ALTBACKGROUND") end
 Fighters = { Hero = {}, Foe = {} } -- Fighters.Friend = Fighters.Hero
 -- Init Players
 local ptag

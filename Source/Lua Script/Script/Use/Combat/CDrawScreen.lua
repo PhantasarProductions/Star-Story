@@ -130,7 +130,7 @@ end
 function DrawScreen(noparty)
 Image.Cls()
 White()
-if AltBackGround then AltBackGrounds[AltBackGround]() else Image.Draw("ARENA",0,0) end
+if AltBackGround then (AltBackGrounds[AltBackGround] or function() Sys.Error("Alternate Background routine not found","AB,"..sval(AltBackGround)) end)() else Image.Draw("ARENA",0,0) end
 DrawGauge()
 DrawFighters()
 ShowCharReports()
