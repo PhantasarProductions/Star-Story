@@ -59,7 +59,14 @@ function StartBoss()
 end
 
 function PostBoss()
-  Sys.Error('Sorry, no postboss script yet')
+  MapText('POSTBOSS')
+  ItemGive('EQP_LOUSYTSHIRT',{'Wendicka','Crystal','Yirl','Foxy','Xenobi','Rolf'},true,false)
+  Award("BOSS_BLACKHOLEDWELLER")
+  BlockWorld("Black Hole")
+  LoadMap("Hawk","Bridge")
+  Maps.GotoLayer("Bridge")
+  SpawnPlayer("Scotty")
+  -- Sys.Error('Sorry, no postboss script yet')
 end
 
 function GALE_OnLoad()

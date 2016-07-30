@@ -179,6 +179,7 @@
 1. Script/JINC/IAA/ITM_EQP_EMERALD.lua
 1. Script/JINC/IAA/ITM_EQP_GARNET.lua
 1. Script/JINC/IAA/ITM_EQP_KYANITE.lua
+1. Script/JINC/IAA/ITM_EQP_LOUSYTSHIRT.lua
 1. Script/JINC/IAA/ITM_EQP_ONYX.lua
 1. Script/JINC/IAA/ITM_EQP_PHAN_PRISMDIAMOND.lua
 1. Script/JINC/IAA/ITM_EQP_RUBY.lua
@@ -589,4 +590,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sat 30 July 2016; 13:54:29 CET
+### Last updated: Sat 30 July 2016; 14:38:02 CET
