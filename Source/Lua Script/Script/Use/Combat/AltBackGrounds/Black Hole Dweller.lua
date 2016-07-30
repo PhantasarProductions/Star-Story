@@ -39,10 +39,11 @@ AltBackGrounds = {}
 -- @FI
 
 
+--CSay('BHDAB Script present')
 function AltBackGrounds.BlackHoleDweller()
    bhaddress = bhaddress or Var.C('$BLACKHOLE')
    Image.Cls()
-   BlackHole.Show(bhaddress)
+   BlackHole.Show(bhaddress,400,300)
 end
 
 -- @IF IGNORE
