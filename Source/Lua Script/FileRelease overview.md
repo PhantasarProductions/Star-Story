@@ -159,6 +159,10 @@
 1. Script/JINC/IAA/ARM_ROCKTHROWER.lua
 1. Script/JINC/IAA/ARM_STUN_GUN.lua
 1. Script/JINC/IAA/ARM_VIRUSBOMB.lua
+1. Script/JINC/IAA/BHD_BLIZZARD.lua
+1. Script/JINC/IAA/BHD_FIRE.lua
+1. Script/JINC/IAA/BHD_LIGHT.lua
+1. Script/JINC/IAA/BHD_LIGHTNING.lua
 1. Script/JINC/IAA/BLADEH_MOLOTOV.lua
 1. Script/JINC/IAA/BLADEH_MULTI_STAB.lua
 1. Script/JINC/IAA/BLADEH_STUNSTAB.lua
@@ -590,4 +594,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sat 30 July 2016; 15:42:32 CET
+### Last updated: Sat 30 July 2016; 16:56:49 CET

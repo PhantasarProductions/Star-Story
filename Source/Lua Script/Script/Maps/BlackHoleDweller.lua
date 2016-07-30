@@ -67,6 +67,7 @@ function PostBoss()
   LoadMap("Hawk","Bridge")
   Maps.GotoLayer("Bridge")
   SpawnPlayer("Scotty")
+  BlackHole.ClearAll()
   -- Sys.Error('Sorry, no postboss script yet')
 end
 
