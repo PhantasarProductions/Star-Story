@@ -40,7 +40,9 @@ function MapBlackHole(OHYEAH)
 end
 
 function StartBoss()
-  PartyPop('BH')
+  Maps.CamX = 0
+  Maps.CamY = 0
+  PartyPop('BH',"West")
   MapText("PREBOSS")
   Sys.Error("No more scripting yet")
 end
