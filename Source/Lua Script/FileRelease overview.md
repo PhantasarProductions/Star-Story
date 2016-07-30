@@ -543,6 +543,7 @@
 1. Script/Use/Combat/Foe_AI/ExHuRU_AI.lua
 1. Script/Use/Combat/Foe_AI/FireSpider.lua
 1. Script/Use/Combat/Foe_AI/McLeen.lua
+1. Script/Use/Combat/SpellAni/ARK SMASH.lua
 1. Script/Use/Combat/SpellAni/Johnson_Phaser.lua
 1. Script/Use/Combat/SpellAni/Moo.lua
 1. Script/Use/Combat/StatusChanges/Confusion.lua
@@ -594,4 +595,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sat 30 July 2016; 16:56:49 CET
+### Last updated: Sat 30 July 2016; 20:40:45 CET
