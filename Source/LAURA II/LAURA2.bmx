@@ -147,7 +147,7 @@ Import  tricky_units.RPGStats
 Import  tricky_units.SafeString
 Import	tricky_units.Append
 Import	tricky_units.advdatetime
-Import	tircky_units.blackhole
+Import	tricky_units.BlackHole
 
 
 ' Lastly some brl modules I really need

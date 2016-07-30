@@ -36,7 +36,7 @@ version: 16.07.30
 ]]
 function MapBlackHole(OHYEAH)
   Image.Cls()
-  BlackHole.Show(400,300)
+  BlackHole.Show(bh,400,300)
 end
 
 function StartBoss()
@@ -48,6 +48,6 @@ end
 function GALE_OnLoad()
     Music('SpecialBoss/BlackHoleDweller.ogg')
     BlackHole.ClearAll()
-    bh = BlackHole('GFX/Space')
+    bh = BlackHole.Init('GFX/Space')
     ZA_Enter('BOSS',StartBoss)
 end    
