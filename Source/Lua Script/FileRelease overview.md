@@ -493,6 +493,7 @@
 1. Script/JINC/World/Phantasar.lua
 1. Script/Maps/BlackHoleDweller.lua
 1. Script/Maps/Excalibur - Final - 2.lua
+1. Script/Maps/Excalibur - Final Boss.lua
 1. Script/Maps/Excalibur - Final.lsv
 1. Script/Maps/Excalibur - Final.lua
 1. Script/Maps/Nizozemska - Belioss.lua
@@ -595,4 +596,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sat 30 July 2016; 21:32:52 CET
+### Last updated: Sun 31 July 2016; 23:27:21 CET

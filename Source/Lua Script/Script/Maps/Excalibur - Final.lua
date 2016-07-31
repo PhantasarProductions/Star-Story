@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.30
+version: 16.07.31
 ]]
 
 -- [[ @USE /Script/Use/Maps/Gen/Schuif.lua ]]
@@ -570,6 +570,12 @@ function McLeenPostFight()
   ({ [false]=McLeenVictory, [true]=OnlyCrystalIsLeft})[v]()
   -- Cool, eh? Avoiding "if" commands. :-P
 end
+
+function ToGoddess()
+   LoadMap("Excalibur - Final Boss","#020")
+   Maps.GotoLayer("#020")
+   SpawnPlayer("Start")
+end
   
 function GALE_OnLoad()
    --if not (Done("&DONE.INIT.EXCALIBUR.KEYS")) then initkeycards() end
@@ -626,4 +632,5 @@ function GALE_OnLoad()
    FinalMapShow()
    Var.D('&BLOCK.EMERGENCY.SAVE',"TRUE")
    ZA_Enter('FLOOR20REACHED',Done,'&DONE.EXCALIBUR.FLOOR20.REACHED') -- Needed for Black Hole Dweller
+   ZA_Enter('Goddess',ToGoddess)
 end
