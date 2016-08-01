@@ -452,6 +452,7 @@
 1. Script/JINC/Foes/Boss/SuperZombie.lua
 1. Script/JINC/Foes/Boss/Thief Chief.lua
 1. Script/JINC/Foes/Boss/UberGremlin.lua
+1. Script/JINC/Foes/Goddess/Goddess.lua
 1. Script/JINC/Foes/Reg/AstrilopupGuard.lua
 1. Script/JINC/Foes/Reg/BlackLizard.lua
 1. Script/JINC/Foes/Reg/Bladeh.lua
@@ -598,4 +599,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 01 August 2016; 08:00:08 CET
+### Last updated: Mon 01 August 2016; 08:13:51 CET
