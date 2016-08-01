@@ -49,6 +49,7 @@ GoddessAddons = {
 
 if Var.C('%SKILL')~="1" then
    for _,a in ipairs({
+                        'VenomGun'
                     }) do
          GoddessAddons[#GoddessAddons+1] = a                    
    end                    

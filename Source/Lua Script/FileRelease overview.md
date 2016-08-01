@@ -462,6 +462,7 @@
 1. Script/JINC/Foes/Goddess/Add_IceCannon.lua
 1. Script/JINC/Foes/Goddess/Add_LightGun.lua
 1. Script/JINC/Foes/Goddess/Add_RockThrower.lua
+1. Script/JINC/Foes/Goddess/Add_VenomGun.lua
 1. Script/JINC/Foes/Goddess/Add_WaterGun.lua
 1. Script/JINC/Foes/Goddess/Add_WindGun.lua
 1. Script/JINC/Foes/Goddess/Goddess.lua
@@ -612,4 +613,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 01 August 2016; 12:35:16 CET
+### Last updated: Mon 01 August 2016; 15:17:57 CET
