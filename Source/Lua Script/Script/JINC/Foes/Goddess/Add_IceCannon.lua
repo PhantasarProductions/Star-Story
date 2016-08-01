@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  Add_FlameThrower.lua
+  Add_IceCannon.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -51,32 +51,32 @@ version: 16.08.01
 
 
 Data = {
-	Name = "Flame Thrower",
-	Desc = "...",
-	ImageFile = "Goddess/Add_FlameThrower.png",
+	Name = "Ice Cannon",
+	Desc = "--",
+	ImageFile = "Goddess/Add_IceCannon.png",
 	AI = "Default",
 	Boss = true,
-	EleRes_Fire = 6,
+	EleRes_Fire = 5,
 	EleRes_Wind = 5,
 	EleRes_Water = 5,
 	EleRes_Earth = 5,
-	EleRes_Frost = 5,
+	EleRes_Frost = 6,
 	EleRes_Lightning = 5,
 	EleRes_Light = 5,
 	EleRes_Dark = 5,
-	EleRes_Healing = 5,
+	EleRes_Healing = 6,
 	EleRes_DarkHealing = 5,
 	Stat = {
-		["Strength"] = {0,400},
+		["Strength"] = {0,500},
 		["Defense"] = {0,0},
 		["Will"] = {0,0},
 		["Resistance"] = {0,0},
-		["Agility"] = {0,25},
+		["Agility"] = {0,10},
 		["Accuracy"] = {0,0},
 		["Evasion"] = {0,0},
 		["HP"] = {10,10},
 		["AP"] = {0,0},
-		["LevelRange"] = {0,100},
+		["LevelRange"] = {5,100},
 },
 	StatusResistance = {
 		["Poison"] = 100   --[[ #1 ]],
@@ -97,7 +97,9 @@ Data = {
 local temp
 
 
-Data.ActMinLevel["Abl.ARM_FLAMETHROWER"] = 0		for ak=1,1000 do table.insert(Data.Acts,"Abl.ARM_FLAMETHROWER") end
+Data.ActMinLevel["Abl.ARM_ICEBULLET"] = 0		for ak=1,50 do table.insert(Data.Acts,"Abl.ARM_ICEBULLET") end
+temp = { ITM='ITM_EQP_SUPER_AQUAMARINE', LVL=1, VLT=false }
+for ak=1,100 do table.insert(Data.ItemSteal,temp) end
 
 
 return Data

@@ -455,6 +455,7 @@
 1. Script/JINC/Foes/Boss/UberGremlin.lua
 1. Script/JINC/Foes/Goddess/Add_FlameThrower.lua
 1. Script/JINC/Foes/Goddess/Add_Gunner.lua
+1. Script/JINC/Foes/Goddess/Add_IceCannon.lua
 1. Script/JINC/Foes/Goddess/Goddess.lua
 1. Script/JINC/Foes/Reg/AstrilopupGuard.lua
 1. Script/JINC/Foes/Reg/BlackLizard.lua
@@ -602,4 +603,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 01 August 2016; 10:40:52 CET
+### Last updated: Mon 01 August 2016; 10:56:27 CET
