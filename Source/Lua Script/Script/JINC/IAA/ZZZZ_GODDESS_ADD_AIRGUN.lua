@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  Excalibur - Final Boss.lua
+  ZZZZ_GODDESS_ADD_AIRGUN.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -34,17 +34,22 @@
  
 version: 16.08.01
 ]]
--- @USE /Script/Use/Maps/Gen/SchuifNext.lua
+ret = {
+	["APRecoverType"] = "Absolute",
+	["ActSpeed"] = 250,
+	["AttackElement"] = "Wind",
+	["AttackPower"] = 100,
+	["AttackStat"] = "Strength",
+	["DefenseStat"] = "Defense",
+	["HealingType"] = "Absolute",
+	["Icon"] = "GFX/Abilities/Gun.png",
+	["ItemType"] = "Consumable",
+	["Name"] = "Air Gun",
+	["Target"] = "1F",
+	["UseCombat"] = true,
+	["UseField"] = true}
 
-GoddessAddons = {
-                     'Gunner',
-                     "FlameThrower",
-                     "IceCannon",
-                     "WaterGun",
-                     "WindGun",
-                     "RockThrower",
-                }                
+return ret
 
-function GALE_OnLoad()
-   Music('Sys/Silence.ogg') -- Let the normal music stop.
-end
+-- This file is an automatically generated file!
+
