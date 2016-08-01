@@ -62,6 +62,8 @@ end
 NumAdds = {2,4,6}                                
 
 function DIE_Lovejoy()
+   if Done("&DONE.LOVEJOY_IS_DEAD") then return end
+   Music('Special/GameOver.ogg')
    PartyPop("LJ","North")
    MapText("LOVEJOY")
    PartyUnPop()
@@ -74,5 +76,6 @@ end
 
 function GALE_OnLoad()
    Music('Sys/Silence.ogg') -- Let the normal music stop.
+   if CVV("&DONE.LOVEJOY_IS_DEAD") then Music('Special/GameOver.ogg') end
    ZA_Enter('DIE_Lovejoy',DIE_Lovejoy)
 end
