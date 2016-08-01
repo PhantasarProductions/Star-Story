@@ -1,8 +1,8 @@
 --[[
 **********************************************
   
-  ABL_FOE_SCRATCH.lua
-  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
+  ZZZZ_GODDESS_ADD_GUN.lua
+  (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -35,18 +35,16 @@
 version: 16.08.01
 ]]
 ret = {
-	["ABL_AP"] = 0,
-	["ABL_Pose"] = "Attack",
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 100,
+	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
-	["AttackPower"] = 125,
+	["AttackPower"] = 100,
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Fist.png",
+	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Scratch",
+	["Name"] = "Shot",
 	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}

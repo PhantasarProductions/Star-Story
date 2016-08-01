@@ -269,6 +269,7 @@
 1. Script/JINC/IAA/SUPER_THRILLING_DAMNNATION.lua
 1. Script/JINC/IAA/SUPER_WENDICKA_VOLTSUNAMI.lua
 1. Script/JINC/IAA/SUPER_XENOBI_WHITE_APOCALYPSE.lua
+1. Script/JINC/IAA/ZZZZ_GODDESS_ADD_GUN.lua
 1. Script/JINC/IAA/ZZZZ_GODDESS_ELECTRICHEALING.lua
 1. Script/JINC/IAA/ZZZZ_GODDESS_VOID.lua
 1. Script/JINC/IAA/ZZZ_ASTRILOPUPELITE_SUMMON.lua
@@ -599,4 +600,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 01 August 2016; 08:13:51 CET
+### Last updated: Mon 01 August 2016; 08:30:41 CET
