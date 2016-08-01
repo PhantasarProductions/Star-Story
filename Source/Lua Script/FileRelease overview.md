@@ -269,6 +269,10 @@
 1. Script/JINC/IAA/SUPER_THRILLING_DAMNNATION.lua
 1. Script/JINC/IAA/SUPER_WENDICKA_VOLTSUNAMI.lua
 1. Script/JINC/IAA/SUPER_XENOBI_WHITE_APOCALYPSE.lua
+1. Script/JINC/IAA/ZZZZ_ADD_GODDESS_BLACKLOCKSHOT.lua
+1. Script/JINC/IAA/ZZZZ_ADD_GODDESS_CONFUSHOT.lua
+1. Script/JINC/IAA/ZZZZ_ADD_GODDESS_HANDICAP.lua
+1. Script/JINC/IAA/ZZZZ_ADD_GODDESS_HORROR_SHOT.lua
 1. Script/JINC/IAA/ZZZZ_ADD_GODDESS_TRAQUALIZERDART.lua
 1. Script/JINC/IAA/ZZZZ_ADD_WATERGUN.lua
 1. Script/JINC/IAA/ZZZZ_DARKSHOT.lua
@@ -458,6 +462,8 @@
 1. Script/JINC/Foes/Boss/SuperZombie.lua
 1. Script/JINC/Foes/Boss/Thief Chief.lua
 1. Script/JINC/Foes/Boss/UberGremlin.lua
+1. Script/JINC/Foes/Goddess/Add_BlockGun.lua
+1. Script/JINC/Foes/Goddess/Add_ConfuseGun.lua
 1. Script/JINC/Foes/Goddess/Add_DarkGun.lua
 1. Script/JINC/Foes/Goddess/Add_FlameThrower.lua
 1. Script/JINC/Foes/Goddess/Add_Gunner.lua
@@ -616,4 +622,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 01 August 2016; 16:24:51 CET
+### Last updated: Mon 01 August 2016; 17:39:23 CET

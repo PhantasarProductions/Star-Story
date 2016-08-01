@@ -52,12 +52,27 @@ if Var.C('%SKILL')~="1" then
                         'VenomGun',
                         "VirusGun",
                         "Trq",
-                        ""
+                        "BlockGun",
+                        "ConfuseGun"
                     }) do
          GoddessAddons[#GoddessAddons+1] = a                    
    end                    
-end                                
+end
+
+NumAdds = {2,4,6}                                
+
+function DIE_Lovejoy()
+   PartyPop("LJ","North")
+   MapText("LOVEJOY")
+   PartyUnPop()
+end
+
+function NPC_Lovejoy()
+   local p = upper(GetActive())
+   MapText("LOVEJOY.DEAD."..p)
+end
 
 function GALE_OnLoad()
    Music('Sys/Silence.ogg') -- Let the normal music stop.
+   ZA_Enter('DIE_Lovejoy',DIE_Lovejoy)
 end
