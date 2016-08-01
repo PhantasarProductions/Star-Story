@@ -74,8 +74,28 @@ function NPC_Lovejoy()
    MapText("LOVEJOY.DEAD."..p)
 end
 
+function GoddessRoom()
+   SetScrollBoundaries(1,1,2,2)
+   Music('Sys/Silence.ogg')
+   Maps.Obj.Obj("Reggie").Visible = 0
+   Maps.Remap()
+end
+
+function NPC_Goddess()
+  -- Pre boss Scenario
+  PartyPop("Goddess")
+  Maps.Obj.Obj("Reggie").Visible = 1
+  MapText("GODDESS1")
+  KickReggie('West','POP_Foxy','Reggie')
+  MapText('GODDESS2')
+  Sys.Error("Goddess Fight not yet Scripted")  
+  -- Set it all up
+  -- Let the final battle begin
+end
+
 function GALE_OnLoad()
    Music('Sys/Silence.ogg') -- Let the normal music stop.
    if CVV("&DONE.LOVEJOY_IS_DEAD") then Music('Special/GameOver.ogg') end
    ZA_Enter('DIE_Lovejoy',DIE_Lovejoy)
+   ZA_Enter("Goddess_Room",GoddessRoom)
 end
