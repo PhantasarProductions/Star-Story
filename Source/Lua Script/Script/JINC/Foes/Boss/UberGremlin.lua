@@ -41,7 +41,7 @@ version: 16.08.01
 
 
 Data = {
-	Name = "Gremlin",
+	Name = "Uber Gremlin",
 	Desc = "The stronger kind of Gremlin.\nNot the kind of fellow you want to meet in the dark",
 	ImageFile = "Boss/UberGremlin.png",
 	AI = "Default",

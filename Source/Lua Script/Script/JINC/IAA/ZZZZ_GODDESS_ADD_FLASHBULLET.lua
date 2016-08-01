@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  Excalibur - Final Boss.lua
+  ZZZZ_GODDESS_ADD_FLASHBULLET.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -34,26 +34,22 @@
  
 version: 16.08.01
 ]]
--- @USE /Script/Use/Maps/Gen/SchuifNext.lua
+ret = {
+	["APRecoverType"] = "Absolute",
+	["ActSpeed"] = 250,
+	["AttackElement"] = "Light",
+	["AttackPower"] = 100,
+	["AttackStat"] = "Strength",
+	["DefenseStat"] = "Defense",
+	["HealingType"] = "Absolute",
+	["Icon"] = "GFX/Elements/Light.png",
+	["ItemType"] = "Consumable",
+	["Name"] = "Flash Bullet",
+	["Target"] = "1F",
+	["UseCombat"] = true,
+	["UseField"] = true}
 
-GoddessAddons = {
-                     'Gunner',
-                     "FlameThrower",
-                     "IceCannon",
-                     "WaterGun",
-                     "WindGun",
-                     "RockThrower",
-                     "LightGun",
-                     "DarkGun"
-                }
+return ret
 
-if Var.C('%SKILL')~="1" then
-   for _,a in ipairs({
-                    }) do
-         GoddessAddons[#GoddessAddons+1] = a                    
-   end                    
-end                                
+-- This file is an automatically generated file!
 
-function GALE_OnLoad()
-   Music('Sys/Silence.ogg') -- Let the normal music stop.
-end
