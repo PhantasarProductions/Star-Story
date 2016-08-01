@@ -1,5 +1,5 @@
 --[[
-  ITM_MINDCLEARPILL.lua
+  ZZZZ_GODDESS_ELECTRICHEALING.lua
   Version: 16.08.01
   Copyright (C) 2016 Jeroen Petrus Broks
   
@@ -36,23 +36,18 @@
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 300,
-	["AttackElement"] = "Non-Elemental",
-	["AttackStat"] = "Strength",
-	["CureConfusion"] = true,
-	["DefenseStat"] = "Defense",
-	["Description"] = "Cures \"Confusion\"",
+	["ActSpeed"] = 250,
+	["AttackElement"] = "Lightning",
+	["AttackPower"] = 500,
+	["AttackStat"] = "Will",
+	["DefenseStat"] = "Resistance",
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 100,
-	["ITM_SellPrice"] = 75,
-	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/WhitePill.png",
+	["Icon"] = "GFX/Abilities/Lightning.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Mind Clearing Pill",
-	["SpellAni_Reference"] = "SingleHeal",
-	["Target"] = "1F",
-	["UseCombat"] = true,
-	["UseField"] = true}
+	["Name"] = "Electric Healing",
+	["SpellAni_Reference"] = "Mjolnir",
+	["Target"] = "OS",
+	["UseCombat"] = true}
 
 return ret
 

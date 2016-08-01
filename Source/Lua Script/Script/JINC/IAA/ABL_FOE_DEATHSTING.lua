@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_DEATHSTING.lua
-  Version: 16.07.30
+  Version: 16.08.01
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
