@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  Add_LightGun.lua
+  Add_Trq.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -51,9 +51,9 @@ version: 16.08.01
 
 
 Data = {
-	Name = "Light Gun",
+	Name = "Tranquilizer Gun",
 	Desc = "",
-	ImageFile = "Godess/Add_LightGun.png",
+	ImageFile = "Goddess/Add_Trq.png",
 	AI = "Default",
 	Boss = true,
 	EleRes_Fire = 5,
@@ -62,21 +62,21 @@ Data = {
 	EleRes_Earth = 5,
 	EleRes_Frost = 5,
 	EleRes_Lightning = 5,
-	EleRes_Light = 6,
+	EleRes_Light = 5,
 	EleRes_Dark = 5,
-	EleRes_Healing = 6,
+	EleRes_Healing = 5,
 	EleRes_DarkHealing = 5,
 	Stat = {
 		["Strength"] = {0,0},
 		["Defense"] = {0,0},
 		["Will"] = {0,0},
 		["Resistance"] = {0,0},
-		["Agility"] = {0,0},
+		["Agility"] = {0,25},
 		["Accuracy"] = {0,0},
 		["Evasion"] = {0,0},
 		["HP"] = {0,0},
 		["AP"] = {0,0},
-		["LevelRange"] = {0,0},
+		["LevelRange"] = {4,95},
 },
 	StatusResistance = {
 		["Poison"] = 100   --[[ #1 ]],
@@ -97,7 +97,9 @@ Data = {
 local temp
 
 
-Data.ActMinLevel["Abl.ZZZZ_GODDESS_ADD_FLASHBULLET"] = 0		for ak=1,20 do table.insert(Data.Acts,"Abl.ZZZZ_GODDESS_ADD_FLASHBULLET") end
+temp = { ITM='ITM_EQP_SAPHIRE', LVL=200, VLT=false }
+for ak=1,25 do table.insert(Data.ItemSteal,temp) end
+Data.ActMinLevel["Abl.ZZZZ_ADD_GODDESS_TRAQUALIZERDART"] = 0		for ak=1,20 do table.insert(Data.Acts,"Abl.ZZZZ_ADD_GODDESS_TRAQUALIZERDART") end
 
 
 return Data
