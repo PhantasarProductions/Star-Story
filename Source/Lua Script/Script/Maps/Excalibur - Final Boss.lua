@@ -32,9 +32,13 @@
   
  **********************************************
  
-version: 16.07.31
+version: 16.08.01
 ]]
 -- @USE /Script/Use/Maps/Gen/SchuifNext.lua
+
+GoddessAddons = {
+                     'Gunner'
+                }
 
 function GALE_OnLoad()
    Music('Sys/Silence.ogg') -- Let the normal music stop.
