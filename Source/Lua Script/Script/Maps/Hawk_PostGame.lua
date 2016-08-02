@@ -34,16 +34,21 @@
  
 version: 16.08.02
 ]]
+
 function CLICK_ARRIVAL_Terminal()
  if not Done("&TUT.TERMINAL") then MapText("TERMINALTUTORIAL") end
  MS.LoadNew("TERMINAL","Script/Flow/Terminal.lua") -- Load the terminal program, but only if it wasn't already loaded.
  LAURA.Flow("TERMINAL")
- Schedule('MAP','GALE_OnLoad')
+ Schedule('MAP','StartMusic')
 end
 
+function StartMusic()
+   Music('Launcher/Launcher.ogg')
+end   
 
 
 function GALE_OnLoad()
-     Music('Launcher/Launcher.ogg')
+     StartMusic ()
      MapShow('Back')
+     Add_Clickable('Terminal')
 end     
