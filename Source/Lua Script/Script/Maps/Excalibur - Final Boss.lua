@@ -111,6 +111,7 @@ function NPC_Goddess()
          add = GoddessAddons[rand(1,#GoddessAddons)]
       until not tablecontains(adds,add)
   end
+  CSay("Adding "..#adds.." to the final boss fight")
   for i,a in ipairs(adds) do
       local ip = i + 1
       Var.D('$COMBAT.FOE'..ip,"Goddess/Add_"..a)
