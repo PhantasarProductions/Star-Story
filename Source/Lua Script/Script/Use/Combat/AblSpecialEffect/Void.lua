@@ -43,7 +43,7 @@ function AblSpecialEffect.DispellEverything(ag,ai,tg,ti,act)
   for g,gd in pairs(Fighters) do
       for i,f in pairs(gd) do
           for st in each({'Strength','Defense','Will','Resistance','Agility','Accuracy','HP',"AP","Evasion"}) do
-              RPGChar.DefSat(f.Tag,"BUFF_"..st,0)
+              RPGChar.DefStat(f.Tag,"BUFF_"..st,0)
           end
           CharReport(g,i,"Dispell!",{rand(127,255),rand(127,255),rand(127,255)}) 
       end
