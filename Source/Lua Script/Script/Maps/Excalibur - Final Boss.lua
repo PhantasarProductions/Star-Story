@@ -132,7 +132,7 @@ function PostBoss()
   MapText("POSTBOSS2")
   for i=0,25 do
       Image.Color(rand(0,255),rand(0,255),rand(0,255))
-      DrawRect(0,0,800,255)
+      Image.Rect(0,0,800,255)
       ShowParty()
       Flip()
   end
