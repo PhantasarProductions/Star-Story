@@ -44,7 +44,7 @@ function NPC_Johnson()
   PartyPop('J')
   MapText('JOHNSON')
   Actors.Spawn('NPC_Johnson','Player','Beam_Johnson',0)
-  Maps.Obj.Obj('NPC_Jonson').Visible=0
+  Maps.Obj.Obj('NPC_Johnson').Visible=0
   Actors.ChoosePic('Beam_Johnson')
   Actors.Actor("Beam_Johnson").NotInMotionThen0 = 0
   for f=0,99 do
