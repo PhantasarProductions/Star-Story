@@ -50,5 +50,5 @@ end
 function GALE_OnLoad()
      StartMusic ()
      MapShow('Back')
-     Add_Clickable('Terminal')
+     AddClickable("Terminal")
 end     

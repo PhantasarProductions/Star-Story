@@ -1039,8 +1039,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/82
     1. Script: Script/Use/Maps/Hawk/AutoNewNav.lua
     1. Script: Script/Use/Maps/Hawk/ArrivalPhysillium.lua
-    1. Script: Script/Use/Maps/Hawk/Teach Wendicka.lua
     1. General Data: Data/LvStats/Briggs/83
+    1. Script: Script/Use/Maps/Hawk/Teach Wendicka.lua
     1. Script: Script/Use/Maps/Hawk/HawkBridge.lua
     1. General Data: Data/LvStats/Briggs/84
     1. Script: Script/Use/Maps/Hawk/AftermathVolcania.lua
@@ -1058,8 +1058,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Maps/Gen/SchuifNextReal.lua
     1. General Data: Data/LvStats/Briggs/88
     1. Script: Script/Use/Maps/AltArena/Excalibur.lua
-    1. Script: Script/Use/Sub/Party/XenobiSpells.lua
-    1. General Data: Data/LvStats/Briggs/89
+    1. General Data: Data/LvStats/Briggs/89 < alias > Script/Use/Sub/Party/XenobiSpells.lua
     1. Script: Script/Use/Combat/AblSpecialEffect/HPAPto1.lua
     1. General Data: Data/LvStats/Briggs/9
     1. Script: Script/Use/Combat/AblSpecialEffect/Summon.lua
@@ -1072,8 +1071,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Combat/StatusChanges/Confusion.lua
     1. General Data: Data/LvStats/Briggs/92
     1. Script: Script/Use/Combat/StatusChanges/Death.lua
-    1. Script: Script/Use/Combat/StatusChanges/Fear.lua
     1. General Data: Data/LvStats/Briggs/93
+    1. Script: Script/Use/Combat/StatusChanges/Fear.lua
     1. Script: Script/Use/Combat/AltEnemyBuild/SuperFoe_FireSpider.lua
     1. General Data: Data/LvStats/Briggs/94
     1. Script: Script/Use/Combat/AltEnemyBuild/ExHuRU.lua
@@ -1140,8 +1139,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/CyberAstrilopup.lua
     1. General Data: Data/LvStats/Crystal/24
     1. Script: Script/JINC/Foes/Reg/Spider.lua
-    1. Script: Script/JINC/Foes/Reg/Leopard.lua
     1. General Data: Data/LvStats/Crystal/25
+    1. Script: Script/JINC/Foes/Reg/Leopard.lua
     1. Script: Script/JINC/Foes/Reg/SnowLeopard.lua
     1. General Data: Data/LvStats/Crystal/26
     1. Script: Script/JINC/Foes/Reg/Zombie.lua
