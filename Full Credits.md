@@ -1168,8 +1168,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Boss/LichKing.lua
     1. General Data: Data/LvStats/Crystal/35
     1. Script: Script/JINC/Foes/Boss/ExHuRU.lua
-    1. Script: Script/JINC/Foes/Boss/DeathMyrQueen.lua
     1. General Data: Data/LvStats/Crystal/36
+    1. Script: Script/JINC/Foes/Boss/DeathMyrQueen.lua
     1. Script: Script/JINC/Foes/Boss/SuperZombie.lua
     1. General Data: Data/LvStats/Crystal/37
     1. Script: Script/JINC/Foes/Boss/FireSpiderYoung.lua

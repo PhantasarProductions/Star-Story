@@ -58,7 +58,7 @@ function NPC_Johnson()
   Actors.Actor("Beam_Johnson").Visible = 0
   MapText('JOHNON_GONE') -- This typo is there in the language file, and fixing it there is gonna be one hell of a job.
   Schedule('MAP','PostCredits')
-  MS.Load('CREDITS','Script/Flow/Credits.lua')
+  MS.Load('CREDITS','Script/Flow/EndCredits.lua')
   LAURA.Flow('CREDITS')
 end
 
