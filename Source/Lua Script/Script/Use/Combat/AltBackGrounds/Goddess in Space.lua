@@ -66,7 +66,7 @@ GoddessSpace = {
                            local tag = foe.Tag
                            foe.goddess = {
                                             rad = 300+(i*({100,75,50})[skill]),
-                                            dgr = ({1,-1})[rand(1,2)],
+                                            dgr = ({.01,-.01})[rand(1,2)],
                                             deg = 0 
                                          }
                            RPGChar.Points(tag,"HP").Minimum = RPGChar.Points(tag,"HP").Maximum -- Now all adds are invincible.              
