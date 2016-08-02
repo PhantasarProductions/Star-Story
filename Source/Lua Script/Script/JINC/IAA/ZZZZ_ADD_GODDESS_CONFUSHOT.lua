@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.01
+version: 16.08.02
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
@@ -42,8 +42,10 @@ ret = {
 	["CauseConfusion"] = true,
 	["DefenseStat"] = "Defense",
 	["HealingType"] = "Absolute",
+	["Icon"] = "GFX/Inventory/Yellow Flower.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Confusion Shot",
+	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}

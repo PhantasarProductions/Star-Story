@@ -44,7 +44,7 @@ GoddessSpace = {
                    
                    AllCharStat = function ()
                        local chars = {'Wendicka','Crystal','Yirl','Foxy','Xenobi','Johnson'}
-                       local stats = {'Strength','Defense','Will','Resistance','Agility','Accuracy','Evasion','HP'}
+                       local stats = {'Strength','Defense','Will','Resistance','Agility','Accuracy','HP'} -- 'Evasion', (I don't want the party to miss all the time. For a final boss, that is not really a suitable option.
                        local chi = 1
                        local sti = 0
                        return function ()
@@ -102,14 +102,16 @@ function AltBackGrounds.GoddessSpace()
       -- Control the adds
       for i=2,#Fighters.Foe do
           local foe = Fighters.Foe[i]
-          if foe.goddess.rad > 260 then foe.goddess.rad = foe.goddess.rad - 1
-          else foe.goddess.deg = foe.goddess.deg + foe.goddess.dgr end
-          foe.x = 300 - (math.sin(foe.goddess.deg)*foe.goddess.rad)
-          foe.y = 300 - (math.cos(foe.goddess.deg)*foe.goddess.rad)
+          if foe.goddess then
+             if foe.goddess.rad > 260 then foe.goddess.rad = foe.goddess.rad - 1
+             else foe.goddess.deg = foe.goddess.deg + foe.goddess.dgr end
+             foe.x = 300 - (math.sin(foe.goddess.deg)*foe.goddess.rad)
+             foe.y = 300 - (math.cos(foe.goddess.deg)*foe.goddess.rad)
+          end
       end
       -- Stars
       if GoddessSpace.Stars[1] and GoddessSpace.Stars[1].rad > 800 then table.remove(GoddessSpace.Stars,1) end
-      if #GoddessSpace.Stars<=0 or rand(1,GoddessSpace.Stars)==1 then 
+      if #GoddessSpace.Stars<=0 or rand(1,#GoddessSpace.Stars*100)==1 then 
          GoddessSpace.Stars [ #GoddessSpace.Stars + 1 ] = { rad = 0, spd = rand(0,20)/15, deg=rand(0,360) }
       end
       for star in each(GoddessSpace.Stars) do

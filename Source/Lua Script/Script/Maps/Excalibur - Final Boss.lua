@@ -101,7 +101,7 @@ function NPC_Goddess()
   Var.D("$COMBAT.ALTBACKGROUND","GoddessSpace")
   Var.D("$COMBAT.BEGIN","Default")
   Var.D("$COMBAT.FOE1","Goddess/Goddess")
-  Var.D("$COMBAT.ALTCOORDSFOE1","300,300")
+  Var.D("$COMBAT.ALTCOORDSFOE1","300,427")
   Var.D("%COMBAT.LVFOE1",lv)
   Var.D("$COMBAT.MUSIC",'SpecialBoss/Spellbound.ogg')
   local adds = {}

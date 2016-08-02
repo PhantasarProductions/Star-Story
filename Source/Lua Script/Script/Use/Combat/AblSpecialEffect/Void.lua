@@ -1,5 +1,5 @@
 --[[
-  ABL_FOE_DEATH.lua
+  Void.lua
   Version: 16.08.02
   Copyright (C) 2016 Jeroen Petrus Broks
   
@@ -34,27 +34,22 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-ret = {
-	["ABL_AP"] = 0,
-	["ABL_Pose"] = "Cast",
-	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 250,
-	["AttackElement"] = "Non-Elemental",
-	["AttackStat"] = "Strength",
-	["CauseDeath"] = true,
-	["DefenseStat"] = "Defense",
-	["Description"] = "I kill you",
-	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Elements/Dark.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Death",
-	["SpellAni_Reference"] = "SingleHeal",
-	["Target"] = "1F",
-	["UseCombat"] = true,
-	["UseField"] = true,
-	["untauntable"] = true}
+-- @IF IGNORE
+AblSpecialEffect = {}
+--@FI
 
-return ret
 
--- This file is an automatically generated file!
+function AblSpecialEffect.DispellEverything(ag,ai,tg,ti,act)
+  for g,gd in pairs(Fighters) do
+      for i,f in pairs(gd) do
+          for st in each({'Strength','Defense','Will','Resistance','Agility','Accuracy','HP',"AP","Evasion"}) do
+              RPGChar.DefSat(f.Tag,"BUFF_"..st,0)
+          end
+          CharReport(g,i,"Dispell!",{rand(127,255),rand(127,255),rand(127,255)}) 
+      end
+  end 
+end
 
+-- @IF IGNORE
+return AblSpecialEffect 
+--@FI

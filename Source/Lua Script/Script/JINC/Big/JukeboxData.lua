@@ -1,6 +1,6 @@
 --[[
   JukeboxData.lua
-  Version: 16.08.01
+  Version: 16.08.02
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -198,6 +198,9 @@ return {
                    Artist = "SJ Mellia"},
      ["Exit the Premises"] = {
                    File = "Music/SpecialBoss/Exit the Premises.ogg",
+                   Artist = "Kevin McLeod"},
+     ["Spellbound"] = {
+                   File = "Music/SpecialBoss/Spellbound.ogg",
                    Artist = "Kevin McLeod"},
      ["Born Barnstomers"] = {
                    File = "Music/original4alias/Born Barnstomers.ogg",
