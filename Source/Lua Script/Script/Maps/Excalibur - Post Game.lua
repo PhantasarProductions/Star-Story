@@ -47,6 +47,7 @@ function NPC_Johnson()
   Maps.Obj.Obj('NPC_Johnson').Visible=0
   Actors.ChoosePic('Beam_Johnson')
   Actors.Actor("Beam_Johnson").NotInMotionThen0 = 0
+  Actors.ChoosePic("Beam_Johnson","TELEPORT")
   for f=0,99 do
     Image.Cls()
     Actors.Actor("Beam_Johnson").Frame = f 
@@ -56,7 +57,7 @@ function NPC_Johnson()
     Flip()    
     end
   Actors.Actor("Beam_Johnson").Visible = 0
-  MapText('JOHNSON_GONE')
+  MapText('JOHNON_GONE') -- This typo is there in the language file, and fixing it there is gonna be one hell of a job.
   Sys.Error('End Credits not available yet')
 end
 
