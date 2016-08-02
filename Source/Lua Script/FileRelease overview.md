@@ -562,6 +562,7 @@
 1. Script/Use/Combat/AblSpecialEffect/Summon.lua
 1. Script/Use/Combat/AblSpecialEffect/UpgradeToSnowLeopard.lua
 1. Script/Use/Combat/AltBackGrounds/Black Hole Dweller.lua
+1. Script/Use/Combat/AltBackGrounds/Goddess in Space.lua
 1. Script/Use/Combat/AltEnemyBuild/ExHuRU.lua
 1. Script/Use/Combat/AltEnemyBuild/SuperFoe_FireSpider.lua
 1. Script/Use/Combat/Events/ReleaseTheGoddess.lua
@@ -622,4 +623,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 01 August 2016; 22:18:29 CET
+### Last updated: Tue 02 August 2016; 12:02:51 CET

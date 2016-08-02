@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.01
+version: 16.08.02
 ]]
 -- @USE /Script/Use/Maps/Gen/SchuifNext.lua
 
@@ -59,7 +59,9 @@ if Var.C('%SKILL')~="1" then
    end                    
 end
 
-NumAdds = {2,4,6}                                
+NumAdds = {2,4,6}         
+
+LvMargin = {.50,.25,.10}                       
 
 function DIE_Lovejoy()
    if Done("&DONE.LOVEJOY_IS_DEAD") then return end
@@ -88,10 +90,41 @@ function NPC_Goddess()
   MapText("GODDESS1")
   KickReggie('West','POP_Foxy','Reggie')
   MapText('GODDESS2')
-  Sys.Error("Goddess Fight not yet Scripted")  
   -- Set it all up
+  local lv=0
+  for ch in each({'Wendicka','Crystal','Yirl','Xenobi','Foxy','Johnson'}) do
+      lv = lv + RPGChar.Stat(ch,'Level')
+  end
+  lv = math.ceil(lv/6)
+  CleanCombat()
+  Var.D("$COMBAT.BACKGROUND","Phan - Dung.png") -- Just have some value, to prevent a crash
+  Var.D("$COMBAT.ALTBACKGROUND","GoddessSpace")
+  Var.D("$COMBAT.BEGIN","Default")
+  Var.D("$COMBAT.FOE1","Goddess/Goddess")
+  Var.D("$COMBAT.ALTCOORDSFOE1","300,300")
+  Var.D("%COMBAT.LVFOE1",lv)
+  Var.D("$COMBAT.MUSIC",'SpecialBoss/Spellbound.ogg')
+  local adds = {}
+  local add
+  for i=1,NumAdds[skill] do
+      repeat
+         add = GoddessAddons[rand(1,#GoddessAddons)]
+      until not tablecontains(adds,add)
+  end
+  for i,a in ipairs(adds) do
+      local ip = i + 1
+      Var.D('$COMBAT.FOE'..ip,"Goddess/Add_"..a)
+      Var.D('%COMBAT.LVFOE'..ip , rand(lv-(lv*lvMargin[skill]),lv))
+      CSay('Added '..a..' as FOE'..ip)
+  end
+  Schedule('MAP','PostBoss') 
   -- Let the final battle begin
+  StartCombat()
 end
+
+function PostBoss()
+  Sys.Error("PostBoss not yet scripted")
+end  
 
 function GALE_OnLoad()
    Music('Sys/Silence.ogg') -- Let the normal music stop.
