@@ -98,7 +98,7 @@ function AltBackGrounds.GoddessSpace()
       GoddessSpace.Orion = GoddessSpace.Orion or Image.Load('GFX/XSpace/Orionnevel.png')
       Image.Draw(GoddessSpace.Orion,0,0)
       -- Init (if needed)
-      GoddessInitiated = GodessInitiated or GoddessSpace.init()
+      GoddessInitiated = GoddessInitiated or GoddessSpace.init()
       -- Control the adds
       for i=2,#Fighters.Foe do
           local foe = Fighters.Foe[i]
