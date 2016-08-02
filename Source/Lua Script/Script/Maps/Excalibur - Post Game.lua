@@ -34,6 +34,12 @@
  
 version: 16.08.02
 ]]
+
+function NPC_Doctor()
+   SetActive('Wendicka')
+   MapText('DOCTOR')
+end   
+
 function GALE_OnLoad()
    Music('Dungeon/Observatorium.ogg')
 end
