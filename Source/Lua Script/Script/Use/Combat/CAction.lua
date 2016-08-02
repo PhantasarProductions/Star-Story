@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 16.07.30
+  Version: 16.08.02
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -182,7 +182,12 @@ if abl.ScriptEffect_Reference and abl.ScriptEffect_Reference~="" then
       MS.Load("COMBAT_ABLEFFECT","Script/Combat/Effect/"..abl.ScriptEffect_Reference)
       MS.Run("COMBAT_ABLEFFECT","SCRIPTEFFECT",ag..";"..ai..";"..tg..";"..ti)
       effect = effect or CVV("&RET")
-      else
+   else
+      if not AblSpecialEffect[abl.ScriptEffect_Reference] then
+         CSay("Warning! Effect: "..abl.ScriptEffect_Reference.." not found!")
+         for k,v in spairs(AblSpecialEffect) do CSay("I do have "..k) end
+         CSay("But no "..abl.ScriptEffect_Reference..", oh no!")
+         end
       effect = AblSpecialEffect[abl.ScriptEffect_Reference](ag,ai,tg,ti,act,abl.ScriptEffect_Parameters) or effect
       end 
    end
