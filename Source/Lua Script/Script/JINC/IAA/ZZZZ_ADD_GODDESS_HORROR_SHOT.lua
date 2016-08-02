@@ -42,6 +42,7 @@ ret = {
 	["CauseTerrified"] = true,
 	["DefenseStat"] = "Defense",
 	["HealingType"] = "Absolute",
+	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Horror Shot",
 	["Target"] = "1F",

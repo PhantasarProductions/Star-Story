@@ -42,6 +42,7 @@ ret = {
 	["CauseHandicapped"] = true,
 	["DefenseStat"] = "Defense",
 	["HealingType"] = "Absolute",
+	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Handicap Shot",
 	["Target"] = "1F",
