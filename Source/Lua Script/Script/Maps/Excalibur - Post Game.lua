@@ -40,6 +40,27 @@ function NPC_Doctor()
    MapText('DOCTOR')
 end   
 
+function NPC_Johnson()
+  PartyPop('J')
+  MapText('JOHNSON')
+  Actors.Spawn('NPC_Johnson','Player','Beam_Johnson',0)
+  Maps.Obj.Obj('NPC_Jonson').Visible=0
+  Actors.ChoosePic('Beam_Johnson')
+  Actors.Actor("Beam_Johnson").NotInMotionThen0 = 0
+  for f=0,99 do
+    Image.Cls()
+    Actors.Actor("Beam_Johnson").Frame = f 
+    Maps.Draw()
+    ShowParty()
+    --DrawScreen()
+    Flip()    
+    end
+  Actors.Actor("Beam_Johnson").Visible = 0
+  MapText('JOHNSON_GONE')
+  Sys.Error('End Credits not available yet')
+end
+
 function GALE_OnLoad()
    Music('Dungeon/Observatorium.ogg')
+   Award("WINGAME")
 end

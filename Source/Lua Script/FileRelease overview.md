@@ -442,6 +442,7 @@
 1. Script/Flow/PhantasarStore.lua
 1. Script/Flow/World.lua
 1. Script/JINC/Big/BestiaryData.lua
+1. Script/JINC/Big/Credits.lua
 1. Script/JINC/Foes/Boss/AstrilopupElite.lua
 1. Script/JINC/Foes/Boss/BigLion.lua
 1. Script/JINC/Foes/Boss/Cultist Leader.lua
@@ -625,4 +626,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 02 August 2016; 18:55:40 CET
+### Last updated: Tue 02 August 2016; 21:09:58 CET

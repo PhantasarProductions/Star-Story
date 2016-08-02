@@ -136,6 +136,7 @@ function PostBoss()
       ShowParty()
       Flip()
   end
+  Actors.ChoosePic('POP_Wendicka',"WENDICKA.HOSE")
   Maps.Obj.Kill("NPC_Goddess")
   MapText("POSTBOSS3")
   Maps.CamY=1600
