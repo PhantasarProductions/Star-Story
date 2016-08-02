@@ -110,12 +110,13 @@ function NPC_Goddess()
       repeat
          add = GoddessAddons[rand(1,#GoddessAddons)]
       until not tablecontains(adds,add)
+      adds[#adds+1] = add
   end
-  CSay("Adding "..#adds.." to the final boss fight")
+  CSay("Adding "..#adds.." drones to the final boss fight")
   for i,a in ipairs(adds) do
       local ip = i + 1
       Var.D('$COMBAT.FOE'..ip,"Goddess/Add_"..a)
-      Var.D('%COMBAT.LVFOE'..ip , rand(lv-(lv*lvMargin[skill]),lv))
+      Var.D('%COMBAT.LVFOE'..ip , rand(lv-(lv*LvMargin[skill]),lv))
       CSay('Added '..a..' as FOE'..ip)
   end
   Schedule('MAP','PostBoss') 
