@@ -1168,8 +1168,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Boss/LichKing.lua
     1. General Data: Data/LvStats/Crystal/35
     1. Script: Script/JINC/Foes/Boss/ExHuRU.lua
-    1. General Data: Data/LvStats/Crystal/36
     1. Script: Script/JINC/Foes/Boss/DeathMyrQueen.lua
+    1. General Data: Data/LvStats/Crystal/36
     1. Script: Script/JINC/Foes/Boss/SuperZombie.lua
     1. General Data: Data/LvStats/Crystal/37
     1. Script: Script/JINC/Foes/Boss/FireSpiderYoung.lua
@@ -1197,8 +1197,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Crystal/44
     1. Script: Script/JINC/Foes/Goddess/Add_LightGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_DarkGun.lua
-    1. General Data: Data/LvStats/Crystal/45
     1. Script: Script/JINC/Foes/Goddess/Add_VenomGun.lua
+    1. General Data: Data/LvStats/Crystal/45
     1. Script: Script/JINC/Foes/Goddess/Add_virusGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_Trq.lua
     1. General Data: Data/LvStats/Crystal/46
