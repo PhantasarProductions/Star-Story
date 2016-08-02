@@ -43,11 +43,10 @@ end
 function NPC_Johnson()
   PartyPop('J')
   MapText('JOHNSON')
-  Actors.Spawn('NPC_Johnson','Player','Beam_Johnson',0)
+  Actors.Spawn('NPC_Johnson','gfx/actors/Player','Beam_Johnson',0)
   Maps.Obj.Obj('NPC_Johnson').Visible=0
-  Actors.ChoosePic('Beam_Johnson')
-  Actors.Actor("Beam_Johnson").NotInMotionThen0 = 0
   Actors.ChoosePic("Beam_Johnson","TELEPORT")
+  Actors.Actor("Beam_Johnson").NotInMotionThen0 = 0
   for f=0,99 do
     Image.Cls()
     Actors.Actor("Beam_Johnson").Frame = f 
@@ -58,7 +57,13 @@ function NPC_Johnson()
     end
   Actors.Actor("Beam_Johnson").Visible = 0
   MapText('JOHNON_GONE') -- This typo is there in the language file, and fixing it there is gonna be one hell of a job.
-  Sys.Error('End Credits not available yet')
+  SetSchedule('PostCredits')
+  MS.Load('CREDITS','Script/Flow/Credits.lua')
+  LAURA.Flow('CREDITS')
+end
+
+function PostCredits()
+   Sys.Error('Post Credits not available yet')
 end
 
 function GALE_OnLoad()

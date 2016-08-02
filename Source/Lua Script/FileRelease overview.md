@@ -434,6 +434,7 @@
 1. Script/Flow/Bestiary.lsv
 1. Script/Flow/Bestiary.lua
 1. Script/Flow/BlockShooter.lua
+1. Script/Flow/EndCredits.lua
 1. Script/Flow/Excalibur_Transport.lua
 1. Script/Flow/NIM.lua
 1. Script/Flow/NizozemskaSave.lsv
@@ -626,4 +627,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 02 August 2016; 21:28:03 CET
+### Last updated: Tue 02 August 2016; 21:43:47 CET
