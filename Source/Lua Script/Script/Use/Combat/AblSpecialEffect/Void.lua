@@ -36,7 +36,7 @@
 ]]
 -- @IF IGNORE
 AblSpecialEffect = {}
---@FI
+-- @FI
 
 
 function AblSpecialEffect.DispellEverything(ag,ai,tg,ti,act)
@@ -52,4 +52,4 @@ end
 
 -- @IF IGNORE
 return AblSpecialEffect 
---@FI
+-- @FI
