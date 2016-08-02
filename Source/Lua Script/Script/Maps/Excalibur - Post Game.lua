@@ -63,7 +63,9 @@ function NPC_Johnson()
 end
 
 function PostCredits()
-   Sys.Error('Post Credits not available yet')
+   -- Sys.Error('Post Credits not available yet')
+   LoadMap("Hawk_PostGame")
+   SpawnPlayer('Scotty')
 end
 
 function GALE_OnLoad()
