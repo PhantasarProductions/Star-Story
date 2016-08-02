@@ -2233,6 +2233,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Combat/Fighters/Foe/Reg/Cyborg Gunner.png
     1. Graphics: GFX/Combat/Fighters/Foe/Reg/Cyborg Captain.png
     1. Graphics: GFX/Combat/Fighters/Foe/SuperBoss/BlackHoleDweller.png
+    1. General Data: gfx/combat/Fighters/foe/Boss/LichKing
+    1. Graphics: gfx/combat/Fighters/foe/Boss/LichKing.png
     1. Music: Music/Sys/Silence.ogg
     1. Script: Script/Use/AnyWay/MusicAvailable.lua
 - Jeroen P Broks
@@ -2667,9 +2669,6 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
 - Jeroen Petrus Broks
     1. Script: Script/Libs/FieldCreator.lua
     1. Music: Music/AltCombat/X-Ray.ogg
-- Jeroen roks
-    1. General Data: gfx/combat/Fighters/foe/Boss/LichKing
-    1. Graphics: gfx/combat/Fighters/foe/Boss/LichKing.png
 - Kelly
     1. Graphics: GFX/Combat/Fighters/Foe/Boss/GiantSnake.png
     1. Graphics: GFX/Combat/Fighters/Foe/Reg/Salamander.png

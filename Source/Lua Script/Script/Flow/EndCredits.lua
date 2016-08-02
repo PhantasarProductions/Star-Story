@@ -93,7 +93,7 @@ function MAIN_FLOW()
          for k,d in spairs(cdata) do if d.imgtag then Image.Free(d.imgtag) end end
          Image.Free(Orion)
          MS.Destroy('CREDITS')
-         MS.Flow('Field')
+         LAURA.Flow('Field')
       end
       Flip()   
 end
