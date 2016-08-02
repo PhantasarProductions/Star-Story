@@ -676,6 +676,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Portret/Johnson/Johnson.piko
     1. Graphics: GFX/Portret/Ashley/General.png < alias > GFX/Portret/Johnson/General.png
     1. Graphics: GFX/Portret/Rachel/General.png
+    1. Graphics: GFX/Portret/Ashley/Blij.png
     1. Graphics: GFX/Combat/Arena/Y Anhysbys.png
     1. Audio: Audio/IntroStory/Lovejoy0006.ogg
     1. Graphics: GFX/Combat/Arena/Ji Rubble.png
@@ -699,10 +700,10 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Combat/Arena/Camelot.png
     1. Graphics: GFX/Combat/Arena/Mansion.png
     1. Graphics: GFX/Combat/Arena/Mines.png
+    1. Audio: Audio/IntroStory/Lovejoy0013.ogg
     1. Graphics: GFX/Combat/GaugeIcons/Xenobi.png
     1. Graphics: GFX/Combat/GaugeIcons/Johnson.png
     1. Graphics: GFX/Actors/Player/Xenobi.South.png
-    1. Audio: Audio/IntroStory/Lovejoy0013.ogg
     1. Graphics: GFX/Actors/Player/Rolf.South.png
     1. Graphics: GFX/Actors/Player/Xenobi.North.png
     1. Graphics: GFX/Actors/Player/Rolf.North.png
@@ -741,11 +742,11 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Combat/Fighters/Hero/Xenobi.Attack.1.png
     1. Graphics: GFX/Combat/Fighters/Hero/Rolf.Dead.png
     1. Graphics: GFX/Combat/Fighters/Hero/Xenobi.Cast.png
+    1. Graphics: GFX/Scenario/Dokter Sal'pr'drita.png
     1. Graphics: GFX/Combat/Fighters/Hero/Xenobi.Dead.png
     1. Graphics: GFX/Combat/Fighters/Hero/Rolf.Attack.2.png
     1. Graphics: GFX/Combat/Fighters/Hero/Rolf.Cast.png
     1. Graphics: GFX/Combat/Fighters/Hero/Rolf.Attack.1.png
-    1. Graphics: GFX/Scenario/Dokter Sal'pr'drita.png
     1. Graphics: GFX/Combat/Fighters/Hero/Johnson.Cast.png
     1. Graphics: GFX/Combat/Fighters/Hero/Johnson.attack.2.png
     1. Graphics: GFX/Combat/Fighters/Hero/Johnson.attack.1.png
@@ -770,146 +771,146 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Actors/SinglePic/Nizozemska/Liefde.png
     1. Graphics: GFX/Actors/SinglePic/Nizozemska/Marlon.png
     1. Graphics: GFX/Actors/SinglePic/Nizozemska/Liefde.piko
-    1. Graphics: GFX/Actors/SinglePic/Sewers/MadScientistHU.png
-    1. Graphics: GFX/Actors/SinglePic/Sewers/MadScientist.png
-    1. Graphics: GFX/Actors/SinglePic/Sewers/Zombie.png < alias > GFX/Combat/Fighters/Foe/Boss/SuperZombie.png < alias > GFX/Combat/Fighters/Foe/Reg/Zombie.png
     1. Scenario: Languages/Dutch/Scenario/GENERAL/ARMS
-    1. Graphics: GFX/Actors/SinglePic/Meteor Staff/LoveJoy.Dead.png
     1. Scenario: Languages/Dutch/Scenario/GENERAL/COMBAT
+    1. Graphics: GFX/Actors/SinglePic/Sewers/MadScientistHU.png
     1. Scenario: Languages/Dutch/Scenario/GENERAL/SCOTTY
     1. Scenario: Languages/Dutch/Scenario/GENERAL/SECRETDUNGEON
-    1. Graphics: GFX/Actors/Phantasar/Elf/Rosetta.png
     1. Scenario: Languages/Dutch/Scenario/JONES
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_ALLQUIET
+    1. Graphics: GFX/Actors/SinglePic/Sewers/MadScientist.png
+    1. Graphics: GFX/Actors/SinglePic/Sewers/Zombie.png < alias > GFX/Combat/Fighters/Foe/Boss/SuperZombie.png < alias > GFX/Combat/Fighters/Foe/Reg/Zombie.png
+    1. Graphics: GFX/Actors/SinglePic/Meteor Staff/LoveJoy.Dead.png
+    1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_HANGAR
+    1. Graphics: GFX/Actors/Phantasar/Elf/Rosetta.png
+    1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_HOME
     1. Graphics: GFX/Actors/Phantasar/Fairy/Marrilona.png
     1. Graphics: GFX/Actors/Phantasar/Fairy/Marrilona.piko
-    1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_HANGAR
-    1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_HOME
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_KITCHEN
-    1. Graphics: GFX/Actors/Phantasar/Fairy/Myrah.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_SICKBAY
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_UNDERATTACK
-    1. Graphics: GFX/Actors/Phantasar/Gnome/Rachel.png
-    1. Graphics: GFX/Textures/Astrilopups/City/HOLE.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/HAWK
+    1. Graphics: GFX/Actors/Phantasar/Fairy/Myrah.png
+    1. Graphics: GFX/Actors/Phantasar/Gnome/Rachel.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_BARINSIDE
+    1. Graphics: GFX/Textures/Astrilopups/City/HOLE.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_BONUS_SPACEOBSERVATORIUM
-    1. Graphics: GFX/Textures/Astrilopups/City/Ash.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_DUNGEON
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_DUNGEON_CELL
-    1. ???: GFX/Textures/Astrilopups/City/Hole.Hot
-    1. Graphics: GFX/Textures/Astrilopups/Facility/North-East Ending.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_GRASSJUNGLE
-    1. Graphics: GFX/Textures/Astrilopups/Facility/SchuifDeur.png
-    1. Graphics: GFX/Textures/Astrilopups/Facility/North.png
+    1. Graphics: GFX/Textures/Astrilopups/City/Ash.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_GRASSJUNGLE_3
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_JUNKYARD
+    1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_PUB_OUTSIDE
+    1. ???: GFX/Textures/Astrilopups/City/Hole.Hot
+    1. Graphics: GFX/Textures/Astrilopups/Facility/North-East Ending.png
+    1. Graphics: GFX/Textures/Astrilopups/Facility/SchuifDeur.png
+    1. Scenario: Languages/Dutch/Scenario/MAPS/PROLOGUE_YAQIRPA
+    1. Graphics: GFX/Textures/Astrilopups/Facility/North.png
     1. Graphics: GFX/Textures/Astrilopups/Facility/East.png
     1. Graphics: GFX/Textures/Astrilopups/Facility/North-West.png
-    1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_PUB_OUTSIDE
     1. Graphics: GFX/Textures/Astrilopups/Facility/West.png
-    1. Graphics: GFX/Textures/Astrilopups/Facility/North-East.png
-    1. Scenario: Languages/Dutch/Scenario/MAPS/PROLOGUE_YAQIRPA
-    1. Graphics: GFX/Textures/Astrilopups/Facility/South.png
-    1. Graphics: GFX/Textures/Astrilopups/Facility/South-East.png
-    1. Graphics: GFX/Textures/Astrilopups/Facility/South-West.png
-    1. Graphics: GFX/Textures/Astrilopups/Facility/Floor.png
     1. Scenario: Languages/Dutch/Scenario/SCENONLY/OPENING/START
-    1. Graphics: GFX/Textures/Astrilopups/Facility/DoorPost_East.png
-    1. Graphics: GFX/Textures/Astrilopups/Facility/North-West Ending.png
+    1. Graphics: GFX/Textures/Astrilopups/Facility/North-East.png
+    1. Graphics: GFX/Textures/Astrilopups/Facility/South.png
     1. Scenario: Languages/Dutch/Scenario/TUTORIAL/BAGSFULL
+    1. Graphics: GFX/Textures/Astrilopups/Facility/South-East.png
     1. Scenario: Languages/Dutch/Settings
     1. Scenario: Languages/English/Settings
     1. Scenario: Languages/English/Scenario/GENERAL/ARMS
-    1. Graphics: GFX/Textures/Astrilopups/Facility/South-East Ending.png
     1. Scenario: Languages/English/Scenario/GENERAL/COMBAT
+    1. Graphics: GFX/Textures/Astrilopups/Facility/South-West.png
     1. Scenario: Languages/English/Scenario/GENERAL/SCOTTY
-    1. Graphics: GFX/Textures/Astrilopups/Facility/DoorPost_West.png
     1. Scenario: Languages/English/Scenario/GENERAL/SECRETDUNGEON
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_ALLQUIET
+    1. Graphics: GFX/Textures/Astrilopups/Facility/Floor.png
+    1. Graphics: GFX/Textures/Astrilopups/Facility/DoorPost_East.png
+    1. Graphics: GFX/Textures/Astrilopups/Facility/North-West Ending.png
+    1. Graphics: GFX/Textures/Astrilopups/Facility/South-East Ending.png
+    1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_HANGAR
+    1. Graphics: GFX/Textures/Astrilopups/Facility/DoorPost_West.png
+    1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_HOME
     1. Graphics: GFX/Textures/Astrilopups/Facility/South-West Ending.png
     1. Graphics: GFX/Textures/Wendicka/Naked/WendickaNakedStandEast.png
     1. Graphics: GFX/Textures/Wendicka/Naked/WendickaNakedHandsupEast.png
-    1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_HANGAR
-    1. Graphics: GFX/Textures/Wendicka/Naked/WendickaNakedHandsupInChainsEast.png
-    1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_HOME
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank_Wendicka_Sue.png
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_KITCHEN
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank.piko
+    1. Graphics: GFX/Textures/Wendicka/Naked/WendickaNakedHandsupInChainsEast.png
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_SICKBAY
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_UNDERATTACK
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank_Wendicka_Sue.png
     1. Scenario: Languages/English/Scenario/MAPS/HAWK
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank.png
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank_Foxy.png
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank.piko
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_BARINSIDE
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank_Crystal.png
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_BONUS_SPACEOBSERVATORIUM
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Plavuizen.png
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank.png
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_DUNGEON
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank_Foxy.png
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_DUNGEON_CELL
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank1.piko
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank_Crystal.png
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_GRASSJUNGLE
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_GRASSJUNGLE_3
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Plavuizen.png
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_JUNKYARD
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank1.piko
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_PUB_OUTSIDE
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Grenol.png
     1. Scenario: Languages/English/Scenario/MAPS/PROLOGUE_YAQIRPA
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Lamp.png
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Schommelstoel met Marlon.png
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Schommelstoel.piko
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Grenol.png
     1. Scenario: Languages/English/Scenario/SCENONLY/OPENING/START
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Lamp.png
     1. Scenario: Languages/English/Scenario/TUTORIAL/BAGSFULL
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Schommelstoel met Marlon.png
     1. General Data: Data/LvStats/Briggs/0
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Open Haard.png
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Schommelstoel.piko
     1. General Data: Data/LvStats/Briggs/1
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Foto van Sue.png
-    1. Graphics: GFX/Combat/Fighters/Foe/Reg/Bladeh.png
     1. General Data: Data/LvStats/Briggs/10
-    1. Graphics: GFX/Combat/Fighters/Foe/Reg/Cyborg Ji.png
     1. General Data: Data/LvStats/Briggs/100
     1. General Data: Data/LvStats/Briggs/11
-    1. Graphics: GFX/Combat/Fighters/Foe/Reg/Cid.png
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Open Haard.png
     1. General Data: Data/LvStats/Briggs/12
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Foto van Sue.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Reg/Bladeh.png
+    1. General Data: Data/LvStats/Briggs/13
+    1. Graphics: GFX/Combat/Fighters/Foe/Reg/Cyborg Ji.png
+    1. General Data: Data/LvStats/Briggs/14
+    1. Graphics: GFX/Combat/Fighters/Foe/Reg/Cid.png
+    1. General Data: Data/LvStats/Briggs/15
     1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Befindo.png
     1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Elf.png
-    1. General Data: Data/LvStats/Briggs/13
+    1. General Data: Data/LvStats/Briggs/16
     1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Fairy.png
     1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Human.png
-    1. General Data: Data/LvStats/Briggs/14
+    1. General Data: Data/LvStats/Briggs/17
     1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Phelynx.png
     1. Graphics: GFX/Combat/Fighters/Foe/Reg/CyberAstrilopup.png
-    1. General Data: Data/LvStats/Briggs/15
-    1. General Data: Data/LvStats/Briggs/16
-    1. General Data: Data/LvStats/Briggs/17
     1. General Data: Data/LvStats/Briggs/18
     1. General Data: Data/LvStats/Briggs/19
     1. General Data: Data/LvStats/Briggs/2
-    1. Graphics: GFX/Combat/Fighters/Foe/Boss/Mid-Boss.png
-    1. Graphics: GFX/Combat/Fighters/Foe/Boss/DardMoeder.png
     1. General Data: Data/LvStats/Briggs/20
-    1. Graphics: GFX/Combat/Fighters/Foe/Boss/DardBoorth.png
     1. General Data: Data/LvStats/Briggs/21
-    1. Graphics: GFX/Combat/Fighters/Foe/Boss/HWSNBN.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Boss/Mid-Boss.png
     1. General Data: Data/LvStats/Briggs/22
-    1. Graphics: GFX/Combat/Fighters/Foe/Boss/SuperCyborg.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Boss/DardMoeder.png
     1. General Data: Data/LvStats/Briggs/23
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_Gunner.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Boss/DardBoorth.png
     1. General Data: Data/LvStats/Briggs/24
+    1. Graphics: GFX/Combat/Fighters/Foe/Boss/HWSNBN.png
+    1. General Data: Data/LvStats/Briggs/25
+    1. Graphics: GFX/Combat/Fighters/Foe/Boss/SuperCyborg.png
+    1. General Data: Data/LvStats/Briggs/26
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_Gunner.png
+    1. General Data: Data/LvStats/Briggs/27
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_FlameThrower.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_IceCannon.png
-    1. General Data: Data/LvStats/Briggs/25
+    1. General Data: Data/LvStats/Briggs/28
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_WaterGun.png
-    1. General Data: Data/LvStats/Briggs/26
+    1. General Data: Data/LvStats/Briggs/29
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_WindGun.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_RockThrower.png
-    1. General Data: Data/LvStats/Briggs/27
+    1. General Data: Data/LvStats/Briggs/3
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_LightGun.png
-    1. General Data: Data/LvStats/Briggs/28
+    1. General Data: Data/LvStats/Briggs/30
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_DarkGun.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Goddess.piko
-    1. General Data: Data/LvStats/Briggs/29
-    1. General Data: Data/LvStats/Briggs/3
-    1. General Data: Data/LvStats/Briggs/30
     1. General Data: Data/LvStats/Briggs/31
     1. General Data: Data/LvStats/Briggs/32
     1. General Data: Data/LvStats/Briggs/33
@@ -917,22 +918,22 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/35
     1. General Data: Data/LvStats/Briggs/36
     1. General Data: Data/LvStats/Briggs/37
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_VenomGun.png
     1. General Data: Data/LvStats/Briggs/38
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_VirusGun.png
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/ADD_BlockGun.png
     1. General Data: Data/LvStats/Briggs/39
+    1. General Data: Data/LvStats/Briggs/4
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_VenomGun.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_VirusGun.png
+    1. General Data: Data/LvStats/Briggs/40
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/ADD_BlockGun.png
+    1. General Data: Data/LvStats/Briggs/41
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/ADD_ConfuseGun.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Goddess.png
-    1. General Data: Data/LvStats/Briggs/4
-    1. General Data: Data/LvStats/Briggs/40
-    1. General Data: Data/LvStats/Briggs/41
     1. General Data: Data/LvStats/Briggs/42
     1. General Data: Data/LvStats/Briggs/43
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_TRQ.png
     1. General Data: Data/LvStats/Briggs/44
     1. General Data: Data/LvStats/Briggs/45
     1. General Data: Data/LvStats/Briggs/46
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_TRQ.png
     1. General Data: Data/LvStats/Briggs/47
     1. General Data: Data/LvStats/Briggs/48
     1. General Data: Data/LvStats/Briggs/49
@@ -2547,6 +2548,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Linkers/WorldLinker.lua
     1. Script: Script/JINC/NewGame+/PreserveVar.lua
     1. Script: Script/JINC/Big/BestiaryData.lua
+    1. Script: Script/JINC/Big/Credits.lua
     1. Script: Script/JINC/World/Nizozemska.lua
     1. Script: Script/JINC/World/Phantasar.lua
     1. Script: Script/External/SpellAni/Thriller.lua

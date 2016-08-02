@@ -62,5 +62,5 @@ end
 
 function GALE_OnLoad()
    Music('Dungeon/Observatorium.ogg')
-   Award("WINGAME")
+   ZA_Enter(Win,Award,"WINGAME")
 end
