@@ -83,7 +83,7 @@ function MAIN_FLOW()
              Image.HotCenter(d.imgtag)
              Image.Show(d.imgtag,400,d.y)
           else
-             DarkText(d.txt,d.r or 255, d.g or 255, d.b or 255,2,2,400,y)
+             DarkText(d.txt,400,d.y,2,2,d.r or 255, d.g or 255, d.b or 255,2,2)
           end
           d.y = d.y - 1
           max = k      

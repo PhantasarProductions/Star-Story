@@ -1197,8 +1197,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Crystal/44
     1. Script: Script/JINC/Foes/Goddess/Add_LightGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_DarkGun.lua
-    1. Script: Script/JINC/Foes/Goddess/Add_VenomGun.lua
     1. General Data: Data/LvStats/Crystal/45
+    1. Script: Script/JINC/Foes/Goddess/Add_VenomGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_virusGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_Trq.lua
     1. General Data: Data/LvStats/Crystal/46
