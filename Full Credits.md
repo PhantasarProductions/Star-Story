@@ -844,8 +844,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_BONUS_SPACEOBSERVATORIUM
     1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank.png
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_DUNGEON
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank_Foxy.png
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_DUNGEON_CELL
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank_Foxy.png
     1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank_Crystal.png
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_GRASSJUNGLE
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_GRASSJUNGLE_3
