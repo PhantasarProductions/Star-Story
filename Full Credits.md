@@ -2543,6 +2543,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Flow/PhantasarStore.lsv
     1. Script: Script/Flow/NIM.lua
     1. Script: Script/Flow/Excalibur_Transport.lua
+    1. Script: Script/Flow/EndCredits.lua
     1. Script: Script/Use/Anyway/Full.lua
     1. Script: Script/Use/Anyway/ReLevel.lua
     1. Script: Script/Use/Linkers/WorldLinker.lua
