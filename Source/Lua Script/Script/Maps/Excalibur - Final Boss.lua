@@ -59,7 +59,7 @@ if Var.C('%SKILL')~="1" then
    end                    
 end
 
-NumAdds = {2,4,6}         
+NumAdds = {3,6,8}         
 
 LvMargin = {.50,.25,.10}                       
 
@@ -125,7 +125,28 @@ function NPC_Goddess()
 end
 
 function PostBoss()
-  Sys.Error("PostBoss not yet scripted")
+  Music('Sys/Silence.ogg') 
+  Actors.ChoosePic('POP_Wendicka',"WENDICKA.HOSE")
+  MapText("POSTBOSS1")
+  Actors.ChoosePic('POP_Wendicka',"WENDICKA.HOSE.WATER")
+  MapText("POSTBOSS2")
+  for i=0,25 do
+      Image.Color(rand(0,255),rand(0,255),rand(0,255))
+      DrawRect(0,0,800,255)
+      ShowParty()
+      Flip()
+  end
+  Maps.Obj.Kill("NPC_Goddess")
+  MapText("POSTBOSS3")
+  Maps.CamY=1600
+  LoadMap("Excalibur - Post Game")
+  SpawnPlayer("Start")
+  SetActive("Wendicka")
+  TurnPlayer('South')
+  Party("Wendicka;Crystal;Yirl;Foxy;Xenobi")
+  MapText("POST")
+  for c in each({'PR','PF','PC','PY','PX'}) do Maps.Obj.Kill(c,1) end
+  -- Sys.Error("PostBoss not yet scripted")
 end  
 
 function GALE_OnLoad()

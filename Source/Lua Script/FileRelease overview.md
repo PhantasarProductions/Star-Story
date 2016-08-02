@@ -522,6 +522,7 @@
 1. Script/Maps/Excalibur - Final Boss.lua
 1. Script/Maps/Excalibur - Final.lsv
 1. Script/Maps/Excalibur - Final.lua
+1. Script/Maps/Excalibur - Post Game.lua
 1. Script/Maps/Nizozemska - Belioss.lua
 1. Script/Maps/Nizozemska - Dark Graveyard.lsv
 1. Script/Maps/Nizozemska - Dark Graveyard.lua
@@ -624,4 +625,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 02 August 2016; 14:41:18 CET
+### Last updated: Tue 02 August 2016; 17:21:17 CET
