@@ -106,6 +106,7 @@ function StartNewGamePlus()
   SyncLevel('UniWendicka')
   SyncLevel('UniCrystal')
   CSay("- EXP uncap")
+  local needexp = {1500,4500,15000}
   -- Reopening EXP in case the level cap was reached in the previous cycle
   for ch in each({"Wendicka","Crystal","ExHuRU","Yirl","Foxy","Xenobi"}) do -- No need to get the uniformed versions and Rolf and Johnson as they are all LINKED!!
       if RPGChar.Stat(ch,"Level")~=10000 then
