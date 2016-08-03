@@ -1,6 +1,6 @@
 --[[
   Transporter.lua
-  Version: 16.07.08
+  Version: 16.08.03
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -40,6 +40,11 @@ DemoMapsFunction = loadstring(JCR6.LoadString("Script/JINC/Demo/Maps.lua"))
 DemoMaps = DemoMapsFunction()
 
 back = "MenuBack"
+
+function TransporterClearAll()
+   Transporters = { Nodes = {}, Worlds={} }
+   CurrentWorld = nil
+end   
 
 function ActivatePad(tag)
 local obj = Maps.Obj.Obj("Trans.Spot."..tag)
