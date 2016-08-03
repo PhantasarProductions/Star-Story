@@ -819,8 +819,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/Dutch/Settings
     1. Scenario: Languages/English/Settings
     1. Scenario: Languages/English/Scenario/GENERAL/ARMS
-    1. Graphics: GFX/Textures/Astrilopups/Facility/West.png
-    1. Scenario: Languages/English/Scenario/GENERAL/COMBAT
+    1. Graphics: GFX/Textures/Astrilopups/Facility/West.png < alias > Languages/English/Scenario/GENERAL/COMBAT
     1. Scenario: Languages/English/Scenario/GENERAL/SCOTTY
     1. Graphics: GFX/Textures/Astrilopups/Facility/North-East.png
     1. Scenario: Languages/English/Scenario/GENERAL/SECRETDUNGEON
@@ -1100,8 +1099,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/Bladeh.lua
     1. General Data: Data/LvStats/Crystal/10
     1. Script: Script/JINC/Foes/Reg/Lion.lua
-    1. Script: Script/JINC/Foes/Reg/BlackLizard.lua
     1. General Data: Data/LvStats/Crystal/100
+    1. Script: Script/JINC/Foes/Reg/BlackLizard.lua
     1. General Data: Data/LvStats/Crystal/11
     1. Script: Script/JINC/Foes/Reg/Cid.lua
     1. General Data: Data/LvStats/Crystal/12
@@ -1149,8 +1148,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/SnowLeopard.lua
     1. General Data: Data/LvStats/Crystal/28
     1. Script: Script/JINC/Foes/Reg/Zombie.lua
-    1. Script: Script/JINC/Foes/Reg/Gremlin.lua
     1. General Data: Data/LvStats/Crystal/29
+    1. Script: Script/JINC/Foes/Reg/Gremlin.lua
     1. Script: Script/JINC/Foes/Reg/Hag.lua
     1. General Data: Data/LvStats/Crystal/3
     1. Script: Script/JINC/Foes/Reg/Ghoul.lua
@@ -1162,8 +1161,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Boss/DardMoeder.lua
     1. General Data: Data/LvStats/Crystal/32
     1. Script: Script/JINC/Foes/Boss/DardBoorth.lua
-    1. Script: Script/JINC/Foes/Boss/QueenMyr.lua
     1. General Data: Data/LvStats/Crystal/33
+    1. Script: Script/JINC/Foes/Boss/QueenMyr.lua
     1. Script: Script/JINC/Foes/Boss/AstrilopupElite.lua
     1. General Data: Data/LvStats/Crystal/34
     1. Script: Script/JINC/Foes/Boss/Mid-Boss.lua

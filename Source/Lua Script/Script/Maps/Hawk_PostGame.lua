@@ -117,6 +117,8 @@ function StartNewGamePlus()
          CSay(ch.."'s EXP remains closed, since the level cap has been reached")
       end   
    end   
+  -- Kill all map swap files, but make sure the chests removed by a collected ARM remain.
+  Maps.PermaGenocide(1) 
   Sys.Error('Not everything for the New Game+ has yet been set up')
 end
 
