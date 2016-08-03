@@ -2,7 +2,7 @@
 **********************************************
   
   Prologue_Yaqirpa.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.31
+version: 16.08.03
 ]]
 
 -- @UNDEF TRAPDEBUG
@@ -223,7 +223,7 @@ CleanCombat()
 Var.D("$COMBAT.BACKGROUND","Yaqirpa.png")
 Var.D("$COMBAT.BEGIN","Default")
 Var.D("$COMBAT.FOE1","Boss/BrainDroid")
-Var.D("%COMBAT.LVFOE1",RPGChar.Stat("Briggs",'Level'))
+Var.D("%COMBAT.LVFOE1",MapLevel())
 Var.D("$COMBAT.VICTORYCHECK","YaqirpaBrain")
 RandomBossTune()
 Schedule("MAP","PostBoss")
