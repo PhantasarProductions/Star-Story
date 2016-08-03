@@ -57,7 +57,7 @@ function NPC_Upgrade()
    MapText('SAPPAE')
 end   
 
-function StatNewGamePlus()
+function StartNewGamePlus()
   -- NG Plus Message
   Image.Cls()
   DarkText("Starting New Game+",400,250,2,2,255,0,0)
