@@ -213,8 +213,10 @@ local Show = {
        name  = "Shilders", -- Play only a role in the secret Phantasar section
        value = CVVN("%SHILDERS")
     },
+    {
        name  = "Play through cycle:",
        value = CVVN('%NEWGAMEPLUS')
+    },
     {     
        name  = "Time",
        value = CVVN("%PLAYTIME"),
