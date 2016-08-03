@@ -72,17 +72,17 @@ function StartNewGamePlus()
       if CVVN(v) then transfer[v] = Var.C(v) CSay('  = Preserved: '..v) end
   end 
   CSay("- Saving prefixed vars")
-  CSay(serialize('varlist',varlist))
+  --CSay(serialize('varlist',varlist))
   CSay("Vars = "..Var.Vars(';'))
   for v in each(varlist) do
       CSay("Let's try: "..v)
       for pre in each(pv.prefix) do 
-          CSay("v = "..v.."; pre = "..pre.."; prefixed = "..sval(prefixed(v,pre)))
+          -- CSay("v = "..v.."; pre = "..pre.."; prefixed = "..sval(prefixed(v,pre)))
           if prefixed(v,pre) then transfer[v] = Var.C(v) CSay('  = Preserved: '..v) end
       end    
   end
-  CSay("- Showing result")
-  CSay(serialize("result",transfer))
+  --CSay("- Showing result")
+  --CSay(serialize("result",transfer))
   CSay("- Clear all variables")
   Var.ClearAll()     
   CSay("- Defining all NEEDED variables anew")
@@ -90,7 +90,22 @@ function StartNewGamePlus()
       Var.D(k,v)
       CSay("  = "..k.."  << "..v)
   end
-  Sys.Error('Not everything for the New Game+ has yet been set up')    
+  -- Upgrade ExHuRU
+  CSay("Upgrading ExHuRU ABL Used")
+  for a in each({'YKSY','KAKSI','KOLME','NELJA','KUUSI','BATTLECRY'}) do
+      inc('%ABL.USED.EXHURU.'..a,CVV("%ABL.USED.ROLF."   ..a))
+      inc('%ABL.USED.EXHURU.'..a,CVV("%ABL.USED.JOHNSON."..a))
+      Var.Clear("%ABL.USED.JOHNSON."..a)
+      Var.Clear("%ABL.USED.ROLF."   ..a)
+  end
+  -- Clearing Navigation Panel Hawk
+  CSay("- Clearing the navigation panel on the Hawk")
+  TransporterClearAll()    
+  Sys.Error('Not everything for the New Game+ has yet been set up')
+  -- Make sure Uniforemd versions of Wendicka and Crystal come up properly.
+  CSay("- Uniform level resync")
+  SyncLevel('UniWendicka')
+  SyncLevel('UniCrystal')    
 end
 
 function NPC_NEWGAMEPLUS()

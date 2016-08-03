@@ -785,8 +785,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Actors/SinglePic/Sewers/MadScientistHU.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_HANGAR
     1. Graphics: GFX/Actors/SinglePic/Sewers/MadScientist.png
-    1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_HOME
     1. Graphics: GFX/Actors/SinglePic/Sewers/Zombie.png < alias > GFX/Combat/Fighters/Foe/Boss/SuperZombie.png < alias > GFX/Combat/Fighters/Foe/Reg/Zombie.png
+    1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_HOME
     1. Graphics: GFX/Actors/SinglePic/Meteor Staff/LoveJoy.Dead.png
     1. Graphics: GFX/Actors/Phantasar/Elf/Rosetta.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_KITCHEN
@@ -819,8 +819,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/Dutch/Settings
     1. Scenario: Languages/English/Settings
     1. Scenario: Languages/English/Scenario/GENERAL/ARMS
-    1. Scenario: Languages/English/Scenario/GENERAL/COMBAT
     1. Graphics: GFX/Textures/Astrilopups/Facility/West.png
+    1. Scenario: Languages/English/Scenario/GENERAL/COMBAT
     1. Scenario: Languages/English/Scenario/GENERAL/SCOTTY
     1. Graphics: GFX/Textures/Astrilopups/Facility/North-East.png
     1. Scenario: Languages/English/Scenario/GENERAL/SECRETDUNGEON
@@ -894,8 +894,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/21
     1. General Data: Data/LvStats/Briggs/22
     1. General Data: Data/LvStats/Briggs/23
-    1. General Data: Data/LvStats/Briggs/24
     1. Graphics: GFX/Combat/Fighters/Foe/Boss/Mid-Boss.png
+    1. General Data: Data/LvStats/Briggs/24
     1. Graphics: GFX/Combat/Fighters/Foe/Boss/DardMoeder.png
     1. General Data: Data/LvStats/Briggs/25
     1. Graphics: GFX/Combat/Fighters/Foe/Boss/DardBoorth.png
@@ -1038,8 +1038,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/82
     1. Script: Script/JINC/World/Nizozemska.lua
     1. Script: Script/JINC/World/Phantasar.lua
-    1. General Data: Data/LvStats/Briggs/83
     1. Script: Script/External/SpellAni/Thriller.lua
+    1. General Data: Data/LvStats/Briggs/83
     1. Script: Script/Use/Maps/Hawk/AutoNewNav.lua
     1. General Data: Data/LvStats/Briggs/84
     1. Script: Script/Use/Maps/Hawk/ArrivalPhysillium.lua
@@ -1047,8 +1047,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Maps/Hawk/HawkBridge.lua
     1. General Data: Data/LvStats/Briggs/85
     1. Script: Script/Use/Maps/Hawk/AftermathVolcania.lua
-    1. General Data: Data/LvStats/Briggs/86
     1. Script: Script/Use/Maps/Hawk/ArrivalExcalibur.lua
+    1. General Data: Data/LvStats/Briggs/86
     1. Script: Script/Use/Maps/Hawk/UnlockBlackHoleDweller.lua
     1. Script: Script/Use/Maps/Hawk_Terminal/Bestiary.lua
     1. General Data: Data/LvStats/Briggs/87
@@ -1104,8 +1104,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Crystal/100
     1. General Data: Data/LvStats/Crystal/11
     1. Script: Script/JINC/Foes/Reg/Cid.lua
-    1. General Data: Data/LvStats/Crystal/12
     1. Script: Script/JINC/Foes/Reg/Myr.lua
+    1. General Data: Data/LvStats/Crystal/12
     1. Script: Script/JINC/Foes/Reg/Insetto.lua
     1. General Data: Data/LvStats/Crystal/13
     1. Script: Script/JINC/Foes/Reg/Flysky.lua
