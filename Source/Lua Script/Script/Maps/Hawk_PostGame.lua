@@ -119,7 +119,31 @@ function StartNewGamePlus()
    end   
   -- Kill all map swap files, but make sure the chests removed by a collected ARM remain.
   Maps.PermaGenocide(1) 
-  Sys.Error('Not everything for the New Game+ has yet been set up')
+  -- Remove all key items
+  if CVV('%VAULT.KEY_YAQIRPA') then Var.Clear("%VAULT.KEY_YAQIRPA") end
+  for ch in each({"Wendicka","Crystal","ExHuRU","Yirl","Foxy","Xenobi"}) do
+      for i=1,InventorySockets do
+          if upper(RPGStat.GetData(ch,'INVITEM'..i))=="KEY_YAQUIRPA" then 
+             RPGChar.DefStat(ch,'INVAMNT'..i,0) 
+             RPGStat.setData(ch,'INVITEM'..i,'')
+             end
+      end
+  end 
+  -- Go back to the Yaqirpa
+  Party('UniWendicka','UniCrystal','Briggs')
+  LoadMap('Prologue_Yaqirpa') 
+  MapShow("Entrance")
+  Actors.Spawn("StartWendicka","GFX/Actors/Uniform","ActWendicka"); CSay("Wendicka Loaded")
+  Actors.Spawn("StartCrystal","GFX/Actors/Uniform","ActCrystal"); CSay("Crystal Loaded")
+  Actors.Spawn("StartBriggs","GFX/Actors/Uniform","ActBriggs"); CSay("Briggs Loaded"); CSay("All actors loaded")
+  Actors.ChoosePic("ActWendicka","WENDICKA.NORTH")
+  Actors.ChoosePic("ActCrystal","CRYSTAL.NORTH")
+  Actors.ChoosePic("ActBriggs","BRIGGS.NORTH")
+  Maps.CamX=608
+  Maps.CamY=1360
+  Maps.Draw()
+  Flip()
+  -- Sys.Error('Not everything for the New Game+ has yet been set up')  
 end
 
 function NPC_NEWGAMEPLUS()

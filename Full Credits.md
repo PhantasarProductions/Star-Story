@@ -819,7 +819,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/Dutch/Settings
     1. Scenario: Languages/English/Settings
     1. Scenario: Languages/English/Scenario/GENERAL/ARMS
-    1. Graphics: GFX/Textures/Astrilopups/Facility/West.png < alias > Languages/English/Scenario/GENERAL/COMBAT
+    1. Scenario: Languages/English/Scenario/GENERAL/COMBAT
+    1. Graphics: GFX/Textures/Astrilopups/Facility/West.png
     1. Scenario: Languages/English/Scenario/GENERAL/SCOTTY
     1. Graphics: GFX/Textures/Astrilopups/Facility/North-East.png
     1. Scenario: Languages/English/Scenario/GENERAL/SECRETDUNGEON
