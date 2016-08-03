@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 16.07.22
+  Version: 16.08.03
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -417,11 +417,13 @@ if not partymembers then Sys.Error("Something went wrong when counting the level
 local mylevel = myleveltotal / partymembers
 if pt>99 then pt=99 end
 local dt = "PT "..right(" "..pt,2).." Level Range"
+CSay("Level setup for cycle: "..pt)
 while Maps.GetData(dt)=="" do
       pt = pt - 1      
       dt = "PT "..right(" "..pt,2).." Level Range"
       if pt<=0 then return("No foe levels set, ignoring foe request!") end
-      end 
+      end
+CSay("Using "..dt)             
 lvrange = mysplit(Maps.GetData(dt),"-")
 if #lvrange<2 then GALE_Error("Level range for playthrough #"..pt.." not properly set up!") end
 for i,v in ipairs(lvrange) do lvrange[i] = Sys.Val(v) end
@@ -963,6 +965,8 @@ end
 
 
 function LoadMap(map,layer)
+ngpcount = Sys.Val(Var.C("%NEWGAMEPLUS"))
+if ngpcount==0 then ngpcount=1 end
 FieldFoes = nil -- Let's just FORCE enemies will NOT mess this up.
 Loading()
 PartyPopArray = nil

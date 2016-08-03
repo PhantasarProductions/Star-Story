@@ -133,7 +133,12 @@ function StartNewGamePlus()
   ngpcount = ngpcount + 1
   Var.D('%NEWGAMEPLUS',ngpcount)
   -- Go back to the Yaqirpa
+  MapShow("ShowNothing!!!")
   Party('UniWendicka','UniCrystal','Briggs')
+  DrawScreen()
+  Flip()
+  DrawScreen()
+  Flip()
   LoadMap('Prologue_Yaqirpa') 
   MapShow("Entrance")
   Actors.Spawn("StartWendicka","GFX/Actors/Uniform","ActWendicka"); CSay("Wendicka Loaded")
