@@ -1,6 +1,6 @@
 --[[
   Party.lua
-  Version: 16.02.19
+  Version: 16.08.03
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -213,6 +213,8 @@ local Show = {
        name  = "Shilders", -- Play only a role in the secret Phantasar section
        value = CVVN("%SHILDERS")
     },
+       name  = "Play through cycle:",
+       value = CVVN('%NEWGAMEPLUS')
     {     
        name  = "Time",
        value = CVVN("%PLAYTIME"),
