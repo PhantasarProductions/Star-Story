@@ -95,7 +95,7 @@ function NPC_NEWGAMEPLUS()
    if Keuze==2 then return MapText('NGPQ1_NEE') end
    MapText('NPG2') -- This is a typo in the scenario files. It's quite a disaster to fix it there, so let's just make the same typo here.
    Keuze = RunQuestion("MAP","NGPQ2")
-   if Keuze==1 then StartNewGamePlus() end
+   if Keuze==1 then StarNewGamePlus() end
 end
 
 

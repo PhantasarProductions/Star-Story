@@ -1063,8 +1063,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/9
     1. Script: Script/Use/Maps/AltArena/Excalibur.lua
     1. Script: Script/Use/Sub/Party/XenobiSpells.lua
-    1. Script: Script/Use/Combat/AblSpecialEffect/HPAPto1.lua
     1. General Data: Data/LvStats/Briggs/90
+    1. Script: Script/Use/Combat/AblSpecialEffect/HPAPto1.lua
     1. Script: Script/Use/Combat/AblSpecialEffect/Summon.lua
     1. General Data: Data/LvStats/Briggs/91
     1. Script: Script/Use/Combat/AblSpecialEffect/UpgradeToSnowLeopard.lua
@@ -1098,8 +1098,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Combat/AltBackGrounds/Goddess in Space.lua
     1. General Data: Data/LvStats/Crystal/1
     1. Script: Script/JINC/Foes/Reg/Bladeh.lua
-    1. Script: Script/JINC/Foes/Reg/Lion.lua
     1. General Data: Data/LvStats/Crystal/10
+    1. Script: Script/JINC/Foes/Reg/Lion.lua
     1. Script: Script/JINC/Foes/Reg/BlackLizard.lua
     1. General Data: Data/LvStats/Crystal/100
     1. General Data: Data/LvStats/Crystal/11
@@ -1210,8 +1210,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Crystal/48
     1. Script: Script/JINC/Foes/Goddess/Add_virusGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_Trq.lua
-    1. Script: Script/JINC/Foes/Goddess/Add_BlockGun.lua
     1. General Data: Data/LvStats/Crystal/49
+    1. Script: Script/JINC/Foes/Goddess/Add_BlockGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_ConfuseGun.lua
     1. General Data: Data/LvStats/Crystal/5
     1. General Data: Data/LvStats/Crystal/50
