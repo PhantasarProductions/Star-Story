@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.15
+version: 16.08.03
 ]]
 
 function CLICK_ARRIVAL_Vlag_Brabant()
@@ -215,6 +215,13 @@ Music("Excalibur/Attacked.ogg")
 Maps.Obj.Kill("Crystal")
 Maps.Obj.Kill("ExHuRU")
 Party("Wendicka","Crystal","ExHuRU")
+if RPGChar.Stat('ExHuRU','Level')<RPGChar.Stat('Wendicka','Level') then
+   RPGChar.DefStat('ExHuRU','Level',RPGChar.Stat('Wendicka','Level')+20)
+   if RPGChar.Stat('ExHuRU','Level')>10000 then RPGChar.Stat('ExHuRU','Level',10000) RPGChar.Points('ExHuRU','EXP').Maximum=0 end
+   end
+SyncLevel('ExHuRU')
+SyncLevel('Crystal')
+SyncLevel('Wendicka')
 TurnPlayer("South") 
 Var.D("&ATTACKED.EXCALIBUR","TRUE")   
 end
