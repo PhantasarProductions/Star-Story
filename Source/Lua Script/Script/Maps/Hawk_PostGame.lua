@@ -52,6 +52,11 @@ function NPC_Bakina()
    MapText('BANIKA')
 end   
 
+function NPC_Upgrade()
+   TurnPlayer('North')
+   MapText('SAPPAE')
+end   
+
 
 function GALE_OnLoad()
      StartMusic ()

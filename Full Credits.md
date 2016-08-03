@@ -1156,8 +1156,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/HellHound.lua
     1. General Data: Data/LvStats/Crystal/3
     1. Script: Script/JINC/Foes/Boss/BigLion.lua
-    1. General Data: Data/LvStats/Crystal/30
     1. Script: Script/JINC/Foes/Boss/Cyborg Lord.lua
+    1. General Data: Data/LvStats/Crystal/30
     1. Script: Script/JINC/Foes/Boss/DardMoeder.lua
     1. General Data: Data/LvStats/Crystal/31
     1. Script: Script/JINC/Foes/Boss/DardBoorth.lua
