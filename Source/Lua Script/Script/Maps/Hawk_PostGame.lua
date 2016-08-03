@@ -69,7 +69,7 @@ function StartNewGamePlus()
   local varlist = mysplit(Var.Vars(),";")
   CSay("- Saving fixed vars")
   for v in each(pv.fixed) do
-      if CVVN(b) then transfer[v] = Var.C(v) CSay('  = Preserved: '..v) end
+      if CVVN(v) then transfer[v] = Var.C(v) CSay('  = Preserved: '..v) end
   end 
   CSay("- Saving prefixed vars")
   for v in each(varlist) do
@@ -77,6 +77,8 @@ function StartNewGamePlus()
           if prefixed(v,pre) then transfer[v] = Var.C(v) CSay('  = Preserved: '..v) end
       end    
   end
+  CSay("- Showing result")
+  CSay(serialize("result",transfer))
   CSay("- Clear all variables")
   Var.ClearAll()     
   CSay("- Defining all NEEDED variables anew")
