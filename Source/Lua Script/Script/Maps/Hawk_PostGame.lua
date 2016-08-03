@@ -57,7 +57,7 @@ function NPC_Upgrade()
    MapText('SAPPAE')
 end   
 
-function StarNewGamePlus()
+function StatNewGamePlus()
   -- NG Plus Message
   Image.Cls()
   DarkText("Starting New Game+",400,250,2,2,255,0,0)
@@ -78,7 +78,7 @@ function StarNewGamePlus()
       end    
   end
   CSay("- Clear all variables")
-  Vars.ClearAll()     
+  Var.ClearAll()     
   CSay("- Defining all NEEDED variables anew")
   for k,v in spairs(transfer) do
       Var.D(k,v)
@@ -95,7 +95,7 @@ function NPC_NEWGAMEPLUS()
    if Keuze==2 then return MapText('NGPQ1_NEE') end
    MapText('NPG2') -- This is a typo in the scenario files. It's quite a disaster to fix it there, so let's just make the same typo here.
    Keuze = RunQuestion("MAP","NGPQ2")
-   if Keuze==1 then StarNewGamePlus() end
+   if Keuze==1 then StartNewGamePlus() end
 end
 
 
