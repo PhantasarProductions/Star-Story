@@ -49,7 +49,7 @@ end
 function NPC_Bakina()
    SetActive('Wendicka')
    TurnPlayer('North')
-   MapText('BAKINA')
+   MapText('BANIKA')
 end   
 
 
