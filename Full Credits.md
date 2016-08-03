@@ -1162,8 +1162,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Boss/DardMoeder.lua
     1. General Data: Data/LvStats/Crystal/32
     1. Script: Script/JINC/Foes/Boss/DardBoorth.lua
-    1. Script: Script/JINC/Foes/Boss/QueenMyr.lua
     1. General Data: Data/LvStats/Crystal/33
+    1. Script: Script/JINC/Foes/Boss/QueenMyr.lua
     1. Script: Script/JINC/Foes/Boss/AstrilopupElite.lua
     1. General Data: Data/LvStats/Crystal/34
     1. Script: Script/JINC/Foes/Boss/Mid-Boss.lua

@@ -79,7 +79,8 @@ ret = {
 		"%TREASURE_RATE[Special Item 16CB4472]",
 		"%SHILDERS",
 		"%UPGRADES.ROLF",
-		"&MENUTUT.FIELD.ABILITIES"},
+		"&MENUTUT.FIELD.ABILITIES",
+		"%NEWGAMEPLUS"},
 
 	prefix = {
 		"$CTIME",
@@ -122,6 +123,7 @@ ret = {
 		"%SHILDERS",
 		"%UPGRADES.ROLF",
 		"&MENUTUT.FIELD.ABILITIES",
+		"%NEWGAMEPLUS",
 		"<",
 		"%PLAYTIME.",
 		"&TUT.",

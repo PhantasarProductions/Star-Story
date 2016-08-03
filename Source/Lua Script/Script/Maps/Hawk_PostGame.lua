@@ -128,7 +128,10 @@ function StartNewGamePlus()
              RPGStat.setData(ch,'INVITEM'..i,'')
              end
       end
-  end 
+  end
+  -- Count new cycle 
+  ngpcount = ngpcount + 1
+  Var.D('%NEWGAMEPLUS',ngpcount)
   -- Go back to the Yaqirpa
   Party('UniWendicka','UniCrystal','Briggs')
   LoadMap('Prologue_Yaqirpa') 
@@ -143,8 +146,7 @@ function StartNewGamePlus()
   Maps.CamY=1360
   Maps.Draw()
   Flip()
-  ngpcount = ngpcount + 1
-  Var.D('%NEWGAMEPLUS',ngpcount)
+  MapText('NEWGAMEPLUS')
   -- Sys.Error('Not everything for the New Game+ has yet been set up')  
 end
 

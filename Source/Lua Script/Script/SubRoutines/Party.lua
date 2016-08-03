@@ -214,7 +214,7 @@ local Show = {
        value = CVVN("%SHILDERS")
     },
     {
-       name  = "Play through cycle:",
+       name  = "Play-through cycle",
        value = CVVN('%NEWGAMEPLUS')
     },
     {     
