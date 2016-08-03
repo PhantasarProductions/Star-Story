@@ -1058,7 +1058,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Maps/Gen/SchuifNextReal.lua
     1. General Data: Data/LvStats/Briggs/88
     1. Script: Script/Use/Maps/AltArena/Excalibur.lua
-    1. General Data: Data/LvStats/Briggs/89 < alias > Script/Use/Sub/Party/XenobiSpells.lua
+    1. Script: Script/Use/Sub/Party/XenobiSpells.lua
+    1. General Data: Data/LvStats/Briggs/89
     1. Script: Script/Use/Combat/AblSpecialEffect/HPAPto1.lua
     1. General Data: Data/LvStats/Briggs/9
     1. Script: Script/Use/Combat/AblSpecialEffect/Summon.lua

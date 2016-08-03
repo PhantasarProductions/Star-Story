@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.02
+version: 16.08.03
 ]]
 
 function CLICK_ARRIVAL_Terminal()
@@ -46,9 +46,17 @@ function StartMusic()
    Music('Launcher/Launcher.ogg')
 end   
 
+function NPC_Bakina()
+   SetAchive('Wendicka')
+   TurnPlayer('North')
+   MapText('BAKINA')
+end   
+
 
 function GALE_OnLoad()
      StartMusic ()
-     MapShow('Back')
+     MapShow('Back')     
      AddClickable("Terminal")
+     -- Show NPCs in the back only when you let them on board
+     if not CVV("&BANIKA") then Maps.Obj.Kill("NPC_Banika") Maps.Obj.Kill("NPC_Bakina") end     
 end     
