@@ -143,6 +143,8 @@ function StartNewGamePlus()
   Maps.CamY=1360
   Maps.Draw()
   Flip()
+  ngpcount = ngpcount + 1
+  Var.D('%NEWGAMEPLUS',ngpcount)
   -- Sys.Error('Not everything for the New Game+ has yet been set up')  
 end
 
