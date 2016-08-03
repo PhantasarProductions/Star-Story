@@ -66,14 +66,18 @@ function StartNewGamePlus()
   -- Clear all non-transferrable variables
   local pv = JINC('Script/JINC/NewGame+/PreserveVar.lua')
   local transfer = {}
-  local varlist = mysplit(Var.Vars(),";")
+  local varlist = mysplit(Var.Vars(';'),";")
   CSay("- Saving fixed vars")
   for v in each(pv.fixed) do
       if CVVN(v) then transfer[v] = Var.C(v) CSay('  = Preserved: '..v) end
   end 
   CSay("- Saving prefixed vars")
+  CSay(serialize('varlist',varlist))
+  CSay("Vars = "..Var.Vars(';'))
   for v in each(varlist) do
+      CSay("Let's try: "..v)
       for pre in each(pv.prefix) do 
+          CSay("v = "..v.."; pre = "..pre.."; prefixed = "..sval(prefixed(v,pre)))
           if prefixed(v,pre) then transfer[v] = Var.C(v) CSay('  = Preserved: '..v) end
       end    
   end

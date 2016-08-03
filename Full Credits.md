@@ -1038,8 +1038,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/82
     1. Script: Script/JINC/World/Nizozemska.lua
     1. Script: Script/JINC/World/Phantasar.lua
-    1. Script: Script/External/SpellAni/Thriller.lua
     1. General Data: Data/LvStats/Briggs/83
+    1. Script: Script/External/SpellAni/Thriller.lua
     1. Script: Script/Use/Maps/Hawk/AutoNewNav.lua
     1. General Data: Data/LvStats/Briggs/84
     1. Script: Script/Use/Maps/Hawk/ArrivalPhysillium.lua
@@ -1047,8 +1047,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Maps/Hawk/HawkBridge.lua
     1. General Data: Data/LvStats/Briggs/85
     1. Script: Script/Use/Maps/Hawk/AftermathVolcania.lua
-    1. Script: Script/Use/Maps/Hawk/ArrivalExcalibur.lua
     1. General Data: Data/LvStats/Briggs/86
+    1. Script: Script/Use/Maps/Hawk/ArrivalExcalibur.lua
     1. Script: Script/Use/Maps/Hawk/UnlockBlackHoleDweller.lua
     1. Script: Script/Use/Maps/Hawk_Terminal/Bestiary.lua
     1. General Data: Data/LvStats/Briggs/87
@@ -1104,8 +1104,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Crystal/100
     1. General Data: Data/LvStats/Crystal/11
     1. Script: Script/JINC/Foes/Reg/Cid.lua
-    1. Script: Script/JINC/Foes/Reg/Myr.lua
     1. General Data: Data/LvStats/Crystal/12
+    1. Script: Script/JINC/Foes/Reg/Myr.lua
     1. Script: Script/JINC/Foes/Reg/Insetto.lua
     1. General Data: Data/LvStats/Crystal/13
     1. Script: Script/JINC/Foes/Reg/Flysky.lua
@@ -1191,8 +1191,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/SuperBoss/FireSpider.lua
     1. General Data: Data/LvStats/Crystal/42
     1. Script: Script/JINC/Foes/SuperBoss/BlackHoleDweller.lua
-    1. Script: Script/JINC/Foes/SpecialBoss/McLeen.lua
     1. General Data: Data/LvStats/Crystal/43
+    1. Script: Script/JINC/Foes/SpecialBoss/McLeen.lua
     1. Script: Script/JINC/Foes/Goddess/Goddess.lua
     1. General Data: Data/LvStats/Crystal/44
     1. Script: Script/JINC/Foes/Goddess/Add_Gunner.lua
