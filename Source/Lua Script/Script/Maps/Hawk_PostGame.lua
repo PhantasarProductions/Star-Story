@@ -101,7 +101,6 @@ function StartNewGamePlus()
   -- Clearing Navigation Panel Hawk
   CSay("- Clearing the navigation panel on the Hawk")
   TransporterClearAll()    
-  Sys.Error('Not everything for the New Game+ has yet been set up')
   -- Make sure Uniforemd versions of Wendicka and Crystal come up properly.
   CSay("- Uniform level resync")
   SyncLevel('UniWendicka')
@@ -117,6 +116,7 @@ function StartNewGamePlus()
          CSay(ch.."'s EXP remains closed, since the level cap has been reached")
       end   
    end   
+  Sys.Error('Not everything for the New Game+ has yet been set up')
 end
 
 function NPC_NEWGAMEPLUS()
