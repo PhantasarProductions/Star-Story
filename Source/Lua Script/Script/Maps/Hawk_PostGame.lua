@@ -47,7 +47,7 @@ function StartMusic()
 end   
 
 function NPC_Bakina()
-   SetAchive('Wendicka')
+   SetActive('Wendicka')
    TurnPlayer('North')
    MapText('BAKINA')
 end   
