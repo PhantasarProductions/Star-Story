@@ -57,6 +57,47 @@ function NPC_Upgrade()
    MapText('SAPPAE')
 end   
 
+function StarNewGamePlus()
+  -- NG Plus Message
+  Image.Cls()
+  DarkText("Starting New Game+",400,250,2,2,255,0,0)
+  DarkText("Please wait",400,350,2,2,255,180,0)
+  Flip()
+  -- Clear all non-transferrable variables
+  local pv = JINC('Script/JINC/NewGame+/PreserveVar.lua')
+  local transfer = {}
+  local varlist = mysplit(Var.Vars(),";")
+  CSay("- Saving fixed vars")
+  for v in each(pv.fixed) do
+      if CVVN(b) then transfer[v] = Var.C(v) CSay('  = Preserved: '..v) end
+  end 
+  CSay("- Saving prefixed vars")
+  for v in each(varlist) do
+      for pre in each(pv.prefix) do 
+          if prefixed(v,pre) then transfer[v] = Var.C(v) CSay('  = Preserved: '..v) end
+      end    
+  end
+  CSay("- Clear all variables")
+  Vars.ClearAll()     
+  CSay("- Defining all NEEDED variables anew")
+  for k,v in spairs(transfer) do
+      Var.D(k,v)
+      CSay("  = "..k.."  << "..v)
+  end
+  Sys.Error('Not everything for the New Game+ has yet been set up')    
+end
+
+function NPC_NEWGAMEPLUS()
+   SetActive('Wendicka')
+   TurnPlayer('North')
+   MapText('NGP')
+   local Keuze = RunQuestion("MAP","NGPQ1")
+   if Keuze==2 then return MapText('NGPQ1_NEE') end
+   MapText('NGP2')
+   Keuze = RunQuestion("MAP","NGPQ2")
+   if Keuze==1 then StartNewGamePlus() end
+end
+
 
 function GALE_OnLoad()
      StartMusic ()
