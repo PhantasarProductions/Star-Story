@@ -105,7 +105,18 @@ function StartNewGamePlus()
   -- Make sure Uniforemd versions of Wendicka and Crystal come up properly.
   CSay("- Uniform level resync")
   SyncLevel('UniWendicka')
-  SyncLevel('UniCrystal')    
+  SyncLevel('UniCrystal')
+  CSay("- EXP uncap")
+  -- Reopening EXP in case the level cap was reached in the previous cycle
+  for ch in each({"Wendicka","Crystal","ExHuRU","Yirl","Foxy","Xenobi"}) do -- No need to get the uniformed versions and Rolf and Johnson as they are all LINKED!!
+      if RPGChar.Stat(ch,"Level")~=10000 then
+         CSay(ch.."'s EXP has been re-opened (in case it was closed)")
+         RPGChar.Points(ch,"EXP",1).Maximum = needexp[skill] or 5000
+         if RPGChar.Points(ch,"EXP",1).Maximum==0 then RPGChar.Points(ch,"EXP",1).Maximum=5000 end -- Dirty code straight from hell, but it will have to do for now.
+      else
+         CSay(ch.."'s EXP remains closed, since the level cap has been reached")
+      end   
+   end   
 end
 
 function NPC_NEWGAMEPLUS()
