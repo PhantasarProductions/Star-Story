@@ -2,7 +2,7 @@
 **********************************************
   
   LostPlanet_BarInside.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.01
+version: 16.08.04
 ]]
 
 
@@ -80,8 +80,10 @@ function NPC_Yirl()
 	end
 	PartyPop("Yirl")
 	MapText("YIRL")
-	Fight()
+	Fight()	
 	Party("Wendicka","Crystal","ExHuRU","Yirl","Foxy")
+	if RPGStat.Stat('Yirl','Level')<RPGStat.Stat('Wendicka','Level') then RPGStat.DefStat('Yirl','Level',RPGStat.Stat('Wendicka','Level')) end -- This line will only affect thew New Game+ cycles.
+	if CVV('%NEWGAMEPLUS')>=2 then RPGStat.IncStat('Foxy','Level',({30,15,0})[skill]) end
 	LoadMap("LostPlanet_Dungeon_Cell")
 	Maps.Obj.Obj("KijkGat").X = -32
 	Maps.Obj.Obj("KijkGat").Y = 0
