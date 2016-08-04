@@ -35,7 +35,7 @@
 version: 16.08.04
 ]]
 ret = {
-	["ABL_AP"] = 500,
+	["ABL_AP"] = 260,
 	["ABL_APCut"] = 10000,
 	["ABL_Pose"] = "Cast",
 	["ABL_Speed"] = 100,

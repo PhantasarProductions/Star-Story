@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 16.07.05
+  Version: 16.08.04
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -145,6 +145,31 @@ if abl.Healing and abl.Healing>0 then
                  end
    })[abl.HealingType] or function() Sys.Error("Unknown healing type: "..sval(abl.HealingType)) end )()               
    end
+if abl.APRecover and abl.APRecover>0 then
+   (({ Absolute = function()                 
+                 if RPGChar.Points(ch,'AP').Have==RPGChar.Points(ch,'AP').Maximum then CSay("No AP recovery. Already at maximum") return false end
+                 RPGChar.Points(ch,'AP').inc(abl.APRecover);
+                 CSay(ch.." has healed "..abl.APRecover) 
+                 effect=true 
+                 end,
+      Percent  = function()
+                 if RPGChar.Points(ch,'AP').Have==RPGChar.Points(ch,'AP').Maximum then CSay("No AP recovery. Already at maximum") return false end
+                 local apt = RPGChar.Points(ch,"ap")
+                 local apm = apt.Maximum
+                 local points = (apm/100)*abl.APRecover
+                 RPGChar.Points(ch,'AP').inc(abl.APRecover)
+                 effect=true
+                 end
+   })[abl.APRecoverType] or function() Sys.Error("Unknown healing type: "..sval(abl.APRecoverType)) end )()               
+   end
+local pbm = {HP=100}   
+local pbms = {5,3,1}
+for stat in each({'Strength','Defense','Agility','Will','Resistance','Accuracy','Evasion','HP','AP'}) do
+    if abl['PermaBuff_'..stat] then
+       RPGStat.IncStat(ch,'POWERUP_'..stat,(pmb[stat] or 1) * pbms[skill] )
+       effect = true
+       end
+    end   
 return effect	
 end
 

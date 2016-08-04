@@ -1,7 +1,7 @@
 --[[
-  SUPER_FOXY_SKYDRAGONSLASH.lua
+  ITM_PERMABUFF_REDPILL.lua
   Version: 16.08.04
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -36,20 +36,19 @@
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 50,
-	["AttackElement"] = "Fire",
-	["AttackPower"] = 900,
-	["AttackStat"] = "Will",
-	["DefenseStat"] = "Resistance",
-	["Description"] = "Iedereen in de fik",
+	["ActSpeed"] = 250,
+	["AttackElement"] = "Non-Elemental",
+	["AttackStat"] = "Strength",
+	["DefenseStat"] = "Defense",
+	["Description"] = "What if I told you: This pill increases your strength forever (field only)",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Elements/Fire.png",
+	["ITM_BuyPrice"] = 100,
+	["ITM_SellPrice"] = 75,
+	["ITM_Sellable"] = true,
 	["ItemType"] = "Consumable",
-	["Name"] = "Sky Dragon Slash",
-	["SpellAni_External"] = true,
-	["SpellAni_Reference"] = "SkyDragonSlash",
-	["Target"] = "AF",
-	["UseCombat"] = true,
+	["Name"] = "Red Pill",
+	["PermaBuff_Strength"] = true,
+	["Target"] = "1A",
 	["UseField"] = true}
 
 return ret
