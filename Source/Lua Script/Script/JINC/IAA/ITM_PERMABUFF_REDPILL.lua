@@ -45,6 +45,7 @@ ret = {
 	["ITM_BuyPrice"] = 100,
 	["ITM_SellPrice"] = 75,
 	["ITM_Sellable"] = true,
+	["Icon"] = "GFX/Inventory/RedPill.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Red Pill",
 	["PermaBuff_Strength"] = true,

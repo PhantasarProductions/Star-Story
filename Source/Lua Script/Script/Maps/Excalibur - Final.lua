@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.31
+version: 16.08.04
 ]]
 
 -- [[ @USE /Script/Use/Maps/Gen/Schuif.lua ]]
@@ -152,8 +152,9 @@ function GetKey(pname)
   MINI(Name.." keycard found",keycolors[Name][1],keycolors[Name][2],keycolors[Name][3])
   keycards[lay][Name] = true
   Maps.Obj.Kill("NPC_"..Name,1)
-  Var.D(keyinsysvar,serialize('ret',keycards))
-  SFX('Audio/Sfx/Yeah/Yeah.ogg')
+  -- Var.D(keyinsysvar,serialize('ret',keycards))
+  MS.LN_Run("SFX","Script/Subroutines/SFX.lua","SFX",'Audio/Sfx/Yeah/Yeah.ogg'..";no")
+  -- SFX('Audio/Sfx/Yeah/Yeah.ogg')
   UnLockEmgSave()
   if skill~=3 then 
     MapEXP()
@@ -191,10 +192,14 @@ function ToHangar()
 end
 
 function Opslaan()
+   Loading()
+   Var.D(keyinsysvar,serialize('ret',keycards))
    GotoSave()
 end
 
 function TerugNaarHawk()
+   Loading()
+   Var.D(keyinsysvar,serialize('ret',keycards))
    if left(Maps.LayerCodeName,1)~="#" then return MapText('NOHAWK') end
    local node = "EXN"..math.ceil(tonumber(right(Maps.LayerCodeName,3))/5)
    MS.LN_Run("TRANS","Script/SubRoutines/Transporter.lua","ReDefNode","F"..right(Maps.LayerCodeName,3)..";"..Maps.CodeName..";Excalibur;"..Names[Maps.LayerCodeName]..";"..Maps.LayerCodeName..";"..node)
@@ -209,7 +214,8 @@ function TerugNaarHawk()
 end
 
 function InternStralen()
-   Var.D("$EXCALIBURTRANSPORT","return  { "..serialize('keys',keycards)..", "..serialize('locs',Names).." }")
+   Loading()
+   Var.D("$EXCALIBURTRANSPORT","return  { "..serialize('keys',keycards)..", "..serialize('locs',Names).." }")   
    MS.LoadNew("EXCATRANS","Script/Flow/Excalibur_Transport.lua")
    MS.Run('EXCATRANS','TransferVarsFromMap')
    LAURA.Flow('EXCATRANS')
