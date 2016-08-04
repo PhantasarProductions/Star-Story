@@ -1,7 +1,7 @@
 --[[
-  ITM_EQP_RUBY.lua
+  ITM_KILOGUBAFLOWER.lua
   Version: 16.08.04
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -35,21 +35,26 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
+	["APRecover"] = 20,
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
+	["CureDisease"] = true,
+	["CureParalysis"] = true,
+	["CurePoison"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Raises disease resistance of its owner by 10%",
+	["Description"] = "Heals 750 HP and cures poison, disease and paralysis and 20 AP",
+	["Healing"] = 750,
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 10000,
-	["ITM_EQP_SRes_Disease"] = 10,
-	["ITM_SellPrice"] = 7500,
+	["ITM_BuyPrice"] = 112,
+	["ITM_SellPrice"] = 60,
 	["ITM_Sellable"] = true,
-	["Icon"] = "gfx/Inventory/Ruby.png",
-	["ItemType"] = "EquipItem",
-	["Name"] = "Ruby",
-	["Target"] = "1F",
+	["Icon"] = "GFX/Inventory/Yellow Flower.png",
+	["ItemType"] = "Consumable",
+	["Name"] = "Guba Flower",
+	["SpellAni_Reference"] = "SingleHeal",
+	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true}
 

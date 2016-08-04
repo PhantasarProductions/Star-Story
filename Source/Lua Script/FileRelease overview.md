@@ -200,6 +200,8 @@
 1. Script/JINC/IAA/ITM_HOMEO.lua
 1. Script/JINC/IAA/ITM_ICEBOMB.lua
 1. Script/JINC/IAA/ITM_KEY_YAQIRPA.lua
+1. Script/JINC/IAA/ITM_KILOBLUBAFLOWER.lua
+1. Script/JINC/IAA/ITM_KILOGUBAFLOWER.lua
 1. Script/JINC/IAA/ITM_MEDICINE.lua
 1. Script/JINC/IAA/ITM_MEDIKIT.lua
 1. Script/JINC/IAA/ITM_MINDCLEARPILL.lua
@@ -317,6 +319,7 @@
 1. Script/JINC/Shops/HAWK_BAKINA_HEAL.lua
 1. Script/JINC/Shops/HAWK_BANIKA_ATTACK.lua
 1. Script/JINC/Shops/HAWK_BANIKA_HEAL.lua
+1. Script/JINC/Shops/HAWK_BANIKA_HEAL_CYCLE2.lua
 1. Script/JINC/Shops/HAWK_BANIKA_SUPPORT.lua
 1. Script/JINC/Shops/LOSTPLANET_BAR_ITEMS.lua
 1. Script/JINC/Shops/STONESELLER.lua
@@ -628,4 +631,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Wed 03 August 2016; 23:37:48 CET
+### Last updated: Thu 04 August 2016; 09:48:43 CET

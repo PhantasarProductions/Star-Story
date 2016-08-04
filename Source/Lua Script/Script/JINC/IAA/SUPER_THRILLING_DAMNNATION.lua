@@ -1,6 +1,6 @@
 --[[
   SUPER_THRILLING_DAMNNATION.lua
-  Version: 16.08.02
+  Version: 16.08.04
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
