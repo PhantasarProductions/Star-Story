@@ -1,5 +1,5 @@
 --[[
-  ITM_PERMABUFF_HEART.lua
+  ITM_SUPER_ENERGYDRINK.lua
   Version: 16.08.05
   Copyright (C) 2016 Jeroen Petrus Broks
   
@@ -35,21 +35,24 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
+	["APRecover"] = 15,
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 250,
+	["ActSpeed"] = 100,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
+	["CureSleep"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Increases your max HP permanently (field only)",
+	["Description"] = "Grands 150 AP and cures sleep",
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 100000,
-	["ITM_SellPrice"] = 1,
+	["ITM_BuyPrice"] = 1000,
+	["ITM_SellPrice"] = 750,
 	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/CandyHeart.png",
+	["Icon"] = "gfx/inventory/Energy Drink.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Candy Heart",
-	["PermaBuff_HP"] = true,
+	["Name"] = "Super Energy Drink",
+	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1A",
+	["UseCombat"] = true,
 	["UseField"] = true}
 
 return ret

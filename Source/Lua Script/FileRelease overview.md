@@ -238,6 +238,7 @@
 1. Script/JINC/IAA/ITM_SUPERCAPSULE.lua
 1. Script/JINC/IAA/ITM_SUPERFIRSTAIDKIT.lua
 1. Script/JINC/IAA/ITM_SUPERICEBOMB.lua
+1. Script/JINC/IAA/ITM_SUPER_ENERGYDRINK.lua
 1. Script/JINC/IAA/ITM_SUPER_SHOT.lua
 1. Script/JINC/IAA/ITM_SUPER_THUNDER_DIAMAND.lua
 1. Script/JINC/IAA/ITM_SUPER_THUNDER_DIAMOND.lua
@@ -634,4 +635,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 05 August 2016; 17:38:49 CET
+### Last updated: Fri 05 August 2016; 17:42:39 CET
