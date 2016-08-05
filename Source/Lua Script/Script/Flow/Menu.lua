@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 16.08.04
+  Version: 16.08.05
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -166,7 +166,7 @@ local pbm = {HP=100}
 local pbms = {5,3,1}
 for stat in each({'Strength','Defense','Agility','Will','Resistance','Accuracy','Evasion','HP','AP'}) do
     if abl['PermaBuff_'..stat] then
-       RPGStat.IncStat(ch,'POWERUP_'..stat,(pmb[stat] or 1) * pbms[skill] )
+       RPGStat.IncStat(ch,'POWERUP_'..stat,(pbm[stat] or 1) * pbms[skill] )
        effect = true
        end
     end   
