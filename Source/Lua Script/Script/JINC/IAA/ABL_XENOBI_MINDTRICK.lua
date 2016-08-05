@@ -1,6 +1,6 @@
 --[[
   ABL_XENOBI_MINDTRICK.lua
-  Version: 16.08.04
+  Version: 16.08.05
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================

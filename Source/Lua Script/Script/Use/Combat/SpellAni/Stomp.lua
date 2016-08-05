@@ -1,7 +1,7 @@
 --[[
-  ZZZ_CID_DARKCHARGE.lua
+  Stomp.lua
   Version: 16.08.05
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -34,24 +34,24 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-ret = {
-	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 250,
-	["AttackElement"] = "Non-Elemental",
-	["AttackStat"] = "Strength",
-	["DefenseStat"] = "Defense",
-	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Elements/Dark.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Dark Charge",
-	["SpellAni_Reference"] = "SingleHeal",
-	["Target"] = "AF",
-	["UseCombat"] = true,
-	["UseField"] = true,
-	["UserNextMove"] = "ZZZ_CID_DARKSOULBREAKER",
-	["untauntable"] = true}
+-- @IF IGNORE
+SpellAni={}
+-- @FI
 
-return ret
+function SpellAni.Stomp(ActG,ActT,TarG,TarT)
+     local vuist = Image.Load('GFX/Combat/SpellAni/Stomp/Fist.png')
+     Image.HotCenter(vuist)
+     for size=0,200 do
+         DrawScreen()
+         Image.ScalePC(size,size)
+         Image.Show(vuist,400,300)
+         Image.ScalePC(100,100)
+         Flip()
+     end
+     if JCR6.Exists('Audio/SFX/Scenario/Reggie_Crash.ogg') then SFX("Audio/SFX/Scenario/Reggie_Crash.ogg") end
+end
 
--- This file is an automatically generated file!
 
+-- @IF IGNORE
+return SpellAni
+-- @FI

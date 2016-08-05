@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.04
+version: 16.08.05
 ]]
 ret = {
 	["ABL_AP"] = 6,
@@ -50,6 +50,8 @@ ret = {
 	["Icon"] = "GFX/Abilities/Fist.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Stomp",
+	["ScriptEffect_Reference"] = "RemoveEnemy",
+	["SpellAni_Reference"] = "Stomp",
 	["Target"] = "1F",
 	["UseCombat"] = true,
 	["untauntable"] = true}
