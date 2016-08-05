@@ -206,6 +206,7 @@
 1. Script/JINC/IAA/ITM_MEDIKIT.lua
 1. Script/JINC/IAA/ITM_MINDCLEARPILL.lua
 1. Script/JINC/IAA/ITM_MOLOTOV.lua
+1. Script/JINC/IAA/ITM_PERMABUFF_HEART.lua
 1. Script/JINC/IAA/ITM_PERMABUFF_REDPILL.lua
 1. Script/JINC/IAA/ITM_PHANTASAR_AMBROSIA.lua
 1. Script/JINC/IAA/ITM_PHANTASAR_ANTIDOTE.lua
@@ -633,4 +634,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 05 August 2016; 17:32:52 CET
+### Last updated: Fri 05 August 2016; 17:38:49 CET

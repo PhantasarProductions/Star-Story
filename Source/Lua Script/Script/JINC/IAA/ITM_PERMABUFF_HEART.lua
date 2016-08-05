@@ -1,5 +1,5 @@
 --[[
-  ITM_KILOGUBAFLOWER.lua
+  ITM_PERMABUFF_HEART.lua
   Version: 16.08.05
   Copyright (C) 2016 Jeroen Petrus Broks
   
@@ -35,27 +35,21 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["APRecover"] = 20,
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
-	["CureDisease"] = true,
-	["CureParalysis"] = true,
-	["CurePoison"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Heals 750 HP and cures poison, disease and paralysis and 20 AP",
-	["Healing"] = 750,
+	["Description"] = "Increases your max HP permanently (field only)",
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 112,
-	["ITM_SellPrice"] = 60,
+	["ITM_BuyPrice"] = 100,
+	["ITM_SellPrice"] = 75,
 	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/Yellow Flower.png",
+	["Icon"] = "GFX/Inventory/CandyHeart.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Kilo Guba Flower",
-	["SpellAni_Reference"] = "SingleHeal",
+	["Name"] = "Candy Heart",
+	["PermaBuff_HP"] = true,
 	["Target"] = "1A",
-	["UseCombat"] = true,
 	["UseField"] = true}
 
 return ret
