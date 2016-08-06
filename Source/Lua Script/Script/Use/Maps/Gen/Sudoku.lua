@@ -6,7 +6,7 @@
 	Mozilla Public License, v. 2.0. If a copy of the MPL was not 
 	distributed with this file, You can obtain one at 
 	http://mozilla.org/MPL/2.0/.
-        Version: 16.01.17
+        Version: 16.08.06
 ]]
 Sudoku = {}
 SudoRoot = {}  for i=2,9 do SudoRoot[i*i] = i end
@@ -108,6 +108,7 @@ if not correct then return end
 SFX("Audio/SFX/MBOX1.ogg")
 MapEXP()
 CSay("Sudoku solved")
+-- SFX("Audio/SFX/MBOX1.ogg")
 local tag,tagc
 for gx,gy,r,c in SudoQuery(work.RootSize) do 
     tag = "G"..gx..gy.."R"..r
@@ -124,6 +125,10 @@ Done("&SUDOKU."..id)
 end
 
 function SudoButton(id,tag,pc)
+local player = Actors.Actor('PLAYER')
+player.Walking=0
+player.Moving=0
+Actors.MoveTo('PLAYER',player.x,player.y-32)
 if CVV("&SUDOKU."..id) then return end
 local c = Sys.Val(pc)
 CSay("Player activates sudoku button: "..id.."/"..tag.."/"..c)
