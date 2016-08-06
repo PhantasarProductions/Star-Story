@@ -1,6 +1,6 @@
 --[[
   ITM_SUPER_THUNDER_DIAMOND.lua
-  Version: 16.08.05
+  Version: 16.08.06
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================

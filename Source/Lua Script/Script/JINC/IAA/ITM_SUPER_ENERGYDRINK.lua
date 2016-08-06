@@ -1,6 +1,6 @@
 --[[
   ITM_SUPER_ENERGYDRINK.lua
-  Version: 16.08.05
+  Version: 16.08.06
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -35,7 +35,7 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["APRecover"] = 15,
+	["APRecover"] = 150,
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 100,
 	["AttackElement"] = "Non-Elemental",
