@@ -80,7 +80,8 @@ ret = {
 		"%SHILDERS",
 		"%UPGRADES.ROLF",
 		"&MENUTUT.FIELD.ABILITIES",
-		"%NEWGAMEPLUS"},
+		"%NEWGAMEPLUS",
+		"%UPGRADES.EXHURU"},
 
 	prefix = {
 		"$CTIME",
@@ -124,6 +125,7 @@ ret = {
 		"%UPGRADES.ROLF",
 		"&MENUTUT.FIELD.ABILITIES",
 		"%NEWGAMEPLUS",
+		"%UPGRADES.EXHURU",
 		"<",
 		"%PLAYTIME.",
 		"&TUT.",
