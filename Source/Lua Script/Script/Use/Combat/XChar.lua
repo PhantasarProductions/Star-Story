@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.29
+version: 16.08.07
 ]]
 
 -- Kills for ExHuRU (and his "representatives")  
@@ -263,6 +263,7 @@ XCharAlternateAttack = {
                SerialBoxText("NEWABILITY","SPECIAL.ROLF","Combat")
                local act = Fighters.Hero[ai].Act
                act.ItemCode = "ABL_ROLF_AUTO_CRITICAL"
+               act.Item = ItemGet('ABL_ROLF_AUTO_CRITICAL')
                ActionFuncs.ABL('Hero',ai,act)
                return true
            end           
