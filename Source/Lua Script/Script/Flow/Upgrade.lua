@@ -1,6 +1,6 @@
 --[[
   Upgrade.lua
-  Version: 16.06.18
+  Version: 16.08.07
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -81,6 +81,8 @@ SpecificDraw = {
                                SFX("Audio/SFX/Shopping/ChaChing.ogg")
                                RPGStat.IncStat(pchar,"UPGRADE_"..v)
                                inc("%UPGRADES."..upper(pchar))
+                               if pchar=='Rolf' then Var.D('%UPGRADES.EXHURU',Var.C('%UPGRADES.ROLF')) end
+                               if pchar=='ExHuRU' then Var.D('%UPGRADES.ROLF',Var.C('%UPGRADES.EXHURU')) end
                                end
                             end
                          if price<=CVV('%CASH') then DarkText('Upgrade',520,y,0,0,r,g,b) end

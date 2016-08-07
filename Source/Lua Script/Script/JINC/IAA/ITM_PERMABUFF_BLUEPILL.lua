@@ -1,7 +1,7 @@
 --[[
-  ITM_HEATHRUB.lua
+  ITM_PERMABUFF_BLUEPILL.lua
   Version: 16.08.07
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -39,19 +39,18 @@ ret = {
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
-	["CureParalysis"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Cures \"Paralysis\"",
+	["Description"] = "What if I told you: Your Will goes up with this? (Field Only)",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 100,
 	["ITM_SellPrice"] = 75,
 	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/HeathRub.png",
+	["Icon"] = "GFX/Inventory/BluePill.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Heath Rub",
-	["SpellAni_Reference"] = "SingleHeal",
+	["Name"] = "Blue Pill",
+	["PermaBuff_Will"] = true,
 	["Target"] = "1A",
-	["UseCombat"] = true}
+	["UseField"] = true}
 
 return ret
 

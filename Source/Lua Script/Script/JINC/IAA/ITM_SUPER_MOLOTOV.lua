@@ -1,20 +1,24 @@
 ret = {
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 50,
+	["ActSpeed"] = 100,
 	["AttackElement"] = "Fire",
-	["AttackPower"] = 900,
+	["AttackPower"] = 400,
 	["AttackStat"] = "Will",
+	["CauseTerrified"] = true,
 	["DefenseStat"] = "Resistance",
-	["Description"] = "Iedereen in de fik",
+	["Description"] = "Disco Inferno!",
 	["HealingType"] = "Absolute",
+	["ITM_BuyPrice"] = 100,
+	["ITM_SellPrice"] = 75,
+	["ITM_Sellable"] = true,
 	["Icon"] = "GFX/Elements/Fire.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Sky Dragon Slash",
-	["SpellAni_External"] = true,
-	["SpellAni_Reference"] = "SkyDragonSlash",
+	["Name"] = "Super Molotov",
+	["SpellAni_Reference"] = "Inferno",
 	["Target"] = "AF",
 	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseField"] = true,
+	["untauntable"] = true}
 
 return ret
 
