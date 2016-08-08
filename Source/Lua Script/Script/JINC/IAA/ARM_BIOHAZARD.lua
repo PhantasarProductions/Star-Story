@@ -1,0 +1,41 @@
+ret = {
+	["APRecoverType"] = "Absolute",
+	["ARM_Hit%"] = 65,
+	["ARM_MaxAmmo"] = 3,
+	["ARM_PRICE_Hit%"] = 50,
+	["ARM_PRICE_MaxAmmo"] = 200,
+	["ARM_PRICE_Weight"] = 125,
+	["ARM_PRICE_XPower"] = 20,
+	["ARM_XPower"] = 0,
+	["ActSpeed"] = 5,
+	["AttackElement"] = "Non-Elemental",
+	["AttackPower"] = 50,
+	["AttackStat"] = "Strength",
+	["Buff_Accuracy"] = -3,
+	["Buff_Agility"] = -4,
+	["Buff_Defense"] = -10,
+	["Buff_Evasion"] = -100,
+	["Buff_HP"] = -2,
+	["Buff_Resistance"] = -10,
+	["Buff_Strength"] = -5,
+	["Buff_Will"] = -5,
+	["CauseAmnesia"] = true,
+	["CauseConfusion"] = true,
+	["CauseDisease"] = true,
+	["CauseParalysis"] = true,
+	["CausePoison"] = true,
+	["DefenseStat"] = "Defense",
+	["Description"] = "You dirty environment killer!",
+	["HealingType"] = "Absolute",
+	["Icon"] = "GFX/Abilities/Gun.png",
+	["ItemType"] = "Consumable",
+	["Name"] = "Biohazard cannon",
+	["SpellAni_Reference"] = "SingleHeal",
+	["Target"] = "1F",
+	["UseCombat"] = true,
+	["UseField"] = true}
+
+return ret
+
+-- This file is an automatically generated file!
+
