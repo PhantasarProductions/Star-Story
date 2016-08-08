@@ -175,6 +175,9 @@
 1. Script/JINC/IAA/ITM_BANDAGE.lua
 1. Script/JINC/IAA/ITM_BIOHAZARD.lua
 1. Script/JINC/IAA/ITM_BLUBAFLOWER.lua
+1. Script/JINC/IAA/ITM_BOOK1.lua
+1. Script/JINC/IAA/ITM_BOOK2.lua
+1. Script/JINC/IAA/ITM_BOOK3.lua
 1. Script/JINC/IAA/ITM_CHLOROFORM.lua
 1. Script/JINC/IAA/ITM_ENERGYDRINK.lua
 1. Script/JINC/IAA/ITM_EPO.lua
@@ -640,4 +643,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 08 August 2016; 11:52:54 CET
+### Last updated: Mon 08 August 2016; 12:08:33 CET

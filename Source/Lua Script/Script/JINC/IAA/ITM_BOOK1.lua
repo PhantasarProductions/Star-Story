@@ -1,22 +1,23 @@
 ret = {
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 250,
+	["ActSpeed"] = 20,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
-	["CauseSleep"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Put your enemy to sleep",
+	["Description"] = "Grants extra EXP to an ally",
 	["GramtEXPRecoverType"] = "Absolute",
+	["GrantEXP"] = 100,
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 300,
-	["ITM_SellPrice"] = 175,
+	["ITM_BuyPrice"] = 100,
+	["ITM_SellPrice"] = 75,
 	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/Chloroform.png",
+	["Icon"] = "GFX/Inventory/Book.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Choroform",
-	["Target"] = "1F",
+	["Name"] = "Old Book",
+	["Target"] = "1A",
 	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseField"] = true,
+	["untauntable"] = true}
 
 return ret
 

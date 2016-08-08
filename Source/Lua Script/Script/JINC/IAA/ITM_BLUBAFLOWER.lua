@@ -5,6 +5,7 @@ ret = {
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "Heals 250 HP",
+	["GramtEXPRecoverType"] = "Absolute",
 	["Healing"] = 250,
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 100,
