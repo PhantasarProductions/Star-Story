@@ -1,6 +1,6 @@
 --[[
   Thief.lua
-  Version: 16.06.03
+  Version: 16.08.08
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.06.03
+-- Version 16.08.08
 
 
 
@@ -98,6 +98,15 @@ for ak=1,1 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_BANDAGE', LVL=10, VLT=false }
 for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,10 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_BOOK1', LVL=150, VLT=false }
+for ak=1,5 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,25 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_BOOK2', LVL=300, VLT=false }
+for ak=1,3 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,10 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_BOOK3', LVL=500, VLT=false }
+for ak=1,1 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,5 do table.insert(Data.ItemSteal,temp) end
 Data.ActMinLevel["Abl.ITM_CHLOROFORM"] = 4		for ak=1,55 do table.insert(Data.Acts,"Abl.ITM_CHLOROFORM") end
 temp = { ITM='ITM_CHLOROFORM', LVL=40, VLT=false }
 for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
