@@ -14,7 +14,8 @@ ret = {
 	["Icon"] = "GFX/Inventory/Book.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Chronicle of Old",
-	["Target"] = "1F",
+	["SpellAni_Reference"] = "SingleHeal",
+	["Target"] = "1A",
 	["UseCombat"] = true,
 	["UseField"] = true}
 
