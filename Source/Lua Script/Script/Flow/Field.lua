@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 16.08.03
+  Version: 16.08.08
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -782,11 +782,14 @@ function SetUpTreasure(layerswitch) -- if layerswitch is set to 1 only reset thi
 	CSay("Find treasure from map itself")
 	CSay("Playthrough #"..pt)
 	for i = 1 , pt do
-		t = Maps.GetData("PT"..right("   "..pt,3).." Items")
-		if t~="" then table.insert(treasurestringarray,t) end    
+ 		t = Maps.GetData("PT"..right("   "..i,3).." Items")
+		if t~="" then -- table.insert(treasurestringarray,t) end    
+		   if treasurestring then treasurestring = treasurestring ..";" .. t else treasurestring=t end
+		   CSay('treasurestring = '..sval(treasurestring))
+		   end
 	end
 	-- Compile into a workable array
-	treasurestring=join(treasurestringarray,";")
+	--treasurestring=join(treasurestringarray,";")
 	for t in each(mysplit(treasurestring,";")) do
 		tra = mysplit(t,",")
 		if #tra~=2 then Sys.Error("Invalid treasure definition in this map! > "..t) end

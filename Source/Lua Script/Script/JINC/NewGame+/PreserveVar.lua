@@ -83,7 +83,8 @@ ret = {
 		"%NEWGAMEPLUS",
 		"%UPGRADES.EXHURU",
 		"%TREASURE_RATE[Special Item 16C76DA4]",
-		"%TREASURE_RATE[Special Item 16C8BF58]"},
+		"%TREASURE_RATE[Special Item 16C8BF58]",
+		"%TREASURE_RATE[Special Item 3C16F32D]"},
 
 	prefix = {
 		"$CTIME",
@@ -130,6 +131,7 @@ ret = {
 		"%UPGRADES.EXHURU",
 		"%TREASURE_RATE[Special Item 16C76DA4]",
 		"%TREASURE_RATE[Special Item 16C8BF58]",
+		"%TREASURE_RATE[Special Item 3C16F32D]",
 		"<",
 		"%PLAYTIME.",
 		"&TUT.",

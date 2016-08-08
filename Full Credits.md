@@ -786,8 +786,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/English/Scenario/GENERAL/ARMS
     1. Scenario: Languages/English/Scenario/GENERAL/COMBAT
     1. Scenario: Languages/English/Scenario/GENERAL/SCOTTY
-    1. Scenario: Languages/English/Scenario/GENERAL/SECRETDUNGEON
     1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Long Red Hair.png
+    1. Scenario: Languages/English/Scenario/GENERAL/SECRETDUNGEON
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_ALLQUIET
     1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Blonde Piggy Tails.png
     1. Graphics: GFX/Actors/SinglePic/Ji/Grand Master.png
@@ -842,8 +842,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/15
     1. General Data: Data/LvStats/Briggs/16
     1. Graphics: GFX/Actors/Phantasar/Gnome/Rachel.png
-    1. General Data: Data/LvStats/Briggs/17
     1. Graphics: GFX/Textures/Astrilopups/City/HOLE.png
+    1. General Data: Data/LvStats/Briggs/17
     1. General Data: Data/LvStats/Briggs/18
     1. General Data: Data/LvStats/Briggs/19
     1. General Data: Data/LvStats/Briggs/2
@@ -858,8 +858,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Textures/Astrilopups/Facility/North.png
     1. General Data: Data/LvStats/Briggs/24
     1. Graphics: GFX/Textures/Astrilopups/Facility/East.png
-    1. General Data: Data/LvStats/Briggs/25
-    1. Graphics: GFX/Textures/Astrilopups/Facility/North-West.png
+    1. General Data: Data/LvStats/Briggs/25 < alias > GFX/Textures/Astrilopups/Facility/North-West.png
     1. Graphics: GFX/Textures/Astrilopups/Facility/West.png
     1. General Data: Data/LvStats/Briggs/26
     1. Graphics: GFX/Textures/Astrilopups/Facility/North-East.png
@@ -881,8 +880,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Textures/Wendicka/Naked/WendickaNakedStandEast.png
     1. General Data: Data/LvStats/Briggs/32
     1. Graphics: GFX/Textures/Wendicka/Naked/WendickaNakedHandsupEast.png
-    1. General Data: Data/LvStats/Briggs/33
     1. Graphics: GFX/Textures/Wendicka/Naked/WendickaNakedHandsupInChainsEast.png
+    1. General Data: Data/LvStats/Briggs/33
     1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank_Wendicka_Sue.png
     1. General Data: Data/LvStats/Briggs/34
     1. General Data: Data/LvStats/Briggs/35
@@ -947,8 +946,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_Gunner.png
     1. General Data: Data/LvStats/Briggs/65
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_FlameThrower.png
-    1. General Data: Data/LvStats/Briggs/66
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_IceCannon.png
+    1. General Data: Data/LvStats/Briggs/66
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_WaterGun.png
     1. General Data: Data/LvStats/Briggs/67
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_WindGun.png
@@ -1009,8 +1008,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Maps/Phantasar.lua
     1. General Data: Data/LvStats/Briggs/94
     1. Script: Script/Maps/Phantasar - Frendor Bushes.lua
-    1. General Data: Data/LvStats/Briggs/95
     1. Script: Script/Maps/Phantasar - Frendor.lua
+    1. General Data: Data/LvStats/Briggs/95
     1. General Data: Data/LvStats/Briggs/96
     1. Script: Script/Maps/Nizozemska - Belioss.lua
     1. Script: Script/Maps/Phantasar - Ghost House.lua
@@ -1219,8 +1218,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Boss/ExHuRU.lua
     1. General Data: Data/LvStats/Crystal/75
     1. Script: Script/JINC/Foes/Boss/DeathMyrQueen.lua
-    1. General Data: Data/LvStats/Crystal/76
     1. Script: Script/JINC/Foes/Boss/SuperZombie.lua
+    1. General Data: Data/LvStats/Crystal/76
     1. Script: Script/JINC/Foes/Boss/FireSpiderYoung.lua
     1. General Data: Data/LvStats/Crystal/77
     1. Script: Script/JINC/Foes/Boss/SuperCyborg.lua
