@@ -165,7 +165,7 @@ if abl.GrantEXP and abl.GrantEXP>0 and tg=='Hero' then
 if abl.AttackPower and abl.AttackPower>0 then
    atkdata = {
        atk = abl.AttackStat,
-       def = abl.DefenseStat,
+       def = abl.DefenseStat, 
        mod = (abl.AttackPower + (act.XPower or 0)) / 100,
        element
            = abl.AttackElement
