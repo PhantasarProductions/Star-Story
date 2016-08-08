@@ -151,12 +151,12 @@ if abl.APRecover and abl.APRecover>0 and tg=='Hero' then
    end
 -- Extra EXP absolute or by percent
 if abl.GrantEXP and abl.GrantEXP>0 and tg=='Hero' then
-   (({ Absolute = function() RPGChar.Points(tcht,"EXP").Inc(abl.GrantEXP*2); effect=true end,
+   (({ Absolute = function() RPGChar.Points(cht,"EXP").Inc(abl.GrantEXP*2); effect=true end,
        Percent  = function()
                  local hpt = RPGChar.Points(cht,"EXP")
                  local hpm = hpt.Maximum
                  local points = (hpm/100)
-                 RPGChar.Points(tcht,"EXP").Inc(abl.GrantEXP)
+                 RPGChar.Points(cht,"EXP").Inc(abl.GrantEXP)
                  effect=true
                  end
    })[abl.GrantEXPType] or function() Sys.Error("Unknown GrantEXP Type: "..sval(abl.HealingType)) end )()               
