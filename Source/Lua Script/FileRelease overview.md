@@ -232,6 +232,7 @@
 1. Script/JINC/IAA/ITM_PHANTASAR_SUPERCARROT.lua
 1. Script/JINC/IAA/ITM_PHANTASAR_SUPERSALVE.lua
 1. Script/JINC/IAA/ITM_PHAN_BANANAS.lua
+1. Script/JINC/IAA/ITM_PHAN_LEVELAPPLE.lua
 1. Script/JINC/IAA/ITM_PHAN_PRISMDIAMOND.lua
 1. Script/JINC/IAA/ITM_PHAN_TRAVEL.lua
 1. Script/JINC/IAA/ITM_POISONDART.lua
@@ -643,4 +644,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 09 August 2016; 16:41:05 CET
+### Last updated: Tue 09 August 2016; 20:25:20 CET
