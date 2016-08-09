@@ -1119,8 +1119,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Combat/StatusChanges/Death.lua
     1. General Data: Data/LvStats/Crystal/40
     1. Script: Script/Use/Combat/StatusChanges/Fear.lua
-    1. Script: Script/Use/Combat/AltEnemyBuild/SuperFoe_FireSpider.lua
     1. General Data: Data/LvStats/Crystal/41
+    1. Script: Script/Use/Combat/AltEnemyBuild/SuperFoe_FireSpider.lua
     1. Script: Script/Use/Combat/AltEnemyBuild/ExHuRU.lua
     1. Script: Script/Use/Combat/Foe_AI/FireSpider.lua
     1. General Data: Data/LvStats/Crystal/42
@@ -1193,8 +1193,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/Gremlin.lua
     1. General Data: Data/LvStats/Crystal/66
     1. Script: Script/JINC/Foes/Reg/Hag.lua
-    1. Script: Script/JINC/Foes/Reg/Ghoul.lua
     1. General Data: Data/LvStats/Crystal/67
+    1. Script: Script/JINC/Foes/Reg/Ghoul.lua
     1. Script: Script/JINC/Foes/Reg/HellHound.lua
     1. Script: Script/JINC/Foes/Boss/BigLion.lua
     1. General Data: Data/LvStats/Crystal/68

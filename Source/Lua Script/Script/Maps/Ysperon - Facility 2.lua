@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.23
+version: 16.08.09
 ]]
 -- @USE /Script/Use/Maps/Gen/SchuifNext.lua
 
@@ -89,11 +89,19 @@ function Boss()
   CamScroll(camposes[1])
   Actors.Spawn("SpotExHuRU","GFX/Actors/Player","ExHuRU")
   Actors.ChoosePic("ExHuRU","EXHURU.SOUTH")
-  ExOpen()
+  --ExOpen()
+  for i=1,39 do
+      Maps.Obj.Obj('ExLinks').X = Maps.Obj.Obj('ExLinks').X - 1 
+      Maps.Obj.Obj('ExRechts').X = Maps.Obj.Obj('ExRechts').X + 1
+      DrawScreen()
+      Flip()
+  end     
   Actors.MoveToSpot("ExHuRU","MeetExHuRU",1)
   Actors.MoveTo("ExHuRU",352,1920)
   CamScroll(camposes[2])
-  ExDicht()
+  -- ExDicht()
+  Maps.Obj.Seal('ExLinks')
+  Maps.Obj.Seal('ExRechts')
   MapText("EXHURU2")
   SyncLevel("ExHuRU")
   SetUpBossFight()
@@ -156,8 +164,8 @@ function GALE_OnLoad()
   ZA_Enter("ShowOne",MapShow,"One")
   ZA_Enter("ShowTwo",MapShow,"Two")
   ZA_Enter("Boss",Boss)
-  ZA_Enter("OpenEx",ExOpen)
-  ZA_Leave("OpenEx",ExDicht)
+  -- ZA_Enter("OpenEx",ExOpen)
+  -- ZA_Leave("OpenEx",ExDicht)
   ZA_Enter("GoBackToTheLab",GoBackToTheLab)
   ZA_Enter("McLeen",McLeen)
 end
