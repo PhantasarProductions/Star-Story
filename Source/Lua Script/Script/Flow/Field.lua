@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 16.08.08
+  Version: 16.08.09
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -681,6 +681,10 @@ if foe.barrier then
    end
 end
 
+function OnTheScreen(o)
+   return o.X>-64 and o.X<864 and o.Y>-128 and o.Y<728 
+end
+
 function ControlFoes()
 local foe
 local player = Actors.Actor(cplayer)
@@ -693,7 +697,7 @@ if not FieldFoes then return end
     if Maps.Multi()==0 or Maps.LayerCodeName==foe.Layer then obj = Actors.Actor(foe.Tag) else obj = nil end -- foe = FieldFoes[replace(obj.Tag," FoeActor","")] -- Needed due to the optimization
     -- CSay("We got a foe on  : "..obj.Tag.." >> "..sval(foe~=nil))
     -- CSay("We got suffix on : "..obj.Tag.." >> "..sval(suffixed(obj.Tag,"FoeActor")))
-    if foe and (Maps.Multi()==0 or foe.Layer==	Maps.LayerCodeName) and obj.Visible>0 and suffixed(obj.Tag,"FoeActor")   then
+    if foe and (Maps.Multi()==0 or foe.Layer==	Maps.LayerCodeName) and obj.Visible>0 and OnTheScreen(obj) and suffixed(obj.Tag,"FoeActor")   then
        (({   -- Switch
           HZ = function ()  -- Horizontaal
                if FoeReturning(foe) then
