@@ -766,8 +766,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_DUNGEON
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_DUNGEON_CELL
     1. Graphics: GFX/Combat/Fighters/Hero/Rolf.Attack.2.png
-    1. Graphics: GFX/Combat/Fighters/Hero/Rolf.Cast.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_GRASSJUNGLE
+    1. Graphics: GFX/Combat/Fighters/Hero/Rolf.Cast.png
     1. Graphics: GFX/Combat/Fighters/Hero/Rolf.Attack.1.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_GRASSJUNGLE_3
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_JUNKYARD
@@ -952,8 +952,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_WaterGun.png
     1. General Data: Data/LvStats/Briggs/67
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_WindGun.png
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_RockThrower.png
     1. General Data: Data/LvStats/Briggs/68
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_RockThrower.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_LightGun.png
     1. General Data: Data/LvStats/Briggs/69
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_DarkGun.png
@@ -1114,8 +1114,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Combat/AblSpecialEffect/Void.lua
     1. General Data: Data/LvStats/Crystal/39
     1. Script: Script/Use/Combat/StatusChanges/IDDQD.lua
-    1. Script: Script/Use/Combat/StatusChanges/Confusion.lua
     1. General Data: Data/LvStats/Crystal/4
+    1. Script: Script/Use/Combat/StatusChanges/Confusion.lua
     1. Script: Script/Use/Combat/StatusChanges/Death.lua
     1. General Data: Data/LvStats/Crystal/40
     1. Script: Script/Use/Combat/StatusChanges/Fear.lua
@@ -1206,8 +1206,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Boss/QueenMyr.lua
     1. General Data: Data/LvStats/Crystal/70
     1. Script: Script/JINC/Foes/Boss/AstrilopupElite.lua
-    1. Script: Script/JINC/Foes/Boss/Mid-Boss.lua
     1. General Data: Data/LvStats/Crystal/71
+    1. Script: Script/JINC/Foes/Boss/Mid-Boss.lua
     1. Script: Script/JINC/Foes/Boss/GiantSnake.lua
     1. General Data: Data/LvStats/Crystal/72
     1. Script: Script/JINC/Foes/Boss/Cultist Leader.lua

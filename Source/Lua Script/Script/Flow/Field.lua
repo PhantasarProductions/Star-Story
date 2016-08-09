@@ -682,7 +682,8 @@ if foe.barrier then
 end
 
 function OnTheScreen(o)
-   return o.X>-64 and o.X<864 and o.Y>-128 and o.Y<728 
+   local ox,oy = o.X-Maps.CamX,o.Y-Maps.CamY
+   return ox>-64 and ox<864 and oy>-128 and oy<728 
 end
 
 function ControlFoes()
