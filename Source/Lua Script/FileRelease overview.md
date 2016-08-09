@@ -178,6 +178,7 @@
 1. Script/JINC/IAA/ITM_BOOK1.lua
 1. Script/JINC/IAA/ITM_BOOK2.lua
 1. Script/JINC/IAA/ITM_BOOK3.lua
+1. Script/JINC/IAA/ITM_BOOK4.lua
 1. Script/JINC/IAA/ITM_CHLOROFORM.lua
 1. Script/JINC/IAA/ITM_ENERGYDRINK.lua
 1. Script/JINC/IAA/ITM_EPO.lua
@@ -644,4 +645,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 09 August 2016; 20:25:20 CET
+### Last updated: Tue 09 August 2016; 20:43:37 CET
