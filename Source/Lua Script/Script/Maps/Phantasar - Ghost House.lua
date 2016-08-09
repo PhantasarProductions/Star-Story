@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.04
+version: 16.08.09
 ]]
 
 -- @USE Phantasar.lua
@@ -56,6 +56,7 @@ function OpenDoor()
   local tag = '&DONE.PHANTASAR.GHOSTHOUSE.ROOM['..Maps.LayerCodeName..']'
   -- local vsolved = CVV(tag)
   if not Done(tag) then
+     SFX("Audio/SFX/MBOX1.ogg")
      MapEXP()
      Maps.Obj.Kill('BlockNext',1)
      Maps.Obj.Kill('Plate2Open',1)
