@@ -1,9 +1,9 @@
 ret = {
 	["ABL_AP"] = 15,
-	["ABL_APCut"] = 15000,
-	["ABL_Cancel"] = 5000,
+	["ABL_APCut"] = 150,
+	["ABL_Cancel"] = 500,
 	["ABL_DblPower"] = 200000,
-	["ABL_Instant"] = 20000,
+	["ABL_Instant"] = 200,
 	["ABL_Pose"] = "Attack",
 	["ABL_Speed"] = 750,
 	["APRecoverType"] = "Absolute",

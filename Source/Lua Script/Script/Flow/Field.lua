@@ -790,7 +790,8 @@ function SetUpTreasure(layerswitch) -- if layerswitch is set to 1 only reset thi
 	end
 	-- Compile into a workable array
 	--treasurestring=join(treasurestringarray,";")
-	for t in each(mysplit(treasurestring,";")) do
+	if not treasurestring then return end
+	for t in each(mysplit(treasurestring ,";")) do
 		tra = mysplit(t,",")
 		if #tra~=2 then Sys.Error("Invalid treasure definition in this map! > "..t) end
 		for i=1,Sys.Val(tra[2]) do        
