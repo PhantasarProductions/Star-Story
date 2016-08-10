@@ -1,6 +1,6 @@
 --[[
   Flirmouse_King.lua
-  Version: 16.07.07
+  Version: 16.08.10
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.07.07
+-- Version 16.08.10
 
 
 
