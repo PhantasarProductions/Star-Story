@@ -994,8 +994,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Maps/Ysperon - Facility.lua
     1. General Data: Data/LvStats/Briggs/89
     1. Script: Script/Maps/Vulpina - Town.lua
-    1. Script: Script/Maps/Volcania - Volcanic Plains.lua
     1. General Data: Data/LvStats/Briggs/9
+    1. Script: Script/Maps/Volcania - Volcanic Plains.lua
     1. Script: Script/Maps/Poloqor - Mid-Boss.lua
     1. General Data: Data/LvStats/Briggs/90
     1. Script: Script/Maps/Nizozemska - Space Port.lua
@@ -1005,8 +1005,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Maps/Nizozemska - Marlon's house.lua
     1. Script: Script/Maps/Nizozemska - Lake.lua
     1. Script: Script/Maps/Phantasar - Frendor Bushes - Arrival.lua
-    1. Script: Script/Maps/Phantasar.lua
     1. General Data: Data/LvStats/Briggs/93
+    1. Script: Script/Maps/Phantasar.lua
     1. General Data: Data/LvStats/Briggs/94
     1. Script: Script/Maps/Phantasar - Frendor Bushes.lua
     1. Script: Script/Maps/Phantasar - Frendor.lua
@@ -1066,8 +1066,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Crystal/23
     1. General Data: Data/LvStats/Crystal/24
     1. Script: Script/Flow/Excalibur_Transport.lua
-    1. Script: Script/Flow/EndCredits.lua
     1. General Data: Data/LvStats/Crystal/25
+    1. Script: Script/Flow/EndCredits.lua
     1. Script: Script/Use/Anyway/Full.lua
     1. Script: Script/Use/Anyway/ReLevel.lua
     1. General Data: Data/LvStats/Crystal/26
@@ -1081,8 +1081,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/World/Phantasar.lua
     1. General Data: Data/LvStats/Crystal/29
     1. Script: Script/External/SpellAni/Thriller.lua
-    1. Script: Script/Use/Maps/Hawk/AutoNewNav.lua
     1. General Data: Data/LvStats/Crystal/3
+    1. Script: Script/Use/Maps/Hawk/AutoNewNav.lua
     1. Script: Script/Use/Maps/Hawk/ArrivalPhysillium.lua
     1. Script: Script/Use/Maps/Hawk/Teach Wendicka.lua
     1. General Data: Data/LvStats/Crystal/30
@@ -1120,8 +1120,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Combat/StatusChanges/Fear.lua
     1. General Data: Data/LvStats/Crystal/40
     1. Script: Script/Use/Combat/AltEnemyBuild/SuperFoe_FireSpider.lua
-    1. Script: Script/Use/Combat/AltEnemyBuild/ExHuRU.lua
     1. General Data: Data/LvStats/Crystal/41
+    1. Script: Script/Use/Combat/AltEnemyBuild/ExHuRU.lua
     1. Script: Script/Use/Combat/Foe_AI/FireSpider.lua
     1. Script: Script/Use/Combat/Foe_AI/ExHuRU_AI.lua
     1. General Data: Data/LvStats/Crystal/42
@@ -1246,8 +1246,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Crystal/83
     1. Script: Script/JINC/Foes/Goddess/Add_LightGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_DarkGun.lua
-    1. Script: Script/JINC/Foes/Goddess/Add_VenomGun.lua
     1. General Data: Data/LvStats/Crystal/84
+    1. Script: Script/JINC/Foes/Goddess/Add_VenomGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_virusGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_Trq.lua
     1. General Data: Data/LvStats/Crystal/85
