@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.30
+version: 16.08.10
 ]]
 -- @USE Phantasar.lua
 
@@ -138,5 +138,6 @@ function GALE_OnLoad()
    EncounterBack = "Mines"
    if CVV('&RACHEL.DONE.AIROM.STUFF') then Maps.Obj.Kill("Stuff") end
    ZA_Enter('Boss',Boss)
+   ZA_Enter('Bye',GoWorld,"Phantasar")
 end
    
