@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.07.07
+version: 16.08.10
 ]]
 
 
--- Version 16.07.07
+-- Version 16.08.10
 
 
 
@@ -57,7 +57,7 @@ Data = {
 	EleRes_Healing = 6,
 	EleRes_DarkHealing = 5,
 	Stat = {
-		["Strength"] = {489,3},
+		["Strength"] = {489,500},
 		["Defense"] = {187,188},
 		["Will"] = {291,293},
 		["Resistance"] = {198,199},
@@ -66,7 +66,7 @@ Data = {
 		["Evasion"] = {39,42},
 		["HP"] = {20000,20100},
 		["AP"] = {0,0},
-		["LevelRange"] = {200,202},
+		["LevelRange"] = {200,222},
 },
 	StatusResistance = {
 		["Poison"] = 100   --[[ #1 ]],

@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.07
+version: 16.08.10
 ]]
 
 AltComeInFromNorth = { [6]=2673 }
@@ -106,7 +106,7 @@ MapText("PREBOSS")
 -- Needed pre-combat settings
 Party("Wendicka;Crystal;Yirl;Foxy;Xenobi") -- Party order is essential. Wendicka MUST be up-front during this fight!
 RPGStat.Points("Wendicka","HP").Minimum = 1 -- Wendicka cannot die in this fight!
-Maps.Obj.Kill("BOSS")
+Maps.Obj.Kill("BOSS",1)
 Music("SYS/SILENCE")
 -- Init combat
 CleanCombat()

@@ -793,13 +793,13 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Actors/SinglePic/Ji/Grand Master.png
     1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Green Alien With Long Moss Hair.png
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_HANGAR
-    1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Bald Black.png
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_HOME
+    1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Bald Black.png
     1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Afro.png
     1. Graphics: GFX/Actors/SinglePic/Ji/Ji East - Black long hair.png
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_KITCHEN
-    1. Graphics: GFX/Actors/SinglePic/Ji/Ji East - Black long hair - Light Saber.png
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_SICKBAY
+    1. Graphics: GFX/Actors/SinglePic/Ji/Ji East - Black long hair - Light Saber.png
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_UNDERATTACK
     1. Graphics: GFX/Actors/SinglePic/Cid/Dard Boorth.png
     1. Graphics: GFX/Actors/SinglePic/Cid/Dard Moeder.png
@@ -826,8 +826,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/English/Scenario/SCENONLY/OPENING/START
     1. Graphics: GFX/Actors/SinglePic/Sewers/Zombie.png < alias > GFX/Combat/Fighters/Foe/Boss/SuperZombie.png < alias > GFX/Combat/Fighters/Foe/Reg/Zombie.png
     1. Scenario: Languages/English/Scenario/TUTORIAL/BAGSFULL
-    1. Graphics: GFX/Actors/SinglePic/Meteor Staff/LoveJoy.Dead.png
     1. General Data: Data/LvStats/Briggs/0
+    1. Graphics: GFX/Actors/SinglePic/Meteor Staff/LoveJoy.Dead.png
     1. Graphics: GFX/Actors/Phantasar/Elf/Rosetta.png
     1. General Data: Data/LvStats/Briggs/1
     1. Graphics: GFX/Actors/Phantasar/Fairy/Marrilona.png
@@ -898,8 +898,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/40
     1. Graphics: GFX/Textures/Nizozemska/Meubels/Plavuizen.png
     1. General Data: Data/LvStats/Briggs/41
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank1.piko
     1. General Data: Data/LvStats/Briggs/42
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank1.piko
     1. General Data: Data/LvStats/Briggs/43
     1. General Data: Data/LvStats/Briggs/44
     1. General Data: Data/LvStats/Briggs/45
@@ -913,8 +913,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/49
     1. General Data: Data/LvStats/Briggs/5
     1. Graphics: GFX/Textures/Nizozemska/Meubels/Open Haard.png
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Foto van Sue.png
     1. General Data: Data/LvStats/Briggs/50
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Foto van Sue.png
     1. Graphics: GFX/Combat/Fighters/Foe/Reg/Bladeh.png
     1. General Data: Data/LvStats/Briggs/51
     1. Graphics: GFX/Combat/Fighters/Foe/Reg/Cyborg Ji.png
@@ -1109,8 +1109,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Combat/AblSpecialEffect/Summon.lua
     1. General Data: Data/LvStats/Crystal/37
     1. Script: Script/Use/Combat/AblSpecialEffect/UpgradeToSnowLeopard.lua
-    1. Script: Script/Use/Combat/AblSpecialEffect/Randomizer.lua
     1. General Data: Data/LvStats/Crystal/38
+    1. Script: Script/Use/Combat/AblSpecialEffect/Randomizer.lua
     1. Script: Script/Use/Combat/AblSpecialEffect/Void.lua
     1. Script: Script/Use/Combat/StatusChanges/IDDQD.lua
     1. General Data: Data/LvStats/Crystal/39
@@ -1179,8 +1179,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Elf.lua
     1. General Data: Data/LvStats/Crystal/60
     1. Script: Script/JINC/Foes/Reg/Cyborg Ji.lua
-    1. Script: Script/JINC/Foes/Reg/DeathMyr.lua
     1. General Data: Data/LvStats/Crystal/61
+    1. Script: Script/JINC/Foes/Reg/DeathMyr.lua
     1. Script: Script/JINC/Foes/Reg/CyberAstrilopup.lua
     1. General Data: Data/LvStats/Crystal/62
     1. Script: Script/JINC/Foes/Reg/Spider.lua
@@ -1194,8 +1194,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/Hag.lua
     1. General Data: Data/LvStats/Crystal/66
     1. Script: Script/JINC/Foes/Reg/Ghoul.lua
-    1. Script: Script/JINC/Foes/Reg/HellHound.lua
     1. General Data: Data/LvStats/Crystal/67
+    1. Script: Script/JINC/Foes/Reg/HellHound.lua
     1. Script: Script/JINC/Foes/Boss/BigLion.lua
     1. General Data: Data/LvStats/Crystal/68
     1. Script: Script/JINC/Foes/Boss/Cyborg Lord.lua
@@ -1233,11 +1233,11 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/SuperBoss/BlackHoleDweller.lua
     1. General Data: Data/LvStats/Crystal/8
     1. Script: Script/JINC/Foes/SpecialBoss/McLeen.lua
-    1. Script: Script/JINC/Foes/Goddess/Goddess.lua
     1. General Data: Data/LvStats/Crystal/80
+    1. Script: Script/JINC/Foes/Goddess/Goddess.lua
     1. Script: Script/JINC/Foes/Goddess/Add_Gunner.lua
-    1. Script: Script/JINC/Foes/Goddess/Add_FlameThrower.lua
     1. General Data: Data/LvStats/Crystal/81
+    1. Script: Script/JINC/Foes/Goddess/Add_FlameThrower.lua
     1. Script: Script/JINC/Foes/Goddess/Add_IceCannon.lua
     1. Script: Script/JINC/Foes/Goddess/Add_WaterGun.lua
     1. General Data: Data/LvStats/Crystal/82
