@@ -35,6 +35,10 @@ Import    BRL.GLMax2D
 Import  "-lfontconfig"
 ?
 
+?MacOS
+Import "imp/MacNameBlockout.bmx"
+?
+
 
 Import "imp/JCR6Crash.bmx"
 Import "imp/DeleteCrash.bmx"
@@ -54,9 +58,6 @@ Import "imp/LoadGame.bmx"
 Import "imp/versions.bmx"
 
 ' Mac name check
-?MacOS
-Import "imp/MacNameBlockout.bmx"
-?
 
 
 'Flow

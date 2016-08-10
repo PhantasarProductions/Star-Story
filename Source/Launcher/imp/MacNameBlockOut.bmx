@@ -32,6 +32,10 @@ Strict
 Import tricky_units.prefixsuffix
 Import brl.system
 
+MKL_Version "LAURA II - MacNameBlockOut.bmx","16.08.10"
+MKL_Lic     "LAURA II - MacNameBlockOut.bmx","GNU General Public License 3"
+
+AppTitle = "LAURA LAUNCHER"
 If Not Suffixed(AppFile,"Star Story.app/Contents/MacOS/Star Story")
 	Notify "There are some name errors in the launcher name preventing secure work on Mac. Please make sure the names of the files are correctly set up."
 	End
