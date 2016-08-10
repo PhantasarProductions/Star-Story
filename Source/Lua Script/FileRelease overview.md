@@ -279,6 +279,7 @@
 1. Script/JINC/IAA/MOO_Z1_ZIEK.lua
 1. Script/JINC/IAA/MOO_Z2_ALLE_STATUSSEN.lua
 1. Script/JINC/IAA/MOO_Z2_STERF.lua
+1. Script/JINC/IAA/PERMABUFF_GREENPILL.lua
 1. Script/JINC/IAA/PERMABUFF_YELLOWPILL.lua
 1. Script/JINC/IAA/PHANTASAR_APPLE.lua
 1. Script/JINC/IAA/SUPER_FOXY_SKYDRAGONSLASH.lua
@@ -646,4 +647,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Tue 09 August 2016; 23:08:56 CET
+### Last updated: Wed 10 August 2016; 10:39:45 CET
