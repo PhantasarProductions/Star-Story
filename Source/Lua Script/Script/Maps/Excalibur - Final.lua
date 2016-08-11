@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.04
+version: 16.08.11
 ]]
 
 -- [[ @USE /Script/Use/Maps/Gen/Schuif.lua ]]
@@ -401,6 +401,7 @@ function PostBoss005()
 end  
 
 function GoHome() 
+  Var.D(keyinsysvar,serialize('ret',keycards))
   LoadMap('Excalibur_Home')
   SpawnPlayer('Voordeur')
   Award('BONUS_HOME')
