@@ -47,7 +47,7 @@ for ak=1,50 do
         x = rand(sx-16,sx+16)
         y = rand(sy-64,sy)
         Image.Rotate(rand(0,360))
-        local s = Rand(50,100)
+        local s = rand(50,100)
         Image.ScalePC(s,s)
         Image.Draw('SA_LIGHT_BASE',x,y)
         Image.ScalePC(100,100)

@@ -1132,128 +1132,129 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Combat/SpellAni/Johnson_Phaser.lua
     1. General Data: Data/LvStats/Crystal/44
     1. Script: Script/Use/Combat/SpellAni/ARK SMASH.lua
-    1. Script: Script/Use/Combat/FoeAltImage/Cultist.lua
+    1. Script: Script/Use/Combat/SpellAni/Love, shine a light.lua
     1. General Data: Data/LvStats/Crystal/45
+    1. Script: Script/Use/Combat/FoeAltImage/Cultist.lua
     1. Script: Script/Use/Combat/FoeAltImage/Alg.lua
+    1. General Data: Data/LvStats/Crystal/46
     1. Script: Script/Use/Combat/AltBackGrounds/Black Hole Dweller.lua
     1. Script: Script/Use/Combat/AltBackGrounds/Goddess in Space.lua
-    1. General Data: Data/LvStats/Crystal/46
-    1. Script: Script/JINC/Foes/Reg/Bladeh.lua
     1. General Data: Data/LvStats/Crystal/47
-    1. Script: Script/JINC/Foes/Reg/Lion.lua
+    1. Script: Script/JINC/Foes/Reg/Bladeh.lua
     1. General Data: Data/LvStats/Crystal/48
+    1. Script: Script/JINC/Foes/Reg/Lion.lua
     1. Script: Script/JINC/Foes/Reg/BlackLizard.lua
-    1. Script: Script/JINC/Foes/Reg/Cid.lua
     1. General Data: Data/LvStats/Crystal/49
-    1. Script: Script/JINC/Foes/Reg/Myr.lua
+    1. Script: Script/JINC/Foes/Reg/Cid.lua
     1. General Data: Data/LvStats/Crystal/5
+    1. Script: Script/JINC/Foes/Reg/Myr.lua
     1. Script: Script/JINC/Foes/Reg/Insetto.lua
-    1. Script: Script/JINC/Foes/Reg/Flysky.lua
     1. General Data: Data/LvStats/Crystal/50
-    1. Script: Script/JINC/Foes/Reg/AstrilopupGuard.lua
+    1. Script: Script/JINC/Foes/Reg/Flysky.lua
     1. General Data: Data/LvStats/Crystal/51
+    1. Script: Script/JINC/Foes/Reg/AstrilopupGuard.lua
     1. Script: Script/JINC/Foes/Reg/Salamander.lua
-    1. Script: Script/JINC/Foes/Reg/Pyroguin.lua
     1. General Data: Data/LvStats/Crystal/52
+    1. Script: Script/JINC/Foes/Reg/Pyroguin.lua
     1. Script: Script/JINC/Foes/Reg/Wolf.lua
     1. General Data: Data/LvStats/Crystal/53
     1. Script: Script/JINC/Foes/Reg/Thief.lua
-    1. Script: Script/JINC/Foes/Reg/Hawk.lua
     1. General Data: Data/LvStats/Crystal/54
+    1. Script: Script/JINC/Foes/Reg/Hawk.lua
     1. Script: Script/JINC/Foes/Reg/Goblin.lua
-    1. Script: Script/JINC/Foes/Reg/Cultist.lua
     1. General Data: Data/LvStats/Crystal/55
-    1. Script: Script/JINC/Foes/Reg/Imp.lua
+    1. Script: Script/JINC/Foes/Reg/Cultist.lua
     1. General Data: Data/LvStats/Crystal/56
+    1. Script: Script/JINC/Foes/Reg/Imp.lua
     1. Script: Script/JINC/Foes/Reg/Shroom.lua
-    1. Script: Script/JINC/Foes/Reg/Cow.lua
     1. General Data: Data/LvStats/Crystal/57
-    1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Befindo.lua
+    1. Script: Script/JINC/Foes/Reg/Cow.lua
     1. General Data: Data/LvStats/Crystal/58
+    1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Befindo.lua
     1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Human.lua
-    1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Fairy.lua
     1. General Data: Data/LvStats/Crystal/59
+    1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Fairy.lua
     1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Phelynx.lua
-    1. Script: Script/JINC/Foes/Reg/UndedKid_Elf.lua
     1. General Data: Data/LvStats/Crystal/6
-    1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Elf.lua
+    1. Script: Script/JINC/Foes/Reg/UndedKid_Elf.lua
     1. General Data: Data/LvStats/Crystal/60
+    1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Elf.lua
     1. Script: Script/JINC/Foes/Reg/Cyborg Ji.lua
     1. General Data: Data/LvStats/Crystal/61
     1. Script: Script/JINC/Foes/Reg/DeathMyr.lua
-    1. Script: Script/JINC/Foes/Reg/CyberAstrilopup.lua
     1. General Data: Data/LvStats/Crystal/62
+    1. Script: Script/JINC/Foes/Reg/CyberAstrilopup.lua
     1. Script: Script/JINC/Foes/Reg/Spider.lua
     1. General Data: Data/LvStats/Crystal/63
     1. Script: Script/JINC/Foes/Reg/Leopard.lua
-    1. Script: Script/JINC/Foes/Reg/SnowLeopard.lua
     1. General Data: Data/LvStats/Crystal/64
-    1. Script: Script/JINC/Foes/Reg/Zombie.lua
+    1. Script: Script/JINC/Foes/Reg/SnowLeopard.lua
     1. General Data: Data/LvStats/Crystal/65
+    1. Script: Script/JINC/Foes/Reg/Zombie.lua
     1. Script: Script/JINC/Foes/Reg/Gremlin.lua
     1. General Data: Data/LvStats/Crystal/66
     1. Script: Script/JINC/Foes/Reg/Hag.lua
-    1. Script: Script/JINC/Foes/Reg/Ghoul.lua
     1. General Data: Data/LvStats/Crystal/67
+    1. Script: Script/JINC/Foes/Reg/Ghoul.lua
     1. Script: Script/JINC/Foes/Reg/HellHound.lua
-    1. Script: Script/JINC/Foes/Boss/BigLion.lua
     1. General Data: Data/LvStats/Crystal/68
+    1. Script: Script/JINC/Foes/Boss/BigLion.lua
     1. Script: Script/JINC/Foes/Boss/Cyborg Lord.lua
-    1. Script: Script/JINC/Foes/Boss/DardMoeder.lua
     1. General Data: Data/LvStats/Crystal/69
-    1. Script: Script/JINC/Foes/Boss/DardBoorth.lua
+    1. Script: Script/JINC/Foes/Boss/DardMoeder.lua
     1. General Data: Data/LvStats/Crystal/7
+    1. Script: Script/JINC/Foes/Boss/DardBoorth.lua
     1. Script: Script/JINC/Foes/Boss/QueenMyr.lua
-    1. Script: Script/JINC/Foes/Boss/AstrilopupElite.lua
     1. General Data: Data/LvStats/Crystal/70
-    1. Script: Script/JINC/Foes/Boss/Mid-Boss.lua
+    1. Script: Script/JINC/Foes/Boss/AstrilopupElite.lua
     1. General Data: Data/LvStats/Crystal/71
+    1. Script: Script/JINC/Foes/Boss/Mid-Boss.lua
     1. Script: Script/JINC/Foes/Boss/GiantSnake.lua
-    1. Script: Script/JINC/Foes/Boss/Cultist Leader.lua
     1. General Data: Data/LvStats/Crystal/72
-    1. Script: Script/JINC/Foes/Boss/Thief Chief.lua
+    1. Script: Script/JINC/Foes/Boss/Cultist Leader.lua
     1. General Data: Data/LvStats/Crystal/73
+    1. Script: Script/JINC/Foes/Boss/Thief Chief.lua
     1. Script: Script/JINC/Foes/Boss/Diablo.lua
-    1. Script: Script/JINC/Foes/Boss/LichKing.lua
     1. General Data: Data/LvStats/Crystal/74
-    1. Script: Script/JINC/Foes/Boss/ExHuRU.lua
+    1. Script: Script/JINC/Foes/Boss/LichKing.lua
     1. General Data: Data/LvStats/Crystal/75
+    1. Script: Script/JINC/Foes/Boss/ExHuRU.lua
     1. Script: Script/JINC/Foes/Boss/DeathMyrQueen.lua
-    1. Script: Script/JINC/Foes/Boss/SuperZombie.lua
     1. General Data: Data/LvStats/Crystal/76
+    1. Script: Script/JINC/Foes/Boss/SuperZombie.lua
     1. Script: Script/JINC/Foes/Boss/FireSpiderYoung.lua
-    1. Script: Script/JINC/Foes/Boss/SuperCyborg.lua
     1. General Data: Data/LvStats/Crystal/77
+    1. Script: Script/JINC/Foes/Boss/SuperCyborg.lua
     1. Script: Script/JINC/Foes/Boss/HWSNBN.lua
     1. General Data: Data/LvStats/Crystal/78
     1. Script: Script/JINC/Foes/Boss/Gold Killer Droid.lua
-    1. Script: Script/JINC/Foes/Boss/UberGremlin.lua
     1. General Data: Data/LvStats/Crystal/79
+    1. Script: Script/JINC/Foes/Boss/UberGremlin.lua
     1. Script: Script/JINC/Foes/SuperBoss/FireSpider.lua
-    1. Script: Script/JINC/Foes/SuperBoss/BlackHoleDweller.lua
     1. General Data: Data/LvStats/Crystal/8
+    1. Script: Script/JINC/Foes/SuperBoss/BlackHoleDweller.lua
     1. Script: Script/JINC/Foes/SpecialBoss/McLeen.lua
     1. General Data: Data/LvStats/Crystal/80
     1. Script: Script/JINC/Foes/Goddess/Goddess.lua
-    1. Script: Script/JINC/Foes/Goddess/Add_Gunner.lua
     1. General Data: Data/LvStats/Crystal/81
+    1. Script: Script/JINC/Foes/Goddess/Add_Gunner.lua
     1. Script: Script/JINC/Foes/Goddess/Add_FlameThrower.lua
-    1. Script: Script/JINC/Foes/Goddess/Add_IceCannon.lua
     1. General Data: Data/LvStats/Crystal/82
+    1. Script: Script/JINC/Foes/Goddess/Add_IceCannon.lua
     1. Script: Script/JINC/Foes/Goddess/Add_WaterGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_WindGun.lua
-    1. Script: Script/JINC/Foes/Goddess/Add_RockThrower.lua
     1. General Data: Data/LvStats/Crystal/83
+    1. Script: Script/JINC/Foes/Goddess/Add_RockThrower.lua
     1. Script: Script/JINC/Foes/Goddess/Add_LightGun.lua
-    1. Script: Script/JINC/Foes/Goddess/Add_DarkGun.lua
     1. General Data: Data/LvStats/Crystal/84
+    1. Script: Script/JINC/Foes/Goddess/Add_DarkGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_VenomGun.lua
-    1. Script: Script/JINC/Foes/Goddess/Add_virusGun.lua
     1. General Data: Data/LvStats/Crystal/85
+    1. Script: Script/JINC/Foes/Goddess/Add_virusGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_Trq.lua
     1. Script: Script/JINC/Foes/Goddess/Add_BlockGun.lua
-    1. Script: Script/JINC/Foes/Goddess/Add_ConfuseGun.lua
     1. General Data: Data/LvStats/Crystal/86
+    1. Script: Script/JINC/Foes/Goddess/Add_ConfuseGun.lua
     1. General Data: Data/LvStats/Crystal/87
     1. General Data: Data/LvStats/Crystal/88
     1. General Data: Data/LvStats/Crystal/89
