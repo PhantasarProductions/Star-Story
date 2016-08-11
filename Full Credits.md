@@ -791,8 +791,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_ALLQUIET
     1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Blonde Piggy Tails.png
     1. Graphics: GFX/Actors/SinglePic/Ji/Grand Master.png
-    1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Green Alien With Long Moss Hair.png
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_HANGAR
+    1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Green Alien With Long Moss Hair.png
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_HOME
     1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Bald Black.png
     1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Afro.png
@@ -1046,7 +1046,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Maps/Hawk_PostGame.lua
     1. General Data: Data/LvStats/Crystal/16
     1. Script: Script/MiniGame/AutoUse.lua
-    1. General Data: Data/LvStats/Crystal/17 < alias > Script/MiniGame/MemoryAnhysbys.lua
+    1. General Data: Data/LvStats/Crystal/17
+    1. Script: Script/MiniGame/MemoryAnhysbys.lua
     1. Script: Script/Flow/Bestiary.lua
     1. General Data: Data/LvStats/Crystal/18
     1. General Data: Data/LvStats/Crystal/19
@@ -1238,8 +1239,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Crystal/81
     1. Script: Script/JINC/Foes/Goddess/Add_FlameThrower.lua
     1. Script: Script/JINC/Foes/Goddess/Add_IceCannon.lua
-    1. Script: Script/JINC/Foes/Goddess/Add_WaterGun.lua
     1. General Data: Data/LvStats/Crystal/82
+    1. Script: Script/JINC/Foes/Goddess/Add_WaterGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_WindGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_RockThrower.lua
     1. General Data: Data/LvStats/Crystal/83

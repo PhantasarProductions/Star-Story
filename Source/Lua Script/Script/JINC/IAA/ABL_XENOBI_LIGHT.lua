@@ -16,6 +16,7 @@ ret = {
 	["Icon"] = "GFX/Elements/Light.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Light",
+	["SpellAni_Reference"] = "Light",
 	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}
