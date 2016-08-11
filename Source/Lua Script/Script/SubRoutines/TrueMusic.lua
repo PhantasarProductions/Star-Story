@@ -1,7 +1,7 @@
 --[[
   TrueMusic.lua
   
-  version: 16.02.12
+  version: 16.08.11
   Copyright (C) 2015, 2016 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -26,6 +26,10 @@ if not musicavailable then
    Console.Write("Request done to load music "..songfile..", but the music is not available!",255,0,0)
    return 
    end -- If this is the version without music, then let's skip it all!
+if LAURA.LauraStartUp('StartScript')=="Synchronize.lua" then
+   Console.Write("Request done to load music "..songfile..", but we're just synchronizing so let's skip that, shall we?",255,0,0)
+   return
+   end   
 if currentsong==songfile then return end
 currentsong=songfile
 if true then -- config.music or MainMenuScript then

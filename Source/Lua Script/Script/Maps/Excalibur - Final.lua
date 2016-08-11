@@ -337,7 +337,7 @@ function Admiraal()
 end
 
 function ExecChat(i)
-   if not Done('&DONE.EXCALIBUR.FINAL.CHAT['..i..']') then MapText('CHAT'..i) end
+   if not Done('&DONE.EXCALIBUR.FINAL.CHAT['..i..']') then MapText('CHAT'..i) MapEXP() end
 end   
 
 function Boss(BossFile,track)

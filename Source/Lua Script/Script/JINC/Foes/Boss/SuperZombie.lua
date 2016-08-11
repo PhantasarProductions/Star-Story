@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.07.15
+version: 16.08.11
 ]]
 
 
--- Version 16.07.15
+-- Version 16.08.11
 
 
 
@@ -61,12 +61,12 @@ Data = {
 		["Defense"] = {0,200},
 		["Will"] = {1,600},
 		["Resistance"] = {1,200},
-		["Agility"] = {1,250},
+		["Agility"] = {1,222},
 		["Accuracy"] = {1,600},
 		["Evasion"] = {1,5},
 		["HP"] = {20,1500},
 		["AP"] = {0,0},
-		["LevelRange"] = {1,100},
+		["LevelRange"] = {1,150},
 },
 	StatusResistance = {
 		["Poison"] = 100   --[[ #1 ]],

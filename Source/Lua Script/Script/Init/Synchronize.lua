@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.04
+version: 16.08.11
 ]]
 
 
@@ -66,8 +66,7 @@ function Synchronize()
 	Console.Show()
 	Console.Flip()
 	Time.Sleep(5000)
-	Sys.Bye()
-		
+	Sys.Bye()		
 end
 
 
