@@ -581,9 +581,9 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/Ysperon - Facility 2/Data
     1. Map Design: Kthura/Ysperon - Facility 2/Objects
     1. Map Design: Kthura/Ysperon - Facility 2/Settings
-    1. Map Design: Kthura/Ysperon - Eugorvnia Caves/DATA
-    1. Map Design: Kthura/Ysperon - Eugorvnia Caves/OBJECTS
-    1. Map Design: Kthura/Ysperon - Eugorvnia Caves/SETTINGS
+    1. Map Design: Kthura/Ysperon - Eugorvnia Caves/Data
+    1. Map Design: Kthura/Ysperon - Eugorvnia Caves/Objects
+    1. Map Design: Kthura/Ysperon - Eugorvnia Caves/Settings
     1. Map Design: Kthura/Vulpina - Sewers/Data
     1. Map Design: Kthura/Vulpina - Sewers/Objects
     1. Map Design: Kthura/Vulpina - Sewers/Settings
@@ -1087,8 +1087,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Maps/Hawk/Teach Wendicka.lua
     1. General Data: Data/LvStats/Crystal/30
     1. Script: Script/Use/Maps/Hawk/HawkBridge.lua
-    1. Script: Script/Use/Maps/Hawk/AftermathVolcania.lua
     1. General Data: Data/LvStats/Crystal/31
+    1. Script: Script/Use/Maps/Hawk/AftermathVolcania.lua
     1. Script: Script/Use/Maps/Hawk/ArrivalExcalibur.lua
     1. Script: Script/Use/Maps/Hawk/UnlockBlackHoleDweller.lua
     1. General Data: Data/LvStats/Crystal/32
