@@ -208,6 +208,8 @@
 1. Script/JINC/IAA/ITM_KILOGUBAFLOWER.lua
 1. Script/JINC/IAA/ITM_MEDICINE.lua
 1. Script/JINC/IAA/ITM_MEDIKIT.lua
+1. Script/JINC/IAA/ITM_MEGABLUBAFLOWER.lua
+1. Script/JINC/IAA/ITM_MEGAGUBAFLOWER.lua
 1. Script/JINC/IAA/ITM_MINDCLEARPILL.lua
 1. Script/JINC/IAA/ITM_MOLOTOV.lua
 1. Script/JINC/IAA/ITM_PERMABUFF_BLUEPILL.lua
@@ -648,4 +650,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 12 August 2016; 10:12:44 CET
+### Last updated: Fri 12 August 2016; 10:29:13 CET

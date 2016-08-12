@@ -7,6 +7,7 @@ ret = {
 	["CureZombie"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Heals 2500 HP and 5 AP",
+	["GrantEXPType"] = "Absolute",
 	["Healing"] = 2500,
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 100,
