@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 16.05.24
+Version: 16.08.12
 End Rem
 Strict
 
@@ -30,13 +30,14 @@ Import tricky_units.advdatetime
 Import tricky_units.Bye
 Import "Framework.bmx"
 
-MKL_Version "LAURA II - LoadGame.bmx","16.05.24"
+MKL_Version "LAURA II - LoadGame.bmx","16.08.12"
 MKL_Lic     "LAURA II - LoadGame.bmx","GNU General Public License 3"
 
 
 JCR6CrashError = True
 
 Const save$ = "$AppSupport$/$LinuxDot$Phantasar Productions/LAURA2/StarStory/Saved Games"
+If Not FileType(save) CreateDir save,1
 
 Private
 Global GLGPanel:tloadgamepanel = New TLoadGamePanel
@@ -133,7 +134,7 @@ Type TLoadGamePanel Extends tfpanelbase
 			DebugLog "SFILE = "+SFILE+"; F = "+F+"; i = "+i+"; c = "+c
 		Else
 			DebugLog "Trim error so file ignored: "+F
-			endif
+			EndIf
 		Next
 	If i>-1 
 		SelectGadgetItem Files,i	
