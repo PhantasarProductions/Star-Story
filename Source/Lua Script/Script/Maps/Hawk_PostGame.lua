@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.03
+version: 16.08.12
 ]]
 
 function CLICK_ARRIVAL_Terminal()
@@ -128,6 +128,11 @@ function StartNewGamePlus()
              RPGStat.setData(ch,'INVITEM'..i,'')
              end
       end
+  end
+  -- Fix and issue with Wendicka's modifiers
+  for s in each({'Dark','Light','Fire','Frost','Lightning','Water','Wind','Earth'}) do
+      RPGStat.LinkStat("Wendicka","UniWendicka","ER_MODIFIER_"..s)
+      CSay("Wendicka Casual/Uniform - Linking: "..s)
   end
   -- Count new cycle 
   ngpcount = ngpcount + 1

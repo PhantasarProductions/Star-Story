@@ -379,6 +379,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/App/BlockShooter/Bullet_2.png
     1. Graphics: GFX/App/BlockShooter/Bullet_3.png
     1. Audio: Audio/Sfx/Moo/1.ogg
+    1. Audio: Audio/Sfx/Moo/2.ogg
     1. Font: Fonts/Astrilopup.ttf
     1. General Data: ID/Identify < alias > ID/Identify.txt
     1. Map Design: Kthura/Excalibur_Home/Data
@@ -387,9 +388,9 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/Intro_Ship_Transporter/Data
     1. Map Design: Kthura/Intro_Ship_Transporter/Objects
     1. Map Design: Kthura/Intro_Ship_Transporter/Settings
-    1. Map Design: Kthura/Prologue_Yaqirpa/Data < alias > Kthura/Return_Yaqirpa/Data
-    1. Map Design: Kthura/Prologue_Yaqirpa/Objects < alias > Kthura/Return_Yaqirpa/Objects
-    1. Map Design: Kthura/Prologue_Yaqirpa/Settings < alias > Kthura/Return_Yaqirpa/Settings
+    1. Map Design: Kthura/Prologue_Yaqirpa/DATA < alias > Kthura/Return_Yaqirpa/Data
+    1. Map Design: Kthura/Prologue_Yaqirpa/OBJECTS < alias > Kthura/Return_Yaqirpa/Objects
+    1. Map Design: Kthura/Prologue_Yaqirpa/SETTINGS < alias > Kthura/Return_Yaqirpa/Settings
     1. Map Design: Kthura/Excalibur_Sickbay/DATA
     1. Map Design: Kthura/Excalibur_Sickbay/OBJECTS
     1. Map Design: Kthura/Excalibur_Sickbay/SETTINGS
@@ -399,31 +400,31 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/Excalibur_Kitchen/Data
     1. Map Design: Kthura/Excalibur_Kitchen/Objects
     1. Map Design: Kthura/Excalibur_Kitchen/Settings
-    1. Map Design: Kthura/Excalibur_UnderAttack/Data
-    1. Map Design: Kthura/Excalibur_UnderAttack/Objects
-    1. Map Design: Kthura/Excalibur_UnderAttack/Settings
-    1. Map Design: Kthura/Excalibur_SecretPassage/Data
-    1. Map Design: Kthura/Excalibur_SecretPassage/Objects
-    1. Map Design: Kthura/Excalibur_SecretPassage/Settings
+    1. Map Design: Kthura/Excalibur_UnderAttack/DATA
+    1. Map Design: Kthura/Excalibur_UnderAttack/OBJECTS
+    1. Map Design: Kthura/Excalibur_UnderAttack/SETTINGS
+    1. Map Design: Kthura/Excalibur_SecretPassage/DATA
+    1. Map Design: Kthura/Excalibur_SecretPassage/OBJECTS
+    1. Map Design: Kthura/Excalibur_SecretPassage/SETTINGS
     1. Map Design: Kthura/Excalibur_Hangar/DATA
     1. Map Design: Kthura/Excalibur_Hangar/OBJECTS
     1. Map Design: Kthura/Excalibur_Hangar/SETTINGS
     1. Map Design: Kthura/Hawk/Data
     1. Map Design: Kthura/Hawk/Objects
     1. Map Design: Kthura/Hawk/Settings
-    1. Map Design: Kthura/LostPlanet_GrassJungle/Data
-    1. Map Design: Kthura/LostPlanet_GrassJungle/Objects
-    1. Map Design: Kthura/LostPlanet_GrassJungle/Settings
-    1. Map Design: Kthura/LostPlanet_GrassJungle_2/Data
-    1. Map Design: Kthura/LostPlanet_GrassJungle_2/Objects
-    1. Map Design: Kthura/LostPlanet_GrassJungle_2/Settings
+    1. Map Design: Kthura/LostPlanet_GrassJungle/DATA
+    1. Map Design: Kthura/LostPlanet_GrassJungle/OBJECTS
+    1. Audio: Audio/Sfx/Moo/3.ogg
+    1. Map Design: Kthura/LostPlanet_GrassJungle/SETTINGS
+    1. Map Design: Kthura/LostPlanet_GrassJungle_2/DATA
+    1. Map Design: Kthura/LostPlanet_GrassJungle_2/OBJECTS
+    1. Map Design: Kthura/LostPlanet_GrassJungle_2/SETTINGS
     1. Map Design: Kthura/LostPlanet_Bonus_Dark_Caves_of_Shilington/Data
     1. Map Design: Kthura/LostPlanet_Bonus_Dark_Caves_of_Shilington/Objects
-    1. Audio: Audio/Sfx/Moo/2.ogg
     1. Map Design: Kthura/LostPlanet_Bonus_Dark_Caves_of_Shilington/Settings
-    1. Map Design: Kthura/LostPlanet_GrassJungle_3/Data
-    1. Map Design: Kthura/LostPlanet_GrassJungle_3/Objects
-    1. Map Design: Kthura/LostPlanet_GrassJungle_3/Settings
+    1. Map Design: Kthura/LostPlanet_GrassJungle_3/DATA
+    1. Map Design: Kthura/LostPlanet_GrassJungle_3/OBJECTS
+    1. Map Design: Kthura/LostPlanet_GrassJungle_3/SETTINGS
     1. Map Design: Kthura/LostPlanet_Pub_Outside/DATA
     1. Map Design: Kthura/LostPlanet_Pub_Outside/OBJECTS
     1. Map Design: Kthura/LostPlanet_Pub_Outside/SETTINGS
@@ -433,21 +434,20 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/LostPlanet_Dungeon_Cell/Data
     1. Map Design: Kthura/LostPlanet_Dungeon_Cell/Objects
     1. Map Design: Kthura/LostPlanet_Dungeon_Cell/Settings
-    1. Map Design: Kthura/LostPlanet_Dungeon/Data
-    1. Map Design: Kthura/LostPlanet_Dungeon/Objects
-    1. Map Design: Kthura/LostPlanet_Dungeon/Settings
-    1. Map Design: Kthura/LostPlanet_Junkyard/Data
-    1. Map Design: Kthura/LostPlanet_Junkyard/Objects
-    1. Map Design: Kthura/LostPlanet_Junkyard/Settings
+    1. Map Design: Kthura/LostPlanet_Dungeon/DATA
+    1. Map Design: Kthura/LostPlanet_Dungeon/OBJECTS
+    1. Map Design: Kthura/LostPlanet_Dungeon/SETTINGS
+    1. Map Design: Kthura/LostPlanet_Junkyard/DATA
+    1. Map Design: Kthura/LostPlanet_Junkyard/OBJECTS
+    1. Audio: Audio/Sfx/Moo/4.ogg
+    1. Map Design: Kthura/LostPlanet_Junkyard/SETTINGS
     1. Map Design: Kthura/LostPlanet_Bonus_SpaceObservatorium/Data
     1. Map Design: Kthura/LostPlanet_Bonus_SpaceObservatorium/Objects
     1. Map Design: Kthura/LostPlanet_Bonus_SpaceObservatorium/Settings
     1. Audio: Audio/IntroStory/Lovejoy0001.ogg
-    1. Audio: Audio/Sfx/Moo/3.ogg
-    1. Audio: Audio/Sfx/Moo/4.ogg
-    1. Audio: Audio/IntroStory/Lovejoy0002.ogg
     1. Audio: Audio/Sfx/Moo/5.ogg
     1. Audio: Audio/Sfx/Yeah/Yeah.ogg
+    1. Audio: Audio/IntroStory/Lovejoy0002.ogg
     1. Graphics: GFX/Textures/Floor/Grind/Cyan.png
     1. Graphics: GFX/Textures/Obstacles/Muur Toorts/Brandend.frames
     1. Graphics: GFX/Textures/Obstacles/Muur Toorts/Brandend.png
@@ -524,7 +524,6 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/Ysperon - Eugorvnia/Settings
     1. Map Design: Kthura/Ysperon - Facility/Data
     1. Map Design: Kthura/Ysperon - Facility/Objects
-    1. Audio: Audio/IntroStory/Lovejoy0003.ogg
     1. Map Design: Kthura/Ysperon - Facility/Settings
     1. Map Design: Kthura/Vulpina - Town/Data
     1. Map Design: Kthura/Vulpina - Town/Objects
@@ -564,7 +563,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/Phantasar - Frendor/Settings
     1. Map Design: Kthura/Nizozemska - Belioss/Data
     1. Map Design: Kthura/Nizozemska - Belioss/Objects
-    1. Audio: Audio/IntroStory/Lovejoy0004.ogg
+    1. Audio: Audio/IntroStory/Lovejoy0003.ogg
     1. Map Design: Kthura/Nizozemska - Belioss/Settings
     1. Map Design: Kthura/Nizozemska - Dark Graveyard/Data
     1. Map Design: Kthura/Nizozemska - Dark Graveyard/Objects
@@ -589,7 +588,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/Vulpina - Sewers/Settings
     1. Map Design: Kthura/Vulpina - Flower Forest/Data
     1. Map Design: Kthura/Vulpina - Flower Forest/Objects
-    1. Audio: Audio/IntroStory/Lovejoy0005.ogg
+    1. Audio: Audio/IntroStory/Lovejoy0004.ogg
     1. Map Design: Kthura/Vulpina - Flower Forest/Settings
     1. Map Design: Kthura/Volcania - Caves/Data
     1. Map Design: Kthura/Volcania - Caves/Objects
@@ -632,6 +631,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/English/Scenario/MAPS/PHYSILLIUM - BLACK CASTLE
     1. Scenario: Languages/English/Scenario/MAPS/PHYSILLIUM - JI RUBBLE
     1. Scenario: Languages/English/Scenario/MAPS/PHYSILLIUM - JI TEMPLE
+    1. Audio: Audio/IntroStory/Lovejoy0005.ogg
     1. Scenario: Languages/English/Scenario/MAPS/PHYSILLIUM - THE RUINS OF THE Y ANHYSBYS
     1. Scenario: Languages/English/Scenario/MAPS/POLOQOR - MID-BOSS
     1. Scenario: Languages/English/Scenario/MAPS/VOLCANIA - VOLCANIC PLAINS
@@ -684,34 +684,32 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Portret/Ashley/Blij.png
     1. Graphics: GFX/Combat/Arena/Y Anhysbys.png
     1. Audio: Audio/IntroStory/Lovejoy0006.ogg
-    1. Audio: Audio/IntroStory/Lovejoy0007.ogg
     1. Graphics: GFX/Combat/Arena/Ji Rubble.png
-    1. Audio: Audio/IntroStory/Lovejoy0008.ogg
+    1. Audio: Audio/IntroStory/Lovejoy0007.ogg
     1. Graphics: GFX/Combat/Arena/Black Castle.png
     1. Graphics: GFX/Combat/Arena/Eugorvnia.png
     1. Graphics: GFX/Combat/Arena/Facility.png
     1. Graphics: GFX/Combat/Arena/Volcano.png
     1. Graphics: GFX/Combat/Arena/Mid-Boss.png
+    1. Audio: Audio/IntroStory/Lovejoy0008.ogg
     1. Graphics: GFX/Combat/Arena/Bos - Spar.png
     1. Graphics: GFX/Combat/Arena/Bos - Loofbomen.png
-    1. Audio: Audio/IntroStory/Lovejoy0009.ogg
-    1. Audio: Audio/IntroStory/Lovejoy0010.ogg
     1. Graphics: GFX/Combat/Arena/Bos - Kerkhof.png
+    1. Audio: Audio/IntroStory/Lovejoy0009.ogg
     1. Graphics: GFX/Combat/Arena/Phan - Dung.png
+    1. Audio: Audio/IntroStory/Lovejoy0010.ogg
     1. Graphics: GFX/Combat/Arena/FlowerGarden.png
     1. Audio: Audio/IntroStory/Lovejoy0011.ogg
-    1. Audio: Audio/IntroStory/Lovejoy0012.ogg
     1. Graphics: GFX/Combat/Arena/Riool.png
     1. Graphics: GFX/Combat/Arena/Camelot.png
     1. Graphics: GFX/Combat/Arena/Mansion.png
-    1. Audio: Audio/IntroStory/Lovejoy0013.ogg
+    1. Audio: Audio/IntroStory/Lovejoy0012.ogg
     1. Graphics: GFX/Combat/Arena/Mines.png
     1. Graphics: GFX/Combat/GaugeIcons/Xenobi.png
     1. Graphics: GFX/Combat/GaugeIcons/Johnson.png
     1. Graphics: GFX/Actors/Player/Xenobi.South.png
     1. Graphics: GFX/Actors/Player/Rolf.South.png
     1. Graphics: GFX/Actors/Player/Xenobi.North.png
-    1. Audio: Audio/IntroStory/Lovejoy0014.ogg
     1. Graphics: GFX/Actors/Player/Rolf.North.png
     1. Graphics: GFX/Actors/Player/Xenobi.East.png
     1. Graphics: GFX/Actors/Player/Xenobi.West.png < alias > GFX/Combat/Fighters/Hero/Xenobi.default.png
@@ -732,529 +730,531 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Actors/Sue/Sue.South.Frames
     1. Graphics: GFX/Actors/Sue/Sue.South.png
     1. Graphics: GFX/Actors/Sue/Sue.North.png
-    1. Graphics: GFX/Intro/IntroText.png
     1. Graphics: GFX/Actors/Sue/Sue.West.png
     1. Graphics: GFX/Actors/Sue/Sue.North.Frames
     1. Graphics: GFX/Actors/Sue/Sue.East.Frames
     1. Graphics: GFX/Actors/Goddess/Goddess.png
     1. Graphics: GFX/Textures/Ji/Wall.png
-    1. Graphics: GFX/Achievements/Perfectstreak0005.png
-    1. Graphics: GFX/Scenario/Dokter Sal'pr'drita.png
+    1. Audio: Audio/IntroStory/Lovejoy0013.ogg
     1. Graphics: GFX/Textures/McLeen/McLeen_Masked.png
     1. Graphics: GFX/Textures/McLeen/McLeen_Unmasked.png
     1. Graphics: GFX/Textures/McLeen/Masked.South.png
     1. Graphics: GFX/Textures/Whole/Marlon's House.png
+    1. Audio: Audio/IntroStory/Lovejoy0014.ogg
+    1. Graphics: GFX/Combat/Fighters/Hero/Xenobi.Attack.2.png
+    1. Graphics: GFX/Combat/Fighters/Hero/Xenobi.Attack.1.png
+    1. Graphics: GFX/Combat/Fighters/Hero/Rolf.Dead.png
+    1. Graphics: GFX/Combat/Fighters/Hero/Xenobi.Cast.png
+    1. Graphics: GFX/Combat/Fighters/Hero/Xenobi.Dead.png
+    1. Graphics: GFX/Combat/Fighters/Hero/Rolf.Attack.2.png
+    1. Graphics: GFX/Combat/Fighters/Hero/Rolf.Cast.png
+    1. Graphics: GFX/Combat/Fighters/Hero/Rolf.Attack.1.png
+    1. Graphics: GFX/Combat/Fighters/Hero/Johnson.Cast.png
+    1. Graphics: GFX/Combat/Fighters/Hero/Johnson.attack.2.png
+    1. Graphics: GFX/Combat/Fighters/Hero/Johnson.attack.1.png
+    1. Graphics: GFX/Combat/Fighters/Hero/Johnson.Dead.png
+    1. Graphics: GFX/Combat/Fighters/Hero/Johnson.attack.piko
+    1. Graphics: GFX/Intro/IntroText.png
+    1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Long Moss Hair.png
+    1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Long Red Hair.png
+    1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Blonde Piggy Tails.png
+    1. Graphics: GFX/Actors/SinglePic/Ji/Grand Master.png
+    1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Green Alien With Long Moss Hair.png
+    1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Bald Black.png
+    1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Afro.png
+    1. Graphics: GFX/Actors/SinglePic/Ji/Ji East - Black long hair.png
+    1. Graphics: GFX/Actors/SinglePic/Ji/Ji East - Black long hair - Light Saber.png
+    1. Graphics: GFX/Actors/SinglePic/Cid/Dard Boorth.png
+    1. Graphics: GFX/Actors/SinglePic/Cid/Dard Moeder.png
+    1. Graphics: GFX/Actors/SinglePic/Random/Vulpin Female Blue Skirt.png
+    1. Graphics: GFX/Actors/SinglePic/Random/Vulpin Female Red Dress.png
+    1. Graphics: GFX/Actors/SinglePic/Random/Vulpin Female Purpe Skirt - West.png
+    1. Graphics: GFX/Actors/SinglePic/Pirates/PirateLeader.png
+    1. Graphics: GFX/Actors/SinglePic/Pirates/Pirate.png
+    1. Graphics: GFX/Actors/SinglePic/Nizozemska/Liefde.png
+    1. Graphics: GFX/Achievements/Perfectstreak0005.png
+    1. Graphics: GFX/Actors/SinglePic/Nizozemska/Marlon.png
+    1. Graphics: GFX/Actors/SinglePic/Nizozemska/Liefde.piko
+    1. Graphics: GFX/Actors/SinglePic/Sewers/MadScientistHU.png
+    1. Graphics: GFX/Actors/SinglePic/Sewers/MadScientist.png
+    1. Graphics: GFX/Actors/SinglePic/Sewers/Zombie.png < alias > GFX/Combat/Fighters/Foe/Boss/SuperZombie.png < alias > GFX/Combat/Fighters/Foe/Reg/Zombie.png
+    1. Graphics: GFX/Actors/SinglePic/Meteor Staff/LoveJoy.Dead.png
+    1. Graphics: GFX/Actors/Phantasar/Elf/Rosetta.png
+    1. Graphics: GFX/Actors/Phantasar/Fairy/Marrilona.png
+    1. Graphics: GFX/Actors/Phantasar/Fairy/Marrilona.piko
+    1. Graphics: GFX/Scenario/Dokter Sal'pr'drita.png
+    1. Graphics: GFX/Actors/Phantasar/Fairy/Myrah.png
+    1. Graphics: GFX/Actors/Phantasar/Gnome/Rachel.png
+    1. Graphics: GFX/Textures/Astrilopups/City/HOLE.png
+    1. Graphics: GFX/Textures/Astrilopups/City/Ash.png
+    1. ???: GFX/Textures/Astrilopups/City/Hole.Hot
+    1. Graphics: GFX/Textures/Astrilopups/Facility/North-East Ending.png
+    1. Graphics: GFX/Textures/Astrilopups/Facility/SchuifDeur.png
+    1. Graphics: GFX/Textures/Astrilopups/Facility/North.png
+    1. Graphics: GFX/Textures/Astrilopups/Facility/East.png
+    1. Graphics: GFX/Textures/Astrilopups/Facility/North-West.png
+    1. Graphics: GFX/Textures/Astrilopups/Facility/West.png
+    1. Graphics: GFX/Textures/Astrilopups/Facility/North-East.png
+    1. Graphics: GFX/Textures/Astrilopups/Facility/South.png
+    1. Graphics: GFX/Textures/Astrilopups/Facility/South-East.png
+    1. Graphics: GFX/Textures/Astrilopups/Facility/South-West.png
+    1. Graphics: GFX/Textures/Astrilopups/Facility/Floor.png
+    1. Graphics: GFX/Textures/Astrilopups/Facility/DoorPost_East.png
+    1. Graphics: GFX/Textures/Astrilopups/Facility/North-West Ending.png
+    1. Graphics: GFX/Textures/Astrilopups/Facility/South-East Ending.png
+    1. Graphics: GFX/Textures/Astrilopups/Facility/DoorPost_West.png
+    1. Graphics: GFX/Textures/Astrilopups/Facility/South-West Ending.png
+    1. Graphics: GFX/Textures/Wendicka/Naked/WendickaNakedStandEast.png
+    1. Graphics: GFX/Textures/Wendicka/Naked/WendickaNakedHandsupEast.png
+    1. Graphics: GFX/Textures/Wendicka/Naked/WendickaNakedHandsupInChainsEast.png
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank_Wendicka_Sue.png
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank.piko
     1. Scenario: Languages/Dutch/Scenario/GENERAL/ARMS
     1. Scenario: Languages/Dutch/Scenario/GENERAL/COMBAT
     1. Scenario: Languages/Dutch/Scenario/GENERAL/SCOTTY
     1. Scenario: Languages/Dutch/Scenario/GENERAL/SECRETDUNGEON
     1. Scenario: Languages/Dutch/Scenario/JONES
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_ALLQUIET
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank_Foxy.png
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank_Crystal.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_HANGAR
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Plavuizen.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_HOME
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank1.piko
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_KITCHEN
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_SICKBAY
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_UNDERATTACK
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Grenol.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/HAWK
-    1. Graphics: GFX/Combat/Fighters/Hero/Xenobi.Attack.2.png
-    1. Graphics: GFX/Combat/Fighters/Hero/Xenobi.Attack.1.png
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Lamp.png
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Schommelstoel met Marlon.png
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Schommelstoel.piko
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_BARINSIDE
-    1. Graphics: GFX/Combat/Fighters/Hero/Rolf.Dead.png
-    1. Graphics: GFX/Combat/Fighters/Hero/Xenobi.Cast.png
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Open Haard.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_BONUS_SPACEOBSERVATORIUM
-    1. Graphics: GFX/Combat/Fighters/Hero/Xenobi.Dead.png
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Foto van Sue.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_DUNGEON
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_DUNGEON_CELL
-    1. Graphics: GFX/Combat/Fighters/Hero/Rolf.Attack.2.png
-    1. Graphics: GFX/Combat/Fighters/Hero/Rolf.Cast.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Reg/Bladeh.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_GRASSJUNGLE
-    1. Graphics: GFX/Combat/Fighters/Hero/Rolf.Attack.1.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Reg/Cyborg Ji.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_GRASSJUNGLE_3
-    1. Graphics: GFX/Combat/Fighters/Hero/Johnson.Cast.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Reg/Cid.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_JUNKYARD
-    1. Graphics: GFX/Combat/Fighters/Hero/Johnson.attack.2.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Befindo.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_PUB_OUTSIDE
-    1. Graphics: GFX/Combat/Fighters/Hero/Johnson.attack.1.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Elf.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Fairy.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/PROLOGUE_YAQIRPA
-    1. Graphics: GFX/Combat/Fighters/Hero/Johnson.Dead.png
-    1. Graphics: GFX/Combat/Fighters/Hero/Johnson.attack.piko
+    1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Human.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Phelynx.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Reg/CyberAstrilopup.png
     1. Scenario: Languages/Dutch/Scenario/SCENONLY/OPENING/START
-    1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Long Moss Hair.png
     1. Scenario: Languages/Dutch/Scenario/TUTORIAL/BAGSFULL
     1. Scenario: Languages/Dutch/Settings
     1. Scenario: Languages/English/Settings
     1. Scenario: Languages/English/Scenario/GENERAL/ARMS
     1. Scenario: Languages/English/Scenario/GENERAL/COMBAT
-    1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Long Red Hair.png
     1. Scenario: Languages/English/Scenario/GENERAL/SCOTTY
     1. Scenario: Languages/English/Scenario/GENERAL/SECRETDUNGEON
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_ALLQUIET
-    1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Blonde Piggy Tails.png
-    1. Graphics: GFX/Actors/SinglePic/Ji/Grand Master.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Boss/Mid-Boss.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Boss/DardMoeder.png
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_HANGAR
-    1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Green Alien With Long Moss Hair.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Boss/DardBoorth.png
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_HOME
-    1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Bald Black.png
-    1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Afro.png
-    1. Graphics: GFX/Actors/SinglePic/Ji/Ji East - Black long hair.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Boss/HWSNBN.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Boss/SuperCyborg.png
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_KITCHEN
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_Gunner.png
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_SICKBAY
-    1. Graphics: GFX/Actors/SinglePic/Ji/Ji East - Black long hair - Light Saber.png
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_UNDERATTACK
-    1. Graphics: GFX/Actors/SinglePic/Cid/Dard Boorth.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_FlameThrower.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_IceCannon.png
     1. Scenario: Languages/English/Scenario/MAPS/HAWK
-    1. Graphics: GFX/Actors/SinglePic/Cid/Dard Moeder.png
-    1. Graphics: GFX/Actors/SinglePic/Random/Vulpin Female Blue Skirt.png
-    1. Graphics: GFX/Actors/SinglePic/Random/Vulpin Female Red Dress.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_WaterGun.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_WindGun.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_RockThrower.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_LightGun.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_DarkGun.png
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_BARINSIDE
-    1. Graphics: GFX/Actors/SinglePic/Random/Vulpin Female Purpe Skirt - West.png
-    1. Graphics: GFX/Actors/SinglePic/Pirates/PirateLeader.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Goddess.piko
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_BONUS_SPACEOBSERVATORIUM
-    1. Graphics: GFX/Actors/SinglePic/Pirates/Pirate.png
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_DUNGEON
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_DUNGEON_CELL
-    1. Graphics: GFX/Actors/SinglePic/Nizozemska/Liefde.png
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_GRASSJUNGLE
-    1. Graphics: GFX/Actors/SinglePic/Nizozemska/Marlon.png
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_GRASSJUNGLE_3
-    1. Graphics: GFX/Actors/SinglePic/Nizozemska/Liefde.piko
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_JUNKYARD
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_PUB_OUTSIDE
     1. Scenario: Languages/English/Scenario/MAPS/PROLOGUE_YAQIRPA
-    1. Graphics: GFX/Actors/SinglePic/Sewers/MadScientistHU.png
-    1. Graphics: GFX/Actors/SinglePic/Sewers/MadScientist.png
     1. Scenario: Languages/English/Scenario/SCENONLY/OPENING/START
-    1. Graphics: GFX/Actors/SinglePic/Sewers/Zombie.png < alias > GFX/Combat/Fighters/Foe/Boss/SuperZombie.png < alias > GFX/Combat/Fighters/Foe/Reg/Zombie.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_VenomGun.png
     1. Scenario: Languages/English/Scenario/TUTORIAL/BAGSFULL
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_VirusGun.png
     1. General Data: Data/LvStats/Briggs/0
-    1. Graphics: GFX/Actors/SinglePic/Meteor Staff/LoveJoy.Dead.png
-    1. Graphics: GFX/Actors/Phantasar/Elf/Rosetta.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/ADD_BlockGun.png
     1. General Data: Data/LvStats/Briggs/1
-    1. Graphics: GFX/Actors/Phantasar/Fairy/Marrilona.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/ADD_ConfuseGun.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Goddess.png
     1. General Data: Data/LvStats/Briggs/10
-    1. Graphics: GFX/Actors/Phantasar/Fairy/Marrilona.piko
     1. General Data: Data/LvStats/Briggs/100
     1. General Data: Data/LvStats/Briggs/11
     1. General Data: Data/LvStats/Briggs/12
     1. General Data: Data/LvStats/Briggs/13
     1. General Data: Data/LvStats/Briggs/14
-    1. Graphics: GFX/Actors/Phantasar/Fairy/Myrah.png
-    1. General Data: Data/LvStats/Briggs/15
-    1. Graphics: GFX/Actors/Phantasar/Gnome/Rachel.png
-    1. General Data: Data/LvStats/Briggs/16
-    1. Graphics: GFX/Textures/Astrilopups/City/HOLE.png
-    1. General Data: Data/LvStats/Briggs/17
-    1. General Data: Data/LvStats/Briggs/18
-    1. General Data: Data/LvStats/Briggs/19
-    1. General Data: Data/LvStats/Briggs/2
-    1. General Data: Data/LvStats/Briggs/20
-    1. Graphics: GFX/Textures/Astrilopups/City/Ash.png
-    1. General Data: Data/LvStats/Briggs/21
-    1. General Data: Data/LvStats/Briggs/22
-    1. ???: GFX/Textures/Astrilopups/City/Hole.Hot
-    1. Graphics: GFX/Textures/Astrilopups/Facility/North-East Ending.png
-    1. Graphics: GFX/Textures/Astrilopups/Facility/SchuifDeur.png
-    1. General Data: Data/LvStats/Briggs/23
-    1. Graphics: GFX/Textures/Astrilopups/Facility/North.png
-    1. General Data: Data/LvStats/Briggs/24
-    1. Graphics: GFX/Textures/Astrilopups/Facility/East.png
-    1. Graphics: GFX/Textures/Astrilopups/Facility/North-West.png
-    1. General Data: Data/LvStats/Briggs/25
-    1. Graphics: GFX/Textures/Astrilopups/Facility/West.png
-    1. Graphics: GFX/Textures/Astrilopups/Facility/North-East.png
-    1. General Data: Data/LvStats/Briggs/26
-    1. Graphics: GFX/Textures/Astrilopups/Facility/South.png
-    1. General Data: Data/LvStats/Briggs/27
-    1. Graphics: GFX/Textures/Astrilopups/Facility/South-East.png
-    1. Graphics: GFX/Textures/Astrilopups/Facility/South-West.png
-    1. General Data: Data/LvStats/Briggs/28
-    1. Graphics: GFX/Textures/Astrilopups/Facility/Floor.png
-    1. Graphics: GFX/Textures/Astrilopups/Facility/DoorPost_East.png
-    1. General Data: Data/LvStats/Briggs/29
-    1. Graphics: GFX/Textures/Astrilopups/Facility/North-West Ending.png
-    1. General Data: Data/LvStats/Briggs/3
-    1. Graphics: GFX/Textures/Astrilopups/Facility/South-East Ending.png
-    1. Graphics: GFX/Textures/Astrilopups/Facility/DoorPost_West.png
-    1. General Data: Data/LvStats/Briggs/30
-    1. Graphics: GFX/Textures/Astrilopups/Facility/South-West Ending.png
-    1. General Data: Data/LvStats/Briggs/31
-    1. Graphics: GFX/Textures/Wendicka/Naked/WendickaNakedStandEast.png
-    1. Graphics: GFX/Textures/Wendicka/Naked/WendickaNakedHandsupEast.png
-    1. General Data: Data/LvStats/Briggs/32
-    1. Graphics: GFX/Textures/Wendicka/Naked/WendickaNakedHandsupInChainsEast.png
-    1. General Data: Data/LvStats/Briggs/33
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank_Wendicka_Sue.png
-    1. General Data: Data/LvStats/Briggs/34
-    1. General Data: Data/LvStats/Briggs/35
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank.piko
-    1. General Data: Data/LvStats/Briggs/36
-    1. General Data: Data/LvStats/Briggs/37
-    1. General Data: Data/LvStats/Briggs/38
-    1. General Data: Data/LvStats/Briggs/39
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank.png
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank_Foxy.png
-    1. General Data: Data/LvStats/Briggs/4
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank_Crystal.png
-    1. General Data: Data/LvStats/Briggs/40
-    1. General Data: Data/LvStats/Briggs/41
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Plavuizen.png
-    1. General Data: Data/LvStats/Briggs/42
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank1.piko
-    1. General Data: Data/LvStats/Briggs/43
-    1. General Data: Data/LvStats/Briggs/44
-    1. General Data: Data/LvStats/Briggs/45
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Grenol.png
-    1. General Data: Data/LvStats/Briggs/46
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Lamp.png
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Schommelstoel met Marlon.png
-    1. General Data: Data/LvStats/Briggs/47
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Schommelstoel.piko
-    1. General Data: Data/LvStats/Briggs/48
-    1. General Data: Data/LvStats/Briggs/49
-    1. General Data: Data/LvStats/Briggs/5
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Open Haard.png
-    1. General Data: Data/LvStats/Briggs/50
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Foto van Sue.png
-    1. Graphics: GFX/Combat/Fighters/Foe/Reg/Bladeh.png
-    1. General Data: Data/LvStats/Briggs/51
-    1. Graphics: GFX/Combat/Fighters/Foe/Reg/Cyborg Ji.png
-    1. General Data: Data/LvStats/Briggs/52
-    1. Graphics: GFX/Combat/Fighters/Foe/Reg/Cid.png
-    1. General Data: Data/LvStats/Briggs/53
-    1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Befindo.png
-    1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Elf.png
-    1. General Data: Data/LvStats/Briggs/54
-    1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Fairy.png
-    1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Human.png
-    1. General Data: Data/LvStats/Briggs/55
-    1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Phelynx.png
-    1. Graphics: GFX/Combat/Fighters/Foe/Reg/CyberAstrilopup.png
-    1. General Data: Data/LvStats/Briggs/56
-    1. General Data: Data/LvStats/Briggs/57
-    1. General Data: Data/LvStats/Briggs/58
-    1. General Data: Data/LvStats/Briggs/59
-    1. General Data: Data/LvStats/Briggs/6
-    1. Graphics: GFX/Combat/Fighters/Foe/Boss/Mid-Boss.png
-    1. General Data: Data/LvStats/Briggs/60
-    1. Graphics: GFX/Combat/Fighters/Foe/Boss/DardMoeder.png
-    1. General Data: Data/LvStats/Briggs/61
-    1. Graphics: GFX/Combat/Fighters/Foe/Boss/DardBoorth.png
-    1. General Data: Data/LvStats/Briggs/62
-    1. Graphics: GFX/Combat/Fighters/Foe/Boss/HWSNBN.png
-    1. General Data: Data/LvStats/Briggs/63
-    1. Graphics: GFX/Combat/Fighters/Foe/Boss/SuperCyborg.png
-    1. General Data: Data/LvStats/Briggs/64
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_Gunner.png
-    1. General Data: Data/LvStats/Briggs/65
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_FlameThrower.png
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_IceCannon.png
-    1. General Data: Data/LvStats/Briggs/66
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_WaterGun.png
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_WindGun.png
-    1. General Data: Data/LvStats/Briggs/67
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_RockThrower.png
-    1. General Data: Data/LvStats/Briggs/68
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_LightGun.png
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_DarkGun.png
-    1. General Data: Data/LvStats/Briggs/69
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Goddess.piko
-    1. General Data: Data/LvStats/Briggs/7
-    1. General Data: Data/LvStats/Briggs/70
-    1. General Data: Data/LvStats/Briggs/71
-    1. General Data: Data/LvStats/Briggs/72
-    1. General Data: Data/LvStats/Briggs/73
-    1. General Data: Data/LvStats/Briggs/74
-    1. General Data: Data/LvStats/Briggs/75
-    1. General Data: Data/LvStats/Briggs/76
-    1. General Data: Data/LvStats/Briggs/77
-    1. General Data: Data/LvStats/Briggs/78
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_VenomGun.png
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_VirusGun.png
-    1. General Data: Data/LvStats/Briggs/79
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/ADD_BlockGun.png
-    1. General Data: Data/LvStats/Briggs/8
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/ADD_ConfuseGun.png
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Goddess.png
-    1. General Data: Data/LvStats/Briggs/80
-    1. General Data: Data/LvStats/Briggs/81
-    1. General Data: Data/LvStats/Briggs/82
-    1. General Data: Data/LvStats/Briggs/83
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_TRQ.png
-    1. General Data: Data/LvStats/Briggs/84
     1. Script: Script/Maps/Physillium - The Ruins of the Y Anhysbys.lua
-    1. General Data: Data/LvStats/Briggs/85
+    1. General Data: Data/LvStats/Briggs/15
     1. Script: Script/Maps/Physillium - The Ruins of the Y Anhysbys.lsv
     1. Script: Script/Maps/Physillium - Ji Rubble.lua
-    1. General Data: Data/LvStats/Briggs/86
+    1. General Data: Data/LvStats/Briggs/16
     1. Script: Script/Maps/Physillium - Ji Temple.lua
     1. Script: Script/Maps/Physillium - Black Castle.lua
-    1. General Data: Data/LvStats/Briggs/87
+    1. General Data: Data/LvStats/Briggs/17
     1. Script: Script/Maps/Ysperon - Eugorvnia.lua
-    1. General Data: Data/LvStats/Briggs/88
+    1. General Data: Data/LvStats/Briggs/18
     1. Script: Script/Maps/Ysperon - Facility.lua
-    1. General Data: Data/LvStats/Briggs/89
+    1. General Data: Data/LvStats/Briggs/19
     1. Script: Script/Maps/Vulpina - Town.lua
-    1. General Data: Data/LvStats/Briggs/9
+    1. General Data: Data/LvStats/Briggs/2
     1. Script: Script/Maps/Volcania - Volcanic Plains.lua
+    1. General Data: Data/LvStats/Briggs/20
     1. Script: Script/Maps/Poloqor - Mid-Boss.lua
-    1. General Data: Data/LvStats/Briggs/90
     1. Script: Script/Maps/Nizozemska - Space Port.lua
-    1. General Data: Data/LvStats/Briggs/91
+    1. General Data: Data/LvStats/Briggs/21
     1. Script: Script/Maps/Nizozemska - Groenhart bos.lua
-    1. General Data: Data/LvStats/Briggs/92
+    1. General Data: Data/LvStats/Briggs/22
     1. Script: Script/Maps/Nizozemska - Marlon's house.lua
     1. Script: Script/Maps/Nizozemska - Lake.lua
     1. Script: Script/Maps/Phantasar - Frendor Bushes - Arrival.lua
-    1. General Data: Data/LvStats/Briggs/93
+    1. General Data: Data/LvStats/Briggs/23
     1. Script: Script/Maps/Phantasar.lua
-    1. General Data: Data/LvStats/Briggs/94
+    1. General Data: Data/LvStats/Briggs/24
     1. Script: Script/Maps/Phantasar - Frendor Bushes.lua
     1. Script: Script/Maps/Phantasar - Frendor.lua
-    1. General Data: Data/LvStats/Briggs/95
+    1. General Data: Data/LvStats/Briggs/25
+    1. General Data: Data/LvStats/Briggs/26
     1. Script: Script/Maps/Nizozemska - Belioss.lua
-    1. General Data: Data/LvStats/Briggs/96
     1. Script: Script/Maps/Phantasar - Ghost House.lua
-    1. General Data: Data/LvStats/Briggs/97
+    1. General Data: Data/LvStats/Briggs/27
     1. Script: Script/Maps/Nizozemska - Dark Graveyard.lua
     1. Script: Script/Maps/Nizozemska - Dark Graveyard.lsv
     1. Script: Script/Maps/Phantasar - Slagimon Forest.lua
-    1. General Data: Data/LvStats/Briggs/98
+    1. General Data: Data/LvStats/Briggs/28
     1. Script: Script/Maps/Nizozemska - Marlon's Garden.lua
+    1. General Data: Data/LvStats/Briggs/29
     1. Script: Script/Maps/Phantasar - Frendor.lsv
     1. Script: Script/Maps/Ysperon - Facility 2.lua
-    1. General Data: Data/LvStats/Briggs/99
     1. Script: Script/Maps/Ysperon - Eugorvnia Caves.lua
-    1. General Data: Data/LvStats/Crystal/0
+    1. General Data: Data/LvStats/Briggs/3
     1. Script: Script/Maps/Vulpina - Flower Forest.lua
+    1. General Data: Data/LvStats/Briggs/30
     1. Script: Script/Maps/Vulpina - Sewers.lua
-    1. General Data: Data/LvStats/Crystal/1
     1. Script: Script/Maps/Volcania - Caves.lua
     1. Script: Script/Maps/Excalibur - Final.lua
-    1. General Data: Data/LvStats/Crystal/10
-    1. General Data: Data/LvStats/Crystal/100
-    1. General Data: Data/LvStats/Crystal/11
-    1. General Data: Data/LvStats/Crystal/12
+    1. General Data: Data/LvStats/Briggs/31
+    1. General Data: Data/LvStats/Briggs/32
+    1. General Data: Data/LvStats/Briggs/33
+    1. General Data: Data/LvStats/Briggs/34
     1. Script: Script/Maps/Excalibur - Final.lsv
     1. Script: Script/Maps/Excalibur - Final - 2.lua
-    1. General Data: Data/LvStats/Crystal/13
     1. Script: Script/Maps/Phantasar - Airom.lua
+    1. General Data: Data/LvStats/Briggs/35
     1. Script: Script/Maps/BlackHoleDweller.lua
-    1. General Data: Data/LvStats/Crystal/14
     1. Script: Script/Maps/Excalibur - Final Boss.lua
-    1. General Data: Data/LvStats/Crystal/15
+    1. General Data: Data/LvStats/Briggs/36
     1. Script: Script/Maps/Excalibur - Post Game.lua
     1. Script: Script/Maps/Hawk_PostGame.lua
-    1. General Data: Data/LvStats/Crystal/16
+    1. General Data: Data/LvStats/Briggs/37
+    1. General Data: Data/LvStats/Briggs/38
     1. Script: Script/MiniGame/AutoUse.lua
-    1. General Data: Data/LvStats/Crystal/17
     1. Script: Script/MiniGame/MemoryAnhysbys.lua
+    1. General Data: Data/LvStats/Briggs/39
     1. Script: Script/Flow/Bestiary.lua
-    1. General Data: Data/LvStats/Crystal/18
-    1. General Data: Data/LvStats/Crystal/19
+    1. General Data: Data/LvStats/Briggs/4
     1. Script: Script/Flow/Bestiary.lsv
     1. Script: Script/Flow/BlockShooter.lua
-    1. General Data: Data/LvStats/Crystal/2
+    1. General Data: Data/LvStats/Briggs/40
     1. Script: Script/Flow/NizozemskaSave.lua
-    1. General Data: Data/LvStats/Crystal/20
-    1. General Data: Data/LvStats/Crystal/21
+    1. General Data: Data/LvStats/Briggs/41
+    1. General Data: Data/LvStats/Briggs/42
     1. Script: Script/Flow/NizozemskaSave.lsv
     1. Script: Script/Flow/World.lua
     1. Script: Script/Flow/PhantasarStore.lua
-    1. General Data: Data/LvStats/Crystal/22
+    1. General Data: Data/LvStats/Briggs/43
     1. Script: Script/Flow/PhantasarStore.lsv
     1. Script: Script/Flow/NIM.lua
-    1. General Data: Data/LvStats/Crystal/23
-    1. General Data: Data/LvStats/Crystal/24
+    1. General Data: Data/LvStats/Briggs/44
+    1. General Data: Data/LvStats/Briggs/45
     1. Script: Script/Flow/Excalibur_Transport.lua
-    1. General Data: Data/LvStats/Crystal/25
+    1. General Data: Data/LvStats/Briggs/46
     1. Script: Script/Flow/EndCredits.lua
+    1. General Data: Data/LvStats/Briggs/47
     1. Script: Script/Use/Anyway/Full.lua
     1. Script: Script/Use/Anyway/ReLevel.lua
-    1. General Data: Data/LvStats/Crystal/26
     1. Script: Script/Use/Linkers/WorldLinker.lua
     1. Script: Script/JINC/NewGame+/PreserveVar.lua
-    1. General Data: Data/LvStats/Crystal/27
+    1. General Data: Data/LvStats/Briggs/48
     1. Script: Script/JINC/Big/BestiaryData.lua
     1. Script: Script/JINC/Big/Credits.lua
-    1. General Data: Data/LvStats/Crystal/28
+    1. General Data: Data/LvStats/Briggs/49
     1. Script: Script/JINC/World/Nizozemska.lua
-    1. General Data: Data/LvStats/Crystal/29
+    1. General Data: Data/LvStats/Briggs/5
     1. Script: Script/JINC/World/Phantasar.lua
     1. Script: Script/External/SpellAni/Thriller.lua
-    1. General Data: Data/LvStats/Crystal/3
+    1. General Data: Data/LvStats/Briggs/50
     1. Script: Script/Use/Maps/Hawk/AutoNewNav.lua
     1. Script: Script/Use/Maps/Hawk/ArrivalPhysillium.lua
+    1. General Data: Data/LvStats/Briggs/51
     1. Script: Script/Use/Maps/Hawk/Teach Wendicka.lua
-    1. General Data: Data/LvStats/Crystal/30
     1. Script: Script/Use/Maps/Hawk/HawkBridge.lua
-    1. General Data: Data/LvStats/Crystal/31
+    1. General Data: Data/LvStats/Briggs/52
     1. Script: Script/Use/Maps/Hawk/AftermathVolcania.lua
     1. Script: Script/Use/Maps/Hawk/ArrivalExcalibur.lua
     1. Script: Script/Use/Maps/Hawk/UnlockBlackHoleDweller.lua
-    1. General Data: Data/LvStats/Crystal/32
+    1. General Data: Data/LvStats/Briggs/53
     1. Script: Script/Use/Maps/Hawk_Terminal/Bestiary.lua
     1. Script: Script/Use/Maps/Hawk_Terminal/Block Shooter .lua
+    1. General Data: Data/LvStats/Briggs/54
     1. Script: Script/Use/Maps/Hawk_Terminal/NIM.lua
-    1. General Data: Data/LvStats/Crystal/33
     1. Script: Script/Use/Maps/Gen/Next.lua
     1. Script: Script/Use/Maps/Gen/Sudoku.lua
-    1. General Data: Data/LvStats/Crystal/34
+    1. General Data: Data/LvStats/Briggs/55
     1. Script: Script/Use/Maps/Gen/SchuifNext.lua
+    1. General Data: Data/LvStats/Briggs/56
     1. Script: Script/Use/Maps/Gen/SchuifNextReal.lua
-    1. General Data: Data/LvStats/Crystal/35
     1. Script: Script/Use/Maps/AltArena/Excalibur.lua
+    1. General Data: Data/LvStats/Briggs/57
     1. Script: Script/Use/Sub/Party/XenobiSpells.lua
-    1. General Data: Data/LvStats/Crystal/36
     1. Script: Script/Use/Combat/AblSpecialEffect/HPAPto1.lua
-    1. General Data: Data/LvStats/Crystal/37
+    1. General Data: Data/LvStats/Briggs/58
     1. Script: Script/Use/Combat/AblSpecialEffect/Summon.lua
     1. Script: Script/Use/Combat/AblSpecialEffect/UpgradeToSnowLeopard.lua
-    1. General Data: Data/LvStats/Crystal/38
+    1. General Data: Data/LvStats/Briggs/59
     1. Script: Script/Use/Combat/AblSpecialEffect/Randomizer.lua
     1. Script: Script/Use/Combat/AblSpecialEffect/Void.lua
-    1. General Data: Data/LvStats/Crystal/39
+    1. General Data: Data/LvStats/Briggs/6
     1. Script: Script/Use/Combat/StatusChanges/IDDQD.lua
     1. Script: Script/Use/Combat/StatusChanges/Confusion.lua
-    1. General Data: Data/LvStats/Crystal/4
+    1. General Data: Data/LvStats/Briggs/60
     1. Script: Script/Use/Combat/StatusChanges/Death.lua
+    1. General Data: Data/LvStats/Briggs/61
     1. Script: Script/Use/Combat/StatusChanges/Fear.lua
-    1. General Data: Data/LvStats/Crystal/40
     1. Script: Script/Use/Combat/AltEnemyBuild/SuperFoe_FireSpider.lua
-    1. General Data: Data/LvStats/Crystal/41
+    1. General Data: Data/LvStats/Briggs/62
     1. Script: Script/Use/Combat/AltEnemyBuild/ExHuRU.lua
     1. Script: Script/Use/Combat/Foe_AI/FireSpider.lua
+    1. General Data: Data/LvStats/Briggs/63
     1. Script: Script/Use/Combat/Foe_AI/ExHuRU_AI.lua
-    1. General Data: Data/LvStats/Crystal/42
     1. Script: Script/Use/Combat/Foe_AI/McLeen.lua
     1. Script: Script/Use/Combat/Events/ReleaseTheGoddess.lua
-    1. General Data: Data/LvStats/Crystal/43
+    1. General Data: Data/LvStats/Briggs/64
     1. Script: Script/Use/Combat/SpellAni/Moo.lua
     1. Script: Script/Use/Combat/SpellAni/Johnson_Phaser.lua
-    1. General Data: Data/LvStats/Crystal/44
+    1. General Data: Data/LvStats/Briggs/65
     1. Script: Script/Use/Combat/SpellAni/ARK SMASH.lua
     1. Script: Script/Use/Combat/SpellAni/Love, shine a light.lua
-    1. General Data: Data/LvStats/Crystal/45
+    1. General Data: Data/LvStats/Briggs/66
     1. Script: Script/Use/Combat/FoeAltImage/Cultist.lua
     1. Script: Script/Use/Combat/FoeAltImage/Alg.lua
-    1. General Data: Data/LvStats/Crystal/46
+    1. General Data: Data/LvStats/Briggs/67
     1. Script: Script/Use/Combat/AltBackGrounds/Black Hole Dweller.lua
     1. Script: Script/Use/Combat/AltBackGrounds/Goddess in Space.lua
-    1. General Data: Data/LvStats/Crystal/47
+    1. General Data: Data/LvStats/Briggs/68
     1. Script: Script/JINC/Foes/Reg/Bladeh.lua
-    1. General Data: Data/LvStats/Crystal/48
+    1. General Data: Data/LvStats/Briggs/69
     1. Script: Script/JINC/Foes/Reg/Lion.lua
     1. Script: Script/JINC/Foes/Reg/BlackLizard.lua
-    1. General Data: Data/LvStats/Crystal/49
+    1. General Data: Data/LvStats/Briggs/7
     1. Script: Script/JINC/Foes/Reg/Cid.lua
-    1. General Data: Data/LvStats/Crystal/5
+    1. General Data: Data/LvStats/Briggs/70
     1. Script: Script/JINC/Foes/Reg/Myr.lua
+    1. General Data: Data/LvStats/Briggs/71
     1. Script: Script/JINC/Foes/Reg/Insetto.lua
-    1. General Data: Data/LvStats/Crystal/50
     1. Script: Script/JINC/Foes/Reg/Flysky.lua
-    1. General Data: Data/LvStats/Crystal/51
+    1. General Data: Data/LvStats/Briggs/72
     1. Script: Script/JINC/Foes/Reg/AstrilopupGuard.lua
     1. Script: Script/JINC/Foes/Reg/Salamander.lua
-    1. General Data: Data/LvStats/Crystal/52
+    1. General Data: Data/LvStats/Briggs/73
     1. Script: Script/JINC/Foes/Reg/Pyroguin.lua
     1. Script: Script/JINC/Foes/Reg/Wolf.lua
-    1. General Data: Data/LvStats/Crystal/53
+    1. General Data: Data/LvStats/Briggs/74
     1. Script: Script/JINC/Foes/Reg/Thief.lua
-    1. General Data: Data/LvStats/Crystal/54
+    1. General Data: Data/LvStats/Briggs/75
     1. Script: Script/JINC/Foes/Reg/Hawk.lua
     1. Script: Script/JINC/Foes/Reg/Goblin.lua
-    1. General Data: Data/LvStats/Crystal/55
+    1. General Data: Data/LvStats/Briggs/76
     1. Script: Script/JINC/Foes/Reg/Cultist.lua
-    1. General Data: Data/LvStats/Crystal/56
+    1. General Data: Data/LvStats/Briggs/77
     1. Script: Script/JINC/Foes/Reg/Imp.lua
+    1. General Data: Data/LvStats/Briggs/78
     1. Script: Script/JINC/Foes/Reg/Shroom.lua
-    1. General Data: Data/LvStats/Crystal/57
     1. Script: Script/JINC/Foes/Reg/Cow.lua
-    1. General Data: Data/LvStats/Crystal/58
+    1. General Data: Data/LvStats/Briggs/79
     1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Befindo.lua
     1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Human.lua
-    1. General Data: Data/LvStats/Crystal/59
+    1. General Data: Data/LvStats/Briggs/8
     1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Fairy.lua
     1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Phelynx.lua
-    1. General Data: Data/LvStats/Crystal/6
+    1. General Data: Data/LvStats/Briggs/80
     1. Script: Script/JINC/Foes/Reg/UndedKid_Elf.lua
-    1. General Data: Data/LvStats/Crystal/60
+    1. General Data: Data/LvStats/Briggs/81
     1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Elf.lua
     1. Script: Script/JINC/Foes/Reg/Cyborg Ji.lua
-    1. General Data: Data/LvStats/Crystal/61
+    1. General Data: Data/LvStats/Briggs/82
     1. Script: Script/JINC/Foes/Reg/DeathMyr.lua
-    1. General Data: Data/LvStats/Crystal/62
+    1. General Data: Data/LvStats/Briggs/83
     1. Script: Script/JINC/Foes/Reg/CyberAstrilopup.lua
     1. Script: Script/JINC/Foes/Reg/Spider.lua
-    1. General Data: Data/LvStats/Crystal/63
+    1. General Data: Data/LvStats/Briggs/84
     1. Script: Script/JINC/Foes/Reg/Leopard.lua
-    1. General Data: Data/LvStats/Crystal/64
+    1. General Data: Data/LvStats/Briggs/85
     1. Script: Script/JINC/Foes/Reg/SnowLeopard.lua
-    1. General Data: Data/LvStats/Crystal/65
+    1. General Data: Data/LvStats/Briggs/86
     1. Script: Script/JINC/Foes/Reg/Zombie.lua
     1. Script: Script/JINC/Foes/Reg/Gremlin.lua
-    1. General Data: Data/LvStats/Crystal/66
+    1. General Data: Data/LvStats/Briggs/87
     1. Script: Script/JINC/Foes/Reg/Hag.lua
-    1. General Data: Data/LvStats/Crystal/67
+    1. General Data: Data/LvStats/Briggs/88
     1. Script: Script/JINC/Foes/Reg/Ghoul.lua
     1. Script: Script/JINC/Foes/Reg/HellHound.lua
-    1. General Data: Data/LvStats/Crystal/68
+    1. General Data: Data/LvStats/Briggs/89
     1. Script: Script/JINC/Foes/Boss/BigLion.lua
     1. Script: Script/JINC/Foes/Boss/Cyborg Lord.lua
-    1. General Data: Data/LvStats/Crystal/69
+    1. General Data: Data/LvStats/Briggs/9
     1. Script: Script/JINC/Foes/Boss/DardMoeder.lua
-    1. General Data: Data/LvStats/Crystal/7
+    1. General Data: Data/LvStats/Briggs/90
     1. Script: Script/JINC/Foes/Boss/DardBoorth.lua
     1. Script: Script/JINC/Foes/Boss/QueenMyr.lua
-    1. General Data: Data/LvStats/Crystal/70
+    1. General Data: Data/LvStats/Briggs/91
     1. Script: Script/JINC/Foes/Boss/AstrilopupElite.lua
-    1. General Data: Data/LvStats/Crystal/71
+    1. General Data: Data/LvStats/Briggs/92
     1. Script: Script/JINC/Foes/Boss/Mid-Boss.lua
     1. Script: Script/JINC/Foes/Boss/GiantSnake.lua
-    1. General Data: Data/LvStats/Crystal/72
+    1. General Data: Data/LvStats/Briggs/93
     1. Script: Script/JINC/Foes/Boss/Cultist Leader.lua
-    1. General Data: Data/LvStats/Crystal/73
+    1. General Data: Data/LvStats/Briggs/94
     1. Script: Script/JINC/Foes/Boss/Thief Chief.lua
     1. Script: Script/JINC/Foes/Boss/Diablo.lua
-    1. General Data: Data/LvStats/Crystal/74
+    1. General Data: Data/LvStats/Briggs/95
     1. Script: Script/JINC/Foes/Boss/LichKing.lua
-    1. General Data: Data/LvStats/Crystal/75
+    1. General Data: Data/LvStats/Briggs/96
     1. Script: Script/JINC/Foes/Boss/ExHuRU.lua
     1. Script: Script/JINC/Foes/Boss/DeathMyrQueen.lua
-    1. General Data: Data/LvStats/Crystal/76
+    1. General Data: Data/LvStats/Briggs/97
     1. Script: Script/JINC/Foes/Boss/SuperZombie.lua
     1. Script: Script/JINC/Foes/Boss/FireSpiderYoung.lua
-    1. General Data: Data/LvStats/Crystal/77
+    1. General Data: Data/LvStats/Briggs/98
     1. Script: Script/JINC/Foes/Boss/SuperCyborg.lua
     1. Script: Script/JINC/Foes/Boss/HWSNBN.lua
-    1. General Data: Data/LvStats/Crystal/78
+    1. General Data: Data/LvStats/Briggs/99
     1. Script: Script/JINC/Foes/Boss/Gold Killer Droid.lua
-    1. General Data: Data/LvStats/Crystal/79
+    1. General Data: Data/LvStats/Crystal/0
     1. Script: Script/JINC/Foes/Boss/UberGremlin.lua
     1. Script: Script/JINC/Foes/SuperBoss/FireSpider.lua
-    1. General Data: Data/LvStats/Crystal/8
+    1. General Data: Data/LvStats/Crystal/1
     1. Script: Script/JINC/Foes/SuperBoss/BlackHoleDweller.lua
     1. Script: Script/JINC/Foes/SpecialBoss/McLeen.lua
-    1. General Data: Data/LvStats/Crystal/80
+    1. General Data: Data/LvStats/Crystal/10
     1. Script: Script/JINC/Foes/Goddess/Goddess.lua
-    1. General Data: Data/LvStats/Crystal/81
+    1. General Data: Data/LvStats/Crystal/100
+    1. General Data: Data/LvStats/Crystal/11
     1. Script: Script/JINC/Foes/Goddess/Add_Gunner.lua
     1. Script: Script/JINC/Foes/Goddess/Add_FlameThrower.lua
-    1. General Data: Data/LvStats/Crystal/82
+    1. General Data: Data/LvStats/Crystal/12
     1. Script: Script/JINC/Foes/Goddess/Add_IceCannon.lua
     1. Script: Script/JINC/Foes/Goddess/Add_WaterGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_WindGun.lua
-    1. General Data: Data/LvStats/Crystal/83
+    1. General Data: Data/LvStats/Crystal/13
     1. Script: Script/JINC/Foes/Goddess/Add_RockThrower.lua
     1. Script: Script/JINC/Foes/Goddess/Add_LightGun.lua
-    1. General Data: Data/LvStats/Crystal/84
+    1. General Data: Data/LvStats/Crystal/14
     1. Script: Script/JINC/Foes/Goddess/Add_DarkGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_VenomGun.lua
-    1. General Data: Data/LvStats/Crystal/85
+    1. General Data: Data/LvStats/Crystal/15
     1. Script: Script/JINC/Foes/Goddess/Add_virusGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_Trq.lua
     1. Script: Script/JINC/Foes/Goddess/Add_BlockGun.lua
-    1. General Data: Data/LvStats/Crystal/86
+    1. General Data: Data/LvStats/Crystal/16
     1. Script: Script/JINC/Foes/Goddess/Add_ConfuseGun.lua
+    1. General Data: Data/LvStats/Crystal/17
+    1. General Data: Data/LvStats/Crystal/18
+    1. General Data: Data/LvStats/Crystal/19
+    1. General Data: Data/LvStats/Crystal/2
+    1. General Data: Data/LvStats/Crystal/20
+    1. General Data: Data/LvStats/Crystal/21
+    1. General Data: Data/LvStats/Crystal/22
+    1. General Data: Data/LvStats/Crystal/23
+    1. General Data: Data/LvStats/Crystal/24
+    1. General Data: Data/LvStats/Crystal/25
+    1. General Data: Data/LvStats/Crystal/26
+    1. General Data: Data/LvStats/Crystal/27
+    1. General Data: Data/LvStats/Crystal/28
+    1. General Data: Data/LvStats/Crystal/29
+    1. General Data: Data/LvStats/Crystal/3
+    1. General Data: Data/LvStats/Crystal/30
+    1. General Data: Data/LvStats/Crystal/31
+    1. General Data: Data/LvStats/Crystal/32
+    1. General Data: Data/LvStats/Crystal/33
+    1. General Data: Data/LvStats/Crystal/34
+    1. General Data: Data/LvStats/Crystal/35
+    1. General Data: Data/LvStats/Crystal/36
+    1. General Data: Data/LvStats/Crystal/37
+    1. General Data: Data/LvStats/Crystal/38
+    1. General Data: Data/LvStats/Crystal/39
+    1. General Data: Data/LvStats/Crystal/4
+    1. General Data: Data/LvStats/Crystal/40
+    1. General Data: Data/LvStats/Crystal/41
+    1. General Data: Data/LvStats/Crystal/42
+    1. General Data: Data/LvStats/Crystal/43
+    1. General Data: Data/LvStats/Crystal/44
+    1. General Data: Data/LvStats/Crystal/45
+    1. General Data: Data/LvStats/Crystal/46
+    1. General Data: Data/LvStats/Crystal/47
+    1. General Data: Data/LvStats/Crystal/48
+    1. General Data: Data/LvStats/Crystal/49
+    1. General Data: Data/LvStats/Crystal/5
+    1. General Data: Data/LvStats/Crystal/50
+    1. General Data: Data/LvStats/Crystal/51
+    1. General Data: Data/LvStats/Crystal/52
+    1. General Data: Data/LvStats/Crystal/53
+    1. General Data: Data/LvStats/Crystal/54
+    1. General Data: Data/LvStats/Crystal/55
+    1. General Data: Data/LvStats/Crystal/56
+    1. General Data: Data/LvStats/Crystal/57
+    1. General Data: Data/LvStats/Crystal/58
+    1. General Data: Data/LvStats/Crystal/59
+    1. General Data: Data/LvStats/Crystal/6
+    1. General Data: Data/LvStats/Crystal/60
+    1. General Data: Data/LvStats/Crystal/61
+    1. General Data: Data/LvStats/Crystal/62
+    1. General Data: Data/LvStats/Crystal/63
+    1. General Data: Data/LvStats/Crystal/64
+    1. General Data: Data/LvStats/Crystal/65
+    1. General Data: Data/LvStats/Crystal/66
+    1. General Data: Data/LvStats/Crystal/67
+    1. General Data: Data/LvStats/Crystal/68
+    1. General Data: Data/LvStats/Crystal/69
+    1. General Data: Data/LvStats/Crystal/7
+    1. General Data: Data/LvStats/Crystal/70
+    1. General Data: Data/LvStats/Crystal/71
+    1. General Data: Data/LvStats/Crystal/72
+    1. General Data: Data/LvStats/Crystal/73
+    1. General Data: Data/LvStats/Crystal/74
+    1. General Data: Data/LvStats/Crystal/75
+    1. General Data: Data/LvStats/Crystal/76
+    1. General Data: Data/LvStats/Crystal/77
+    1. General Data: Data/LvStats/Crystal/78
+    1. General Data: Data/LvStats/Crystal/79
+    1. General Data: Data/LvStats/Crystal/8
+    1. General Data: Data/LvStats/Crystal/80
+    1. General Data: Data/LvStats/Crystal/81
+    1. General Data: Data/LvStats/Crystal/82
+    1. General Data: Data/LvStats/Crystal/83
+    1. General Data: Data/LvStats/Crystal/84
+    1. General Data: Data/LvStats/Crystal/85
+    1. General Data: Data/LvStats/Crystal/86
     1. General Data: Data/LvStats/Crystal/87
     1. General Data: Data/LvStats/Crystal/88
     1. General Data: Data/LvStats/Crystal/89
@@ -2578,6 +2578,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/IAA/ITM_BOOK4.lua
     1. Script: Script/JINC/IAA/ITM_PROKIT.lua
     1. Script: Script/JINC/IAA/PERMABUFF_GREENPILL.lua
+    1. Script: Script/JINC/IAA/ITM_MEGAGUBAFLOWER.lua
+    1. Script: Script/JINC/IAA/ITM_MEGABLUBAFLOWER.lua
     1. Script: Script/JINC/InitChar/Briggs.lua
     1. Script: Script/JINC/InitChar/UniCrystal.lua
     1. Script: Script/JINC/InitChar/UniWendicka.lua
