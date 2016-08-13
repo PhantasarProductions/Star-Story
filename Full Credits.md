@@ -994,8 +994,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Anyway/Full.lua
     1. Script: Script/Use/Anyway/ReLevel.lua
     1. Script: Script/Use/Linkers/WorldLinker.lua
-    1. Script: Script/JINC/NewGame+/PreserveVar.lua
     1. General Data: Data/LvStats/Briggs/48
+    1. Script: Script/JINC/NewGame+/PreserveVar.lua
     1. Script: Script/JINC/Big/BestiaryData.lua
     1. Script: Script/JINC/Big/Credits.lua
     1. General Data: Data/LvStats/Briggs/49
@@ -1048,8 +1048,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/63
     1. Script: Script/Use/Combat/Foe_AI/ExHuRU_AI.lua
     1. Script: Script/Use/Combat/Foe_AI/McLeen.lua
-    1. Script: Script/Use/Combat/Events/ReleaseTheGoddess.lua
     1. General Data: Data/LvStats/Briggs/64
+    1. Script: Script/Use/Combat/Events/ReleaseTheGoddess.lua
     1. Script: Script/Use/Combat/SpellAni/Moo.lua
     1. Script: Script/Use/Combat/SpellAni/Johnson_Phaser.lua
     1. General Data: Data/LvStats/Briggs/65
@@ -1096,8 +1096,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Human.lua
     1. General Data: Data/LvStats/Briggs/8
     1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Fairy.lua
-    1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Phelynx.lua
     1. General Data: Data/LvStats/Briggs/80
+    1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Phelynx.lua
     1. Script: Script/JINC/Foes/Reg/UndedKid_Elf.lua
     1. General Data: Data/LvStats/Briggs/81
     1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Elf.lua
@@ -1155,8 +1155,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/SuperBoss/FireSpider.lua
     1. General Data: Data/LvStats/Crystal/1
     1. Script: Script/JINC/Foes/SuperBoss/BlackHoleDweller.lua
-    1. Script: Script/JINC/Foes/SpecialBoss/McLeen.lua
     1. General Data: Data/LvStats/Crystal/10
+    1. Script: Script/JINC/Foes/SpecialBoss/McLeen.lua
     1. Script: Script/JINC/Foes/Goddess/Goddess.lua
     1. General Data: Data/LvStats/Crystal/100
     1. General Data: Data/LvStats/Crystal/11
@@ -1175,8 +1175,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Crystal/15
     1. Script: Script/JINC/Foes/Goddess/Add_virusGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_Trq.lua
-    1. Script: Script/JINC/Foes/Goddess/Add_BlockGun.lua
     1. General Data: Data/LvStats/Crystal/16
+    1. Script: Script/JINC/Foes/Goddess/Add_BlockGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_ConfuseGun.lua
     1. General Data: Data/LvStats/Crystal/17
     1. General Data: Data/LvStats/Crystal/18
