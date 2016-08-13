@@ -631,8 +631,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/English/Scenario/MAPS/PHYSILLIUM - BLACK CASTLE
     1. Scenario: Languages/English/Scenario/MAPS/PHYSILLIUM - JI RUBBLE
     1. Scenario: Languages/English/Scenario/MAPS/PHYSILLIUM - JI TEMPLE
-    1. Audio: Audio/IntroStory/Lovejoy0005.ogg
     1. Scenario: Languages/English/Scenario/MAPS/PHYSILLIUM - THE RUINS OF THE Y ANHYSBYS
+    1. Audio: Audio/IntroStory/Lovejoy0005.ogg
     1. Scenario: Languages/English/Scenario/MAPS/POLOQOR - MID-BOSS
     1. Scenario: Languages/English/Scenario/MAPS/VOLCANIA - VOLCANIC PLAINS
     1. Scenario: Languages/English/Scenario/MAPS/VULPINA - FLOWER FOREST
@@ -902,8 +902,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/11
     1. General Data: Data/LvStats/Briggs/12
     1. General Data: Data/LvStats/Briggs/13
-    1. General Data: Data/LvStats/Briggs/14
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_TRQ.png
+    1. General Data: Data/LvStats/Briggs/14 < alias > GFX/Combat/Fighters/Foe/Goddess/Add_TRQ.png
     1. Script: Script/Maps/Physillium - The Ruins of the Y Anhysbys.lua
     1. General Data: Data/LvStats/Briggs/15
     1. Script: Script/Maps/Physillium - The Ruins of the Y Anhysbys.lsv

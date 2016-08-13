@@ -10,7 +10,7 @@ Modifications can still happen
 ![Wendicka Lovejoy](http://i.imgbox.com/33ut2FrS.png)
 
 Hello there boys and girls.
-For a little more than a year now I've been working to bring you Star Story, the RPG game about the space adventures of Wendicka Lovejoy and Crystal McLeen. The core development of the game is now over. At this moment I'm only bug-fixing and doing some "cosmetic touches". The only "major" think is adding some New Game+ data, but that doesn't require much code, only some extra data, and that's all. So in other words, I can consider this game now officially beta.
+For a little more than a year now I've been working to bring you Star Story, the RPG game about the space adventures of Wendicka Lovejoy and Crystal McLeen. The core development of the game is now over. At this moment I'm only bug-fixing and doing some "cosmetic touches". The only "major" thing is adding some New Game+ data, but that doesn't require much code, only some extra data, and that's all. So in other words, I can consider this game now officially beta.
 
 Since this is an early beta I am still waiting to come up with the result in all public. I will first want to put the game to the test to a few users before I actually make the game fully public. You can be one of them.
 
@@ -27,7 +27,7 @@ The game will be available for Mac and Windows. (Unfortunately the Linux version
 
 - A Game Jolt account, since I need to pass a secret key to you leading to the beta download.
 - A GitHub account and you need to know how to use the []GitHub issue tracker](https://github.com/PhantasarProductions/Star-Story/issues)
-- I don't require knowledge of Lua or BlitzMax but if you can describe bugs in detail, you're the one I may need.
+- I don't require you have knowledge knowledge of Lua or BlitzMax but if you can describe bugs in detail, you're the one I may need.
 
 One note, keep spoilers out of the issue tracker.
 
