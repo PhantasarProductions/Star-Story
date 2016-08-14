@@ -21,13 +21,16 @@ The game will be available for Mac and Windows. (Unfortunately the Linux version
 - So I need both Mac users and Windows users
 - The game can be a bit demanding. The Mac I used to develop this was a "Late 2012 Mac Mini" running El Capitan. For Windows I recommend either Windows 7 or 10.
 - I will not officially support Wine, but if Linux users want to try how well the game runs in Wine, be my guest. ;)
+- The game requires OpenGL for graphics, yes even in Windows.
+- The game's audio uses DirectSound in Windows (should be installed by default) and FreeSound on Mac (should be no problem on El Capitan).
+
 
 
 ## "Requirements" (I hate that word)
 
 - A Game Jolt account, since I need to pass a secret key to you leading to the beta download.
 - A GitHub account and you need to know how to use the []GitHub issue tracker](https://github.com/PhantasarProductions/Star-Story/issues)
-- I don't require you have knowledge knowledge of Lua or BlitzMax but if you can describe bugs in detail, you're the one I may need.
+- I don't require you have knowledge of Lua or BlitzMax but if you can describe bugs in detail, you're the one I may need.
 
 One note, keep spoilers out of the issue tracker.
 
@@ -51,5 +54,5 @@ You can either respond to this post, but then I'll need you to throw me a friend
 
 ![Fake captcha](http://i.imgur.com/n4V3VqE.png)
 
-(This address will only exist as long as there are still vacant spots, and will after that be destroyed. I want to try to void spammers, you know)
+(This address will only exist as long as there are still vacant spots, and will after that be destroyed. I want to try to avoid spammers, you know)
 
