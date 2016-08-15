@@ -1,7 +1,7 @@
 --[[
   Start.lua
-  Version: 15.09.18
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.08.14
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -177,9 +177,11 @@ StartIntroSequence()
 LAURA.Flow("FIELD")
 end
 
+--[[ This part has not been used since the New Game+ has now been covered on a differnt way.
 function NewGamePlus()
 NewGame()
 Console.Write("Basic new game has been set up, but now for the New Game+",255,180,0)
 end
+]]
 
 print("Ready to go?")

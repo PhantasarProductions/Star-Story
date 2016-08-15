@@ -1,6 +1,6 @@
 --[[
   BoxText.lua
-  Version: 16.07.12
+  Version: 16.08.15
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -229,6 +229,7 @@ local sb_data = { Header = rec.Header, PicDir = rec.PicDir, PicSpc = rec.PicSpc,
 local width=700 -- standard width, this can be shortened by the portraits popping with the textbox
 local ak,txt,cline,spline
 local aw,word
+local continue
 if rec.PicRef then
    width = width - Image.Width(rec.PicRef)   
    end
@@ -257,7 +258,14 @@ repeat
 INP.Grab()
 ShowBox(sb_data,boxback)
 Flip()
-until mousehit(1)
+if mousehit(1) then
+     if sb_data.SL>#sb_data.Lines then 
+        continue=true
+     else
+         sb_data.SL=#sb_data.Lines+1
+     end
+end     
+until continue -- mousehit(1)
 end
 
 function SerialBoxText(file,ptag,boxback)

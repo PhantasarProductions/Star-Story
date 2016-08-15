@@ -2,7 +2,7 @@
 **********************************************
   
   Physillium - Ji Temple.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,18 +32,22 @@
   
  **********************************************
  
-version: 15.11.29
+version: 16.08.15
 ]]
 
 function NPC_IRVONA()
-MapText("IRVONA")
-if not Done("&REVEALED.BLACKCASTLE") then
-   ActivateRemotePad('Start','Physillium - Black Castle','Physillium','Black Castle - Entrance Hall',"#001")
-   CSay("Transporter pad for Black Castle Revealed")
-   end
+  MapText("IRVONA")
+  if not Done("&REVEALED.BLACKCASTLE") then
+     ActivateRemotePad('Start','Physillium - Black Castle','Physillium','Black Castle - Entrance Hall',"#001")
+    CSay("Transporter pad for Black Castle Revealed")
+  end
 end   
 
+function NPC_Master()
+  MapText("YA."..upper(GetActive()))
+end  
+
 function GALE_OnLoad()
-Music("Ji/The_Loneliness")
-SetScrollBoundaries(0,0,0,80)
+  Music("Ji/The_Loneliness")
+  SetScrollBoundaries(0,0,0,80)
 end
