@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.11
+version: 16.08.16
 ]]
 
 
@@ -65,7 +65,11 @@ local Keuze = RunQuestion("MAP","BAKINA.MENU")
       end,
             
       function() -- Healing items
-      GoToStore("HAWK_BANIKA_HEAL")
+      
+      GoToStore(({"HAWK_BANIKA_HEAL",
+                  "HAWK_BANIKA_HEAL_CYCLE2",
+                  "HAWK_BANIKA_HEAL_CYCLE2"     -- Cycle 2 and 3 use the same stock.
+                 })[npgcount] or "HAWK_BANIKA_ULTRAHEAL")
       end,      
       
       function() -- powerup items

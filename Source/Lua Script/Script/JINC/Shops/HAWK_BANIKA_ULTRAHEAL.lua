@@ -1,5 +1,5 @@
 --[[
-  HAWK_BANIKA_HEAL_CYCLE2.lua
+  HAWK_BANIKA_ULTRAHEAL.lua
   Version: 16.08.16
   Copyright (C) 2016 Jeroen Petrus Broks
   
@@ -38,16 +38,16 @@
 -- 16 Aug 2016; 14:44:27
 -- License: If stripped from any reference to the story line and its characters, this file becomes zLib
 	ret = {
-		["Stock1"] = "ITM_KILOBLUBAFLOWER.lua",
-		["Stock10"] = "ITM_SUPER_ENERGYDRINK.lua",
-		["Stock2"] = "ITM_KILOGUBAFLOWER.lua",
-		["Stock3"] = "ITM_SUPER_SHOT.lua",
-		["Stock4"] = "ITM_PROKIT.lua",
-		["Stock5"] = "ITM_MEGABLUBAFLOWER.lua",
-		["Stock6"] = "ITM_ANTIDOTE.lua",
-		["Stock7"] = "ITM_MEDICINE.lua",
-		["Stock8"] = "ITM_SHOT.lua",
-		["Stock9"] = "ITM_HEATHRUB.lua",
-		["StoreName"] = "Banika's Healing Items"}
+		["Stock1"] = "*Nothing*",
+		["Stock10"] = "*Nothing*",
+		["Stock2"] = "*Nothing*",
+		["Stock3"] = "*Nothing*",
+		["Stock4"] = "*Nothing*",
+		["Stock5"] = "*Nothing*",
+		["Stock6"] = "*Nothing*",
+		["Stock7"] = "*Nothing*",
+		["Stock8"] = "*Nothing*",
+		["Stock9"] = "*Nothing*",
+		["StoreName"] = ""}
 
 return ret
