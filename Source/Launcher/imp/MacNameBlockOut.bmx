@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 16.08.10
+Version: 16.08.16
 End Rem
 'Print appfile
 
@@ -32,11 +32,13 @@ Strict
 Import tricky_units.prefixsuffix
 Import brl.system
 
-MKL_Version "LAURA II - MacNameBlockOut.bmx","16.08.10"
+MKL_Version "LAURA II - MacNameBlockOut.bmx","16.08.16"
 MKL_Lic     "LAURA II - MacNameBlockOut.bmx","GNU General Public License 3"
 
+?Not debug
 AppTitle = "LAURA LAUNCHER"
 If Not Suffixed(AppFile,"Star Story.app/Contents/MacOS/Star Story")
 	Notify "There are some name errors in the launcher name preventing secure work on Mac. Please make sure the names of the files are correctly set up."
 	End
 EndIf
+?

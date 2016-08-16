@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 16.05.03
+Version: 16.08.16
 End Rem
 Strict
 Import "framework.bmx"
@@ -36,7 +36,7 @@ End Function
 Public
 
 
-MKL_Version "LAURA II - NewGame.bmx","16.05.03"
+MKL_Version "LAURA II - NewGame.bmx","16.08.16"
 MKL_Lic     "LAURA II - NewGame.bmx","GNU General Public License 3"
 
 JCR6CrashError = True
@@ -64,6 +64,8 @@ Type TNewGamePanel Extends tfpanelbase
 	Field Skill:TGadget
 	Field Windowed:TGadget
 	Field SkipGameJolt:TGadget
+	Field GJWhatsthis:TGadget
+	Field AnnaWhatsthis:TGadget
 	Field YesNo$[] = ["No","Yes"]
 
 	Method Build()
@@ -105,26 +107,31 @@ Type TNewGamePanel Extends tfpanelbase
 	windowed = CreateButton("Windowed",300,275,300,25,Panel,Button_CheckBox)
 	SkipGameJolt = CreateButton("Skip GameJolt",300,300,300,25,Panel,Button_CheckBox)
 	
-	CreateLabel "GameJolt Login. If you don't have a GameJolt account, simply leave the fields below blank",0,375,400,50,Panel
-	CreateLabel "UserName:",0,425,300,25,Panel
-	CreateLabel "Token:",0,450,300,25,Panel
-	GameJoltUserName = CreateTextField(300,425,300,25,Panel)
-	GameJoltToken = CreateTextField(300,450,300,25,panel,textfield_password)
+	'CreateLabel "GameJolt Login. If you don't have a GameJolt account, simply leave the fields below blank",0,375,400,50,Panel
+	CreateLabel "Game Jolt login (optional)",0,375,250,25,panel
+	GJWhatsthis = CreateButton("What's this?",250,375,150,25,panel)
+	CreateLabel "UserName:",0,400,300,25,Panel
+	CreateLabel "Token:",0,425,300,25,Panel
+	GameJoltUserName = CreateTextField(300,400,300,25,Panel)
+	GameJoltToken = CreateTextField(300,425,300,25,panel,textfield_password)
 	Gamejoltusername.setenabled JCR_Exists(JCR,"Authenticate/GameJolt")
 	gamejolttoken.setenabled JCR_Exists(JCR,"Authenticate/GameJolt")
 	made = True
 	MGIF_RegisterGadget "GameJolt.UserName",GameJoltUserName
 	MGIF_RegisterGadget "GameJolt.Token",GameJoltToken	
 	MGIF_GetConfig Config
-	
+	Rem
 	CreateLabel "Anna Login. If you have an Anna account, your achievements will be logged on the Phantasar Productions Website",0,500,400,50,Panel
 	CreateLabel "If you don't have or want an Anna account you can skip this part.",0,550,400,25,panel
 	CreateLabel "If your Anna Account is tied to your GameJolt account, can don't have to log this game itself in on GameJolt, but doing so anyway is harmless",0,600,400,50,panel
-	CreateLabel "Account id:",0,650,200,25,panel
-	CreateLabel "Secu-Code: ",0,675,200,25,panel
-	AnnaID = CreateTextField(300,650,50,25,panel)
-	AnnaSecu = CreateTextField(300,675,200,25,panel)
-	AnnaCreate = CreateButton("Create",375,650,100,25,panel)
+	End Rem
+	CreateLabel "Anna Login: (optional)",0,475,250,25,panel
+	AnnaWhatsthis = CreateButton("What's this?",250,475,150,25,panel)	
+	CreateLabel "Account id:",0,500,200,25,panel
+	CreateLabel "Secu-Code: ",0,525,200,25,panel
+	AnnaID = CreateTextField(300,500,50,25,panel)
+	AnnaSecu = CreateTextField(300,525,200,25,panel)
+	AnnaCreate = CreateButton("Create",375,500,100,25,panel)
 	Rem
 	?Win32
 	panwendicka = CreatePanel(tw-PixmapWidth(pixwendicka),th-PixmapHeight(pixwendicka),PixmapWidth(pixwendicka),PixmapHeight(pixwendicka),panel)
@@ -144,6 +151,8 @@ Type TNewGamePanel Extends tfpanelbase
 		Select ESource 
 			Case StartGame DoStartNewGame
 			Case AnnaCreate DoAnnaCreate
+			Case AnnaWhatsthis OpenURL "http://utbbs.tbbs.nl/Game.php?A=Read&C=Doc&Doc=Netwerk"
+			Case GJWhatsthis OpenURL "http://utbbs.tbbs.nl/Game.php?A=Read&C=Doc&Doc=Netwerk"
 			End Select
 		EndIf
 	End Method
@@ -157,7 +166,7 @@ Type TNewGamePanel Extends tfpanelbase
 	End Method
 	
 	Method DoAnnaCreate()
-	Local Secu$ = MD5(Rand(0,MilliSecs()))
+	Local Secu$ = Left(MD5(Rand(0,MilliSecs())),6)
 	Local result:StringMap = Anna("&HC=Game&A=BPC_Create&Secu="+Secu+"&name="+Toph(TextFieldText(Yourname)))
 	If result.value("REJECT")
 		Notify "Anna has rejected your account creation.~n~nThe reason stated is:~n"+result.value("REJECT")
