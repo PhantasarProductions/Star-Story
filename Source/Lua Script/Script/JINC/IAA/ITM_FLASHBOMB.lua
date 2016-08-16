@@ -1,7 +1,7 @@
 --[[
-  ABL_YIRL_FOLLOWME.lua
+  ITM_FLASHBOMB.lua
   Version: 16.08.16
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -35,26 +35,24 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["ABL_AP"] = 125,
-	["ABL_APCut"] = 10000,
-	["ABL_Instant"] = 2500,
-	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 60,
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
-	["AttackElement"] = "Non-Elemental",
-	["AttackStat"] = "Strength",
-	["DefenseStat"] = "Defense",
-	["Description"] = "Move all allies to COM",
+	["AttackElement"] = "Light",
+	["AttackPower"] = 250,
+	["AttackStat"] = "Will",
+	["DefenseStat"] = "Resistance",
+	["Description"] = "Shine a light on the enemy",
 	["HealingType"] = "Absolute",
+	["ITM_BuyPrice"] = 500,
+	["ITM_SellPrice"] = 275,
+	["ITM_Sellable"] = true,
 	["Icon"] = "GFX/Elements/Light.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Follow me",
-	["ScriptEffect_Reference"] = "FollowMe",
-	["Target"] = "OS",
+	["Name"] = "Flash Bomb",
+	["SpellAni_Reference"] = "Light",
+	["Target"] = "1F",
 	["UseCombat"] = true,
-	["UseField"] = true,
-	["untauntable"] = true}
+	["UseField"] = true}
 
 return ret
 

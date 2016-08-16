@@ -1,6 +1,6 @@
 --[[
   SUPER_FOXY_SKYDRAGONSLASH.lua
-  Version: 16.08.12
+  Version: 16.08.16
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
