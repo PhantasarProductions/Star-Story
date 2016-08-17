@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 16.08.09
+  Version: 16.08.17
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -447,6 +447,9 @@ for lay in each(layers[Maps.Multi()]) do
 			if skill<foe.Skill then
 				CWrite("  = Rejected. Not meant for this skill level",255,0,0)
 				FieldFoes[obj.Tag] = nil
+			elseif rand(1,2)==1 and (not suffixed(obj.kind,"AS1")) and (not suffixed(obj.kind,"AS2")) and (not suffixed(obj.kind,"AS3")) then
+        CWrite("  = Rejected. Randomizer ruled it out",255,0,0)
+        FieldFoes[obj.Tag] = nil			 
 			else
 				foe.OriPos = { X = obj.X, Y = obj.Y }
 				foe.Actor = obj.Tag .. " FoeActor"

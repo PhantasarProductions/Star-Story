@@ -26,7 +26,7 @@
  **********************************************
 ITM_KEY_YAQIRPA.lua
 (c) 2015, 2016 Jeroen Petrus Broks
-Version: 16.08.16
+Version: 16.08.17
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",

@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_DARK_VITALIZE.lua
-  Version: 16.08.16
+  Version: 16.08.17
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================

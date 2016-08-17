@@ -1,6 +1,6 @@
 --[[
   ITM_FLASHBOMB.lua
-  Version: 16.08.16
+  Version: 16.08.17
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -46,7 +46,7 @@ ret = {
 	["ITM_BuyPrice"] = 500,
 	["ITM_SellPrice"] = 275,
 	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Elements/Light.png",
+	["Icon"] = "GFX/Inventory/Flash Bomb.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Flash Bomb",
 	["SpellAni_Reference"] = "Light",
