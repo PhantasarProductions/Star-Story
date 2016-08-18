@@ -1,6 +1,6 @@
 --[[
   NizozemskaSave.lua
-  Version: 16.02.25
+  Version: 16.08.18
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -158,7 +158,7 @@ end
 
 boottext = {
 
-     [100] = {"FU-DOS v2.19.1950",1},
+     [100] = {"HR-DOS v6.10.1905",1},
      [101] = {"(c) Nanosoft corporation",2},
      [120] = {"A>prompt $p$g",4},
      [125] = {"A:\\>cd system",5},
