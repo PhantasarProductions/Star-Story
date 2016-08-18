@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 16.08.08
+  Version: 16.08.18
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -116,8 +116,9 @@ local cured,stc
 for i,y in spairs(abl) do
     if prefixed(i,'Cure') and y then
        stc = right(i,len(i)-len('Cure'))
-       cured = RPGChar.ListHas(cht,"STATUSCHANGE",stc)~=0
-       if cured then 
+       while RPGChar.ListHas(cht,"STATUSCHANGE",stc)~=0 do
+          cured = true
+       -- if cured then 
           CSay("Curing "..stc.." on "..cht)
           RPGChar.RemList(cht,"STATUSCHANGE",stc)
           CharReport(tg,ti,"Cure",{180,255,0})
@@ -211,7 +212,7 @@ for i,y in spairs(abl) do
     if prefixed(i,'Cause') and y then
        stc = right(i,len(i)-len('Cause'))
        stcr = StatusResistance[stc] or stc
-       if RPGChar.ListHas(cht,stc)==0 and (RPGChar.StatExists(cht,"SR_TRUE_"..stcr)==0 or rand(1,100)>RPGStat.Stat(cht,"SR_TRUE_"..stcr)) then
+       if RPGChar.ListHas(cht,"STATUSCHANGE",stc)==0 and (RPGChar.StatExists(cht,"SR_TRUE_"..stcr)==0 or rand(1,100)>RPGStat.Stat(cht,"SR_TRUE_"..stcr)) then
           RPGChar.AddList(cht,"STATUSCHANGE",stc)
           ;(StatusInflict[stc] or StatusInflict.Nothing)(tg,ti)
           CharReport(tg,ti,stc,{255,255,255})               
