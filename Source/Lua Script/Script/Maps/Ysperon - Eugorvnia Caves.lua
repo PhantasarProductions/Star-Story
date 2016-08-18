@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.16
+version: 16.08.18
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -44,6 +44,10 @@ end
 
 function StartTrans()
 	ActivatePad("EUGCAVESTART","General")
+	if not (Done("&DONE.YSPERON.EUGORVNIA.START.PLATE.ACTIVATION")) then
+	   SFX("Audio/SFX/MBOX1.ogg")
+	   MapEXP()
+	end   
 end	
 
 function ToCity()
