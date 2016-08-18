@@ -1,6 +1,6 @@
 --[[
   Wolf.lua
-  Version: 16.08.08
+  Version: 16.08.18
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.08.08
+-- Version 16.08.18
 
 
 
@@ -60,12 +60,12 @@ Data = {
 		["Defense"] = {113,115},
 		["Will"] = {193,195},
 		["Resistance"] = {133,135},
-		["Agility"] = {85,90},
+		["Agility"] = {87,90},
 		["Accuracy"] = {65,70},
 		["Evasion"] = {25,26},
 		["HP"] = {2679,2700},
 		["AP"] = {0,0},
-		["LevelRange"] = {60,61},
+		["LevelRange"] = {60,62},
 },
 	StatusResistance = {
 		["Poison"] = 70   --[[ #1 ]],

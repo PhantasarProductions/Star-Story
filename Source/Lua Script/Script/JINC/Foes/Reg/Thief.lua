@@ -1,6 +1,6 @@
 --[[
   Thief.lua
-  Version: 16.08.08
+  Version: 16.08.18
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.08.08
+-- Version 16.08.18
 
 
 
