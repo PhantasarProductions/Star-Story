@@ -211,7 +211,7 @@ end
 
 function SellItem(ch,item,socket)
   if not item.ITM_Sellable then
-     MINI("Unfortunately that item cannot be sold")
+     MINI("Unfortunately that item cannot be sold",255,0,0)
      return
   end   
 	SFX("Audio/SFX/Shopping/ChaChing.ogg")

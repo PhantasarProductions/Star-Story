@@ -1,6 +1,6 @@
 --[[
   Field.lua
-  Version: 16.08.17
+  Version: 16.08.19
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -191,6 +191,10 @@ for i,v in ipairs(Clickables) do
 table.remove(Clickables,r)
 end
 
+function TurnOffClicks() 
+  WalkArrival    = nil
+  WalkArrivalArg = nil
+end
 
 function CheckClickables()
 local i,c

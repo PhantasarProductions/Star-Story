@@ -1,6 +1,6 @@
 --[[
   Phantasar.lua
-  Version: 16.05.13
+  Version: 16.08.19
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -121,6 +121,7 @@ if rand(0,travelled)<encrange[skill] then return end
 -- GREAT! Then let's start the show!
 player.Walking=0
 player.Moving=0
+MS.Run("FIELD","TurnOffClicks")
 local ActivePlayer = GetActive()
 if not Done("&DONE.PHANTASAR.RANDOMENCOUNTER."..upper(ActivePlayer)) then SerialBoxText("PHANTASAR","RAND."..upper(ActivePlayer),"BOXTEXT.KTHURA") end
 CleanCombat()
