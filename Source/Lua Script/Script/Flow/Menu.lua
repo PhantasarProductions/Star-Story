@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 16.08.08
+  Version: 16.08.19
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -210,6 +210,10 @@ local ch = pch or pchar
 end
 
 function SellItem(ch,item,socket)
+  if not item.ITM_Sellable then
+     MINI("Unfortunately that item cannot be sold")
+     return
+  end   
 	SFX("Audio/SFX/Shopping/ChaChing.ogg")
 	RPGChar.DecStat(ch,"INVAMNT"..socket,1)
 	inc("%CASH",item.ITM_SellPrice)
