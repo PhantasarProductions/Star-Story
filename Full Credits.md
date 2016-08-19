@@ -1003,8 +1003,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/World/Phantasar.lua
     1. General Data: Data/LvStats/Briggs/5
     1. Script: Script/External/SpellAni/Thriller.lua
-    1. Script: Script/Use/Maps/Hawk/AutoNewNav.lua
     1. General Data: Data/LvStats/Briggs/50
+    1. Script: Script/Use/Maps/Hawk/AutoNewNav.lua
     1. Script: Script/Use/Maps/Hawk/ArrivalPhysillium.lua
     1. Script: Script/Use/Maps/Hawk/Teach Wendicka.lua
     1. General Data: Data/LvStats/Briggs/51
@@ -1017,8 +1017,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Maps/Hawk_Terminal/Bestiary.lua
     1. Script: Script/Use/Maps/Hawk_Terminal/Block Shooter .lua
     1. Script: Script/Use/Maps/Hawk_Terminal/NIM.lua
-    1. Script: Script/Use/Maps/Gen/Next.lua
     1. General Data: Data/LvStats/Briggs/54
+    1. Script: Script/Use/Maps/Gen/Next.lua
     1. Script: Script/Use/Maps/Gen/Sudoku.lua
     1. General Data: Data/LvStats/Briggs/55
     1. Script: Script/Use/Maps/Gen/SchuifNext.lua
@@ -1109,8 +1109,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/Spider.lua
     1. General Data: Data/LvStats/Briggs/84
     1. Script: Script/JINC/Foes/Reg/Leopard.lua
-    1. Script: Script/JINC/Foes/Reg/SnowLeopard.lua
     1. General Data: Data/LvStats/Briggs/85
+    1. Script: Script/JINC/Foes/Reg/SnowLeopard.lua
     1. Script: Script/JINC/Foes/Reg/Zombie.lua
     1. General Data: Data/LvStats/Briggs/86
     1. Script: Script/JINC/Foes/Reg/Gremlin.lua
