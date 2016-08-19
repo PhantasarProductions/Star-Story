@@ -1,6 +1,6 @@
 --[[
   Love, shine a light.lua
-  Version: 16.08.11
+  Version: 16.08.19
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -34,6 +34,10 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
+
+-- @IF IGNORE
+SpellAni = {}
+-- @FI
 function SpellAni.Light(ActG,ActT,TarG,TarT)
 local sx,sy = FighterCoords(TarG,TarT)
 local ak,x,y
@@ -56,3 +60,53 @@ for ak=1,50 do
     Flip()
     end
 end
+
+function LichtShow(met)
+  local zonder = not met
+  -- local sx,sy = FighterCoords(TarG,TarT)
+  local ak,x,y
+  local duur = { [true] = 100, [false]=50 }
+  Image.LoadNew("SA_LIGHT_BASE","GFX/Elements/Light.png") --"GFX/COMBAT/SPELLANI/GLITTER/BASE.PNG")
+  Image.HotCenter("SA_LIGHT_BASE") 
+  for ak=1,duur[met] do
+    DrawScreen()    
+    if met then
+       Image.SetAlphaPC(ak)
+       White()
+       Image.Rect(0,0,800,600)
+       ShowParty()
+       Image.SetAlphaPC(100)
+    end    
+    local c = rand(127,255)
+    Image.Color(c,c,c) -- rand(0,255),rand(0,255),rand(0,255)
+    for al=1,150 do
+        x = rand(0,800)
+        y = rand(0,600)
+        Image.Rotate(rand(0,360))
+        local s = rand(50,100)
+        Image.ScalePC(s,s)
+        Image.Draw('SA_LIGHT_BASE',x,y)
+        Image.ScalePC(100,100)
+        Image.Rotate(0)
+        end
+    Flip()
+    end
+
+end
+
+function SpellAni.Solaria(ActG,ActT,TarG,TarT)
+  local met = true
+  local zonder = false
+  LichtShow(zonder)
+end
+
+function SpellAni.WhiteApocalypse(ActG,ActT,TarG,TarT)
+  local met = true
+  local zonder = false
+  LichtShow(met)
+end
+
+
+-- @IF IGNORE
+return SpellAni
+-- @FI

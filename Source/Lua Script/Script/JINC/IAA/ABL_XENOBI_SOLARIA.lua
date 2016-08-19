@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.17
+version: 16.08.19
 ]]
 ret = {
 	["ABL_AP"] = 250,
@@ -54,6 +54,7 @@ ret = {
 	["Icon"] = "GFX/Elements/Light.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Solaria",
+	["SpellAni_Reference"] = "Solaria",
 	["Target"] = "AF",
 	["UseCombat"] = true,
 	["untauntable"] = true}

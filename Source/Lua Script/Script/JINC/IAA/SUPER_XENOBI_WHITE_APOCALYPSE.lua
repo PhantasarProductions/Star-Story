@@ -1,6 +1,6 @@
 --[[
   SUPER_XENOBI_WHITE_APOCALYPSE.lua
-  Version: 16.08.17
+  Version: 16.08.19
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -50,6 +50,7 @@ ret = {
 	["Icon"] = "GFX/Elements/Light.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "White Apocalypse",
+	["SpellAni_Reference"] = "WhiteApocalypse",
 	["Target"] = "AF",
 	["UseCombat"] = true,
 	["UseField"] = true}
