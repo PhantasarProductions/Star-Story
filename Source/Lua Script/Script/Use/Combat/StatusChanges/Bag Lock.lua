@@ -1,5 +1,5 @@
 --[[
-  Fear.lua
+  Bag Lock.lua
   Version: 16.08.20
   Copyright (C) 2016 Jeroen Petrus Broks
   
@@ -41,45 +41,22 @@ StatusBlockAction = {}
 -- @FI
 
 
-StatusResistance.Terrified  = 'Will'
-StatusBlockAction.Terrified = {'ATK','SHT'}
-tatusExpireOnAttack.Terrified = true
+StatusResistance.BagLock  = 'Block'
+StatusBlockAction.BagLock = {'ITM'}
+-- StatusExpireOnAttack.Terrified = true
 
-
-function StatusDrawFighter.Terrified(g,i)
-local ch = Fighters[g][i].Tag
-local w,h,er = ({
-
-                  Hero = function()
-                         return 32,64,({10000,25000,100000})[skill] 
-                         end,
-                  Foe  = function()
-                         return Image.Width("O"..Fighters.Foe[i].Tag),Image.Height("O"..Fighters.Foe[i].Tag),({10000000,25000,5000})[skill]
-                         end 
-                })[g]()
--- Get off the gauge
---if Fighters[g][i].Gauge>=10000 then RepCancel(g,i) end
---Fighters[g][i].Gauge=-1000
--- Draw the paralyse graphic
-Image.LoadNew("ST_PARALYSIS","GFX/Combat/StatusAni/Paralysis/Paralysis.png")
-paralysis_mod = paralysis_mod or {}
-paralysis_mod[ch] = (paralysis_mod[ch] or -2) * - 1
-local x,y = FighterCoords(g,i)
+function StatusDrawFighter.BagLock(g,i)
+--[[
+local bx,by = FighterCoords(g,i)
+local wy = by - 20
+local wx = bx
+local x,y
+x = wx + (math.sin(Time.MSecs()/1000)*20)
+y = wy - (math.cos(Time.MSecs()/2000)*5)
+Image.LoadNew('Rolstoel','GFX/Combat/StatusAni/Diseased/Rode Kruis.png'); Image.HotCenter(RodeKruis)
+Image.Show('Rolstoel',x,y)
+]]
 Image.Color(0,180,255)
-Image.ViewPort(x-((w/2)+16),y-h,16,h)
-Image.Tile("ST_PARALYSIS",x-((w/2)+16+paralysis_mod[ch]),y-h) 
-Image.ViewPort(x+((w/2)+16),y-h,16,h)
-Image.Tile("ST_PARALYSIS",x+((w/2)+16+paralysis_mod[ch]),y-h-8)
-Image.ViewPort(0,0,800,600)
--- Prevent wear off effect while entering moves (no I won't allow cheating) :-P 
-for ag,aia in pairs(Fighters) do
-    for ai,ad in pairs(aia) do
-        if ad.Gauge==10000 then return end
-        end
-    end    
--- Automatic wear off                
-fear_erate = fear_erate or {}
-fear_erate[ch] = fear_erate[ch] or -1000
-fear_erate[ch] = fear_erate[ch] +   1
-if rand(1,er)<fear_erate[ch] and NobodyOnCOM() then RPGChar.RemList(ch,"STATUSCHANGE","Fear"); fear_erate[ch]=nil return end
 end
+
+

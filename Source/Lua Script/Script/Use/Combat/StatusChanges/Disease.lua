@@ -55,8 +55,8 @@ local wx = bx
 local x,y
 x = wx + (math.sin(Time.MSecs()/1000)*20)
 y = wy + (math.cos(Time.MSecs()/1000)*5)
-Image.LoadNew(RodeKruis,'GFX/Combat/StatusAni/Diseased/Rode Kruis.png'); Image.HotCenter(RodeKruis)
-Image.Show(RodeKruis,x,y)
+Image.LoadNew('RodeKruis','GFX/Combat/StatusAni/Diseased/Rode Kruis.png'); Image.HotCenter('RodeKruis')
+Image.Show('RodeKruis',x,y)
 end
 
 
