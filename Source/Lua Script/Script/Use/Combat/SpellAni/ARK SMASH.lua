@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.30
+version: 16.08.20
 ]]
 -- @IF IGNORE
 SpellAni = {}
@@ -61,6 +61,7 @@ function SpellAni.ArkSmash(ActG,ActT,TarG,TarT)
     -- Make it dark    
     for alpha=0,100 do
         DrawScreen()
+        stars[#stars+1] = {x=rand(0,790),y=rand(0,500),spd=rand(1,10)/5}
         Image.SetAlphaPC(alpha)
         Black()
         Image.Rect(0,0,800,600)
