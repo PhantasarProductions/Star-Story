@@ -43,7 +43,7 @@ StatusBlockAction = {}
 
 StatusResistance.Terrified  = 'Will'
 StatusBlockAction.Terrified = {'ATK','SHT'}
-tatusExpireOnAttack.Terrified = true
+StatusExpireOnAttack.Terrified = true
 
 
 function StatusDrawFighter.Terrified(g,i)

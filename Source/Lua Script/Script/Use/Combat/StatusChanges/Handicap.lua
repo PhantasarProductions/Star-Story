@@ -46,7 +46,7 @@ StatusBlockAction.Handicapped = {'ARM','ABL'}
 -- StatusExpireOnAttack.Terrified = true
 
 function StatusDrawFighter.BagLock(g,i)
---[[
+
 local bx,by = FighterCoords(g,i)
 local wy = by - 20
 local wx = bx
@@ -55,8 +55,6 @@ x = wx + (math.sin(Time.MSecs()/1000)*20)
 y = wy - (math.cos(Time.MSecs()/2000)*5)
 Image.LoadNew('Rolstoel','GFX/Combat/StatusAni/Rolstoel.png'); Image.HotCenter('Rolstoel')
 Image.Show('Rolstoel',x,y)
-]]
-Image.Color(0,180,255)
 end
 
 
