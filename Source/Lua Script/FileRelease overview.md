@@ -607,6 +607,7 @@
 1. Script/Use/Combat/StatusChanges/Death.lua
 1. Script/Use/Combat/StatusChanges/Fear.lua
 1. Script/Use/Combat/StatusChanges/IDDQD.lua
+1. Script/Use/Combat/StatusChanges/Undead.lua
 1. Script/Use/Linkers/WorldLinker.lua
 1. Script/Use/Maps/AltArena/Excalibur.lua
 1. Script/Use/Maps/Gen/Next.lua
@@ -652,4 +653,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Fri 19 August 2016; 18:05:50 CET
+### Last updated: Sat 20 August 2016; 09:07:41 CET

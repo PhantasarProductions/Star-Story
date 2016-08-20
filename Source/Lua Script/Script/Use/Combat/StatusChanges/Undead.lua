@@ -1,7 +1,7 @@
 --[[
-  Disease.lua
+  Undead.lua
   Version: 16.08.20
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -35,41 +35,40 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 -- @IF IGNOREME
--- These lines are only meant to "fool" the outline routine in Eclipse ;)
--- The @IF IGNOREME and @FI command will make GALE ignore these lines. :)
-StatusResistance = {}
-StatusAltStat = {}
+StatusResistance = {}  
+StatusAltAI = {}
+StatusExpireOnAttack = {}
 StatusDrawFighter = {}
-StatusAltHealing = {}
+StatusAltHealing = {}  
 -- @FI
 
 
-StatusResistance.Disease = "Disease"
+StatusResistance.Zombie = "Damned"
+StatusResistance.Damned = "Damned"
 
+StatusAltAI.Zombie = StatusAltAI.Confusion
 
-
-function StatusDrawFighter.Disease(g,i)
-local bx,by = FighterCoords(g,i)
-local wy = by - 20
-local wx = bx
-local x,y
-x = wx + (math.sin(Time.MSecs()/1000)*20)
-y = wy + (math.cos(Time.MSecs()/1000)*5)
-Image.LoadNew(RodeKruis,'GFX/Combat/StatusAni/Diseased/Rode Kruis.png'); Image.HotCenter(RodeKruis)
-Image.Show(RodeKruis,x,y)
+function StatusAltHealing.Damned(ch,hp,element)
+  local dodmg = 0
+  local report = "DEATH!"      
+  local r,g,b = 255,0,0
+  RPGStat.Points(ch,"HP").Have = 0
+  return dodmg,report,r,g,b
 end
 
+StatusAltHealing.Zombie = StatusAltHealing.Damned
 
---[[ Dropped! Slowed the game down like crazy!
-StatusAltStat.Disease = {}
-function StatusAltStat.Disease.HP(ch)
-RPGChar.DefStat(ch,'END_HP',RPGChar.Points(ch,"HP").Have) -- This will make the Max HP always match the current HP as long as this status lasts, and due to that healing becomes impossible as long as this status lasts.
-end
-]]
+function StatusDrawFighter.Damned(g,i)
+  Image.Color(rand(1,100),rand(1,100),rand(1,100))
+end  
 
-function StatusAltHealing.Disease(ch,hp,element)
-local dodmg = 0
-local report = "NO EFFECT!"      
-local r,g,b = 255,180,0
-return dodmg,report,r,g,b
+function StatusDrawFighter.Zombie(g,i)
+  Image.LoadNew("ST_ZOMBIE","GFX/Combat/StatusChanges/Zombie.png")
+  Image.Hot("ST_ZOMBIE",Image.Width("ST_ZOMBIE")/2,Image.Height("ST_ZOMBIE"))
+  local bx,by = FighterCoords(g,i)
+  local s = right(Time.Time(),1)
+  if s=='0' or s=='2' or s=='4' or s=='6 'or s=='8' then
+     Image.Show("ST_ZOMBIE",bx,by)
+     return true
+  end
 end

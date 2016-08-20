@@ -240,14 +240,15 @@ SpriteAnim = {
 
 function DrawFighters()
 local Targeted 
+local alt
 for ft,ftl in spairs(Fighters) do
     for fli,fv in pairs(ftl) do
         Targeted = isorcontains(TargetedGroup,ft) and isorcontains(TargetedFighter,fli)
         if Targeted then TargetedColor() else White() end
         for stc in iStatusChange(fv.Tag) do
-            (StatusDrawFighter[stc] or function() end)(ft,fli)
+            alt = (StatusDrawFighter[stc] or function() end)(ft,fli)
             end
-        DrawFighter[ft](fli,fv)
+        if not alt then DrawFighter[ft](fli,fv) end
         end
     end
 end
