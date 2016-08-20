@@ -583,9 +583,9 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/Ysperon - Eugorvnia Caves/Data
     1. Map Design: Kthura/Ysperon - Eugorvnia Caves/Objects
     1. Map Design: Kthura/Ysperon - Eugorvnia Caves/Settings
-    1. Map Design: Kthura/Vulpina - Sewers/Data
-    1. Map Design: Kthura/Vulpina - Sewers/Objects
-    1. Map Design: Kthura/Vulpina - Sewers/Settings
+    1. Map Design: Kthura/Vulpina - Sewers/DATA
+    1. Map Design: Kthura/Vulpina - Sewers/OBJECTS
+    1. Map Design: Kthura/Vulpina - Sewers/SETTINGS
     1. Map Design: Kthura/Vulpina - Flower Forest/Data
     1. Map Design: Kthura/Vulpina - Flower Forest/Objects
     1. Audio: Audio/IntroStory/Lovejoy0004.ogg
@@ -846,7 +846,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_PUB_OUTSIDE
     1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Befindo.png
     1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Elf.png
-    1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Fairy.png < alias > Languages/Dutch/Scenario/MAPS/PROLOGUE_YAQIRPA
+    1. Scenario: Languages/Dutch/Scenario/MAPS/PROLOGUE_YAQIRPA
+    1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Fairy.png
     1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Human.png
     1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Phelynx.png
     1. Graphics: GFX/Combat/Fighters/Foe/Reg/CyberAstrilopup.png
@@ -914,8 +915,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Maps/Physillium - Black Castle.lua
     1. Script: Script/Maps/Ysperon - Eugorvnia.lua
     1. General Data: Data/LvStats/Briggs/18
-    1. Script: Script/Maps/Ysperon - Facility.lua
     1. General Data: Data/LvStats/Briggs/19
+    1. Script: Script/Maps/Ysperon - Facility.lua
     1. General Data: Data/LvStats/Briggs/2
     1. Script: Script/Maps/Vulpina - Town.lua
     1. Script: Script/Maps/Volcania - Volcanic Plains.lua
@@ -1001,8 +1002,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Big/Credits.lua
     1. General Data: Data/LvStats/Briggs/5
     1. Script: Script/JINC/World/Nizozemska.lua
-    1. Script: Script/JINC/World/Phantasar.lua
     1. General Data: Data/LvStats/Briggs/50
+    1. Script: Script/JINC/World/Phantasar.lua
     1. Script: Script/External/SpellAni/Thriller.lua
     1. General Data: Data/LvStats/Briggs/51
     1. Script: Script/Use/Maps/Hawk/AutoNewNav.lua
@@ -1074,16 +1075,16 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/Myr.lua
     1. General Data: Data/LvStats/Briggs/72
     1. Script: Script/JINC/Foes/Reg/Insetto.lua
-    1. Script: Script/JINC/Foes/Reg/Flysky.lua
     1. General Data: Data/LvStats/Briggs/73
+    1. Script: Script/JINC/Foes/Reg/Flysky.lua
     1. Script: Script/JINC/Foes/Reg/AstrilopupGuard.lua
     1. General Data: Data/LvStats/Briggs/74
     1. Script: Script/JINC/Foes/Reg/Salamander.lua
     1. Script: Script/JINC/Foes/Reg/Pyroguin.lua
     1. General Data: Data/LvStats/Briggs/75
     1. Script: Script/JINC/Foes/Reg/Wolf.lua
-    1. Script: Script/JINC/Foes/Reg/Thief.lua
     1. General Data: Data/LvStats/Briggs/76
+    1. Script: Script/JINC/Foes/Reg/Thief.lua
     1. Script: Script/JINC/Foes/Reg/Hawk.lua
     1. General Data: Data/LvStats/Briggs/77
     1. Script: Script/JINC/Foes/Reg/Goblin.lua
@@ -1110,8 +1111,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/CyberAstrilopup.lua
     1. General Data: Data/LvStats/Briggs/85
     1. Script: Script/JINC/Foes/Reg/Spider.lua
-    1. Script: Script/JINC/Foes/Reg/Leopard.lua
     1. General Data: Data/LvStats/Briggs/86
+    1. Script: Script/JINC/Foes/Reg/Leopard.lua
     1. Script: Script/JINC/Foes/Reg/SnowLeopard.lua
     1. General Data: Data/LvStats/Briggs/87
     1. Script: Script/JINC/Foes/Reg/Zombie.lua
@@ -1120,8 +1121,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/Hag.lua
     1. General Data: Data/LvStats/Briggs/89
     1. Script: Script/JINC/Foes/Reg/Ghoul.lua
-    1. Script: Script/JINC/Foes/Reg/HellHound.lua
     1. General Data: Data/LvStats/Briggs/9
+    1. Script: Script/JINC/Foes/Reg/HellHound.lua
     1. Script: Script/JINC/Foes/Boss/BigLion.lua
     1. General Data: Data/LvStats/Briggs/90
     1. Script: Script/JINC/Foes/Boss/Cyborg Lord.lua

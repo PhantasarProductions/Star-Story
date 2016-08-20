@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.25
+version: 16.08.20
 ]]
 -- @IF IGNORE
 AltArena = {}
@@ -52,7 +52,9 @@ AltArena['EXCALIBUR - FINAL'] = {
                                      ['#018'] = 'Junkyard.png',
                                      ['#019'] = 'Mansion.png',
                                      Secret1  = 'Facility.png',
-                                     Secret2  = 'Excalibur_SecretPassage.png'
+                                     Secret2  = 'Excalibur_SecretPassage.png',
+                                     SECRET1  = 'Facility.png',
+                                     SECRET2  = 'Excalibur_SecretPassage.png'
                                 }
                                 
 AltArena['EXCALIBUR - FINAL - 2'] = AltArena['EXCALIBUR - FINAL']                                
