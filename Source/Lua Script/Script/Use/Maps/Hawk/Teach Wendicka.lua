@@ -32,16 +32,29 @@
   
  **********************************************
  
-version: 16.07.26
+version: 16.08.20
 ]]
 
 TeachWendickaArray = {
+              Crystal = {
+                          Requirement = function()
+                                          local a = RPGChar.ListHas("Wendicka","ABL","WENDICKA_ELECTRICCHARGE")==1
+                                          a = a and RPGChar.ListHas("Wendicka","ABL","YIRL_FOLLOWME")==1
+                                          a = a and RPGChar.ListHas("Wendicka","ABL","FOXY_PICKPOCKET")==1
+                                          a = a and RPGChar.ListHas("Wendicka","ABL","EXHURU_KOLME")==1
+                                          a = a and RPGChar.ListHas("Wendicka","ABL","XENOBI_VITALIZE")==1
+                                          a = a and RPGChar.ListHas("Crystal","ARM","ARKSMASH")==1
+                                          a = a and CVV("&DONE.KILL.GEORGEMCLEEN")
+                                          return a
+                                        end,
+                          Teach = "WENDICKA_SISTERS"              
+                        },
 
              
              
               Yirl = {
                        Requirement = function() 
-                                     return CVV('&DONE.GROENHART') and RPGChar.ListHas("Yirl","ABL","YIRL_FOLLOWME")
+                                     return CVV('&DONE.GROENHART') and RPGChar.ListHas("Yirl","ABL","YIRL_FOLLOWME")==1
                                      end,
                        Teach = 'YIRL_FOLLOWME'              
                      },

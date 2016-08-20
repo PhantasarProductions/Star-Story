@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.11
+version: 16.08.20
 ]]
 
 -- [[ @USE /Script/Use/Maps/Gen/Schuif.lua ]]
@@ -536,6 +536,7 @@ function TalkLab()
 end
 
 function FightMcLeen()
+   if Done("&DONE.KILL.GEORGEMCLEEN") then return end
    PartyPop('Mac','West')
    Var.D('$JOHNSON',"Ashley")
    RPGChar.SetName("Johnson","Ashley")
