@@ -32,48 +32,29 @@
   
  **********************************************
  
-version: 16.08.19
+version: 16.08.20
 ]]
 ret = {
-	["ABL_AP"] = 300,
-	["ABL_APCut"] = 65535,
-	["ABL_DblSpeed"] = 65535,
+	["ABL_AP"] = 500,
+	["ABL_APCut"] = 50000,
+	["ABL_Instant"] = 600000,
 	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 5,
+	["ABL_Speed"] = 250,
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
-	["Buff_AP"] = 75,
-	["Buff_Accuracy"] = 75,
-	["Buff_Agility"] = 75,
-	["Buff_Defense"] = 75,
-	["Buff_Evasion"] = 75,
-	["Buff_HP"] = 75,
-	["Buff_Resistance"] = 75,
-	["Buff_Strength"] = 75,
-	["Buff_Will"] = 75,
-	["CureAmnesia"] = true,
-	["CureBagLock"] = true,
-	["CureConfusion"] = true,
-	["CureDisease"] = true,
-	["CureHandicapped"] = true,
-	["CureParalysis"] = true,
-	["CurePoison"] = true,
-	["CureSleep"] = true,
-	["CureTerrified"] = true,
-	["CureZombie"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Crystal! With you on the front rank we are invincible",
-	["Healing"] = 100,
-	["HealingType"] = "Percent",
-	["Icon"] = "GFX/Abilities/Fist.png",
+	["Description"] = "In Wendicka and Crystal are up front their bond each other will increase all stats.",
+	["HealingType"] = "Absolute",
+	["Icon"] = "GFX/Inventory/CandyHeart.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Sisters in all but blood",
 	["ScriptEffect_Reference"] = "Sisters",
-	["Script_XReq_Reference"] = "Sisters",
 	["Target"] = "OS",
-	["UseCombat"] = true}
+	["UseCombat"] = true,
+	["UseField"] = true,
+	["untauntable"] = true}
 
 return ret
 

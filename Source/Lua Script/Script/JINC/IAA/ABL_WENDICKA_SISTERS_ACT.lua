@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ITM_PHAN_TRAVEL.lua
+  ABL_WENDICKA_SISTERS_ACT.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -35,25 +35,44 @@
 version: 16.08.20
 ]]
 ret = {
+	["ABL_AP"] = 300,
+	["ABL_APCut"] = 65535,
+	["ABL_DblSpeed"] = 65535,
+	["ABL_Pose"] = "Cast",
+	["ABL_Speed"] = 5,
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 500,
+	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
+	["Buff_AP"] = 75,
+	["Buff_Accuracy"] = 75,
+	["Buff_Agility"] = 75,
+	["Buff_Defense"] = 75,
+	["Buff_Evasion"] = 75,
+	["Buff_HP"] = 75,
+	["Buff_Resistance"] = 75,
+	["Buff_Strength"] = 75,
+	["Buff_Will"] = 75,
+	["CureAmnesia"] = true,
+	["CureBagLock"] = true,
+	["CureConfusion"] = true,
+	["CureDisease"] = true,
+	["CureHandicapped"] = true,
+	["CureParalysis"] = true,
+	["CurePoison"] = true,
+	["CureSleep"] = true,
+	["CureTerrified"] = true,
+	["CureZombie"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Make all enemies disappear (does not work on bosses)",
-	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 100,
-	["ITM_SellPrice"] = 75,
-	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/Phan_Travel.png",
+	["Description"] = "Crystal! With you on the front rank we are invincible",
+	["GrantEXP"] = 10,
+	["Healing"] = 100,
+	["HealingType"] = "Percent",
+	["Icon"] = "GFX/Abilities/Fist.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Traveler's Emblem",
-	["ScriptEffect_Reference"] = "RemoveEnemy",
-	["SpellAni_Reference"] = "SmokeBomb",
-	["Target"] = "AF",
-	["UseCombat"] = true,
-	["UseField"] = true,
-	["untauntable"] = true}
+	["Name"] = "Sisters in all but blood",
+	["Target"] = "OS",
+	["UseCombat"] = true}
 
 return ret
 

@@ -1,6 +1,6 @@
 --[[
   CDrawFighters.lua
-  Version: 16.06.04
+  Version: 16.08.20
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
