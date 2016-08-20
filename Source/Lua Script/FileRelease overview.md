@@ -587,6 +587,7 @@
 1. Script/Use/Anyway/ReLevel.lua
 1. Script/Use/Combat/AblSpecialEffect/HPAPto1.lua
 1. Script/Use/Combat/AblSpecialEffect/Randomizer.lua
+1. Script/Use/Combat/AblSpecialEffect/Sisters in all but blood.lua
 1. Script/Use/Combat/AblSpecialEffect/Summon.lua
 1. Script/Use/Combat/AblSpecialEffect/UpgradeToSnowLeopard.lua
 1. Script/Use/Combat/AblSpecialEffect/Void.lua
@@ -654,4 +655,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Sat 20 August 2016; 12:16:30 CET
+### Last updated: Sat 20 August 2016; 15:07:11 CET

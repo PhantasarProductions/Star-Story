@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.18
+version: 16.08.20
 ]]
 
 -- Kills for ExHuRU (and his "representatives")  
@@ -233,7 +233,7 @@ XCharAttacked = {
                 local HP = RPGStat.Points('Johnson','HP')
                 local d = math.floor( (HP.Have/HP.Maximum) * 10)
                 if d>0 then
-                   MINI("$JOHNSON became a bit faster")
+                   MINI(Var.S("$JOHNSON became a bit faster"))
                    RPGStat.IncStat("Johnson","BUFF_Agility")
                 end   
               end          

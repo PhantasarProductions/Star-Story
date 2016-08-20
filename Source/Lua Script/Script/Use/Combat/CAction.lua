@@ -1,6 +1,6 @@
 --[[
   CAction.lua
-  Version: 16.08.18
+  Version: 16.08.20
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -102,7 +102,7 @@ if act.HitPercentage and armd100>act.HitPercentage then
    return
    end
 local effect
-local abl=act.Item
+local abl=act.Item; if not abl then Sys.Error("AblEffect: No ability data") end
 local atkdata
 local cha = FighterTag(ag,ai)..""
 local cht = FighterTag(tg,ti) --.."" -- This way of forming FORCES a <nil> value error if this should happen. I need to know if the evil's done here or not :)

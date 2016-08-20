@@ -66,6 +66,7 @@ ret = {
 	["DefenseStat"] = "Defense",
 	["Description"] = "Crystal! With you on the front rank we are invincible",
 	["GrantEXP"] = 10,
+	["GrantEXPType"] = "Absolute",
 	["Healing"] = 100,
 	["HealingType"] = "Percent",
 	["Icon"] = "GFX/Abilities/Fist.png",

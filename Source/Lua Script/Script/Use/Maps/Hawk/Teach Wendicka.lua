@@ -43,8 +43,16 @@ TeachWendickaArray = {
                                           a = a and RPGChar.ListHas("Wendicka","ABL","FOXY_PICKPOCKET")==1
                                           a = a and RPGChar.ListHas("Wendicka","ABL","EXHURU_KOLME")==1
                                           a = a and RPGChar.ListHas("Wendicka","ABL","XENOBI_VITALIZE")==1
-                                          a = a and RPGChar.ListHas("Crystal","ARM","ARKSMASH")==1
+                                          a = a and RPGChar.ListHas("Crystal","ARMS","ARKSMASH")==1
                                           a = a and CVV("&DONE.KILL.GEORGEMCLEEN")
+                                          CSay("Requirement list")
+                                          CSay( RPGChar.ListHas("Wendicka","ABL","WENDICKA_ELECTRICCHARGE"))
+                                          CSay( RPGChar.ListHas("Wendicka","ABL","YIRL_FOLLOWME"))
+                                          CSay( RPGChar.ListHas("Wendicka","ABL","FOXY_PICKPOCKET"))
+                                          CSay( RPGChar.ListHas("Wendicka","ABL","EXHURU_KOLME"))
+                                          CSay( RPGChar.ListHas("Wendicka","ABL","XENOBI_VITALIZE"))
+                                          CSay( RPGChar.ListHas("Crystal","ARMS","ARKSMASH"))
+                                          CSay( Var.C("&DONE.KILL.GEORGEMCLEEN") )
                                           return a
                                         end,
                           Teach = "WENDICKA_SISTERS"              
