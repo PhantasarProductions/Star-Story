@@ -148,6 +148,7 @@ ak=0
 local c=0
 local ca=0
 local dr,dg,db
+local fs
 -- list
 Image.ViewPort(0,0,700,600)
 for key,ach in spairs(Achievements) do
@@ -174,9 +175,17 @@ for key,ach in spairs(Achievements) do
              end           
           -- Text
           SetFont("AchievementHeader")
-          if Achieved[key] then dr=255 dg=0 db=0 else dr=128 dg=0 db=0 end
+          if Achieved[key] then dr=255 dg=0 db=0 else dr=128 dg=0 db=0 end          
+          while Image.TextWidth(ach.Title)>450 do
+            fs = (fs or fonts.AchievementHeader[2]) - 1
+            Image.Font("Fonts/"..fonts.AchievementHeader[1],fs)
+          end; fs=nil
           DarkText(ach.Title,120,y+30,0,0,dr,dg,db)
           SetFont("AchievementDescription")
+          while Image.TextWidth(ach.Description)>450 do
+            fs = (fs or fonts.AchievementDescription[2]) - 1
+            Image.Font("Fonts/"..fonts.AchievementDescription[1],fs)
+          end; fs=nil
           if Achieved[key] then dr=0 dg=180 db=255 else dr=0 dg=90 db=128 end 
           DarkText(ach.Description,120,y+60,0,0,dr,dg,db)
           end
