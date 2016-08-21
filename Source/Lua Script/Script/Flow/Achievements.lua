@@ -1,6 +1,6 @@
 --[[
   Achievements.lua
-  Version: 16.05.04
+  Version: 16.08.21
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -134,6 +134,10 @@ end
 -- @FI
 
 
+function mousedown(k)
+   return INP.MouseD(k)>0
+end    
+
 function MAIN_FLOW()
 local y
 local ak,ach,key
@@ -144,6 +148,8 @@ ak=0
 local c=0
 local ca=0
 local dr,dg,db
+-- list
+Image.ViewPort(0,0,700,600)
 for key,ach in spairs(Achievements) do
     c = c + 1
     -- first "or" statements
@@ -177,8 +183,8 @@ for key,ach in spairs(Achievements) do
        end 
     end
 y = (ca*100)-590    
-if my==0   and PM>0 then PM = PM - 2 end
-if my>=599 and PM<y then PM = PM + 2 end
+--if my==0   and PM>0 then PM = PM - 2 end
+--if my>=599 and PM<y then PM = PM + 2 end
 if mousehit(2) then 
    if CVV("&ACHTERMIMMEDIATELY") then Sys.Bye() end          
    LAURA.Flow("FIELD") 
@@ -188,6 +194,38 @@ if INP.Terminate>0 then
    MS.LoadNew("QUIT","Script/Flow/Quit.lua")
    LAURA.Flow("QUIT") 
    end
+-- control bar
+Image.ViewPort(700,0,100,600)
+Image.Color(255,180,0)
+Image.Rect(700,0,5,600)
+imgup   = imgup   or Image.Load("GFX/Save/Up.png")
+imgdown = imgdown or Image.Load("GFX/Save/Down.png")
+imgquit = imgquit or Image.Load("GFX/FieldIcons/Quit.png") -- I know this is RAM inefficient, but I DON'T CARE! I just neede a quick fix, ok?
+qx = 700
+qy = 5
+ux = 700
+uy = uy or (10 + Image.Height(imgquit))
+dx = 700
+dy = dy or 600 - (Image.Height(imgdown)+5)
+qe = uy
+ue = ue or (uy + Image.Height(imgup))
+de = 600
+Image.Hot (imgup   ,Image.Width(imgup  )/2,0)
+Image.Hot (imgdown ,Image.Width(imgdown)/2,0)
+Image.Hot (imgquit ,Image.Width(imgquit)/2,0)
+Image.Show(imgup   ,ux+50,uy)
+Image.Show(imgdown ,dx+50,dy)
+Image.Show(imgquit ,qx+50,qy)
+if mousedown(1) and mx>700 then
+   if my>qy and my<qe then 
+      if CVV("&ACHTERMIMMEDIATELY") then Sys.Bye() end          
+      LAURA.Flow("FIELD")
+   elseif my>uy and my<ue and PM>0 then PM = PM - 2
+   elseif my>dy and my<de and PM<y then PM = PM + 2  
+   end   
+end
+-- mouse and back to whole screen   
+Image.ViewPort(0,0,800,600)   
 ShowMouse()    
 Flip()    
 end
