@@ -834,8 +834,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_BARINSIDE
     1. Graphics: GFX/Textures/Nizozemska/Meubels/Open Haard.png
     1. Graphics: GFX/Textures/Nizozemska/Meubels/Foto van Sue.png
-    1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_BONUS_SPACEOBSERVATORIUM
     1. Graphics: GFX/Combat/Fighters/Foe/Reg/Bladeh.png
+    1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_BONUS_SPACEOBSERVATORIUM
     1. Graphics: GFX/Combat/Fighters/Foe/Reg/Cyborg Ji.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_DUNGEON
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_DUNGEON_CELL
@@ -963,8 +963,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Maps/BlackHoleDweller.lua
     1. General Data: Data/LvStats/Briggs/34
     1. Script: Script/Maps/Excalibur - Final Boss.lua
-    1. General Data: Data/LvStats/Briggs/35
     1. Script: Script/Maps/Excalibur - Post Game.lua
+    1. General Data: Data/LvStats/Briggs/35
     1. Script: Script/Maps/Hawk_PostGame.lua
     1. General Data: Data/LvStats/Briggs/36
     1. Script: Script/MiniGame/AutoUse.lua
@@ -1037,8 +1037,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Combat/AblSpecialEffect/Sisters in all but blood.lua
     1. General Data: Data/LvStats/Briggs/59
     1. Script: Script/Use/Combat/StatusChanges/IDDQD.lua
-    1. Script: Script/Use/Combat/StatusChanges/Confusion.lua
-    1. General Data: Data/LvStats/Briggs/6
+    1. General Data: Data/LvStats/Briggs/6 < alias > Script/Use/Combat/StatusChanges/Confusion.lua
     1. Script: Script/Use/Combat/StatusChanges/Death.lua
     1. General Data: Data/LvStats/Briggs/60
     1. Script: Script/Use/Combat/StatusChanges/Fear.lua
