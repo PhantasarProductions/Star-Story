@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.17
+version: 16.08.22
 ]]
 -- @IF IGNORE
 VicCheck = {}
@@ -190,12 +190,17 @@ Bestiary[f] = (Bestiary[f] or 0) + 1
 local maxfactor = 350
 local enemylevel = RPGStat.Stat(myfoe.Tag,"Level")
 local herotag,herolevel,gainexp
+local allowexpbonus,bonus
 -- Hero experience
 for i=0,5 do
     herotag = RPGStat.PartyTag(i)
     if herotag and herotag~="" then
        herolevel = RPGStat.Stat(herotag,"Level")
        gainexp = math.floor((enemylevel/herolevel)*maxfactor)
+       allowexpbonus = rand(1,10000)>(lv/2)*skill
+       bonus = rand(1,math.ceil(ngpcount/(2*skill)))
+       if bonus>100 then bonus=100 end
+       if allowexpbonus then gainexp = gainexp * bonus end
 	   if skill==3 then gainexp = gainexp - (Bestiary[f]-1) end -- In the hard mode you will gain less experience for enemies you've met before.
 	   if gainexp<0 or (herolevel-enemylevel)>maxlvmargin[skill] then gainexp=0 end
        if RPGStat.Points(herotag,"HP").Have==0 then
