@@ -26,7 +26,7 @@
  **********************************************
 ITM_KEY_YAQIRPA.lua
 (c) 2015, 2016 Jeroen Petrus Broks
-Version: 16.08.20
+Version: 16.08.22
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
@@ -35,6 +35,7 @@ ret = {
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "Grants access to the Yaqirpa Tower",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Inventory/Key.png",
 	["ItemType"] = "KeyItem",

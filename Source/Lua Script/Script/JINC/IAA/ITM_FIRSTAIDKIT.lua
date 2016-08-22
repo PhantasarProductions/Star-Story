@@ -1,6 +1,6 @@
 --[[
   ITM_FIRSTAIDKIT.lua
-  Version: 16.08.20
+  Version: 16.08.22
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -41,6 +41,7 @@ ret = {
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "Heals 400 HP",
+	["GrantEXPType"] = "Absolute",
 	["Healing"] = 400,
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 500,

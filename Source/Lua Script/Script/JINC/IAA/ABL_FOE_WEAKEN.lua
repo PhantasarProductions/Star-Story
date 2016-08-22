@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_WEAKEN.lua
-  Version: 16.08.20
+  Version: 16.08.22
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -50,6 +50,7 @@ ret = {
 	["Buff_Strength"] = -10,
 	["Buff_Will"] = -25,
 	["DefenseStat"] = "Defense",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",

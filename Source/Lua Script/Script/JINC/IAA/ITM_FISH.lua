@@ -1,6 +1,6 @@
 --[[
   ITM_FISH.lua
-  Version: 16.08.20
+  Version: 16.08.22
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -43,6 +43,7 @@ ret = {
 	["Buff_Will"] = 25,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Raises Will and Max AP when used in combat by 25%",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 5000,
 	["ITM_SellPrice"] = 2500,

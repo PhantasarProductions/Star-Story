@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_MINDCONTROLFLUID.lua
-  Version: 16.08.20
+  Version: 16.08.22
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -44,6 +44,7 @@ ret = {
 	["CauseConfusion"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Confuses everybody",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",

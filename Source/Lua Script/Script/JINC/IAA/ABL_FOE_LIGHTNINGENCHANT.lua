@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.20
+version: 16.08.22
 ]]
 ret = {
 	["ABL_AP"] = 0,
@@ -46,6 +46,7 @@ ret = {
 	["Buff_Agility"] = -25,
 	["CauseParalysis"] = true,
 	["DefenseStat"] = "Defense",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Abilities/Fist.png",
 	["ItemType"] = "Consumable",

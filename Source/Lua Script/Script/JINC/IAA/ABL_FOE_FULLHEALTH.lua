@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_FULLHEALTH.lua
-  Version: 16.08.20
+  Version: 16.08.22
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -44,6 +44,7 @@ ret = {
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "Heals all HP",
+	["GrantEXPType"] = "Absolute",
 	["Healing"] = 100,
 	["HealingType"] = "Percent",
 	["Icon"] = "GFX/Inventory/FirstAidKit.png",

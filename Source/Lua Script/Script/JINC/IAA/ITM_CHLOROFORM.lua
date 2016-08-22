@@ -1,6 +1,6 @@
 --[[
   ITM_CHLOROFORM.lua
-  Version: 16.08.20
+  Version: 16.08.22
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -50,6 +50,7 @@ ret = {
 	["Icon"] = "GFX/Inventory/Chloroform.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Chloroform",
+	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}

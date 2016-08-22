@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_THRILLINGCHARGE.lua
-  Version: 16.08.20
+  Version: 16.08.22
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -42,6 +42,7 @@ ret = {
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",

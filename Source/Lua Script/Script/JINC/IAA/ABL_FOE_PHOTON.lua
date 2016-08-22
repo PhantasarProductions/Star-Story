@@ -1,7 +1,7 @@
 --[[
   ABL_FOE_PHOTON.lua
   
-  version: 16.08.20
+  version: 16.08.22
   Copyright (C) 2015, 2016 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -27,6 +27,7 @@ ret = {
 	["AttackPower"] = 100,
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",

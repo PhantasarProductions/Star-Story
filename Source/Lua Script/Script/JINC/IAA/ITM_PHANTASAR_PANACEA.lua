@@ -1,6 +1,6 @@
 --[[
   ITM_PHANTASAR_PANACEA.lua
-  Version: 16.08.20
+  Version: 16.08.22
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================

@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_VENOMBITE.lua
-  Version: 16.08.20
+  Version: 16.08.22
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -45,6 +45,7 @@ ret = {
 	["CausePoison"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Poisons you",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Inventory/Poison Cloud.png",
 	["ItemType"] = "Consumable",

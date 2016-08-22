@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.20
+version: 16.08.22
 ]]
 ret = {
 	["ABL_AP"] = 0,
@@ -43,6 +43,7 @@ ret = {
 	["AttackPower"] = 125,
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Abilities/Fist.png",
 	["ItemType"] = "Consumable",

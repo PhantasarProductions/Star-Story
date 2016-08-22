@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.20
+version: 16.08.22
 ]]
 ret = {
 	["ABL_AP"] = 0,
@@ -44,6 +44,7 @@ ret = {
 	["AttackStat"] = "Will",
 	["DefenseStat"] = "Resistance",
 	["Description"] = "Water Attack - One target",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Elements/Water.png",
 	["ItemType"] = "Consumable",

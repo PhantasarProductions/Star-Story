@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_PARALYZEFLUID.lua
-  Version: 16.08.20
+  Version: 16.08.22
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -45,6 +45,7 @@ ret = {
 	["CauseParalysis"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Paralysis enemy",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",

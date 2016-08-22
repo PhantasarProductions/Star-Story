@@ -605,6 +605,7 @@
 1. Script/Use/Combat/SpellAni/Johnson_Phaser.lua
 1. Script/Use/Combat/SpellAni/Love, shine a light.lua
 1. Script/Use/Combat/SpellAni/Moo.lua
+1. Script/Use/Combat/SpellAni/Quake.lua
 1. Script/Use/Combat/StatusChanges/Bag Lock.lua
 1. Script/Use/Combat/StatusChanges/Confusion.lua
 1. Script/Use/Combat/StatusChanges/Death.lua
@@ -657,4 +658,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 22 August 2016; 09:10:02 CET
+### Last updated: Mon 22 August 2016; 13:19:49 CET

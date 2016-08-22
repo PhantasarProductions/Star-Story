@@ -1,6 +1,6 @@
 --[[
   ITM_HOMEO.lua
-  Version: 16.08.20
+  Version: 16.08.22
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -43,6 +43,7 @@ ret = {
 	["CurePoison"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Heals 1000 HP + poison and disease",
+	["GrantEXPType"] = "Absolute",
 	["Healing"] = 1000,
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 3000,

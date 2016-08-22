@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_LICKYOURWOUNDS.lua
-  Version: 16.08.20
+  Version: 16.08.22
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -54,6 +54,7 @@ ret = {
 	["CureTerrified"] = true,
 	["DefenseStat"] = "Resistance",
 	["Description"] = "Heal",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Inventory/Patch.png",
 	["ItemType"] = "Consumable",

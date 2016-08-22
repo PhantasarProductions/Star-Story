@@ -1,7 +1,7 @@
 --[[
-  ABL_XENOBI_RECOVER.lua
+  Quake.lua
   Version: 16.08.22
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2014, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -34,30 +34,39 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-ret = {
-	["ABL_AP"] = 40,
-	["ABL_APCut"] = 2000,
-	["ABL_DblPower"] = 15000,
-	["ABL_DblSpeed"] = 3000,
-	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 250,
-	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 250,
-	["AttackElement"] = "Healing",
-	["AttackPower"] = 400,
-	["AttackStat"] = "Will",
-	["DefenseStat"] = "Resistance",
-	["Description"] = "Heals wounds",
-	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Elements/Light.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Recover",
-	["SpellAni_Reference"] = "SingleHeal",
-	["Target"] = "1A",
-	["UseCombat"] = true,
-	["UseField"] = true}
 
-return ret
+-- If set, the computer will display this image behind the quake and afterward clean it up.
+quakeimage = nil
 
--- This file is an automatically generated file!
+function SpellAni.Quake()
+local screen = Image.GrabScreen()
+local ak
+for ak=1,100 do
+    Image.Cls()
+    Image.Draw(screen,0,0-(ak/10))
+    if quakeimage then Image.Draw(quakeimage.Img,quakeimage.X,quakeimage.Y-(ak/10)) end
+    Image.Flip()
+    Time.Sleep(20)
+    Image.Cls()
+    Image.Draw(screen,0,0+(ak/10))
+    if quakeimage then Image.Draw(quakeimage.Img,quakeimage.X,quakeimage.Y+(ak/10)) end
+    Image.Flip()
+    Time.Sleep(20)
+    end
+for ak=1,100 do
+    Image.Cls()
+    Image.Draw(screen,0,0-(10))
+    if quakeimage then Image.Draw(quakeimage.Img,quakeimage.X,quakeimage.Y-(ak/10)) end
+    Image.Flip()
+    Time.Sleep(20)
+    Image.Cls()
+    Image.Draw(screen,0,0+(10))
+    if quakeimage then Image.Draw(quakeimage.Img,quakeimage.X,quakeimage.Y+(ak/10)) end
+    Image.Flip()
+    Time.Sleep(20)
+    end
+Image.Free(screen)
+quakeimage=nil    
+end
 
+Quake = SpellAni.Quake

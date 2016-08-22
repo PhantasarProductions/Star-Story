@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_ULTRASONIC.lua
-  Version: 16.08.20
+  Version: 16.08.22
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -43,6 +43,7 @@ ret = {
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "All AP gone!",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",

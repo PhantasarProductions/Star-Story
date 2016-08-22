@@ -1,6 +1,6 @@
 --[[
   ITM_ICEBOMB.lua
-  Version: 16.08.20
+  Version: 16.08.22
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -42,6 +42,7 @@ ret = {
 	["AttackStat"] = "Will",
 	["DefenseStat"] = "Resistance",
 	["Description"] = "In Moscow nights are cold, without your love to hold!",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 100,
 	["ITM_SellPrice"] = 75,

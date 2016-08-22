@@ -1,6 +1,6 @@
 --[[
   ABL_XENOBI_QUAKE.lua
-  Version: 16.08.20
+  Version: 16.08.22
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -51,6 +51,7 @@ ret = {
 	["Icon"] = "GFX/Elements/Earth.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Quake",
+	["SpellAni_Reference"] = "Quake",
 	["Target"] = "AF",
 	["UseCombat"] = true,
 	["UseField"] = true}

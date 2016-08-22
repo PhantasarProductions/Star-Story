@@ -1,6 +1,6 @@
 --[[
   ITM_ENERGYDRINK.lua
-  Version: 16.08.20
+  Version: 16.08.22
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -43,6 +43,7 @@ ret = {
 	["CureSleep"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Grands 15 AP and cures sleep",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 100,
 	["ITM_SellPrice"] = 75,

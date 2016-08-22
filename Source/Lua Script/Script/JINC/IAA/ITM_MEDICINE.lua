@@ -1,6 +1,6 @@
 --[[
   ITM_MEDICINE.lua
-  Version: 16.08.20
+  Version: 16.08.22
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -42,6 +42,7 @@ ret = {
 	["CureDisease"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Cures \"Disease\"",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 100,
 	["ITM_SellPrice"] = 75,

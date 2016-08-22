@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.20
+version: 16.08.22
 ]]
 ret = {
 	["ABL_AP"] = 0,
@@ -43,6 +43,7 @@ ret = {
 	["AttackStat"] = "Strength",
 	["CausePoison"] = true,
 	["DefenseStat"] = "Defense",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Inventory/Poison Cloud.png",
 	["ItemType"] = "Consumable",

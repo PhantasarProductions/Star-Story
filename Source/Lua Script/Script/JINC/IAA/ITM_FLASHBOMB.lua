@@ -1,6 +1,6 @@
 --[[
   ITM_FLASHBOMB.lua
-  Version: 16.08.20
+  Version: 16.08.22
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -42,6 +42,7 @@ ret = {
 	["AttackStat"] = "Will",
 	["DefenseStat"] = "Resistance",
 	["Description"] = "Shine a light on the enemy",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 500,
 	["ITM_SellPrice"] = 275,
