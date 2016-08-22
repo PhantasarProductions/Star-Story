@@ -103,7 +103,7 @@ function StartNewGamePlus()
   TransporterClearAll()    
   -- Boost Xenobi
   local xlv = RPGChar.Stat("Xenobi",level)
-  if xlv>300 and xlv<9000 then RPGStat.IncStat("Xenobi",28); SyncLevel('Xenobi',"Level") end
+  if xlv>300 and xlv<9000 then RPGStat.IncStat("Xenobi","Level",28); SyncLevel('Xenobi') end
   -- Make sure Uniforemd versions of Wendicka and Crystal come up properly.
   CSay("- Uniform level resync")
   SyncLevel('UniWendicka')

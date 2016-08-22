@@ -1037,7 +1037,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Combat/AblSpecialEffect/Sisters in all but blood.lua
     1. General Data: Data/LvStats/Briggs/59
     1. Script: Script/Use/Combat/StatusChanges/IDDQD.lua
-    1. General Data: Data/LvStats/Briggs/6 < alias > Script/Use/Combat/StatusChanges/Confusion.lua
+    1. General Data: Data/LvStats/Briggs/6
+    1. Script: Script/Use/Combat/StatusChanges/Confusion.lua
     1. Script: Script/Use/Combat/StatusChanges/Death.lua
     1. General Data: Data/LvStats/Briggs/60
     1. Script: Script/Use/Combat/StatusChanges/Fear.lua
