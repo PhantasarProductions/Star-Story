@@ -102,7 +102,7 @@ function StartNewGamePlus()
   CSay("- Clearing the navigation panel on the Hawk")
   TransporterClearAll()    
   -- Boost Xenobi
-  local xlv = RPGChar.Stat("Xenobi",level)
+  local xlv = RPGChar.Stat("Xenobi",'level')
   if xlv>300 and xlv<9000 then RPGStat.IncStat("Xenobi","Level",28); SyncLevel('Xenobi') end
   -- Make sure Uniforemd versions of Wendicka and Crystal come up properly.
   CSay("- Uniform level resync")
