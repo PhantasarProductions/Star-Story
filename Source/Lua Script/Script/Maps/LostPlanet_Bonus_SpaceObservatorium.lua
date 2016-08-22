@@ -2,7 +2,7 @@
 **********************************************
   
   LostPlanet_Bonus_SpaceObservatorium.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.11.06
+version: 16.08.22
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Schuif.lua
@@ -146,7 +146,7 @@ for i=1,3 do
     ZA_Enter('toplay'..i,MapShow,"Plee")
     end
 -- Final room
-ZA_Enter("TheEnd",function() MapShow("TheEnd") Award('SECRETDUNGEON_OBSERVATORIUM') end) 
+ZA_Enter("TheEnd",function() MapShow("TheEnd") Award('SECRETDUNGEON_OBSERVATORIUM') if not(Done('&DONE.COMPLETE.OBSERVATORIUM.YEAH')) then  MapEXP() end end) 
 ZA_Enter("EndTrans",MapShow,"TheEnd")
 -- Observation room #2
 ZA_Enter("UObs2",MapShow,"Observe2")    
