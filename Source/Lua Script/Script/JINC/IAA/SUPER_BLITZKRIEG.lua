@@ -1,7 +1,7 @@
 --[[
 **********************************************
   
-  ARM_NAPALMSHOWER.lua
+  SUPER_BLITZKRIEG.lua
   (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
@@ -36,25 +36,16 @@ version: 16.08.23
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
-	["ARM_Hit%"] = 80,
-	["ARM_MaxAmmo"] = 2,
-	["ARM_PRICE_Hit%"] = 250,
-	["ARM_PRICE_MaxAmmo"] = 100,
-	["ARM_PRICE_Weight"] = 1,
-	["ARM_PRICE_XPower"] = 500,
-	["ARM_XPower"] = 0,
 	["ActSpeed"] = 50,
-	["AttackElement"] = "Fire",
-	["AttackPower"] = 400,
+	["AttackElement"] = "Non-Elemental",
+	["AttackPower"] = 1500,
 	["AttackStat"] = "Strength",
-	["Buff_Resistance"] = -10,
-	["DefenseStat"] = "Defense",
-	["Description"] = "We don't need no water, let the motherf***er burn!",
+	["CauseTerrified"] = true,
+	["DefenseStat"] = "Evasion",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Gun.png",
+	["Icon"] = "GFX/Abilities/Fist.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Napalm Shower",
-	["SpellAni_Reference"] = "Inferno",
+	["Name"] = "BlitzKrieg",
 	["Target"] = "AF",
 	["UseCombat"] = true,
 	["UseField"] = true}

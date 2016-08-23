@@ -1,6 +1,6 @@
 --[[
   BHD_LIGHT.lua
-  Version: 16.08.22
+  Version: 16.08.23
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================

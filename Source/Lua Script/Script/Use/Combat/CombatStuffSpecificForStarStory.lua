@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.22
+version: 16.08.23
 ]]
 -- @IF IGNORE
 VicCheck = {}
@@ -199,6 +199,7 @@ for i=0,5 do
        gainexp = math.floor((enemylevel/herolevel)*maxfactor)
        allowexpbonus = rand(1,10000)>(herolevel/2)*skill
        bonus = rand(1,math.ceil(ngpcount/(2*skill)))
+       if bonus<1 then bonus = 1 end
        if bonus>100 then bonus=100 end
        if allowexpbonus then gainexp = gainexp * bonus end
 	   if skill==3 then gainexp = gainexp - (Bestiary[f]-1) end -- In the hard mode you will gain less experience for enemies you've met before.

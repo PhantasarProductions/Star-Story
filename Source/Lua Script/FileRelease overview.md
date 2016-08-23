@@ -286,6 +286,7 @@
 1. Script/JINC/IAA/PERMABUFF_GREENPILL.lua
 1. Script/JINC/IAA/PERMABUFF_YELLOWPILL.lua
 1. Script/JINC/IAA/PHANTASAR_APPLE.lua
+1. Script/JINC/IAA/SUPER_BLITZKRIEG.lua
 1. Script/JINC/IAA/SUPER_FOXY_SKYDRAGONSLASH.lua
 1. Script/JINC/IAA/SUPER_THRILLING_DAMNNATION.lua
 1. Script/JINC/IAA/SUPER_WENDICKA_VOLTSUNAMI.lua
@@ -658,4 +659,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Mon 22 August 2016; 19:50:38 CET
+### Last updated: Tue 23 August 2016; 20:04:48 CET
