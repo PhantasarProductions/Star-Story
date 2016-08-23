@@ -36,6 +36,7 @@
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
+	["ARM_BLOCK_XPower"] = true,
 	["ARM_Hit%"] = 95,
 	["ARM_MaxAmmo"] = 8,
 	["ARM_PRICE_Hit%"] = 1000,

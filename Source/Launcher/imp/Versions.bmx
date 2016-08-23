@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 16.08.20
+Version: 16.08.23
 End Rem
 Strict
 Import "framework.bmx"
@@ -29,7 +29,7 @@ Import tricky_units.identify
 
 Global VRPanel:TGadget = AddPanel("Versions",New TversionsPanel)
 
-MKL_Version "LAURA II - Versions.bmx","16.08.20"
+MKL_Version "LAURA II - Versions.bmx","16.08.23"
 MKL_Lic     "LAURA II - Versions.bmx","GNU General Public License 3"
 
 Type TVersionsPanel Extends tfpanelbase
@@ -54,7 +54,7 @@ Type TVersionsPanel Extends tfpanelbase
 	?MacOS
 	platform = "Mac"
 	'syscommand = "open ~q"+lini.c("Mac")+"~q"
-	syscommand = "~q"+lini.c("Mac")+"~q/Contents/MacOS/"+StripAll(linic("Mac")+"~q"
+	syscommand = "~q"+lini.c("Mac")+"~q/Contents/MacOS/"+StripAll(lini.c("Mac"))+"~q"
 	engineexe = lini.c("Mac")
 	?Win32
 	platform = "Windows"

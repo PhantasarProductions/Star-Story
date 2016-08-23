@@ -37,6 +37,7 @@ version: 16.08.23
 ret = {
 	["APRecover"] = 100,
 	["APRecoverType"] = "Absolute",
+	["ARM_BLOCK_XPower"] = true,
 	["ARM_Hit%"] = 80,
 	["ARM_MaxAmmo"] = 2,
 	["ARM_PRICE_Hit%"] = 2500,
