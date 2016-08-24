@@ -26,7 +26,7 @@ BMCGOWAN | 2 | Art;
 Benboncan | 3 | Audio; Misc files; 
 Brian Boyko | 2 | Music; 
 CoolText | 5 | Art; Misc files; 
-Courtney Novits | 3 | Font; Misc files; 
+Courtney Novits | 4 | Font; Misc files; 
 Cynix | 1 | Art; 
 Dedicated Teacher | 1 | Art; 
 Deluge | 1 | Art; 
