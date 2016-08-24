@@ -2,7 +2,7 @@
 **********************************************
   
   LostPlanet_Bonus_Dark_Caves_of_Shilington.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.04
+version: 16.08.24
 ]]
 
 function Boss()
@@ -92,6 +92,12 @@ TurnPlayer("South")
 MapShow("II","Secret")
 end
 
+function Dom40()
+  MapShow("Main")
+  Actors.Actor("PLAYER").Dominance = 40
+  Maps.Remap()
+end  
+
 function GALE_OnLoad()
 Music("Dungeon/Dark_City.ogg")
 ZA_Enter("Secret1",function() MapShow("Secret1","Main") end)
@@ -103,6 +109,9 @@ ZA_Leave("Secret1",function() MapShow("Main") end)
 ZA_Leave("Secret2",function() MapShow("Main") end)
 ZA_Leave("Secret3",function() MapShow("Main") end)
 ZA_Leave("Secret5",function() MapShow("Main") end)
+
+ZA_Enter("Dom40a",Dom40)
+ZA_Enter("Dom40b",Dom40)
 
 ZA_Enter("ByeSecret4",function() MapShow("Main") end)
 ZA_Enter("FirstJump",FirstJump)
