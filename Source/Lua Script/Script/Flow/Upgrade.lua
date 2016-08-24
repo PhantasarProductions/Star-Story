@@ -1,6 +1,6 @@
 --[[
   Upgrade.lua
-  Version: 16.08.07
+  Version: 16.08.24
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -130,6 +130,7 @@ SpecificDraw = {
                       statval = RPGChar.Stat(pchar,statname)
                       allow = allow and statval>0
                       allow = allow and statval<=pricecap
+                      allow = allow and (not ARM["ARM_BLOCK_"..ARMBase[id]]); CSay("")
                       allow = allow and (id=="AMMO" or ((not ARMMax[id]) or RPGChar.Stat(pchar,"ARM."..id.."."..cARM)<ARMMax[id]))
                       if allow then DarkText(statval.." CR",780,y,1,0,180,0,255) end
                       allow = allow and CVV("%CASH")>=statval
