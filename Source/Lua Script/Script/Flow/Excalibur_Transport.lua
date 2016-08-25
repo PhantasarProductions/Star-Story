@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.09
+version: 16.08.25
 ]]
 function GetMapLocks(d)
    d.access = { ['#001']=true}
@@ -77,10 +77,12 @@ function MAIN_FLOW()
         else
            Image.Color(0,180,255)
         end
-        Image.DText(data.locs[a] or 'Unnamed area '..a,x,y)             
-      else
+        Image.DText(data.locs[a] or 'Unnamed area '..a,x,y)
+      --[[               
+      else        
         Image.Color(80,80,80)
         Image.DText('# Area Locked #',x,y)
+      ]]  
       end  
   end
   -- Confirm
