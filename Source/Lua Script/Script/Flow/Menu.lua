@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 16.08.19
+  Version: 16.08.25
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -598,7 +598,7 @@ FeatureHandleArray = {
                               dy = dy + Image.TextHeight(dl) 
                               end 
                          end    
-                  -- @IF *DEVELOPMENT
+                  -- @IF IGNORE*DEVELOPMENT
                   y = 20
                   for k,v in spairs(ChosenItem) do
                       White() 
