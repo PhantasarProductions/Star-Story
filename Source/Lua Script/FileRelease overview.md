@@ -618,6 +618,7 @@
 1. Script/Use/Combat/StatusChanges/Undead.lua
 1. Script/Use/Linkers/WorldLinker.lua
 1. Script/Use/Maps/AltArena/Excalibur.lua
+1. Script/Use/Maps/AltArena/Facility.lua
 1. Script/Use/Maps/Gen/Next.lua
 1. Script/Use/Maps/Gen/SchuifNext.lua
 1. Script/Use/Maps/Gen/SchuifNextReal.lua
@@ -661,4 +662,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Thu 25 August 2016; 18:55:48 CET
+### Last updated: Thu 25 August 2016; 19:53:27 CET
