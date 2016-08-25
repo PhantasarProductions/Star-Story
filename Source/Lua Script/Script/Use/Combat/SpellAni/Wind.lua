@@ -1,7 +1,7 @@
 --[[
-  ABL_ROTTEN_BREATH.lua
+  Wind.lua
   Version: 16.08.25
-  Copyright (C) 2016 Jeroen Petrus Broks
+  Copyright (C) 2014, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -34,28 +34,62 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-ret = {
-	["ABL_AP"] = 0,
-	["ABL_Pose"] = "Cast",
-	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 250,
-	["AttackElement"] = "Non-Elemental",
-	["AttackStat"] = "Strength",
-	["CauseConfusion"] = true,
-	["CauseDisease"] = true,
-	["CauseParalysis"] = true,
-	["CausePoison"] = true,
-	["DefenseStat"] = "Defense",
-	["Description"] = "Yuck!",
-	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Elements/Dark.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Rotten Breath",
-	["Target"] = "AF",
-	["UseCombat"] = true,
-	["UseField"] = true}
+function SpellAni.BlowAway(TG,TT,TA)
+local lines = {}
+local ak,ln
+local modspd = 0
+for ak=0,2500 do
+    table.insert(lines,{sx=rand(600,1500),ex=rand(1,400),y=rand(0,598),spd=rand(4,10),c=rand(100,255)})
+    end
+local ok
+SFX('Audio/SFX/SpellAni/BlowAway.ogg')
+while not ok do
+      ok = true
+      DrawScreen()
+      for ak,ln in ipairs(lines) do
+          Image.Color(ln.c,ln.c,ln.c)
+          Image.Line(ln.sx,ln.y,ln.sx+ln.ex,ln.y)
+          ok = ok and ln.sx+ln.ex<0
+          lines[ak].sx = lines[ak].sx-ln.spd
+          end
+      --[[    
+      if TA then    
+         if (not FoeData[TA.Target].Boss) and (upper(left(Foe[TA.Target]),5)~="KIDS_") then    
+            if modspd<10 then modspd = modspd + .02 end
+            enemspotmod[TA.Target].x = enemspotmod[TA.Target].x - modspd
+            end
+         end
+      ]]          
+      Flip()   
+      end    
+end
 
-return ret
 
--- This file is an automatically generated file!
 
+function SpellAni.Hurricane()
+SpellAni.BlowAway(false,false,false)
+end
+
+
+
+function SpellAni.Breeze(TG,TT,TA)
+local lines = {}
+local ak,ln
+local modspd = 0
+SFX('Audio/SFX/SpellAni/Breeze.ogg')
+for ak=0,100 do
+    table.insert(lines,{sx=rand(600,1500),ex=rand(1,400),y=rand(0,598),spd=rand(4,10),c=rand(100,255)})
+    end
+local ok
+while not ok do
+      ok = true
+      DrawScreen()
+      for ak,ln in ipairs(lines) do
+          Image.Color(ln.c,ln.c,ln.c)
+          Image.Line(ln.sx,ln.y,ln.sx+ln.ex,ln.y)
+          ok = ok and ln.sx+ln.ex<0
+          lines[ak].sx = lines[ak].sx-ln.spd
+          end
+      Flip()   
+      end    
+end

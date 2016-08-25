@@ -1,6 +1,6 @@
 --[[
   ABL_XENOBI_HURRICANE.lua
-  Version: 16.08.24
+  Version: 16.08.25
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -51,6 +51,7 @@ ret = {
 	["Icon"] = "GFX/Elements/Wind.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Hurricane",
+	["SpellAni_Reference"] = "Hurricane",
 	["Target"] = "AF",
 	["UseCombat"] = true,
 	["UseField"] = true}

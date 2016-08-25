@@ -1,6 +1,6 @@
 --[[
   ABL_XENOBI_BREEZE.lua
-  Version: 16.08.24
+  Version: 16.08.25
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -52,6 +52,7 @@ ret = {
 	["Icon"] = "GFX/Elements/Wind.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Breeze",
+	["SpellAni_Reference"] = "Breeze",
 	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}

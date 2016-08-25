@@ -68,6 +68,7 @@ local Keuze = RunQuestion("MAP","BAKINA.MENU")
       if (not npgcount) or npgcount==0 then npgcount=1 end
       GoToStore(({"HAWK_BANIKA_HEAL",
                   "HAWK_BANIKA_HEAL_CYCLE2",
+                  "HAWK_BANIKA_HEAL_CYCLE2",
                   "HAWK_BANIKA_HEAL_CYCLE2"     -- Cycle 2 and 3 use the same stock.
                  })[npgcount] or "HAWK_BANIKA_ULTRAHEAL")
       end,      
