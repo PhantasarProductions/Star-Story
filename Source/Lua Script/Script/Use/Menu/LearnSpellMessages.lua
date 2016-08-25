@@ -35,11 +35,15 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 function needkills(name)
-local need = CVV("%KILLS.NEED") - CVV("%KILLS.DONE")
-if CVV("%KILLS.NEED")<=0 then return "" end
--- if need==0 then return "Attack any enemy while "..name.." is on front" end
-if RPGChar.CountList("UniWendicka","LEARN")>0 then return "Attack any enemy" end
-return "Perform "..need.." kills with "..name.." on the front row"
+  local need = CVV("%KILLS.NEED") - CVV("%KILLS.DONE")
+  if CVV("%KILLS.NEED")<=0 then return "" end
+  -- if need==0 then return "Attack any enemy while "..name.." is on front" end
+  if RPGChar.CountList("UniWendicka","LEARN")>0 then 
+    return "Attack any enemy"
+  elseif need<0 then -- All abilities acquired
+     return "" 
+  end
+  return "Perform "..need.." kills with "..name.." on the front row"
 end
 
 
@@ -79,7 +83,7 @@ learnspellmessages = {
                     end,
       ExHuRU      = function() return needkills("ExHuRU") end,
       Rolf        = function() return needkills("Rolf") end,
-      Johnson     = function() return needkills("Admiral Johnson") end              
+      Johnson     = function() return needkills(Var.C("$JOHNSON")) end              
 
 }
 

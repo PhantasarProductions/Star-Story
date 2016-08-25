@@ -1,8 +1,8 @@
 --[[
 **********************************************
   
-  ABL_EXHURU_CONCENTRATE.lua
-  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
+  ExHuRU_Achievement.lua
+  (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -34,27 +34,19 @@
  
 version: 16.08.25
 ]]
-ret = {
-	["ABL_AP"] = 200,
-	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 50,
-	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 50,
-	["AttackElement"] = "Non-Elemental",
-	["AttackStat"] = "Strength",
-	["DefenseStat"] = "Defense",
-	["Description"] = "Charge up energy for BlitzKrieg",
-	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Abilities/Fist.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Concentrate",
-	["SpellAni_Reference"] = "ExHuRU_Ach",
-	["Target"] = "AF",
-	["UseCombat"] = true,
-	["UserNextMove"] = "SUPER_BLITZKRIEG",
-	["untauntable"] = true}
+-- @IF IGNORE
+SpellAni = {}
+-- @FI
 
-return ret
+--[[
+function ShowCrystalAndAllTargets(ai)
+end
+]]
 
--- This file is an automatically generated file!
+function SpellAni.ExHuRU_Ach(ActG,ActT,TarG,TarT)
+    Award('ALLABL_EXHURU')
+end
 
+-- @IF IGNORE
+return SpellAni
+-- @FI

@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.06
+version: 16.08.25
 ]]
 
 -- @USE /Script/Use/Maps/Gen/SchuifNext.lua
@@ -147,6 +147,7 @@ end
 function Lab()
 MapText("FREE_WENDICA_A") -- Wendica is of course a typo, but as the language editor didn't allow tag modifications, I kept it this way. The player won't notice the difference.
 -- McLeen beams away
+Actors.Actor("GMcLeen").NotInMotionThen0 = 0
 Actors.ChoosePic("GMcLeen","TELEPORT")
 for f=0,99 do -- The beam out does not work. This is not a bug in the code below. This bug doesn't exist. It's impossible that this doesn't work while it works on all other beam-outs. If somebody can explain this impossibility, I'm all ears.
     Image.Cls()
