@@ -819,8 +819,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/Dutch/Scenario/GENERAL/SCOTTY
     1. Scenario: Languages/Dutch/Scenario/GENERAL/SECRETDUNGEON
     1. Scenario: Languages/Dutch/Scenario/JONES
-    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_ALLQUIET
+    1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank.png
     1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank_Foxy.png
     1. Graphics: GFX/Textures/Nizozemska/Meubels/Bank_Crystal.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_HANGAR
@@ -842,14 +842,14 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_DUNGEON
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_DUNGEON_CELL
     1. Graphics: GFX/Combat/Fighters/Foe/Reg/Bladeh.png
-    1. Graphics: GFX/Combat/Fighters/Foe/Reg/Cyborg Ji.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_GRASSJUNGLE
-    1. Graphics: GFX/Combat/Fighters/Foe/Reg/Cid.png
+    1. Graphics: GFX/Combat/Fighters/Foe/Reg/Cyborg Ji.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_GRASSJUNGLE_3
+    1. Graphics: GFX/Combat/Fighters/Foe/Reg/Cid.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_JUNKYARD
     1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Befindo.png
-    1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Elf.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_PUB_OUTSIDE
+    1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Elf.png
     1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Fairy.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/PROLOGUE_YAQIRPA
     1. Graphics: GFX/Combat/Fighters/Foe/Reg/PhanUndeadKid_Human.png
@@ -877,13 +877,12 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_UNDERATTACK
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_FlameThrower.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_IceCannon.png
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_WaterGun.png
     1. Scenario: Languages/English/Scenario/MAPS/HAWK
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_WaterGun.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_WindGun.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_RockThrower.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_LightGun.png
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_DarkGun.png
-    1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_BARINSIDE
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_DarkGun.png < alias > Languages/English/Scenario/MAPS/LOSTPLANET_BARINSIDE
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Goddess.piko
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_BONUS_SPACEOBSERVATORIUM
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_DUNGEON
@@ -907,8 +906,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/11
     1. General Data: Data/LvStats/Briggs/12
     1. General Data: Data/LvStats/Briggs/13
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_TRQ.png
     1. General Data: Data/LvStats/Briggs/14
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_TRQ.png
     1. Script: Script/Maps/Physillium - The Ruins of the Y Anhysbys.lua
     1. General Data: Data/LvStats/Briggs/15
     1. Script: Script/Maps/Physillium - The Ruins of the Y Anhysbys.lsv
@@ -932,15 +931,15 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/22
     1. Script: Script/Maps/Nizozemska - Marlon's house.lua
     1. Script: Script/Maps/Nizozemska - Lake.lua
-    1. Script: Script/Maps/Phantasar - Frendor Bushes - Arrival.lua
     1. General Data: Data/LvStats/Briggs/23
+    1. Script: Script/Maps/Phantasar - Frendor Bushes - Arrival.lua
     1. Script: Script/Maps/Phantasar.lua
     1. General Data: Data/LvStats/Briggs/24
     1. Script: Script/Maps/Phantasar - Frendor Bushes.lua
     1. Script: Script/Maps/Phantasar - Frendor.lua
     1. General Data: Data/LvStats/Briggs/25
-    1. Script: Script/Maps/Nizozemska - Belioss.lua
     1. General Data: Data/LvStats/Briggs/26
+    1. Script: Script/Maps/Nizozemska - Belioss.lua
     1. Script: Script/Maps/Phantasar - Ghost House.lua
     1. General Data: Data/LvStats/Briggs/27
     1. Script: Script/Maps/Nizozemska - Dark Graveyard.lua
@@ -948,8 +947,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Maps/Phantasar - Slagimon Forest.lua
     1. General Data: Data/LvStats/Briggs/28
     1. Script: Script/Maps/Nizozemska - Marlon's Garden.lua
-    1. Script: Script/Maps/Phantasar - Frendor.lsv
     1. General Data: Data/LvStats/Briggs/29
+    1. Script: Script/Maps/Phantasar - Frendor.lsv
     1. Script: Script/Maps/Ysperon - Facility 2.lua
     1. Script: Script/Maps/Ysperon - Eugorvnia Caves.lua
     1. General Data: Data/LvStats/Briggs/3
@@ -957,8 +956,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/30
     1. Script: Script/Maps/Vulpina - Sewers.lua
     1. Script: Script/Maps/Volcania - Caves.lua
-    1. Script: Script/Maps/Excalibur - Final.lua
     1. General Data: Data/LvStats/Briggs/31
+    1. Script: Script/Maps/Excalibur - Final.lua
     1. General Data: Data/LvStats/Briggs/32
     1. General Data: Data/LvStats/Briggs/33
     1. General Data: Data/LvStats/Briggs/34
@@ -986,11 +985,11 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/42
     1. Script: Script/Flow/NizozemskaSave.lsv
     1. Script: Script/Flow/World.lua
-    1. Script: Script/Flow/PhantasarStore.lua
     1. General Data: Data/LvStats/Briggs/43
+    1. Script: Script/Flow/PhantasarStore.lua
+    1. General Data: Data/LvStats/Briggs/44
     1. Script: Script/Flow/PhantasarStore.lsv
     1. Script: Script/Flow/NIM.lua
-    1. General Data: Data/LvStats/Briggs/44
     1. General Data: Data/LvStats/Briggs/45
     1. Script: Script/Flow/Excalibur_Transport.lua
     1. General Data: Data/LvStats/Briggs/46
@@ -1002,8 +1001,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/48
     1. Script: Script/JINC/NewGame+/PreserveVar.lua
     1. Script: Script/JINC/Big/BestiaryData.lua
-    1. Script: Script/JINC/Big/Credits.lua
     1. General Data: Data/LvStats/Briggs/49
+    1. Script: Script/JINC/Big/Credits.lua
     1. General Data: Data/LvStats/Briggs/5
     1. Script: Script/JINC/World/Nizozemska.lua
     1. Script: Script/JINC/World/Phantasar.lua
@@ -1020,17 +1019,17 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/53
     1. Script: Script/Use/Maps/Hawk/UnlockBlackHoleDweller.lua
     1. Script: Script/Use/Maps/Hawk_Terminal/Bestiary.lua
-    1. Script: Script/Use/Maps/Hawk_Terminal/Block Shooter .lua
     1. General Data: Data/LvStats/Briggs/54
+    1. Script: Script/Use/Maps/Hawk_Terminal/Block Shooter .lua
     1. Script: Script/Use/Maps/Hawk_Terminal/NIM.lua
     1. Script: Script/Use/Maps/Gen/Next.lua
     1. General Data: Data/LvStats/Briggs/55
     1. Script: Script/Use/Maps/Gen/Sudoku.lua
-    1. Script: Script/Use/Maps/Gen/SchuifNext.lua
     1. General Data: Data/LvStats/Briggs/56
+    1. Script: Script/Use/Maps/Gen/SchuifNext.lua
     1. Script: Script/Use/Maps/Gen/SchuifNextReal.lua
-    1. Script: Script/Use/Maps/AltArena/Excalibur.lua
     1. General Data: Data/LvStats/Briggs/57
+    1. Script: Script/Use/Maps/AltArena/Excalibur.lua
     1. Script: Script/Use/Maps/AltArena/Facility.lua
     1. Script: Script/Use/Sub/Party/XenobiSpells.lua
     1. General Data: Data/LvStats/Briggs/58
@@ -1113,8 +1112,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Human.lua
     1. General Data: Data/LvStats/Briggs/83
     1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Fairy.lua
-    1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Phelynx.lua
     1. General Data: Data/LvStats/Briggs/84
+    1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Phelynx.lua
     1. Script: Script/JINC/Foes/Reg/UndedKid_Elf.lua
     1. General Data: Data/LvStats/Briggs/85
     1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Elf.lua
@@ -1164,8 +1163,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Boss/FireSpiderYoung.lua
     1. General Data: Data/LvStats/Crystal/10
     1. Script: Script/JINC/Foes/Boss/SuperCyborg.lua
-    1. Script: Script/JINC/Foes/Boss/HWSNBN.lua
     1. General Data: Data/LvStats/Crystal/100
+    1. Script: Script/JINC/Foes/Boss/HWSNBN.lua
     1. General Data: Data/LvStats/Crystal/11
     1. Script: Script/JINC/Foes/Boss/Gold Killer Droid.lua
     1. General Data: Data/LvStats/Crystal/12
@@ -1179,8 +1178,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Crystal/15
     1. Script: Script/JINC/Foes/Goddess/Add_Gunner.lua
     1. Script: Script/JINC/Foes/Goddess/Add_FlameThrower.lua
-    1. Script: Script/JINC/Foes/Goddess/Add_IceCannon.lua
     1. General Data: Data/LvStats/Crystal/16
+    1. Script: Script/JINC/Foes/Goddess/Add_IceCannon.lua
     1. Script: Script/JINC/Foes/Goddess/Add_WaterGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_WindGun.lua
     1. General Data: Data/LvStats/Crystal/17
@@ -1192,8 +1191,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Crystal/19
     1. Script: Script/JINC/Foes/Goddess/Add_virusGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_Trq.lua
-    1. Script: Script/JINC/Foes/Goddess/Add_BlockGun.lua
     1. General Data: Data/LvStats/Crystal/2
+    1. Script: Script/JINC/Foes/Goddess/Add_BlockGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_ConfuseGun.lua
     1. General Data: Data/LvStats/Crystal/20
     1. General Data: Data/LvStats/Crystal/21
