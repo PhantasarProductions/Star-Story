@@ -1,6 +1,6 @@
 --[[
   ITM_PHANTASAR_SUPERCARROT.lua
-  Version: 16.08.25
+  Version: 16.08.27
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -35,7 +35,7 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["APRecover"] = 250,
+	["APRecover"] = 500,
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
