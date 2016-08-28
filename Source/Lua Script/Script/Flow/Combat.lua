@@ -1,6 +1,6 @@
 --[[
   Combat.lua
-  Version: 16.07.30
+  Version: 16.08.28
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -144,6 +144,7 @@ else
 -- Reset gauge
 if Fighters[ft][p].Gauge>9999 then Fighters[ft][p].Gauge = 0 end
 (GameSpecificAfterPerformAction or function() CSay("No After action") end)(ft,p,fv);
+InitGaugeSpeed() -- Make sure buffs and debuffs and other crazy stuff are taken in order.
 end
 
 function FighterTag(t,i)
