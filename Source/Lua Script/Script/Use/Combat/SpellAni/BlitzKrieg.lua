@@ -1,5 +1,5 @@
 --[[
-  ABL_FOE_DARK_VITALIZE.lua
+  BlitzKrieg.lua
   Version: 16.08.28
   Copyright (C) 2016 Jeroen Petrus Broks
   
@@ -34,26 +34,53 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
-ret = {
-	["ABL_AP"] = 0,
-	["ABL_Pose"] = "Cast",
-	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 250,
-	["AttackElement"] = "DarkHealing",
-	["AttackPower"] = 500,
-	["AttackStat"] = "Will",
-	["DefenseStat"] = "Resistance",
-	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Elements/Dark.png",
-	["ItemType"] = "Consumable",
-	["Name"] = "Dark Vitalization",
-	["SpellAni_Reference"] = "AllHeal",
-	["Target"] = "AA",
-	["UseCombat"] = true,
-	["UseField"] = true,
-	["untauntable"] = true}
 
-return ret
+-- @IF IGNORE
+SpellAni = {}
+-- @FI
 
--- This file is an automatically generated file!
+function SpellAni.BlitzKriegDrawClouds(i)
+   Image.ViewPort(0,400,800,200)
+   for s,i in pairs(img) do
+       if prefixed(s,"Cloud") then Image.Tile(s,Time.MSecs()/i,400) end
+   end
+   ShowParty()    
+end
 
+function SpellAni.BlitzKrieg()
+    -- Init
+    local seq = {"CaveMan","Cavalry","Tank"}
+    local img = {}
+    local extra = {"SpaceShip","Cloud1","Cloud2","Cloud3"}
+    local dat = {}
+    -- Load
+    for s in each(seq)   do img[s]=Image.Load("GFX/Combat/SpellAni/SuperMoves/BlitzKrieg/"..s..".png") end 
+    for s in each(extra) do img[s]=Image.Load("GFX/Combat/SpellAni/SuperMoves/BlitzKrieg/"..s..".png") end
+    for s in each(img)   do Image.Hot(s,Image.Width(s)/2,Image.Height(s)) end
+    -- Execute ground troups
+    repeat
+      DrawScreen()
+      for i=1,#seq do
+         dat[i] = dat[i] or { x = 250 + (i*1200) , y = 500, s = (i/2)+1 }
+         Image.Show(img[seq[i]],dat[i].x,dat[i].y)
+         dat[i].x = dat[i].x - dat[i].s 
+      end
+      SpellAni.BlitzKriegDrawClouds(img)
+      Flip()      
+    until dat[#seq].x<0  
+    -- Execute SpaceShit
+    x = 400
+    for y = 600,-20,-4 do
+        DrawScreen()
+        Image.Show(img.SpaceShip,x,y)
+        SpellAni.BlitzKregDrawClouds(i)
+        Flip()
+    end    
+    -- Unload
+    for s in each(img) do Image.Free(s) end
+end
+
+
+-- @IF IGNORE
+return SpellAni -- Fooling the Eclipse outline routine is fun, isn't it?
+-- @FI

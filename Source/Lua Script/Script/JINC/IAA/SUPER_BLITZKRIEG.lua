@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.27
+version: 16.08.28
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
@@ -46,6 +46,7 @@ ret = {
 	["Icon"] = "GFX/Abilities/Fist.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "BlitzKrieg",
+	["SpellAni_Reference"] = "BlitzKrieg",
 	["Target"] = "AF",
 	["UseCombat"] = true,
 	["UseField"] = true}
