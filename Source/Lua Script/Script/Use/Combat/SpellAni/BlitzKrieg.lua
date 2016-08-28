@@ -41,7 +41,7 @@ SpellAni = {}
 
 function SpellAni.BlitzKriegDrawClouds(i)
    Image.ViewPort(0,400,800,200)
-   for s,i in pairs(img) do
+   for s,i in pairs(i) do
        if prefixed(s,"Cloud") then Image.Tile(s,Time.MSecs()/i,400) end
    end
    ShowParty()    
