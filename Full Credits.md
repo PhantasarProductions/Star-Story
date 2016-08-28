@@ -875,8 +875,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Combat/Fighters/Foe/Boss/SuperCyborg.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_Gunner.png
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_KITCHEN
-    1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_SICKBAY
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_FlameThrower.png
+    1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_SICKBAY
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_UNDERATTACK
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_IceCannon.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_WaterGun.png

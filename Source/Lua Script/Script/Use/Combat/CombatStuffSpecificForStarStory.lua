@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.23
+version: 16.08.28
 ]]
 -- @IF IGNORE
 VicCheck = {}
@@ -106,7 +106,7 @@ local ak
 for ak=3,5 do
     f = RPGStat.PartyTag(ak)
     if f~="" then RPGStat.Points(f,"AP").Inc(amount or 1) end
-    if f=="Crystal" then RPGStat.Points(f,"HP").Inc((amount or 1)*(6/skill)) end
+    if f=="Crystal" then RPGStat.Points(f,"HP").Inc((amount or 1)*(6/skill)*((ngpcount*10)/(skill+1))) end
     end
 end
 
