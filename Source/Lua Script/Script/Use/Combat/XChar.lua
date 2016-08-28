@@ -32,10 +32,22 @@
   
  **********************************************
  
-version: 16.08.20
+version: 16.08.28
 ]]
 
 -- Kills for ExHuRU (and his "representatives")  
+
+
+function XCharAutoAllow(ch)
+  local allow = {"Poison","Disease","Damned"}
+  local getlist = RPGChar.ListOut(ch,"StatusChanges")
+  local list = mysplit(getlist,";")
+  local ret = true  
+  for sc in each(list) do
+      ret = ret and tablecontains(allow)
+  end
+  return ret
+end
   
   
 function XCharKillCount(DoNotCount) -- ExHuRU, Rolf, and Johnson share this one.

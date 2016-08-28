@@ -39,11 +39,17 @@
 SpellAni = {}
 -- @FI
 
-function SpellAni.BlitzKriegDrawClouds(i)
-   Image.ViewPort(0,400,800,200)
-   for s,i in pairs(i) do
-       if prefixed(s,"Cloud") then Image.Tile(s,Time.MSecs()/i,400) end
+function SpellAni.BlitzKriegDrawClouds(img)
+   local sp
+   Image.ScalePC(100,100)
+   Image.ViewPort(0,300,800,300)
+   Image.Origin(0,300,800,300)
+   for s,i in pairs(img) do
+       sp = (sp or 0) + 2
+       if prefixed(s,"Cloud") then Image.Tile(i,Time.MSecs()/sp,00) end
    end
+   Image.ViewPort(0,0,800,600)
+   Image.Origin(0,0)
    ShowParty()    
 end
 
@@ -54,12 +60,13 @@ function SpellAni.BlitzKrieg()
     local extra = {"SpaceShip","Cloud1","Cloud2","Cloud3"}
     local dat = {}
     -- Load
-    for s in each(seq)   do img[s]=Image.Load("GFX/Combat/SpellAni/SuperMoves/BlitzKrieg/"..s..".png") end 
-    for s in each(extra) do img[s]=Image.Load("GFX/Combat/SpellAni/SuperMoves/BlitzKrieg/"..s..".png") end
-    for s in each(img)   do Image.Hot(s,Image.Width(s)/2,Image.Height(s)) end
+    for s   in each(seq)     do img[s]=Image.Load("GFX/Combat/SpellAni/SuperMoves/BlitzKrieg/"..s..".png") end 
+    for s   in each(extra)   do img[s]=Image.Load("GFX/Combat/SpellAni/SuperMoves/BlitzKrieg/"..s..".png") end
+    for k,v in spairs(img)   do CSay(k .. " has image "..sval(v) ) Image.Hot(v,Image.Width(v)/2,Image.Height(v)) end
     -- Execute ground troups
     repeat
       DrawScreen()
+      Image.ScalePC(25,25)
       for i=1,#seq do
          dat[i] = dat[i] or { x = 250 + (i*1200) , y = 500, s = (i/2)+1 }
          Image.Show(img[seq[i]],dat[i].x,dat[i].y)
@@ -69,11 +76,13 @@ function SpellAni.BlitzKrieg()
       Flip()      
     until dat[#seq].x<0  
     -- Execute SpaceShit
-    x = 400
+    local x = 400
     for y = 600,-20,-4 do
         DrawScreen()
+        Image.ScalePC(25,25)
         Image.Show(img.SpaceShip,x,y)
-        SpellAni.BlitzKregDrawClouds(i)
+        Image.ScalePC(100,100)
+        SpellAni.BlitzKriegDrawClouds(img)
         Flip()
     end    
     -- Unload
