@@ -37,7 +37,7 @@
 
 -- @UNDEF DEBUG_HURT
 
-function HurtBug(dmg)
+function HurtBig(dmg)
  if  dmg>10000000 then return math.floor(dmg/1000000).."m"
  elseif dmg>75000 then return math.floor(dmg/1000).."k"
  else                  return dmg end
@@ -46,7 +46,7 @@ end
 function Hurt(tg,ti,hp,element)
 local r,g,b = 255,255,255
 local report = round(hp)
-local dodmg = round(hp)
+local dodmg = HurtBig(round(hp))
 local chtarget = FighterTag(tg,ti)
 local jack = CVV("&CHEAT.JACK")
 local god  = CVV("&CHEAT.GOD")
