@@ -45,8 +45,8 @@ end
 
 function Hurt(tg,ti,hp,element)
 local r,g,b = 255,255,255
-local report = round(hp)
-local dodmg = HurtBig(round(hp))
+local report = HurtBig(round(hp))
+local dodmg  = round(hp)
 local chtarget = FighterTag(tg,ti)
 local jack = CVV("&CHEAT.JACK")
 local god  = CVV("&CHEAT.GOD")
