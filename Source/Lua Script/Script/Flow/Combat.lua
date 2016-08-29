@@ -1,6 +1,6 @@
 --[[
   Combat.lua
-  Version: 16.08.28
+  Version: 16.08.29
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================

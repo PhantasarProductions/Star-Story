@@ -1,6 +1,6 @@
 --[[
   CHurt.lua
-  Version: 16.06.04
+  Version: 16.08.29
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -37,6 +37,12 @@
 
 -- @UNDEF DEBUG_HURT
 
+function HurtBug(dmg)
+ if  dmg>10000000 then return math.floor(dmg/1000000).."m"
+ elseif dmg>75000 then return math.floor(dmg/1000).."k"
+ else                  return dmg end
+end
+
 function Hurt(tg,ti,hp,element)
 local r,g,b = 255,255,255
 local report = round(hp)
@@ -65,14 +71,14 @@ if RPGStat.GetData(Fighters[tg][ti].Tag,"IMMUNE")=="YES" then elementalresistanc
                        end,
                  [1] = function() -- super weakness
                        dodmg = dodmg * 4
-                       report = dodmg; r,g,b = 255,0,0
+                       report = HurtBig(dodmg); r,g,b = 255,0,0
                        for status in iStatusChange(chtarget) do
                            if StatusAltUltraWeak[status] then dodmg,report,r,g,b = StatusAltUltraWeak[status](chtarget,dodmg,element) end
                            end                       
                        end,
                  [2] = function() -- regular weakness
                        dodmg = round(dodmg * 1.75)       
-                       report = dodmg; r,g,b = 255,80,0
+                       report = HurtBig(dodmg); r,g,b = 255,80,0
                        for status in iStatusChange(chtarget) do
                            if StatusAltWeak[status] then dodmg,report,r,g,b = StatusAltWeak[status](chtarget,dodmg,element) end
                            end
@@ -80,7 +86,7 @@ if RPGStat.GetData(Fighters[tg][ti].Tag,"IMMUNE")=="YES" then elementalresistanc
                  [4] = function() -- half
                        dodmg = round(dodmg/2)
                        if dodmg<1 then dodmg=1 end
-                       report = dodmg
+                       report = HurtBig(dodmg)
                        r,g,b = 255,180,0
                        for status in iStatusChange(chtarget) do
                            if StatusAltHalved[status] then dodmg,report,r,g,b = StatusAltHalved[status](chtarget,dodmg,element) end
@@ -99,7 +105,7 @@ if RPGStat.GetData(Fighters[tg][ti].Tag,"IMMUNE")=="YES" then elementalresistanc
                           return
                           end
                        dodmg = math.abs(dodmg)*(-1)
-                       report = math.abs(dodmg)
+                       report = HurtBig(math.abs(dodmg))
                        r,g,b = 0,255,0
                        for status in iStatusChange(chtarget) do
                            if StatusAltHealing[status] then dodmg,report,r,g,b = StatusAltHealing[status](chtarget,dodmg,element) end

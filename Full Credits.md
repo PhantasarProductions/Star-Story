@@ -870,8 +870,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Combat/Fighters/Foe/Boss/DardMoeder.png
     1. Graphics: GFX/Combat/Fighters/Foe/Boss/DardBoorth.png
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_HANGAR
-    1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_HOME
     1. Graphics: GFX/Combat/Fighters/Foe/Boss/HWSNBN.png
+    1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_HOME
     1. Graphics: GFX/Combat/Fighters/Foe/Boss/SuperCyborg.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_Gunner.png
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_KITCHEN
@@ -980,8 +980,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Flow/Bestiary.lua
     1. General Data: Data/LvStats/Briggs/39
     1. Script: Script/Flow/Bestiary.lsv
-    1. General Data: Data/LvStats/Briggs/4
     1. Script: Script/Flow/BlockShooter.lua
+    1. General Data: Data/LvStats/Briggs/4
     1. General Data: Data/LvStats/Briggs/40
     1. Script: Script/Flow/NizozemskaSave.lua
     1. General Data: Data/LvStats/Briggs/41
@@ -999,8 +999,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/46
     1. Script: Script/Use/Anyway/Full.lua
     1. Script: Script/Use/Anyway/ReLevel.lua
-    1. General Data: Data/LvStats/Briggs/47
     1. Script: Script/Use/Linkers/WorldLinker.lua
+    1. General Data: Data/LvStats/Briggs/47
     1. Script: Script/JINC/NewGame+/PreserveVar.lua
     1. Script: Script/JINC/Big/BestiaryData.lua
     1. General Data: Data/LvStats/Briggs/48
@@ -1078,8 +1078,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/7
     1. Script: Script/Use/Combat/FoeAltImage/Alg.lua
     1. Script: Script/Use/Combat/AltBackGrounds/Black Hole Dweller.lua
-    1. General Data: Data/LvStats/Briggs/70
     1. Script: Script/Use/Combat/AltBackGrounds/Goddess in Space.lua
+    1. General Data: Data/LvStats/Briggs/70
     1. Script: Script/JINC/Foes/Reg/Bladeh.lua
     1. General Data: Data/LvStats/Briggs/71
     1. Script: Script/JINC/Foes/Reg/Lion.lua
@@ -1167,8 +1167,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Boss/SuperCyborg.lua
     1. General Data: Data/LvStats/Crystal/10
     1. Script: Script/JINC/Foes/Boss/HWSNBN.lua
-    1. General Data: Data/LvStats/Crystal/100
     1. Script: Script/JINC/Foes/Boss/Gold Killer Droid.lua
+    1. General Data: Data/LvStats/Crystal/100
     1. General Data: Data/LvStats/Crystal/11
     1. Script: Script/JINC/Foes/Boss/UberGremlin.lua
     1. General Data: Data/LvStats/Crystal/12

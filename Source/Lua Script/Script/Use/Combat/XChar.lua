@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.28
+version: 16.08.29
 ]]
 
 -- Kills for ExHuRU (and his "representatives")  
@@ -42,7 +42,7 @@ function XCharAutoAllow(ch)
   local allow = {"Poison","Disease","Damned"}
   local getlist = RPGChar.ListOut(ch,"StatusChanges")
   local list = mysplit(getlist,";")
-  local ret = true  
+  local ret = RPG.Points(ch,"HP").Have>0  
   for sc in each(list) do
       ret = ret and tablecontains(allow)
   end
@@ -175,6 +175,7 @@ XCharAfterAction.UniWendicka = XCharAfterAction.Wendicka
 XCharAttacked = {
  
     Foxy = function(attackergroup,attackterindividual)
+             if not XCharAutoAllow('Foxy') then return end -- If Foxy is unable to act, she cannot do this either.
              if rand(1,100)>15 then return end -- Only 15% chance Foxy will do this, after this 15% some other factors may play a role.
              local sw = rand(0,5)
              if RPGStat.PartyTag(sw)=="Foxy" or RPGStat.PartyTag(sw)=="" then return end -- Nope, Foxy cannot swap places with herself, neither can she swap with an empty spot.
@@ -198,6 +199,7 @@ XCharAttacked = {
              end,
              
     Yirl = function(attackergroup,attackerindividual)
+             if not XCharAutoAllow('Yirl') then return end -- If Yirl is unable to act, she cannot do this either.
              if attackergroup=='Hero' then return end
     		     if rand(1,100)>25 then return end  
     		     if RPGChar.Points('Yirl',"AMMO").Have==0 then return end -- Yirl needs at least one bullet to do this.
@@ -214,7 +216,7 @@ XCharAttacked = {
              end,
 
     Wendicka = function(attackergroup,attackterindividual) -- Odd as it may seem, this is not about Wendicka, but about ExHuRU who responds to Wendicka being attacked.
-               local pos,exu
+               if not XCharAutoAllow('ExHuRU') then return end -- If ExHuRU is unable to act, she cannot do this either.
                local hp = RPGChar.Points("Wendicka","HP").Have
                local hpm = RPGChar.Points("Wendicka","HP").Maximum
                if hp>(hpm/2) then return end -- Only respond if Wendicka's health is below 50%
