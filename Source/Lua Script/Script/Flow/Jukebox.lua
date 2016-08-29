@@ -1,7 +1,7 @@
 --[[
   Jukebox.lua
-  Version: 15.10.30
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.08.29
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -89,13 +89,13 @@ if playing then
    Image.Color(255,180,0)
    Image.DText(playing.Title,780,40,1,0)
    Image.DText(playing.Artist,780,90,1,0)
-   if tmx>780-Image.TextWidth(hawk) and tmy>450 and tmy<500 then
+   if tmx>780-Image.TextWidth(hawk) and tmy>350 and tmy<400 then
       Image.Color(180,255,0)
       if mousehit(1) then Var.D("$HAWKMUSIC",playing.File) end
       else
       Image.Color(100,180,0)
       end
-   Image.DText(hawk,780,450,1,0)   
+   Image.DText(hawk,780,350,1,0)   
    end
 White()   
 if PM>0 then
