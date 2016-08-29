@@ -42,7 +42,7 @@ function XCharAutoAllow(ch)
   local allow = {"Poison","Disease","Damned"}
   local getlist = RPGChar.ListOut(ch,"StatusChanges")
   local list = mysplit(getlist,";")
-  local ret = RPG.Points(ch,"HP").Have>0  
+  local ret = RPGChar.Points(ch,"HP").Have>0  
   for sc in each(list) do
       ret = ret and tablecontains(allow)
   end
