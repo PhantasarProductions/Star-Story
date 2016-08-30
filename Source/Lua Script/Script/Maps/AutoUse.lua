@@ -1,7 +1,7 @@
 --[[
   AutoUse.lua
   
-  version: 16.07.21
+  version: 16.08.30
   Copyright (C) 2015, 2016 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -208,6 +208,7 @@ local eind  = {99,0}
 local stap  = {1,-1}
 Actors.ChoosePic("PLAYER","TELEPORT")
 Actors.Actor("PLAYER").NotInMotionThen0 = 0
+SFX('Audio/Sfx/Transporter/Beam.ogg')
 for f=start[inorout],eind[inorout],stap[inorout] do
     Image.Cls()
     Actors.Actor("PLAYER").Frame = f 
@@ -215,6 +216,7 @@ for f=start[inorout],eind[inorout],stap[inorout] do
     --DrawScreen()
     Flip()    
     end
+for i=1,3 do DrawScreen() Flip() end -- Cosmetic fix    
 local cp = GetActive()    
 if inorout==2 then
    Actors.ChoosePic("PLAYER",upper(cp)..".SOUTH")
