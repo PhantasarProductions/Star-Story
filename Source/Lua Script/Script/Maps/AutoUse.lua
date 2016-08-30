@@ -216,7 +216,12 @@ for f=start[inorout],eind[inorout],stap[inorout] do
     --DrawScreen()
     Flip()    
     end
-for i=1,3 do DrawScreen() Flip() end -- Cosmetic fix    
+for i=1,3 do 
+    Actors.Actor("PLAYER").Visible = 0
+    DrawScreen() 
+    Flip() 
+    Actors.Actor("PLAYER").Visible = 1
+    end -- Cosmetic fix    
 local cp = GetActive()    
 if inorout==2 then
    Actors.ChoosePic("PLAYER",upper(cp)..".SOUTH")
