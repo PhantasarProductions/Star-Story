@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.25
+version: 16.09.01
 ]]
 function GetMapLocks(d)
    d.access = { ['#001']=true}
@@ -98,7 +98,7 @@ function MAIN_FLOW()
   -- Mouse
   ShowMouse()
   -- Debug
-  DarkText('('..mx..","..my..'); Hover: '..sval(hover),200,350,0,0,180,0,255) -- debug line. Should be disabled in stable build.
+  -- DarkText('('..mx..","..my..'); Hover: '..sval(hover),200,350,0,0,180,0,255) -- debug line. Should be disabled in stable build.
   -- Flip    
   Flip()
 end
