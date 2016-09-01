@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 16.08.25
+  Version: 16.09.01
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -73,6 +73,9 @@ tuts = {
 ChosenItem = {}   
 
 Trashcan = Image.Load("GFX/StatusScreen/Trash.png"); TrashCan=Trashcan -- Just to make sure no silly case sensitive errors can pop up, sigh!
+imgup   = Image.Load("GFX/Save/Up.png")
+imgdown = Image.Load("GFX/Save/Down.png")
+
 
 function PointChar(chp)
 pcharn = Sys.Val(chp)
@@ -664,8 +667,17 @@ FeatureHandleArray = {
                   local y = 15
                   local hover = nil
                   local itcode,item,itshort,itreallyshort
-                  Image.ViewPort(50,100,700,400)
+                  vaultpm=vaultpm or 0
+                  y = y - vaultpm
+                  Image.ViewPort(50,100,700,300)
                   Image.Origin(50,100)
+                  Image.Color(255,180,0)
+                  Image.Show(imgup,630,0)
+                  Image.Show(imgdown,630,250)
+                  if INP.MouseX()>680 and INP.MouseD(1)==1 then
+                     if INP.MouseY()<200 and vaultpm>0 then vaultpm = vaultpm - 1
+                     elseif INP.mouseY()>350 and INP.mouseY()<500 then vaultpm = vaultpm + 1 end 
+                  end
                   for itcode in IVARS() do
                       if prefixed(itcode,"%VAULT.") then
                          itshort = right(itcode,len(itcode)-7)
@@ -683,11 +695,11 @@ FeatureHandleArray = {
                                end
                             end
                          Image.DText(item.Name,100,y,0,2) 
-                         Image.DText("x"..CVV(itcode),680,y,1,2)  
+                         Image.DText("x"..CVV(itcode),580,y,1,2)  
                          y = y + 32
                          end 
                       end
-                  if INP.MouseH(1)==1 and INP.MouseY()>100 then
+                  if INP.MouseH(1)==1 and INP.MouseY()>100  and INP.MouseX()<800-280 then
                      if ChosenItem.Taken then 
                         if CVV("%VAULT.ITM_"..ChosenItem.Item) < InventoryMaxVaultStack then
                            inc("%VAULT.ITM_"..ChosenItem.Item)
