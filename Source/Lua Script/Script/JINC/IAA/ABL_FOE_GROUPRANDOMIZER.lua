@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_GROUPRANDOMIZER.lua
-  Version: 16.08.28
+  Version: 16.09.02
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -37,6 +37,7 @@
 ret = {
 	["ABL_AP"] = 0,
 	["ABL_Pose"] = "Cast",
+	["ABL_Speed"] = 250,
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
