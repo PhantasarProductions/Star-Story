@@ -44,6 +44,7 @@ ret = {
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["HealingType"] = "Absolute",
+	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Total Randomizer",
 	["ScriptEffect_Reference"] = "Randomizer",
