@@ -1,6 +1,6 @@
 --[[
   Randomizer.lua
-  Version: 16.07.18
+  Version: 16.09.02
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -40,8 +40,9 @@ AblSpecialEffect = {}
 
 function P_Rand(pstat)
   if pstat.Have==0 then return false end
-  local minval = ({pstat.Have/2,1,1})
-  local maxval = ({pstat.Maximum,pstat.Maximum-1,pstat.have})
+  local minval = ({pstat.Have/2,1,1})[skill]
+  local maxval = ({pstat.Maximum,pstat.Maximum-1,pstat.Have})[skill]
+  CSay("pstat.Have = "..pstat.Have.."; pstat.Maximum = "..pstat.Maximum.."; minval = "..minval.."; maxval = "..maxval)
   pstat.Have = rand(minval,maxval)
   if pstat.Have==0 then pstat.Have=1 end
 end
