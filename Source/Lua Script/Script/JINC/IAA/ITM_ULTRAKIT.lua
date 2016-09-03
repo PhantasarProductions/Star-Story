@@ -35,21 +35,37 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
+	["APRecover"] = 125,
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
+	["CureAmnesia"] = true,
+	["CureBagLock"] = true,
+	["CureConfusion"] = true,
+	["CureDeathOne"] = true,
+	["CureDisease"] = true,
+	["CureHandicapped"] = true,
+	["CureParalysis"] = true,
+	["CurePoison"] = true,
+	["CureSleep"] = true,
+	["CureTerrified"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Who even needs any other healing items now?",
+	["GrantEXP"] = 50,
+	["GrantEXPType"] = "Absolute",
+	["Healing"] = 1000000,
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 100,
-	["ITM_SellPrice"] = 75,
+	["ITM_BuyPrice"] = 2500000,
+	["ITM_SellPrice"] = 7500,
 	["ITM_Sellable"] = true,
+	["Icon"] = "GFX/Inventory/UltraKit.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "UltraKit",
-	["Target"] = "1F",
+	["Target"] = "1A",
 	["UseCombat"] = true,
-	["UseField"] = true}
+	["UseField"] = true,
+	["untauntable"] = true}
 
 return ret
 
