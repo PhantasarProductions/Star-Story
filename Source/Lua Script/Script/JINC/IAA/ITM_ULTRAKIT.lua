@@ -1,7 +1,7 @@
 --[[
-  ZZZ_CID_ULTRADARKNESS.lua
+  ITM_ULTRAKIT.lua
   Version: 16.09.03
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -36,17 +36,18 @@
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 150,
-	["AttackElement"] = "Dark",
-	["AttackPower"] = 150,
-	["AttackStat"] = "Will",
-	["DefenseStat"] = "Resistance",
-	["Description"] = "Dark attack",
+	["ActSpeed"] = 250,
+	["AttackElement"] = "Non-Elemental",
+	["AttackStat"] = "Strength",
+	["DefenseStat"] = "Defense",
+	["Description"] = "Who even needs any other healing items now?",
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Elements/Dark.png",
+	["ITM_BuyPrice"] = 100,
+	["ITM_SellPrice"] = 75,
+	["ITM_Sellable"] = true,
 	["ItemType"] = "Consumable",
-	["Name"] = "Ultra Darkness",
-	["Target"] = "AF",
+	["Name"] = "UltraKit",
+	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}
 
