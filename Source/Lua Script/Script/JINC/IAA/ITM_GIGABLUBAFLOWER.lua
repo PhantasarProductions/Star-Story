@@ -1,8 +1,8 @@
 --[[
 **********************************************
   
-  ABL_FOXY_DRAGON_CHARGE.lua
-  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
+  ITM_GIGABLUBAFLOWER.lua
+  (c) Jeroen Broks, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -35,24 +35,33 @@
 version: 16.09.05
 ]]
 ret = {
-	["ABL_AP"] = 260,
-	["ABL_APCut"] = 10000,
-	["ABL_Pose"] = "Cast",
-	["ABL_Speed"] = 100,
+	["APRecover"] = 500,
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 150,
+	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
+	["Buff_Agility"] = 50,
+	["Buff_Strength"] = 25,
+	["CureDamned"] = true,
+	["CureDisease"] = true,
+	["CurePoison"] = true,
+	["CureZombie"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Charge up for \"Sky Dragon Slash\"",
+	["Description"] = "Heals 250000 HP and 500 AP",
+	["GrantEXP"] = 10,
+	["GrantEXPType"] = "Absolute",
+	["Healing"] = 250000,
 	["HealingType"] = "Absolute",
-	["Icon"] = "GFX/Elements/Fire.png",
+	["ITM_BuyPrice"] = 10000,
+	["ITM_SellPrice"] = 7500,
+	["ITM_Sellable"] = true,
+	["Icon"] = "GFX/Inventory/Blue Flower.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Dragon Charge",
-	["SpellAni_Reference"] = "DragonCharge",
-	["Target"] = "AF",
+	["Name"] = "Giga Bluba Flower",
+	["SpellAni_Reference"] = "SingleHeal",
+	["Target"] = "1A",
 	["UseCombat"] = true,
-	["UserNextMove"] = "SUPER_FOXY_SKYDRAGONSLASH"}
+	["UseField"] = true}
 
 return ret
 
