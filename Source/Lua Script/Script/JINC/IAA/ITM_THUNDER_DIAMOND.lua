@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.09.05
+version: 16.09.07
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
@@ -43,6 +43,7 @@ ret = {
 	["CauseParalysis"] = true,
 	["DefenseStat"] = "Resistance",
 	["Description"] = "Electric attack on one enemy",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 250,
 	["ITM_SellPrice"] = 175,

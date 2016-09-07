@@ -1,6 +1,6 @@
 --[[
   Start.lua
-  Version: 16.08.14
+  Version: 16.09.07
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -95,6 +95,7 @@ for i,v in ipairs(actors) do
     Actors.Actor("Act"..v).NotInMotionThen0 = 0
     end
 local f
+SFX('Audio/Sfx/Transporter/Beam.ogg')
 for f=0,99 do
     Image.Cls()
     for i,v in ipairs(actors) do

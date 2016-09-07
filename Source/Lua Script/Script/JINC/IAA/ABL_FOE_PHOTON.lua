@@ -1,7 +1,7 @@
 --[[
   ABL_FOE_PHOTON.lua
   
-  version: 16.09.05
+  version: 16.09.07
   Copyright (C) 2015, 2016 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages

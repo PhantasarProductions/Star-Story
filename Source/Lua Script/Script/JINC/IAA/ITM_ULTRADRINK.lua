@@ -1,5 +1,5 @@
 --[[
-  ITM_MEGAGUBAFLOWER.lua
+  ITM_ULTRADRINK.lua
   Version: 16.09.07
   Copyright (C) 2016 Jeroen Petrus Broks
   
@@ -35,28 +35,24 @@
   3. This notice may not be removed or altered from any source distribution.
 ]]
 ret = {
-	["APRecover"] = 200,
+	["APRecover"] = 1500,
 	["APRecoverType"] = "Absolute",
-	["ActSpeed"] = 250,
+	["ActSpeed"] = 120,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
-	["CureDisease"] = true,
-	["CureParalysis"] = true,
-	["CurePoison"] = true,
+	["CureConfusion"] = true,
 	["CureSleep"] = true,
-	["CureZombie"] = true,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Heals 7500 HP and cures poison, disease and paralysis and 200 AP",
-	["GrantEXP"] = 2,
+	["Description"] = "Grands 1500 AP and cures sleep and confusion",
+	["GrantEXP"] = 15,
 	["GrantEXPType"] = "Absolute",
-	["Healing"] = 7500,
 	["HealingType"] = "Absolute",
-	["ITM_BuyPrice"] = 112,
-	["ITM_SellPrice"] = 60,
+	["ITM_BuyPrice"] = 100000,
+	["ITM_SellPrice"] = 75000,
 	["ITM_Sellable"] = true,
-	["Icon"] = "GFX/Inventory/Yellow Flower.png",
+	["Icon"] = "gfx/inventory/Energy Drink.png",
 	["ItemType"] = "Consumable",
-	["Name"] = "Mega Guba Flower",
+	["Name"] = "Ultra Drink",
 	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1A",
 	["UseCombat"] = true,
