@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.08.08
+version: 16.09.12
 ]]
 
 
--- Version 16.08.08
+-- Version 16.09.11
 
 
 
@@ -105,6 +105,9 @@ Data.ActMinLevel["Abl.ABL_WENDICKA_JOLT"] = 275		for ak=1,50 do table.insert(Dat
 Data.ActMinLevel["Abl.ABL_XENOBI_BLIZZARD"] = 250		for ak=1,5 do table.insert(Data.Acts,"Abl.ABL_XENOBI_BLIZZARD") end
 temp = { ITM='ITM_PHANTASAR_BANANA', LVL=250, VLT=false }
 for ak=1,25 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=1900, VLT=false }
+for ak=1,1900 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,1900 do table.insert(Data.ItemSteal,temp) end
 
 
 return Data

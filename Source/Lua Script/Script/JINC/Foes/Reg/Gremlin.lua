@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.07.29
+version: 16.09.12
 ]]
 
 
--- Version 16.07.29
+-- Version 16.09.11
 
 
 
@@ -98,6 +98,21 @@ Data.ActMinLevel["Abl.ABL_EXHURU_YKSI"] = 200		for ak=1,90 do table.insert(Data.
 Data.ActMinLevel["Abl.ABL_FOE_DEMON_SOUL_BREAKER"] = 1600		for ak=1,55 do table.insert(Data.Acts,"Abl.ABL_FOE_DEMON_SOUL_BREAKER") end
 Data.ActMinLevel["Abl.ABL_FOE_EXPDRAIN"] = 1400		for ak=1,60 do table.insert(Data.Acts,"Abl.ABL_FOE_EXPDRAIN") end
 Data.ActMinLevel["Abl.ABL_FOE_IDDQD"] = 1600		for ak=1,40 do table.insert(Data.Acts,"Abl.ABL_FOE_IDDQD") end
+temp = { ITM='ITM_PERMABUFF_BLUEPILL', LVL=100, VLT=false }
+for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,100 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_PERMABUFF_HEART', LVL=100, VLT=false }
+for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,100 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_PERMABUFF_REDPILL', LVL=100, VLT=false }
+for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,100 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_PERMABUFF_YELLOWPILL', LVL=100, VLT=false }
+for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,100 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_PHANTASAR_AMBROSIA', LVL=1000, VLT=false }
+for ak=1,1000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,10000 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_PHANTASAR_BANANA', LVL=500, VLT=false }
 for ak=1,20 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,20 do table.insert(Data.ItemSteal,temp) end
@@ -147,6 +162,9 @@ for ak=1,40 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_PHAN_BANANAS', LVL=1000, VLT=false }
 for ak=1,15 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,15 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=10, VLT=false }
+for ak=1,10 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,10 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_PHAN_PRISMDIAMOND', LVL=9000, VLT=false }
 for ak=1,1 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_PHAN_TRAVEL', LVL=330, VLT=false }

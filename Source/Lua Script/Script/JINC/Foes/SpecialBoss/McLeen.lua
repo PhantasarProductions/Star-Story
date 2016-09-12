@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.08.01
+version: 16.09.12
 ]]
 
 
--- Version 16.08.01
+-- Version 16.09.11
 
 
 
@@ -109,6 +109,9 @@ Data.ActMinLevel["Abl.ARM_ROCKTHROWER"] = 30		for ak=1,50 do table.insert(Data.A
 Data.ActMinLevel["Abl.ARM_STUN_GUN"] = 20		for ak=1,70 do table.insert(Data.Acts,"Abl.ARM_STUN_GUN") end
 Data.ActMinLevel["Abl.ITM_CHLOROFORM"] = 5		for ak=1,5 do table.insert(Data.Acts,"Abl.ITM_CHLOROFORM") end
 Data.ActMinLevel["Abl.ITM_EPO"] = 150		for ak=1,1 do table.insert(Data.Acts,"Abl.ITM_EPO") end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=1000, VLT=false }
+for ak=1,100000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,10000 do table.insert(Data.ItemSteal,temp) end
 Data.ActMinLevel["Abl.ITM_STEROIDS"] = 200		for ak=1,1 do table.insert(Data.Acts,"Abl.ITM_STEROIDS") end
 Data.ActMinLevel["Abl.ZZZ_CYBERSUMMON_ASTRILOPUP"] = 100		for ak=1,5 do table.insert(Data.Acts,"Abl.ZZZ_CYBERSUMMON_ASTRILOPUP") end
 Data.ActMinLevel["Abl.ZZZ_CYBERSUMMON_CAPT"] = 100		for ak=1,10 do table.insert(Data.Acts,"Abl.ZZZ_CYBERSUMMON_CAPT") end

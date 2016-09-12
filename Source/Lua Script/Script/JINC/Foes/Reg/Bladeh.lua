@@ -1,6 +1,6 @@
 --[[
   Bladeh.lua
-  Version: 16.05.26
+  Version: 16.09.12
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.05.26
+-- Version 16.09.11
 
 
 
@@ -121,6 +121,9 @@ for ak=1,5 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_MOLOTOV', LVL=50, VLT=false }
 for ak=1,1 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,10 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=400, VLT=false }
+for ak=1,400 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,400 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_ROCK', LVL=1, VLT=false }
 for ak=1,1 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,3 do table.insert(Data.ItemSteal,temp) end

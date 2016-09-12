@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.08.11
+version: 16.09.12
 ]]
 
 
--- Version 16.08.11
+-- Version 16.09.11
 
 
 
@@ -106,6 +106,9 @@ temp = { ITM='ITM_EQP_SUPER_KYANITE', LVL=100, VLT=false }
 for ak=1,1 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_EQP_SUPER_ONYX', LVL=100, VLT=false }
 for ak=1,1 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=500, VLT=false }
+for ak=1,500 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,500 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_STEROIDS', LVL=100, VLT=false }
 for ak=1,5 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,5 do table.insert(Data.ItemSteal,temp) end

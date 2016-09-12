@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.07.07
+version: 16.09.12
 ]]
 
 
--- Version 16.07.07
+-- Version 16.09.11
 
 
 
@@ -86,6 +86,9 @@ Data = {
 local temp
 
 
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=600, VLT=false }
+for ak=1,600 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,600 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_STEROIDS', LVL=70, VLT=false }
 for ak=1,1 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_VLUGZOUT', LVL=80, VLT=false }

@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.08.10
+version: 16.09.12
 ]]
 
 
--- Version 16.08.10
+-- Version 16.09.11
 
 
 
@@ -99,6 +99,9 @@ Data.ActMinLevel["Abl.ABL_FOE_FULLHEALTH"] = 800		for ak=1,1 do table.insert(Dat
 Data.ActMinLevel["Abl.ABL_FOE_HORROR"] = 300		for ak=1,1 do table.insert(Data.Acts,"Abl.ABL_FOE_HORROR") end
 Data.ActMinLevel["Abl.ABL_FOE_IDDQD"] = 800		for ak=1,1 do table.insert(Data.Acts,"Abl.ABL_FOE_IDDQD") end
 Data.ActMinLevel["Abl.ABL_FOE_LICKYOURWOUNDS"] = 200		for ak=1,1 do table.insert(Data.Acts,"Abl.ABL_FOE_LICKYOURWOUNDS") end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=100, VLT=false }
+for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,100 do table.insert(Data.ItemSteal,temp) end
 
 
 return Data

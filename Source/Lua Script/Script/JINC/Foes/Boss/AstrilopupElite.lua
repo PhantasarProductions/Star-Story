@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.01.27
+version: 16.09.12
 ]]
 
 
--- Version 16.01.27
+-- Version 16.09.11
 
 
 
@@ -137,6 +137,9 @@ for ak=1,15 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_MOLOTOV', LVL=85, VLT=false }
 for ak=1,40 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,10 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=20, VLT=false }
+for ak=1,20 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,20 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_ROCK', LVL=90, VLT=false }
 for ak=1,35 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,5 do table.insert(Data.ItemSteal,temp) end

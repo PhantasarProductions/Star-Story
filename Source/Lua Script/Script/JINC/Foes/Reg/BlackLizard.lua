@@ -1,6 +1,6 @@
 --[[
   BlackLizard.lua
-  Version: 16.02.10
+  Version: 16.09.12
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.02.10
+-- Version 16.09.11
 
 
 
@@ -94,6 +94,9 @@ for ak=1,1 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_HEATHRUB', LVL=1, VLT=false }
 for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,100 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=300, VLT=false }
+for ak=1,300 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,300 do table.insert(Data.ItemSteal,temp) end
 
 
 return Data

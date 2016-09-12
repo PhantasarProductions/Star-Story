@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.06.10
+version: 16.09.12
 ]]
 
 
--- Version 16.06.10
+-- Version 16.09.11
 
 
 
@@ -220,6 +220,9 @@ for ak=1,1 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_PHANTASAR_MAGICDUST', LVL=460, VLT=false }
 for ak=1,350 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,1 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=700, VLT=false }
+for ak=1,700 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,700 do table.insert(Data.ItemSteal,temp) end
 Data.ActMinLevel["Abl.ITM_ROCK"] = 10		for ak=1,1 do table.insert(Data.Acts,"Abl.ITM_ROCK") end
 temp = { ITM='ITM_ROCK', LVL=180, VLT=false }
 for ak=1,830 do table.insert(Data.ItemDrop ,temp) end

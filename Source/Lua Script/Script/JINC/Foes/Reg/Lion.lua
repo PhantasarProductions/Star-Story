@@ -1,6 +1,6 @@
 --[[
   Lion.lua
-  Version: 16.06.23
+  Version: 16.09.12
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.06.23
+-- Version 16.09.11
 
 
 
@@ -97,6 +97,9 @@ Data.ActMinLevel["Abl.ABL_FOE_SCRATCH"] = 30		for ak=1,500 do table.insert(Data.
 temp = { ITM='ITM_HEALINGCAPSULE', LVL=1, VLT=false }
 for ak=1,1 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,1 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=4000, VLT=false }
+for ak=1,4000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,4000 do table.insert(Data.ItemSteal,temp) end
 
 
 return Data

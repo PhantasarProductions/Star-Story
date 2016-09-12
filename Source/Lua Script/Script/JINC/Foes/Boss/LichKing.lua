@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.07.16
+version: 16.09.12
 ]]
 
 
--- Version 16.07.16
+-- Version 16.09.11
 
 
 
@@ -115,6 +115,9 @@ Data.ActMinLevel["Abl.ABL_XENOBI_ROCK"] = 2		for ak=1,2 do table.insert(Data.Act
 Data.ActMinLevel["Abl.ABL_YIRL_CONFUSION"] = 2		for ak=1,2 do table.insert(Data.Acts,"Abl.ABL_YIRL_CONFUSION") end
 Data.ActMinLevel["Abl.ABL_YIRL_INTIMIDATE"] = 10		for ak=1,2 do table.insert(Data.Acts,"Abl.ABL_YIRL_INTIMIDATE") end
 Data.ActMinLevel["Abl.ITM_BIOHAZARD"] = 0		for ak=1,2 do table.insert(Data.Acts,"Abl.ITM_BIOHAZARD") end
+temp = { ITM='ITM_PHAN_PRISMDIAMOND', LVL=200, VLT=false }
+for ak=1,200 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,200 do table.insert(Data.ItemSteal,temp) end
 Data.ActMinLevel["Abl.ZZZ_LK_SUM_BEFINDO"] = 0		for ak=1,20 do table.insert(Data.Acts,"Abl.ZZZ_LK_SUM_BEFINDO") end
 Data.ActMinLevel["Abl.ZZZ_LK_SUM_ELF"] = 0		for ak=1,20 do table.insert(Data.Acts,"Abl.ZZZ_LK_SUM_ELF") end
 Data.ActMinLevel["Abl.ZZZ_LK_SUM_FAIRY"] = 0		for ak=1,20 do table.insert(Data.Acts,"Abl.ZZZ_LK_SUM_FAIRY") end

@@ -1,6 +1,6 @@
 --[[
   BigLion.lua
-  Version: 16.02.04
+  Version: 16.09.12
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.02.04
+-- Version 16.09.11
 
 
 

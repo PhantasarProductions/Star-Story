@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.02.14
+version: 16.09.12
 ]]
 
 
--- Version 16.02.14
+-- Version 16.09.11
 
 
 
@@ -99,6 +99,9 @@ for ak=1,100 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_ICEBOMB', LVL=1, VLT=false }
 for ak=1,1 do table.insert(Data.ItemDrop ,temp) end
 Data.ActMinLevel["Abl.ITM_MEDIKIT"] = 10		for ak=1,7 do table.insert(Data.Acts,"Abl.ITM_MEDIKIT") end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=250, VLT=false }
+for ak=1,250 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,250 do table.insert(Data.ItemSteal,temp) end
 
 
 return Data

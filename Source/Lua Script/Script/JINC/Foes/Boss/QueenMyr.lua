@@ -1,6 +1,6 @@
 --[[
   QueenMyr.lua
-  Version: 16.01.22
+  Version: 16.09.12
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.01.22
+-- Version 16.09.11
 
 
 
@@ -123,6 +123,9 @@ for ak=1,10 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,20 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_MOLOTOV', LVL=43, VLT=false }
 for ak=1,4 do table.insert(Data.ItemDrop ,temp) end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=300, VLT=false }
+for ak=1,300 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,300 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_ROCK', LVL=1, VLT=false }
 for ak=1,3 do table.insert(Data.ItemDrop ,temp) end
 temp = { ITM='ITM_THUNDER_DIAMOND', LVL=44, VLT=false }

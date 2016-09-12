@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.08.08
+version: 16.09.12
 ]]
 
 
--- Version 16.08.08
+-- Version 16.09.11
 
 
 
@@ -89,6 +89,9 @@ local temp
 
 Data.ActMinLevel["Sys.Attack"] = 0		for ak=1,100 do table.insert(Data.Acts,"Sys.Attack") end
 Data.ActMinLevel["Abl.ABL_FOE_PARA_DIVE"] = 65		for ak=1,20 do table.insert(Data.Acts,"Abl.ABL_FOE_PARA_DIVE") end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=2000, VLT=false }
+for ak=1,2000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,2000 do table.insert(Data.ItemSteal,temp) end
 
 
 return Data

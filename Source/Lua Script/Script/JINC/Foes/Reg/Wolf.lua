@@ -1,6 +1,6 @@
 --[[
   Wolf.lua
-  Version: 16.08.18
+  Version: 16.09.12
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.08.18
+-- Version 16.09.11
 
 
 

@@ -1,6 +1,6 @@
 --[[
   HWSNBN.lua
-  Version: 16.07.18
+  Version: 16.09.12
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.07.18
+-- Version 16.09.11
 
 
 
@@ -96,6 +96,9 @@ Data.ActMinLevel["Abl.ABL_FOE_FULLHEALTH"] = 500		for ak=1,5 do table.insert(Dat
 Data.ActMinLevel["Abl.ABL_FOE_IDDQD"] = 100		for ak=1,10 do table.insert(Data.Acts,"Abl.ABL_FOE_IDDQD") end
 Data.ActMinLevel["Abl.ABL_FOE_IMPERIO"] = 125		for ak=1,90 do table.insert(Data.Acts,"Abl.ABL_FOE_IMPERIO") end
 Data.ActMinLevel["Abl.ABL_FOE_INFERNO"] = 111		for ak=1,20 do table.insert(Data.Acts,"Abl.ABL_FOE_INFERNO") end
+temp = { ITM='ITM_PHAN_PRISMDIAMOND', LVL=180, VLT=false }
+for ak=1,180 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,180 do table.insert(Data.ItemSteal,temp) end
 
 
 return Data

@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.06.16
+version: 16.09.12
 ]]
 
 
--- Version 16.06.16
+-- Version 16.09.11
 
 
 
@@ -91,6 +91,9 @@ Data.ActMinLevel["Sys.Attack"] = 0		for ak=1,1000 do table.insert(Data.Acts,"Sys
 Data.ActMinLevel["Abl.ABL_FOE_FULLHEALTH"] = 80		for ak=1,100 do table.insert(Data.Acts,"Abl.ABL_FOE_FULLHEALTH") end
 Data.ActMinLevel["Abl.ABL_FOE_IDDQD"] = 90		for ak=1,25 do table.insert(Data.Acts,"Abl.ABL_FOE_IDDQD") end
 Data.ActMinLevel["Abl.ABL_FOE_LIGHTNINGENCHANT"] = 100		for ak=1,100 do table.insert(Data.Acts,"Abl.ABL_FOE_LIGHTNINGENCHANT") end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=80, VLT=false }
+for ak=1,80 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,80 do table.insert(Data.ItemSteal,temp) end
 Data.ActMinLevel["Abl.MOO_ALLDOWN"] = 50		for ak=1,90 do table.insert(Data.Acts,"Abl.MOO_ALLDOWN") end
 Data.ActMinLevel["Abl.MOO_Z2_STERF"] = 2		for ak=1,100 do table.insert(Data.Acts,"Abl.MOO_Z2_STERF") end
 

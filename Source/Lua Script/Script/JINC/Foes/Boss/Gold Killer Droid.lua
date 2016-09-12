@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.08.27
+version: 16.09.12
 ]]
 
 
--- Version 16.08.27
+-- Version 16.09.11
 
 
 
@@ -91,6 +91,9 @@ Data.ActMinLevel["Sys.Attack"] = 0		for ak=1,100 do table.insert(Data.Acts,"Sys.
 Data.ActMinLevel["Abl.ABL_FOE_GROUPRANDOMIZER"] = 0		for ak=1,75 do table.insert(Data.Acts,"Abl.ABL_FOE_GROUPRANDOMIZER") end
 Data.ActMinLevel["Abl.ABL_FOE_IDDQD"] = 5		for ak=1,500 do table.insert(Data.Acts,"Abl.ABL_FOE_IDDQD") end
 Data.ActMinLevel["Abl.ABL_FOE_RANDOMIZER"] = 0		for ak=1,90 do table.insert(Data.Acts,"Abl.ABL_FOE_RANDOMIZER") end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=950, VLT=false }
+for ak=1,950 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,950 do table.insert(Data.ItemSteal,temp) end
 
 
 return Data

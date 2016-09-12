@@ -1,6 +1,6 @@
 --[[
   Zombie.lua
-  Version: 16.08.18
+  Version: 16.09.12
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.08.18
+-- Version 16.09.11
 
 
 
@@ -103,6 +103,9 @@ for ak=1,1 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_FISH', LVL=10, VLT=false }
 for ak=1,10 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,10 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=1, VLT=false }
+for ak=1,1 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,1 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_SHIT', LVL=80, VLT=false }
 for ak=1,1 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,1 do table.insert(Data.ItemSteal,temp) end

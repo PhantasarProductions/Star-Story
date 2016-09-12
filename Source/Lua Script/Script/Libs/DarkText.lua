@@ -20,8 +20,9 @@
 
 DTSW = DTSW or 795 -- Should be changed by the script if any other screenwidth than 800 is used. 
 
-function DarkText(txt,x,y,ah,av,r,g,b,br,bg,bb)
+function DarkText(txt,px,py,ah,av,r,g,b,br,bg,bb)
 Image.Color(br or 0,bg or 0,bb or 0)
+local x,y = px or 0 , py or 0
 local ax,ay
 for ay=y-1,y+1 do for ax=x-1,x+1 do Image.DText(txt,ax,ay,ah,av) end end
 Image.Color(r or 255, g or 255, b or 255)

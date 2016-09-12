@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.08.01
+version: 16.09.12
 ]]
 
 
--- Version 16.08.01
+-- Version 16.09.11
 
 
 
@@ -120,6 +120,9 @@ Data.ActMinLevel["Abl.ITM_HOMEO"] = 60		for ak=1,10 do table.insert(Data.Acts,"A
 temp = { ITM='ITM_HOMEO', LVL=65, VLT=false }
 for ak=1,50 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,25 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=750, VLT=false }
+for ak=1,750 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,750 do table.insert(Data.ItemSteal,temp) end
 Data.ActMinLevel["Abl.ITM_ROCK"] = 75		for ak=1,10 do table.insert(Data.Acts,"Abl.ITM_ROCK") end
 Data.ActMinLevel["Abl.ITM_STEROIDS"] = 1		for ak=1,1 do table.insert(Data.Acts,"Abl.ITM_STEROIDS") end
 

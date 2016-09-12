@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.07.06
+version: 16.09.12
 ]]
 
 
--- Version 16.07.06
+-- Version 16.09.11
 
 
 
@@ -101,6 +101,9 @@ Data.ActMinLevel["Abl.ABL_FOE_VENOMSTING"] = 80		for ak=1,50 do table.insert(Dat
 temp = { ITM='ITM_EQP_EMERALD', LVL=10, VLT=false }
 for ak=1,1000 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,1000 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=70, VLT=false }
+for ak=1,70 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,70 do table.insert(Data.ItemSteal,temp) end
 Data.ActMinLevel["Abl.ZZZ_MYR_SUMMON"] = 100		for ak=1,10 do table.insert(Data.Acts,"Abl.ZZZ_MYR_SUMMON") end
 Data.ActMinLevel["Abl.ZZZ_SUMMON_DEATH_MYR"] = 120		for ak=1,10 do table.insert(Data.Acts,"Abl.ZZZ_SUMMON_DEATH_MYR") end
 

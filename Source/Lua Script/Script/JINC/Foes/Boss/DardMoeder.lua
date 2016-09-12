@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.06.16
+version: 16.09.12
 ]]
 
 
--- Version 16.06.16
+-- Version 16.09.11
 
 
 
@@ -121,6 +121,9 @@ for ak=1,20 do table.insert(Data.ItemDrop ,temp) end
 temp = { ITM='ITM_HEATHRUB', LVL=3, VLT=false }
 for ak=1,5 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,3 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=60, VLT=false }
+for ak=1,60 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,60 do table.insert(Data.ItemSteal,temp) end
 Data.ActMinLevel["Abl.ITM_SPORES"] = 5		for ak=1,5 do table.insert(Data.Acts,"Abl.ITM_SPORES") end
 Data.ActMinLevel["Abl.ZZZ_CID_DARKCHARGE"] = 50		for ak=1,50 do table.insert(Data.Acts,"Abl.ZZZ_CID_DARKCHARGE") end
 Data.ActMinLevel["Abl.ZZZ_CID_DARKNESS"] = 30		for ak=1,1 do table.insert(Data.Acts,"Abl.ZZZ_CID_DARKNESS") end

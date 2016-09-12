@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.08.01
+version: 16.09.12
 ]]
 
 
--- Version 16.08.01
+-- Version 16.09.11
 
 
 
@@ -93,6 +93,9 @@ Data.ActMinLevel["Abl.BHD_BLIZZARD"] = 0		for ak=1,25 do table.insert(Data.Acts,
 Data.ActMinLevel["Abl.BHD_FIRE"] = 0		for ak=1,25 do table.insert(Data.Acts,"Abl.BHD_FIRE") end
 Data.ActMinLevel["Abl.BHD_LIGHT"] = 0		for ak=1,25 do table.insert(Data.Acts,"Abl.BHD_LIGHT") end
 Data.ActMinLevel["Abl.BHD_LIGHTNING"] = 0		for ak=1,25 do table.insert(Data.Acts,"Abl.BHD_LIGHTNING") end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=1, VLT=false }
+for ak=1,1 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,1 do table.insert(Data.ItemSteal,temp) end
 
 
 return Data

@@ -1,6 +1,6 @@
 --[[
   SnowLeopard.lua
-  Version: 16.08.07
+  Version: 16.09.12
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.08.07
+-- Version 16.09.11
 
 
 
@@ -119,6 +119,9 @@ for ak=1,1 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_FISH', LVL=90, VLT=false }
 for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,25 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=1000, VLT=false }
+for ak=1,10000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,10000 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_SUPERICEBOMB', LVL=75, VLT=false }
 for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,40 do table.insert(Data.ItemSteal,temp) end
