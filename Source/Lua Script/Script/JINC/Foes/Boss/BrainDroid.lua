@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.06.15
+version: 16.09.12
 ]]
 
 
--- Version 16.06.14
+-- Version 16.09.11
 
 
 
@@ -111,6 +111,9 @@ Data.ActMinLevel["Abl.ITM_HEALINGCAPSULE"] = 20		for ak=1,1 do table.insert(Data
 temp = { ITM='ITM_HEALINGCAPSULE', LVL=10, VLT=false }
 for ak=1,25 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,1 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=2000, VLT=false }
+for ak=1,2000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,2000 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_SPORES', LVL=3, VLT=false }
 for ak=1,3 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,3 do table.insert(Data.ItemSteal,temp) end

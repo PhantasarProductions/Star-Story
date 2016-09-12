@@ -1,6 +1,6 @@
 --[[
   SupaQual.lua
-  Version: 16.07.15
+  Version: 16.09.12
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.07.15
+-- Version 16.09.11
 
 
 
@@ -122,6 +122,9 @@ for ak=1,9 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_MOLOTOV', LVL=80, VLT=false }
 for ak=1,10 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,10 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=450, VLT=false }
+for ak=1,450 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,450 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_ROCK', LVL=90, VLT=false }
 for ak=1,11 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,11 do table.insert(Data.ItemSteal,temp) end

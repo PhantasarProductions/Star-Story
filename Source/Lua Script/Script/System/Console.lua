@@ -1,6 +1,6 @@
 --[[
   Console.lua
-  Version: 16.06.26
+  Version: 16.09.12
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -554,7 +554,7 @@ function BUFFS()
 end 
 
 function SETBUFF(ch,stat,value)
-  if LAURA.GetFlow()~="COMBAT" then CWrite("? This command only works in combat mode!",255,0,0) return end
+  -- if LAURA.GetFlow()~="COMBAT" then CWrite("? This command only works in combat mode!",255,0,0) return end
   if RPGChar.CharExists(ch)==0 then CWrite("? Character '"..sval(ch).."' does not exist!",255,0,0) return end
   RPGStat.DefStat(ch,"BUFF_"..stat,value)
 end  

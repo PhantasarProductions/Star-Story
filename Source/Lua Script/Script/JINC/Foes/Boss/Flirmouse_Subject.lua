@@ -1,6 +1,6 @@
 --[[
   Flirmouse_Subject.lua
-  Version: 16.08.27
+  Version: 16.09.12
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.08.27
+-- Version 16.09.11
 
 
 
@@ -91,6 +91,9 @@ Data.ActMinLevel["Sys.Attack"] = 1		for ak=1,1 do table.insert(Data.Acts,"Sys.At
 temp = { ITM='ITM_MOLOTOV', LVL=1, VLT=false }
 for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,20 do table.insert(Data.ItemSteal,temp) end
+temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=120, VLT=false }
+for ak=1,120 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,120 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_ROCK', LVL=1, VLT=false }
 for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,40 do table.insert(Data.ItemSteal,temp) end
