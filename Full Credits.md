@@ -923,8 +923,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_GRASSJUNGLE_3
     1. Script: Script/Maps/Phantasar - Ghost House.lua
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_JUNKYARD
-    1. Script: Script/Maps/Nizozemska - Dark Graveyard.lua
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_PUB_OUTSIDE
+    1. Script: Script/Maps/Nizozemska - Dark Graveyard.lua
     1. Script: Script/Maps/Nizozemska - Dark Graveyard.lsv
     1. Script: Script/Maps/Phantasar - Slagimon Forest.lua
     1. Script: Script/Maps/Nizozemska - Marlon's Garden.lua
@@ -986,8 +986,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Big/Credits.lua
     1. General Data: Data/LvStats/Briggs/26
     1. Script: Script/JINC/World/Nizozemska.lua
-    1. Script: Script/JINC/World/Phantasar.lua
     1. General Data: Data/LvStats/Briggs/27
+    1. Script: Script/JINC/World/Phantasar.lua
     1. Script: Script/External/SpellAni/Thriller.lua
     1. General Data: Data/LvStats/Briggs/28
     1. Script: Script/Use/Maps/Hawk/AutoNewNav.lua
@@ -1137,8 +1137,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Boss/Diablo.lua
     1. General Data: Data/LvStats/Briggs/76
     1. Script: Script/JINC/Foes/Boss/LichKing.lua
-    1. Script: Script/JINC/Foes/Boss/ExHuRU.lua
     1. General Data: Data/LvStats/Briggs/77
+    1. Script: Script/JINC/Foes/Boss/ExHuRU.lua
     1. Script: Script/JINC/Foes/Boss/DeathMyrQueen.lua
     1. General Data: Data/LvStats/Briggs/78
     1. Script: Script/JINC/Foes/Boss/SuperZombie.lua
