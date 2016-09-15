@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.28
+version: 16.09.15
 ]]
 -- @IF IGNORE
 VicCheck = {}
@@ -202,8 +202,8 @@ for i=0,5 do
        if bonus<1 then bonus = 1 end
        if bonus>100 then bonus=100 end
        if allowexpbonus then gainexp = gainexp * bonus end
-	   if skill==3 then gainexp = gainexp - (Bestiary[f]-1) end -- In the hard mode you will gain less experience for enemies you've met before.
-	   if gainexp<0 or (herolevel-enemylevel)>maxlvmargin[skill] then gainexp=0 end
+	   if skill==3 and ngpcount>rand(5,10) then gainexp = gainexp - (Bestiary[f]-1) end -- In the hard mode you will gain less experience for enemies you've met before. From cycle 5 there is a possibility this no longer counts. In cycle 10 it's definite. Getting to level 10,000 must still be TECHNICALLY possible.
+	   if gainexp<0 or ((herolevel-enemylevel)>maxlvmargin[skill] and ngpcount<=rand(5,skill*5)) then gainexp=0 end
        if RPGStat.Points(herotag,"HP").Have==0 then
           ({
            function() end,
