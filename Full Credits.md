@@ -860,8 +860,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_KITCHEN
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_WindGun.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_SICKBAY
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_RockThrower.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_UNDERATTACK
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_RockThrower.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_LightGun.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_DarkGun.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/HAWK
@@ -1162,8 +1162,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/84
     1. Script: Script/JINC/Foes/Goddess/Add_IceCannon.lua
     1. Script: Script/JINC/Foes/Goddess/Add_WaterGun.lua
-    1. Script: Script/JINC/Foes/Goddess/Add_WindGun.lua
-    1. General Data: Data/LvStats/Briggs/85
+    1. General Data: Data/LvStats/Briggs/85 < alias > Script/JINC/Foes/Goddess/Add_WindGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_RockThrower.lua
     1. Script: Script/JINC/Foes/Goddess/Add_LightGun.lua
     1. General Data: Data/LvStats/Briggs/86
