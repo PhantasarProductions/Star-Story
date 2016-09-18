@@ -2,7 +2,7 @@
 **********************************************
   
   Return_Yaqirpa.lua
-  (c) Jeroen Broks, 2015, All Rights Reserved.
+  (c) Jeroen Broks, 2015, 2016, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 15.10.28
+version: 16.09.18
 ]]
 -- @UNDEF TRAPDEBUG
 
@@ -104,7 +104,7 @@ ZA_Enter("DownToTower1", function() Trap("D_Tower1","Tower1") end)
 ZA_Enter("DownToTower2", function() Trap("D_Tower2","Tower2") end)
 ZA_Enter("DownToTower3", function() Trap("D_Tower3","Tower3") end)
 ZA_Enter("DownToTower4", function() Trap("D_Tower4","Tower4") end)
-ZA_Enter("DownToTower5", function() BreakThe4thWall(); Trap("D_Tower5","Tower5") end)
+ZA_Enter("DownToTower5", function() --[[BreakThe4thWall();]] Trap("D_Tower5","Tower5") end)
 -- ZA_Enter("Astrilopups",  TopAstrilopups)
 ZA_Enter("SAVEZONE1",EnterSave)
 ZA_Enter("EnterSave",EnterSave)
