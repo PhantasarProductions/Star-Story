@@ -1,8 +1,8 @@
 --[[
   DarkText.lua
   
-  version: 15.10.04
-  Copyright (C) 2015 Jeroen P. Broks
+  version: 16.09.19
+  Copyright (C) 2015, 2016 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
   arising from the use of this software.

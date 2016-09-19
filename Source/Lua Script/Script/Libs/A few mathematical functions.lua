@@ -1,7 +1,7 @@
 --[[
   A few mathematical functions.lua
   
-  version: 16.09.07
+  version: 16.09.19
   Copyright (C) 2015, 2016 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -75,9 +75,9 @@ abs = math.abs
 sqr = math.sqrt
 
 function Distance(x1,y1,x2,y2) -- BLD: Calculates distance between two points, by using Pythagoras
-local rechthoekszijde1 = abs(x1-x2)
-local rechthoekszijde2 = abs(y1-y2)
-local hypothenusakwardraat = (rechthoekszijde1*rechthoekszijde1) + (rechthoekszijde2*rechthoekszijde2)
-local hypothenusa = sqr(hypothenusakwardraat)
-return hypothenusa
+  local rechthoekszijde1 = abs(x1-x2)
+  local rechthoekszijde2 = abs(y1-y2)
+  local hypothenusakwardraat = (rechthoekszijde1*rechthoekszijde1) + (rechthoekszijde2*rechthoekszijde2)
+  local hypothenusa = sqr(hypothenusakwardraat)
+  return hypothenusa
 end
