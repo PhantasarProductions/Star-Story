@@ -900,8 +900,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Maps/Ysperon - Eugorvnia.lua
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_KITCHEN
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_SICKBAY
-    1. Script: Script/Maps/Ysperon - Facility.lua
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_UNDERATTACK
+    1. Script: Script/Maps/Ysperon - Facility.lua
     1. Script: Script/Maps/Vulpina - Town.lua
     1. Scenario: Languages/English/Scenario/MAPS/HAWK
     1. Script: Script/Maps/Volcania - Volcanic Plains.lua
@@ -923,8 +923,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_GRASSJUNGLE_3
     1. Script: Script/Maps/Phantasar - Ghost House.lua
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_JUNKYARD
-    1. Script: Script/Maps/Nizozemska - Dark Graveyard.lua
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_PUB_OUTSIDE
+    1. Script: Script/Maps/Nizozemska - Dark Graveyard.lua
     1. Script: Script/Maps/Nizozemska - Dark Graveyard.lsv
     1. Script: Script/Maps/Phantasar - Slagimon Forest.lua
     1. Script: Script/Maps/Nizozemska - Marlon's Garden.lua
