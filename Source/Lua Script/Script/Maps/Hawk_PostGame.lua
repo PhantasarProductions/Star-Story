@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.22
+version: 16.09.22
 ]]
 
 function CLICK_ARRIVAL_Terminal()
@@ -116,6 +116,11 @@ function StartNewGamePlus()
          CSay(ch.."'s EXP has been re-opened (in case it was closed)")
          RPGChar.Points(ch,"EXP",1).Maximum = needexp[skill] or 5000
          if RPGChar.Points(ch,"EXP",1).Maximum==0 then RPGChar.Points(ch,"EXP",1).Maximum=5000 end -- Dirty code straight from hell, but it will have to do for now.
+         if ngpcount>=5 then
+            local b = ngpcount
+            local d = skill * 50
+            PGChar.Points(ch,"EXP",1).Maximum = b*d
+         end
       else
          CSay(ch.."'s EXP remains closed, since the level cap has been reached")
       end   

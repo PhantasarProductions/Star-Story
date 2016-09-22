@@ -900,8 +900,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Maps/Ysperon - Eugorvnia.lua
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_KITCHEN
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_SICKBAY
-    1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_UNDERATTACK
     1. Script: Script/Maps/Ysperon - Facility.lua
+    1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_UNDERATTACK
     1. Script: Script/Maps/Vulpina - Town.lua
     1. Scenario: Languages/English/Scenario/MAPS/HAWK
     1. Script: Script/Maps/Volcania - Volcanic Plains.lua
