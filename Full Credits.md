@@ -995,8 +995,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Maps/Hawk/Teach Wendicka.lua
     1. General Data: Data/LvStats/Briggs/29
     1. Script: Script/Use/Maps/Hawk/HawkBridge.lua
-    1. Script: Script/Use/Maps/Hawk/AftermathVolcania.lua
     1. General Data: Data/LvStats/Briggs/3
+    1. Script: Script/Use/Maps/Hawk/AftermathVolcania.lua
     1. Script: Script/Use/Maps/Hawk/ArrivalExcalibur.lua
     1. Script: Script/Use/Maps/Hawk/UnlockBlackHoleDweller.lua
     1. General Data: Data/LvStats/Briggs/30
@@ -1011,8 +1011,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Maps/Gen/SchuifNextReal.lua
     1. General Data: Data/LvStats/Briggs/33
     1. Script: Script/Use/Maps/AltArena/Excalibur.lua
-    1. Script: Script/Use/Maps/AltArena/Facility.lua
     1. General Data: Data/LvStats/Briggs/34
+    1. Script: Script/Use/Maps/AltArena/Facility.lua
     1. Script: Script/Use/Sub/Party/XenobiSpells.lua
     1. Script: Script/Use/Combat/AblSpecialEffect/HPAPto1.lua
     1. General Data: Data/LvStats/Briggs/35
@@ -1089,8 +1089,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/Shroom.lua
     1. General Data: Data/LvStats/Briggs/59
     1. Script: Script/JINC/Foes/Reg/Cow.lua
-    1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Befindo.lua
     1. General Data: Data/LvStats/Briggs/6
+    1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Befindo.lua
     1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Human.lua
     1. General Data: Data/LvStats/Briggs/60
     1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Fairy.lua
@@ -1102,8 +1102,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/Cyborg Ji.lua
     1. General Data: Data/LvStats/Briggs/63
     1. Script: Script/JINC/Foes/Reg/DeathMyr.lua
-    1. Script: Script/JINC/Foes/Reg/CyberAstrilopup.lua
     1. General Data: Data/LvStats/Briggs/64
+    1. Script: Script/JINC/Foes/Reg/CyberAstrilopup.lua
     1. Script: Script/JINC/Foes/Reg/Spider.lua
     1. General Data: Data/LvStats/Briggs/65
     1. Script: Script/JINC/Foes/Reg/Leopard.lua
@@ -1145,8 +1145,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Boss/FireSpiderYoung.lua
     1. General Data: Data/LvStats/Briggs/79
     1. Script: Script/JINC/Foes/Boss/SuperCyborg.lua
-    1. Script: Script/JINC/Foes/Boss/HWSNBN.lua
     1. General Data: Data/LvStats/Briggs/8
+    1. Script: Script/JINC/Foes/Boss/HWSNBN.lua
     1. Script: Script/JINC/Foes/Boss/Gold Killer Droid.lua
     1. General Data: Data/LvStats/Briggs/80
     1. Script: Script/JINC/Foes/Boss/UberGremlin.lua

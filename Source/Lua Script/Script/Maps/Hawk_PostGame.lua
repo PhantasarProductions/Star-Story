@@ -119,7 +119,7 @@ function StartNewGamePlus()
          if ngpcount>=5 then
             local b = ngpcount
             local d = skill * 50
-            PGChar.Points(ch,"EXP",1).Maximum = b*d
+            RPGChar.Points(ch,"EXP",1).Maximum = b*d
          end
       else
          CSay(ch.."'s EXP remains closed, since the level cap has been reached")
