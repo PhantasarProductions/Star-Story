@@ -1,6 +1,6 @@
 --[[
   Console.lua
-  Version: 16.09.12
+  Version: 16.09.23
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -34,7 +34,9 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
+
 -- @USEDIR Script/Use/AnyWay
+
 --[[
   
   
