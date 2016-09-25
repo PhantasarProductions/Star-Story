@@ -11,4 +11,4 @@ Please note, this repository is only a copy of my real work directory. It will n
 
 Please note the icons (Wendicka.o, Wendicka.icns and Wendicka.ico) are my own property not part of the open-source license and my only be distributed with an unmodified version of the game.
 
-### Last updated: Sat 24 September 2016; 11:37:29
+### Last updated: Sun 25 September 2016; 09:20:52

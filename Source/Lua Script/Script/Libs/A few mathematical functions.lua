@@ -81,3 +81,11 @@ function Distance(x1,y1,x2,y2) -- BLD: Calculates distance between two points, b
   local hypothenusa = sqr(hypothenusakwardraat)
   return hypothenusa
 end
+
+function NumLead(number,size,leadchar)
+    if not right then Sys.Error("NumLead needs the 'right' function to be imported!") end
+    local r = ""
+    for i=1,size or 4 do r = r .. (leadchar or "0") end
+    return right(r,size or 4)
+end    
+     

@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.14
+version: 16.09.25
 ]]
 -- @USE /Script/Use/Maps/Gen/Schuif.lua
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -80,7 +80,7 @@ PartyUnPop()
 RPGChar.SetParty(4,"Wendicka")
 ReLevel("Wendicka","Crystal")
 MS.Run("TRANS",'ActivatePad',"TRANSWENDICKA")
-MS.Run("TRANS","FixPadLayer","TRANSWENDICKA")
+--MS.Run("TRANS","FixPadLayer","TRANSWENDICKA")
 Maps.Obj.Kill("Wendicka",1)
 Var.D("$HAWK","ANHYSBYS.REJOIN")
 end
