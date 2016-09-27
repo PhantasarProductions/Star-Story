@@ -1071,8 +1071,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/Insetto.lua
     1. General Data: Data/LvStats/Briggs/52
     1. Script: Script/JINC/Foes/Reg/Flysky.lua
-    1. Script: Script/JINC/Foes/Reg/AstrilopupGuard.lua
     1. General Data: Data/LvStats/Briggs/53
+    1. Script: Script/JINC/Foes/Reg/AstrilopupGuard.lua
     1. Script: Script/JINC/Foes/Reg/Salamander.lua
     1. General Data: Data/LvStats/Briggs/54
     1. Script: Script/JINC/Foes/Reg/Pyroguin.lua
@@ -1114,8 +1114,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/Gremlin.lua
     1. General Data: Data/LvStats/Briggs/68
     1. Script: Script/JINC/Foes/Reg/Hag.lua
-    1. Script: Script/JINC/Foes/Reg/Ghoul.lua
     1. General Data: Data/LvStats/Briggs/69
+    1. Script: Script/JINC/Foes/Reg/Ghoul.lua
     1. Script: Script/JINC/Foes/Reg/HellHound.lua
     1. Script: Script/JINC/Foes/Boss/BigLion.lua
     1. General Data: Data/LvStats/Briggs/7
