@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.09.24
+version: 16.09.28
 ]]
 
 -- Kills for ExHuRU (and his "representatives")  
@@ -141,7 +141,7 @@ XCharAfterAction = {
 	Foxy = function()
 				local lv = RPGChar.Stat("Foxy","Level")
 				local foxyused = CVV('%FOXY.USED') * (4-skill)       
-				local abilities = { DRAGON_BURN = 200, DRAGON_INFERNO = 8400, STUNSTAB = 6400, BACKSTAB = 1600, CHEER = 25600, SMOKEBOMB = 4600, DRAGON_CHARGE = 655350 }
+				local abilities = { DRAGON_BURN = 200, DRAGON_INFERNO = 8400, STUNSTAB = 6400, BACKSTAB = 1600, CHEER = 25600, SMOKEBOMB = 4600, DRAGON_CHARGE = 65535 }
 				local hasall = true
 				local hasit,learnit,allowlearn
 				local r
