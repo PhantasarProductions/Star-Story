@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.30
+version: 16.09.25
 ]]
 
 -- @USEDIR Script/Use/Maps/Hawk/
@@ -101,7 +101,7 @@ if not Done("&NAV.YAQIRPA") then ActivateRemotePad('YaqirpaStart','Return_Yaqirp
 if not FullVersion then
    MapText("ENDDEMO")
 elseif not Done("&NAV.PHYSILIUM.OLDRUINS") then
-   ActivateRemotePad('TRANSWENDICKA','Physillium - Ruins of the Y Anhysbys','Physillium','The Ruins of the Y Anhysbys - Wendicka\'s spot',"#002")
+   ActivateRemotePad('TRANSWENDICKA','Physillium - The Ruins of the Y Anhysbys','Physillium','The Ruins of the Y Anhysbys - Wendicka\'s spot',"#002")
    -- Sys.Error("Protection blockout! We cannot continue yet.")
    FirstWorld("Physillium","ArrivalPhysillium")
    -- We do need to script the arrival at Physilium part first!
