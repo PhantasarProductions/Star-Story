@@ -584,6 +584,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/Phantasar - Ghost House/Objects
     1. Map Design: Kthura/Phantasar - Ghost House/Settings
     1. Map Design: Kthura/Ysperon - Facility 2/Data
+    1. Map Design: Kthura/Ysperon - Facility 2/KME.TextureSettings
     1. Map Design: Kthura/Ysperon - Facility 2/Objects
     1. Audio: Audio/IntroStory/Lovejoy0003.ogg
     1. Map Design: Kthura/Ysperon - Facility 2/Settings
