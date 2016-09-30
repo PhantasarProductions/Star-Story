@@ -592,9 +592,11 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/Ysperon - Eugorvnia Caves/Objects
     1. Map Design: Kthura/Ysperon - Eugorvnia Caves/Settings
     1. Map Design: Kthura/Vulpina - Sewers/Data
+    1. Map Design: Kthura/Vulpina - Sewers/KME.TextureSettings
     1. Map Design: Kthura/Vulpina - Sewers/Objects
     1. Map Design: Kthura/Vulpina - Sewers/Settings
     1. Map Design: Kthura/Vulpina - Flower Forest/Data
+    1. Map Design: Kthura/Vulpina - Flower Forest/KME.TextureSettings
     1. Map Design: Kthura/Vulpina - Flower Forest/Objects
     1. Map Design: Kthura/Vulpina - Flower Forest/Settings
     1. Map Design: Kthura/Volcania - Caves/Data
@@ -875,8 +877,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_GRASSJUNGLE_3
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_JUNKYARD
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_PUB_OUTSIDE
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_VenomGun.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/PROLOGUE_YAQIRPA
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_VenomGun.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_VirusGun.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/ADD_BlockGun.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/ADD_ConfuseGun.png
@@ -1098,8 +1100,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Phelynx.lua
     1. General Data: Data/LvStats/Briggs/61
     1. Script: Script/JINC/Foes/Reg/UndedKid_Elf.lua
-    1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Elf.lua
     1. General Data: Data/LvStats/Briggs/62
+    1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Elf.lua
     1. Script: Script/JINC/Foes/Reg/Cyborg Ji.lua
     1. General Data: Data/LvStats/Briggs/63
     1. Script: Script/JINC/Foes/Reg/DeathMyr.lua
