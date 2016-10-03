@@ -603,9 +603,11 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/Volcania - Caves/Objects
     1. Map Design: Kthura/Volcania - Caves/Settings
     1. Map Design: Kthura/Excalibur - Final/Data
+    1. Map Design: Kthura/Excalibur - Final/KME.TextureSettings
     1. Map Design: Kthura/Excalibur - Final/Objects
     1. Map Design: Kthura/Excalibur - Final/Settings
     1. Map Design: Kthura/Excalibur - Final - 2/Data
+    1. Map Design: Kthura/Excalibur - Final - 2/KME.TextureSettings
     1. Map Design: Kthura/Excalibur - Final - 2/Objects
     1. Audio: Audio/IntroStory/Lovejoy0004.ogg
     1. Map Design: Kthura/Excalibur - Final - 2/Settings
