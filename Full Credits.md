@@ -397,6 +397,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/Intro_Ship_Transporter/Objects
     1. Map Design: Kthura/Intro_Ship_Transporter/Settings
     1. Map Design: Kthura/Prologue_Yaqirpa/Data < alias > Kthura/Return_Yaqirpa/Data
+    1. Map Design: Kthura/Prologue_Yaqirpa/KME.TextureSettings
     1. Map Design: Kthura/Prologue_Yaqirpa/Objects < alias > Kthura/Return_Yaqirpa/Objects
     1. Map Design: Kthura/Prologue_Yaqirpa/Settings < alias > Kthura/Return_Yaqirpa/Settings
     1. Map Design: Kthura/Excalibur_Sickbay/DATA
@@ -409,9 +410,11 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/Excalibur_Kitchen/Objects
     1. Map Design: Kthura/Excalibur_Kitchen/Settings
     1. Map Design: Kthura/Excalibur_UnderAttack/Data
+    1. Map Design: Kthura/Excalibur_UnderAttack/KME.TextureSettings
     1. Map Design: Kthura/Excalibur_UnderAttack/Objects
     1. Map Design: Kthura/Excalibur_UnderAttack/Settings
     1. Map Design: Kthura/Excalibur_SecretPassage/Data
+    1. Map Design: Kthura/Excalibur_SecretPassage/KME.TextureSettings
     1. Map Design: Kthura/Excalibur_SecretPassage/Objects
     1. Map Design: Kthura/Excalibur_SecretPassage/Settings
     1. Map Design: Kthura/Excalibur_Hangar/DATA
@@ -879,8 +882,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_GRASSJUNGLE_3
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_JUNKYARD
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_PUB_OUTSIDE
-    1. Scenario: Languages/Dutch/Scenario/MAPS/PROLOGUE_YAQIRPA
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_VenomGun.png
+    1. Scenario: Languages/Dutch/Scenario/MAPS/PROLOGUE_YAQIRPA
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_VirusGun.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/ADD_BlockGun.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/ADD_ConfuseGun.png
@@ -1102,8 +1105,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Phelynx.lua
     1. General Data: Data/LvStats/Briggs/61
     1. Script: Script/JINC/Foes/Reg/UndedKid_Elf.lua
-    1. General Data: Data/LvStats/Briggs/62
     1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Elf.lua
+    1. General Data: Data/LvStats/Briggs/62
     1. Script: Script/JINC/Foes/Reg/Cyborg Ji.lua
     1. General Data: Data/LvStats/Briggs/63
     1. Script: Script/JINC/Foes/Reg/DeathMyr.lua
