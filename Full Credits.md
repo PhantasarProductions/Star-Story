@@ -424,16 +424,20 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/Hawk/Objects
     1. Map Design: Kthura/Hawk/Settings
     1. Map Design: Kthura/LostPlanet_GrassJungle/Data
+    1. Map Design: Kthura/LostPlanet_GrassJungle/KME.TextureSettings
     1. Map Design: Kthura/LostPlanet_GrassJungle/Objects
     1. Map Design: Kthura/LostPlanet_GrassJungle/Settings
     1. Map Design: Kthura/LostPlanet_GrassJungle_2/Data
+    1. Map Design: Kthura/LostPlanet_GrassJungle_2/KME.TextureSettings
     1. Map Design: Kthura/LostPlanet_GrassJungle_2/Objects
     1. Audio: Audio/Sfx/Moo/4.ogg
     1. Map Design: Kthura/LostPlanet_GrassJungle_2/Settings
     1. Map Design: Kthura/LostPlanet_Bonus_Dark_Caves_of_Shilington/Data
+    1. Map Design: Kthura/LostPlanet_Bonus_Dark_Caves_of_Shilington/KME.TextureSettings
     1. Map Design: Kthura/LostPlanet_Bonus_Dark_Caves_of_Shilington/Objects
     1. Map Design: Kthura/LostPlanet_Bonus_Dark_Caves_of_Shilington/Settings
     1. Map Design: Kthura/LostPlanet_GrassJungle_3/Data
+    1. Map Design: Kthura/LostPlanet_GrassJungle_3/KME.TextureSettings
     1. Map Design: Kthura/LostPlanet_GrassJungle_3/Objects
     1. Map Design: Kthura/LostPlanet_GrassJungle_3/Settings
     1. Map Design: Kthura/LostPlanet_Pub_Outside/DATA
@@ -446,12 +450,15 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/LostPlanet_Dungeon_Cell/Objects
     1. Map Design: Kthura/LostPlanet_Dungeon_Cell/Settings
     1. Map Design: Kthura/LostPlanet_Dungeon/Data
+    1. Map Design: Kthura/LostPlanet_Dungeon/KME.TextureSettings
     1. Map Design: Kthura/LostPlanet_Dungeon/Objects
     1. Map Design: Kthura/LostPlanet_Dungeon/Settings
     1. Map Design: Kthura/LostPlanet_Junkyard/Data
+    1. Map Design: Kthura/LostPlanet_Junkyard/KME.TextureSettings
     1. Map Design: Kthura/LostPlanet_Junkyard/Objects
     1. Map Design: Kthura/LostPlanet_Junkyard/Settings
     1. Map Design: Kthura/LostPlanet_Bonus_SpaceObservatorium/Data
+    1. Map Design: Kthura/LostPlanet_Bonus_SpaceObservatorium/KME.TextureSettings
     1. Map Design: Kthura/LostPlanet_Bonus_SpaceObservatorium/Objects
     1. Map Design: Kthura/LostPlanet_Bonus_SpaceObservatorium/Settings
     1. Audio: Audio/IntroStory/Lovejoy0001.ogg
@@ -908,8 +915,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Maps/Ysperon - Eugorvnia.lua
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_KITCHEN
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_SICKBAY
-    1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_UNDERATTACK
     1. Script: Script/Maps/Ysperon - Facility.lua
+    1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_UNDERATTACK
     1. Script: Script/Maps/Vulpina - Town.lua
     1. Scenario: Languages/English/Scenario/MAPS/HAWK
     1. Script: Script/Maps/Volcania - Volcanic Plains.lua
@@ -931,8 +938,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_GRASSJUNGLE_3
     1. Script: Script/Maps/Phantasar - Ghost House.lua
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_JUNKYARD
-    1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_PUB_OUTSIDE
     1. Script: Script/Maps/Nizozemska - Dark Graveyard.lua
+    1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_PUB_OUTSIDE
     1. Script: Script/Maps/Nizozemska - Dark Graveyard.lsv
     1. Script: Script/Maps/Phantasar - Slagimon Forest.lua
     1. Script: Script/Maps/Nizozemska - Marlon's Garden.lua
@@ -1022,8 +1029,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/34
     1. Script: Script/Use/Maps/AltArena/Facility.lua
     1. Script: Script/Use/Sub/Party/XenobiSpells.lua
-    1. General Data: Data/LvStats/Briggs/35
     1. Script: Script/Use/Combat/AblSpecialEffect/HPAPto1.lua
+    1. General Data: Data/LvStats/Briggs/35
     1. Script: Script/Use/Combat/AblSpecialEffect/Summon.lua
     1. General Data: Data/LvStats/Briggs/36
     1. Script: Script/Use/Combat/AblSpecialEffect/UpgradeToSnowLeopard.lua
@@ -1031,8 +1038,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/37
     1. Script: Script/Use/Combat/AblSpecialEffect/Void.lua
     1. Script: Script/Use/Combat/AblSpecialEffect/Sisters in all but blood.lua
-    1. General Data: Data/LvStats/Briggs/38
     1. Script: Script/Use/Combat/StatusChanges/IDDQD.lua
+    1. General Data: Data/LvStats/Briggs/38
     1. Script: Script/Use/Combat/StatusChanges/Confusion.lua
     1. General Data: Data/LvStats/Briggs/39
     1. Script: Script/Use/Combat/StatusChanges/Death.lua
@@ -1074,13 +1081,13 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/BlackLizard.lua
     1. General Data: Data/LvStats/Briggs/50
     1. Script: Script/JINC/Foes/Reg/Cid.lua
-    1. General Data: Data/LvStats/Briggs/51
     1. Script: Script/JINC/Foes/Reg/Myr.lua
+    1. General Data: Data/LvStats/Briggs/51
     1. Script: Script/JINC/Foes/Reg/Insetto.lua
     1. General Data: Data/LvStats/Briggs/52
     1. Script: Script/JINC/Foes/Reg/Flysky.lua
-    1. General Data: Data/LvStats/Briggs/53
     1. Script: Script/JINC/Foes/Reg/AstrilopupGuard.lua
+    1. General Data: Data/LvStats/Briggs/53
     1. Script: Script/JINC/Foes/Reg/Salamander.lua
     1. General Data: Data/LvStats/Briggs/54
     1. Script: Script/JINC/Foes/Reg/Pyroguin.lua
@@ -1110,8 +1117,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/Cyborg Ji.lua
     1. General Data: Data/LvStats/Briggs/63
     1. Script: Script/JINC/Foes/Reg/DeathMyr.lua
-    1. General Data: Data/LvStats/Briggs/64
     1. Script: Script/JINC/Foes/Reg/CyberAstrilopup.lua
+    1. General Data: Data/LvStats/Briggs/64
     1. Script: Script/JINC/Foes/Reg/Spider.lua
     1. General Data: Data/LvStats/Briggs/65
     1. Script: Script/JINC/Foes/Reg/Leopard.lua
@@ -1122,8 +1129,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/Gremlin.lua
     1. General Data: Data/LvStats/Briggs/68
     1. Script: Script/JINC/Foes/Reg/Hag.lua
-    1. General Data: Data/LvStats/Briggs/69
     1. Script: Script/JINC/Foes/Reg/Ghoul.lua
+    1. General Data: Data/LvStats/Briggs/69
     1. Script: Script/JINC/Foes/Reg/HellHound.lua
     1. Script: Script/JINC/Foes/Boss/BigLion.lua
     1. General Data: Data/LvStats/Briggs/7
@@ -1158,8 +1165,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Boss/Gold Killer Droid.lua
     1. General Data: Data/LvStats/Briggs/80
     1. Script: Script/JINC/Foes/Boss/UberGremlin.lua
-    1. General Data: Data/LvStats/Briggs/81
     1. Script: Script/JINC/Foes/SuperBoss/FireSpider.lua
+    1. General Data: Data/LvStats/Briggs/81
     1. Script: Script/JINC/Foes/SuperBoss/BlackHoleDweller.lua
     1. General Data: Data/LvStats/Briggs/82
     1. Script: Script/JINC/Foes/SpecialBoss/McLeen.lua
