@@ -1,6 +1,6 @@
 --[[
   ITM_BOOK3.lua
-  Version: 16.09.28
+  Version: 16.10.06
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================

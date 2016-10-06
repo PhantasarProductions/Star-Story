@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.09.28
+version: 16.10.06
 ]]
 ret = {
 	["ABL_AP"] = 50,
@@ -44,10 +44,11 @@ ret = {
 	["ActSpeed"] = 250,
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
+	["Buff_Agility"] = 50,
 	["Buff_Strength"] = 25,
 	["Buff_Will"] = 25,
 	["DefenseStat"] = "Defense",
-	["Description"] = "Raises strength and will of the all allies a bit",
+	["Description"] = "Raises strength, agility and will of the all allies a bit",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Inventory/Dagger.png",
 	["ItemType"] = "Consumable",
