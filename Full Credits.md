@@ -525,12 +525,14 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/Test/Objects
     1. Map Design: Kthura/Test/Settings
     1. Map Design: Kthura/Physillium - The Ruins of the Y Anhysbys/Data
+    1. Map Design: Kthura/Physillium - The Ruins of the Y Anhysbys/KME.TextureSettings
     1. Map Design: Kthura/Physillium - The Ruins of the Y Anhysbys/Objects
     1. Map Design: Kthura/Physillium - The Ruins of the Y Anhysbys/Settings
     1. Map Design: Kthura/Physillium - Ji Rubble/DATA
     1. Map Design: Kthura/Physillium - Ji Rubble/OBJECTS
     1. Map Design: Kthura/Physillium - Ji Rubble/SETTINGS
     1. Map Design: Kthura/Physillium - Black Castle/Data
+    1. Map Design: Kthura/Physillium - Black Castle/KME.TextureSettings
     1. Map Design: Kthura/Physillium - Black Castle/Objects
     1. Map Design: Kthura/Physillium - Black Castle/Settings
     1. Map Design: Kthura/Physillium - Ji Temple/Data
@@ -938,8 +940,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_GRASSJUNGLE_3
     1. Script: Script/Maps/Phantasar - Ghost House.lua
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_JUNKYARD
-    1. Script: Script/Maps/Nizozemska - Dark Graveyard.lua
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_PUB_OUTSIDE
+    1. Script: Script/Maps/Nizozemska - Dark Graveyard.lua
     1. Script: Script/Maps/Nizozemska - Dark Graveyard.lsv
     1. Script: Script/Maps/Phantasar - Slagimon Forest.lua
     1. Script: Script/Maps/Nizozemska - Marlon's Garden.lua
@@ -1029,8 +1031,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/34
     1. Script: Script/Use/Maps/AltArena/Facility.lua
     1. Script: Script/Use/Sub/Party/XenobiSpells.lua
-    1. Script: Script/Use/Combat/AblSpecialEffect/HPAPto1.lua
     1. General Data: Data/LvStats/Briggs/35
+    1. Script: Script/Use/Combat/AblSpecialEffect/HPAPto1.lua
     1. Script: Script/Use/Combat/AblSpecialEffect/Summon.lua
     1. General Data: Data/LvStats/Briggs/36
     1. Script: Script/Use/Combat/AblSpecialEffect/UpgradeToSnowLeopard.lua
@@ -1117,8 +1119,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/Cyborg Ji.lua
     1. General Data: Data/LvStats/Briggs/63
     1. Script: Script/JINC/Foes/Reg/DeathMyr.lua
-    1. Script: Script/JINC/Foes/Reg/CyberAstrilopup.lua
     1. General Data: Data/LvStats/Briggs/64
+    1. Script: Script/JINC/Foes/Reg/CyberAstrilopup.lua
     1. Script: Script/JINC/Foes/Reg/Spider.lua
     1. General Data: Data/LvStats/Briggs/65
     1. Script: Script/JINC/Foes/Reg/Leopard.lua
