@@ -550,6 +550,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/Vulpina - Town/Objects
     1. Map Design: Kthura/Vulpina - Town/Settings
     1. Map Design: Kthura/Volcania - Volcanic Plains/Data
+    1. Map Design: Kthura/Volcania - Volcanic Plains/KME.TextureSettings
     1. Map Design: Kthura/Volcania - Volcanic Plains/Objects
     1. Map Design: Kthura/Volcania - Volcanic Plains/Settings
     1. Map Design: Kthura/Poloqor - Mid-Boss/Data
@@ -615,6 +616,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/Vulpina - Flower Forest/Objects
     1. Map Design: Kthura/Vulpina - Flower Forest/Settings
     1. Map Design: Kthura/Volcania - Caves/Data
+    1. Map Design: Kthura/Volcania - Caves/KME.TextureSettings
     1. Map Design: Kthura/Volcania - Caves/Objects
     1. Map Design: Kthura/Volcania - Caves/Settings
     1. Map Design: Kthura/Excalibur - Final/Data
@@ -822,8 +824,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Textures/Astrilopups/Facility/North.png
     1. Graphics: GFX/Textures/Astrilopups/Facility/East.png
     1. Graphics: GFX/Textures/Astrilopups/Facility/North-West.png
-    1. Graphics: GFX/Textures/Astrilopups/Facility/West.png
     1. Graphics: GFX/Achievements/Perfectstreak0005.png
+    1. Graphics: GFX/Textures/Astrilopups/Facility/West.png
     1. Graphics: GFX/Textures/Astrilopups/Facility/North-East.png
     1. Graphics: GFX/Textures/Astrilopups/Facility/South.png
     1. Graphics: GFX/Textures/Astrilopups/Facility/South-East.png
@@ -1106,8 +1108,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/Cultist.lua
     1. General Data: Data/LvStats/Briggs/58
     1. Script: Script/JINC/Foes/Reg/Imp.lua
-    1. Script: Script/JINC/Foes/Reg/Shroom.lua
     1. General Data: Data/LvStats/Briggs/59
+    1. Script: Script/JINC/Foes/Reg/Shroom.lua
     1. Script: Script/JINC/Foes/Reg/Cow.lua
     1. General Data: Data/LvStats/Briggs/6
     1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Befindo.lua
