@@ -560,6 +560,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/Nizozemska - Space Port/Objects
     1. Map Design: Kthura/Nizozemska - Space Port/Settings
     1. Map Design: Kthura/Nizozemska - Groenhart bos/Data
+    1. Map Design: Kthura/Nizozemska - Groenhart bos/KME.TextureSettings
     1. Map Design: Kthura/Nizozemska - Groenhart bos/Objects
     1. Map Design: Kthura/Nizozemska - Groenhart bos/Settings
     1. Map Design: Kthura/Nizozemska - Marlon's House/Data
@@ -584,9 +585,11 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/Phantasar - Frendor/Objects
     1. Map Design: Kthura/Phantasar - Frendor/Settings
     1. Map Design: Kthura/Nizozemska - Belioss/Data
+    1. Map Design: Kthura/Nizozemska - Belioss/KME.TextureSettings
     1. Map Design: Kthura/Nizozemska - Belioss/Objects
     1. Map Design: Kthura/Nizozemska - Belioss/Settings
     1. Map Design: Kthura/Nizozemska - Dark Graveyard/Data
+    1. Map Design: Kthura/Nizozemska - Dark Graveyard/KME.TextureSettings
     1. Map Design: Kthura/Nizozemska - Dark Graveyard/Objects
     1. Map Design: Kthura/Nizozemska - Dark Graveyard/Settings
     1. Map Design: Kthura/Phantasar - Slagimon Forest/Data
@@ -874,8 +877,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Combat/Fighters/Foe/Boss/HWSNBN.png
     1. Graphics: GFX/Combat/Fighters/Foe/Boss/SuperCyborg.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_HANGAR
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_Gunner.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_HOME
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_Gunner.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_FlameThrower.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_IceCannon.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_WaterGun.png
@@ -919,13 +922,13 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Maps/Physillium - Ji Rubble.lua
     1. Script: Script/Maps/Physillium - Ji Temple.lua
     1. Script: Script/Maps/Physillium - Black Castle.lua
-    1. Script: Script/Maps/Ysperon - Eugorvnia.lua
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_KITCHEN
+    1. Script: Script/Maps/Ysperon - Eugorvnia.lua
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_SICKBAY
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR_UNDERATTACK
     1. Script: Script/Maps/Ysperon - Facility.lua
-    1. Script: Script/Maps/Vulpina - Town.lua
     1. Scenario: Languages/English/Scenario/MAPS/HAWK
+    1. Script: Script/Maps/Vulpina - Town.lua
     1. Script: Script/Maps/Volcania - Volcanic Plains.lua
     1. Script: Script/Maps/Poloqor - Mid-Boss.lua
     1. Script: Script/Maps/Nizozemska - Space Port.lua
@@ -1014,8 +1017,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/28
     1. Script: Script/Use/Maps/Hawk/AutoNewNav.lua
     1. Script: Script/Use/Maps/Hawk/ArrivalPhysillium.lua
-    1. Script: Script/Use/Maps/Hawk/Teach Wendicka.lua
     1. General Data: Data/LvStats/Briggs/29
+    1. Script: Script/Use/Maps/Hawk/Teach Wendicka.lua
     1. Script: Script/Use/Maps/Hawk/HawkBridge.lua
     1. General Data: Data/LvStats/Briggs/3
     1. Script: Script/Use/Maps/Hawk/AftermathVolcania.lua
@@ -1131,8 +1134,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/Leopard.lua
     1. General Data: Data/LvStats/Briggs/66
     1. Script: Script/JINC/Foes/Reg/SnowLeopard.lua
-    1. Script: Script/JINC/Foes/Reg/Zombie.lua
     1. General Data: Data/LvStats/Briggs/67
+    1. Script: Script/JINC/Foes/Reg/Zombie.lua
     1. Script: Script/JINC/Foes/Reg/Gremlin.lua
     1. General Data: Data/LvStats/Briggs/68
     1. Script: Script/JINC/Foes/Reg/Hag.lua
