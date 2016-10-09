@@ -1,6 +1,6 @@
 --[[
   Love, shine a light.lua
-  Version: 16.08.19
+  Version: 16.10.09
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -74,8 +74,8 @@ function LichtShow(met)
        Image.SetAlphaPC(ak)
        White()
        Image.Rect(0,0,800,600)
-       ShowParty()
        Image.SetAlphaPC(100)
+       ShowParty()
     end    
     local c = rand(127,255)
     Image.Color(c,c,c) -- rand(0,255),rand(0,255),rand(0,255)

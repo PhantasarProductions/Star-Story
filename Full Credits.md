@@ -579,6 +579,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/Phantasar - Frendor Bushes - Arrival/Objects
     1. Map Design: Kthura/Phantasar - Frendor Bushes - Arrival/Settings
     1. Map Design: Kthura/Phantasar - Frendor Bushes/Data
+    1. Map Design: Kthura/Phantasar - Frendor Bushes/KME.TextureSettings
     1. Map Design: Kthura/Phantasar - Frendor Bushes/Objects
     1. Map Design: Kthura/Phantasar - Frendor Bushes/Settings
     1. Map Design: Kthura/Phantasar - Frendor/Data
@@ -593,12 +594,14 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/Nizozemska - Dark Graveyard/Objects
     1. Map Design: Kthura/Nizozemska - Dark Graveyard/Settings
     1. Map Design: Kthura/Phantasar - Slagimon Forest/Data
+    1. Map Design: Kthura/Phantasar - Slagimon Forest/KME.TextureSettings
     1. Map Design: Kthura/Phantasar - Slagimon Forest/Objects
     1. Map Design: Kthura/Phantasar - Slagimon Forest/Settings
     1. Map Design: Kthura/Nizozemska - Marlon's Garden/Data
     1. Map Design: Kthura/Nizozemska - Marlon's Garden/Objects
     1. Map Design: Kthura/Nizozemska - Marlon's Garden/Settings
     1. Map Design: Kthura/Phantasar - Ghost House/Data
+    1. Map Design: Kthura/Phantasar - Ghost House/KME.TextureSettings
     1. Map Design: Kthura/Phantasar - Ghost House/Objects
     1. Map Design: Kthura/Phantasar - Ghost House/Settings
     1. Map Design: Kthura/Ysperon - Facility 2/Data
@@ -979,8 +982,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Maps/Hawk_PostGame.lua
     1. General Data: Data/LvStats/Briggs/14
     1. Script: Script/MiniGame/AutoUse.lua
-    1. Script: Script/MiniGame/MemoryAnhysbys.lua
     1. General Data: Data/LvStats/Briggs/15
+    1. Script: Script/MiniGame/MemoryAnhysbys.lua
     1. Script: Script/Flow/Bestiary.lua
     1. General Data: Data/LvStats/Briggs/16
     1. General Data: Data/LvStats/Briggs/17
@@ -1068,8 +1071,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Combat/Foe_AI/McLeen.lua
     1. General Data: Data/LvStats/Briggs/43
     1. Script: Script/Use/Combat/Events/ReleaseTheGoddess.lua
-    1. Script: Script/Use/Combat/SpellAni/Moo.lua
     1. General Data: Data/LvStats/Briggs/44
+    1. Script: Script/Use/Combat/SpellAni/Moo.lua
     1. Script: Script/Use/Combat/SpellAni/Johnson_Phaser.lua
     1. Script: Script/Use/Combat/SpellAni/ARK SMASH.lua
     1. General Data: Data/LvStats/Briggs/45
