@@ -1004,8 +1004,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/22
     1. General Data: Data/LvStats/Briggs/23
     1. Script: Script/Flow/Excalibur_Transport.lua
-    1. General Data: Data/LvStats/Briggs/24
     1. Script: Script/Flow/EndCredits.lua
+    1. General Data: Data/LvStats/Briggs/24
     1. Script: Script/Use/Anyway/Full.lua
     1. Script: Script/Use/Anyway/ReLevel.lua
     1. General Data: Data/LvStats/Briggs/25
@@ -1050,8 +1050,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/37
     1. Script: Script/Use/Combat/AblSpecialEffect/UpgradeToSnowLeopard.lua
     1. Script: Script/Use/Combat/AblSpecialEffect/Randomizer.lua
-    1. General Data: Data/LvStats/Briggs/38
     1. Script: Script/Use/Combat/AblSpecialEffect/Void.lua
+    1. General Data: Data/LvStats/Briggs/38
     1. Script: Script/Use/Combat/AblSpecialEffect/Sisters in all but blood.lua
     1. Script: Script/Use/Combat/StatusChanges/IDDQD.lua
     1. General Data: Data/LvStats/Briggs/39
@@ -1157,8 +1157,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Boss/QueenMyr.lua
     1. General Data: Data/LvStats/Briggs/73
     1. Script: Script/JINC/Foes/Boss/AstrilopupElite.lua
-    1. General Data: Data/LvStats/Briggs/74
     1. Script: Script/JINC/Foes/Boss/Mid-Boss.lua
+    1. General Data: Data/LvStats/Briggs/74
     1. Script: Script/JINC/Foes/Boss/GiantSnake.lua
     1. General Data: Data/LvStats/Briggs/75
     1. Script: Script/JINC/Foes/Boss/Cultist Leader.lua
@@ -1183,8 +1183,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/SuperBoss/FireSpider.lua
     1. General Data: Data/LvStats/Briggs/82
     1. Script: Script/JINC/Foes/SuperBoss/BlackHoleDweller.lua
-    1. General Data: Data/LvStats/Briggs/83
     1. Script: Script/JINC/Foes/SpecialBoss/McLeen.lua
+    1. General Data: Data/LvStats/Briggs/83
     1. Script: Script/JINC/Foes/Goddess/Goddess.lua
     1. General Data: Data/LvStats/Briggs/84
     1. Script: Script/JINC/Foes/Goddess/Add_Gunner.lua
@@ -1192,8 +1192,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/85
     1. Script: Script/JINC/Foes/Goddess/Add_IceCannon.lua
     1. Script: Script/JINC/Foes/Goddess/Add_WaterGun.lua
-    1. General Data: Data/LvStats/Briggs/86
     1. Script: Script/JINC/Foes/Goddess/Add_WindGun.lua
+    1. General Data: Data/LvStats/Briggs/86
     1. Script: Script/JINC/Foes/Goddess/Add_RockThrower.lua
     1. Script: Script/JINC/Foes/Goddess/Add_LightGun.lua
     1. General Data: Data/LvStats/Briggs/87
