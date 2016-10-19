@@ -595,6 +595,7 @@ function GALE_OnLoad()
    if (CVV("&JOINED.JOHNSON")) then
       Party("Wendicka","Crystal","Johnson","Yirl","Foxy","Xenobi")
       SyncLevel('Johnson')
+      RPGChar.SetData('Johnson','ShootSpellAni','Johnson_Phaser')
       if (not CVV('&IGNORE.TRANSPORTER')) and MS.ContainsScript("BOXTEXT.KTHURA")==1 then MapText("JOHNSON_BACK") end -- temp crash prevention. A more neat solution is on the way.
    else
       Party("Wendicka","Crystal","Yirl","Foxy","Xenobi")
