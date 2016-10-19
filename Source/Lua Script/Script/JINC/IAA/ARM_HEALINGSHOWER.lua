@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.10.06
+version: 16.10.19
 ]]
 ret = {
 	["APRecover"] = 10,
@@ -44,7 +44,7 @@ ret = {
 	["ARM_PRICE_Weight"] = 2500,
 	["ARM_PRICE_XPower"] = 2500,
 	["ARM_XPower"] = 0,
-	["ActSpeed"] = 1,
+	["ActSpeed"] = 100,
 	["AttackElement"] = "Healing",
 	["AttackPower"] = 3000,
 	["AttackStat"] = "Strength",
