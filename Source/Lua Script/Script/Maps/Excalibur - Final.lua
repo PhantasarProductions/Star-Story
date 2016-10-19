@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.20
+version: 16.10.19
 ]]
 
 -- [[ @USE /Script/Use/Maps/Gen/Schuif.lua ]]
@@ -330,6 +330,7 @@ function Admiraal()
   SyncLevel('Johnson') -- In the new game + we must make sure her stats are properly updated.
   RPGChar.SetName("Johnson","Admiral Johnson")
   Var.D("$JOHNSON","Johnson")
+  RPGChar.SetData('Johnson','ShootSpellAni','Johnson_Phaser')
   Maps.Obj.Kill('Johnson')
   Maps.Obj.Obj('Reggie').Visible=0
   PartyUnPop()
