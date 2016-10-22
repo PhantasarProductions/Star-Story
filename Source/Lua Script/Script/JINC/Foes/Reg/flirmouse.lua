@@ -1,6 +1,6 @@
 --[[
   flirmouse.lua
-  Version: 16.07.24
+  Version: 16.10.20
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.07.24
+-- Version 16.10.20
 
 
 
