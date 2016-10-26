@@ -943,8 +943,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Maps/Nizozemska - Lake.lua
     1. Script: Script/Maps/Phantasar - Frendor Bushes - Arrival.lua
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_DUNGEON
-    1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_DUNGEON_CELL
     1. Script: Script/Maps/Phantasar.lua
+    1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_DUNGEON_CELL
     1. Scenario: Languages/English/Scenario/MAPS/LOSTPLANET_GRASSJUNGLE
     1. Script: Script/Maps/Phantasar - Frendor Bushes.lua
     1. Script: Script/Maps/Phantasar - Frendor.lua
@@ -1061,8 +1061,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Combat/StatusChanges/Fear.lua
     1. General Data: Data/LvStats/Briggs/40
     1. Script: Script/Use/Combat/StatusChanges/Undead.lua
-    1. General Data: Data/LvStats/Briggs/41
     1. Script: Script/Use/Combat/StatusChanges/Handicap.lua
+    1. General Data: Data/LvStats/Briggs/41
     1. Script: Script/Use/Combat/StatusChanges/Bag Lock.lua
     1. General Data: Data/LvStats/Briggs/42
     1. Script: Script/Use/Combat/AltEnemyBuild/SuperFoe_FireSpider.lua
@@ -1083,8 +1083,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/47
     1. Script: Script/Use/Combat/SpellAni/Wind.lua
     1. Script: Script/Use/Combat/SpellAni/ExHuRU_Achievement.lua
-    1. General Data: Data/LvStats/Briggs/48
     1. Script: Script/Use/Combat/FoeAltImage/Cultist.lua
+    1. General Data: Data/LvStats/Briggs/48
     1. Script: Script/Use/Combat/FoeAltImage/Alg.lua
     1. Script: Script/Use/Combat/AltBackGrounds/Black Hole Dweller.lua
     1. General Data: Data/LvStats/Briggs/49
