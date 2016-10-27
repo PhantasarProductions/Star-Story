@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.10.19
+version: 16.10.27
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
@@ -41,6 +41,7 @@ ret = {
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "Useless but worth a lot of money",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["ITM_SellPrice"] = 1000000,
 	["ITM_Sellable"] = true,

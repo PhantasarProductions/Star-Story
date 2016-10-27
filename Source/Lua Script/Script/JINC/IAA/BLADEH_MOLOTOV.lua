@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.10.19
+version: 16.10.27
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
@@ -42,6 +42,7 @@ ret = {
 	["AttackStat"] = "Will",
 	["DefenseStat"] = "Resistance",
 	["Description"] = "Put one enemy on fire!",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Inventory/Molotov.png",
 	["ItemType"] = "Consumable",

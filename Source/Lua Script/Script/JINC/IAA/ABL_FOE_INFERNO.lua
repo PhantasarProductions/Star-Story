@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_INFERNO.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -44,6 +44,7 @@ ret = {
 	["AttackStat"] = "Will",
 	["DefenseStat"] = "Resistance",
 	["Description"] = "Burn baby burn!",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Elements/Fire.png",
 	["ItemType"] = "Consumable",

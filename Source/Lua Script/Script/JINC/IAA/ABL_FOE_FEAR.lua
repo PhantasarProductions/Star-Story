@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_FEAR.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -47,7 +47,7 @@ ret = {
 	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Fear",
-	["SpellAni_Reference"] = "Single_Heal",
+	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}

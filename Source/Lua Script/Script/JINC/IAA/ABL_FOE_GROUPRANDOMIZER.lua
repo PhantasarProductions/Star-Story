@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_GROUPRANDOMIZER.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -43,6 +43,7 @@ ret = {
 	["AttackElement"] = "Non-Elemental",
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",

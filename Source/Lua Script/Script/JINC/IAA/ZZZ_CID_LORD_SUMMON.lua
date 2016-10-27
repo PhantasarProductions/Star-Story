@@ -1,6 +1,6 @@
 --[[
   ZZZ_CID_LORD_SUMMON.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -41,6 +41,7 @@ ret = {
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "Summons a CID",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",

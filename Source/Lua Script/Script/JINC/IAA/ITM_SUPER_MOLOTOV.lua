@@ -1,6 +1,6 @@
 --[[
   ITM_SUPER_MOLOTOV.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -43,6 +43,7 @@ ret = {
 	["CauseTerrified"] = true,
 	["DefenseStat"] = "Resistance",
 	["Description"] = "Disco Inferno!",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 100,
 	["ITM_SellPrice"] = 75,

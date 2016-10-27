@@ -1,6 +1,6 @@
 --[[
   ABL_XENOBI_ROCK.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -48,6 +48,7 @@ ret = {
 	["AttackStat"] = "Will",
 	["DefenseStat"] = "Resistance",
 	["Description"] = "Let's rock 'n roll",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Elements/Earth.png",
 	["ItemType"] = "Consumable",

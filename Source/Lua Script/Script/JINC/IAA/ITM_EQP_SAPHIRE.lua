@@ -1,6 +1,6 @@
 --[[
   ITM_EQP_SAPHIRE.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -41,6 +41,7 @@ ret = {
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "Raises paralyis resistance of its owner by 10%",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 10000,
 	["ITM_EQP_SRes_Paralysis"] = 10,

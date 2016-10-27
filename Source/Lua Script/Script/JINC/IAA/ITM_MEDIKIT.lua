@@ -1,6 +1,6 @@
 --[[
   ITM_MEDIKIT.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -43,6 +43,7 @@ ret = {
 	["CureParalysis"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Heals 800 HP",
+	["GrantEXPType"] = "Absolute",
 	["Healing"] = 800,
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 3500,

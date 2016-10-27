@@ -1,6 +1,6 @@
 --[[
   ITM_SHIT.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -45,6 +45,7 @@ ret = {
 	["CauseDisease"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "That stuff stinks. Can we get rid of it?",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 100,
 	["ITM_SellPrice"] = 75,

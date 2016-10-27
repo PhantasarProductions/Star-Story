@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.10.19
+version: 16.10.27
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
@@ -41,6 +41,7 @@ ret = {
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "Inc water resist, dec thunder resist (voided by Wendicka's curse)",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 125,
 	["ITM_EQP_ERes_DownLightning"] = true,

@@ -1,6 +1,6 @@
 --[[
   ITM_PHAN_BANANAS.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -54,6 +54,7 @@ ret = {
 	["CureZombie"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "The best healing item in the universe for all",
+	["GrantEXPType"] = "Absolute",
 	["Healing"] = 1000000,
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 100,

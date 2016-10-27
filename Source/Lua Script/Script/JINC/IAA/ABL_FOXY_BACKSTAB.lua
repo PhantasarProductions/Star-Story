@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.10.19
+version: 16.10.27
 ]]
 ret = {
 	["ABL_AP"] = 120,
@@ -47,6 +47,7 @@ ret = {
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "Kick a foe off the time gauge",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Inventory/Dagger.png",
 	["ItemType"] = "Consumable",

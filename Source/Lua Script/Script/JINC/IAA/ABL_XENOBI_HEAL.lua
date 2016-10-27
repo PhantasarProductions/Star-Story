@@ -1,6 +1,6 @@
 --[[
   ABL_XENOBI_HEAL.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -49,6 +49,7 @@ ret = {
 	["CureDisease"] = true,
 	["DefenseStat"] = "Resistance",
 	["Description"] = "Heals minor wounds",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Elements/Light.png",
 	["ItemType"] = "Consumable",

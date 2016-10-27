@@ -1,6 +1,6 @@
 --[[
   SUPER_XENOBI_WHITE_APOCALYPSE.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -46,6 +46,7 @@ ret = {
 	["CauseTerrified"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Super light attack",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Elements/Light.png",
 	["ItemType"] = "Consumable",

@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.10.19
+version: 16.10.27
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
@@ -42,6 +42,7 @@ ret = {
 	["Buff_Strength"] = -100,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Moo",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Inventory/Moo.png",
 	["ItemType"] = "Consumable",

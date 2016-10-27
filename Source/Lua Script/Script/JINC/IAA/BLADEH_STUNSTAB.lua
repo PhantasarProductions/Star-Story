@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.10.19
+version: 16.10.27
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
@@ -43,6 +43,7 @@ ret = {
 	["CauseParalysis"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Weak attack, but may paralyze the enemy",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Inventory/Dagger.png",
 	["ItemType"] = "Consumable",

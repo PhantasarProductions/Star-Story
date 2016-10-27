@@ -1,6 +1,6 @@
 --[[
   ITM_SUPERFIRSTAIDKIT.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -41,6 +41,7 @@ ret = {
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "Heals 3000 HP",
+	["GrantEXPType"] = "Absolute",
 	["Healing"] = 400,
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 5000,

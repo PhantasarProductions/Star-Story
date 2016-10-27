@@ -1,6 +1,6 @@
 --[[
   ABL_YIRL_CONFUSION.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -46,6 +46,7 @@ ret = {
 	["CauseConfusion"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Confuse the enemy",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",

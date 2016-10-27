@@ -1,6 +1,6 @@
 --[[
   ITM_SHOT.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -51,6 +51,7 @@ ret = {
 	["Buff_Will"] = 2,
 	["DefenseStat"] = "Defense",
 	["Description"] = "OUCH! (50% heal, 5% AP, and cure poison + disease)",
+	["GrantEXPType"] = "Absolute",
 	["Healing"] = 50,
 	["HealingType"] = "Percent",
 	["ITM_BuyPrice"] = 2500,

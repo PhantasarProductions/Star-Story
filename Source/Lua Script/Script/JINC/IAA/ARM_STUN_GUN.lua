@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.10.19
+version: 16.10.27
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
@@ -57,6 +57,7 @@ ret = {
 	["CauseParalysis"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Shocking attack. Thunder attack + paralysis",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",

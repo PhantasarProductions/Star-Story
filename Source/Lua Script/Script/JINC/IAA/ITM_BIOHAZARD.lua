@@ -1,6 +1,6 @@
 --[[
   ITM_BIOHAZARD.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -44,6 +44,7 @@ ret = {
 	["CausePoison"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Poisons and diseases one target",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 100,
 	["ITM_SellPrice"] = 75,

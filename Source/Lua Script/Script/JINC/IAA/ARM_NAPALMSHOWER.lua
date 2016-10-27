@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.10.19
+version: 16.10.27
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
@@ -50,6 +50,7 @@ ret = {
 	["Buff_Resistance"] = -10,
 	["DefenseStat"] = "Defense",
 	["Description"] = "We don't need no water, let the motherf***er burn!",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",

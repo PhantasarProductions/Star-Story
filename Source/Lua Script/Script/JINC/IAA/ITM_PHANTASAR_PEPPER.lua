@@ -1,6 +1,6 @@
 --[[
   ITM_PHANTASAR_PEPPER.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -43,6 +43,7 @@ ret = {
 	["CureHandicapped"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Raises you Will greatly",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["ITM_SellPrice"] = 300,
 	["ITM_Sellable"] = true,

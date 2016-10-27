@@ -1,6 +1,6 @@
 --[[
   ITM_ANTIDOTE.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -42,6 +42,7 @@ ret = {
 	["CurePoison"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Cures \"Poison\"",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 50,
 	["ITM_SellPrice"] = 25,

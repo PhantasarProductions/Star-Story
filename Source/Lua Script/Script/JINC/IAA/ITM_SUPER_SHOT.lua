@@ -1,6 +1,6 @@
 --[[
   ITM_SUPER_SHOT.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -55,6 +55,7 @@ ret = {
 	["CureZombie"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Full HP and AP. It has a few nasty side effects though.",
+	["GrantEXPType"] = "Absolute",
 	["Healing"] = 100,
 	["HealingType"] = "Percent",
 	["ITM_BuyPrice"] = 100,

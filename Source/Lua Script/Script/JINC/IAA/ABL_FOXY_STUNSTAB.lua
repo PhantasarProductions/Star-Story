@@ -1,6 +1,6 @@
 --[[
   ABL_FOXY_STUNSTAB.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -48,6 +48,7 @@ ret = {
 	["CauseParalysis"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Weak attack, but may paralyze the enemy",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Inventory/Dagger.png",
 	["ItemType"] = "Consumable",

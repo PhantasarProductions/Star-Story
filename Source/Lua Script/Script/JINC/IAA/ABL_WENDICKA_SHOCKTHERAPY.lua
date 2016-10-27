@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.10.19
+version: 16.10.27
 ]]
 ret = {
 	["ABL_AP"] = 30,
@@ -47,6 +47,7 @@ ret = {
 	["CureDeathOne"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Revives fallen character",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Abilities/Lightning.png",
 	["ItemType"] = "Consumable",

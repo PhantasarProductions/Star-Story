@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.10.19
+version: 16.10.27
 ]]
 ret = {
 	["APRecover"] = 1000000,
@@ -54,6 +54,7 @@ ret = {
 	["CureZombie"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "The best healing item in the universe.",
+	["GrantEXPType"] = "Absolute",
 	["Healing"] = 1000000,
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 100,

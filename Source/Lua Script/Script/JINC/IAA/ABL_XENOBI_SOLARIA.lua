@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.10.19
+version: 16.10.27
 ]]
 ret = {
 	["ABL_AP"] = 250,
@@ -50,6 +50,7 @@ ret = {
 	["CauseHandicapped"] = true,
 	["DefenseStat"] = "Resistance",
 	["Description"] = "Light attack on all enemies",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Elements/Light.png",
 	["ItemType"] = "Consumable",

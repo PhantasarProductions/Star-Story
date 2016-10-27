@@ -1,6 +1,6 @@
 --[[
   ITM_PHANTASAR_AMBROSIA.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -52,6 +52,7 @@ ret = {
 	["CureZombie"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Super healing, yeah!",
+	["GrantEXPType"] = "Absolute",
 	["Healing"] = 100000,
 	["HealingType"] = "Absolute",
 	["ITM_SellPrice"] = 1000000,

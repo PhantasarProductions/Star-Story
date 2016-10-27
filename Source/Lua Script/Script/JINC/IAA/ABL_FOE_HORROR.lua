@@ -1,6 +1,6 @@
 --[[
   ABL_FOE_HORROR.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -43,11 +43,12 @@ ret = {
 	["AttackStat"] = "Strength",
 	["CauseTerrified"] = true,
 	["DefenseStat"] = "Defense",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Horror",
-	["SpellAni_Reference"] = "Single_Heal",
+	["SpellAni_Reference"] = "SingleHeal",
 	["Target"] = "1F",
 	["UseCombat"] = true,
 	["UseField"] = true}

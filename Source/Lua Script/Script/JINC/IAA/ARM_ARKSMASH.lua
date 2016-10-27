@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.10.19
+version: 16.10.27
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
@@ -54,6 +54,7 @@ ret = {
 	["CauseDeath"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Push all your enemies through space to their doom!",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",

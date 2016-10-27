@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.10.19
+version: 16.10.27
 ]]
 ret = {
 	["APRecover"] = 250,
@@ -46,6 +46,7 @@ ret = {
 	["CurePoison"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Cures 2400 HP, Poison, Disease and recovers 250 AP.",
+	["GrantEXPType"] = "Absolute",
 	["Healing"] = 2400,
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 100,

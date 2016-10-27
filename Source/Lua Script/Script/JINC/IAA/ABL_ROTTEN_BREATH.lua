@@ -1,6 +1,6 @@
 --[[
   ABL_ROTTEN_BREATH.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -47,6 +47,7 @@ ret = {
 	["CausePoison"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Yuck!",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Elements/Dark.png",
 	["ItemType"] = "Consumable",

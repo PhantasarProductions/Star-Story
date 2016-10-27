@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.10.19
+version: 16.10.27
 ]]
 ret = {
 	["APRecover"] = 100,
@@ -57,6 +57,7 @@ ret = {
 	["Buff_Will"] = 20,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Recovers 100 AP to ally",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Abilities/Gun.png",
 	["ItemType"] = "Consumable",

@@ -1,6 +1,6 @@
 --[[
   ITM_PHANTASAR_SUPERSALVE.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -42,6 +42,7 @@ ret = {
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "Cures 4800 HP",
+	["GrantEXPType"] = "Absolute",
 	["Healing"] = 2400,
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 100,

@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.10.19
+version: 16.10.27
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
@@ -43,6 +43,7 @@ ret = {
 	["CausePoison"] = true,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Poisons you",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["Icon"] = "GFX/Inventory/Poison Cloud.png",
 	["ItemType"] = "Consumable",

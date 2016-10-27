@@ -1,6 +1,6 @@
 --[[
   ITM_SUPER_THUNDER_DIAMOND.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -43,6 +43,7 @@ ret = {
 	["CauseParalysis"] = true,
 	["DefenseStat"] = "Resistance",
 	["Description"] = "Electric attack on one enemy",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 2500,
 	["ITM_SellPrice"] = 1025,

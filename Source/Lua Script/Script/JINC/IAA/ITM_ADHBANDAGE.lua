@@ -15,7 +15,7 @@ not longer than 70 years ago, you can deem this file
 with basically comes down to the same lack of
 restriction the public domain offers. (YAY!)
 *********************************************************** 
-Version 16.10.19
+Version 16.10.27
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
@@ -24,6 +24,7 @@ ret = {
 	["AttackStat"] = "Strength",
 	["DefenseStat"] = "Defense",
 	["Description"] = "Heals 25 HP",
+	["GrantEXPType"] = "Absolute",
 	["Healing"] = 60,
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 5,

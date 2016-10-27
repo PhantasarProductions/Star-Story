@@ -1,6 +1,6 @@
 --[[
   ITM_VITAMINC.lua
-  Version: 16.10.19
+  Version: 16.10.27
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -43,6 +43,7 @@ ret = {
 	["Buff_Resistance"] = 25,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Raises Defense and Resistance by 25% if used in combat",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 500,
 	["ITM_SellPrice"] = 250,

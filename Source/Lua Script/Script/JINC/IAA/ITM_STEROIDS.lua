@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.10.19
+version: 16.10.27
 ]]
 ret = {
 	["APRecoverType"] = "Absolute",
@@ -50,6 +50,7 @@ ret = {
 	["Buff_Will"] = 15,
 	["DefenseStat"] = "Defense",
 	["Description"] = "Increases all stats but most of all speed and strength",
+	["GrantEXPType"] = "Absolute",
 	["HealingType"] = "Absolute",
 	["ITM_BuyPrice"] = 4000,
 	["ITM_SellPrice"] = 1234,
