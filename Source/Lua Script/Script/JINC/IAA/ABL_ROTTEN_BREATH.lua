@@ -1,6 +1,6 @@
 --[[
   ABL_ROTTEN_BREATH.lua
-  Version: 16.10.27
+  Version: 16.10.29
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================

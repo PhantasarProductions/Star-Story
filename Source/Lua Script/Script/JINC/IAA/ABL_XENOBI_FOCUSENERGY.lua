@@ -1,6 +1,6 @@
 --[[
   ABL_XENOBI_FOCUSENERGY.lua
-  Version: 16.10.27
+  Version: 16.10.29
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -49,6 +49,7 @@ ret = {
 	["Icon"] = "GFX/Elements/Light.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Focus Energy",
+	["SpellAni_Reference"] = "RewardLight",
 	["Target"] = "AF",
 	["UseCombat"] = true,
 	["UserNextMove"] = "SUPER_XENOBI_WHITE_APOCALYPSE",
