@@ -1115,8 +1115,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/Cultist.lua
     1. General Data: Data/LvStats/Briggs/58
     1. Script: Script/JINC/Foes/Reg/Imp.lua
-    1. Script: Script/JINC/Foes/Reg/Shroom.lua
     1. General Data: Data/LvStats/Briggs/59
+    1. Script: Script/JINC/Foes/Reg/Shroom.lua
     1. Script: Script/JINC/Foes/Reg/Cow.lua
     1. General Data: Data/LvStats/Briggs/6
     1. Script: Script/JINC/Foes/Reg/PhanUndeadKid_Befindo.lua
@@ -1138,8 +1138,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/Leopard.lua
     1. General Data: Data/LvStats/Briggs/66
     1. Script: Script/JINC/Foes/Reg/SnowLeopard.lua
-    1. Script: Script/JINC/Foes/Reg/Zombie.lua
     1. General Data: Data/LvStats/Briggs/67
+    1. Script: Script/JINC/Foes/Reg/Zombie.lua
     1. Script: Script/JINC/Foes/Reg/Gremlin.lua
     1. General Data: Data/LvStats/Briggs/68
     1. Script: Script/JINC/Foes/Reg/Hag.lua

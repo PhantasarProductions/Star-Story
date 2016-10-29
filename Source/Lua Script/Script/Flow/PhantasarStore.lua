@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.07.27
+version: 16.10.29
 ]]
 
 
@@ -121,8 +121,10 @@ function GenerateStock()
       CSay("Scanning the vault")
       for k,v in IVARS() do
           if prefixed(k,"%VAULT.ITM_PHANTASAR_") then
-             CSay('Found: '..replace(k,"%VAULT.ITM_",""))
-             AddToStock(replace(k,"%VAULT.ITM_",""))
+             local ki = right(k,#k-1) 
+             ki = replace(ki,"VAULT.ITM_","")             
+             CSay('Found: '..ki.." --- "..k)
+             AddToStock(ki)
           end   
       end
       -- Sort table and add prices
@@ -187,16 +189,16 @@ function MAIN_FLOW()
     end
     Image.ViewPort(0,0,800,600)
     --local pcharn
-    CSay('-- checking phantasar store click ---')
+    --CSay('-- checking phantasar store click ---')
     for i=0,5 do 
-        CSay('Check clickchar: '..i..'; currently is: '..sval(pcharn))
+        --CSay('Check clickchar: '..i..'; currently is: '..sval(pcharn))
         if ClickedChar(i) then
            if i==pcharn then Bye() return end
            char=RPGChar.PartyTag(i)
         end
     	  if RPGChar.PartyTag(i)==char then pcharn=i end
     end
-    CSay('-- end check --')
+    --CSay('-- end check --')
     if pcharn<3 then
        White()
 		   Image.Draw(chpointer,(pcharn*200)+100,450)
