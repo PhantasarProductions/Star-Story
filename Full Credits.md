@@ -983,8 +983,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Maps/Hawk_PostGame.lua
     1. General Data: Data/LvStats/Briggs/14
     1. Script: Script/MiniGame/AutoUse.lua
-    1. Script: Script/MiniGame/MemoryAnhysbys.lua
-    1. General Data: Data/LvStats/Briggs/15
+    1. General Data: Data/LvStats/Briggs/15 < alias > Script/MiniGame/MemoryAnhysbys.lua
     1. Script: Script/Flow/Bestiary.lua
     1. General Data: Data/LvStats/Briggs/16
     1. General Data: Data/LvStats/Briggs/17
