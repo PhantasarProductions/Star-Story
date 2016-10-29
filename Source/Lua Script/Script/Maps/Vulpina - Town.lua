@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.08
+version: 16.10.29
 ]]
 
 function DoneHere()
@@ -40,11 +40,11 @@ return CVV("&DONE.VULPINA.ALLTHESHITINTOWNISDONEBYNOW")
 end
 
 function CrystalXenobi()
-if DoneHere() then return end
-Actors.StopWalking("PLAYER")
-local text = { [false] = "LUISTERAF_", [true]="BETTERNOT_"}
-MapText(text[Done("&DONE.VULPINA.AFGELUISTERD.CRYSTALXENOBI")==true].."CRYSTALXENOBI")
-Actors.WalkToSpot("PLAYER","DoNotDisturb")
+  if DoneHere() then return end
+  Actors.StopWalking("PLAYER")
+  local text = { [false] = "LUISTERAF_", [true]="BETTERNOT_"}
+  MapText(text[Done("&DONE.VULPINA.AFGELUISTERD.CRYSTALXENOBI")==true].."CRYSTALXENOBI")
+  Actors.WalkToSpot("PLAYER","DoNotDisturb")
 end
 
 function GoBack()
@@ -81,15 +81,16 @@ end
 
 
 function NPC_Yirl()
-local removal = {"NPC_Yirl","NPC_Foxy","GoBack","Crystal","Xenobi"}
-if not(CVV("&DONE.VULPINA.FOXY") and CVV("&DONE.VULPINA.AFGELUISTERD.CRYSTALXENOBI")) then
-   MapText("YIRL_NO")
-   return
-   end
-MapText("YIRL_YES")
-Var.D('$HAWK.BRIDGE','ToVolcania')
-for i in each(removal) do Maps.Obj.Kill(i,1) end
-Party("Wendicka","Crystal","Yirl","Foxy","Xenobi")
+  local removal = {"NPC_Yirl","NPC_Foxy","GoBack","Crystal","Xenobi"}
+  if not(CVV("&DONE.VULPINA.FOXY") and CVV("&DONE.VULPINA.AFGELUISTERD.CRYSTALXENOBI")) then
+     MapText("YIRL_NO")
+     return
+     end
+  MapText("YIRL_YES")
+  Var.D('$HAWK.BRIDGE','ToVolcania')
+  for i in each(removal) do Maps.Obj.Kill(i,1) end
+  Party("Wendicka","Crystal","Yirl","Foxy","Xenobi")
+  Done("&DONE.VULPINA.ALLTHESHITINTOWNISDONEBYNOW")
 end   
 
 function GALE_OnLoad()
