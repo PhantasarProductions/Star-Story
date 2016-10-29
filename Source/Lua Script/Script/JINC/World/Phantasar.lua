@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.07.28
+version: 16.10.29
 ]]
 local phantasar = {
 
-          name = "Nizozemska",
+          name = "Phantasar",
 
           locations = {
                            { Name = "Transporter Pad", Map = "Phantasar - Frendor Bushes - Arrival"},

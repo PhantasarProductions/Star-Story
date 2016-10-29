@@ -972,8 +972,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/10
     1. Script: Script/Maps/Excalibur - Final.lsv
     1. Script: Script/Maps/Excalibur - Final - 2.lua
-    1. Script: Script/Maps/Phantasar - Airom.lua
     1. General Data: Data/LvStats/Briggs/100
+    1. Script: Script/Maps/Phantasar - Airom.lua
     1. General Data: Data/LvStats/Briggs/11
     1. Script: Script/Maps/BlackHoleDweller.lua
     1. General Data: Data/LvStats/Briggs/12
