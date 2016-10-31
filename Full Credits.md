@@ -908,8 +908,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_VirusGun.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/ADD_BlockGun.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/ADD_ConfuseGun.png
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Goddess.png
     1. Scenario: Languages/Dutch/Scenario/SCENONLY/OPENING/START
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Goddess.png
     1. Scenario: Languages/Dutch/Scenario/TUTORIAL/BAGSFULL
     1. Scenario: Languages/Dutch/Settings
     1. Scenario: Languages/English/Settings
