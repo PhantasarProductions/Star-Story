@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.09.15
+version: 16.10.31
 ]]
 -- @IF IGNORE
 VicCheck = {}
@@ -161,7 +161,7 @@ function GiveItem(ch,item,vault)
 -- If we got no socket reaching the required conditions, we must either reject the item or throw it into the vault (if the latter is allowed for this item)
 if not spot then
    if not vault then return end -- If the item cannot be thrown into the vault, let's just ignore the item and we won't even talk about it any more
-   putinvault = PutInVault(item)
+   -- putinvault = item.PutInVault --PutInVault(item)
    if not putinvault then return end -- and if the item also could not be placed in the vault, let's ignore it anyway and also not even talk about it any more.
    inc("%VAULT."..item)    
 else
