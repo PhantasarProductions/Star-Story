@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.02
+version: 16.11.03
 ]]
 -- @IF IGNORE
 AltBackGrounds = {}
@@ -124,7 +124,7 @@ function AltBackGrounds.GoddessSpace()
       end
       -- Goddess Defeated?
       if RPGStat.Points('FOE_1','HP').Have<=1 then 
-         LAURA.Flow('Field')
+         LAURA.Flow('FIELD')
          Image.Free(GoddessSpace.Orion) 
       end
 end

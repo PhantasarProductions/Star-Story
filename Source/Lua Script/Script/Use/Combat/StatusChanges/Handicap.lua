@@ -1,6 +1,6 @@
 --[[
   Handicap.lua
-  Version: 16.08.20
+  Version: 16.11.03
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -45,7 +45,7 @@ StatusResistance.Handicapped  = 'Block'
 StatusBlockAction.Handicapped = {'ARM','ABL'}
 -- StatusExpireOnAttack.Terrified = true
 
-function StatusDrawFighter.BagLock(g,i)
+function StatusDrawFighter.Handicapped(g,i)
 
 local bx,by = FighterCoords(g,i)
 local wy = by - 20

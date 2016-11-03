@@ -794,8 +794,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Combat/Fighters/Hero/Johnson.Dead.png
     1. Graphics: GFX/Combat/Fighters/Hero/Johnson.attack.piko
     1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Long Moss Hair.png
-    1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Long Red Hair.png
-    1. Audio: Audio/IntroStory/Lovejoy0014.ogg
+    1. Audio: Audio/IntroStory/Lovejoy0014.ogg < alias > GFX/Actors/SinglePic/Ji/Ji - Long Red Hair.png
     1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Blonde Piggy Tails.png
     1. Graphics: GFX/Actors/SinglePic/Ji/Grand Master.png
     1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Green Alien With Long Moss Hair.png
@@ -972,8 +971,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/10
     1. Script: Script/Maps/Excalibur - Final.lsv
     1. Script: Script/Maps/Excalibur - Final - 2.lua
-    1. Script: Script/Maps/Phantasar - Airom.lua
     1. General Data: Data/LvStats/Briggs/100
+    1. Script: Script/Maps/Phantasar - Airom.lua
     1. General Data: Data/LvStats/Briggs/11
     1. Script: Script/Maps/BlackHoleDweller.lua
     1. General Data: Data/LvStats/Briggs/12
