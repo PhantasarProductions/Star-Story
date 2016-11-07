@@ -1,6 +1,6 @@
 --[[
   CLoadFoe.lua
-  Version: 16.06.23
+  Version: 16.11.02
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -50,6 +50,7 @@ if not FoeData then Sys.Error("Either no data returned or a faulty foe load scri
 RPGChar.CreateChar(Foe.Tag)
 RPGStat.CreateList(Foe.Tag,"STATUSCHANGE")
 -- Compile the data to get the right stats of the right level
+CSay("= Level setup "..Foe.Tag)
 local ckey,cvalue
 local lvrange = FoeData.Stat.LevelRange
 local lvmin = lvrange[1]
@@ -63,6 +64,7 @@ if Foe.Level<1 then Foe.Level=1 end
 RPGChar.DefStat(Foe.Tag,"Level",Foe.Level)
 RPGChar.SetName(Foe.Tag,FoeData.Name)
 -- Stats
+CSay("= Statistics "..Foe.Tag)
 for ckey,cvalue in spairs(FoeData.Stat) do
     sint = math.abs(cvalue[2]-cvalue[1])
     sinc = sint / rng
@@ -87,29 +89,35 @@ for ckey,cvalue in spairs(FoeData.Stat) do
 RPGStat.Points(Foe.Tag,"HP",1).MaxCopy = "END_HP"
 RPGStat.Points(Foe.Tag,"HP").Have = RPGStat.Points(Foe.Tag,"HP").Maximum
 -- Status Change Resistance
+CSay("= StatusRes: "..Foe.Tag)
 for stat,value in spairs(FoeData.StatusResistance) do
     RPGStat.DefStat(Foe.Tag,"SR_TRUE_"..stat,value) -- The enemy will not be influence by equipment anyway.
     end    
 -- Shilders
+CSay("= Shilders: "..Foe.Tag)
 Foe.Shilders = FoeData.Shilders    
 -- Boss?
+CSay("= BossOrNot: "..Foe.Tag)
 Foe.Boss = FoeData.Boss
 -- Elemental resistances
 for k,v in spairs(FoeData) do
     if prefixed(k,"EleRes_") then RPGStat.DefStat(Foe.Tag,replace(k,"EleRes_","ER_"),v) end
     end 
 -- Steal and drops
+CSay("= Item Steal & Drops: "..Foe.Tag)
 Foe.ItemDrop = {}
 Foe.ItemSteal = {}
 for ckey,cvalue in ipairs(FoeData.ItemDrop)  do if cvalue.LVL<=Foe.Level then table.insert(Foe.ItemDrop ,cvalue) end end
 for ckey,cvalue in ipairs(FoeData.ItemSteal) do if cvalue.LVL<=Foe.Level then table.insert(Foe.ItemSteal,cvalue) end end
 -- Actions (only needed for the Default AI setting)
+CSay("= Actions: "..Foe.Tag)
 Foe.Actions = {}
 for cvalue in each(FoeData.Acts) do
     if Foe.Level>=FoeData.ActMinLevel[cvalue] then table.insert(Foe.Actions,cvalue) end -- Only add the move if the level allows it
     end
 Foe.AI=FoeData.AI    
 -- Load the pictures
+CSay("= Pics: "..Foe.Tag)
 if left(FoeData.ImageFile)=="*" then 
    FoeAltImage[FoeData.ImageFile](Foe)
 else   

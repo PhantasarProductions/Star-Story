@@ -1,6 +1,6 @@
 --[[
   Combat.lua
-  Version: 16.08.29
+  Version: 16.11.02
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -266,7 +266,10 @@ local fx,fy , fget
 for k,v in spairs(CombatData) do
     if left(k,3)=="FOE" and type(v)=='string' then
        FoeCount = FoeCount + 1
-       CSay('New Foe','Foe #'..FoeCount,"key: "..k,"Foe File: "..v)
+       CSay('New Foe')
+       CSay('Foe #'..FoeCount)
+       CSay("key: "..k)
+       CSay("Foe File: "..v)
        if CombatData["IDFOE"..k] then GiveID=CombatData["IDFOE"..k] else GiveID=GaugeID; GaugeID=GaugeID+1 end
        InitFoeCoords(FoeCount)
        if CombatData["ALTCOORDSFOE"..right(k,len(k)-3)] then
