@@ -1,6 +1,6 @@
 --[[
   SnowLeopard.lua
-  Version: 16.09.12
+  Version: 16.11.09
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.09.11
+-- Version 16.11.09
 
 
 

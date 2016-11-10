@@ -1,6 +1,6 @@
 --[[
   CLoadFoe.lua
-  Version: 16.11.02
+  Version: 16.11.10
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -64,7 +64,7 @@ if Foe.Level<1 then Foe.Level=1 end
 RPGChar.DefStat(Foe.Tag,"Level",Foe.Level)
 RPGChar.SetName(Foe.Tag,FoeData.Name)
 -- Stats
-CSay("= Statistics "..Foe.Tag)
+CSay("= Statistics "..Foe.Tag.." lv"..sval(Foe.Level))
 for ckey,cvalue in spairs(FoeData.Stat) do
     sint = math.abs(cvalue[2]-cvalue[1])
     sinc = sint / rng
@@ -104,11 +104,16 @@ for k,v in spairs(FoeData) do
     if prefixed(k,"EleRes_") then RPGStat.DefStat(Foe.Tag,replace(k,"EleRes_","ER_"),v) end
     end 
 -- Steal and drops
-CSay("= Item Steal & Drops: "..Foe.Tag)
+CSay("= Item Steal & Drops Init: "..Foe.Tag)
 Foe.ItemDrop = {}
 Foe.ItemSteal = {}
-for ckey,cvalue in ipairs(FoeData.ItemDrop)  do if cvalue.LVL<=Foe.Level then table.insert(Foe.ItemDrop ,cvalue) end end
-for ckey,cvalue in ipairs(FoeData.ItemSteal) do if cvalue.LVL<=Foe.Level then table.insert(Foe.ItemSteal,cvalue) end end
+if FoeData.ItemDrop and FoeData.ItemSteal then
+   CSay("= Item Steal & Drops -- Compiling: "..Foe.Tag)
+   for ckey,cvalue in ipairs(FoeData.ItemDrop)  do if cvalue and cvalue.LVL and cvalue.LVL<=Foe.Level then table.insert(Foe.ItemDrop ,cvalue) end end
+   for ckey,cvalue in ipairs(FoeData.ItemSteal) do if cvalue and cvalue.LVL and cvalue.LVL<=Foe.Level then table.insert(Foe.ItemSteal,cvalue) end end
+else
+   CSay("      WARNING! Nil data in item data of foe")
+end      
 -- Actions (only needed for the Default AI setting)
 CSay("= Actions: "..Foe.Tag)
 Foe.Actions = {}
