@@ -15,6 +15,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
 - -
     1. Graphics: GFX/PC Font/Font0.png
     1. Graphics: GFX/PC Font/Font1.png
+- 1 Up-Nuke
+    1. <Game Testing>
 - Aaron Krogh
     1. Music: Music/Boss/001.ogg < alias > Music/Original4Alias/289, 131 - Heated Battle-1.ogg
     1. Music: Music/Boss/002.ogg < alias > Music/Original4Alias/289, 131 - Normal Enemy-1.ogg
@@ -72,7 +74,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: gfx/combat/fighters/foe/reg/Leopard.png
 - Benboncan
     1. Audio: Audio/SFX/Gen/whoosh.ogg
-    1. ???: Audio/SFX/Gen/whoosh.wav
+    1. Audio: Audio/SFX/Gen/whoosh.wav
     1. Audio: Audio/SFX/Shopping/ChaChing.ogg
 - Brian Boyko
     1. Music: Music/original4alias/Born Barnstomers.ogg < alias > Music/Town/Vulpina.ogg
@@ -83,12 +85,14 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Textures/Excalibur/Casino/Casino.png
     1. Graphics: GFX/Textures/Excalibur/Casino/Casino.Frames
 - Courtney Novits
-    1. ???: Fonts/Robotica.sfd
+    1. Font: Fonts/Robotica.sfd
     1. Font: Fonts/Robotica.ttf
     1. ???: Fonts/Robotica.sfd~
-    1. ???: Fonts/Robotica.afm
+    1. Font: Fonts/Robotica.afm
 - Cynix
     1. Graphics: GFX/Inventory/Patch.png
+- DarkbloodBane
+    1. <Game Testing>
 - Dedicated Teacher
     1. Graphics: gfx/Textures/Furniture/Sofa.png
 - Deluge
@@ -100,6 +104,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
 - Eric Matyas
     1. Music: Music/Excalibur/Attacked.ogg < alias > Music/Original4Alias/Urban-Sci-Fi-Heroes.ogg
     1. Music: Music/Launcher/Launcher.ogg < alias > Music/Original4Alias/Once-Around-the-Solar-System.ogg
+- FB Projecten
+    1. <Game Testing>
 - Fake Music Generator
     1. Music: Music/Location_Pub_Jungle/1 - TDCi - Don't Talk Too Much.ogg
 - FlamingText.com
@@ -159,6 +165,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: Achievements/SAVETERMINAL30.png
 - Holly
     1. Graphics: gfx/combat/fighters/foe/reg/Hawk.png
+- Honno
+    1. <Game Testing>
 - J.W.H. Broeders
     1. Music: Music/Dungeon/Dungeon1.ogg
 - J4p4n
@@ -239,9 +247,9 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Inventory/UltraKit.png
     1. Graphics: GFX/Combat/TimeGauge.png
     1. Graphics: GFX/Combat/FoeTimePointer.png
-    1. ???: GFX/Combat/FoeTimePointer.Hot
+    1. Graphics: GFX/Combat/FoeTimePointer.Hot
     1. Graphics: GFX/Combat/HeroTimePointer.png
-    1. ???: GFX/Combat/HeroTimePointer.Hot
+    1. Graphics: GFX/Combat/HeroTimePointer.Hot
     1. Graphics: GFX/StatusChanges/Poison.png
     1. Graphics: GFX/StatusChanges/Paralysis.png
     1. Graphics: GFX/StatusChanges/Disease.png
@@ -344,7 +352,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Combat/Projectiles/Yirl_Laser.png
     1. Graphics: GFX/Combat/Projectiles/PHOTON.png
     1. ???: Audio/SFX/Transporter/Beam.lch
-    1. ???: Audio/SFX/Transporter/Beam.wav
+    1. Audio: Audio/SFX/Transporter/Beam.wav
     1. Audio: Audio/SFX/Transporter/Beam.ogg
     1. Graphics: GFX/Actors/SinglePic/Random/Poep.png
     1. Graphics: GFX/Textures/Ship/Cyan/Center.png
@@ -358,7 +366,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Textures/Door/Big Wooden Double Door/Door 64x96.png
     1. General Data: GFX/Textures/Door/ShipDoor/Left < alias > GFX/Textures/Door/ShipDoor/Left.png
     1. Graphics: GFX/Textures/Door/ShipDoor/Right.png
-    1. ???: GFX/Textures/Door/ShipDoor/Left_Centered.hot
+    1. Graphics: GFX/Textures/Door/ShipDoor/Left_Centered.hot
     1. Graphics: GFX/Textures/Door/ShipDoor/Left_Centered.Png
     1. Graphics: GFX/Textures/Door/Prison/Bars.png
     1. Graphics: GFX/Textures/Obstacles/Floor/Slab.png
@@ -389,7 +397,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Audio: Audio/Sfx/Moo/2.ogg
     1. Audio: Audio/Sfx/Moo/3.ogg
     1. Font: Fonts/Astrilopup.ttf
-    1. General Data: ID/Identify < alias > ID/Identify.txt
+    1. Game identification data: ID/Identify < alias > ID/Identify.txt
     1. Map Design: Kthura/Excalibur_Home/Data
     1. Map Design: Kthura/Excalibur_Home/Objects
     1. Map Design: Kthura/Excalibur_Home/Settings
@@ -644,9 +652,9 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Map Design: Kthura/Hawk_PostGame/Objects
     1. Map Design: Kthura/Hawk_PostGame/Settings
     1. Font: Fonts/Phantasar.ttf
-    1. ???: Fonts/Untitled1.sfd
+    1. Font: Fonts/Untitled1.sfd
     1. ???: Fonts/Untitled1.sfd~
-    1. ???: Fonts/Phantasar.afm
+    1. Font: Fonts/Phantasar.afm
     1. Scenario: Languages/English/Scenario/GENERAL/PHANTASAR
     1. Scenario: Languages/English/Scenario/MAPS/BLACKHOLEDWELLER
     1. Scenario: Languages/English/Scenario/MAPS/EXCALIBUR - FINAL < alias > Languages/English/Scenario/MAPS/EXCALIBUR - FINAL - 2
@@ -825,7 +833,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Actors/Phantasar/Gnome/Rachel.png
     1. Graphics: GFX/Textures/Astrilopups/City/HOLE.png
     1. Graphics: GFX/Textures/Astrilopups/City/Ash.png
-    1. ???: GFX/Textures/Astrilopups/City/Hole.Hot
+    1. Graphics: GFX/Textures/Astrilopups/City/Hole.Hot
     1. Graphics: GFX/Textures/Astrilopups/Facility/North-East Ending.png
     1. Graphics: GFX/Textures/Astrilopups/Facility/SchuifDeur.png
     1. Graphics: GFX/Textures/Astrilopups/Facility/North.png
@@ -1136,63 +1144,63 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/Spider.lua
     1. General Data: Data/LvStats/Briggs/65
     1. Script: Script/JINC/Foes/Reg/Leopard.lua
-    1. General Data: Data/LvStats/Briggs/66
     1. Script: Script/JINC/Foes/Reg/SnowLeopard.lua
+    1. General Data: Data/LvStats/Briggs/66
     1. Script: Script/JINC/Foes/Reg/Zombie.lua
     1. General Data: Data/LvStats/Briggs/67
     1. Script: Script/JINC/Foes/Reg/Gremlin.lua
     1. General Data: Data/LvStats/Briggs/68
     1. Script: Script/JINC/Foes/Reg/Hag.lua
-    1. General Data: Data/LvStats/Briggs/69
     1. Script: Script/JINC/Foes/Reg/Ghoul.lua
+    1. General Data: Data/LvStats/Briggs/69
     1. Script: Script/JINC/Foes/Reg/HellHound.lua
-    1. General Data: Data/LvStats/Briggs/7
     1. Script: Script/JINC/Foes/Boss/BigLion.lua
+    1. General Data: Data/LvStats/Briggs/7
     1. Script: Script/JINC/Foes/Boss/Cyborg Lord.lua
     1. General Data: Data/LvStats/Briggs/70
     1. Script: Script/JINC/Foes/Boss/DardMoeder.lua
-    1. General Data: Data/LvStats/Briggs/71
     1. Script: Script/JINC/Foes/Boss/DardBoorth.lua
+    1. General Data: Data/LvStats/Briggs/71
     1. Script: Script/JINC/Foes/Boss/QueenMyr.lua
     1. General Data: Data/LvStats/Briggs/72
     1. Script: Script/JINC/Foes/Boss/AstrilopupElite.lua
-    1. General Data: Data/LvStats/Briggs/73
     1. Script: Script/JINC/Foes/Boss/Mid-Boss.lua
+    1. General Data: Data/LvStats/Briggs/73
     1. Script: Script/JINC/Foes/Boss/GiantSnake.lua
-    1. General Data: Data/LvStats/Briggs/74
     1. Script: Script/JINC/Foes/Boss/Cultist Leader.lua
+    1. General Data: Data/LvStats/Briggs/74
     1. General Data: Data/LvStats/Briggs/75
     1. Script: Script/JINC/Foes/Boss/Thief Chief.lua
     1. Script: Script/JINC/Foes/Boss/Diablo.lua
     1. General Data: Data/LvStats/Briggs/76
     1. Script: Script/JINC/Foes/Boss/LichKing.lua
-    1. General Data: Data/LvStats/Briggs/77
     1. Script: Script/JINC/Foes/Boss/ExHuRU.lua
+    1. General Data: Data/LvStats/Briggs/77
     1. Script: Script/JINC/Foes/Boss/DeathMyrQueen.lua
     1. General Data: Data/LvStats/Briggs/78
     1. Script: Script/JINC/Foes/Boss/SuperZombie.lua
     1. Script: Script/JINC/Foes/Boss/FireSpiderYoung.lua
     1. General Data: Data/LvStats/Briggs/79
     1. Script: Script/JINC/Foes/Boss/SuperCyborg.lua
-    1. General Data: Data/LvStats/Briggs/8
     1. Script: Script/JINC/Foes/Boss/HWSNBN.lua
+    1. General Data: Data/LvStats/Briggs/8
     1. Script: Script/JINC/Foes/Boss/Gold Killer Droid.lua
     1. General Data: Data/LvStats/Briggs/80
     1. Script: Script/JINC/Foes/Boss/UberGremlin.lua
-    1. General Data: Data/LvStats/Briggs/81
     1. Script: Script/JINC/Foes/SuperBoss/FireSpider.lua
+    1. General Data: Data/LvStats/Briggs/81
     1. Script: Script/JINC/Foes/SuperBoss/BlackHoleDweller.lua
-    1. General Data: Data/LvStats/Briggs/82
     1. Script: Script/JINC/Foes/SpecialBoss/McLeen.lua
+    1. General Data: Data/LvStats/Briggs/82
     1. Script: Script/JINC/Foes/Goddess/Goddess.lua
     1. General Data: Data/LvStats/Briggs/83
     1. Script: Script/JINC/Foes/Goddess/Add_Gunner.lua
     1. Script: Script/JINC/Foes/Goddess/Add_FlameThrower.lua
-    1. General Data: Data/LvStats/Briggs/84
     1. Script: Script/JINC/Foes/Goddess/Add_IceCannon.lua
+    1. General Data: Data/LvStats/Briggs/84
     1. Script: Script/JINC/Foes/Goddess/Add_WaterGun.lua
-    1. General Data: Data/LvStats/Briggs/85
     1. Script: Script/JINC/Foes/Goddess/Add_WindGun.lua
+    1. General Data: Data/LvStats/Briggs/85
     1. Script: Script/JINC/Foes/Goddess/Add_RockThrower.lua
     1. Script: Script/JINC/Foes/Goddess/Add_LightGun.lua
     1. General Data: Data/LvStats/Briggs/86
@@ -1201,8 +1209,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/87
     1. Script: Script/JINC/Foes/Goddess/Add_virusGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_Trq.lua
-    1. General Data: Data/LvStats/Briggs/88
     1. Script: Script/JINC/Foes/Goddess/Add_BlockGun.lua
+    1. General Data: Data/LvStats/Briggs/88
     1. Script: Script/JINC/Foes/Goddess/Add_ConfuseGun.lua
     1. General Data: Data/LvStats/Briggs/89
     1. General Data: Data/LvStats/Briggs/9
@@ -2132,7 +2140,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Combat/GaugeIcons/UniWendicka.png < alias > GFX/Combat/GaugeIcons/Wendicka.png
     1. Graphics: GFX/Combat/GaugeIcons/ExHuRU.png
     1. Graphics: GFX/Combat/GaugeIcons/Yirl.png
-    1. ???: GFX/Combat/GaugeIcons/UniWendicka.hot < alias > GFX/Combat/GaugeIcons/Wendicka.Hot
+    1. Graphics: GFX/Combat/GaugeIcons/UniWendicka.hot < alias > GFX/Combat/GaugeIcons/Wendicka.Hot
     1. Graphics: GFX/Combat/GaugeIcons/Rolf.png
     1. Graphics: GFX/Combat/Arena/Excalibur.png
     1. Graphics: GFX/Combat/Arena/Yaqirpa.png
@@ -2294,8 +2302,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Music: Music/Sys/Silence.ogg
     1. Script: Script/Use/AnyWay/MusicAvailable.lua
 - Jeroen P Broks
-    1. General Data: ID/IdentifyMusic
-    1. ???: ID/IdentifyMusic.txt
+    1. Game identification data: ID/IdentifyMusic
+    1. Game identification data: ID/IdentifyMusic.txt
 - Jeroen P. Broks
     1. Script: Script/OSBOOT/Mac.x86.lua
     1. Script: Script/OSBOOT/Win32.x86.lua
@@ -2791,7 +2799,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Audio: Audio/SFX/Foxy/Yes.ogg
 - Lazur URH
     1. Graphics: GFX/Combat/SpellAni/Thunder/Lightning.png
-    1. ???: GFX/Combat/SpellAni/Thunder/Lightning.hot
+    1. Graphics: GFX/Combat/SpellAni/Thunder/Lightning.hot
 - Lee Rosevere
     1. Music: Music/Original4Alias/Nearly_There.ogg < alias > Music/SpecialBoss/BlackHoleDweller.ogg
 - Linda James
@@ -3074,7 +3082,7 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. ???: Documentation/License/Lobster Font/Font Lab Source/LobsterSource.vfb
 - PacDV
     1. Audio: Audio/SFX/Memory/MemEffect.ogg
-    1. ???: Audio/SFX/Memory/MemEffect.wav
+    1. Audio: Audio/SFX/Memory/MemEffect.wav
     1. Audio: Audio/SFX/Field/Get.ogg
     1. Audio: Audio/SFX/Field/Get.mp3
     1. Audio: Audio/SFX/Signal.ogg
