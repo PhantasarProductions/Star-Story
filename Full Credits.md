@@ -903,8 +903,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_GRASSJUNGLE_3
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_JUNKYARD
     1. Scenario: Languages/Dutch/Scenario/MAPS/LOSTPLANET_PUB_OUTSIDE
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_VenomGun.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/PROLOGUE_YAQIRPA
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_VenomGun.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_VirusGun.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/ADD_BlockGun.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/ADD_ConfuseGun.png
@@ -978,8 +978,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Maps/BlackHoleDweller.lua
     1. General Data: Data/LvStats/Briggs/12
     1. Script: Script/Maps/Excalibur - Final Boss.lua
-    1. Script: Script/Maps/Excalibur - Post Game.lua
     1. General Data: Data/LvStats/Briggs/13
+    1. Script: Script/Maps/Excalibur - Post Game.lua
     1. Script: Script/Maps/Hawk_PostGame.lua
     1. General Data: Data/LvStats/Briggs/14
     1. Script: Script/MiniGame/AutoUse.lua
@@ -1146,8 +1146,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/69
     1. Script: Script/JINC/Foes/Reg/Ghoul.lua
     1. Script: Script/JINC/Foes/Reg/HellHound.lua
-    1. Script: Script/JINC/Foes/Boss/BigLion.lua
     1. General Data: Data/LvStats/Briggs/7
+    1. Script: Script/JINC/Foes/Boss/BigLion.lua
     1. Script: Script/JINC/Foes/Boss/Cyborg Lord.lua
     1. General Data: Data/LvStats/Briggs/70
     1. Script: Script/JINC/Foes/Boss/DardMoeder.lua
