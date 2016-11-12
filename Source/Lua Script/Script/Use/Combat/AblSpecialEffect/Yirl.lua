@@ -1,7 +1,7 @@
 --[[
   Yirl.lua
-  Version: 15.11.02
-  Copyright (C) 2015 Jeroen Petrus Broks
+  Version: 16.11.12
+  Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -46,13 +46,16 @@ local ret
 if ammo.Have==0 then MINI("Can't trigger happy without ammo") return true end
 for i=1,ammo.Have do
       if not Fighters[tg][ti] then return end -- Stop shooting if the enemy is dead already
+      if upper(LAURA.GetFlow())~="COMBAT" then return end -- stop this routine if the battle was ended artificially. This should fix #582
       if RPGChar.Points(tgt,"HP").Have==0 then return end
+      if RPGChar.Points(tgt,"HP").Have==RPGChar.Points(tgt,"HP").Minimum then return end
       -- ActionFuncs.SHT(ag,ai,act)
       SpriteAnim[ag](ai,act)
       White()
       SpellAni[RPGChar.GetData(me,"ShootSpellAni")](ag,ai,tg,ti)
       -- Perform Attack
-      Attack(ag,ai,act)
+      Attack(ag,ai,act)      
+      if RPGChar.Points(tgt,"HP").Have==RPGChar.Points(tgt,"HP").Minimum then return end
       ammo.Have=ammo.Have-1
       ret=true      
       end
