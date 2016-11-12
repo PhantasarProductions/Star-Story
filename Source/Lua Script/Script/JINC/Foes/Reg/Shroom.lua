@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.08.07
+version: 16.11.12
 ]]
 
 
--- Version 16.08.07
+-- Version 16.11.12
 
 
 
@@ -92,7 +92,7 @@ temp = { ITM='ITM_EQP_EMERALD', LVL=1, VLT=false }
 for ak=1,1 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,1 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_PHANTASAR_ANTIDOTE', LVL=1, VLT=false }
-for ak=1,100000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,1000 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,24 do table.insert(Data.ItemSteal,temp) end
 Data.ActMinLevel["Abl.ITM_SPORES"] = 1		for ak=1,1000 do table.insert(Data.Acts,"Abl.ITM_SPORES") end
 

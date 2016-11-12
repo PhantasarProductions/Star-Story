@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.09.12
+version: 16.11.12
 ]]
 
 
--- Version 16.09.11
+-- Version 16.11.12
 
 
 
@@ -98,8 +98,8 @@ Data.ActMinLevel["Abl.ARM_POISONDART"] = 1		for ak=1,5 do table.insert(Data.Acts
 Data.ActMinLevel["Abl.ARM_STUN_GUN"] = 1		for ak=1,5 do table.insert(Data.Acts,"Abl.ARM_STUN_GUN") end
 Data.ActMinLevel["Abl.ARM_VIRUSBOMB"] = 1		for ak=1,5 do table.insert(Data.Acts,"Abl.ARM_VIRUSBOMB") end
 temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=800, VLT=false }
-for ak=1,800 do table.insert(Data.ItemDrop ,temp) end
-for ak=1,800 do table.insert(Data.ItemSteal,temp) end
+for ak=1,80 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,80 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_SHOT', LVL=80, VLT=false }
 for ak=1,20 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,50 do table.insert(Data.ItemSteal,temp) end

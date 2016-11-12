@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.09.12
+version: 16.11.12
 ]]
 
 
--- Version 16.09.11
+-- Version 16.11.12
 
 
 
@@ -109,25 +109,25 @@ Data.ActMinLevel["Abl.ABL_XENOBI_ROCK"] = 10		for ak=1,10 do table.insert(Data.A
 Data.ActMinLevel["Abl.ABL_XENOBI_VITALIZE"] = 25		for ak=1,20 do table.insert(Data.Acts,"Abl.ABL_XENOBI_VITALIZE") end
 Data.ActMinLevel["Abl.ABL_YIRL_CONFUSION"] = 25		for ak=1,20 do table.insert(Data.Acts,"Abl.ABL_YIRL_CONFUSION") end
 temp = { ITM='ITM_ANTIDOTE', LVL=10, VLT=false }
-for ak=1,19000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,1900 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,99 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_ASTRILOPUPHONEY', LVL=85, VLT=false }
 for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,1 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_BANDAGE', LVL=20, VLT=false }
-for ak=1,18000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,1800 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,98 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_BIOHAZARD', LVL=30, VLT=false }
-for ak=1,17000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,1700 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,97 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_BLUBAFLOWER', LVL=40, VLT=false }
-for ak=1,16000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,1600 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,96 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_CHLOROFORM', LVL=50, VLT=false }
-for ak=1,15000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,150 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,94 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_ENERGYDRINK', LVL=60, VLT=false }
-for ak=1,14000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,140 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,93 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_EQP_AQUAMARINE', LVL=70, VLT=false }
 for ak=1,100 do table.insert(Data.ItemDrop ,temp) end
@@ -169,34 +169,34 @@ temp = { ITM='ITM_EQP_SUPER_ONYX', LVL=900, VLT=false }
 for ak=1,2 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,2 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_FIRSTAIDKIT', LVL=140, VLT=false }
-for ak=1,13000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,1300 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,84 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_GUBAFLOWER', LVL=150, VLT=false }
-for ak=1,12000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,1200 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,83 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_HEALINGCAPSULE', LVL=160, VLT=false }
-for ak=1,11000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,1100 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,82 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_HEATHRUB', LVL=170, VLT=false }
-for ak=1,10000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,1000 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,81 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_HOMEO', LVL=180, VLT=false }
-for ak=1,9000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,900 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,80 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_ICEBOMB', LVL=190, VLT=false }
-for ak=1,8000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,800 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,79 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_MEDICINE', LVL=200, VLT=false }
-for ak=1,7000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,700 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,78 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_MEDIKIT', LVL=210, VLT=false }
-for ak=1,6000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,600 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,77 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_MINDCLEARPILL', LVL=220, VLT=false }
-for ak=1,5000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,500 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,76 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_MOLOTOV', LVL=230, VLT=false }
-for ak=1,4000 do table.insert(Data.ItemDrop ,temp) end
+for ak=1,400 do table.insert(Data.ItemDrop ,temp) end
 for ak=1,75 do table.insert(Data.ItemSteal,temp) end
 temp = { ITM='ITM_PHAN_LEVELAPPLE', LVL=1100, VLT=false }
 for ak=1,1100 do table.insert(Data.ItemDrop ,temp) end
