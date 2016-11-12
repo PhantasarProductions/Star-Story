@@ -1,6 +1,6 @@
 --[[
   Menu.lua
-  Version: 16.09.01
+  Version: 16.11.12
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -421,14 +421,16 @@ FeatureHandleArray = {
                         end
                   SetFont("StatusStat")
                   Image.Color(255-hpc,hpc,100)
-                  Image.DText("HP",50,100)
-                  Image.DText(RPGStats.Points(pchar,"HP").Have.." / "..RPGStats.Points(pchar,"HP").Maximum,250,100,1)
+                  local HP = RPGStats.Points(pchar,"HP").Have.." / "..RPGStats.Points(pchar,"HP").Maximum
+                  if Image.TextWidth(HP)<150 then Image.DText("HP",50,100) end
+                  Image.DText(HP,250,100,1)
                   Image.Color(100,100,100);   Image.Rect(50,120,200,3)
-                  Image.Color(255-hpc,hpc,0); Image.Rect(50,120,hpb,3)
+                  Image.Color(255-hpc,hpc,0); Image.Rect(50,120,hpb,3)                  
                   if RPGStats.Points(pchar,"AP").Maximum>0 then
+                     local AP = RPGStats.Points(pchar,"AP").Have.." / "..RPGStats.Points(pchar,"AP").Maximum
                      Image.Color(100,100,255)
-                     Image.DText("AP",50,125)
-                     Image.DText(RPGStats.Points(pchar,"AP").Have.." / "..RPGStats.Points(pchar,"AP").Maximum,250,125,1)
+                     if Image.Textwidth(AP)<150 then Image.DText("AP",50,125) end
+                     Image.DText(AP,250,125,1)
                      Image.Color(100,100,100); Image.Rect(50,145,200,3)
                      Image.Color(0,0,255);     Image.Rect(50,145,apb,3)
                      end
