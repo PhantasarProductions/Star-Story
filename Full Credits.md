@@ -897,8 +897,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_KITCHEN
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_WindGun.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_SICKBAY
-    1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_UNDERATTACK
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_RockThrower.png
+    1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_UNDERATTACK
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_LightGun.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_DarkGun.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/HAWK
@@ -970,8 +970,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Maps/Ysperon - Facility 2.lua
     1. Script: Script/Maps/Ysperon - Eugorvnia Caves.lua
     1. Script: Script/Maps/Vulpina - Flower Forest.lua
-    1. Scenario: Languages/English/Scenario/SCENONLY/OPENING/START
     1. Script: Script/Maps/Vulpina - Sewers.lua
+    1. Scenario: Languages/English/Scenario/SCENONLY/OPENING/START
     1. Script: Script/Maps/Volcania - Caves.lua
     1. Script: Script/Maps/Excalibur - Final.lua
     1. Scenario: Languages/English/Scenario/TUTORIAL/BAGSFULL
@@ -1098,8 +1098,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Combat/AltBackGrounds/Goddess in Space.lua
     1. General Data: Data/LvStats/Briggs/49
     1. Script: Script/JINC/Foes/Reg/Bladeh.lua
-    1. General Data: Data/LvStats/Briggs/5
     1. Script: Script/JINC/Foes/Reg/Lion.lua
+    1. General Data: Data/LvStats/Briggs/5
     1. Script: Script/JINC/Foes/Reg/BlackLizard.lua
     1. General Data: Data/LvStats/Briggs/50
     1. Script: Script/JINC/Foes/Reg/Cid.lua
@@ -1157,8 +1157,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Boss/BigLion.lua
     1. General Data: Data/LvStats/Briggs/7
     1. Script: Script/JINC/Foes/Boss/Cyborg Lord.lua
-    1. General Data: Data/LvStats/Briggs/70
     1. Script: Script/JINC/Foes/Boss/DardMoeder.lua
+    1. General Data: Data/LvStats/Briggs/70
     1. Script: Script/JINC/Foes/Boss/DardBoorth.lua
     1. General Data: Data/LvStats/Briggs/71
     1. Script: Script/JINC/Foes/Boss/QueenMyr.lua
@@ -1169,8 +1169,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Boss/GiantSnake.lua
     1. Script: Script/JINC/Foes/Boss/Cultist Leader.lua
     1. General Data: Data/LvStats/Briggs/74
-    1. General Data: Data/LvStats/Briggs/75
     1. Script: Script/JINC/Foes/Boss/Thief Chief.lua
+    1. General Data: Data/LvStats/Briggs/75
     1. Script: Script/JINC/Foes/Boss/Diablo.lua
     1. General Data: Data/LvStats/Briggs/76
     1. Script: Script/JINC/Foes/Boss/LichKing.lua
@@ -1185,8 +1185,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Boss/HWSNBN.lua
     1. General Data: Data/LvStats/Briggs/8
     1. Script: Script/JINC/Foes/Boss/Gold Killer Droid.lua
-    1. General Data: Data/LvStats/Briggs/80
     1. Script: Script/JINC/Foes/Boss/UberGremlin.lua
+    1. General Data: Data/LvStats/Briggs/80
     1. Script: Script/JINC/Foes/SuperBoss/FireSpider.lua
     1. General Data: Data/LvStats/Briggs/81
     1. Script: Script/JINC/Foes/SuperBoss/BlackHoleDweller.lua
@@ -1206,8 +1206,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/86
     1. Script: Script/JINC/Foes/Goddess/Add_DarkGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_VenomGun.lua
-    1. General Data: Data/LvStats/Briggs/87
     1. Script: Script/JINC/Foes/Goddess/Add_virusGun.lua
+    1. General Data: Data/LvStats/Briggs/87
     1. Script: Script/JINC/Foes/Goddess/Add_Trq.lua
     1. Script: Script/JINC/Foes/Goddess/Add_BlockGun.lua
     1. General Data: Data/LvStats/Briggs/88
