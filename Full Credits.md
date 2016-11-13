@@ -1098,8 +1098,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Combat/AltBackGrounds/Goddess in Space.lua
     1. General Data: Data/LvStats/Briggs/49
     1. Script: Script/JINC/Foes/Reg/Bladeh.lua
-    1. Script: Script/JINC/Foes/Reg/Lion.lua
     1. General Data: Data/LvStats/Briggs/5
+    1. Script: Script/JINC/Foes/Reg/Lion.lua
     1. Script: Script/JINC/Foes/Reg/BlackLizard.lua
     1. General Data: Data/LvStats/Briggs/50
     1. Script: Script/JINC/Foes/Reg/Cid.lua
@@ -1185,8 +1185,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Boss/HWSNBN.lua
     1. General Data: Data/LvStats/Briggs/8
     1. Script: Script/JINC/Foes/Boss/Gold Killer Droid.lua
-    1. Script: Script/JINC/Foes/Boss/UberGremlin.lua
     1. General Data: Data/LvStats/Briggs/80
+    1. Script: Script/JINC/Foes/Boss/UberGremlin.lua
     1. Script: Script/JINC/Foes/SuperBoss/FireSpider.lua
     1. General Data: Data/LvStats/Briggs/81
     1. Script: Script/JINC/Foes/SuperBoss/BlackHoleDweller.lua

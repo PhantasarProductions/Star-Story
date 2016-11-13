@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.10.29
+version: 16.11.13
 ]]
 
 
@@ -85,6 +85,7 @@ end
 function GetPrice(item)
   items[item]=items[item] or ItemGet("ITM_"..item)
   if price[item] then return end
+  --[[ old method. Way unbalanced
   price[item] = (({
                   ['1A'] = function() return skill end,
                   ['1F'] = function() return skill*2 end,
@@ -101,7 +102,8 @@ function GetPrice(item)
       if prefixed(k,"Cause") and v then price[item] = price[item] + ({ 5,10,25})[skill] end 
       if prefixed(k,"Cure")  and v then price[item] = price[item] + ({10,20,50})[skill] end 
   end     
-  CSay(item.." costs "..price[item].." shilders")        
+  CSay(item.." costs "..price[item].." shilders")]]
+  price[item]=items[item].ITM_ShilderPrice        
   -- return price[item]
 end
 
