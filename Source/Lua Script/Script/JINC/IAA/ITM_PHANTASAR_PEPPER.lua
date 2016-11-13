@@ -1,6 +1,6 @@
 --[[
   ITM_PHANTASAR_PEPPER.lua
-  Version: 16.11.07
+  Version: 16.11.13
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -47,6 +47,7 @@ ret = {
 	["HealingType"] = "Absolute",
 	["ITM_SellPrice"] = 300,
 	["ITM_Sellable"] = true,
+	["ITM_ShilderPrice"] = 500,
 	["Icon"] = "GFX/Inventory/Phan_Pepper.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Pepper",

@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.11.07
+version: 16.11.13
 ]]
 ret = {
 	["APRecover"] = 1000000,
@@ -60,6 +60,7 @@ ret = {
 	["ITM_BuyPrice"] = 100,
 	["ITM_SellPrice"] = 75,
 	["ITM_Sellable"] = true,
+	["ITM_ShilderPrice"] = 50000000,
 	["Icon"] = "GFX/Inventory/Phan_Banana.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Banana",

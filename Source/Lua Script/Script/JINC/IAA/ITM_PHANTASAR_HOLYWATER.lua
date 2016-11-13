@@ -1,6 +1,6 @@
 --[[
   ITM_PHANTASAR_HOLYWATER.lua
-  Version: 16.11.07
+  Version: 16.11.13
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -48,6 +48,7 @@ ret = {
 	["ITM_BuyPrice"] = 100,
 	["ITM_SellPrice"] = 75,
 	["ITM_Sellable"] = true,
+	["ITM_ShilderPrice"] = 500,
 	["Icon"] = "GFX/Inventory/HolyWater.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Holy Water",

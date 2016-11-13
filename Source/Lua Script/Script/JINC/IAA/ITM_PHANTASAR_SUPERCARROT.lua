@@ -1,6 +1,6 @@
 --[[
   ITM_PHANTASAR_SUPERCARROT.lua
-  Version: 16.11.07
+  Version: 16.11.13
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -47,6 +47,7 @@ ret = {
 	["ITM_BuyPrice"] = 100,
 	["ITM_SellPrice"] = 750,
 	["ITM_Sellable"] = true,
+	["ITM_ShilderPrice"] = 5000,
 	["Icon"] = "GFX/Inventory/Phan_Carrot.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Super Carrot",

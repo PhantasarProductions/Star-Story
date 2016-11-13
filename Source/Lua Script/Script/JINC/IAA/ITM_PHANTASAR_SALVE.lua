@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.11.07
+version: 16.11.13
 ]]
 ret = {
 	["APRecover"] = 40,
@@ -48,6 +48,7 @@ ret = {
 	["ITM_BuyPrice"] = 100,
 	["ITM_SellPrice"] = 75,
 	["ITM_Sellable"] = true,
+	["ITM_ShilderPrice"] = 1000,
 	["Icon"] = "GFX/Inventory/Phan_Salve.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Salve",

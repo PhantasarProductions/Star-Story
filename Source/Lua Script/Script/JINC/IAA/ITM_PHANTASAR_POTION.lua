@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.11.07
+version: 16.11.13
 ]]
 ret = {
 	["APRecover"] = 250,
@@ -52,6 +52,7 @@ ret = {
 	["ITM_BuyPrice"] = 100,
 	["ITM_SellPrice"] = 5000,
 	["ITM_Sellable"] = true,
+	["ITM_ShilderPrice"] = 2500,
 	["Icon"] = "GFX/Inventory/Phan_Potion.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Potion",

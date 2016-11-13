@@ -1,6 +1,6 @@
 --[[
   ITM_PHANTASAR_AMBROSIA.lua
-  Version: 16.11.07
+  Version: 16.11.13
   Copyright (C) 2016 Jeroen Petrus Broks
   
   ===========================
@@ -57,6 +57,7 @@ ret = {
 	["HealingType"] = "Absolute",
 	["ITM_SellPrice"] = 1000000,
 	["ITM_Sellable"] = true,
+	["ITM_ShilderPrice"] = 10000000,
 	["Icon"] = "GFX/Inventory/Phan_Ambrosia.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Ambrosia",

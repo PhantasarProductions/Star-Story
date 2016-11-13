@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.11.07
+version: 16.11.13
 ]]
 ret = {
 	["APRecover"] = 5,
@@ -48,6 +48,7 @@ ret = {
 	["ITM_BuyPrice"] = 1000,
 	["ITM_SellPrice"] = 750,
 	["ITM_Sellable"] = true,
+	["ITM_ShilderPrice"] = 500,
 	["Icon"] = "gfx/inventory/Phantasar_Apple.png",
 	["ItemType"] = "Consumable",
 	["Name"] = "Apple",
