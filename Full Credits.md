@@ -897,8 +897,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_KITCHEN
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_WindGun.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_SICKBAY
-    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_RockThrower.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/EXCALIBUR_UNDERATTACK
+    1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_RockThrower.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_LightGun.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_DarkGun.png
     1. Scenario: Languages/Dutch/Scenario/MAPS/HAWK
