@@ -1157,8 +1157,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Boss/BigLion.lua
     1. General Data: Data/LvStats/Briggs/7
     1. Script: Script/JINC/Foes/Boss/Cyborg Lord.lua
-    1. Script: Script/JINC/Foes/Boss/DardMoeder.lua
     1. General Data: Data/LvStats/Briggs/70
+    1. Script: Script/JINC/Foes/Boss/DardMoeder.lua
     1. Script: Script/JINC/Foes/Boss/DardBoorth.lua
     1. General Data: Data/LvStats/Briggs/71
     1. Script: Script/JINC/Foes/Boss/QueenMyr.lua
@@ -1169,8 +1169,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Boss/GiantSnake.lua
     1. Script: Script/JINC/Foes/Boss/Cultist Leader.lua
     1. General Data: Data/LvStats/Briggs/74
-    1. Script: Script/JINC/Foes/Boss/Thief Chief.lua
     1. General Data: Data/LvStats/Briggs/75
+    1. Script: Script/JINC/Foes/Boss/Thief Chief.lua
     1. Script: Script/JINC/Foes/Boss/Diablo.lua
     1. General Data: Data/LvStats/Briggs/76
     1. Script: Script/JINC/Foes/Boss/LichKing.lua
@@ -1206,8 +1206,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/86
     1. Script: Script/JINC/Foes/Goddess/Add_DarkGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_VenomGun.lua
-    1. Script: Script/JINC/Foes/Goddess/Add_virusGun.lua
     1. General Data: Data/LvStats/Briggs/87
+    1. Script: Script/JINC/Foes/Goddess/Add_virusGun.lua
     1. Script: Script/JINC/Foes/Goddess/Add_Trq.lua
     1. Script: Script/JINC/Foes/Goddess/Add_BlockGun.lua
     1. General Data: Data/LvStats/Briggs/88
