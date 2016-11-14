@@ -970,8 +970,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Maps/Ysperon - Facility 2.lua
     1. Script: Script/Maps/Ysperon - Eugorvnia Caves.lua
     1. Script: Script/Maps/Vulpina - Flower Forest.lua
-    1. Script: Script/Maps/Vulpina - Sewers.lua
     1. Scenario: Languages/English/Scenario/SCENONLY/OPENING/START
+    1. Script: Script/Maps/Vulpina - Sewers.lua
     1. Script: Script/Maps/Volcania - Caves.lua
     1. Script: Script/Maps/Excalibur - Final.lua
     1. Scenario: Languages/English/Scenario/TUTORIAL/BAGSFULL
