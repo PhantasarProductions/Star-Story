@@ -1,6 +1,6 @@
 --[[
   Console.lua
-  Version: 16.09.23
+  Version: 16.11.21
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -451,7 +451,8 @@ if #chrs==0 or chrs[1]=="" then
    end
 for ch in each(chrs) do
     CSay("Level up: "..ch)
-    RPGChar.Points(ch,"EXP").Have = 9999999
+    RPGChar.Points(ch,"EXP").Have = RPGChar.Points(ch,"EXP").Maximum + 1000
+    MS.Run("PARTY","SyncLevel",ch)
     end
 end        
 
