@@ -452,7 +452,8 @@ if #chrs==0 or chrs[1]=="" then
 for ch in each(chrs) do
     CSay("Level up: "..ch)
     RPGChar.Points(ch,"EXP").Have = RPGChar.Points(ch,"EXP").Maximum + 1000
-    MS.Run("PARTY","SyncLevel",ch)
+    -- MS.Run("PARTY","SyncLevel",ch)
+    MS.Run("PARTY","ShowParty")
     end
 end        
 
