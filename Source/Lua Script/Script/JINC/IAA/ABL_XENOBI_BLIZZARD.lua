@@ -1,6 +1,6 @@
 --[[
   ABL_XENOBI_BLIZZARD.lua
-  Version: 16.11.13
+  Version: 16.11.23
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -43,7 +43,7 @@ ret = {
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 80,
 	["AttackElement"] = "Frost",
-	["AttackPower"] = 175,
+	["AttackPower"] = 200,
 	["AttackStat"] = "Will",
 	["DefenseStat"] = "Resistance",
 	["Description"] = "Freeze all enemies",

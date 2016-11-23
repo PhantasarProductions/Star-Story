@@ -1,6 +1,6 @@
 --[[
   ABL_XENOBI_QUAKE.lua
-  Version: 16.11.13
+  Version: 16.11.23
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -43,7 +43,7 @@ ret = {
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 80,
 	["AttackElement"] = "Earth",
-	["AttackPower"] = 175,
+	["AttackPower"] = 100,
 	["AttackStat"] = "Will",
 	["DefenseStat"] = "Resistance",
 	["Description"] = "Force 10 on Richter's scale at least!",

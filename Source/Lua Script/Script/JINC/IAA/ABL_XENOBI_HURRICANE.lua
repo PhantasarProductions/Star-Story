@@ -1,6 +1,6 @@
 --[[
   ABL_XENOBI_HURRICANE.lua
-  Version: 16.11.13
+  Version: 16.11.23
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -43,7 +43,7 @@ ret = {
 	["APRecoverType"] = "Absolute",
 	["ActSpeed"] = 80,
 	["AttackElement"] = "Wind",
-	["AttackPower"] = 175,
+	["AttackPower"] = 200,
 	["AttackStat"] = "Will",
 	["DefenseStat"] = "Resistance",
 	["Description"] = "Beaufort! Eat your heart out!",
