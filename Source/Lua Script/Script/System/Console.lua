@@ -1,6 +1,6 @@
 --[[
   Console.lua
-  Version: 16.11.21
+  Version: 16.11.25
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -439,23 +439,31 @@ CSay(  cnt.." objects found")
 end 
 
 function LEVELUP(...)
-local chrs = arg
-local ch
-local i
-if #chrs==0 or chrs[1]=="" then
-   chrs = {} 
-   for i=0,5 do
-       ch = RPGChar.PartyTag(i)
-       if ch~="" then table.insert(chrs,ch) end
-       end
-   end
-for ch in each(chrs) do
-    CSay("Level up: "..ch)
-    RPGChar.Points(ch,"EXP").Have = RPGChar.Points(ch,"EXP").Maximum + 1000
-    -- MS.Run("PARTY","SyncLevel",ch)
-    MS.Run("PARTY","ShowParty")
+  local chrs = arg
+  local ch
+  local i
+  if #chrs==0 or chrs[1]=="" then
+     chrs = {} 
+    for i=0,5 do
+         ch = RPGChar.PartyTag(i)
+         if ch~="" then table.insert(chrs,ch) end
     end
-end        
+  end
+  for ch in each(chrs) do
+    CSay("Level up: "..ch)
+    if RPGChar.CharExists(ch)==1 then
+          RPGChar.Points(ch,"EXP").Have = RPGChar.Points(ch,"EXP").Maximum + 1000
+          -- MS.Run("PARTY","SyncLevel",ch)
+          MS.Run("PARTY","ShowParty")
+    else
+      Console.Write("ERROR: No character tagged: "..ch)  
+    end
+  end  
+end       
+
+function MULTILEVELUP(num,...) 
+    for i=1,num do LEVELUP(arg) end
+end    
 
 
 function PLAYERPICS()
