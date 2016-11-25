@@ -462,7 +462,16 @@ function LEVELUP(...)
 end       
 
 function MULTILEVELUP(num,...) 
-    for i=1,num do LEVELUP(arg) end
+    for i=1,tonumber(num) or 2 do
+         CSay("Level Up ("..i.."/"..num..")");
+         (({ function (a) LEVELUP(arg[1]) end,
+             function (a) LEVELUP(arg[1],arg[2]) end,
+             function (a) LEVELUP(arg[1],arg[2],arg[3]) end,
+             function (a) LEVELUP(arg[1],arg[2],arg[3],arg[4]) end,
+             function (a) LEVELUP(arg[1],arg[2],arg[3],arg[4],arg[5]) end,
+             function (a) LEVELUP(arg[1],arg[2],arg[3],arg[4],arg[5],arg[6]) end,
+         })[#arg] or function() LEVELUP() end)(arg)
+    end
 end    
 
 
