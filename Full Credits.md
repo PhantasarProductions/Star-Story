@@ -476,8 +476,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Textures/Obstacles/Muur Toorts/Brandend.frames
     1. Graphics: GFX/Textures/Obstacles/Muur Toorts/Brandend.png
     1. Graphics: GFX/Textures/Obstacles/Muur Toorts/Uit.png
-    1. Audio: Audio/IntroStory/Lovejoy0002.ogg
     1. Graphics: GFX/Textures/Sudoku/Eugorvnia/1.png
+    1. Audio: Audio/IntroStory/Lovejoy0002.ogg
     1. Graphics: GFX/Textures/Sudoku/Eugorvnia/2.png
     1. Graphics: GFX/Textures/Sudoku/Eugorvnia/3.png
     1. Graphics: GFX/Textures/Sudoku/Eugorvnia/Untitled.png
@@ -802,8 +802,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Combat/Fighters/Hero/Johnson.Dead.png
     1. Graphics: GFX/Combat/Fighters/Hero/Johnson.attack.piko
     1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Long Moss Hair.png
-    1. Audio: Audio/IntroStory/Lovejoy0014.ogg
     1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Long Red Hair.png
+    1. Audio: Audio/IntroStory/Lovejoy0014.ogg
     1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Blonde Piggy Tails.png
     1. Graphics: GFX/Actors/SinglePic/Ji/Grand Master.png
     1. Graphics: GFX/Actors/SinglePic/Ji/Ji - Green Alien With Long Moss Hair.png
@@ -916,8 +916,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Add_VirusGun.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/ADD_BlockGun.png
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/ADD_ConfuseGun.png
-    1. Scenario: Languages/Dutch/Scenario/SCENONLY/OPENING/START
     1. Graphics: GFX/Combat/Fighters/Foe/Goddess/Goddess.png
+    1. Scenario: Languages/Dutch/Scenario/SCENONLY/OPENING/START
     1. Scenario: Languages/Dutch/Scenario/TUTORIAL/BAGSFULL
     1. Scenario: Languages/Dutch/Settings
     1. Scenario: Languages/English/Settings
@@ -980,8 +980,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/10
     1. Script: Script/Maps/Excalibur - Final.lsv
     1. Script: Script/Maps/Excalibur - Final - 2.lua
-    1. General Data: Data/LvStats/Briggs/100
     1. Script: Script/Maps/Phantasar - Airom.lua
+    1. General Data: Data/LvStats/Briggs/100
     1. General Data: Data/LvStats/Briggs/11
     1. Script: Script/Maps/BlackHoleDweller.lua
     1. General Data: Data/LvStats/Briggs/12
@@ -1001,8 +1001,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/18
     1. Script: Script/Flow/NizozemskaSave.lua
     1. General Data: Data/LvStats/Briggs/19
-    1. General Data: Data/LvStats/Briggs/2
     1. Script: Script/Flow/NizozemskaSave.lsv
+    1. General Data: Data/LvStats/Briggs/2
     1. Script: Script/Flow/World.lua
     1. Script: Script/Flow/PhantasarStore.lua
     1. General Data: Data/LvStats/Briggs/20
@@ -1065,8 +1065,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Combat/StatusChanges/Confusion.lua
     1. General Data: Data/LvStats/Briggs/39
     1. Script: Script/Use/Combat/StatusChanges/Death.lua
-    1. General Data: Data/LvStats/Briggs/4
     1. Script: Script/Use/Combat/StatusChanges/Fear.lua
+    1. General Data: Data/LvStats/Briggs/4
     1. Script: Script/Use/Combat/StatusChanges/Undead.lua
     1. General Data: Data/LvStats/Briggs/40
     1. Script: Script/Use/Combat/StatusChanges/Handicap.lua
@@ -1089,8 +1089,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Use/Combat/SpellAni/Quake.lua
     1. General Data: Data/LvStats/Briggs/46
     1. Script: Script/Use/Combat/SpellAni/Wind.lua
-    1. General Data: Data/LvStats/Briggs/47
     1. Script: Script/Use/Combat/SpellAni/ExHuRU_Achievement.lua
+    1. General Data: Data/LvStats/Briggs/47
     1. Script: Script/Use/Combat/FoeAltImage/Cultist.lua
     1. Script: Script/Use/Combat/FoeAltImage/Alg.lua
     1. General Data: Data/LvStats/Briggs/48
@@ -1105,8 +1105,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Foes/Reg/Cid.lua
     1. General Data: Data/LvStats/Briggs/51
     1. Script: Script/JINC/Foes/Reg/Myr.lua
-    1. General Data: Data/LvStats/Briggs/52
     1. Script: Script/JINC/Foes/Reg/Insetto.lua
+    1. General Data: Data/LvStats/Briggs/52
     1. Script: Script/JINC/Foes/Reg/Flysky.lua
     1. General Data: Data/LvStats/Briggs/53
     1. Script: Script/JINC/Foes/Reg/AstrilopupGuard.lua

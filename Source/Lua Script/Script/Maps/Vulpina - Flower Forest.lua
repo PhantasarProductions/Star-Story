@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.06.26
+version: 16.11.25
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -114,4 +114,5 @@ function GALE_OnLoad()
   Music("Dungeon/Weirdomusic_-_34_-_Fiber_visits_the_Q_Continuum.ogg")
   ZA_Enter("BCheck",Boundaries)
   ZA_Enter("BCheck2",Boundaries)
+  ZA_Enter("BCheck3",Boundaries)
 end
