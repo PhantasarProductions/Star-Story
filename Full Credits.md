@@ -973,7 +973,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Scenario: Languages/English/Scenario/SCENONLY/OPENING/START
     1. Script: Script/Maps/Vulpina - Sewers.lua
     1. Script: Script/Maps/Volcania - Caves.lua
-    1. Scenario: Languages/English/Scenario/TUTORIAL/BAGSFULL < alias > Script/Maps/Excalibur - Final.lua
+    1. Script: Script/Maps/Excalibur - Final.lua
+    1. Scenario: Languages/English/Scenario/TUTORIAL/BAGSFULL
     1. General Data: Data/LvStats/Briggs/0
     1. General Data: Data/LvStats/Briggs/1
     1. General Data: Data/LvStats/Briggs/10
