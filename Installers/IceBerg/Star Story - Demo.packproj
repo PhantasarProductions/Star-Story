@@ -7,7 +7,57 @@
 		<key>Attributes</key>
 		<dict>
 			<key>Documents</key>
-			<dict/>
+			<dict>
+				<key>Background Image</key>
+				<dict>
+					<key>IFPkgFlagBackgroundAlignment</key>
+					<integer>4</integer>
+					<key>IFPkgFlagBackgroundScaling</key>
+					<integer>1</integer>
+					<key>Mode</key>
+					<integer>0</integer>
+					<key>Path</key>
+					<string></string>
+					<key>Path Type</key>
+					<integer>1</integer>
+				</dict>
+				<key>License</key>
+				<dict>
+					<key>International</key>
+					<dict>
+						<key>Mode</key>
+						<integer>0</integer>
+						<key>Path</key>
+						<string>/Volumes/Scyndi/Projects/Applications/BlitzMax/JCR6+/LAURA II/Design/Star Story/GitHub/clone/Star-Story/License/License.rtf</string>
+						<key>Path Type</key>
+						<integer>1</integer>
+					</dict>
+				</dict>
+				<key>ReadMe</key>
+				<dict>
+					<key>International</key>
+					<dict>
+						<key>Mode</key>
+						<integer>0</integer>
+						<key>Path</key>
+						<string></string>
+						<key>Path Type</key>
+						<integer>1</integer>
+					</dict>
+				</dict>
+				<key>Welcome</key>
+				<dict>
+					<key>International</key>
+					<dict>
+						<key>Mode</key>
+						<integer>0</integer>
+						<key>Path</key>
+						<string></string>
+						<key>Path Type</key>
+						<integer>1</integer>
+					</dict>
+				</dict>
+			</dict>
 			<key>Files</key>
 			<dict>
 				<key>Compress</key>
@@ -23,11 +73,27 @@
 									<key>Children</key>
 									<array/>
 									<key>GID</key>
+									<integer>20</integer>
+									<key>Path</key>
+									<string>/Volumes/Scyndi/Releases/Star Story/OSX/Star Story.app</string>
+									<key>Path Type</key>
+									<integer>1</integer>
+									<key>Privileges</key>
+									<integer>511</integer>
+									<key>Type</key>
+									<integer>3</integer>
+									<key>UID</key>
+									<integer>501</integer>
+								</dict>
+								<dict>
+									<key>Children</key>
+									<array/>
+									<key>GID</key>
 									<integer>80</integer>
 									<key>Path</key>
 									<string>Utilities</string>
 									<key>Path Type</key>
-									<integer>0</integer>
+									<integer>1</integer>
 									<key>Privileges</key>
 									<integer>493</integer>
 									<key>Type</key>
@@ -41,7 +107,7 @@
 							<key>Path</key>
 							<string>Applications</string>
 							<key>Path Type</key>
-							<integer>0</integer>
+							<integer>1</integer>
 							<key>Privileges</key>
 							<integer>509</integer>
 							<key>Type</key>
@@ -60,7 +126,7 @@
 									<key>Path</key>
 									<string>Application Support</string>
 									<key>Path Type</key>
-									<integer>0</integer>
+									<integer>1</integer>
 									<key>Privileges</key>
 									<integer>493</integer>
 									<key>Type</key>
@@ -76,7 +142,7 @@
 									<key>Path</key>
 									<string>Automator</string>
 									<key>Path Type</key>
-									<integer>0</integer>
+									<integer>1</integer>
 									<key>Privileges</key>
 									<integer>493</integer>
 									<key>Type</key>
@@ -92,7 +158,7 @@
 									<key>Path</key>
 									<string>Documentation</string>
 									<key>Path Type</key>
-									<integer>0</integer>
+									<integer>1</integer>
 									<key>Privileges</key>
 									<integer>493</integer>
 									<key>Type</key>
@@ -108,7 +174,7 @@
 									<key>Path</key>
 									<string>Filesystems</string>
 									<key>Path Type</key>
-									<integer>0</integer>
+									<integer>1</integer>
 									<key>Privileges</key>
 									<integer>493</integer>
 									<key>Type</key>
@@ -124,7 +190,7 @@
 									<key>Path</key>
 									<string>Frameworks</string>
 									<key>Path Type</key>
-									<integer>0</integer>
+									<integer>1</integer>
 									<key>Privileges</key>
 									<integer>493</integer>
 									<key>Type</key>
@@ -140,7 +206,7 @@
 									<key>Path</key>
 									<string>Input Methods</string>
 									<key>Path Type</key>
-									<integer>0</integer>
+									<integer>1</integer>
 									<key>Privileges</key>
 									<integer>493</integer>
 									<key>Type</key>
@@ -156,7 +222,7 @@
 									<key>Path</key>
 									<string>Internet Plug-Ins</string>
 									<key>Path Type</key>
-									<integer>0</integer>
+									<integer>1</integer>
 									<key>Privileges</key>
 									<integer>493</integer>
 									<key>Type</key>
@@ -172,7 +238,7 @@
 									<key>Path</key>
 									<string>LaunchAgents</string>
 									<key>Path Type</key>
-									<integer>0</integer>
+									<integer>1</integer>
 									<key>Privileges</key>
 									<integer>493</integer>
 									<key>Type</key>
@@ -188,7 +254,7 @@
 									<key>Path</key>
 									<string>LaunchDaemons</string>
 									<key>Path Type</key>
-									<integer>0</integer>
+									<integer>1</integer>
 									<key>Privileges</key>
 									<integer>493</integer>
 									<key>Type</key>
@@ -204,7 +270,7 @@
 									<key>Path</key>
 									<string>PreferencePanes</string>
 									<key>Path Type</key>
-									<integer>0</integer>
+									<integer>1</integer>
 									<key>Privileges</key>
 									<integer>493</integer>
 									<key>Type</key>
@@ -220,7 +286,7 @@
 									<key>Path</key>
 									<string>Preferences</string>
 									<key>Path Type</key>
-									<integer>0</integer>
+									<integer>1</integer>
 									<key>Privileges</key>
 									<integer>493</integer>
 									<key>Type</key>
@@ -236,7 +302,7 @@
 									<key>Path</key>
 									<string>Printers</string>
 									<key>Path Type</key>
-									<integer>0</integer>
+									<integer>1</integer>
 									<key>Privileges</key>
 									<integer>493</integer>
 									<key>Type</key>
@@ -252,7 +318,7 @@
 									<key>Path</key>
 									<string>PrivilegedHelperTools</string>
 									<key>Path Type</key>
-									<integer>0</integer>
+									<integer>1</integer>
 									<key>Privileges</key>
 									<integer>493</integer>
 									<key>Type</key>
@@ -268,23 +334,7 @@
 									<key>Path</key>
 									<string>QuickTime</string>
 									<key>Path Type</key>
-									<integer>0</integer>
-									<key>Privileges</key>
-									<integer>493</integer>
-									<key>Type</key>
 									<integer>1</integer>
-									<key>UID</key>
-									<integer>0</integer>
-								</dict>
-								<dict>
-									<key>Children</key>
-									<array/>
-									<key>GID</key>
-									<integer>0</integer>
-									<key>Path</key>
-									<string>Scripts</string>
-									<key>Path Type</key>
-									<integer>0</integer>
 									<key>Privileges</key>
 									<integer>493</integer>
 									<key>Type</key>
@@ -300,7 +350,23 @@
 									<key>Path</key>
 									<string>Screen Savers</string>
 									<key>Path Type</key>
+									<integer>1</integer>
+									<key>Privileges</key>
+									<integer>493</integer>
+									<key>Type</key>
+									<integer>1</integer>
+									<key>UID</key>
 									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>Children</key>
+									<array/>
+									<key>GID</key>
+									<integer>0</integer>
+									<key>Path</key>
+									<string>Scripts</string>
+									<key>Path Type</key>
+									<integer>1</integer>
 									<key>Privileges</key>
 									<integer>493</integer>
 									<key>Type</key>
@@ -316,7 +382,7 @@
 									<key>Path</key>
 									<string>StartupItems</string>
 									<key>Path Type</key>
-									<integer>0</integer>
+									<integer>1</integer>
 									<key>Privileges</key>
 									<integer>493</integer>
 									<key>Type</key>
@@ -330,7 +396,7 @@
 							<key>Path</key>
 							<string>Library</string>
 							<key>Path Type</key>
-							<integer>0</integer>
+							<integer>1</integer>
 							<key>Privileges</key>
 							<integer>493</integer>
 							<key>Type</key>
@@ -352,7 +418,7 @@
 											<key>Path</key>
 											<string>Extensions</string>
 											<key>Path Type</key>
-											<integer>0</integer>
+											<integer>1</integer>
 											<key>Privileges</key>
 											<integer>493</integer>
 											<key>Type</key>
@@ -366,7 +432,7 @@
 									<key>Path</key>
 									<string>Library</string>
 									<key>Path Type</key>
-									<integer>0</integer>
+									<integer>1</integer>
 									<key>Privileges</key>
 									<integer>493</integer>
 									<key>Type</key>
@@ -380,7 +446,7 @@
 							<key>Path</key>
 							<string>System</string>
 							<key>Path Type</key>
-							<integer>0</integer>
+							<integer>1</integer>
 							<key>Privileges</key>
 							<integer>493</integer>
 							<key>Type</key>
@@ -394,7 +460,7 @@
 					<key>Path</key>
 					<string>/</string>
 					<key>Path Type</key>
-					<integer>0</integer>
+					<integer>1</integer>
 					<key>Privileges</key>
 					<integer>493</integer>
 					<key>Type</key>
@@ -403,13 +469,61 @@
 					<integer>0</integer>
 				</dict>
 				<key>IFPkgFlagDefaultLocation</key>
-				<string>/</string>
+				<string>/Applications</string>
 				<key>Imported Package</key>
 				<false/>
 				<key>Package Path</key>
 				<string></string>
 				<key>Split Forks</key>
 				<true/>
+			</dict>
+			<key>Plugins</key>
+			<dict>
+				<key>PluginsList</key>
+				<array>
+					<dict>
+						<key>Path</key>
+						<string>Introduction</string>
+						<key>Type</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>Path</key>
+						<string>ReadMe</string>
+						<key>Type</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>Path</key>
+						<string>License</string>
+						<key>Type</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>Path</key>
+						<string>Target</string>
+						<key>Type</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>Path</key>
+						<string>PackageSelection</string>
+						<key>Type</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>Path</key>
+						<string>Install</string>
+						<key>Type</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>Path</key>
+						<string>FinishUp</string>
+						<key>Type</key>
+						<integer>0</integer>
+					</dict>
+				</array>
 			</dict>
 			<key>Scripts</key>
 			<dict>
@@ -475,33 +589,35 @@
 						<key>IFPkgDescriptionDeleteWarning</key>
 						<string></string>
 						<key>IFPkgDescriptionDescription</key>
-						<string></string>
+						<string>This will install the Indie RPG Game "Star Story" created by Jeroen Broks.</string>
 						<key>IFPkgDescriptionTitle</key>
-						<string>Star Story - Demo</string>
+						<string>Star Story </string>
 						<key>IFPkgDescriptionVersion</key>
-						<string>1.0</string>
+						<string>16.11.25</string>
 					</dict>
 				</dict>
 				<key>Display Information</key>
 				<dict>
 					<key>CFBundleGetInfoString</key>
-					<string>Star Story - Demo 1.0 Copyrights © 2015 My Great Company</string>
+					<string>Star Story  Copyrights © 2015, 2016 Jeroen Petrus Broks</string>
+					<key>CFBundleIconFile</key>
+					<string></string>
+					<key>CFBundleIconFile Path Type</key>
+					<integer>1</integer>
 					<key>CFBundleIdentifier</key>
-					<string>com.mygreatcompany.pkg.Star Story - Demo</string>
+					<string>com.mygreatcompany.pkg.Star Story</string>
 					<key>CFBundleName</key>
-					<string>Star Story - Demo</string>
+					<string>Star Story </string>
 					<key>CFBundleShortVersionString</key>
-					<string>1.0</string>
+					<string>16.11.25</string>
 				</dict>
 				<key>Options</key>
 				<dict>
 					<key>IFPkgFlagAllowBackRev</key>
 					<false/>
 					<key>IFPkgFlagAuthorizationAction</key>
-					<integer>0</integer>
+					<integer>1</integer>
 					<key>IFPkgFlagFollowLinks</key>
-					<false/>
-					<key>IFPkgFlagInstallFat</key>
 					<false/>
 					<key>IFPkgFlagIsRequired</key>
 					<false/>
@@ -519,16 +635,16 @@
 				<key>Version</key>
 				<dict>
 					<key>IFMajorVersion</key>
-					<integer>1</integer>
+					<integer>16</integer>
 					<key>IFMinorVersion</key>
-					<integer>0</integer>
+					<integer>11</integer>
 				</dict>
 			</dict>
 		</dict>
 		<key>IFPkgFlagPackageSelection</key>
 		<integer>0</integer>
 		<key>Name</key>
-		<string>Star Story - Demo</string>
+		<string>Star Story </string>
 		<key>Status</key>
 		<integer>1</integer>
 		<key>Type</key>
@@ -550,6 +666,8 @@
 		<true/>
 		<key>Remove .pbdevelopment</key>
 		<true/>
+		<key>Remove CVS</key>
+		<false/>
 	</dict>
 </dict>
 </plist>
