@@ -344,11 +344,11 @@ function LevelUp(ch,pos)
    RPGStat.Points(ch,"EXP").Have=0
    if RPGStat.Points(ch,"HP").Have>0 then
       ({ 
-	  [1] = function() RPGStat.Points(ch,"HP").Have = RPGStat.Points(ch,"HP").Maximum RPGStat.Points(ch,"AP").Have = RPGStat.Points(ch,"AP").Maximum end,
+	    [1] = function() RPGStat.Points(ch,"HP").Have = RPGStat.Points(ch,"HP").Maximum RPGStat.Points(ch,"AP").Have = RPGStat.Points(ch,"AP").Maximum end,
       [2] = function() RPGStat.Points(ch,"HP").Have = RPGStat.Points(ch,"HP").Maximum end,
       [3] = function() end })[skill](ch)
 	end
-   if RPGStat.Stat(ch,"Level")>=MaxLevel then RGPStat.Points(ch,EXP).Maximum=0 end   
+   if RPGStat.Stat(ch,"Level")>=MaxLevel then RPGStat.Points(ch,EXP).Maximum=0 end   
    ;(XCharLvUp[ch] or function() end)()
    MaxLevelAchievements()
 end   
