@@ -32,42 +32,17 @@
   
  **********************************************
  
-version: 16.10.19
+version: 16.11.26
 ]]
 
 -- [[ @USE /Script/Use/Maps/Gen/Schuif.lua ]]
 
 -- @USEDIR Script/Use/Maps/AltArena
+-- @USEDIR Script/Use/Maps/Excalibur
 
 chats  = 7
 
 center = 400
-
-Names = {
-            ['#000'] = 'Secret Hangar',
-            ['#001'] = 'Hidden layer',
-            ['#002'] = 'Security department',
-            ['#003'] = 'Lady of the Lake - Artificial Park',
-            ['#004'] = 'Coder Section - LAURA',
-            ['#005'] = 'Residential Area - Galahad',
-            ['#006'] = 'Junk collection area - Donald',
-            ['#007'] = 'Camelot - Town Square',            
-            ['#008'] = 'Coder Section - BLITZ',
-            ['#009'] = 'Maintenance Deck',
-            ['#010'] = 'Residential Area - Guinevere',
-            ['#011'] = "Crystal's bar",
-            ['#012'] = 'Junk collection area - Geert',
-            ['#013'] = 'Casino',
-            ['#014'] = 'Weapon Storage',
-            ['#015'] = 'Medical department',
-            ['#016'] = 'Coder Section - LUA',
-            ['#017'] = 'Playground',
-            ['#018'] = 'Junk collection area - Marine',
-            ['#019'] = 'Staff department',
-            ['#020'] = 'High Security Department',
-            SECRET1  = 'Secret Science Lab',
-            SECRET2  = 'Secret labyrinth of "the Mole"'
-        }; names=Names
         
 keycolors = {RED = {255,0,0}, GREEN={0,255,0},BLUE={0,0,255},GOLD={255,180,0}}        
 
@@ -107,6 +82,44 @@ floorflow = {
                             o.Y = o.Y - 1                            
                           end                 
             }     
+            
+            
+function KeysFromSys()
+     local ret = {}
+     for i=0,22 do
+         local lay = "#"..right("00"..i,3)
+         if i>20 then lay = "SECRET"..right(i,1) end
+         for c in each({'RED','GREEN','BLUE','GOLD'}) do
+             if CVV("&EXCALIBUR.KEYS."..c.."["..lay.."]") then  
+                ret[lay] = ret[lay] or {}
+                ret[lay][c] = true
+             end
+         end       
+     end
+     return ret         
+end
+            
+            
+function FixFloor(a)
+        local i = Sys.Val(a)
+        local b = "#"..right('00'..(i),3)
+        --[[
+        local data = {keys = keycards}
+        data.keys[b] = data.keys[b] or {}
+        data.keys[b].RED=true
+        data.keys[b].BLUE=true
+        data.keys[b].GOLD=true
+        data.keys[b].GREEN=true
+        ]]
+        Var.D("&EXCALIBUR.KEYS.RED["..b.."]",'TRUE')
+        Var.D("&EXCALIBUR.KEYS.GREEN["..b.."]",'TRUE')
+        Var.D("&EXCALIBUR.KEYS.BLUE["..b.."]",'TRUE')
+        Var.D("&EXCALIBUR.KEYS.GOLD["..b.."]",'TRUE')
+        CSay("Fixed floor: "..b.." (I hope)")
+        --
+        keycards = KeysFromSys()
+        CSay("keybase now is: "..serialize("keys",keycards))
+end
             
 function UnLockEmgSave()
   --Var.Clear('&BLOCK.EMERGENCY.SAVE')
@@ -151,6 +164,7 @@ function GetKey(pname)
   assert(keycolors[Name],"No keycard with color "..Name)
   MINI(Name.." keycard found",keycolors[Name][1],keycolors[Name][2],keycolors[Name][3])
   keycards[lay][Name] = true
+  Var.D("&EXCALIBUR.KEYS."..Name.."["..lay.."]",'TRUE')  
   Maps.Obj.Kill("NPC_"..Name,1)
   -- Var.D(keyinsysvar,serialize('ret',keycards))
   MS.LN_Run("SFX","Script/Subroutines/SFX.lua","SFX",'Audio/Sfx/Yeah/Yeah.ogg'..";no")
@@ -193,13 +207,13 @@ end
 
 function Opslaan()
    Loading()
-   Var.D(keyinsysvar,serialize('ret',keycards))
+   --Var.D(keyinsysvar,serialize('ret',keycards))
    GotoSave()
 end
 
 function TerugNaarHawk()
    Loading()
-   Var.D(keyinsysvar,serialize('ret',keycards))
+   --Var.D(keyinsysvar,serialize('ret',keycards))
    if left(Maps.LayerCodeName,1)~="#" then return MapText('NOHAWK') end
    local node = "EXN"..math.ceil(tonumber(right(Maps.LayerCodeName,3))/5)
    MS.LN_Run("TRANS","Script/SubRoutines/Transporter.lua","ReDefNode","F"..right(Maps.LayerCodeName,3)..";"..Maps.CodeName..";Excalibur;"..Names[Maps.LayerCodeName]..";"..Maps.LayerCodeName..";"..node)
@@ -402,7 +416,7 @@ function PostBoss005()
 end  
 
 function GoHome() 
-  Var.D(keyinsysvar,serialize('ret',keycards))
+  --Var.D(keyinsysvar,serialize('ret',keycards))
   LoadMap('Excalibur_Home')
   SpawnPlayer('Voordeur')
   Award('BONUS_HOME')
@@ -585,12 +599,44 @@ function ToGoddess()
    Maps.GotoLayer("#020")
    SpawnPlayer("Start")
 end
+
+function OldSaveToNew(kc)
+   Image.Cls()
+   White()
+   Image.NoFont()
+   Image.DText("I am now converting the old bugged keycard system into the new.",0,0)
+   Image.DText("This may take time, please hang on",0,15)
+   Image.Flip()
+   Var.Clear(keyinsysvar) -- Away with you!
+   local r = Sys.Val(right(Maps.LayerCodeName))
+   CSay("Old save to new")
+   CSay("Current floor: "..r)
+   local v = { [true]='TRUE', [false]='FALSE'}
+   CSay(serialize('keycards',keycards))
+   for i=0,22 do
+       local lay = "#"..right("00"..i,3)
+       if i>20 then lay = "SECRET"..right(i,1) end
+       keycards = keycards or {}
+       keycards[lay] = keycards[lay] or {}
+       local ck = keycards[lay]
+       for c in each({'RED','GREEN','BLUE','GOLD'}) do
+           Var.D("&EXCALIBUR.KEYS."..c.."["..lay.."]",v[ck[c]==true])
+           CSay("Floor: "..lay.." "..c.." = "..v[ck[c]==true])
+       end
+   end    
+   if CVV('&DONE.EXCALIBUR.FINAL.SECRET.LAB') then Var.D("&EXCALIBUR.KEYS.RED[SECRET2]",'TRUE') end
+end
+
   
 function GALE_OnLoad()
    --if not (Done("&DONE.INIT.EXCALIBUR.KEYS")) then initkeycards() end
    --CSay(serialize('keycards',keycards))
-   local getkeycard = loadstring(CVV(keyinsysvar).."\n\nreturn ret")
-   keycards = (getkeycard or function() Sys.Error("Error generated in getting keycard data") end)()
+   if CVVN(keyinsysvar) then
+      local getkeycard = loadstring(CVV(keyinsysvar).."\n\nreturn ret")
+      keycards = (getkeycard or function() Sys.Error("Error generated in getting keycard data") end)()
+      OldSaveToNew(keycards)
+   end
+   keycards = KeysFromSys()
    MS.LoadNew("PARTY","Script/Subroutines/Party.lua")
    if (CVV("&JOINED.JOHNSON")) then
       Party("Wendicka","Crystal","Johnson","Yirl","Foxy","Xenobi")

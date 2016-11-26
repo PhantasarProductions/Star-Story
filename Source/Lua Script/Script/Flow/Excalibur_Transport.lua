@@ -32,21 +32,28 @@
   
  **********************************************
  
-version: 16.09.01
+version: 16.11.26
 ]]
+
+-- @USEDIR Script/Use/Maps/Excalibur
+
 function GetMapLocks(d)
    d.access = { ['#001']=true}
    for i=1,19 do
       local a = i + 1
       local idk,ida = "#"..right('00'..i,3),"#"..right('00'..(a),3)
       -- CSay(serialize('Onzin',d))
-      d.access[ida] = d.keys[idk] and d.keys[idk].RED
+      -- d.access[ida] = d.keys[idk] and d.keys[idk].RED
+      d.access[ida] = CVV("&EXCALIBUR.KEYS.RED["..idk.."]")
+      CSay("Access: "..ida.." is "..sval(d.access[ida]))
    end
+      d.access['#001'] = true
 end
 
 function TransferVarsFromMap()
-   local getmapdata = loadstring(Var.C('$EXCALIBURTRANSPORT'))
-   data = getmapdata()
+   -- local getmapdata = loadstring(Var.C('$EXCALIBURTRANSPORT'))
+   --data = getmapdata()
+   data = { locs = Names }
    GetMapLocks(data)
 end
 
@@ -59,6 +66,9 @@ function MAIN_FLOW()
   Image.Cls()
   -- Rooms
   SetFont('ExFinal')
+  local rnum 
+  if left(Maps.LayerCodeName,1)=="#" then rnum = Sys.Val(right(Maps.LayerCodeName,3)) else rnum=0 end
+  --White(); Image.DText(rnum,0,0)
   for i=1,20 do
       a = '#'..right('00'..i,3)
       if i<=10 then
@@ -78,11 +88,25 @@ function MAIN_FLOW()
            Image.Color(0,180,255)
         end
         Image.DText(data.locs[a] or 'Unnamed area '..a,x,y)
-      --[[               
+      elseif i<=rnum then  
+        Image.Color(80,80,80)
+        Image.DText('# Errorlock - Fixing #',x,y)
+        local b = "#"..right('00'..(i))
+        --[[
+        data.keys = data.keys or {}
+        data.keys[b] = data.keys[b] or {}
+        data.keys[b].RED=true
+        data.keys[b].BLUE=true
+        data.keys[b].GOLD=true
+        data.keys[b].GREEN=true
+        ]]
+        data.access[a] = true
+        MS.Run("MAP","FixFloor",i)
+        MS.Run("MAP","FixFloor",i-1)
+        -- GetMapLocks(data)        
       else        
         Image.Color(80,80,80)
         Image.DText('# Area Locked #',x,y)
-      ]]  
       end  
   end
   -- Confirm
