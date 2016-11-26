@@ -1,6 +1,6 @@
 --[[
   Party.lua
-  Version: 16.08.03
+  Version: 16.11.26
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -322,6 +322,21 @@ RPGStat.Points(ch,"HP").Have = RPGStat.Points(ch,"HP").Maximum
 RPGStat.Points(ch,"AP").Have = RPGStat.Points(ch,"AP").Maximum
 end
 
+function MaxLevelAchievements()
+     -- local chl = { Wendicka = "WENDICKA", UniWendicka="WENDICKA", Crystal="CRYSTAL", UniCrystal="CRYSTAL", Briggs=false, ExHuRU="EXHURU", Yirl="Yirl", Foxy="FOXY", Xenobi="XENOBI", Rolf="EXHURU", Johnson="EXHURU"}
+     -- for chpartykey,chachkey in pairs(chl) do
+     -- Scratch that, due to the linking system I can do this better.
+     for ch in each({"Wendicka","Crystal","ExHuRU","Yirl","Foxy","Xenobi"}) do   
+         if RPGChar.CharExists(ch)==1 then
+            if RPGStat(ch,"Level")==10000 then Award("MAXLVL_"..ch) end
+         elseif RPGChar.CharExists("Uni"..ch)==1 then
+            if RPGStat("Uni"..ch,"Level")==10000 then Award("MAXLVL_"..ch) end
+         end   
+     end
+     return "Done"
+end
+
+
 function LevelUp(ch,pos)
    local lv = RPGStat.Stat(ch,"Level")
    RPGStat.DefStat(ch,"Level",lv+1) 
@@ -335,6 +350,7 @@ function LevelUp(ch,pos)
 	end
    if RPGStat.Stat(ch,"Level")>=MaxLevel then RGPStat.Points(ch,EXP).Maximum=0 end   
    ;(XCharLvUp[ch] or function() end)()
+   MaxLevelAchevements()
 end   
 
 
@@ -407,9 +423,11 @@ function ShowMiniPic(ch,ppos)
 end
 
 
+
 function ShowParty()
 local a,chk
 local ep,epm
+initcheckmaxlevelsdone = initcheckmaxlevelsdone or MaxLevelAchevements()
 White()
 Image.Show(statusbar,0,500)
 -- First show all pictures, the data must be done in a separate loop or the pictures will overlap the data, and the data is more important than the pics.

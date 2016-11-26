@@ -461,16 +461,20 @@ function LEVELUP(...)
   end  
 end       
 
-function MULTILEVELUP(num,...) 
+function MULTILEVELUP(ar)
+    local a = mysplit(ar or "2",",")
+    local num = tonum(a[1] or 2) or 2
+    local argument = {}
+    for i=2,#a do argument[i-1] = a[i] end  
     for i=1,tonumber(num) or 2 do
          CSay("Level Up ("..i.."/"..num..")");
-         (({ function (a) LEVELUP(arg[1]) end,
-             function (a) LEVELUP(arg[1],arg[2]) end,
-             function (a) LEVELUP(arg[1],arg[2],arg[3]) end,
-             function (a) LEVELUP(arg[1],arg[2],arg[3],arg[4]) end,
-             function (a) LEVELUP(arg[1],arg[2],arg[3],arg[4],arg[5]) end,
-             function (a) LEVELUP(arg[1],arg[2],arg[3],arg[4],arg[5],arg[6]) end,
-         })[#arg] or function() LEVELUP() end)(arg)
+         (({ function (a) LEVELUP(argument[1]) end,
+             function (a) LEVELUP(argument[1],argument[2]) end,
+             function (a) LEVELUP(argument[1],argument[2],argument[3]) end,
+             function (a) LEVELUP(argument[1],argument[2],argument[3],argument[4]) end,
+             function (a) LEVELUP(argument[1],argument[2],argument[3],argument[4],argument[5]) end,
+             function (a) LEVELUP(argument[1],argument[2],argument[3],argument[4],argument[5],argument[6]) end,
+         })[#argument] or function() LEVELUP() end)(argument)
     end
 end    
 
