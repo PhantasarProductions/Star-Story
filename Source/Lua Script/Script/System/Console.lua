@@ -1,6 +1,6 @@
 --[[
   Console.lua
-  Version: 16.11.25
+  Version: 16.11.26
   Copyright (C) 2015, 2016 Jeroen Petrus Broks
   
   ===========================
@@ -463,7 +463,7 @@ end
 
 function MULTILEVELUP(ar)
     local a = mysplit(ar or "2",",")
-    local num = tonum(a[1] or 2) or 2
+    local num = tonumber(a[1] or 2) or 2
     local argument = {}
     for i=2,#a do argument[i-1] = a[i] end  
     for i=1,tonumber(num) or 2 do
