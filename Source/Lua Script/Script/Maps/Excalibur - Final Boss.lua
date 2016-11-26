@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.02
+version: 16.11.26
 ]]
 -- @USE /Script/Use/Maps/Gen/SchuifNext.lua
 
@@ -140,6 +140,7 @@ function PostBoss()
   Maps.Obj.Kill("NPC_Goddess")
   MapText("POSTBOSS3")
   Maps.CamY=1600
+  MapText('TRIAL')
   LoadMap("Excalibur - Post Game")
   SpawnPlayer("Start")
   SetActive("Wendicka")

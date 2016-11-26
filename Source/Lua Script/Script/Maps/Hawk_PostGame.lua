@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.09.22
+version: 16.11.26
 ]]
 
 function CLICK_ARRIVAL_Terminal()
@@ -143,7 +143,7 @@ function StartNewGamePlus()
       CSay("Wendicka Casual/Uniform - Linking: "..s)
   end
   -- Count new cycle 
-  ngpcount = ngpcount + 1
+  if ngpcount<10 then ngpcount = ngpcount + 1 end
   Var.D('%NEWGAMEPLUS',ngpcount)
   -- Go back to the Yaqirpa
   MapShow("ShowNothing!!!")
