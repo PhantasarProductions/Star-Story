@@ -328,9 +328,9 @@ function MaxLevelAchievements()
      -- Scratch that, due to the linking system I can do this better.
      for ch in each({"Wendicka","Crystal","ExHuRU","Yirl","Foxy","Xenobi"}) do   
          if RPGChar.CharExists(ch)==1 then
-            if RPGStat(ch,"Level")==10000 then Award("MAXLVL_"..ch) end
+            if RPGStat.Stat(ch,"Level")==10000 then Award("MAXLVL_"..ch) end
          elseif RPGChar.CharExists("Uni"..ch)==1 then
-            if RPGStat("Uni"..ch,"Level")==10000 then Award("MAXLVL_"..ch) end
+            if RPGStat.Stat("Uni"..ch,"Level")==10000 then Award("MAXLVL_"..ch) end
          end   
      end
      return "Done"
