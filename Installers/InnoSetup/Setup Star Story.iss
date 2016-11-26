@@ -13,7 +13,7 @@
 ; Several changes are very likely to be made to this file depending on the upcoming release. (I guess that was pretty obvious).
 
 #define MyAppName "Star Story"
-#define MyAppVersion "?.?"
+#define MyAppVersion "16.11.26"
 #define MyAppPublisher "Jeroen 'Phantasar Productions' Broks"
 #define MyAppURL "http://starstory.sourceforge.net"
 #define MyAppExeName "Star Story.exe"
@@ -33,10 +33,10 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppName}
 DisableDirPage=yes
 DefaultGroupName={#MyAppName}
-LicenseFile=Z:\volumes\irravonia\Projects\BlitzMax\JCR6+\LAURA II\Design\Star Story\GitHub\clone\Star-Story\License\License.rtf
-OutputDir=Z:\Volumes\Irravonia\Releases\Star Story\Windows\Installer
+LicenseFile=Z:\Volumes\Scyndi\Projects\Applications\BlitzMax\JCR6+\LAURA II\Design\Star Story\GitHub\clone\Star-Story\License\License.rtf
+OutputDir=Z:\Volumes\Scyndi\Releases\Star Story\Windows\FullGameInstaller
 OutputBaseFilename=Setup_StarStory_Demo_WithoutMusic
-SetupIconFile=Z:\volumes\irravonia\Projects\BlitzMax\JCR6+\LAURA II\Design\Star Story\GitHub\clone\Star-Story\Installers\InnoSetup\Wendicka.ico
+SetupIconFile=Z:\Volumes\Scyndi\Projects\Applications\BlitzMax\JCR6+\LAURA II\Design\Star Story\GitHub\clone\Star-Story\Installers\InnoSetup\Wendicka.ico
 Compression=lzma
 SolidCompression=yes
 
@@ -48,18 +48,19 @@ Name: "dutch"; MessagesFile: "compiler:Languages\Dutch.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-; The launcher. As such also the file being called from the start menu.
-Source: "Z:\volumes\irravonia\Releases\Star Story\Windows\Star Story.exe"; DestDir: "{app}"; Flags: ignoreversion         
-; The engine. Should only be called by the laucher, as such no links will be made to it.
-Source: "Z:\volumes\irravonia\Releases\Star Story\Windows\LAURA2.exe"; DestDir: "{app}"; Flags: ignoreversion
-; Initial data the engine and the launcher need.
-Source: "Z:\volumes\irravonia\Releases\Star Story\Windows\Init.ini"; DestDir: "{app}"; Flags: ignoreversion
-; The JCR files containing all the scripts and assets of the game.
-;Source: "Z:\volumes\irravonia\Releases\Star Story\OSX\Star Story.app\Contents\Resources\StarStory_Music.JCR"; DestDir: "{app}"; Flags: ignoreversion                                                           
-Source: "Z:\volumes\irravonia\Releases\Star Story\OSX\Star Story.app\Contents\Resources\StarStory.JCR"; DestDir: "{app}"; Flags: ignoreversion
-; This file is needed to contact GameJolt, however it will only be provided with stable releases and not on the repository. 
-Source: "Z:\volumes\irravonia\Releases\Star Story\OSX\Star Story.app\Contents\Resources\GameJolt.net"; DestDir: "{app}"; Flags: ignoreversion
-; NOTE: Don't use "Flags: ignoreversion" on any shared system files
+; Launcher
+Source: "Z:\Volumes\Scyndi\Releases\Star Story\Windows\Star Story.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "Z:\Volumes\Scyndi\Releases\Star Story\Windows\Init.Ini"; DestDir: "{app}"; Flags: ignoreversion
+; Engine
+Source: "Z:\Volumes\Scyndi\Releases\Star Story\Windows\LAURA2.exe"; DestDir: "{app}"; Flags: ignoreversion
+; Secu file for GameJolt and Anna
+Source: "Z:\Volumes\Scyndi\Releases\Star Story\OSX\Star Story.app\Contents\Resources\GameJolt.net"; DestDir: "{app}"; Flags: ignoreversion
+; Scripts and assets
+Source: "Z:\Volumes\Scyndi\Releases\Star Story\OSX\Star Story.app\Contents\Resources\StarStory_FullGame_Music.JCR"; DestDir: "{app}"; Flags: ignoreversion
+Source: "Z:\Volumes\Scyndi\Releases\Star Story\OSX\Star Story.app\Contents\Resources\StarStory_FullGame.JCR"; DestDir: "{app}"; Flags: ignoreversion
+Source: "Z:\Volumes\Scyndi\Releases\Star Story\OSX\Star Story.app\Contents\Resources\StarStory_Music.JCR"; DestDir: "{app}"; Flags: ignoreversion
+Source: "Z:\Volumes\Scyndi\Releases\Star Story\OSX\Star Story.app\Contents\Resources\StarStory.JCR"; DestDir: "{app}"; Flags: ignoreversion
+
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
