@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.11.13
+version: 16.11.26
 ]]
 
 
@@ -43,6 +43,10 @@ price = {} -- This variable may not be saved, due to prices changing during deve
 items = {}
 chpointer = 'MenuCharPointer' Image.HotCenter(chpointer)
 buyicons = {}
+
+
+imgup   = imgup   or Image.Load("GFX/Save/Up.png")
+imgdown = imgdown or Image.Load("GFX/Save/Down.png")
 
 
 function cpos(c)
@@ -138,6 +142,8 @@ function GenerateStock()
 end
 
 function Bye()
+  Image.Free(imgup)
+  Image.Free(imgdown)
 	LAURA.Flow("FIELD")
 end
 
@@ -150,11 +156,16 @@ function Buy(tag,data)
 	end
 end
 
+
+
 function MAIN_FLOW()
     local item,y
     local mx,my = MouseCoords()
     local cash = CVV("%SHILDERS")
     local icol,iprc
+    local PMMax = 0
+    imgup   = imgup   or Image.Load("GFX/Save/Up.png")
+    imgdown = imgdown or Image.Load("GFX/Save/Down.png")
     Image.Cls()
     SetFont('PhantasarWorld')
     Red()
@@ -167,6 +178,7 @@ function MAIN_FLOW()
     for idx,itm in ipairs(stock) do
         item = items[itm]
         y = (100 + (idx*20)) - PM 
+        if y+PM>PMMax-20 then PMMax = y+PM+20 end
         White()
         ItemIcon("ITM_"..itm,60,y,20)
         --CSay(itm.." > "..sval(price[itm].."; "..sval(cash)))
@@ -190,6 +202,24 @@ function MAIN_FLOW()
         Image.DText(price[itm].." shilders",780,y,1,2)        
     end
     Image.ViewPort(0,0,800,600)
+    if PM>0 then
+       if mx>700 and my<35 then 
+          white()
+          if INP.MouseD(1)==1 then PM=PM-1 end
+       else
+          Image.Color(100,100,100)
+       end
+       Image.Show(imgup,700,10)
+    end
+    if PM<PMMax then
+       if mx>700 and my>400 and my<435 then 
+          white()
+          if INP.MouseD(1)==1 then PM=PM+1 end
+       else
+          Image.Color(100,100,100)
+       end
+       Image.Show(imgdown,700,400)
+    end              
     --local pcharn
     --CSay('-- checking phantasar store click ---')
     for i=0,5 do 
