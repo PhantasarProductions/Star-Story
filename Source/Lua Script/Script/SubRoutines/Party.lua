@@ -350,7 +350,7 @@ function LevelUp(ch,pos)
 	end
    if RPGStat.Stat(ch,"Level")>=MaxLevel then RGPStat.Points(ch,EXP).Maximum=0 end   
    ;(XCharLvUp[ch] or function() end)()
-   MaxLevelAchevements()
+   MaxLevelAchievements()
 end   
 
 
@@ -427,7 +427,7 @@ end
 function ShowParty()
 local a,chk
 local ep,epm
-initcheckmaxlevelsdone = initcheckmaxlevelsdone or MaxLevelAchevements()
+initcheckmaxlevelsdone = initcheckmaxlevelsdone or MaxLevelAchievements()
 White()
 Image.Show(statusbar,0,500)
 -- First show all pictures, the data must be done in a separate loop or the pictures will overlap the data, and the data is more important than the pics.
