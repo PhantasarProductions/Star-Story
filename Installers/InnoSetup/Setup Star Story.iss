@@ -5,7 +5,7 @@
 ; The game is originally created on a mac, basically Windows has only been used for compiling the game itself and testing the game.
 ; WINE for Mac does support using Inno Setup 5 which was used for this script, and thus the installer itself was created using WINE.
 ; WINE uses an 'fake C: drive' to store the stuff a normal Windows App would and the "real" Mac file system is within WINE assigned to the Z: drive
-; As such the USB Hard Drive on which the project was stored was codenamed "irravonia" and there we got the the origin of the "stange looking path names"
+; As such the USB Hard Drive on which the project was stored was codenamed "Scyndi" and there we got the the origin of the "stange looking path names"
 
 ; The GameJolt.net file is not present on this GitHub repository and will never be either. It is only released with official stable game releases for security reasons.
 ; By the way I can already tell you this, it is pointless the include the file with modified versions of the game, or games of a different version, the file will simply fail to work.
@@ -35,7 +35,7 @@ DisableDirPage=yes
 DefaultGroupName={#MyAppName}
 LicenseFile=Z:\Volumes\Scyndi\Projects\Applications\BlitzMax\JCR6+\LAURA II\Design\Star Story\GitHub\clone\Star-Story\License\License.rtf
 OutputDir=Z:\Volumes\Scyndi\Releases\Star Story\Windows\FullGameInstaller
-OutputBaseFilename=Setup_StarStory_Demo_WithoutMusic
+OutputBaseFilename=Setup_StarStory_FullGame
 SetupIconFile=Z:\Volumes\Scyndi\Projects\Applications\BlitzMax\JCR6+\LAURA II\Design\Star Story\GitHub\clone\Star-Story\Installers\InnoSetup\Wendicka.ico
 Compression=lzma
 SolidCompression=yes
