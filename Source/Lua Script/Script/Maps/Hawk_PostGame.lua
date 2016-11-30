@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.11.26
+version: 16.11.30
 ]]
 
 function CLICK_ARRIVAL_Terminal()
@@ -164,6 +164,10 @@ function StartNewGamePlus()
   Maps.CamY=1360
   Maps.Draw()
   Flip()
+  for ch in each({'Wendicka','Crystal','Briggs'}) do
+      local p = RPGChar.Points(ch,"HP")
+      p.Have = p.Maximum
+  end
   MapText('NEWGAMEPLUS')
   -- Sys.Error('Not everything for the New Game+ has yet been set up')  
 end
