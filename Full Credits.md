@@ -1022,8 +1022,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/JINC/Big/BestiaryData.lua
     1. Script: Script/JINC/Big/Credits.lua
     1. General Data: Data/LvStats/Briggs/26
-    1. Script: Script/JINC/World/Nizozemska.lua
     1. General Data: Data/LvStats/Briggs/27
+    1. Script: Script/JINC/World/Nizozemska.lua
     1. Script: Script/JINC/World/Phantasar.lua
     1. Script: Script/External/SpellAni/Thriller.lua
     1. General Data: Data/LvStats/Briggs/28
@@ -1212,8 +1212,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. General Data: Data/LvStats/Briggs/88
     1. Script: Script/JINC/Foes/Goddess/Add_Trq.lua
     1. Script: Script/JINC/Foes/Goddess/Add_BlockGun.lua
-    1. Script: Script/JINC/Foes/Goddess/Add_ConfuseGun.lua
     1. General Data: Data/LvStats/Briggs/89
+    1. Script: Script/JINC/Foes/Goddess/Add_ConfuseGun.lua
     1. General Data: Data/LvStats/Briggs/9
     1. General Data: Data/LvStats/Briggs/90
     1. General Data: Data/LvStats/Briggs/91

@@ -164,7 +164,7 @@ function StartNewGamePlus()
   Maps.CamY=1360
   Maps.Draw()
   Flip()
-  for ch in each({'Wendicka','Crystal','Briggs'}) do
+  for ch in each({'UniWendicka','UniCrystal','Briggs'}) do
       local p = RPGChar.Points(ch,"HP")
       p.Have = p.Maximum
   end
