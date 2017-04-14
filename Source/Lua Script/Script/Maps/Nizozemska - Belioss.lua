@@ -54,11 +54,13 @@ function NPC_SaveSpot()
 end
 
 function To6()
+   Maps.Obj.Kill("PLAYER")
    Maps.GotoLayer("#006")
    SpawnPlayer("Start")
 end
 
 function To4()
+   Maps.Obj.Kill("PLAYER")
    Maps.GotoLayer('#004')
    SpawnPlayer('From6')
 end
