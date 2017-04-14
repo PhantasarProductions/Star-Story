@@ -2,7 +2,7 @@
 **********************************************
   
   Nizozemska - Belioss.lua
-  (c) Jeroen Broks, 2016, All Rights Reserved.
+  (c) Jeroen Broks, 2016, 2017, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.05.22
+version: 17.04.14
 ]]
 
 -- @USE /Script/Use/Maps/Gen/Next.lua
@@ -59,7 +59,7 @@ function To6()
 end
 
 function To4()
-   Maps.GotoPlayer('#004')
+   Maps.GotoLayer('#004')
    SpawnPlayer('From6')
 end
 

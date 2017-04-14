@@ -1,7 +1,7 @@
 --[[
   A few mathematical functions.lua
-  
-  version: 16.09.19
+  A few math functions for Lua
+  version: 16.12.17
   Copyright (C) 2015, 2016 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages

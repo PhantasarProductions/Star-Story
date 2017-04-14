@@ -485,6 +485,7 @@
 1. Script/JINC/Foes/Boss/FireSpiderYoung.lua
 1. Script/JINC/Foes/Boss/GiantSnake.lua
 1. Script/JINC/Foes/Boss/Gold Killer Droid.lua
+1. Script/JINC/Foes/Boss/Harry1.lua
 1. Script/JINC/Foes/Boss/HWSNBN.lua
 1. Script/JINC/Foes/Boss/LichKing.lua
 1. Script/JINC/Foes/Boss/Mid-Boss.lua
@@ -667,4 +668,4 @@
 1. Script/Libs/tablecontains.lua
 1. Script/Libs/valstr.lua
 
-### Last updated: Wed 30 November 2016; 10:02:42 CET
+### Last updated: Fri 14 April 2017; 15:46:32 CET

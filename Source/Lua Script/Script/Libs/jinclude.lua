@@ -1,7 +1,7 @@
 --[[
   jinclude.lua
-  2013
-  version: 16.09.07
+  
+  version: 16.12.26
   Copyright (C) 2015, 2016 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -19,7 +19,10 @@
 ]]
 -- This function is supposed to read an entire lua function from a JCR file
 -- and return the value it returns.
-function jinc(a,err)
+
+jincdebug = false
+
+function jinc(a,prefix,err)
 local s = ''
 --local bt = JCR6.ReadFile(a)
 CSay("J-Including: "..a) --.." ("..bt..")")
@@ -32,6 +35,7 @@ while JCR6.Eof(bt)==0 do
       end
 JCR6.Close(bt); CSay("End of file") ]]
 s = JCR6.LoadString(a)
+if prefix then s = prefix.."\n"..s end
 -- print("\n\nJ_INCLUDED SCRIPT:\n"..s.."END J_INCLUDE!\n\n")
 --[[ old
 local fn = loadstring(s)
@@ -39,6 +43,12 @@ if not fn then Sys.Error("Included script contains errors","f,jinc;script,"..a..
 if type(fn)~="function" then CSay("WARNING! J-Include did not produce a function. It produced a "..type(fn).." in stead!") end
 return fn()
 ]]
+if jincdebug then
+   local jdb = mysplit(s,"\n")
+   for i,l in ipairs(jdb) do
+       Console.Write(right("         "..i,10).." | "..l,255,255,0)
+   end
+end       
 local ok,fn = pcall(loadstring,s)
 if not ok then Sys.Error("JINC script had a compilation error","f,jinc;script,"..a..";error,"..(fn or "unprintable error")) return nil end
 local ret 

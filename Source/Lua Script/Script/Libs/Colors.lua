@@ -1,7 +1,7 @@
 --[[
   Colors.lua
-  
-  version: 16.09.07
+  Colors
+  version: 16.12.17
   Copyright (C) 2015, 2016 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages

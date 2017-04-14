@@ -1,7 +1,7 @@
 --[[
   BigLion.lua
-  Version: 16.09.12
-  Copyright (C) 2015, 2016 Jeroen Petrus Broks
+  Version: 17.03.03
+  Copyright (C) 2015, 2016, 2017 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -36,7 +36,7 @@
 ]]
 
 
--- Version 16.09.11
+-- Version 16.12.24
 
 
 

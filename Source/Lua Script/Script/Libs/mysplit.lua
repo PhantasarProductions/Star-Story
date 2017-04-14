@@ -25,10 +25,12 @@
 ]]      
 
 function mysplit(inputstr, sep)
+        local i
         if sep == nil then
-                sep = "%s"
+                sep = ","
         end
         local t={} ; i=1
+        if type(inputstr)~="string" then CSay(serialize('inputstr',inputstr)) end
         for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
                 t[i] = str
                 i = i + 1

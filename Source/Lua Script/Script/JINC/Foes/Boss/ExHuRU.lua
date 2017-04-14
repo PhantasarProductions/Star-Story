@@ -2,7 +2,7 @@
 **********************************************
   
   ExHuRU.lua
-  (c) Jeroen Broks, 2016, All Rights Reserved.
+  (c) Jeroen Broks, 2016, 2017, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,11 +32,11 @@
   
  **********************************************
  
-version: 16.09.12
+version: 17.03.03
 ]]
 
 
--- Version 16.09.11
+-- Version 16.12.24
 
 
 

@@ -1,8 +1,8 @@
 --[[
   Kthura.lua
-  
-  version: 16.02.25
-  Copyright (C) 2015, 2016 Jeroen P. Broks
+  Some Kthura features
+  version: 17.03.29
+  Copyright (C) 2015, 2016, 2017 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
   arising from the use of this software.
@@ -17,6 +17,8 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
+
+
 ------------------------------------------------------------------------------
 
 --[[
@@ -70,6 +72,26 @@ return function()
        if tab[i] then return tab[i] end
        end    
 end       
+
+function KthuraLabelEach(kind) -- Iterator. The values returned are editable and the edits will affect the Kthura map, so use with care :)
+-- CSay("Startup Kthura-Each: "..sval(kind))
+local c = Maps.ObjectList.LabelList(kind or "")
+local k
+local tab = {}
+-- CSay("objects to go through: "..c)
+for k=0,c-1 do
+    -- CSay(k.."   "..c)
+    Maps.ObjectList.Pick(k)
+    -- CSay(Maps.ObjectList.MyObject.Kind)
+    table.insert(tab,Maps.ObjectList.MyObject)
+    end
+local i=0    
+return function()
+       i = i + 1
+       if tab[i] then return tab[i] end
+       end    
+end       
+
 
 function SafeKthuraGet(kind,idx) -- This is just based on the script grabber. It only returns a table with data. Changing them won't affect the map at all, and this data is even safe after loading a new map.
 Maps.ObjectList.Start(kind) 

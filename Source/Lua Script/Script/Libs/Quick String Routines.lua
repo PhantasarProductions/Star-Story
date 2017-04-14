@@ -1,8 +1,8 @@
 --[[
   Quick String Routines.lua
-  
-  version: 16.09.07
-  Copyright (C) 2015, 2016 Jeroen P. Broks
+  Quick String Routines
+  version: 17.03.25
+  Copyright (C) 2015, 2016, 2017 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
   arising from the use of this software.
@@ -28,8 +28,15 @@ function left(txt,l)
 return Str.Left(txt,l or 1)
 end
 
-function right(txt,l)
-return Str.Right(txt,l or 1)
+function right(txt,pl)
+  local l = pl or 1
+  if l>0 then
+    return Str.Right(txt,l)
+  elseif l<0 then
+    return Str.Right(txt,#txt+l)
+  else
+    return ""
+  end  
 end
 
 function upper(txt)
