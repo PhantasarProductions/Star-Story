@@ -1004,8 +1004,8 @@ Please note all 3rd party contributions remain copyrighted and licensed by their
     1. Script: Script/Flow/NizozemskaSave.lua
     1. General Data: Data/LvStats/Briggs/2
     1. Script: Script/Flow/NizozemskaSave.lsv
-    1. Script: Script/Flow/World.lua
     1. General Data: Data/LvStats/Briggs/20
+    1. Script: Script/Flow/World.lua
     1. Script: Script/Flow/PhantasarStore.lua
     1. General Data: Data/LvStats/Briggs/21
     1. Script: Script/Flow/PhantasarStore.lsv
