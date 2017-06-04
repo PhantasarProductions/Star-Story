@@ -67,15 +67,34 @@ Const winh = 800
 Const winw = 1200
 Const winh = 800
 ?
+Global deskw=ClientWidth(Desktop())
+Global deskh=ClientHeight(Desktop())
 
-Global Window:TGadget = CreateWindow("Star Story",0,0,winw,winh,Null,window_center|Window_clientcoords|Window_titlebar)
+Global bigenough=deskw>Double(winw)*1.30 And deskh>Double(winh)*1.30
+bigenough=True
+
+Global Window:TGadget 
+If bigenough
+	Window = CreateWindow("Star Story",0,0,winw,winh,Null,window_center|Window_clientcoords|Window_titlebar|Window_Menu)
+Else
+	Window = CreateWindow("Star Story",0,0,deskw,deskh,Null,Window_titlebar|Window_Menu)
+EndIf	
 Global tabber:TGadget = CreateTabber(0,0,ClientWidth(window),ClientHeight(Window),window)
 Global TW = ClientWidth(tabber)
 Global TH = ClientHeight(tabber)
 Global EID
 Global ESource:TGadget
+Global EData
 Global CPanel
 Global allowcanvas,NoCanvas
+
+Global Menu:TGadget = CreateMenu("Go",0,WindowMenu(window))
+CreateMenu "New Game",1,Menu,Key_N,modifier_command
+CreateMenu "Load Game",2,menu,key_L,modifier_command
+?Not MacOS
+CreateMenu "",999,menu
+CreateMenu "Exit",999,menu,key_x,modifier_alt
+?
 
 MGIF_RegisterGadget "Tabber",Tabber
 
@@ -118,10 +137,10 @@ Return tfp.panel
 End Function
 
 Function ShowPanel(C)
-DebugLog "Showing panel: "+C
+'DebugLog "Showing panel: "+C
 For Local ak=0 Until CountList(panels)
 	panel(ak).setshow ak=c
-	DebugLog "Panel("+ak+") = "+Int(c=ak)
+	'DebugLog "Panel("+ak+") = "+Int(c=ak)
 	Next
 End Function
 

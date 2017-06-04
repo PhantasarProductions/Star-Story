@@ -48,6 +48,9 @@ MapInsert myself,"{*myself.resourcedir*}",CurrentDir()+"/"+StripAll(AppFile)+".a
 MapInsert myself,"{*myself.resourcedir*}",CurrentDir() ' In Windows (and perhaps Linux) this is just the same dir, since these OSes don't use the bundle structure Mac works with.
 ?
 
+?debug
+MapInsert myself,"{*myself.resourcedir*}","/Volumes/Scyndi/Releases/Star Story/OSX/Star Story.app/Contents/Resources"
+?
 
 Public
 Global LIni:TIni '= LoadIni(I)

@@ -107,6 +107,7 @@ If FileType(crashf)
 PollEvent
 eid = EventID()
 esource = TGadget(EventSource())
+edata = EventData()
 NoCanvas = SystemFilesCheck()
 Select eid
 	Case event_AppTerminate,event_windowclose
@@ -119,6 +120,13 @@ Select eid
 			EndIf
 	Case event_gadgetpaint
 		allowcanvas = True
+	Case event_menuaction
+		If edata>=999 
+			End
+		Else
+			SelectGadgetItem tabber,edata
+			showpanel edata
+		EndIf	
 	End Select	
 'ALLOWCANVAS = ALLOWCANVAS And (Not NOCANVAS)	
 Flow

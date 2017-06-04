@@ -146,4 +146,17 @@ Type introaction Extends TFPanelBase
 Global introcanvas:TGadget = CreateCanvas(0,0,tw,th,tabber)
 If Not introcanvas Print "Warning! Introcanvas not properly created!"
 
-addxpanel "Intro",New IntroAction,introcanvas
+Global NotBigENough:TGadget = CreatePanel(0,0,tw,th,tabber)
+
+Type AltIntro Extends TFPanelBase
+	Method Flow()
+	End Method
+EndType	
+	
+
+If BigEnough
+	addxpanel "Intro",New IntroAction,introcanvas
+Else
+	Local altp:TGadget = AddPanel("Intro",New AltIntro)
+	CreateLabel "Due to a too small monitor the intro cannot be displayed",0,0,ClientWidth(altp),25,altp
+EndIf	

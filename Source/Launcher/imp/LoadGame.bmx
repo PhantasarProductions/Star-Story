@@ -68,8 +68,12 @@ Type TLoadGamePanel Extends tfpanelbase
 		
 	Method Make()
 	If Month()=12 And Day()>=25 PixCrystal = LoadPixmap(JCR_B(JCR,"GFX/Intro/CrystalXMas.png"))
-	Crystal = CreatePanel(TW-CW,TH-CH,CW,CH,panel)
-	SetGadgetPixmap Crystal,PixCrystal
+	If bigenough
+		Crystal = CreatePanel(TW-CW,TH-CH,CW,CH,panel)
+		SetGadgetPixmap Crystal,PixCrystal
+	Else
+		Crystal=Panel
+	EndIf	
 	?Not MacOS
 	Go = CreateButton("Load Game",0,CH-25,CW,25,Crystal,Button_ok)
 	Sync = CreateButton("Synchronize",0,CH-60,CW,25,Crystal)
@@ -92,10 +96,12 @@ Type TLoadGamePanel Extends tfpanelbase
 	GetUsers()
 	oldminute = Minute()
 	made = True
-	IgnoreGameJolt:TGadget = CreateButton("Ignore GameJolt",0,CH-25,250,25,panel,Button_checkbox)
-	Windowed:TGadget = CreateButton("Windowed",250,CH-25,250,25,panel,Button_checkbox)
-	MGIF_RegisterGadget "GameJolt.Ignore",IgnoreGAMEJOLT
-	MGIF_RegisterGadget "Load.Windowed",Windowed
+	If bigenough
+		IgnoreGameJolt:TGadget = CreateButton("Ignore GameJolt",0,CH-25,250,25,panel,Button_checkbox)
+		Windowed:TGadget = CreateButton("Windowed",250,CH-25,250,25,panel,Button_checkbox)
+		MGIF_RegisterGadget "GameJolt.Ignore",IgnoreGAMEJOLT
+		MGIF_RegisterGadget "Load.Windowed",Windowed
+	End If
 	MGIF_RegisterGadget "Load.User",Users
 	MGIF_RegisterGadget "Load.File",Files
 	MGIF_GetConfig Config

@@ -71,10 +71,15 @@ Type TNewGamePanel Extends tfpanelbase
 	Method Build()
 	CreateLabel "Start: ",0,0,300,25,panel
 	'?Not Win32
-	panwendicka = CreatePanel(tw-PixmapWidth(pixwendicka),th-PixmapHeight(pixwendicka),PixmapWidth(pixwendicka),PixmapHeight(pixwendicka),panel)
-	startgame = CreateButton("Start Game",ClientWidth(panWendicka)-100,ClientHeight(PanWendicka)-25,100,25,panwendicka)
+	If bigenough	
+		panwendicka = CreatePanel(tw-PixmapWidth(pixwendicka),th-PixmapHeight(pixwendicka),PixmapWidth(pixwendicka),PixmapHeight(pixwendicka),panel)
+		startgame = CreateButton("Start Game",ClientWidth(panWendicka)-100,ClientHeight(PanWendicka)-25,100,25,panwendicka)
+		SetGadgetPixmap panwendicka,pixwendicka
+	Else
+		panWendicka=panel
+		startgame=CreateButton("Start Game",ClientWidth(panel)-100,ClientHeight(Panel)-25,100,25,panel)
+	EndIf	
 	'?
-	SetGadgetPixmap panwendicka,pixwendicka
 	NGP =  CreatePanel(300,0,300,50,panel)
 	StartNewGame = CreateButton("New Game",0,0,300,25,NGP,button_radio)
 	StartNewGamePlus = CreateButton("New Game +",0,25,300,25,NGP,Button_radio)
