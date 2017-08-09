@@ -4,7 +4,7 @@ Rem
 	
 	
 	
-	(c) Jeroen P. Broks, 2015, 2016, All rights reserved
+	(c) Jeroen P. Broks, 2015, 2016, 2017, All rights reserved
 	
 		This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 16.03.24
+Version: 17.06.19
 End Rem
 Strict
 'Import maxgui.drivers
@@ -54,7 +54,7 @@ Import "Music.bmx"
 
 JCR6CrashError = True
 
-MKL_Version "LAURA II - Framework.bmx","16.03.24"
+MKL_Version "LAURA II - Framework.bmx","17.06.19"
 MKL_Lic     "LAURA II - Framework.bmx","GNU General Public License 3"
 
 ?MacOS

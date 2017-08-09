@@ -1,7 +1,7 @@
 --[[
   Wind.lua
-  Version: 16.08.25
-  Copyright (C) 2014, 2016 Jeroen Petrus Broks
+  Version: 17.06.19
+  Copyright (C) 2014, 2016, 2017 Jeroen Petrus Broks
   
   ===========================
   This file is part of a project related to the Phantasar Chronicles or another
@@ -34,6 +34,11 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 ]]
+
+-- @IF IGNORE
+local SpellAni = {}
+-- @FI
+
 function SpellAni.BlowAway(TG,TT,TA)
 local lines = {}
 local ak,ln

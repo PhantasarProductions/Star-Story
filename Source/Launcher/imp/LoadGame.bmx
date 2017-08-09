@@ -4,7 +4,7 @@ Rem
 	
 	
 	
-	(c) Jeroen P. Broks, 2015, 2016, All rights reserved
+	(c) Jeroen P. Broks, 2015, 2016, 2017, All rights reserved
 	
 		This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ Rem
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 16.08.12
+Version: 17.06.19
 End Rem
 Strict
 
@@ -30,7 +30,7 @@ Import tricky_units.advdatetime
 Import tricky_units.Bye
 Import "Framework.bmx"
 
-MKL_Version "LAURA II - LoadGame.bmx","16.08.12"
+MKL_Version "LAURA II - LoadGame.bmx","17.06.19"
 MKL_Lic     "LAURA II - LoadGame.bmx","GNU General Public License 3"
 
 

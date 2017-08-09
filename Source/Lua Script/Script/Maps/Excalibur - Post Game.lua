@@ -2,7 +2,7 @@
 **********************************************
   
   Excalibur - Post Game.lua
-  (c) Jeroen Broks, 2016, All Rights Reserved.
+  (c) Jeroen Broks, 2016, 2017, All Rights Reserved.
   
   This file contains material that is related 
   to a storyline that is which is strictly
@@ -32,7 +32,7 @@
   
  **********************************************
  
-version: 16.08.02
+version: 17.08.09
 ]]
 
 function NPC_Doctor()
@@ -71,4 +71,8 @@ end
 function GALE_OnLoad()
    Music('Dungeon/Observatorium.ogg')
    ZA_Enter('Win',Award,"WINGAME")
+   for ch in each({'Wendicka','Crystal','Foxy','Xenobi','Yirl'}) do 
+       local h = RPGChar.Points(ch,'HP')
+       h.Have = h.Maximum
+   end    
 end

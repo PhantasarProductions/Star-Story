@@ -1,8 +1,8 @@
 --[[
   Append.lua
   Append
-  version: 16.12.17
-  Copyright (C) 2016 Jeroen P. Broks
+  version: 17.07.15
+  Copyright (C) 2016, 2017 Jeroen P. Broks
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
   arising from the use of this software.
