@@ -16,11 +16,30 @@ Since I don't believe in bug-free software, (especially not in a project as huge
 The assets are not part of this repository in order not to violate copyright of third party owners.
 
 
-This game will be set up to work in Windows and Mac. Unfortunately, I cannot go for a Linux version. This is due to some technical difficulties Linux offers, and BlitzMax never got that all covered up. Since you can find the source in this repository you might try to compile this yourself in Linux, I won't stop you, but I'm not going to pain myself with it any more.
+This game is set up to work in Windows and Mac. Unfortunately, I cannot go for a Linux version. This is due to some technical difficulties Linux offers, and BlitzMax never got that all covered up. Since you can find the source in this repository you might try to compile this yourself in Linux, I won't stop you, but I'm not going to pain myself with it any more.
 
-You can follow the some progress on:
+Sites dedicated to this game:
 - SourceForge: http://starstory.sourceforge.net
-- or GameJolt: http://gamejolt.com/games/star-story/58632
+- GameJolt:    http://gamejolt.com/games/star-story/58632 http://tricky.gamejolt.io/starstory
+- Discord:     https://discord.gg/RU3V6YU
+- GitHub:      https://github.com/PhantasarProductions/Star-Story
+
+You can download this game from SourceForge and Game Jolt
+
+Mac users can also install the game using HomeBrew
+~~~shell
+# If you never installed any game of mine before type
+brew tap phantasarproductions/casks
+
+# To install the game itself
+brew cask install starstory
+
+# To upgrade the game when a new version has been released
+brew cask reinstall starstory
+
+# If you have cu for homebrew installed this will work
+brew cask cu -y
+~~~
 
 A live worklog is kept at: http://starstory.sourceforge.net/uTBBS/index.php?C=QuickWorkLog&A=Show&Board=1
 
