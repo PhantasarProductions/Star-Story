@@ -1,3 +1,9 @@
+# NOTE!
+
+This version is now officially discontinued.
+A new version is being developed [here](https://github.com/PhantasarProductions/StarStory)
+
+
 # Star-Story
 
 Star Story is an indie RPG game written by Jeroen Petrus Broks.
